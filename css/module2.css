@@ -1,0 +1,85 @@
+.v2-page { height: 100vh; overflow: hidden; display: flex; flex-direction: column; background: #eef1f4; }
+.v2-page header {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 8px 12px; background: #fff; border-bottom: 1px solid #e3e6ea; flex-shrink: 0;
+}
+.v2-page .prj-name { min-width: 180px; font-weight: 600; border: 1px solid #d0d5db; border-radius: 4px; padding: 4px 8px; }
+.v2-page .spacer { flex: 1; }
+.v2-page .btn-link { text-decoration: none; color: #0b3d91; font-size: 13px; }
+.v2-main {
+  display: grid;
+  grid-template-columns: 260px 1fr 280px;
+  flex: 1; min-height: 0; overflow: hidden;
+}
+.v2-left, .v2-right {
+  overflow: auto; min-height: 0; padding: 10px 12px;
+  background: #fafbfc; border-right: 1px solid #e3e6ea;
+}
+.v2-right { border-right: none; border-left: 1px solid #e3e6ea; }
+.v2-center { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.v2-toolbar {
+  display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px;
+  background: #f3f5f7; border-bottom: 1px solid #e3e6ea; flex-shrink: 0;
+}
+.v2-toolbar button, .v2-page header button {
+  font-size: 12px; padding: 5px 10px; border: 1px solid #cfd5dc; border-radius: 4px;
+  background: #fff; cursor: pointer;
+}
+.v2-toolbar button:hover, .v2-page header button:hover { border-color: #1f6feb; }
+.v2-toolbar button.active { border-color: #1f6feb; background: #eef5ff; color: #0b3d91; }
+.v2-toolbar button.primary, .v2-page header button.primary {
+  background: #1f6feb; color: #fff; border-color: #1f6feb;
+}
+.v2-viewport { flex: 1; min-height: 0; position: relative; background: #f0f2f5; }
+.v2-viewport canvas { display: block; width: 100% !important; height: 100% !important; }
+.v2-hint { font-size: 11px; color: #6b7280; padding: 4px 8px; flex-shrink: 0; }
+
+.v2-left h3, .v2-right h3 { margin: 12px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #4b5563; }
+.v2-left h3:first-child { margin-top: 0; }
+.v2-types { display: flex; flex-direction: column; gap: 4px; }
+.v2-type {
+  text-align: left; padding: 8px 10px; border: 1px solid #dde1e6; border-radius: 6px;
+  background: #fff; cursor: pointer; display: flex; flex-direction: column; gap: 2px;
+}
+.v2-type b { font-size: 13px; }
+.v2-type span { font-size: 11px; color: #6b7280; }
+.v2-type:hover { border-color: #1f6feb; }
+.v2-type.active { border-color: #1f6feb; background: #eef5ff; box-shadow: 0 0 0 1px #1f6feb44; }
+
+.v2-params label { display: block; margin: 4px 0; font-size: 12px; }
+.v2-params input, .v2-params select { width: 100%; box-sizing: border-box; margin-top: 2px; }
+.v2-params .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+.v2-tree-h { font-size: 11px; font-weight: 600; color: #6b7280; margin: 8px 0 3px; }
+.v2-tree-item {
+  display: block; width: 100%; text-align: left; font-size: 11px; padding: 4px 6px;
+  border: 1px solid transparent; border-radius: 4px; background: transparent; cursor: pointer;
+}
+.v2-tree-item:hover { background: #f0f4f8; }
+.v2-tree-item.active { background: #eef5ff; border-color: #1f6feb55; }
+
+.v2-issue { font-size: 12px; padding: 6px 8px; border-radius: 4px; margin: 4px 0; }
+.v2-issue.error { background: #fef2f2; color: #991b1b; }
+.v2-issue.warn { background: #fffbeb; color: #92400e; }
+.v2-issues .ok { color: #067647; font-size: 12px; }
+.v2-rules ul { margin: 0; padding-left: 16px; font-size: 11px; color: #4b5563; line-height: 1.45; }
+.v2-sep { width: 1px; align-self: stretch; background: #d0d5db; margin: 0 4px; }
+.v2-check { display: flex !important; align-items: center; gap: 6px; }
+.v2-check input { width: auto !important; margin: 0; }
+.v2-part-actions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.v2-part-actions button {
+  font-size: 11px; padding: 4px 8px; border: 1px solid #cfd5dc; border-radius: 4px;
+  background: #fff; cursor: pointer;
+}
+.v2-part-actions button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.v2-rules-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin-bottom: 8px;
+}
+.v2-rules-grid label { font-size: 11px; display: block; }
+.v2-rules-grid input { width: 100%; box-sizing: border-box; margin-top: 2px; font-size: 12px; }
+.muted { color: #6b7280; font-size: 12px; }
+
+@media (max-width: 1100px) {
+  .v2-main { grid-template-columns: 220px 1fr; }
+  .v2-right { display: none; }
+}

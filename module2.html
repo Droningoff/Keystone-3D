@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Конструктор модулей v2 — правила и шаблоны</title>
+  <link rel="stylesheet" href="css/app.css?v=20261028v2b">
+  <link rel="stylesheet" href="css/module2.css?v=20261028v2b">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="v2-page">
+  <header>
+    <a class="btn-link" href="index.html?v=20261028v2b">← Сцена</a>
+    <a class="btn-link" href="module.html?v=20261028n" title="Классический редактор деталей">Модуль v1</a>
+    <input id="v2Name" class="prj-name" value="Новый модуль" title="Имя модуля">
+    <div class="spacer"></div>
+    <span id="v2Status" class="muted"></span>
+    <button type="button" id="v2Rebuild">Пересобрать</button>
+    <button type="button" id="v2Export">JSON</button>
+    <button type="button" id="v2Bazis" class="primary">Базис .js</button>
+  </header>
+
+  <main class="v2-main">
+    <aside class="v2-left">
+      <h3>Типология</h3>
+      <p class="muted">Шаблон → параметры → автопересборка по правилам цеха.</p>
+      <div id="v2Types" class="v2-types"></div>
+
+      <h3>Параметры</h3>
+      <div class="v2-params">
+        <div class="row2">
+          <label>Ширина <input type="number" id="v2W" step="10"></label>
+          <label>Высота <input type="number" id="v2H" step="10"></label>
+          <label>Глубина <input type="number" id="v2D" step="10"></label>
+          <label>Цоколь <input type="number" id="v2Plinth" step="10"></label>
+          <label>Полки <input type="number" id="v2Shelves" min="0" max="12"></label>
+          <label>Ящики <input type="number" id="v2Drawers" min="0" max="6"></label>
+          <label id="v2DoorRow">Двери <input type="number" id="v2Doors" min="0" max="4"></label>
+          <label>Секции <input type="number" id="v2Sections" min="1" max="4"></label>
+          <label>Антресоль <input type="number" id="v2Antresol" min="0" step="10" title="Высота верхней зоны, 0 = нет"></label>
+          <label id="v2HingeRow">Петли
+            <select id="v2Hinge"><option value="left">слева</option><option value="right">справа</option></select>
+          </label>
+        </div>
+        <label class="v2-check"><input type="checkbox" id="v2Rod"> Штанга для одежды</label>
+        <label>Корпус <select id="v2MatCarc"></select></label>
+        <label>Фасад <select id="v2MatFront"></select></label>
+        <label>Задняя <select id="v2MatBack"></select></label>
+        <label>Папка .f3d Базиса <input type="text" id="v2FurnPath" placeholder="C:\...\Furniture"></label>
+      </div>
+    </aside>
+
+    <section class="v2-center">
+      <div class="v2-toolbar">
+        <button type="button" id="v2ToolOrbit" class="active" title="Обзор (Orbit)">Обзор</button>
+        <button type="button" id="v2ToolMove" title="Перемещение детали мышью и стрелками">Двигать</button>
+        <span class="v2-sep"></span>
+        <button type="button" id="v2AddShelf" title="Добавить полку">+ полка</button>
+        <button type="button" id="v2AddDoor" title="Добавить дверь">+ дверь</button>
+        <button type="button" id="v2AddDrawer" title="Добавить ящик">+ ящик</button>
+        <button type="button" id="v2AddSection" title="Добавить стойку / секцию">+ стойка</button>
+        <button type="button" id="v2RodBtn" title="Вкл/выкл штангу">Штанга</button>
+        <span class="v2-sep"></span>
+        <button type="button" id="v2Ghost" class="active" title="Полупрозрачный корпус">Скелет</button>
+        <button type="button" id="v2Open" title="Открыть все фасады">Открыть</button>
+        <button type="button" id="v2HideFront" title="Скрыть фасады">Скрыть фасады</button>
+        <button type="button" id="v2HideBack" title="Скрыть заднюю стенку">Скрыть зад</button>
+      </div>
+      <div id="v2Viewport" class="v2-viewport"></div>
+      <div class="v2-hint">Клик — деталь · двойной клик по фасаду — открыть · «Двигать» + стрелки ±1 мм (Shift±10, Ctrl↑↓ по Z) · Delete — убрать полку/дверь/ящик/стойку · H — скрыть</div>
+    </section>
+
+    <aside class="v2-right">
+      <h3>Проверка правил</h3>
+      <div id="v2Issues" class="v2-issues"></div>
+
+      <h3>Дерево деталей</h3>
+      <div id="v2Tree"></div>
+
+      <h3>Выбранная деталь</h3>
+      <div id="v2PartInfo" class="muted">—</div>
+
+      <h3>Правила цеха</h3>
+      <div id="v2RulesEdit" class="v2-rules-edit"></div>
+    </aside>
+  </main>
+
+  <script type="module" src="js/module2/app.js?v=20261028v2b"></script>
+</body>
+</html>

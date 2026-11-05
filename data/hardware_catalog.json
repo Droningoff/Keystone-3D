@@ -1,0 +1,541 @@
+{
+  "source": "Собрано из спецификаций линейки Самолет (data/samolet). Артикулы — как в исходных .b3d.",
+  "categories": [
+    {
+      "id": "hinge",
+      "title": "Петли"
+    },
+    {
+      "id": "slide",
+      "title": "Направляющие"
+    },
+    {
+      "id": "leg",
+      "title": "Опоры"
+    },
+    {
+      "id": "hanger",
+      "title": "Навесы"
+    },
+    {
+      "id": "handle",
+      "title": "Ручки / TIP-ON"
+    },
+    {
+      "id": "shelf",
+      "title": "Полкодержатели"
+    },
+    {
+      "id": "fastener",
+      "title": "Крепёж"
+    },
+    {
+      "id": "other",
+      "title": "Прочее"
+    }
+  ],
+  "items": [
+    {
+      "id": "hinge_sensys_110",
+      "name": "Петля Sensys 110°",
+      "art": "P107E",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 280,
+      "gab": [
+        42,
+        80,
+        80
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 60,
+      "note": "Накладная, Silent System",
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_sensys_110_pto",
+      "name": "Петля Sensys 110° Push to Open",
+      "art": "TIPON1",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 320,
+      "gab": [
+        42,
+        80,
+        80
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 17,
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_onsys_105",
+      "name": "Петля 105° Onsys Silent System",
+      "art": "",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 260,
+      "gab": [
+        42,
+        80,
+        80
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 117,
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_sensys_165",
+      "name": "Петля 165° Sensys Silent System",
+      "art": "P165SSS",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 450,
+      "gab": [
+        48,
+        85,
+        90
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 66,
+      "note": "Для угловых / широкого открывания",
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_adv_110",
+      "name": "Петля Advanced PLUS 110°",
+      "art": "P110SCFAP110",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 240,
+      "gab": [
+        42,
+        80,
+        80
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 41,
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_adv_160",
+      "name": "Петля Advanced PLUS 160° Clip On Soft Close",
+      "art": "P160SCFAP",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 380,
+      "gab": [
+        48,
+        85,
+        90
+      ],
+      "use": [
+        "door"
+      ],
+      "samolet": 33,
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "hinge_false",
+      "name": "Петля для фальш-панели",
+      "art": "PFP",
+      "cat": "hinge",
+      "mesh": "hinge",
+      "price": 180,
+      "gab": [
+        35,
+        60,
+        60
+      ],
+      "use": [
+        "door",
+        "false"
+      ],
+      "samolet": 148,
+      "bazisFile": "Петля Sensys 110.f3d",
+      "mount": "pair"
+    },
+    {
+      "id": "slide_ball",
+      "name": "Направляющие шариковые (пара)",
+      "art": "",
+      "cat": "slide",
+      "mesh": "slide",
+      "price": 900,
+      "gab": [
+        12,
+        35,
+        450
+      ],
+      "use": [
+        "drawer"
+      ],
+      "samolet": 0,
+      "note": "Типовые для ящиков; в Самолёте часто входят в сборку ящика",
+      "bazisFile": "Направляющие шариковые.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "leg_plinth",
+      "name": "Цокольная ножка",
+      "art": "ЦН_ОПР",
+      "cat": "leg",
+      "mesh": "leg",
+      "price": 60,
+      "gab": [
+        50,
+        100,
+        50
+      ],
+      "use": [
+        "base"
+      ],
+      "samolet": 118,
+      "bazisFile": "Цокольная ножка.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "leg_mount",
+      "name": "Крепление опоры",
+      "art": "267978-002",
+      "cat": "leg",
+      "mesh": "leg",
+      "price": 40,
+      "gab": [
+        40,
+        10,
+        40
+      ],
+      "use": [
+        "base"
+      ],
+      "samolet": 93,
+      "bazisFile": "Цокольная ножка.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "hanger_scarpi4",
+      "name": "Навеска SCARPI-4",
+      "art": "600000428",
+      "cat": "hanger",
+      "mesh": "hanger",
+      "price": 180,
+      "gab": [
+        20,
+        50,
+        70
+      ],
+      "use": [
+        "wall"
+      ],
+      "samolet": 210,
+      "bazisFile": "Навеска SCARPI-4.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "hanger_amethyst",
+      "name": "Навеска Аметист-Мпр.",
+      "art": "",
+      "cat": "hanger",
+      "mesh": "hanger",
+      "price": 160,
+      "gab": [
+        18,
+        45,
+        65
+      ],
+      "use": [
+        "wall"
+      ],
+      "samolet": 96,
+      "bazisFile": "Навеска SCARPI-4.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "hanger_cap",
+      "name": "Крышка навески",
+      "art": "300003047",
+      "cat": "hanger",
+      "mesh": "hanger",
+      "price": 25,
+      "gab": [
+        15,
+        40,
+        20
+      ],
+      "use": [
+        "wall"
+      ],
+      "samolet": 228,
+      "bazisFile": "Навеска SCARPI-4.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "tipon1",
+      "name": "Комплект TIP-ON-1",
+      "art": "TIPON1",
+      "cat": "handle",
+      "mesh": "tipon",
+      "price": 450,
+      "gab": [
+        20,
+        60,
+        40
+      ],
+      "use": [
+        "door",
+        "drawer"
+      ],
+      "samolet": 17,
+      "note": "Открывание без ручки",
+      "bazisFile": "TIP-ON.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "handle_128",
+      "name": "Ручка-скоба 128",
+      "art": "",
+      "cat": "handle",
+      "mesh": "handle",
+      "price": 300,
+      "gab": [
+        14,
+        128,
+        30
+      ],
+      "use": [
+        "door",
+        "drawer"
+      ],
+      "samolet": 0,
+      "bazisFile": "Ручка-скоба 128.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "shelf_psf",
+      "name": "Полкодержатель с фиксатором",
+      "art": "PSF",
+      "cat": "shelf",
+      "mesh": "shelfPin",
+      "price": 15,
+      "gab": [
+        8,
+        8,
+        12
+      ],
+      "use": [
+        "shelf"
+      ],
+      "samolet": 246,
+      "bazisFile": "Полкодержатель.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "shelf_d5",
+      "name": "Полкодержатель D5 никель",
+      "art": "",
+      "cat": "shelf",
+      "mesh": "shelfPin",
+      "price": 8,
+      "gab": [
+        5,
+        5,
+        10
+      ],
+      "use": [
+        "shelf"
+      ],
+      "samolet": 98,
+      "bazisFile": "Полкодержатель.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "dowel_main",
+      "name": "Шкант основной",
+      "art": "SH",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 2,
+      "gab": [
+        8,
+        8,
+        30
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 330,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "dowel_extra",
+      "name": "Шкант дополнительный",
+      "art": "SH",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 2,
+      "gab": [
+        8,
+        8,
+        30
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 316,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "dowel_8x30",
+      "name": "Шкант 8×30",
+      "art": "00000001636",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 2,
+      "gab": [
+        8,
+        8,
+        30
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 214,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "confirmat_64",
+      "name": "Конфирмат 6.4×50",
+      "art": "400000841",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 4,
+      "gab": [
+        7,
+        7,
+        50
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 26,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "screw_35",
+      "name": "Саморез 3,5×35",
+      "art": "б/а",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 1,
+      "gab": [
+        4,
+        4,
+        35
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 101,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "plug_hole",
+      "name": "Заглушка д/отверстия",
+      "art": "290000014",
+      "cat": "other",
+      "mesh": "fastener",
+      "price": 3,
+      "gab": [
+        12,
+        12,
+        3
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 246,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "plug_conf",
+      "name": "Заглушка для конфирмата",
+      "art": "112",
+      "cat": "other",
+      "mesh": "fastener",
+      "price": 2,
+      "gab": [
+        10,
+        10,
+        3
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 26,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "tie",
+      "name": "Стяжка",
+      "art": "ST",
+      "cat": "fastener",
+      "mesh": "fastener",
+      "price": 15,
+      "gab": [
+        15,
+        15,
+        20
+      ],
+      "use": [
+        "carcass"
+      ],
+      "samolet": 14,
+      "bazisFile": "Конфирмат.f3d",
+      "mount": "face"
+    },
+    {
+      "id": "tray_alu",
+      "name": "Алюминиевый поддон",
+      "art": "128475963",
+      "cat": "other",
+      "mesh": "tray",
+      "price": 1200,
+      "gab": [
+        500,
+        20,
+        300
+      ],
+      "use": [
+        "wall"
+      ],
+      "samolet": 24,
+      "note": "Сушка / поддон в навесном",
+      "bazisFile": "Поддон.f3d",
+      "mount": "face"
+    }
+  ]
+}

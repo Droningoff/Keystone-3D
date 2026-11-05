@@ -1,0 +1,1104 @@
+{
+ "version": 3,
+ "showFixtures": true,
+ "name": "Кухня Самолет — угол A–D",
+ "room": {
+  "length": 4000,
+  "depth": 3200,
+  "height": 2700,
+  "wallThick": 100,
+  "floorColor": 13616568,
+  "wallColor": 16185072,
+  "openings": [
+   {
+    "id": "op1",
+    "wall": "right",
+    "type": "window",
+    "offset": 1000,
+    "width": 1200,
+    "sill": 900,
+    "height": 1400
+   },
+   {
+    "id": "op2",
+    "wall": "front",
+    "type": "door",
+    "offset": 600,
+    "width": 900,
+    "sill": 0,
+    "height": 2100
+   }
+  ],
+  "features": [],
+  "show": "auto",
+  "showWallLetters": true
+ },
+ "lighting": {
+  "ambient": 0.55,
+  "sun": 1.2,
+  "sunAzimuth": 35,
+  "sunElevation": 55,
+  "fill": 0.35,
+  "ceiling": true,
+  "ceilingCount": 4,
+  "ceilingIntensity": 0.6,
+  "accent": false,
+  "accentColor": "#ffe6c2"
+ },
+ "settings": {
+  "gap": 2,
+  "countertop": true,
+  "topMat": "top38_oak",
+  "topOverhang": 30,
+  "samoletPath": "D:\\AI\\Project_OOZ\\3D модели с диска Y\\Стандартные 3Д-модели\\Самолет"
+ },
+ "modules": [
+  {
+   "id": "m1a17f0c61c51",
+   "type": "lib",
+   "name": "",
+   "x": 0,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 338,
+    "art": "Н-КБ-720х200х560-Б15-САМ_KF",
+    "code": "",
+    "file": "Н-КБ-720х200х560-Б15-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     200.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 200,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c52",
+   "type": "lib",
+   "name": "",
+   "x": 200,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 432,
+    "art": "Н-КМ-720х800х560-М2-САМ_KF",
+    "code": "",
+    "file": "Н-КМ-720х800х560-М2-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     800.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 800,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c53",
+   "type": "lib",
+   "name": "",
+   "x": 1000,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 330,
+    "art": "Н-ДО-20-720х600х560-0-САМ_KF",
+    "code": "3170",
+    "file": "Н-ДО-20-720х600х560-0-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     600.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c54",
+   "type": "lib",
+   "name": "",
+   "x": 1600,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 587,
+    "art": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF",
+    "code": "",
+    "file": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0,
+     0,
+     0,
+     600,
+     720,
+     578
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 578,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c55",
+   "type": "lib",
+   "name": "",
+   "x": 2200,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 587,
+    "art": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF",
+    "code": "",
+    "file": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0,
+     0,
+     0,
+     600,
+     720,
+     578
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 578,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c56",
+   "type": "lib",
+   "name": "",
+   "x": 2800,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 396,
+    "art": "Н-КЗ-720х600х560-2-САМ_KF",
+    "code": "",
+    "file": "Н-КЗ-720х600х560-2-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     600.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c57",
+   "type": "lib",
+   "name": "",
+   "x": 3400,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 548,
+    "art": "Н-ХД-2-2040х600х560-САМ_KF (лев)",
+    "code": "",
+    "file": "Н-ХД-2-2040х600х560-САМ_KF (лев).b3d",
+    "cat": "Пеналы",
+    "decor": "KF",
+    "hand": "left",
+    "box": [
+     0,
+     0,
+     0,
+     600,
+     2040,
+     578
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 2040,
+    "depth": 578,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "tall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c58",
+   "type": "lib",
+   "name": "",
+   "x": 3400,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 652,
+    "art": "П-ПД-1-460х600х560-САМ_KF (лев)",
+    "code": "",
+    "file": "П-ПД-1-460х600х560-САМ_KF (лев).b3d",
+    "cat": "Пеналы",
+    "decor": "KF",
+    "hand": "left",
+    "box": [
+     0,
+     0,
+     0,
+     600,
+     460,
+     578
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 460,
+    "depth": 578,
+    "elev": 2140,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "tall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c59",
+   "type": "lib",
+   "name": "",
+   "x": 0,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 172,
+    "art": "В-КУ1-720х650х350-0-САМ_KF (лев)",
+    "code": "",
+    "file": "В-КУ1-720х650х350-0-САМ_KF (лев).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "left",
+    "box": [
+     0.0,
+     -20.0,
+     0.0,
+     650.0,
+     720.0,
+     401.5
+    ]
+   },
+   "p": {
+    "width": 650,
+    "height": 740,
+    "depth": 402,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c510",
+   "type": "lib",
+   "name": "",
+   "x": 650,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 124,
+    "art": "В-К2-720х800х350-0-САМ_KF",
+    "code": "4782",
+    "file": "В-К2-720х800х350-0-САМ_KF.b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     800.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 800,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c511",
+   "type": "lib",
+   "name": "",
+   "x": 1450,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 118,
+    "art": "В-К2-460х600х350-0-САМ_KF",
+    "code": "",
+    "file": "В-К2-460х600х350-0-САМ_KF.b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     600.0,
+     460.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 460,
+    "depth": 369,
+    "elev": 1710,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c512",
+   "type": "lib",
+   "name": "",
+   "x": 2050,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 121,
+    "art": "В-К2-720х600х350-0-САМ_KF",
+    "code": "4782",
+    "file": "В-К2-720х600х350-0-САМ_KF.b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     600.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c513",
+   "type": "lib",
+   "name": "",
+   "x": 2650,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 35,
+    "art": "В-К1-720х600х350-0-САМ_KF (пр)",
+    "code": "4783",
+    "file": "В-К1-720х600х350-0-САМ_KF (пр).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     600.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c514",
+   "type": "lib",
+   "name": "",
+   "x": 3250,
+   "z": 0.0,
+   "rot": 0,
+   "lib": {
+    "n": 15,
+    "art": "В-К1-720х150х350-0-САМ_KF (пр)",
+    "code": "4783",
+    "file": "В-К1-720х150х350-0-САМ_KF (пр).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     150.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 150,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c515",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 1180,
+   "rot": 90,
+   "lib": {
+    "n": 390,
+    "art": "Н-КЗ-720х600х560-1-САМ_KF (лев)",
+    "code": "",
+    "file": "Н-КЗ-720х600х560-1-САМ_KF (лев).b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": "left",
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     600.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c516",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 1780,
+   "rot": 90,
+   "lib": {
+    "n": 587,
+    "art": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF",
+    "code": "",
+    "file": "Н-ЯЩ-21-720х600х560-Т1-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0,
+     0,
+     0,
+     600,
+     720,
+     578
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 578,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c517",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 2380,
+   "rot": 90,
+   "lib": {
+    "n": 391,
+    "art": "Н-КЗ-720х600х560-1-САМ_KF (пр)",
+    "code": "",
+    "file": "Н-КЗ-720х600х560-1-САМ_KF (пр).b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     600.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c518",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 2780,
+   "rot": 90,
+   "lib": {
+    "n": 368,
+    "art": "Н-КЗ-720х400х560-1-САМ_KF (пр)",
+    "code": "",
+    "file": "Н-КЗ-720х400х560-1-САМ_KF (пр).b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     400.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 400,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c519",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 2980,
+   "rot": 90,
+   "lib": {
+    "n": 338,
+    "art": "Н-КБ-720х200х560-Б15-САМ_KF",
+    "code": "",
+    "file": "Н-КБ-720х200х560-Б15-САМ_KF.b3d",
+    "cat": "Нижние",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     0.0,
+     0.0,
+     200.0,
+     720.0,
+     579.0
+    ]
+   },
+   "p": {
+    "width": 200,
+    "height": 720,
+    "depth": 579,
+    "elev": 100,
+    "plinth": 0,
+    "row": "floor",
+    "kind": "base"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c520",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 1180,
+   "rot": 90,
+   "lib": {
+    "n": 34,
+    "art": "В-К1-720х600х350-0-САМ_KF (лев)",
+    "code": "4782",
+    "file": "В-К1-720х600х350-0-САМ_KF (лев).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "left",
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     600.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c521",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 1780,
+   "rot": 90,
+   "lib": {
+    "n": 121,
+    "art": "В-К2-720х600х350-0-САМ_KF",
+    "code": "4782",
+    "file": "В-К2-720х600х350-0-САМ_KF.b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": null,
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     600.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c522",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 2380,
+   "rot": 90,
+   "lib": {
+    "n": 35,
+    "art": "В-К1-720х600х350-0-САМ_KF (пр)",
+    "code": "4783",
+    "file": "В-К1-720х600х350-0-САМ_KF (пр).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     600.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 600,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  },
+  {
+   "id": "m1a17f0c61c523",
+   "type": "lib",
+   "name": "",
+   "x": 0.0,
+   "z": 2780,
+   "rot": 90,
+   "lib": {
+    "n": 21,
+    "art": "В-К1-720х400х350-0-САМ_KF (пр)",
+    "code": "4783",
+    "file": "В-К1-720х400х350-0-САМ_KF (пр).b3d",
+    "cat": "Навесные",
+    "decor": "KF",
+    "hand": "right",
+    "box": [
+     0.0,
+     -18.5,
+     0.0,
+     400.0,
+     720.0,
+     369.0
+    ]
+   },
+   "p": {
+    "width": 400,
+    "height": 738,
+    "depth": 369,
+    "elev": 1450,
+    "plinth": 0,
+    "row": "wall",
+    "kind": "wall"
+   },
+   "mat": {
+    "carcass": "ldsp16_white",
+    "front": "mdf18_white_gloss",
+    "back": "hdf3_white"
+   },
+   "overrides": {},
+   "open": {}
+  }
+ ],
+ "fixtures": [
+  {
+   "id": "fx_sock",
+   "type": "socket_kitchen",
+   "name": "",
+   "x": 2700,
+   "z": 0,
+   "elev": 1100,
+   "rot": 0
+  },
+  {
+   "id": "fx_pipe",
+   "type": "pipe_water",
+   "name": "",
+   "x": 1250,
+   "z": 30,
+   "elev": 0,
+   "rot": 0
+  },
+  {
+   "id": "fx_sink",
+   "type": "sink_single",
+   "name": "",
+   "moduleId": "m1a17f0c61c52",
+   "lx": 400.0,
+   "ly": 858,
+   "lz": 299.5,
+   "lrot": 0,
+   "x": 600.0,
+   "z": 299.5,
+   "elev": 858,
+   "rot": 0
+  },
+  {
+   "id": "fx_mix",
+   "type": "mixer_chrome",
+   "name": "",
+   "moduleId": "m1a17f0c61c52",
+   "lx": 400.0,
+   "ly": 858,
+   "lz": 199.5,
+   "lrot": 0,
+   "x": 600.0,
+   "z": 199.5,
+   "elev": 858,
+   "rot": 0
+  },
+  {
+   "id": "fx_hob",
+   "type": "hob_60",
+   "name": "",
+   "moduleId": "m1a17f0c61c53",
+   "lx": 300.0,
+   "ly": 858,
+   "lz": 29.5,
+   "lrot": 0,
+   "x": 1300.0,
+   "z": 29.5,
+   "elev": 858,
+   "rot": 0
+  },
+  {
+   "id": "fx_oven",
+   "type": "oven_60",
+   "name": "",
+   "moduleId": "m1a17f0c61c53",
+   "lx": 300.0,
+   "ly": 100,
+   "lz": 19,
+   "lrot": 0,
+   "x": 1300.0,
+   "z": 19.0,
+   "elev": 100,
+   "rot": 0
+  },
+  {
+   "id": "fx_dw",
+   "type": "dishwasher_60",
+   "name": "",
+   "moduleId": "m1a17f0c61c56",
+   "lx": 300.0,
+   "ly": 100,
+   "lz": 19,
+   "lrot": 0,
+   "x": 3100.0,
+   "z": 19.0,
+   "elev": 100,
+   "rot": 0
+  },
+  {
+   "id": "fx_hood",
+   "type": "hood_60",
+   "name": "",
+   "moduleId": "m1a17f0c61c511",
+   "lx": 300.0,
+   "ly": 1510,
+   "lz": 0,
+   "lrot": 0,
+   "x": 1750.0,
+   "z": 0.0,
+   "elev": 1510,
+   "rot": 0
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Конструктор модуля — детали</title>
+  <link rel="stylesheet" href="css/app.css?v=20261028n">
+  <link rel="stylesheet" href="css/module.css?v=20261028n">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="module-page">
+  <header>
+    <a class="btn-link" href="index.html?v=20261028n">← Сцена</a>
+    <a class="btn-link" href="module2.html?v=20261028v2" title="Шаблоны и мебельные правила">Модуль v2</a>
+    <input id="modName" class="prj-name" value="Новый модуль" title="Имя модуля">
+    <div class="spacer"></div>
+    <span id="modStatus" class="muted"></span>
+    <button type="button" id="btnTpl" title="Принудительно пересобрать из шаблона">Пересобрать</button>
+    <button type="button" id="btnAddPanel">+ Деталь</button>
+    <button type="button" id="btnDelPanel">Удалить деталь</button>
+    <button type="button" id="btnSaveJson">Сохранить JSON</button>
+    <button type="button" id="btnLoadJson">Открыть JSON</button>
+    <button type="button" id="btnBazis" class="primary">Выгрузить в Базис</button>
+    <input type="file" id="fileJson" accept=".json" hidden>
+  </header>
+
+  <main class="module-main">
+    <aside class="module-left">
+      <h3>Шаблон корпуса</h3>
+      <label>Тип
+        <select id="modType">
+          <option value="base">Тумба с дверями</option>
+          <option value="base_drawers">Тумба с ящиками</option>
+          <option value="sink">Тумба под мойку</option>
+          <option value="wall">Навесной</option>
+          <option value="tall">Пенал</option>
+          <option value="wardrobe">Шкаф</option>
+        </select>
+      </label>
+      <div class="props-grid">
+        <label>Ширина <input type="number" id="pW" step="10" value="600"></label>
+        <label>Высота <input type="number" id="pH" step="10" value="720"></label>
+        <label>Глубина <input type="number" id="pD" step="10" value="560"></label>
+        <label>Цоколь <input type="number" id="pPlinth" step="10" value="100"></label>
+        <label>Полки <input type="number" id="pShelves" min="0" max="12" value="1"></label>
+        <label id="doorsRow">Двери <input type="number" id="pDoors" min="0" max="4" value="1"></label>
+        <label>Ящики <input type="number" id="pDrawers" min="0" max="6" value="0"></label>
+        <label id="hingeRow">Петли
+          <select id="pHinge"><option value="left">слева</option><option value="right">справа</option></select>
+        </label>
+      </div>
+      <p class="muted">Параметры шаблона сразу пересобирают модуль и сцену. Список деталей справа можно править точечно — изменения тоже сразу на сцене.</p>
+      <label>Папка .f3d Базиса (фурнитура)
+        <input id="furnPath" placeholder="D:\Bazis\Furniture" autocomplete="off">
+      </label>
+      <p class="muted">Если пусто — скрипт спросит папку при выполнении в Базисе.</p>
+
+      <h3>Детали (<span id="partCount">0</span>)</h3>
+      <div id="partList" class="part-list"></div>
+
+      <h3>Фурнитура модуля (<span id="fitCount">0</span>)</h3>
+      <div id="fitList" class="part-list"></div>
+      <button type="button" id="btnDelFit" style="margin-top:4px;width:100%">Удалить фурнитуру</button>
+    </aside>
+
+    <section class="module-center">
+      <div class="mod-toolbar">
+        <button type="button" id="btnToolMove" class="active" title="ЛКМ — тащить, стрелки — сдвиг 1 мм (Shift — 10)">✋ Двигать</button>
+        <button type="button" id="btnToolOrbit" title="Вращение сцены ЛКМ">🔄 Обзор</button>
+        <span class="sep"></span>
+        <button type="button" id="btnHideFronts" title="Скрыть/показать фасады">Фасады</button>
+        <button type="button" id="btnOpenFronts" title="Открыть/закрыть двери и ящики">Открыть</button>
+        <button type="button" id="btnShowAll" title="Показать все детали">Все</button>
+        <button type="button" id="btnIsolate" title="Оставить только выбранную">Изоляция</button>
+        <span class="sep"></span>
+        <button type="button" id="btnHingeGhost" class="active" title="Оранжевые точки — слоты петель, клик ставит">Слоты петель</button>
+        <button type="button" id="btnPlaceHinges" title="Поставить все предложенные петли">+ Петли</button>
+      </div>
+      <div id="modViewport" class="module-viewport"></div>
+      <div class="hint">Двигать: ЛКМ / стрелки (Ctrl+↑↓ — по Z, Shift — шаг 10) · двойной клик по фасаду — открыть · H — скрыть · оранжевые точки — петли · Базис: OpenFurniture</div>
+    </section>
+
+    <aside class="module-right">
+      <h3>Свойства</h3>
+      <div id="partProps" class="muted">Выберите деталь или фурнитуру</div>
+      <h3>Каталог фурнитуры</h3>
+      <p class="muted">Из линейки Самолет. Клик — вставить в модуль (у выбранной двери/полки, иначе по центру).</p>
+      <select id="hwCatFilter"></select>
+      <div id="hwCatalog" class="hw-catalog"></div>
+      <h3>Материалы модуля</h3>
+      <label>Корпус <select id="matCarc"></select></label>
+      <label>Фасад <select id="matFront"></select></label>
+      <label>Задняя <select id="matBack"></select></label>
+    </aside>
+  </main>
+
+  <script type="module" src="js/moduleCtor.js?v=20261028n"></script>
+</body>
+</html>

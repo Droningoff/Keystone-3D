@@ -1,0 +1,292 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Конструктор корпусной мебели</title>
+  <link rel="stylesheet" href="css/app.css?v=20261029j">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <input id="prjName" class="prj-name" title="Название проекта">
+    <div class="spacer"></div>
+    <span id="modeBadge" class="mode-badge"></span>
+    <span id="total" class="total"></span>
+    <button data-act="undo" title="Ctrl+Z">↶</button>
+    <button data-act="new">Новый</button>
+    <button data-act="demoKitchen" title="Новая сцена: кухня из линейки Самолет">Пример кухни</button>
+    <a class="btn-link" href="module.html?v=20261028n" title="Конструктор модуля v1 — детали вручную">Модуль v1</a>
+    <a class="btn-link" href="module2.html?v=20261028v2b" title="Конструктор модулей v2 — шаблоны и мебельные правила">Модуль v2</a>
+    <button data-act="open">Открыть</button>
+    <button data-act="save">Сохранить</button>
+    <button data-act="spec">Спецификация</button>
+    <button data-act="bazis" class="primary">Выгрузить в Базис</button>
+    <button data-act="bazisTest">Тест Базиса</button>
+    <button data-act="csv">CSV</button>
+    <button data-act="onec">В 1С</button>
+    <input type="file" id="fileOpen" accept=".json" hidden>
+    <input type="file" id="libImport" accept=".json" hidden>
+  </header>
+
+  <main>
+    <aside class="left">
+      <div class="tabs">
+        <button class="tab active" data-tab="lib">Библиотека</button>
+        <button class="tab" data-tab="sam">Каталог</button>
+        <button class="tab" data-tab="room">Помещение</button>
+        <button class="tab" data-tab="light">Свет</button>
+        <button class="tab" data-tab="fix">Объекты</button>
+        <button class="tab" data-tab="brief">ТЗ → ИИ</button>
+      </div>
+
+      <div class="tab-pane active" id="tab-lib">
+        <p class="muted">Клик по модулю → режим «по плоскости»: кликните пол или стену. <kbd>R</kbd> — поворот, <kbd>Esc</kbd> — отмена.</p>
+        <div id="library" class="library"></div>
+        <div class="btnrow" style="margin-top:8px">
+          <button id="btnSaveLib" title="Сохранить выбранный модуль в свою библиотеку">★ В мою библиотеку</button>
+          <button id="btnExportLib">Экспорт</button>
+          <button id="btnImportLib">Импорт</button>
+        </div>
+        <h3>Столешница</h3>
+        <label class="chk"><input type="checkbox" id="topOn"> Над нижними у задней стены</label>
+        <label>Материал <select id="topMat"></select></label>
+        <h3>Вид (как eKitchen)</h3>
+        <div class="btnrow">
+          <button type="button" data-view="walk" title="Ходьба изнутри: ЛКМ пусто — ехать, ПКМ — смотреть, WASD/стрелки">Изнутри</button>
+          <button type="button" data-view="3d" title="Изометрия, орбита ЛКМ / стрелки">Изометрия</button>
+          <button type="button" data-view="top" title="Вид сверху, панорама">Сверху</button>
+          <button type="button" data-view="front">Спереди</button>
+        </div>
+        <div class="btnrow">
+          <button type="button" id="btnLines" title="Как eKitchen: черно-белая сцена в линиях">В линиях</button>
+        </div>
+        <label class="chk"><input type="checkbox" id="showGrid" checked> Сетка 100/500 мм</label>
+        <label class="chk"><input type="checkbox" id="showDims" checked> Размеры в 3D</label>
+        <label>Фасады
+          <select id="frontMode">
+            <option value="show">показывать</option>
+            <option value="ghost">прозрачные</option>
+            <option value="hide">скрыть</option>
+          </select>
+        </label>
+        <div class="btnrow">
+          <button id="btnOpenAll">Открыть все</button>
+          <button id="btnCloseAll">Закрыть все</button>
+          <button type="button" id="btnDock" title="Режим привязки к соседу (Ctrl / G)">Стык</button>
+        </div>
+        <label>Помещение
+          <select id="roomShow">
+            <option value="auto">стены — прятать ближние к камере</option>
+            <option value="full">показывать полностью</option>
+            <option value="floor">только пол</option>
+            <option value="hide">скрыть</option>
+          </select>
+        </label>
+        <label class="chk"><input type="checkbox" id="fixShow"> Показывать технику и коммуникации</label>
+        <label class="chk"><input type="checkbox" id="wallLettersShow" checked> Буквы стен A–D</label>
+      </div>
+
+      <div class="tab-pane" id="tab-sam">
+        <label>Линейка продукции
+          <select id="catLine">
+            <option value="samolet" selected>Самолет</option>
+          </select>
+        </label>
+        <p class="muted">Клик по карточке → постановка. <b>архив</b> — скрыть; у своих .b3d — <b>удалить</b>. В Базис — исходный .b3d с фурнитурой. Превью — контур/прозрачность, видно наполнение.</p>
+        <div class="sam-user-bar">
+          <button type="button" id="samAddB3d" title="Добавить один или несколько .b3d в каталог">Добавить .b3d…</button>
+          <input type="file" id="samAddB3dInput" accept=".b3d" multiple hidden>
+          <label class="chk"><input type="checkbox" id="samShowArchived"> показывать архив</label>
+        </div>
+        <input id="samSearch" placeholder="Артикул, серия или размер: Н-КУ 600" autocomplete="off">
+        <div class="sam-filters">
+          <select id="samCat"></select>
+          <select id="samDecor"></select>
+        </div>
+        <div id="samInfo" class="muted"></div>
+        <div id="samGrid" class="sam-grid"></div>
+        <button id="samMore" hidden>Показать ещё</button>
+        <label>Папка с .b3d линейки (для скрипта Базиса)<input id="samPath"></label>
+        <label>Папка моих .b3d<input id="samUserPath" placeholder="D:\models\мои"></label>
+        <label>Папка .f3d фурнитуры Базиса<input id="furnPath" placeholder="D:\Bazis\Furniture"></label>
+        <p class="muted" style="margin-top:8px">
+          <a href="module2.html?v=20261028v2b">Конструктор модулей v2 →</a> шаблоны и правила ·
+          <a href="module.html?v=20261028n">v1 →</a> детали вручную.
+        </p>
+      </div>
+
+      <div class="tab-pane" id="tab-room">
+        <h3>Размеры комнаты</h3>
+        <label>Длина (X), мм <input type="number" id="roomL" step="10"></label>
+        <label>Глубина (Z), мм <input type="number" id="roomD" step="10"></label>
+        <label>Высота (Y), мм <input type="number" id="roomH" step="10"></label>
+        <label>Цвет пола <input type="color" id="floorColor" value="#cfc6b8"></label>
+        <label>Цвет стен <input type="color" id="wallColor" value="#f6f4f0"></label>
+        <h3>Ниши и выступы</h3>
+        <p class="muted">Ниша — углубление стены наружу (комната больше). Выступ — внутрь комнаты (колонна, короб).</p>
+        <div id="features"></div>
+        <div class="btnrow">
+          <button id="btnAddNiche">+ Ниша</button>
+          <button id="btnAddJut">+ Выступ</button>
+        </div>
+        <h3>Проёмы</h3>
+        <div id="openings"></div>
+        <button id="btnAddOpening">+ Проём</button>
+      </div>
+
+      <div class="tab-pane" id="tab-light">
+        <h3>Освещение</h3>
+        <label>Окружающий <input type="range" id="ltAmbient" min="0" max="2" step="0.05"></label>
+        <label>Солнце <input type="range" id="ltSun" min="0" max="3" step="0.05"></label>
+        <label>Азимут солнца <input type="range" id="ltAz" min="0" max="360" step="5"></label>
+        <label>Высота солнца <input type="range" id="ltEl" min="5" max="85" step="1"></label>
+        <label>Заполнение <input type="range" id="ltFill" min="0" max="2" step="0.05"></label>
+        <label class="chk"><input type="checkbox" id="ltCeil"> Потолочные светильники</label>
+        <label>Число светильников <input type="number" id="ltCeilN" min="1" max="8" step="1"></label>
+        <label>Яркость светильников <input type="range" id="ltCeilI" min="0" max="2" step="0.05"></label>
+        <label class="chk"><input type="checkbox" id="ltAccent"> Акцентный свет</label>
+        <label>Цвет акцента <input type="color" id="ltAccentC" value="#ffe6c2"></label>
+      </div>
+
+      <div class="tab-pane" id="tab-fix">
+        <p class="muted">Техника, мойки, смесители, розетки, трубы. Ставятся кликом по полу/стене.</p>
+        <div id="fixturesLib" class="library"></div>
+      </div>
+
+      <div class="tab-pane" id="tab-brief">
+        <p class="muted">Опросник собирает ТЗ и комнату в промпт для <b>ИИ</b>. Вставьте его в чат агента — кухня соберётся из библиотеки Самолет по правилам.</p>
+        <h3>Форма кухни</h3>
+        <label>Конфигурация
+          <select id="brShape">
+            <option value="linear">Линейная</option>
+            <option value="corner" selected>Угловая (L)</option>
+            <option value="u">П-образная (U)</option>
+          </select>
+        </label>
+        <label>Основная стена (длинный ряд)
+          <select id="brMain">
+            <option value="A" selected>A — задняя</option>
+            <option value="B">B — правая</option>
+            <option value="C">C — передняя</option>
+            <option value="D">D — левая</option>
+          </select>
+        </label>
+        <label id="brSecondWrap">Вторая стена
+          <select id="brSecond">
+            <option value="D" selected>D — левая</option>
+            <option value="A">A — задняя</option>
+            <option value="B">B — правая</option>
+            <option value="C">C — передняя</option>
+          </select>
+        </label>
+        <label id="brCornerWrap">Угол
+          <select id="brCorner">
+            <option value="A-D" selected>A–D (задняя–левая) — «левый» у стены A</option>
+            <option value="A-B">A–B (задняя–правая) — «правый» у стены A</option>
+            <option value="C-D">C–D (передняя–левая)</option>
+            <option value="C-B">C–B (передняя–правая)</option>
+          </select>
+        </label>
+        <label>Ряды
+          <select id="brFill">
+            <option value="full" selected>Нижние и верхние</option>
+            <option value="base_only">Только нижние</option>
+            <option value="wall_only">Только верхние</option>
+          </select>
+        </label>
+        <label>Пенал
+          <select id="brTall">
+            <option value="none">Нет</option>
+            <option value="left">Слева (начало ряда)</option>
+            <option value="right" selected>Справа (конец ряда)</option>
+          </select>
+        </label>
+        <h3>Техника</h3>
+        <label class="chk"><input type="checkbox" id="brSink" checked> Мойка</label>
+        <label class="chk"><input type="checkbox" id="brHob" checked> Варочная</label>
+        <label class="chk"><input type="checkbox" id="brOven" checked> Духовка</label>
+        <label class="chk"><input type="checkbox" id="brDw"> Посудомойка</label>
+        <label class="chk"><input type="checkbox" id="brHood" checked> Вытяжка</label>
+        <h3>Материал</h3>
+        <label>Декор Самолет
+          <select id="brDecor">
+            <option value="KF" selected>KF</option>
+            <option value="CC">CC</option>
+            <option value="SS">SS</option>
+            <option value="WG">WG</option>
+          </select>
+        </label>
+        <label>Глубина нижних
+          <select id="brDepth">
+            <option value="560" selected>560</option>
+            <option value="570">570</option>
+          </select>
+        </label>
+        <label class="chk"><input type="checkbox" id="brReplace" checked> Заменить текущий гарнитур</label>
+        <label>Дополнительно (свободный текст)
+          <textarea id="brFree" rows="3" placeholder="Например: мойку ближе к трубе; без бутылочницы; фасады с доводчиками"></textarea>
+        </label>
+        <h3>LLM в браузере (LM Studio)</h3>
+        <p class="muted">Локальная модель строит JSON-план и сразу расставляет модули. Запустите LM Studio → Local Server (порт 1234), загрузите модель.</p>
+        <label>URL сервера<input id="llmUrl" value="http://127.0.0.1:1234"></label>
+        <label>Режим
+          <select id="llmMode">
+            <option value="lmstudio" selected>LM Studio (рекомендуется)</option>
+            <option value="openai">OpenAI-compatible /v1</option>
+          </select>
+        </label>
+        <label>Модель
+          <select id="llmModel"><option value="">— авто (загруженная) —</option></select>
+        </label>
+        <label>API-ключ (если нужен)<input id="llmKey" type="password" placeholder="необязательно для LM Studio" autocomplete="off"></label>
+        <div class="btnrow">
+          <button id="llmRefresh" type="button">Обновить модели</button>
+          <button id="llmBuild" class="primary" type="button">Построить через LLM</button>
+        </div>
+        <div id="llmStatus" class="muted"></div>
+
+        <h3>Или через ИИ</h3>
+        <div class="btnrow" style="margin-top:8px">
+          <button id="brCopy" type="button">Скопировать промпт для ИИ</button>
+          <button id="brDownload" type="button">Скачать .md</button>
+          <button id="brToCmd" type="button">Вставить краткую фразу в чат</button>
+        </div>
+        <label>Превью промпта<textarea id="brPreview" rows="10" readonly></textarea></label>
+        <p class="muted" id="brHint">Стены A–D в 3D. Комната — с вкладки «Помещение».</p>
+      </div>
+    </aside>
+
+    <section class="center">
+      <div id="viewport" class="viewport"></div>
+      <div class="hint">
+        <b>Изометрия</b>: стрелки/WASD — ракурс вокруг кухни · <b>Изнутри</b>: ЛКМ пусто — ехать, ПКМ — смотреть ·
+        «В линиях» — Ч/Б каркас как eKitchen · клик/drag — модули · <kbd>G</kbd> — стык
+      </div>
+      <div class="cmd">
+        <div id="log" class="log"></div>
+        <form id="cmdForm">
+          <input id="cmd" placeholder="Команда или ТЗ: вкладка «ТЗ → ИИ» для опросника · «помощь»" autocomplete="off">
+          <button>▶</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div id="props"></div>
+      <h3>Проверка</h3>
+      <div id="issues" class="issues"></div>
+    </aside>
+  </main>
+
+  <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
+
+  <script type="module" src="js/main.js?v=20261029j"></script>
+</body>
+</html>

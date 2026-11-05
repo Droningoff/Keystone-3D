@@ -1,0 +1,46 @@
+# Temp / probe junk
+_ek_*
+_git_probe.txt
+_unify_v.py
+_chk.txt
+_fixlog.txt
+*.tmp
+*.bak
+*.log
+
+# Local work probes
+work/_hinge_probe.*
+work/_*.py
+work/_*.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / local env
+.env
+.env.*
+*.pem
+credentials.json
+
+# local probe scripts
+_find_*.py
+_wg34_*.py
+_wg34_*.txt
+_push_*.py
+_push_*.txt
+_git_*.txt
+_cc.txt
+_sib.txt
+_env_git.txt

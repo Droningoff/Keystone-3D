@@ -1,0 +1,351 @@
+{
+  "source": "samolet",
+  "hw": [
+    {
+      "name": "Шкант основной",
+      "art": "SH",
+      "modules": 330
+    },
+    {
+      "name": "Шкант дополнительный",
+      "art": "SH",
+      "modules": 316
+    },
+    {
+      "name": "Заглушка д/отверстия (определить)",
+      "art": "290000014",
+      "modules": 246
+    },
+    {
+      "name": "Полкодержатель с фиксатором",
+      "art": "PSF",
+      "modules": 246
+    },
+    {
+      "name": "Крышка навески",
+      "art": "300003047",
+      "modules": 228
+    },
+    {
+      "name": "Шкант 8х30",
+      "art": "00000001636",
+      "modules": 214
+    },
+    {
+      "name": "Заглушка для навески SCARPI-4 на правую боковину",
+      "art": "",
+      "modules": 210
+    },
+    {
+      "name": "Навеска SCARPI-4",
+      "art": "600000428",
+      "modules": 210
+    },
+    {
+      "name": "Заглушка для навески SCARPI-4 на левую боковину",
+      "art": "",
+      "modules": 192
+    },
+    {
+      "name": "Петля для фальш панели",
+      "art": "PFP",
+      "modules": 148
+    },
+    {
+      "name": "Цокольная ножка",
+      "art": "",
+      "modules": 118
+    },
+    {
+      "name": "Петля 105 гр. Onsys Silent System",
+      "art": "",
+      "modules": 117
+    },
+    {
+      "name": "2x5",
+      "art": "",
+      "modules": 102
+    },
+    {
+      "name": "Саморез 3,5х35",
+      "art": "б/а",
+      "modules": 101
+    },
+    {
+      "name": "Полкодержатель D5 никель",
+      "art": "",
+      "modules": 98
+    },
+    {
+      "name": "Навеска Аметист-Мпр.",
+      "art": "",
+      "modules": 96
+    },
+    {
+      "name": "Крепление опоры, черный (267978-002",
+      "art": "267978-002",
+      "modules": 93
+    },
+    {
+      "name": "Цокольная ножка (определить)",
+      "art": "ЦН_ОПР",
+      "modules": 93
+    },
+    {
+      "name": "Шкант35 35x8",
+      "art": "240",
+      "modules": 80
+    },
+    {
+      "name": "Петля 165 гр. Sensys Silent System",
+      "art": "P165SSS",
+      "modules": 66
+    },
+    {
+      "name": "Петля Sensys 110гр",
+      "art": "P107E",
+      "modules": 60
+    },
+    {
+      "name": "Петля Advaced PLUS110гр",
+      "art": "P110SCFAP110",
+      "modules": 41
+    },
+    {
+      "name": "Петля 160 гр. для накладных дверей Clip On Soft Close Firmax Advanced PLUS",
+      "art": "P160SCFAP",
+      "modules": 33
+    },
+    {
+      "name": "Заглушка для конфирмата",
+      "art": "112",
+      "modules": 26
+    },
+    {
+      "name": "Конфирмат 6.4х50 шестигран.",
+      "art": "400000841",
+      "modules": 26
+    },
+    {
+      "name": "Крепеж для фальшпанели (З-002339)",
+      "art": "1505896325",
+      "modules": 26
+    },
+    {
+      "name": "Алюминиевый поддон ОПРЕДЕЛИТЬ",
+      "art": "128475963",
+      "modules": 24
+    },
+    {
+      "name": "Петля Advanced PLUS для фальш панели",
+      "art": "PFPSCFAP",
+      "modules": 20
+    },
+    {
+      "name": "Комплект TIP-ON-1",
+      "art": "TIPON1",
+      "modules": 17
+    },
+    {
+      "name": "Петля Sensys 110гр Push to Open",
+      "art": "TIPON1",
+      "modules": 17
+    },
+    {
+      "name": "Стяжка",
+      "art": "ST",
+      "modules": 14
+    },
+    {
+      "name": "2",
+      "art": "",
+      "modules": 13
+    },
+    {
+      "name": "48_Петля Firmax Smartline 105°",
+      "art": "BM_P105COF_48",
+      "modules": 2
+    },
+    {
+      "name": "P105_DTC",
+      "art": "48_P105_DTC_2",
+      "modules": 2
+    },
+    {
+      "name": "SE",
+      "art": "Top_ST_SE_H",
+      "modules": 2
+    },
+    {
+      "name": "2x10",
+      "art": "",
+      "modules": 1
+    }
+  ],
+  "metal": [
+    {
+      "name": "Полкодержатель с фиксатором PSF",
+      "count": 2296
+    },
+    {
+      "name": "Тело по траектории3",
+      "count": 1648
+    },
+    {
+      "name": "Тело по траектории2",
+      "count": 1552
+    },
+    {
+      "name": "Цокольная ножка",
+      "count": 640
+    },
+    {
+      "name": "Полкодержатель D5 никель",
+      "count": 392
+    },
+    {
+      "name": "Ножка (определить)",
+      "count": 356
+    },
+    {
+      "name": "Петля для фальш панели PFP",
+      "count": 296
+    },
+    {
+      "name": "Профиль1",
+      "count": 292
+    },
+    {
+      "name": "Тело по траектории1",
+      "count": 288
+    },
+    {
+      "name": "Петля 105 гр. Onsys Silent System",
+      "count": 252
+    },
+    {
+      "name": "Навеска SCARPI-4",
+      "count": 192
+    },
+    {
+      "name": "Навеска Аметист-Мпр.",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная3",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная1",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная4",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная5",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная6",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная7",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная9",
+      "count": 192
+    },
+    {
+      "name": "Вертикальная8",
+      "count": 192
+    },
+    {
+      "name": "Петля 165 гр. Sensys Silent System P165SSS",
+      "count": 162
+    },
+    {
+      "name": "Петля Sensys 110гр P107E",
+      "count": 138
+    },
+    {
+      "name": "Профиль4",
+      "count": 104
+    },
+    {
+      "name": "Профиль2",
+      "count": 100
+    },
+    {
+      "name": "Профиль3",
+      "count": 100
+    },
+    {
+      "name": "Горизонтальная1",
+      "count": 96
+    },
+    {
+      "name": "Горизонтальная2",
+      "count": 96
+    },
+    {
+      "name": "Петля Advaced PLUS110гр P110SCFAP110",
+      "count": 94
+    },
+    {
+      "name": "Петля 160 гр. для накладных дверей Clip On Soft Close Firmax Advanced PLUS P160SCFAP",
+      "count": 80
+    },
+    {
+      "name": "Петля Sensys 110гр Push to Open TIPON1",
+      "count": 40
+    },
+    {
+      "name": "Петля Advanced PLUS для фальш панели PFPSCFAP",
+      "count": 40
+    },
+    {
+      "name": "Алюминиевый поддон ОПРЕДЕЛИТЬ 128475963",
+      "count": 24
+    },
+    {
+      "name": "Крышка навески 300003047",
+      "count": 18
+    },
+    {
+      "name": "Крышка навески",
+      "count": 18
+    },
+    {
+      "name": "Навеска SCARPI-4 600000428",
+      "count": 18
+    },
+    {
+      "name": "Заглушка для навески SCARPI-4 на правую боковину",
+      "count": 18
+    },
+    {
+      "name": "48_Петля Firmax Smartline 105° BM_P105COF_48",
+      "count": 4
+    },
+    {
+      "name": "Профиль5",
+      "count": 4
+    },
+    {
+      "name": "Профиль6",
+      "count": 4
+    },
+    {
+      "name": "Профиль7",
+      "count": 4
+    },
+    {
+      "name": "Профиль8",
+      "count": 2
+    }
+  ]
+}
