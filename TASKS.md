@@ -521,3 +521,17 @@
 2. Каталог — прозрачные карточки с фурнитурой.
 3. Превью дальше без вашего OK не менять.
 
+## 2026-11-05. Рабочая версия в Git (Keystone-3D)
+
+Задача: перенести рабочий конструктор в git-репозиторий проекта WG34.
+
+Сделано:
+- Основной код → **https://github.com/Droningoff/Keystone-3D** (`main` @ `25f25e3` + cleanup commit).
+- Связанные файлы остаются в соседнем **WG34_Files** (не туда).
+- Локально: `furniture_constructor/` — git-репозиторий, `origin` → Keystone-3D.
+- Клон для пуша: `d:\AI\_tools\keystone-3d`.
+
+Что проверить:
+1. Открыть https://github.com/Droningoff/Keystone-3D — есть `index.html`, `js/`, `data/samolet/`, `start.bat`.
+2. Clone → `start.bat` → http://localhost:8765/?v=20261029j.
+
