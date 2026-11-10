@@ -1,5 +1,5 @@
 // UI редактора помещения: свойства стены, план SVG, каталог конструкций.
-import { cornerAngleDeg } from './roomGeom.js?v=20261106j';
+import { cornerAngleDeg } from './roomGeom.js?v=20261110a';
 
 function el(html) {
   const t = document.createElement('template');
@@ -46,6 +46,10 @@ export function showRoomPrompt({ title, fields, okLabel = 'Применить' }
   });
 }
 
+// Ключи полей длины, которые подсвечивает viewer.setPropFocus; у прочих уровней — len:<id>
+const LEN_KEY = { floor: 'lengthFloor', ref: 'lengthRef', ceil: 'lengthCeil' };
+const fmtAng = (a) => (a == null ? '—' : `${a}°`);
+
 export function renderWallPropsHtml(survey) {
   if (!survey) {
     return '<p class="muted">Выберите стену на плане (клик по ребру).</p>';
@@ -54,22 +58,15 @@ export function renderWallPropsHtml(survey) {
     <div class="wall-props">
       <div class="muted" style="font-weight:600;margin-bottom:6px">Стена ${survey.letter}</div>
       <details class="room-block nested" open>
-        <summary>Длины</summary>
-        <label>На полу (0 мм)
-          <input type="number" data-wp="lengthFloor" value="${survey.lengthFloor}" step="1">
-        </label>
-        <label>На столешнице (${survey.yRef} мм)
-          <input type="number" data-wp="lengthRef" value="${survey.lengthRef}" step="1">
-        </label>
-        <label>На потолке (${survey.height || 2700} мм)
-          <input type="number" data-wp="lengthCeil" value="${survey.lengthCeil}" step="1">
-        </label>
+        <summary>Длины по уровням</summary>
+        ${(survey.levels || []).map((l) => `<label>${l.name} (${l.h} мм)
+          <input type="number" data-wp="${LEN_KEY[l.id] || `len:${l.id}`}" value="${l.len}" step="1">
+        </label>`).join('')}
       </details>
       <details class="room-block nested" open>
         <summary>Углы (авто)</summary>
         <p class="muted" style="margin:4px 0">
-          Начало: пол ${survey.angleStartFloor}° · yRef ${survey.angleStartRef}° · потолок ${survey.angleStartCeil}°<br>
-          Конец: пол ${survey.angleEndFloor}° · yRef ${survey.angleEndRef}° · потолок ${survey.angleEndCeil}°
+          ${(survey.levels || []).map((l) => `${l.name}: начало ${fmtAng(l.angStart)} · конец ${fmtAng(l.angEnd)}`).join('<br>')}
         </p>
       </details>
       <details class="room-block nested">
@@ -126,8 +123,13 @@ export function renderPlanSvg(container, room, opts = {}) {
   let labels = '';
   let handles = '';
   let angles = '';
+  const nWalls = +room.wallCount > 0 && +room.wallCount < n ? +room.wallCount : n;
   for (let i = 0; i < n; i++) {
     const a = verts[i], b = verts[(i + 1) % n];
+    if (i >= nWalls) {
+      edges += `<line x1="${tx(a.x)}" y1="${tz(a.z)}" x2="${tx(b.x)}" y2="${tz(b.z)}" class="plan-edge virt"/>`;
+      continue;
+    }
     const len = Math.round(Math.hypot(b.x - a.x, b.z - a.z));
     const letter = String.fromCharCode(65 + (i % 26));
     const mx = (tx(a.x) + tx(b.x)) / 2, mz = (tz(a.z) + tz(b.z)) / 2;
@@ -138,6 +140,7 @@ export function renderPlanSvg(container, room, opts = {}) {
   }
   for (let i = 0; i < n; i++) {
     handles += `<circle data-vert="${i}" cx="${tx(verts[i].x)}" cy="${tz(verts[i].z)}" r="6" class="plan-vert"/>`;
+    if (nWalls < n && !(i >= 1 && i < nWalls)) continue;
     const ang = cornerAngleDeg(verts, i);
     const prev = verts[(i - 1 + n) % n];
     const cur = verts[i];

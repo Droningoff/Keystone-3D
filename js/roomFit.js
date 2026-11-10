@@ -1,9 +1,9 @@
 // Отчёт пригодности кухни: влезает ли гарнитур в помещение.
-import { moduleBox, moduleLocalSize, moduleRow } from './model.js?v=20261106j';
+import { moduleBox, moduleLocalSize, moduleRow } from './model.js?v=20261110a';
 import {
   isAdvanced, ensureAdvancedFields, ceilingHeightAt, footprintInsideRoom,
-  cornerAngleDeg, planAtHeight, roomBounds,
-} from './roomGeom.js?v=20261106j';
+  cornerAngleDeg, planAtHeight, roomBounds, isWallCorner,
+} from './roomGeom.js?v=20261110a';
 
 /**
  * @returns {{ status: 'ok'|'warn'|'block', summary: string, items: Array<{level, code, text, moduleId?}> }}
@@ -43,6 +43,7 @@ export function validateFit(prj) {
   if (isAdvanced(room) && room.planAtRef?.length >= 3) {
     const verts = planAtHeight(room, yRef);
     verts.forEach((v, i) => {
+      if (!isWallCorner(room, i)) return;
       const ang = cornerAngleDeg(verts, i);
       if (Math.abs(ang - 90) > angleTol) {
         items.push({
@@ -55,6 +56,7 @@ export function validateFit(prj) {
     // сужение: площадь / глубина у стены
     const floorAng = room.planFloor.map((_, i) => cornerAngleDeg(room.planFloor, i));
     verts.forEach((_, i) => {
+      if (!isWallCorner(room, i)) return;
       const a0 = floorAng[i];
       const a1 = cornerAngleDeg(verts, i);
       if (Math.abs(a1 - a0) > angleTol) {

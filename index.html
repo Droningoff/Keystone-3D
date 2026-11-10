@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261106q">
+  <link rel="stylesheet" href="css/app.css?v=20261110a">
   <script type="importmap">
   {
     "imports": {
@@ -170,12 +170,9 @@
 
         <details class="room-block" open>
           <summary>План (вид сверху)</summary>
-          <p class="muted">Три контура: пол / столешница / потолок. Углы считаются сами.</p>
-          <div class="btnrow plan-layers">
-            <button type="button" data-plan-layer="floor" class="active">Пол</button>
-            <button type="button" data-plan-layer="ref">Столешница</button>
-            <button type="button" data-plan-layer="ceil">Потолок</button>
-          </div>
+          <button id="btnPlanFromPoint" type="button" class="primary" title="Стены от точки, длины и углы, уровни замера">План от точки…</button>
+          <p class="muted">Контур на каждом уровне замера (пол, потолок, столешница…). Углы считаются сами.</p>
+          <div class="btnrow plan-layers"></div>
           <div id="planSvgWrap" class="plan-wrap"></div>
           <div class="btnrow">
             <button id="btnAddFloorVert" type="button" title="На середину выбранной стены, иначе — в конец">+ Вершина</button>
@@ -407,6 +404,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261106r"></script>
+  <script type="module" src="js/main.js?v=20261110a"></script>
 </body>
 </html>

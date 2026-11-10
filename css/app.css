@@ -295,3 +295,41 @@ table { border-collapse: collapse; width: 100%; margin: 6px 0 14px; }
 th, td { border: 1px solid #dde1e6; padding: 3px 6px; text-align: left; }
 th { background: #f1f3f6; }
 td.num { text-align: right; }
+
+/* Достройка пола у открытого контура — не стена */
+.plan-edge.virt { stroke: #b8b0a2; stroke-width: 1.5; stroke-dasharray: 6 4; cursor: default; }
+
+/* Редактор помещения «план сверху» */
+.pe-back { position: fixed; inset: 0; background: rgba(20, 24, 30, .45); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.pe-dlg { width: min(1280px, 96vw); height: min(820px, 92vh); background: #fff; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,.3); display: flex; flex-direction: column; outline: none; }
+.pe-head { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid #dde1e6; }
+.pe-head > button { margin-left: auto; font-size: 18px; line-height: 1; padding: 2px 9px; }
+.pe-hint { font-size: 12px; color: #4a535c; }
+.pe-hint.warn { color: #b71c1c; font-weight: 600; }
+.pe-body { flex: 1; display: flex; min-height: 0; }
+.pe-stage { flex: 1; position: relative; min-width: 0; border-right: 1px solid #dde1e6; }
+.pe-stage svg { width: 100%; height: 100%; display: block; cursor: crosshair; user-select: none; touch-action: none; }
+.pe-stage text { font-family: system-ui, sans-serif; fill: #1f2328; pointer-events: none; }
+.pe-stage .pe-len { font-weight: 600; }
+.pe-stage .pe-ang { fill: #b4530a; font-weight: 600; }
+.pe-stage .pe-rb { fill: #1f6feb; font-weight: 700; }
+.pe-stage .pe-vtx { cursor: move; }
+.pe-stage .pe-wall { cursor: pointer; }
+.pe-live { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 10px; align-items: center; background: rgba(255,255,255,.95); border: 1px solid #c3c8d0; border-radius: 6px; padding: 6px 10px; }
+.pe-live label { display: flex; gap: 6px; align-items: center; margin: 0; }
+.pe-live input { width: 80px; }
+.pe-tools { position: absolute; right: 10px; top: 10px; }
+.pe-side { width: 380px; overflow: auto; padding: 10px 12px; }
+.pe-side h4 { margin: 12px 0 4px; }
+.pe-table { margin: 4px 0 8px; }
+.pe-table td { padding: 2px 4px; }
+.pe-table input[type=number] { width: 80px; }
+.pe-table input:not([type]) { width: 130px; }
+.pe-table tr.sel td { background: #e7f0ff; }
+.pe-table tr.locked td { background: #f1f2f4; }
+.pe-table tr.closing td { color: #6a737d; font-style: italic; }
+.pe-lvbtn { padding: 1px 6px; border-width: 2px; }
+.pe-thick { display: block; margin-top: 10px; }
+.pe-thick input { width: 90px; }
+.pe-foot { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid #dde1e6; }
+.pe-foot .spacer { flex: 1; }

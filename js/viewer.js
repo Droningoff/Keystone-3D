@@ -2,13 +2,13 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { MATERIALS } from './catalog.js?v=20261028m';
-import { panelBox } from './model.js?v=20261106j';
+import { panelBox } from './model.js?v=20261110a';
 import { buildFixtureMesh, FIXTURE_CATALOG, SINK_RIM } from './fixtures.js?v=20261028m';
-import { WALL_BY_ID } from './walls.js?v=20261106a';
+import { WALL_BY_ID } from './walls.js?v=20261110a';
 import {
   roomOutline, roomWallSegments, roomBounds, isAdvanced, ensureAdvancedFields,
   roomWallSegments3D, ceilingHeightAt, planAtHeight, edgeLetter, pointInPolygon,
-} from './roomGeom.js?v=20261106j';
+} from './roomGeom.js?v=20261110a';
 import { buildHardwareMesh } from './hardware.js?v=20261029j';
 
 /**
@@ -747,19 +747,19 @@ export class Viewer {
     for (const s of segs3) {
       const wg = this.wallGroups[s.wall] || g;
       const a0 = s.a0, b0 = s.b0, aR = s.aR || a0, bR = s.bR || b0, a1 = s.a1, b1 = s.b1;
-      // два пояса: пол→yRef и yRef→потолок → сложный контур при разных длинах
+      // пояса между соседними уровнями (пол → … → потолок) → сложный контур при разных длинах
+      const belts = s.belts?.length >= 2 ? s.belts : [
+        { a: a0, b: b0, yA: 0, yB: 0 }, { a: aR, b: bR, yA: yRef, yB: yRef }, { a: a1, b: b1, yA: s.hA, yB: s.hB },
+      ];
+      const pos = [], idx = [];
+      for (let k = 0; k < belts.length - 1; k++) {
+        const lo = belts[k], hi = belts[k + 1], o = pos.length / 3;
+        pos.push(lo.a.x, lo.yA, lo.a.z, lo.b.x, lo.yB, lo.b.z, hi.b.x, hi.yB, hi.b.z, hi.a.x, hi.yA, hi.a.z);
+        idx.push(o, o + 1, o + 2, o, o + 2, o + 3);
+      }
       const geo = new THREE.BufferGeometry();
-      geo.setAttribute('position', new THREE.Float32BufferAttribute([
-        a0.x, 0, a0.z,
-        b0.x, 0, b0.z,
-        bR.x, yRef, bR.z,
-        aR.x, yRef, aR.z,
-        aR.x, yRef, aR.z,
-        bR.x, yRef, bR.z,
-        b1.x, s.hB, b1.z,
-        a1.x, s.hA, a1.z,
-      ], 3));
-      geo.setIndex([0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7]);
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      geo.setIndex(idx);
       geo.computeVertexNormals();
       const wmat = wallMat.clone();
       if (!wmat.emissive) wmat.emissive = new THREE.Color(0x000000);
@@ -2129,7 +2129,8 @@ export class Viewer {
       if (this.mode === 'place') {
         const hit = this._hitPlane(e);
         if (!hit) return;
-        this.h.onPlace?.(hit.point.x, hit.point.z, hit.object.userData.wall || null, hit.point.y, this.placeRot);
+        this.h.onPlace?.(hit.point.x, hit.point.z, hit.object.userData.wall || null, hit.point.y, this.placeRot,
+          hit.object.userData.edgeIndex ?? null);
       } else if (this.mode === 'placeCtor') {
         const ctor = this.placeCtor;
         if (!ctor) return;

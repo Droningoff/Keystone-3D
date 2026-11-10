@@ -11,7 +11,7 @@ import { MATERIALS } from './catalog.js?v=20261028m';
 import { libPanels, libModuleData } from './samolet.js?v=20261029j';
 import {
   isAdvanced, ensureAdvancedFields, unifyRoomPlan, ceilingHeightAt, footprintInsideRoom, roomOutline,
-} from './roomGeom.js?v=20261106j';
+} from './roomGeom.js?v=20261110a';
 
 export const th = (id) => (MATERIALS[id] || MATERIALS.ldsp16_white).t;
 
@@ -133,6 +133,8 @@ export function defaultRoom() {
     openings: [], // новое помещение без дверей/окон — добавляются конструкциями
     features: [], // legacy; новые проекты правят полигон
     yRef: 900,
+    // уровни замера: по умолчанию пол и потолок; столешница и другие добавляются в редакторе плана
+    levels: [{ id: 'floor', name: 'Пол', h: 0 }, { id: 'ceil', name: 'Потолок', h: H }],
     planFloor: plan.map((p) => ({ ...p })),
     planAtRef: plan.map((p) => ({ ...p })),
     planCeiling: plan.map((p) => ({ ...p })),

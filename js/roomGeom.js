@@ -1,7 +1,7 @@
 // Контур комнаты: simple (прямоугольник + ниши/выступы) и advanced (полигон + контур на yRef + потолок).
 // Стены simple: back z=0, right x=L, front z=D, left x=0.
 
-import { wallId, WALL_BY_CODE, wallLetter } from './walls.js?v=20261106a';
+import { wallId, WALL_BY_CODE, wallLetter } from './walls.js?v=20261110a';
 
 /** Единый редактор как BPlanner: полигон, если есть planFloor. */
 export function isAdvanced(room) {
@@ -91,6 +91,174 @@ export function ensureAdvancedFields(room) {
     room.ceiling.mode = room.ceiling.samples.length ? 'samples' : 'flat';
   }
   if (!Array.isArray(room.obstacles)) room.obstacles = [];
+  ensureLevels(room);
+  return room;
+}
+
+// ---------- Уровни замера и открытый контур ----------
+// room.levels: [{ id, name, h, plan? }] — «Пол» (floor) и «Потолок» (ceil) есть всегда, «Столешница» (ref) — по желанию,
+// остальные — сколько угодно. Контур floor/ref/ceil лежит в planFloor/planAtRef/planCeiling, у остальных — в level.plan.
+// Без уровня ref planAtRef не редактируется: он считается между полом и потолком на высоте yRef.
+// room.wallCount — у открытого контура число настоящих стен: рёбра с индексом ≥ wallCount только замыкают пол.
+
+const LEVEL_FIXED = { floor: 'planFloor', ref: 'planAtRef', ceil: 'planCeiling' };
+
+function lerpPlan(a, b, t) {
+  return a.map((p, i) => {
+    const q = b?.[i] || p;
+    return { id: p.id, x: Math.round(p.x + t * (q.x - p.x)), z: Math.round(p.z + t * (q.z - p.z)) };
+  });
+}
+
+export function ensureLevels(room) {
+  if (!room) return [];
+  const H = +room.height || 2700;
+  if (!Array.isArray(room.levels) || !room.levels.length) {
+    room.levels = [
+      { id: 'floor', name: 'Пол', h: 0 },
+      { id: 'ref', name: 'Столешница', h: +room.yRef || 900 },
+      { id: 'ceil', name: 'Потолок', h: H },
+    ];
+  }
+  if (!room.levels.some((l) => l.id === 'floor')) room.levels.unshift({ id: 'floor', name: 'Пол', h: 0 });
+  if (!room.levels.some((l) => l.id === 'ceil')) room.levels.push({ id: 'ceil', name: 'Потолок', h: H });
+  const n = room.planFloor?.length || 0;
+  for (const lv of room.levels) {
+    if (lv.id === 'floor') lv.h = 0;
+    else if (lv.id === 'ceil') lv.h = H;
+    else if (lv.id === 'ref') lv.h = +room.yRef || +lv.h || 900;
+    else {
+      lv.h = Math.max(0, Math.round(+lv.h || 0));
+      if (n >= 3 && (!Array.isArray(lv.plan) || lv.plan.length !== n)) {
+        lv.plan = lerpPlan(room.planFloor, room.planCeiling, Math.min(1, lv.h / H));
+      }
+    }
+  }
+  room.levels.sort((a, b) => +a.h - +b.h);
+  if (n >= 3 && !room.levels.some((l) => l.id === 'ref')) {
+    room.planAtRef = lerpPlan(room.planFloor, room.planCeiling, Math.min(1, (+room.yRef || 900) / H));
+  }
+  return room.levels;
+}
+
+export function levelPlan(room, lv) {
+  return LEVEL_FIXED[lv?.id] ? room[LEVEL_FIXED[lv.id]] : lv?.plan;
+}
+
+/** Уровни с контурами по возрастанию высоты (потолок — на высоте room.height). */
+export function levelsWithPlans(room) {
+  const n = room?.planFloor?.length || 0;
+  const H = +room?.height || 2700;
+  return (room?.levels || [])
+    .map((lv) => ({ id: lv.id, name: lv.name, h: lv.id === 'ceil' ? H : +lv.h, plan: levelPlan(room, lv) }))
+    .filter((l) => l.plan?.length === n && n >= 3)
+    .sort((a, b) => a.h - b.h);
+}
+
+export function wallEdgeCount(room) {
+  const n = room?.planFloor?.length || 0;
+  const w = +room?.wallCount;
+  return w > 0 && w < n ? w : n;
+}
+
+export const isOpenRoom = (room) => wallEdgeCount(room) < (room?.planFloor?.length || 0);
+
+/** Вершина — угол между двумя настоящими стенами (у открытого контура концы цепочки и достройка — нет). */
+export function isWallCorner(room, i) {
+  const n = room?.planFloor?.length || 0;
+  const w = wallEdgeCount(room);
+  return w >= n || (i >= 1 && i < w);
+}
+
+/** Длина стены edgeIndex на уровне levelId: начало ребра на месте, конец сдвигается вдоль стены. */
+export function setWallLengthAtLevel(room, edgeIndex, levelId, newLen) {
+  ensureAdvancedFields(room);
+  const lv = room.levels.find((l) => l.id === levelId);
+  const plan = lv && levelPlan(room, lv);
+  if (!plan) return;
+  const n = plan.length, i = +edgeIndex;
+  if (i < 0 || i >= n) return;
+  const a = plan[i], b = plan[(i + 1) % n];
+  const dx = b.x - a.x, dz = b.z - a.z;
+  const len = Math.hypot(dx, dz) || 1;
+  const L = Math.max(50, +newLen || len);
+  b.x = Math.round(a.x + (dx / len) * L);
+  b.z = Math.round(a.z + (dz / len) * L);
+  syncSimpleAABB(room);
+}
+
+/**
+ * Достроить пол открытой цепочки стен: прямоугольник в осях первой стены, охватывающий все точки,
+ * обходится от конца цепочки к началу (угол из двух стен даёт полный пол, одна стена — 2500 мм вглубь).
+ * Комната — справа по ходу стен. Возвращает добавочные вершины.
+ */
+export function openChainFloorExtra(chain) {
+  if (!chain || chain.length < 2) return [];
+  const p0 = chain[0];
+  const dx = chain[1].x - p0.x, dz = chain[1].z - p0.z, l = Math.hypot(dx, dz) || 1;
+  const tx = dx / l, tz = dz / l, ix = -tz, iz = tx;
+  let u1 = Infinity, u2 = -Infinity, v1 = 0, v2 = 0;
+  const uv = chain.map((p) => {
+    const u = (p.x - p0.x) * tx + (p.z - p0.z) * tz;
+    const v = (p.x - p0.x) * ix + (p.z - p0.z) * iz;
+    u1 = Math.min(u1, u); u2 = Math.max(u2, u);
+    v1 = Math.min(v1, v); v2 = Math.max(v2, v);
+    return { u, v };
+  });
+  if (v2 - v1 < 1) v2 = v1 + 2500;
+  const W = u2 - u1, Dd = v2 - v1, per = 2 * (W + Dd);
+  const corners = [[u1, v1], [u2, v1], [u2, v2], [u1, v2]];
+  const cParam = [0, W, W + Dd, 2 * W + Dd];
+  const param = ({ u, v }) => {
+    const d = [Math.abs(v - v1), Math.abs(u - u2), Math.abs(v - v2), Math.abs(u - u1)];
+    const k = d.indexOf(Math.min(...d));
+    if (k === 0) return u - u1;
+    if (k === 1) return W + (v - v1);
+    if (k === 2) return W + Dd + (u2 - u);
+    return 2 * W + Dd + (v2 - v);
+  };
+  const pEnd = param(uv[uv.length - 1]);
+  let pStart = param(uv[0]);
+  if (pStart <= pEnd + 0.5) pStart += per;
+  const out = [];
+  for (let lap = 0; lap < 2; lap++) {
+    corners.forEach(([u, v], k) => {
+      const t = cParam[k] + lap * per;
+      if (t > pEnd + 0.5 && t < pStart - 0.5) out.push({ t, u, v });
+    });
+  }
+  out.sort((a, b) => a.t - b.t);
+  return out.map(({ u, v }) => ({ x: Math.round(p0.x + tx * u + ix * v), z: Math.round(p0.z + tz * u + iz * v) }));
+}
+
+/**
+ * Записать помещение, нарисованное от точки.
+ * levels: [{ id, name, h, pts }] — у каждого уровня точки цепочки стен (n+1 точка на n стен), число точек одинаковое.
+ */
+export function applyDrawnRoom(room, { levels, closed }) {
+  const floorLv = levels.find((l) => l.id === 'floor') || levels[0];
+  const extra = closed ? [] : openChainFloorExtra(floorLv.pts);
+  const b = roomBoundsFromVerts([...floorLv.pts, ...extra]);
+  const mk = (pts, prefix) => [...pts, ...extra].map((p, i) => ({
+    id: `${prefix}${i}`, x: Math.round(p.x - b.x1), z: Math.round(p.z - b.z1),
+  }));
+  const ceil = levels.find((l) => l.id === 'ceil');
+  const ref = levels.find((l) => l.id === 'ref');
+  room.planFloor = mk(floorLv.pts, 'v');
+  room.planCeiling = mk((ceil || floorLv).pts, 'c');
+  room.planAtRef = mk((ref || floorLv).pts, 'r');
+  if (closed) delete room.wallCount;
+  else room.wallCount = floorLv.pts.length - 1;
+  room.levels = levels.map((l) => {
+    const lv = { id: l.id, name: l.name, h: Math.round(+l.h || 0) };
+    if (!LEVEL_FIXED[l.id]) lv.plan = mk(l.pts, l.id + '_');
+    return lv;
+  });
+  if (ref) room.yRef = Math.round(+ref.h);
+  room.features = [];
+  setRoomHeight(room, ceil ? +ceil.h : room.height);
+  ensureAdvancedFields(room);
+  syncSimpleAABB(room);
   return room;
 }
 
@@ -148,8 +316,9 @@ export function setRoomFootprint(room, length, depth) {
   const oldD = Math.max(1, b.depth);
   const sx = L / oldW;
   const sz = D / oldD;
-  for (const key of ['planFloor', 'planAtRef', 'planCeiling']) {
-    const arr = room[key];
+  const plans = [room.planFloor, room.planAtRef, room.planCeiling,
+    ...(room.levels || []).filter((lv) => !LEVEL_FIXED[lv.id]).map((lv) => lv.plan)];
+  for (const arr of plans) {
     if (!arr?.length) continue;
     for (const p of arr) {
       p.x = Math.round((+p.x - b.x1) * sx);
@@ -181,10 +350,15 @@ export function planByLayer(room, layer) {
   ensureAdvancedFields(room);
   if (layer === 'ref') return room.planAtRef;
   if (layer === 'ceil') return room.planCeiling;
+  const lv = (room.levels || []).find((l) => l.id === layer && !LEVEL_FIXED[l.id]);
+  if (lv?.plan) return lv.plan;
   return room.planFloor;
 }
 
 export function planLayerLabel(layer, room) {
+  const lv = (room?.levels || []).find((l) => l.id === layer);
+  if (lv && !LEVEL_FIXED[lv.id]) return `${lv.name} (${Math.round(+lv.h)} мм)`;
+  if (lv && lv.id === 'ref') return `${lv.name} (yRef ${room?.yRef || 900} мм)`;
   if (layer === 'ref') return `Столешница (yRef ${room?.yRef || 900} мм)`;
   if (layer === 'ceil') return `Потолок (${room?.height || 2700} мм)`;
   return 'Пол (0 мм)';
@@ -209,6 +383,10 @@ export function insertVertexOnEdge(room, edgeIndex) {
   room.planFloor.splice(insertAt, 0, mid(room.planFloor, i, j));
   room.planAtRef.splice(insertAt, 0, mid(room.planAtRef, i, j));
   room.planCeiling.splice(insertAt, 0, mid(room.planCeiling, i, j));
+  for (const lv of room.levels || []) {
+    if (!LEVEL_FIXED[lv.id] && lv.plan?.length === n) lv.plan.splice(insertAt, 0, mid(lv.plan, i, j));
+  }
+  if (+room.wallCount > 0 && i < +room.wallCount) room.wallCount = +room.wallCount + 1;
   syncSimpleAABB(room);
   return insertAt;
 }
@@ -220,6 +398,7 @@ export function resetPlanLayerToRect(room, layer) {
   const D = +room.depth || 3500;
   const rect = rectPlan(L, D);
   const target = planByLayer(room, layer);
+  if (target === room.planFloor) delete room.wallCount;
   // активный — прямоугольник
   target.length = 0;
   rect.forEach((p) => target.push({ ...p }));
@@ -339,6 +518,23 @@ export function roomOutline(room) {
 /** Контур в плане на высоте y: пол → yRef → потолок (три сечения как в BPlanner). */
 export function planAtHeight(room, y) {
   ensureAdvancedFields(room);
+  const lvls = levelsWithPlans(room);
+  if (lvls.length >= 2) {
+    const yy = Math.max(0, +y || 0);
+    if (yy <= lvls[0].h) return clonePlan(lvls[0].plan);
+    const last = lvls[lvls.length - 1];
+    if (yy >= last.h) return clonePlan(last.plan);
+    for (let k = 0; k < lvls.length - 1; k++) {
+      const lo = lvls[k], hi = lvls[k + 1];
+      if (yy <= hi.h) {
+        const t = hi.h > lo.h ? (yy - lo.h) / (hi.h - lo.h) : 0;
+        return lo.plan.map((p, i) => {
+          const q = hi.plan[i] || p;
+          return { id: p.id, x: p.x + t * (q.x - p.x), z: p.z + t * (q.z - p.z) };
+        });
+      }
+    }
+  }
   const floor = room.planFloor;
   const mid = room.planAtRef;
   const top = room.planCeiling;
@@ -389,7 +585,8 @@ export function roomWallSegments(room) {
   const outline = roomOutline(room);
   const segs = [];
   const L = +room.length || 4000, D = +room.depth || 3500;
-  for (let i = 0; i < outline.length - 1; i++) {
+  const nWalls = isAdvanced(room) ? wallEdgeCount(room) : Infinity;
+  for (let i = 0; i < outline.length - 1 && i < nWalls; i++) {
     const a = outline[i], b = outline[i + 1];
     const dx = b.x - a.x, dz = b.z - a.z;
     const len = Math.hypot(dx, dz);
@@ -422,8 +619,10 @@ export function roomWallSegments3D(room) {
   const top = room.planCeiling;
   const yRef = +room.yRef || 900;
   const n = floor.length;
+  const nWalls = wallEdgeCount(room) || n;
+  const lvls = levelsWithPlans(room);
   const segs = [];
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < nWalls; i++) {
     const j = (i + 1) % n;
     const a0 = floor[i], b0 = floor[j];
     const aR = mid[i] || a0, bR = mid[j] || b0;
@@ -443,6 +642,11 @@ export function roomWallSegments3D(room) {
       edgeIndex: i,
       a0, b0, aR, bR, a1: aC, b1: bC,
       yRef, hA, hB,
+      // пояса по всем уровням снизу вверх; у потолка высота своя на каждом конце стены
+      belts: lvls.map((l) => ({
+        id: l.id, a: l.plan[i], b: l.plan[j],
+        yA: l.id === 'ceil' ? hA : l.h, yB: l.id === 'ceil' ? hB : l.h,
+      })),
       len: lenFloor, lenFloor, lenRef, lenCeil,
       nx, nz,
       wall: wallHint,
@@ -694,6 +898,13 @@ export function edgeLetter(edgeIndex) {
 /** Контур плана для высоты y: пол / столешница / потолок. */
 export function planForHeight(room, y) {
   ensureAdvancedFields(room);
+  const lvls = levelsWithPlans(room);
+  if (lvls.length) {
+    const yy = +y || 0;
+    let best = lvls[0];
+    for (const l of lvls) if (Math.abs(l.h - yy) < Math.abs(best.h - yy)) best = l;
+    return best.plan;
+  }
   const yRef = +room.yRef || 900;
   const H = +room.height || 2700;
   const yy = +y || 0;
@@ -740,6 +951,13 @@ export function wallSurvey(room, edgeIndex) {
     angleEndCeil: cornerAngleDeg(room.planCeiling, endV),
     startVertex: startV,
     endVertex: endV,
+    // длины и углы на каждом уровне; угол на конце открытой цепочки не определён (null)
+    levels: levelsWithPlans(room).map((l) => ({
+      id: l.id, name: l.name, h: Math.round(l.h),
+      len: Math.round(Math.hypot(l.plan[endV].x - l.plan[startV].x, l.plan[endV].z - l.plan[startV].z)),
+      angStart: isWallCorner(room, startV) ? cornerAngleDeg(l.plan, startV) : null,
+      angEnd: isWallCorner(room, endV) ? cornerAngleDeg(l.plan, endV) : null,
+    })),
     wallHint: hint,
     colorHex: '#' + ((col >>> 0) & 0xffffff).toString(16).padStart(6, '0'),
   };

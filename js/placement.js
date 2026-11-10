@@ -3,7 +3,7 @@
 // при каждой сборке, поэтому объект следует за модулем при перемещении и повороте.
 
 import { FIXTURE_CATALOG } from './fixtures.js';
-import { moduleGen, frontT, isLib, localToWorld, worldToLocal, th } from './model.js';
+import { moduleGen, frontT, isLib, localToWorld, worldToLocal, th } from './model.js?v=20261110a';
 
 const TOP_T = (prj) => th(prj.settings.topMat);
 

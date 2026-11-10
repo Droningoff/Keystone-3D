@@ -58,8 +58,9 @@ export function placeOnWall(room, idOrLetter, offset, width, depth) {
   if (Array.isArray(room?.planFloor) && room.planFloor.length >= 3) {
     const verts = room.planFloor;
     const n = verts.length;
+    const nWalls = +room.wallCount > 0 && +room.wallCount < n ? +room.wallCount : n;
     let remain = o;
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < nWalls; i++) {
       const a = verts[i], b = verts[(i + 1) % n];
       const dx = b.x - a.x, dz = b.z - a.z;
       const len = Math.hypot(dx, dz);
@@ -97,7 +98,8 @@ export function wallLengthAdvanced(room, idOrLetter) {
   const id = wallId(idOrLetter);
   const verts = room.planFloor;
   let sum = 0;
-  for (let i = 0; i < verts.length; i++) {
+  const nWalls = +room.wallCount > 0 && +room.wallCount < verts.length ? +room.wallCount : verts.length;
+  for (let i = 0; i < nWalls; i++) {
     const a = verts[i], b = verts[(i + 1) % verts.length];
     const dx = b.x - a.x, dz = b.z - a.z;
     const len = Math.hypot(dx, dz);

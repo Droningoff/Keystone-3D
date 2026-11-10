@@ -3,31 +3,34 @@ import {
   MODULE_TYPES, BUTT_SIDES, createModule, newProject, buildProject, snapPos, nextFreeX,
   moduleTitle, panelSize, resolveDoors, migrateProject, toggleFront, setAllFronts,
   createLibModule, isLib, moduleRow, listDockSockets, applyDock, nearestDockSide,
-} from './model.js?v=20261106r';
+} from './model.js?v=20261110a';
 import { loadSamoletIndex, samoletIndex, libGeomTried, libGeom, libPreview, ensureLibGeoms, loadLibGeom, libSpec, findLib } from './samolet.js?v=20261029j';
 import { ExplodeView } from './explode.js?v=20261028m';
-import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261106a';
+import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261110a';
 import {
   newObstacle, newOpening, ensureAdvancedFields, unifyRoomPlan, syncSimpleAABB,
   setRoomFootprint, setRoomHeight, ensureCtorIds,
   rectPlan, wallSurvey, setWallLengthAt, roomWallSegments, edgeLetter,
   planByLayer, planLayerLabel, insertVertexOnEdge, resetPlanLayerToRect,
   newFeature, featureTitle,
-} from './roomGeom.js?v=20261106r';
-import { validateFit } from './roomFit.js?v=20261106j';
+  levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
+} from './roomGeom.js?v=20261110a';
+import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
+import { openPlanEditor } from './planEditor.js?v=20261110a';
+import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
-} from './roomEdit.js?v=20261106q';
+} from './roomEdit.js?v=20261110a';
 import { loadBrief, saveBrief, buildAiPrompt } from './brief.js?v=20261028m';
 import { loadLlmSettings, saveLlmSettings, listModels } from './llm.js?v=20261028m';
 import { planKitchenWithLlm } from './planner.js?v=20261028m';
-import { Viewer } from './viewer.js?v=20261106r';
+import { Viewer } from './viewer.js?v=20261110a';
 import { toBazisScript, bazisSmokeTest, bazisExportCheck, resolveSamoletBase, resolveUserCatalogBase } from './bazis.js?v=20261028m';
 import { computeSpec, specToCSV, specTo1C } from './report.js?v=20261028m';
 import { runCommand } from './commands.js?v=20261028m';
 import { loadLibrary, addToLibrary, removeFromLibrary, exportLibraryJSON, importLibraryJSON, libraryByCategory } from './library.js?v=20261028m';
 import { FIXTURE_CATALOG, createFixture, fixtureTitle, fixturesByCategory } from './fixtures.js?v=20261028m';
-import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261028m';
+import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261110a';
 import {
   loadUserCatalog, userCatalogItems, userCatalogAll, addUserB3dFiles,
   archiveCatalogEntry, deleteUserEntry, isCatalogArchived, catalogArchivedCount,
@@ -137,7 +140,7 @@ const viewer = new Viewer($('#viewport'), {
     sel = { moduleId: id, panelKey: null, fixtureId: null };
     refresh();
   },
-  onPlace: (x, z, wall, y, rot) => placeModuleAt(x, z, wall, y, rot),
+  onPlace: (x, z, wall, y, rot, edgeIndex) => placeModuleAt(x, z, wall, y, rot, edgeIndex),
   onPlaceFixture: (hit, rot) => placeFixtureAt(hit, rot),
   previewFixture: (type, hit, rot) => ({ id: '__ghost', type, ...snapFixture(project, type, hit.point, { ...hit, rot }) }),
   onToggleFront: (id, key) => {
@@ -209,13 +212,17 @@ function updateModeBadge() {
   } else el.textContent = '';
 }
 
-function placeModuleAt(x, z, wall, y, rot) {
+function placeModuleAt(x, z, wall, y, rot, edgeIndex = null) {
   if (!placeEntry) return;
   commit();
   const params = { ...placeEntry.p };
   let r = rot ?? 0;
   let px = x - params.width / 2, pz = z;
-  if (wall === 'back') { r = 0; pz = 0; }
+  const seg = edgeIndex != null ? roomWallSegments(project.room).find((s) => s.edgeIndex === +edgeIndex) : null;
+  if (seg) {
+    const p = wallPose(seg, x, z, +params.width);
+    px = p.x; pz = p.z; r = p.rot;
+  } else if (wall === 'back') { r = 0; pz = 0; }
   else if (wall === 'front') { r = 180; pz = project.room.depth - (+params.depth); }
   else if (wall === 'left') { r = 90; px = x; pz = z - params.width / 2; }
   else if (wall === 'right') { r = 270; px = x - (+params.depth); pz = z - params.width / 2; }
@@ -1298,7 +1305,11 @@ $('#specDlg').addEventListener('close', () => { explodeView?.dispose(); explodeV
 
 const actions = {
   undo: () => { const s = undo.pop(); if (s) { project = migrateProject(JSON.parse(s)); refresh(); log('Отменено'); } },
-  new: () => { if (!confirm('Создать новый проект?')) return; commit(); project = newProject(); sel = { moduleId: null, panelKey: null, fixtureId: null }; refresh(); },
+  new: () => {
+    if (!confirm('Создать новый проект?')) return;
+    commit(); project = newProject(); sel = { moduleId: null, panelKey: null, fixtureId: null }; refresh();
+    openRoomPlan(true);
+  },
   demoKitchen: async () => {
     if (project.modules.length && !confirm('Открыть «Кухня Самолет (пример)»? Текущий проект можно вернуть через ?.')) return;
     try {
@@ -1600,7 +1611,7 @@ function renderWallPropsPanel(part) {
   el.querySelectorAll('[data-wp]').forEach((inp) => {
     const focusKey = () => {
       const k = inp.dataset.wp;
-      if (k === 'wallColor') { viewer.setPropFocus(null); return; }
+      if (k === 'wallColor' || k.startsWith('len:')) { viewer.setPropFocus(null); return; }
       viewer.setPropFocus(k);
       renderPlanEditor();
     };
@@ -1623,7 +1634,8 @@ function renderWallPropsPanel(part) {
       } else if (key === 'lengthFloor') setWallLengthAt(project.room, wallSel.edgeIndex, 0, v);
       else if (key === 'lengthRef') setWallLengthAt(project.room, wallSel.edgeIndex, project.room.yRef || 900, v);
       else if (key === 'lengthCeil') setWallLengthAt(project.room, wallSel.edgeIndex, project.room.height || 2700, v);
-      const foc = key === 'wallColor' ? null : key;
+      else if (key.startsWith('len:')) setWallLengthAtLevel(project.room, wallSel.edgeIndex, key.slice(4), v);
+      const foc = key === 'wallColor' || key.startsWith('len:') ? null : key;
       refresh();
       viewer.setPropFocus(foc);
       const again = el.querySelector(`[data-wp="${key}"]`);
@@ -1668,10 +1680,55 @@ async function placeCommOnWall(part) {
 }
 
 function syncPlanLayerButtons() {
+  const box = document.querySelector('.plan-layers');
+  const lvls = project.room.levels || [];
+  if (!lvls.some((l) => l.id === planEditLayer)) planEditLayer = 'floor';
+  if (box) {
+    box.innerHTML = lvls.map((l) => `<button type="button" data-plan-layer="${l.id}"
+      title="${l.name}, ${Math.round(+l.h)} мм">${l.name}</button>`).join('');
+  }
   document.querySelectorAll('[data-plan-layer]').forEach((b) => {
     b.classList.toggle('active', b.dataset.planLayer === planEditLayer);
   });
 }
+document.querySelector('.plan-layers')?.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-plan-layer]');
+  if (!b) return;
+  planEditLayer = b.dataset.planLayer;
+  renderPlanEditor();
+});
+
+/** Редактор «план сверху»: стены от точки, длины/углы, уровни замера. */
+function openRoomPlan(isNew = false) {
+  const room = project.room;
+  ensureAdvancedFields(room);
+  const closed = !isOpenRoom(room);
+  const nW = wallEdgeCount(room);
+  const levels = isNew
+    ? [{ id: 'floor', name: 'Пол', h: 0 }, { id: 'ceil', name: 'Потолок', h: +room.height || 2700 }]
+    : levelsWithPlans(room).map((l) => {
+      const pts = (closed ? l.plan : l.plan.slice(0, nW + 1)).map((p) => ({ x: +p.x, z: +p.z }));
+      return { id: l.id, name: l.name, h: l.h, chain: chainFromPoints(pts, closed) };
+    });
+  openPlanEditor({
+    levels,
+    wallThick: room.wallThick || 100,
+    onApply: ({ closed: cl, levels: lv, wallThick }) => {
+      if (!isNew) commit();
+      if (isNew) room.openings = [];
+      room.wallColors = {};
+      applyDrawnRoom(room, { levels: lv, closed: cl });
+      room.wallThick = wallThick;
+      const n = wallEdgeCount(room);
+      planEditLayer = 'floor';
+      log(`Помещение: ${n} стен, контур ${cl ? 'замкнут' : 'открыт'}, уровней ${lv.length} (${lv.map((l) => l.name).join(', ')})`, 'ok');
+      refresh();
+      renderPlanEditor();
+      viewer.setView('3d');
+    },
+  });
+}
+document.querySelector('#btnPlanFromPoint')?.addEventListener('click', () => openRoomPlan(false));
 
 function renderPlanEditor() {
   const wrap = document.querySelector('#planSvgWrap');
@@ -1922,9 +1979,6 @@ document.querySelectorAll('#viewCmdBar [data-cam]').forEach((b) => {
   });
 });
 
-document.querySelectorAll('[data-plan-layer]').forEach((b) => {
-  b.onclick = () => { planEditLayer = b.dataset.planLayer; syncPlanLayerButtons(); renderPlanEditor(); };
-});
 if (document.querySelector('#btnAddFloorVert')) {
   document.querySelector('#btnAddFloorVert').onclick = () => {
     commit();
