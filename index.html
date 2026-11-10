@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261029j">
+  <link rel="stylesheet" href="css/app.css?v=20261106q">
   <script type="importmap">
   {
     "imports": {
@@ -59,16 +59,35 @@
         <label>Материал <select id="topMat"></select></label>
         <h3>Вид (как eKitchen)</h3>
         <div class="btnrow">
-          <button type="button" data-view="walk" title="Ходьба изнутри: ЛКМ пусто — ехать, ПКМ — смотреть, WASD/стрелки">Изнутри</button>
-          <button type="button" data-view="3d" title="Изометрия, орбита ЛКМ / стрелки">Изометрия</button>
-          <button type="button" data-view="top" title="Вид сверху, панорама">Сверху</button>
+          <button type="button" data-view="walk" title="Ходьба изнутри">Изнутри</button>
+          <button type="button" data-view="3d" title="Изометрия">Изометрия</button>
+          <button type="button" data-view="top" title="Вид сверху — план">Сверху</button>
           <button type="button" data-view="front">Спереди</button>
         </div>
+        <div class="btnrow" title="Проекции на стены как в BPlanner">
+          <button type="button" data-view="wallA">Стена A</button>
+          <button type="button" data-view="wallB">B</button>
+          <button type="button" data-view="wallC">C</button>
+          <button type="button" data-view="wallD">D</button>
+        </div>
         <div class="btnrow">
-          <button type="button" id="btnLines" title="Как eKitchen: черно-белая сцена в линиях">В линиях</button>
+          <button type="button" id="btnLines" title="Черно-белая сцена в линиях">В линиях</button>
         </div>
         <label class="chk"><input type="checkbox" id="showGrid" checked> Сетка 100/500 мм</label>
-        <label class="chk"><input type="checkbox" id="showDims" checked> Размеры в 3D</label>
+        <label>Размеры
+          <select id="dimMode">
+            <option value="none">нет</option>
+            <option value="basic" selected>базовые</option>
+            <option value="all">все</option>
+          </select>
+        </label>
+        <h4>Слои</h4>
+        <label class="chk"><input type="checkbox" id="layFloor" checked> Пол</label>
+        <label class="chk"><input type="checkbox" id="layWalls" checked> Стены</label>
+        <label class="chk"><input type="checkbox" id="layCeil" checked> Потолок</label>
+        <label class="chk"><input type="checkbox" id="layFurn" checked> Мебель</label>
+        <label class="chk"><input type="checkbox" id="layAppl" checked> Техника</label>
+        <label class="chk"><input type="checkbox" id="layComm" checked> Коммуникации</label>
         <label>Фасады
           <select id="frontMode">
             <option value="show">показывать</option>
@@ -91,6 +110,7 @@
         </label>
         <label class="chk"><input type="checkbox" id="fixShow"> Показывать технику и коммуникации</label>
         <label class="chk"><input type="checkbox" id="wallLettersShow" checked> Буквы стен A–D</label>
+        <label class="chk"><input type="checkbox" id="commsMode"> Замер коммуникаций</label>
       </div>
 
       <div class="tab-pane" id="tab-sam">
@@ -123,22 +143,88 @@
       </div>
 
       <div class="tab-pane" id="tab-room">
-        <h3>Размеры комнаты</h3>
-        <label>Длина (X), мм <input type="number" id="roomL" step="10"></label>
-        <label>Глубина (Z), мм <input type="number" id="roomD" step="10"></label>
-        <label>Высота (Y), мм <input type="number" id="roomH" step="10"></label>
-        <label>Цвет пола <input type="color" id="floorColor" value="#cfc6b8"></label>
-        <label>Цвет стен <input type="color" id="wallColor" value="#f6f4f0"></label>
-        <h3>Ниши и выступы</h3>
-        <p class="muted">Ниша — углубление стены наружу (комната больше). Выступ — внутрь комнаты (колонна, короб).</p>
-        <div id="features"></div>
-        <div class="btnrow">
-          <button id="btnAddNiche">+ Ниша</button>
-          <button id="btnAddJut">+ Выступ</button>
-        </div>
-        <h3>Проёмы</h3>
-        <div id="openings"></div>
-        <button id="btnAddOpening">+ Проём</button>
+        <p class="muted">Помещение как BPlanner Arch System: план сверху и проекции стен.</p>
+
+        <details class="room-block" open>
+          <summary>Проекции</summary>
+          <div class="btnrow room-views">
+            <button type="button" data-view="top" class="primary" title="План сверху">Сверху</button>
+            <button type="button" data-view="3d" title="Изометрия">3D</button>
+            <button type="button" data-view="wallA">A</button>
+            <button type="button" data-view="wallB">B</button>
+            <button type="button" data-view="wallC">C</button>
+            <button type="button" data-view="wallD">D</button>
+          </div>
+        </details>
+
+        <details class="room-block" open>
+          <summary>Габариты и отделка</summary>
+          <label>Длина (X), мм <input type="number" id="roomL" step="10"></label>
+          <label>Глубина (Z), мм <input type="number" id="roomD" step="10"></label>
+          <label>Высота, мм <input type="number" id="roomH" step="10"></label>
+          <button id="btnApplyRoomSize" type="button" class="primary">Применить (прямоугольник)</button>
+          <label>Высота столешницы yRef, мм <input type="number" id="roomYRef" step="10" value="900"></label>
+          <label>Цвет пола <input type="color" id="floorColor" value="#cfc6b8"></label>
+          <label>Цвет стен (общий) <input type="color" id="wallColor" value="#f6f4f0"></label>
+        </details>
+
+        <details class="room-block" open>
+          <summary>План (вид сверху)</summary>
+          <p class="muted">Три контура: пол / столешница / потолок. Углы считаются сами.</p>
+          <div class="btnrow plan-layers">
+            <button type="button" data-plan-layer="floor" class="active">Пол</button>
+            <button type="button" data-plan-layer="ref">Столешница</button>
+            <button type="button" data-plan-layer="ceil">Потолок</button>
+          </div>
+          <div id="planSvgWrap" class="plan-wrap"></div>
+          <div class="btnrow">
+            <button id="btnAddFloorVert" type="button" title="На середину выбранной стены, иначе — в конец">+ Вершина</button>
+            <button id="btnResetRect" type="button" title="Только текущий контур → прямоугольник L×D">Сброс этого плана</button>
+          </div>
+        </details>
+
+        <details class="room-block" open>
+          <summary>Выбранная стена</summary>
+          <div id="wallPropsPanel"></div>
+        </details>
+
+        <details class="room-block" open>
+          <summary>Конструкции</summary>
+          <p class="muted">Клик — добавить в помещение.</p>
+          <div id="constructionsLib" class="ctor-grid"></div>
+        </details>
+
+        <details class="room-block">
+          <summary>Проёмы</summary>
+          <div id="openings"></div>
+          <button id="btnAddOpening">+ Проём</button>
+        </details>
+
+        <details class="room-block">
+          <summary>Препятствия (короба)</summary>
+          <div id="obstacles"></div>
+          <button id="btnAddObstacle" type="button">+ Короб</button>
+        </details>
+
+        <details class="room-block">
+          <summary>Потолок</summary>
+          <label>Режим
+            <select id="ceilMode">
+              <option value="flat">Плоский</option>
+              <option value="samples">По точкам (высоты вдоль стен)</option>
+            </select>
+          </label>
+          <label id="ceilFlatWrap">Высота, мм <input type="number" id="ceilFlatH" step="10"></label>
+          <p class="muted" id="ceilSamplesHint">Точки высоты задаются при замере вдоль стены (не координатами).</p>
+        </details>
+
+        <details class="room-block">
+          <summary>Пригодность кухни</summary>
+          <label>Мин. проход, мм <input type="number" id="fitPassage" step="10" value="1000"></label>
+          <label>Зазор навесных до потолка, мм <input type="number" id="fitClear" step="5" value="40"></label>
+          <div id="fitReport" class="fit-report"></div>
+          <button id="btnFitRefresh" type="button">Обновить проверку</button>
+        </details>
       </div>
 
       <div class="tab-pane" id="tab-light">
@@ -263,11 +349,43 @@
       </div>
     </aside>
 
+    <div class="col-resizer" data-side="left" title="Потяните, чтобы изменить ширину"></div>
+
     <section class="center">
-      <div id="viewport" class="viewport"></div>
+      <div id="viewport" class="viewport" style="position:relative">
+        <div id="viewCmdBar" class="view-cmd-bar" role="toolbar" aria-label="Камера и вид">
+          <div class="view-cmd-group" title="Камера">
+            <button type="button" data-cam="zoomIn" title="Приблизить">＋</button>
+            <button type="button" data-cam="zoomOut" title="Отдалить">－</button>
+            <button type="button" data-cam="reset" title="Сбросить ракурс">⌂</button>
+            <button type="button" data-cam="left" title="Повернуть влево">◀</button>
+            <button type="button" data-cam="right" title="Повернуть вправо">▶</button>
+            <button type="button" data-cam="up" title="Поднять камеру">▲</button>
+            <button type="button" data-cam="down" title="Опустить камеру">▼</button>
+          </div>
+          <div class="view-cmd-sep"></div>
+          <div class="view-cmd-group" title="Режим просмотра">
+            <button type="button" data-view="walk" title="Ходьба изнутри">Изнутри</button>
+            <button type="button" data-view="3d" title="Изометрия" class="active">3D</button>
+            <button type="button" data-view="top" title="План сверху">Сверху</button>
+            <button type="button" data-view="front" title="Спереди">Спереди</button>
+          </div>
+          <div class="view-cmd-sep"></div>
+          <div class="view-cmd-group" title="Проекции на стены">
+            <button type="button" data-view="wallA" title="Стена A">A</button>
+            <button type="button" data-view="wallB" title="Стена B">B</button>
+            <button type="button" data-view="wallC" title="Стена C">C</button>
+            <button type="button" data-view="wallD" title="Стена D">D</button>
+          </div>
+          <div class="view-cmd-sep"></div>
+          <div class="view-cmd-group">
+            <button type="button" id="btnLinesBar" title="Черно-белый каркас">Линии</button>
+          </div>
+        </div>
+      </div>
       <div class="hint">
-        <b>Изометрия</b>: стрелки/WASD — ракурс вокруг кухни · <b>Изнутри</b>: ЛКМ пусто — ехать, ПКМ — смотреть ·
-        «В линиях» — Ч/Б каркас как eKitchen · клик/drag — модули · <kbd>G</kbd> — стык
+        <b>Изометрия</b>: стрелки/WASD — ракурс · <b>Изнутри</b>: ЛКМ — ехать, ПКМ — смотреть ·
+        панель внизу сцены — камера и виды
       </div>
       <div class="cmd">
         <div id="log" class="log"></div>
@@ -278,6 +396,8 @@
       </div>
     </section>
 
+    <div class="col-resizer" data-side="right" title="Потяните, чтобы изменить ширину"></div>
+
     <aside class="right">
       <div id="props"></div>
       <h3>Проверка</h3>
@@ -287,6 +407,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261029j"></script>
+  <script type="module" src="js/main.js?v=20261106r"></script>
 </body>
 </html>

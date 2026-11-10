@@ -9,6 +9,9 @@
 
 import { MATERIALS } from './catalog.js?v=20261028m';
 import { libPanels, libModuleData } from './samolet.js?v=20261029j';
+import {
+  isAdvanced, ensureAdvancedFields, unifyRoomPlan, ceilingHeightAt, footprintInsideRoom, roomOutline,
+} from './roomGeom.js?v=20261106j';
 
 export const th = (id) => (MATERIALS[id] || MATERIALS.ldsp16_white).t;
 
@@ -114,21 +117,35 @@ export const moduleTitle = (m) => m.name || (isLib(m) ? m.lib.art : `${MODULE_TY
 export const moduleRow = (m) => (isLib(m) ? m.p.row : MODULE_TYPES[m.type].row);
 
 export function defaultRoom() {
+  const L = 4000, D = 3500, H = 2700;
+  const plan = [
+    { id: 'v0', x: 0, z: 0 }, { id: 'v1', x: L, z: 0 },
+    { id: 'v2', x: L, z: D }, { id: 'v3', x: 0, z: D },
+  ];
   return {
-    length: 4000,   // X
-    depth: 3500,    // Z
-    height: 2700,   // Y
+    editorMode: 'advanced', // единый режим как BPlanner Arch System
+    length: L,   // X (AABB, синхронизируется с планом)
+    depth: D,    // Z
+    height: H,   // Y
     wallThick: 100,
     floorColor: 0xcfc6b8,
     wallColor: 0xf6f4f0,
-    openings: [
-      // wall: back|front|left|right; type: window|door
-      { id: 'op1', wall: 'right', type: 'window', offset: 1000, width: 1200, sill: 900, height: 1400 },
-      { id: 'op2', wall: 'front', type: 'door', offset: 600, width: 900, sill: 0, height: 2100 },
-    ],
-    // Ниши (наружу) и выступы (внутрь): { id, kind:'niche'|'jut', wall, offset, width, depth, name }
-    features: [],
-    show: 'auto', // auto — прятать стены между камерой и комнатой | full | floor | hide
+    openings: [], // новое помещение без дверей/окон — добавляются конструкциями
+    features: [], // legacy; новые проекты правят полигон
+    yRef: 900,
+    planFloor: plan.map((p) => ({ ...p })),
+    planAtRef: plan.map((p) => ({ ...p })),
+    planCeiling: plan.map((p) => ({ ...p })),
+    ceiling: { mode: 'flat', height: H, samples: [] },
+    obstacles: [],
+    fit: { minPassage: 1000, wallCabClearance: 40, angleTolDeg: 1 },
+    dimMode: 'basic', // none | basic | all
+    layers: {
+      ceiling: true, walls: true, floor: true,
+      appliances: true, communications: true, furniture: true,
+    },
+    wallColors: {},
+    show: 'auto',
     showWallLetters: true,
   };
 }
@@ -192,6 +209,29 @@ export function migrateProject(prj) {
   if (!prj.room.show) prj.room.show = 'auto';
   if (prj.room.showWallLetters == null) prj.room.showWallLetters = true;
   if (!Array.isArray(prj.room.features)) prj.room.features = [];
+  if (prj.room.yRef == null) prj.room.yRef = 900;
+  if (!prj.room.ceiling) prj.room.ceiling = { mode: 'flat', height: prj.room.height || 2700, samples: [] };
+  if (!Array.isArray(prj.room.obstacles)) prj.room.obstacles = [];
+  for (const op of prj.room.openings || []) {
+    if (!op.id) op.id = 'op' + Date.now().toString(36) + Math.floor(Math.random() * 1000);
+    if (op.frameColor == null) op.frameColor = 0x8b7355;
+  }
+  for (const ob of prj.room.obstacles || []) {
+    if (!ob.id) ob.id = 'ob' + Date.now().toString(36) + Math.floor(Math.random() * 1000);
+    if (ob.color == null) ob.color = 0xb0a090;
+    if (ob.rot == null) ob.rot = 0;
+  }
+  if (!prj.room.fit) prj.room.fit = { minPassage: 1000, wallCabClearance: 40, angleTolDeg: 1 };
+  if (!prj.room.dimMode) prj.room.dimMode = 'basic';
+  if (!prj.room.layers) {
+    prj.room.layers = {
+      ceiling: true, walls: true, floor: true,
+      appliances: true, communications: true, furniture: true,
+    };
+  }
+  if (!prj.room.wallColors || typeof prj.room.wallColors !== 'object') prj.room.wallColors = {};
+  // единый редактор BPlanner: всегда полигон
+  unifyRoomPlan(prj.room);
   if (prj.showFixtures == null) prj.showFixtures = true;
   prj.version = 3;
   return prj;
@@ -382,6 +422,24 @@ export function worldToLocal(m, x, z) {
 
 // Интервал проёма вдоль стены в мировых координатах
 export function openingSpan(op, room) {
+  if (op.edgeIndex != null && isAdvanced(room)) {
+    ensureAdvancedFields(room);
+    const outline = roomOutline(room);
+    const i = +op.edgeIndex;
+    if (i < 0 || i >= outline.length - 1) return null;
+    const a = outline[i], b = outline[i + 1];
+    const dx = b.x - a.x, dz = b.z - a.z;
+    const len = Math.hypot(dx, dz) || 1;
+    const tx = dx / len, tz = dz / len;
+    const o1 = +op.offset || 0;
+    const o2 = o1 + (+op.width || 0);
+    const p1 = { x: a.x + tx * o1, z: a.z + tz * o1 };
+    const p2 = { x: a.x + tx * o2, z: a.z + tz * o2 };
+    if (Math.abs(dx) >= Math.abs(dz)) {
+      return { axis: 'x', a: Math.min(p1.x, p2.x), b: Math.max(p1.x, p2.x) };
+    }
+    return { axis: 'z', a: Math.min(p1.z, p2.z), b: Math.max(p1.z, p2.z) };
+  }
   const L = room.length, D = room.depth;
   switch (op.wall) {
     case 'back':  return { axis: 'x', a: op.offset, b: op.offset + op.width };
@@ -476,13 +534,32 @@ export function buildProject(prj) {
 export function validate(prj) {
   const issues = [];
   const mods = prj.modules;
-  const L = prj.room.length, D = prj.room.depth, H = prj.room.height;
+  const room = prj.room;
+  const L = room.length, D = room.depth, H = room.height;
+  const adv = isAdvanced(room);
+  if (adv) ensureAdvancedFields(room);
   const ov = (a1, a2, b1, b2) => Math.min(a2, b2) - Math.max(a1, b1) > 0.5;
+  const clearance = +(room.fit?.wallCabClearance ?? 40);
   mods.forEach((m, i) => {
     const b = moduleBox(m), n = i + 1;
-    if (b.x1 < -1 || b.x2 > L + 1 || b.z1 < -1 || b.z2 > D + 1)
-      issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выходит за пределы комнаты (${L}×${D})` });
-    if (b.y2 > H) issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выше потолка (${b.y2} > ${H})` });
+    const corners = [
+      { x: b.x1, z: b.z1 }, { x: b.x2, z: b.z1 },
+      { x: b.x1, z: b.z2 }, { x: b.x2, z: b.z2 },
+    ];
+    if (adv) {
+      if (!footprintInsideRoom(room, corners, 5))
+        issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выходит за контур комнаты` });
+      const ys = corners.map((c) => ceilingHeightAt(room, c.x, c.z));
+      const hMin = Math.min(...ys);
+      if (b.y2 > hMin - 0.5)
+        issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выше потолка в точке (нужно ≤ ${Math.round(hMin)} мм, сейчас ${Math.round(b.y2)})` });
+      else if (b.y2 > hMin - clearance)
+        issues.push({ level: 'warn', moduleId: m.id, text: `Модуль ${n}: зазор до потолка < ${clearance} мм` });
+    } else {
+      if (b.x1 < -1 || b.x2 > L + 1 || b.z1 < -1 || b.z2 > D + 1)
+        issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выходит за пределы комнаты (${L}×${D})` });
+      if (b.y2 > H) issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} выше потолка (${b.y2} > ${H})` });
+    }
     if (!isLib(m) && (m.p.width < 150 || m.p.width > 1200)) issues.push({ level: 'warn', moduleId: m.id, text: `Модуль ${n}: нестандартная ширина ${m.p.width} мм` });
     const T = th(m.mat.carcass);
     const divided = m.type === 'wardrobe' && m.p.rod && m.p.width >= 800;
@@ -495,13 +572,20 @@ export function validate(prj) {
       if (ov(b.x1, b.x2, c.x1, c.x2) && ov(b.y1, b.y2, c.y1, c.y2) && ov(b.z1, b.z2, c.z1, c.z2))
         issues.push({ level: 'error', moduleId: m.id, text: `Модули ${n} и ${j + 1} пересекаются` });
     }
-    for (const op of prj.room.openings || []) {
+    for (const op of room.openings || []) {
       const near = { back: b.z1 < 50, front: b.z2 > D - 50, left: b.x1 < 50, right: b.x2 > L - 50 }[op.wall];
-      if (!near) continue;
-      const sp = openingSpan(op, prj.room);
+      if (!near && !adv) continue;
+      if (adv && op.edgeIndex == null && !near) continue;
+      const sp = openingSpan(op, room);
+      if (!sp) continue;
       const [m1, m2] = sp.axis === 'x' ? [b.x1, b.x2] : [b.z1, b.z2];
       if (ov(m1, m2, sp.a, sp.b) && ov(b.y1, b.y2, op.sill, op.sill + op.height))
         issues.push({ level: 'warn', moduleId: m.id, text: `Модуль ${n} перекрывает ${op.type === 'door' ? 'дверь' : 'окно'}` });
+    }
+    for (const ob of room.obstacles || []) {
+      const ox2 = +ob.x + +ob.w, oz2 = +ob.z + +ob.d;
+      if (ov(b.x1, b.x2, +ob.x, ox2) && ov(b.z1, b.z2, +ob.z, oz2) && ov(b.y1, b.y2, +ob.y0, +ob.y1))
+        issues.push({ level: 'error', moduleId: m.id, text: `Модуль ${n} пересекается с «${ob.name || 'короб'}»` });
     }
   });
   return issues;
@@ -523,10 +607,22 @@ export function snapPos(prj, moduleId, x, z, tol = 40) {
   let bx = x, bz = z, dx = tol, dz = tol;
   for (const c of candsX) { const d0 = Math.abs(c - x); if (d0 < dx) { dx = d0; bx = c; } }
   for (const c of candsZ) { const d0 = Math.abs(c - z); if (d0 < dz) { dz = d0; bz = c; } }
-  return {
-    x: Math.round(clamp(bx, 0, Math.max(0, L - w))),
-    z: Math.round(clamp(bz, 0, Math.max(0, D - d))),
-  };
+  let sx = Math.round(clamp(bx, 0, Math.max(0, L - w)));
+  let sz = Math.round(clamp(bz, 0, Math.max(0, D - d)));
+  if (isAdvanced(prj.room)) {
+    // проверить footprint; если вылез — откатить к исходным clamp AABB
+    const probe = { ...m, x: sx, z: sz };
+    const b = moduleBox(probe);
+    const corners = [
+      { x: b.x1, z: b.z1 }, { x: b.x2, z: b.z1 },
+      { x: b.x1, z: b.z2 }, { x: b.x2, z: b.z2 },
+    ];
+    if (!footprintInsideRoom(prj.room, corners, 5)) {
+      sx = Math.round(x);
+      sz = Math.round(z);
+    }
+  }
+  return { x: sx, z: sz };
 }
 
 function _rangeOverlap(a1, a2, b1, b2, min = 20) {

@@ -44,3 +44,9 @@ _git_*.txt
 _cc.txt
 _sib.txt
 _env_git.txt
+
+# служебные скрипты и снимки агента в корне
+/_*.py
+/_*.txt
+/_*.mjs
+/_backups/

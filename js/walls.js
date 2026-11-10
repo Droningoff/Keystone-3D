@@ -47,12 +47,40 @@ export const CORNERS = {
 /**
  * Позиция модуля у стены: offset — от начала стены (WALL_BY_CODE.from), мм;
  * width/depth — габарит модуля в плане.
+ * Advanced: ставит вдоль рёбер полигона с тем же wall-hint (A/B/C/D).
  */
 export function placeOnWall(room, idOrLetter, offset, width, depth) {
   const L = +room.length, D = +room.depth;
   const id = wallId(idOrLetter);
   const o = Math.max(0, +offset || 0);
   const w = +width || 0, d = +depth || 0;
+
+  if (Array.isArray(room?.planFloor) && room.planFloor.length >= 3) {
+    const verts = room.planFloor;
+    const n = verts.length;
+    let remain = o;
+    for (let i = 0; i < n; i++) {
+      const a = verts[i], b = verts[(i + 1) % n];
+      const dx = b.x - a.x, dz = b.z - a.z;
+      const len = Math.hypot(dx, dz);
+      if (len < 1) continue;
+      const nx = dz / len, nz = -dx / len;
+      let hint = 'back';
+      if (Math.abs(nx) > Math.abs(nz)) hint = nx > 0 ? 'right' : 'left';
+      else hint = nz > 0 ? 'front' : 'back';
+      if (hint !== id) continue;
+      if (remain > len + 0.5) { remain -= len; continue; }
+      const tx = dx / len, tz = dz / len;
+      const ix = -nx, iz = -nz;
+      const rot = (Math.atan2(ix, iz) * 180) / Math.PI;
+      return {
+        x: Math.round(a.x + tx * remain),
+        z: Math.round(a.z + tz * remain),
+        rot: Math.round(rot),
+      };
+    }
+  }
+
   switch (id) {
     case 'back':  return { x: o, z: 0, rot: 0 };
     case 'right': return { x: L - d, z: o, rot: 270 };
@@ -61,4 +89,24 @@ export function placeOnWall(room, idOrLetter, offset, width, depth) {
     case 'left':  return { x: 0, z: D - o, rot: 90 };
     default:      return { x: o, z: 0, rot: 0 };
   }
+}
+
+/** Длина стены: в advanced — сумма рёбер с данным wall-hint. */
+export function wallLengthAdvanced(room, idOrLetter) {
+  if (!room.planFloor?.length) return wallLength(room, idOrLetter);
+  const id = wallId(idOrLetter);
+  const verts = room.planFloor;
+  let sum = 0;
+  for (let i = 0; i < verts.length; i++) {
+    const a = verts[i], b = verts[(i + 1) % verts.length];
+    const dx = b.x - a.x, dz = b.z - a.z;
+    const len = Math.hypot(dx, dz);
+    if (len < 1) continue;
+    const nx = dz / len, nz = -dx / len;
+    let hint = 'back';
+    if (Math.abs(nx) > Math.abs(nz)) hint = nx > 0 ? 'right' : 'left';
+    else hint = nz > 0 ? 'front' : 'back';
+    if (hint === id) sum += len;
+  }
+  return sum || wallLength(room, idOrLetter);
 }

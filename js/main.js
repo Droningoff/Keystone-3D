@@ -3,15 +3,25 @@ import {
   MODULE_TYPES, BUTT_SIDES, createModule, newProject, buildProject, snapPos, nextFreeX,
   moduleTitle, panelSize, resolveDoors, migrateProject, toggleFront, setAllFronts,
   createLibModule, isLib, moduleRow, listDockSockets, applyDock, nearestDockSide,
-} from './model.js?v=20261029j';
+} from './model.js?v=20261106r';
 import { loadSamoletIndex, samoletIndex, libGeomTried, libGeom, libPreview, ensureLibGeoms, loadLibGeom, libSpec, findLib } from './samolet.js?v=20261029j';
 import { ExplodeView } from './explode.js?v=20261028m';
-import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261028m';
-import { newFeature, featureTitle } from './roomGeom.js?v=20261028m';
+import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261106a';
+import {
+  newObstacle, newOpening, ensureAdvancedFields, unifyRoomPlan, syncSimpleAABB,
+  setRoomFootprint, setRoomHeight, ensureCtorIds,
+  rectPlan, wallSurvey, setWallLengthAt, roomWallSegments, edgeLetter,
+  planByLayer, planLayerLabel, insertVertexOnEdge, resetPlanLayerToRect,
+  newFeature, featureTitle,
+} from './roomGeom.js?v=20261106r';
+import { validateFit } from './roomFit.js?v=20261106j';
+import {
+  showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
+} from './roomEdit.js?v=20261106q';
 import { loadBrief, saveBrief, buildAiPrompt } from './brief.js?v=20261028m';
 import { loadLlmSettings, saveLlmSettings, listModels } from './llm.js?v=20261028m';
 import { planKitchenWithLlm } from './planner.js?v=20261028m';
-import { Viewer } from './viewer.js?v=20261029j';
+import { Viewer } from './viewer.js?v=20261106r';
 import { toBazisScript, bazisSmokeTest, bazisExportCheck, resolveSamoletBase, resolveUserCatalogBase } from './bazis.js?v=20261028m';
 import { computeSpec, specToCSV, specTo1C } from './report.js?v=20261028m';
 import { runCommand } from './commands.js?v=20261028m';
@@ -30,19 +40,63 @@ const $ = (s) => document.querySelector(s);
 const STORE = 'furniture-constructor-project';
 
 let project = migrateProject(load() || demoProject());
-let sel = { moduleId: null, panelKey: null, fixtureId: null };
+let sel = { moduleId: null, panelKey: null, fixtureId: null, obstacleId: null, openingId: null };
 let build = null;
 let placeEntry = null;
 let _selPaintTimer = 0;
 const undo = [];
 
+const emptySel = () => ({ moduleId: null, panelKey: null, fixtureId: null, obstacleId: null, openingId: null });
 const viewer = new Viewer($('#viewport'), {
   onPick: (mid, key, fid) => {
-    if (fid) { sel = { moduleId: null, panelKey: null, fixtureId: fid }; }
-    else if (!mid) { sel = { moduleId: null, panelKey: null, fixtureId: null }; }
-    else if (mid !== sel.moduleId) { sel = { moduleId: mid, panelKey: null, fixtureId: null }; }
-    else { sel = { moduleId: mid, panelKey: sel.panelKey === key ? null : key, fixtureId: null }; }
+    if (fid) { sel = { ...emptySel(), fixtureId: fid }; }
+    else if (!mid) { sel = emptySel(); }
+    else if (mid !== sel.moduleId) { sel = { ...emptySel(), moduleId: mid }; }
+    else { sel = { ...emptySel(), moduleId: mid, panelKey: sel.panelKey === key ? null : key }; }
     softSelect();
+  },
+  onPickCtor: (kind, id) => {
+    sel = {
+      ...emptySel(),
+      obstacleId: kind === 'obstacle' ? id : null,
+      openingId: kind === 'opening' ? id : null,
+    };
+    softSelect();
+  },
+  onMoveObstacle: (id, x, z) => {
+    commit();
+    const ob = (project.room.obstacles || []).find((q) => q.id === id);
+    if (ob) { ob.x = x; ob.z = z; }
+    sel = { ...emptySel(), obstacleId: id };
+    refresh();
+  },
+  onMoveOpening: (id, offset, sill) => {
+    commit();
+    const op = (project.room.openings || []).find((q) => q.id === id);
+    if (op) {
+      if (offset != null) op.offset = offset;
+      if (sill != null) op.sill = sill;
+    }
+    sel = { ...emptySel(), openingId: id };
+    refresh();
+  },
+  onDraggingCtor: (kind, id, fields) => {
+    if (kind === 'obstacle') {
+      const elx = $('#ctor_x'), elz = $('#ctor_z');
+      if (elx && fields.x != null) elx.value = fields.x;
+      if (elz && fields.z != null) elz.value = fields.z;
+    } else if (kind === 'opening') {
+      const elo = $('#ctor_offset'), els = $('#ctor_sill');
+      if (elo && fields.offset != null) elo.value = fields.offset;
+      if (els && fields.sill != null) els.value = fields.sill;
+    }
+  },
+  onRotateObstacle: (id, d) => {
+    commit();
+    const ob = (project.room.obstacles || []).find((q) => q.id === id);
+    if (ob) ob.rot = ((+ob.rot || 0) + d) % 360;
+    sel = { ...emptySel(), obstacleId: id };
+    refresh();
   },
   snap: (id, x, z) => snapPos(project, id, x, z),
   // excludeId = двигаемый модуль; маркеры на свободных боках остальных (как привязка Ctrl в eKitchen)
@@ -149,7 +203,10 @@ function updateModeBadge() {
   const el = $('#modeBadge');
   if (viewer.mode === 'place') el.textContent = `Постановка: ${placeEntry?.name || ''} · R поворот`;
   else if (viewer.mode === 'placeFixture') el.textContent = `Объект: ${FIXTURE_CATALOG[viewer.placeFixture]?.title || ''} · R поворот`;
-  else el.textContent = '';
+  else if (viewer.mode === 'placeCtor') {
+    const c = placeCtorEntry || viewer.placeCtor;
+    el.textContent = 'Конструкция: ' + (c?.title || '') + ' · Esc';
+  } else el.textContent = '';
 }
 
 function placeModuleAt(x, z, wall, y, rot) {
@@ -219,6 +276,7 @@ function syncFrontAnim() {
 function softSelect() {
   if (!build) { refresh(); return; }
   viewer.sel = sel;
+  viewer._refreshHighlights?.();
   const m = sel.moduleId && mod(sel.moduleId);
   if (m && isLib(m) && !libGeom(m.lib.n)) {
     loadLibGeom(m.lib.n).then(() => { refresh(); });
@@ -230,6 +288,7 @@ function softSelect() {
   _selPaintTimer = setTimeout(() => {
     if (!build) return;
     viewer.render(build, sel, resolveFixtures(project));
+    viewer._refreshHighlights?.();
     viewer.syncOpenTargets(build);
     renderIssues();
   }, 320);
@@ -237,8 +296,15 @@ function softSelect() {
 
 function refresh() {
   project = migrateProject(project);
+  ensureCtorIds(project.room);
   if (sel.moduleId && !mod(sel.moduleId) && !String(sel.moduleId).startsWith('__top')) {
-    sel = { moduleId: null, panelKey: null, fixtureId: sel.fixtureId };
+    sel = { ...sel, moduleId: null, panelKey: null };
+  }
+  if (sel.obstacleId && !(project.room.obstacles || []).some((q) => q.id === sel.obstacleId)) {
+    sel = { ...sel, obstacleId: null };
+  }
+  if (sel.openingId && !(project.room.openings || []).some((q) => q.id === sel.openingId)) {
+    sel = { ...sel, openingId: null };
   }
   const orphans = project.fixtures.filter((f) => f.moduleId && !mod(f.moduleId));
   if (orphans.length) {
@@ -258,6 +324,10 @@ function refresh() {
   $('#fixShow').checked = project.showFixtures !== false;
   $('#wallLettersShow').checked = project.room.showWallLetters !== false;
   viewer.setWallLettersVisible(project.room.showWallLetters !== false);
+  try { if (typeof renderPlanEditor === 'function') renderPlanEditor(); } catch(_){}
+  try { if (typeof renderConstructionsLib === 'function') renderConstructionsLib(); } catch(_){}
+  try { if (typeof syncLayersForm === 'function') syncLayersForm(); } catch(_){}
+  try { if (typeof renderWallPropsPanel === 'function') renderWallPropsPanel(); } catch(_){}
   renderFeatures();
   viewer.syncOpenTargets(build);
   renderProps();
@@ -648,8 +718,13 @@ function hexToInt(h) { return parseInt(h.replace('#', ''), 16); }
 ['roomL', 'roomD', 'roomH'].forEach((id) => {
   $('#' + id).onchange = (e) => {
     commit();
-    const map = { roomL: 'length', roomD: 'depth', roomH: 'height' };
-    project.room[map[id]] = +e.target.value;
+    if (id === 'roomH') {
+      setRoomHeight(project.room, +e.target.value);
+    } else {
+      const L = id === 'roomL' ? +e.target.value : +project.room.length;
+      const D = id === 'roomD' ? +e.target.value : +project.room.depth;
+      setRoomFootprint(project.room, L, D);
+    }
     refresh();
   };
 });
@@ -698,12 +773,12 @@ function renderFeatures() {
     };
   });
 }
-$('#btnAddNiche').onclick = () => {
+if ($('#btnAddNiche')) $('#btnAddNiche').onclick = () => {
   commit();
   (project.room.features ||= []).push(newFeature({ kind: 'niche', wall: 'back', offset: 1000, width: 900, depth: 400 }));
   refresh();
 };
-$('#btnAddJut').onclick = () => {
+if ($('#btnAddJut')) $('#btnAddJut').onclick = () => {
   commit();
   (project.room.features ||= []).push(newFeature({ kind: 'jut', wall: 'back', offset: 1200, width: 600, depth: 300, name: 'Выступ' }));
   refresh();
@@ -746,7 +821,9 @@ function renderOpenings() {
 }
 $('#btnAddOpening').onclick = () => {
   commit();
-  project.room.openings.push({ id: 'op' + Date.now(), wall: 'back', type: 'window', offset: 500, width: 1200, sill: 900, height: 1400 });
+  const op = newOpening({ wall: 'back', type: 'window', offset: 500, width: 1200, sill: 900, height: 1400 });
+  project.room.openings.push(op);
+  sel = { ...emptySel(), openingId: op.id };
   refresh();
 };
 
@@ -786,18 +863,113 @@ bindLight('ltAccentC', 'accentColor', (v) => v);
 const opt = (list, v) => list.map((m) => `<option value="${m.id}" ${m.id === v ? 'selected' : ''}>${m.name}</option>`).join('');
 const numField = (id, label, v, step = 1) => `<label>${label}<input type="number" id="${id}" value="${v}" step="${step}"></label>`;
 
+function colorToHex(c, fallback = '#b0a090') {
+  if (c == null || c === '') return fallback;
+  const n = typeof c === 'number' ? c : parseInt(String(c).replace('#', ''), 16);
+  if (!Number.isFinite(n)) return fallback;
+  return '#' + (n >>> 0).toString(16).padStart(6, '0');
+}
+
+function renderCtorProps(el) {
+  const ob = sel.obstacleId && (project.room.obstacles || []).find((q) => q.id === sel.obstacleId);
+  const op = sel.openingId && (project.room.openings || []).find((q) => q.id === sel.openingId);
+  if (!ob && !op) return false;
+  const bind = (id, fn) => { const f = $('#' + id); if (f) f.onchange = () => { commit(); fn(f); refresh(); }; };
+  if (ob) {
+    el.innerHTML = `
+      <h3>Конструкция: ${ob.name || 'Короб'}</h3>
+      <label>Наименование<input type="text" id="ctor_name" value="${ob.name || ''}"></label>
+      <div class="props-grid">
+        ${numField('ctor_x', 'X', ob.x, 10)}
+        ${numField('ctor_z', 'Z', ob.z, 10)}
+        ${numField('ctor_rot', 'Поворот °', ob.rot || 0, 90)}
+        ${numField('ctor_w', 'Ширина', ob.w, 10)}
+        ${numField('ctor_d', 'Глубина', ob.d, 10)}
+        ${numField('ctor_y0', 'От пола', ob.y0, 10)}
+        ${numField('ctor_y1', 'До (Y)', ob.y1, 10)}
+        <label>Цвет<input type="color" id="ctor_color" value="${colorToHex(ob.color, '#b0a090')}"></label>
+      </div>
+      <p class="muted">Перетаскивание на сцене · R — поворот 90° · Delete — удалить</p>
+      <div class="btnrow" style="margin-top:8px">
+        <button id="ctor_rot90">Повернуть 90°</button>
+        <button id="ctor_del" class="danger">Удалить</button>
+      </div>`;
+    bind('ctor_name', (f) => { ob.name = f.value.trim(); });
+    bind('ctor_x', (f) => { ob.x = +f.value; });
+    bind('ctor_z', (f) => { ob.z = +f.value; });
+    bind('ctor_rot', (f) => { ob.rot = +f.value; });
+    bind('ctor_w', (f) => { ob.w = Math.max(10, +f.value); });
+    bind('ctor_d', (f) => { ob.d = Math.max(10, +f.value); });
+    bind('ctor_y0', (f) => { ob.y0 = +f.value; });
+    bind('ctor_y1', (f) => { ob.y1 = Math.max(ob.y0 + 10, +f.value); });
+    const col = $('#ctor_color');
+    if (col) col.oninput = () => { commit(); ob.color = hexToInt(col.value); viewer.setRoom(project.room); viewer._refreshHighlights?.(); save(); };
+    $('#ctor_rot90').onclick = () => { commit(); ob.rot = ((+ob.rot || 0) + 90) % 360; refresh(); };
+    $('#ctor_del').onclick = () => {
+      commit();
+      project.room.obstacles = (project.room.obstacles || []).filter((q) => q.id !== ob.id);
+      sel = emptySel();
+      refresh();
+    };
+    return true;
+  }
+  const defFill = op.type === 'door' ? '#6b4f2a' : '#9ec9e8';
+  el.innerHTML = `
+    <h3>${op.type === 'door' ? 'Дверь' : 'Окно'}</h3>
+    <div class="props-grid">
+      <label>Тип<select id="ctor_type"><option value="window" ${op.type === 'window' ? 'selected' : ''}>Окно</option><option value="door" ${op.type === 'door' ? 'selected' : ''}>Дверь</option></select></label>
+      ${numField('ctor_offset', 'Отступ', op.offset, 10)}
+      ${numField('ctor_width', 'Ширина', op.width, 10)}
+      ${numField('ctor_sill', 'Подоконник', op.sill, 10)}
+      ${numField('ctor_height', 'Высота', op.height, 10)}
+      <label>Цвет заполнения<input type="color" id="ctor_color" value="${colorToHex(op.color, defFill)}"></label>
+      <label>Цвет рамы<input type="color" id="ctor_frame" value="${colorToHex(op.frameColor, '#8b7355')}"></label>
+    </div>
+    <p class="muted">Перетаскивание вдоль стены · Shift+drag — подоконник · Delete — удалить</p>
+    <div class="btnrow" style="margin-top:8px">
+      <button id="ctor_del" class="danger">Удалить</button>
+    </div>`;
+  bind('ctor_type', (f) => { op.type = f.value; });
+  bind('ctor_offset', (f) => { op.offset = Math.max(0, +f.value); });
+  bind('ctor_width', (f) => { op.width = Math.max(100, +f.value); });
+  bind('ctor_sill', (f) => { op.sill = Math.max(0, +f.value); });
+  bind('ctor_height', (f) => { op.height = Math.max(100, +f.value); });
+  const c1 = $('#ctor_color'), c2 = $('#ctor_frame');
+  if (c1) c1.oninput = () => { commit(); op.color = hexToInt(c1.value); viewer.setRoom(project.room); viewer._refreshHighlights?.(); save(); };
+  if (c2) c2.oninput = () => { commit(); op.frameColor = hexToInt(c2.value); viewer.setRoom(project.room); viewer._refreshHighlights?.(); save(); };
+  $('#ctor_del').onclick = () => {
+    commit();
+    project.room.openings = (project.room.openings || []).filter((q) => q.id !== op.id);
+    sel = emptySel();
+    refresh();
+  };
+  return true;
+}
+
 function renderProps() {
   const el = $('#props');
+  if (sel.obstacleId || sel.openingId) {
+    if (renderCtorProps(el)) return;
+  }
   if (sel.fixtureId) return renderFixtureProps(el, fix(sel.fixtureId));
   const m = sel.moduleId && mod(sel.moduleId);
   if (!m) {
-    el.innerHTML = `<h3>Проект</h3><p class="muted">Выберите модуль или объект. Двойной клик по фасаду — открыть/закрыть.</p>` +
+    const obs = project.room.obstacles || [];
+    const ops = project.room.openings || [];
+    el.innerHTML = `<h3>Проект</h3><p class="muted">Выберите модуль, объект или конструкцию. Двойной клик по фасаду — открыть/закрыть.</p>` +
       `<h4>Модули</h4>` +
       project.modules.map((q, i) => `<div><a href="#" data-sel="${q.id}">${i + 1}. ${moduleTitle(q)}</a> <span class="muted">(${q.x},${q.z}) ${q.rot || 0}°</span></div>`).join('') +
       `<h4>Объекты</h4>` +
-      (project.fixtures.length ? project.fixtures.map((f) => `<div><a href="#" data-fix="${f.id}">${fixtureTitle(f)}</a></div>`).join('') : '<p class="muted">нет</p>');
-    el.querySelectorAll('[data-sel]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { moduleId: a.dataset.sel, panelKey: null, fixtureId: null }; refresh(); });
-    el.querySelectorAll('[data-fix]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { moduleId: null, panelKey: null, fixtureId: a.dataset.fix }; refresh(); });
+      (project.fixtures.length ? project.fixtures.map((f) => `<div><a href="#" data-fix="${f.id}">${fixtureTitle(f)}</a></div>`).join('') : '<p class="muted">нет</p>') +
+      `<h4>Конструкции</h4>` +
+      (obs.length || ops.length
+        ? obs.map((q) => `<div><a href="#" data-ob="${q.id}">${q.name || 'Короб'}</a> <span class="muted">${q.w}×${q.d}</span></div>`).join('')
+          + ops.map((q) => `<div><a href="#" data-op="${q.id}">${q.type === 'door' ? 'Дверь' : 'Окно'}</a> <span class="muted">${q.width}×${q.height}</span></div>`).join('')
+        : '<p class="muted">нет — вкладка Помещение → Конструкции</p>');
+    el.querySelectorAll('[data-sel]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { ...emptySel(), moduleId: a.dataset.sel }; refresh(); });
+    el.querySelectorAll('[data-fix]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { ...emptySel(), fixtureId: a.dataset.fix }; refresh(); });
+    el.querySelectorAll('[data-ob]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { ...emptySel(), obstacleId: a.dataset.ob }; softSelect(); });
+    el.querySelectorAll('[data-op]').forEach((a) => a.onclick = (e) => { e.preventDefault(); sel = { ...emptySel(), openingId: a.dataset.op }; softSelect(); });
     return;
   }
   const it = build.items.find((i) => i.module?.id === m.id);
@@ -1112,8 +1284,8 @@ function initExplode(mods) {
   $('#exMod').onchange = show;
   $('#exFronts').onchange = show;
   $('#exFactor').oninput = (e) => { $('#exVal').textContent = Math.round(e.target.value * 100) + '%'; explodeView.setFactor(+e.target.value); };
-  $('#exFit').onclick = () => explodeView.fit();
-  $('#exPng').onclick = () => {
+  if ($('#exFit')) $('#exFit').onclick = () => explodeView.fit();
+  if ($('#exPng')) $('#exPng').onclick = () => {
     explodeView.draw();
     const a = document.createElement('a');
     a.href = explodeView.renderer.domElement.toDataURL('image/png');
@@ -1190,17 +1362,23 @@ window.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.key.toLowerCase() === 'z') { e.preventDefault(); actions.undo(); }
   if (e.key === 'Delete') {
     commit();
-    if (sel.fixtureId) {
+    if (sel.obstacleId) {
+      project.room.obstacles = (project.room.obstacles || []).filter((q) => q.id !== sel.obstacleId);
+      sel = emptySel();
+    } else if (sel.openingId) {
+      project.room.openings = (project.room.openings || []).filter((q) => q.id !== sel.openingId);
+      sel = emptySel();
+    } else if (sel.fixtureId) {
       project.fixtures = project.fixtures.filter((f) => f.id !== sel.fixtureId);
-      sel.fixtureId = null;
+      sel = emptySel();
     } else if (sel.moduleId && !String(sel.moduleId).startsWith('__top')) {
       const m = mod(sel.moduleId);
       if (sel.panelKey) { if (!isLib(m)) (m.overrides[sel.panelKey] ||= {}).removed = true; sel.panelKey = null; }
-      else { project.modules = project.modules.filter((q) => q !== m); sel = { moduleId: null, panelKey: null, fixtureId: null }; }
+      else { project.modules = project.modules.filter((q) => q !== m); sel = emptySel(); }
     }
     refresh();
   }
-  if (e.key === 'Escape') { sel = { moduleId: null, panelKey: null, fixtureId: null }; viewer.setMode('select'); placeEntry = null; updateModeBadge(); refresh(); }
+  if (e.key === 'Escape') { sel = emptySel(); viewer.setMode('select'); placeEntry = null; updateModeBadge(); refresh(); }
 });
 
 // ---------- Опросник ТЗ > промпт ИИ ----------
@@ -1395,5 +1573,382 @@ renderFixturesLib();
 loadUserCatalog();
 initSamolet();
 log('Готово. Вкладка «ТЗ > ИИ» — опросник для сборки кухни через агента. Стены A–D.');
+
+// ===== Keystone patches (viewport bar, column resize, constructions place) =====
+let placeCtorEntry = null;
+let planEditLayer = 'floor';
+let _planResizeObs = null;
+let _planLastW = 0;
+let _planDragBase = null;
+
+function renderWallPropsPanel(part) {
+  const el = $('#wallPropsPanel');
+  if (!el) return;
+  const wallSel = part || (viewer.roomSel?.kind === 'wall' ? viewer.roomSel : null);
+  if (!wallSel || wallSel.kind === 'ceiling' || wallSel.edgeIndex == null) {
+    if (viewer.roomSel?.kind === 'ceiling') {
+      el.innerHTML = `<p class="muted">Потолок: режим ${project.room.ceiling?.mode || 'flat'}, точек ${project.room.ceiling?.samples?.length || 0}.</p>`;
+      return;
+    }
+    el.innerHTML = renderWallPropsHtml(null);
+    return;
+  }
+  ensureAdvancedFields(project.room);
+  const survey = wallSurvey(project.room, wallSel.edgeIndex);
+  const keepFocus = viewer.propFocus;
+  el.innerHTML = renderWallPropsHtml(survey);
+  el.querySelectorAll('[data-wp]').forEach((inp) => {
+    const focusKey = () => {
+      const k = inp.dataset.wp;
+      if (k === 'wallColor') { viewer.setPropFocus(null); return; }
+      viewer.setPropFocus(k);
+      renderPlanEditor();
+    };
+    inp.onfocus = focusKey;
+    inp.onpointerdown = focusKey;
+    inp.onblur = () => {
+      setTimeout(() => {
+        if (!el.contains(document.activeElement)) {
+          viewer.setPropFocus(null);
+          renderPlanEditor();
+        }
+      }, 120);
+    };
+    inp.onchange = () => {
+      commit();
+      const key = inp.dataset.wp;
+      const v = +inp.value;
+      if (key === 'wallColor') {
+        (project.room.wallColors ||= {})[wallSel.edgeIndex] = parseInt(inp.value.replace('#', ''), 16);
+      } else if (key === 'lengthFloor') setWallLengthAt(project.room, wallSel.edgeIndex, 0, v);
+      else if (key === 'lengthRef') setWallLengthAt(project.room, wallSel.edgeIndex, project.room.yRef || 900, v);
+      else if (key === 'lengthCeil') setWallLengthAt(project.room, wallSel.edgeIndex, project.room.height || 2700, v);
+      const foc = key === 'wallColor' ? null : key;
+      refresh();
+      viewer.setPropFocus(foc);
+      const again = el.querySelector(`[data-wp="${key}"]`);
+      if (again) again.focus();
+    };
+  });
+  if (keepFocus) {
+    viewer.setPropFocus(keepFocus);
+    const again = el.querySelector(`[data-wp="${keepFocus}"]`);
+    if (again) again.focus();
+  }
+}
+
+async function placeCommOnWall(part) {
+  const segs = roomWallSegments(project.room);
+  const seg = segs[part.edgeIndex];
+  if (!seg) return;
+  const tx = (seg.x2 - seg.x1) / seg.len, tz = (seg.z2 - seg.z1) / seg.len;
+  const along = Math.round(((part.point?.x ?? seg.midX) - seg.x1) * tx + ((part.point?.z ?? seg.midZ) - seg.z1) * tz);
+  const res = await showRoomPrompt({
+    title: `Коммуникация на стене ${part.letter}`,
+    fields: [
+      { key: 'kind', label: 'Тип: socket | pipe_water | pipe_sewer | pipe_gas', type: 'text', value: 'socket' },
+      { key: 'offset', label: 'Отступ вдоль стены, мм', value: Math.max(0, along), step: 10 },
+      { key: 'elev', label: 'Высота от пола, мм', value: Math.round(part.y || 1100), step: 10 },
+    ],
+  });
+  if (!res) return;
+  const kindRaw = String(res.kind || 'socket').trim().toLowerCase();
+  const type = kindRaw === 'socket' || kindRaw === 'socket_kitchen' ? 'socket_kitchen'
+    : kindRaw.includes('sewer') ? 'pipe_sewer'
+    : kindRaw.includes('gas') ? 'pipe_gas'
+    : kindRaw.includes('water') || kindRaw.includes('pipe') ? 'pipe_water'
+    : 'socket_kitchen';
+  const wall = seg.wall || 'back';
+  const pose = placeOnWall(project.room, wall, +res.offset || 0, 0, 40);
+  commit();
+  const f = createFixture(type, pose.x, pose.z, pose.rot, +res.elev || 1100);
+  project.fixtures.push(f);
+  refresh();
+  log(`Коммуникация ${fixtureTitle(f)} на стене ${part.letter} @ ${res.offset}/${res.elev}`, 'ok');
+}
+
+function syncPlanLayerButtons() {
+  document.querySelectorAll('[data-plan-layer]').forEach((b) => {
+    b.classList.toggle('active', b.dataset.planLayer === planEditLayer);
+  });
+}
+
+function renderPlanEditor() {
+  const wrap = document.querySelector('#planSvgWrap');
+  if (!wrap || typeof renderPlanSvg !== 'function') return;
+  ensureAdvancedFields(project.room);
+  syncPlanLayerButtons();
+  const verts = planByLayer(project.room, planEditLayer);
+  const selEdge = viewer.roomSel?.kind === 'wall' ? viewer.roomSel.edgeIndex : null;
+  const opts = {
+    verts,
+    layerLabel: planLayerLabel(planEditLayer, project.room),
+    selectedEdge: selEdge,
+    propFocus: viewer.propFocus || null,
+    baseline: _planDragBase,
+    onEdgeClick: (ei) => {
+      unifyRoomPlan(project.room);
+      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ei, letter: edgeLetter(ei) });
+      renderWallPropsPanel({ kind: 'wall', edgeIndex: ei, letter: edgeLetter(ei) });
+      renderPlanEditor();
+    },
+    onVertexDown: (i) => {
+      // снимок ДО изменения — Ctrl+Z вернёт исходное
+      commit();
+      unifyRoomPlan(project.room);
+      ensureAdvancedFields(project.room);
+      const plan = planByLayer(project.room, planEditLayer);
+      _planDragBase = {
+        i,
+        verts: plan.map((p) => ({ x: +p.x, z: +p.z })),
+      };
+    },
+    onVertexDrag: (i, x, z) => {
+      unifyRoomPlan(project.room);
+      ensureAdvancedFields(project.room);
+      const plan = planByLayer(project.room, planEditLayer);
+      if (!plan[i]) return;
+      plan[i].x = x; plan[i].z = z;
+      if (planEditLayer === 'floor') syncSimpleAABB(project.room);
+      opts.baseline = _planDragBase;
+      opts.verts = plan;
+      renderPlanSvg(wrap, project.room, opts);
+    },
+    onVertexUp: () => {
+      _planDragBase = null;
+      refresh();
+      renderWallPropsPanel();
+    },
+  };
+  renderPlanSvg(wrap, project.room, opts);
+  _planLastW = Math.round(wrap.clientWidth);
+  if (!_planResizeObs) {
+    _planResizeObs = new ResizeObserver((entries) => {
+      const w = Math.round(entries[0]?.contentRect?.width || wrap.clientWidth);
+      if (!wrap.isConnected || w < 40 || w === _planLastW) return;
+      _planLastW = w;
+      renderPlanEditor();
+    });
+    _planResizeObs.observe(wrap);
+  }
+}
+
+function renderConstructionsLib() {
+  const el = document.querySelector('#constructionsLib');
+  if (!el || !CONSTRUCTION_CATALOG) return;
+  const activeId = viewer.mode === 'placeCtor' ? (placeCtorEntry?.id || viewer.placeCtor?.id) : null;
+  el.innerHTML = CONSTRUCTION_CATALOG.map((c) => `
+    <button type="button" class="ctor-card${activeId === c.id ? ' active' : ''}" data-ctor="${c.id}">
+      <div class="ctor-ico">${(CTOR_ICONS && CTOR_ICONS[c.id]) || ''}</div>
+      <div class="ctor-title">${c.title}</div>
+      <div class="muted">${c.kind === 'opening' ? `${c.width}×${c.height}` : `${c.w}×${c.d}`}</div>
+    </button>`).join('');
+  el.querySelectorAll('[data-ctor]').forEach((node) => {
+    node.onclick = () => {
+      const c = CONSTRUCTION_CATALOG.find((q) => q.id === node.dataset.ctor);
+      if (!c) return;
+      placeCtorEntry = c;
+      viewer.setMode('placeCtor', c);
+      updateModeBadge();
+      renderConstructionsLib();
+      log(c.kind === 'opening'
+        ? `Постановка «${c.title}»: клик по стене. Esc — отмена.`
+        : `Постановка «${c.title}»: клик по полу. Esc — отмена.`, 'ok');
+    };
+  });
+}
+
+function placeCtorAt(ctor, hit, rot = 0) {
+  if (!ctor || !hit) return;
+  commit();
+  unifyRoomPlan(project.room);
+  if (ctor.kind === 'opening') {
+    const segs = roomWallSegments(project.room);
+    const ei = hit.edgeIndex != null ? +hit.edgeIndex : 0;
+    const seg = segs[ei];
+    const w = +ctor.width || 900;
+    let offset = 500;
+    let wall = hit.wall || seg?.wall || 'back';
+    if (seg && hit.point) {
+      const tx = (seg.x2 - seg.x1) / seg.len;
+      const tz = (seg.z2 - seg.z1) / seg.len;
+      const along = (hit.point.x - seg.x1) * tx + (hit.point.z - seg.z1) * tz;
+      offset = Math.max(0, Math.round(along - w / 2));
+      wall = seg.wall || wall;
+    }
+    let sill = +ctor.sill || 0;
+    if (ctor.type === 'window' && hit.y != null) sill = Math.max(0, Math.round(hit.y - (+ctor.height || 1400) / 2));
+    if (ctor.type === 'door') sill = 0;
+    const op = newOpening({
+      wall, edgeIndex: ei, type: ctor.type,
+      offset, width: w, sill, height: +ctor.height || 2100,
+    });
+    project.room.openings.push(op);
+    sel = { ...emptySel(), openingId: op.id };
+    log(`Проём «${ctor.title}» · ${edgeLetter(ei)} · ${offset}`, 'ok');
+  } else {
+    const w = +ctor.w || 400, d = +ctor.d || 400;
+    const x = Math.round((hit.point?.x ?? 500) - w / 2);
+    const z = Math.round((hit.point?.z ?? 500) - d / 2);
+    const ob = newObstacle({
+      w, d, y0: +ctor.y0 || 0, y1: Math.min(+ctor.y1 || 2700, project.room.height || 2700),
+      name: ctor.name || ctor.title, x, z, rot: rot || 0,
+    });
+    (project.room.obstacles ||= []).push(ob);
+    sel = { ...emptySel(), obstacleId: ob.id };
+    log(`Конструкция «${ctor.title}» @ ${x},${z}`, 'ok');
+  }
+  refresh();
+  renderConstructionsLib();
+}
+
+function initColumnResize() {
+  const left = document.querySelector('aside.left');
+  const right = document.querySelector('aside.right');
+  if (!left || !right) return;
+  const KEY_L = 'ks3d-aside-left-w', KEY_R = 'ks3d-aside-right-w';
+  const apply = (el, w) => {
+    const n = Math.max(180, Math.min(Math.floor(window.innerWidth * 0.5), Math.round(w)));
+    el.style.width = n + 'px';
+    return n;
+  };
+  const savedL = +localStorage.getItem(KEY_L), savedR = +localStorage.getItem(KEY_R);
+  if (savedL >= 180) apply(left, savedL);
+  if (savedR >= 180) apply(right, savedR);
+  document.querySelectorAll('.col-resizer').forEach((handle) => {
+    handle.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      const side = handle.dataset.side;
+      const aside = side === 'left' ? left : right;
+      const startX = e.clientX, startW = aside.getBoundingClientRect().width;
+      handle.classList.add('active');
+      const onMove = (ev) => apply(aside, side === 'left' ? startW + (ev.clientX - startX) : startW - (ev.clientX - startX));
+      const onUp = () => {
+        handle.classList.remove('active');
+        window.removeEventListener('pointermove', onMove);
+        window.removeEventListener('pointerup', onUp);
+        localStorage.setItem(side === 'left' ? KEY_L : KEY_R, String(Math.round(aside.getBoundingClientRect().width)));
+      };
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onUp);
+    });
+  });
+}
+
+function setLineModeUi(on) {
+  viewer.setLineMode(!!on);
+  document.querySelector('#btnLines')?.classList.toggle('active', !!viewer.lineMode);
+  document.querySelector('#btnLinesBar')?.classList.toggle('active', !!viewer.lineMode);
+}
+
+// wire viewer placeCtor / wall hooks if viewer already constructed
+if (typeof viewer !== 'undefined' && viewer.h) {
+  viewer.h.onPlaceCtor = (ctor, hit, rot) => placeCtorAt(ctor, hit, rot);
+  viewer.h.onPlaceCtorHint = (msg) => log(msg, 'warn');
+  viewer.h.onWallSelect = (part) => {
+    if ($('#commsMode')?.checked && part?.kind === 'wall') {
+      placeCommOnWall(part);
+      return;
+    }
+    renderWallPropsPanel(part);
+    if (part?.kind === 'wall') {
+      document.querySelector('.tab[data-tab="room"]')?.click();
+      renderPlanEditor();
+    }
+  };
+  viewer.h.onWallHandleDown = (info) => {
+    commit();
+    unifyRoomPlan(project.room);
+    ensureAdvancedFields(project.room);
+    const layer = info.layer || 'floor';
+    const plan = planByLayer(project.room, layer);
+    _planDragBase = {
+      i: info.vertIndex,
+      verts: plan.map((p) => ({ x: +p.x, z: +p.z })),
+      layer,
+    };
+    planEditLayer = layer;
+    syncPlanLayerButtons();
+    viewer.setWallHandleBaseline?.(_planDragBase);
+  };
+  viewer.h.onWallHandleDrag = (info, x, z) => {
+    unifyRoomPlan(project.room);
+    ensureAdvancedFields(project.room);
+    const layer = info.layer || 'floor';
+    const plan = planByLayer(project.room, layer);
+    if (!plan[info.vertIndex]) return;
+    plan[info.vertIndex].x = Math.round(x / 10) * 10;
+    plan[info.vertIndex].z = Math.round(z / 10) * 10;
+    if (layer === 'floor') syncSimpleAABB(project.room);
+    // лёгкий live-preview без полной пересборки мебели
+    if (!viewer._wallHandleDragRaf) {
+      viewer._wallHandleDragRaf = requestAnimationFrame(() => {
+        viewer._wallHandleDragRaf = 0;
+        viewer.setRoom(project.room);
+        viewer.setWallHandleBaseline?.(_planDragBase);
+        renderPlanEditor();
+      });
+    }
+  };
+  viewer.h.onWallHandleUp = () => {
+    _planDragBase = null;
+    viewer.setWallHandleBaseline?.(null);
+    refresh();
+    renderWallPropsPanel();
+  };
+  const prevCancel = viewer.h.onCancelPlace;
+  viewer.h.onCancelPlace = () => {
+    placeCtorEntry = null;
+    prevCancel?.();
+    viewer.setMode('select');
+    if (typeof updateModeBadge === 'function') updateModeBadge();
+    renderConstructionsLib();
+  };
+}
+
+document.querySelector('#btnLinesBar')?.addEventListener('click', () => setLineModeUi(!viewer.lineMode));
+document.querySelectorAll('#viewCmdBar [data-cam]').forEach((b) => {
+  b.addEventListener('click', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    const act = b.dataset.cam;
+    if (act === 'zoomIn') viewer.zoomCamera?.(1 / 1.2);
+    else if (act === 'zoomOut') viewer.zoomCamera?.(1.2);
+    else if (act === 'reset') viewer.setView(viewer.navMode === 'orbit' ? '3d' : (viewer.navMode || '3d'));
+    else if (act === 'left') viewer.orbitCamera?.(-15, 0);
+    else if (act === 'right') viewer.orbitCamera?.(15, 0);
+    else if (act === 'up') viewer.orbitCamera?.(0, 12);
+    else if (act === 'down') viewer.orbitCamera?.(0, -12);
+  });
+});
+
+document.querySelectorAll('[data-plan-layer]').forEach((b) => {
+  b.onclick = () => { planEditLayer = b.dataset.planLayer; syncPlanLayerButtons(); renderPlanEditor(); };
+});
+if (document.querySelector('#btnAddFloorVert')) {
+  document.querySelector('#btnAddFloorVert').onclick = () => {
+    commit();
+    ensureAdvancedFields(project.room);
+    const selEi = viewer.roomSel?.kind === 'wall' ? viewer.roomSel.edgeIndex : null;
+    if (selEi != null) {
+      const ni = insertVertexOnEdge(project.room, selEi);
+      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ni, letter: edgeLetter(ni) });
+      log('Вершина на стене ' + edgeLetter(selEi), 'ok');
+    } else {
+      const last = project.room.planFloor[project.room.planFloor.length - 1];
+      const p = { id: 'v' + Date.now().toString(36), x: (last?.x || 0) + 500, z: last?.z || 0 };
+      project.room.planFloor.push(p);
+      project.room.planAtRef.push({ ...p, id: p.id + 'r' });
+      (project.room.planCeiling ||= []).push({ ...p, id: p.id + 'c' });
+      syncSimpleAABB(project.room);
+    }
+    refresh();
+  };
+}
+
+initColumnResize();
+try { renderConstructionsLib(); } catch (_) {}
+try { renderPlanEditor(); } catch (_) {}
+
 refresh();
 viewer.setView('3d');
