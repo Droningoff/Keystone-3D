@@ -424,25 +424,22 @@ function adjacency(g) {
 }
 
 /**
- * Упорядоченные точки контура (полилиния по рёбрам).
+ * Упорядоченные вершины контура (полилиния по рёбрам).
  * Для дерева стен — путь от листа к листу; для цикла — обход кольца без дубля старта.
  */
-export function graphToOrderedPoints(g) {
+export function graphToOrderedVertices(g) {
   if (!g.vertices.length) return [];
-  if (!g.edges.length) {
-    const v = g.vertices[0];
-    return [{ x: v.x, z: v.z }];
-  }
+  if (!g.edges.length) return [{ ...g.vertices[0] }];
   const adj = adjacency(g);
   const deg = (id) => adj.get(id)?.length || 0;
   const leaves = g.vertices.filter((v) => deg(v.id) === 1);
   const startId = leaves[0]?.id || g.vertices[0].id;
 
-  const pts = [];
+  const out = [];
   const used = new Set();
   let cur = startId;
   const start = getVertex(g, cur);
-  pts.push({ x: start.x, z: start.z });
+  out.push({ id: start.id, x: start.x, z: start.z });
 
   while (used.size < g.edges.length) {
     const next = (adj.get(cur) || []).find((n) => !used.has(n.edgeId));
@@ -451,11 +448,54 @@ export function graphToOrderedPoints(g) {
     cur = next.to;
     const v = getVertex(g, cur);
     if (!v) break;
-    // замкнутый цикл: вернулись в старт — не дублируем точку
     if (cur === startId && used.size === g.edges.length) break;
-    pts.push({ x: v.x, z: v.z });
+    out.push({ id: v.id, x: v.x, z: v.z });
   }
-  return pts;
+  return out;
+}
+
+/** Упорядоченные точки контура (полилиния по рёбрам). */
+export function graphToOrderedPoints(g) {
+  return graphToOrderedVertices(g).map((v) => ({ x: v.x, z: v.z }));
+}
+
+/** Глубокая копия графа */
+export function cloneGraph(g) {
+  return JSON.parse(JSON.stringify(g || { vertices: [], edges: [] }));
+}
+
+/** Совпадает ли топология (id вершин/рёбер и концы рёбер) */
+export function sameGraphTopology(a, b) {
+  if (!a || !b) return false;
+  if (a.vertices.length !== b.vertices.length || a.edges.length !== b.edges.length) return false;
+  const av = new Set(a.vertices.map((v) => v.id));
+  if (b.vertices.some((v) => !av.has(v.id))) return false;
+  const ae = new Map(a.edges.map((e) => [e.id, e]));
+  return b.edges.every((e) => {
+    const x = ae.get(e.id);
+    return x && ((x.from === e.from && x.to === e.to) || (x.from === e.to && x.to === e.from));
+  });
+}
+
+/**
+ * Подтянуть топологию уровня к эталонному (пол): те же id, координаты старых вершин сохраняются.
+ */
+export function syncGraphTopology(target, template) {
+  if (!template?.edges?.length) return { vertices: [], edges: [] };
+  if (sameGraphTopology(target, template)) return target || cloneGraph(template);
+  const oldPos = new Map((target?.vertices || []).map((v) => [v.id, v]));
+  const oldLock = new Map((target?.edges || []).map((e) => [e.id, e.lock]));
+  const g = cloneGraph(template);
+  g.vertices.forEach((v) => {
+    const o = oldPos.get(v.id);
+    if (o) { v.x = o.x; v.z = o.z; }
+  });
+  g.edges.forEach((e) => {
+    if (oldLock.has(e.id)) e.lock = !!oldLock.get(e.id);
+    else e.lock = false;
+    e.len = edgeLength(g, e);
+  });
+  return g;
 }
 
 /** Граф — замкнутый контур (цикл, покрывающий все рёбра) */

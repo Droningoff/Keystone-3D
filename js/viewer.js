@@ -54,6 +54,7 @@ export class Viewer {
     this.showGrid = true;
     this.showDims = true;
     this.dimMode = 'basic'; // none | basic | all — как BPlanner
+    this.roomEdgeHelpers = [];
     this.layers = {
       ceiling: true, walls: true, floor: true,
       appliances: true, communications: true, furniture: true,
@@ -423,6 +424,7 @@ export class Viewer {
     }
     this._clearRoomSelOverlay();
 
+    const edgesOn = this.room?.showRoomEdges === true;
     for (const m of this.wallMeshes || []) {
       const mat = m.material;
       const on = sel?.kind === 'wall' && sel.edgeIndex != null && m.userData.edgeIndex === sel.edgeIndex;
@@ -430,7 +432,8 @@ export class Viewer {
         mat.emissive = new THREE.Color(on ? 0x0d9488 : 0x000000);
         mat.emissiveIntensity = on ? 0.55 : 0;
       }
-      if (m.userData._edgeHelper) m.userData._edgeHelper.visible = false;
+      // окантовка помещения — отдельная опция; выделение стены рисует свой overlay
+      if (m.userData._edgeHelper) m.userData._edgeHelper.visible = edgesOn;
       if (on) this._addSelOverlayForMesh(m);
     }
 
@@ -735,6 +738,23 @@ export class Viewer {
     g.add(ceil);
     this.ceilMesh = ceil;
 
+    // Окантовка рёбер комнаты (опция) — углы стен/пола/потолка не сливаются
+    this.roomEdgeHelpers = [];
+    const edgeMat = () => new THREE.LineBasicMaterial({
+      color: 0x3d4654, transparent: true, opacity: 0.9, depthTest: true, depthWrite: false,
+    });
+    const attachRoomEdges = (mesh, threshold = 20) => {
+      if (!mesh?.geometry) return;
+      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry, threshold), edgeMat());
+      edges.renderOrder = 3;
+      edges.visible = false;
+      mesh.add(edges);
+      mesh.userData._edgeHelper = edges;
+      this.roomEdgeHelpers.push(edges);
+    };
+    attachRoomEdges(floor, 1);
+    attachRoomEdges(ceil, 1);
+
     for (const name of ['back', 'front', 'left', 'right']) {
       const wg = new THREE.Group();
       wg.userData.wall = name;
@@ -770,10 +790,7 @@ export class Viewer {
         plane: 'wall', wall: s.wall, edgeIndex: s.edgeIndex, pickPlane: true,
         roomPart: 'wall', letter: edgeLetter(s.edgeIndex),
       };
-      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: 0xf0c000 }));
-      edges.visible = false;
-      mesh.add(edges);
-      mesh.userData._edgeHelper = edges;
+      attachRoomEdges(mesh, 15);
       wg.add(mesh);
       this.wallMeshes.push(mesh);
     }
@@ -826,6 +843,7 @@ export class Viewer {
       this.wallLetterGroup.add(lab);
     }
     this.setWallLettersVisible(room.showWallLetters !== false);
+    this.setRoomEdgesVisible(room.showRoomEdges === true);
 
     for (const op of room.openings || []) {
       this._addOpening(this.wallGroups[op.wall] || g, op, L, D, H);
@@ -1109,10 +1127,20 @@ export class Viewer {
     });
   }
 
+  /** Окантовка рёбер стен/пола/потолка — чтобы углы не сливались */
+  setRoomEdgesVisible(v) {
+    const on = !!v;
+    if (this.room) this.room.showRoomEdges = on;
+    for (const e of this.roomEdgeHelpers || []) {
+      e.visible = on;
+    }
+  }
+
   _dimLabel(g, text, x, y, z) {
+    // как eKitchen: только число, единицы подразумеваются (мм)
     const div = document.createElement('div');
     div.className = 'mlabel dim';
-    div.textContent = text + ' мм';
+    div.textContent = String(text).replace(/\s*мм\s*$/i, '').trim();
     const lab = new CSS2DObject(div);
     lab.position.set(x, y, z);
     g.add(lab);

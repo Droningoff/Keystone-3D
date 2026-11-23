@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261110a">
+  <link rel="stylesheet" href="css/app.css?v=20261123k">
   <script type="importmap">
   {
     "imports": {
@@ -166,6 +166,8 @@
           <label>Высота столешницы yRef, мм <input type="number" id="roomYRef" step="10" value="900"></label>
           <label>Цвет пола <input type="color" id="floorColor" value="#cfc6b8"></label>
           <label>Цвет стен (общий) <input type="color" id="wallColor" value="#f6f4f0"></label>
+          <label class="chk"><input type="checkbox" id="showRoomEdges"> Окантовка стен, пола и потолка</label>
+          <p class="muted" style="font-size:12px;margin:2px 0 0">Линии по рёбрам — углы не сливаются, удобнее ставить модуль в угол.</p>
         </details>
 
         <details class="room-block" open>
@@ -404,6 +406,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261123i"></script>
+  <script type="module" src="js/main.js?v=20261123k"></script>
 </body>
 </html>

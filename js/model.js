@@ -149,6 +149,7 @@ export function defaultRoom() {
     wallColors: {},
     show: 'auto',
     showWallLetters: true,
+    showRoomEdges: false, // окантовка стен/пола/потолка линией (углы виднее)
   };
 }
 
@@ -210,6 +211,7 @@ export function migrateProject(prj) {
   }
   if (!prj.room.show) prj.room.show = 'auto';
   if (prj.room.showWallLetters == null) prj.room.showWallLetters = true;
+  if (prj.room.showRoomEdges == null) prj.room.showRoomEdges = false;
   if (!Array.isArray(prj.room.features)) prj.room.features = [];
   if (prj.room.yRef == null) prj.room.yRef = 900;
   if (!prj.room.ceiling) prj.room.ceiling = { mode: 'flat', height: prj.room.height || 2700, samples: [] };

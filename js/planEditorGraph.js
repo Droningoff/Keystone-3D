@@ -5,15 +5,18 @@ import {
   emptyGraph, addVertex, addEdge, edgesAtVertex, edgeDirection,
   graphBBox, getVertex, undoLastEdge, chainToGraph, norm360,
   edgeOutwardNormal, setEdgeLength, setEdgeHeading, angBetween, edgeLength,
-  graphToOrderedPoints, isGraphClosed, graphCentroid, roomCornerAngle, moveVertex,
-  wallTableAngle, setEdgeInteriorAngle,
-} from './roomGraph.js?v=20261123i';
+  graphToOrderedPoints, graphToOrderedVertices, isGraphClosed, graphCentroid,
+  roomCornerAngle, moveVertex, wallTableAngle, setEdgeInteriorAngle,
+  cloneGraph, syncGraphTopology,
+} from './roomGraph.js?v=20261123k';
 
 const RAD = Math.PI / 180;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const r10 = (v) => Math.round(v / 10) * 10;
 const r1 = (v) => Math.round(v * 10) / 10;
 const fmtA = (a) => String(r1(a)).replace('.', ',');
+const LEVEL_COLORS = ['#1f6feb', '#b4530a', '#2e9d4f', '#8e44ad', '#c0392b', '#16a085'];
+const FIXED = new Set(['floor', 'ceil']);
 
 const snapToAxis = (deg, threshold = 8) => {
   const axes = [0, 90, 180, 270, 360];
@@ -52,9 +55,13 @@ const HTML = `
       <div class="btnrow">
         <button data-a="flip" title="Комната окажется по другую сторону стен">Сторона комнаты ⇄</button>
       </div>
+      <h4>Уровни замера</h4>
+      <div data-r="levels"></div>
+      <button data-a="addLevel">+ Уровень</button>
+      <p class="muted" style="font-size:12px;margin:4px 0 8px">На каждом уровне свои длины/углы — для наклона и кривизны стен.</p>
       <h4 data-r="wallsTitle">Стены</h4>
       <div data-r="walls"></div>
-      <p class="muted" style="font-size:12px;margin:8px 0 0">Клик по вершине — рисовать от неё. Замыкать контур не обязательно.</p>
+      <p class="muted" style="font-size:12px;margin:8px 0 0">Новые стены — на уровне «Пол». На других уровнях правьте длины и углы. Замыкать не обязательно.</p>
       <label class="pe-thick">Толщина стен, мм <input type="number" data-r="thick" step="10" min="10"></label>
     </div>
   </div>
@@ -84,19 +91,38 @@ export function openPlanEditorGraph({
   onApply,
   onCancel,
 } = {}) {
+  const mkLevel = (l) => {
+    const ch = l.chain || null;
+    const graph = ch?.walls?.length ? chainToGraph(ch) : { vertices: [], edges: [] };
+    return { id: l.id, name: l.name, h: +l.h || 0, graph };
+  };
   const lv0 = (levels?.length
-    ? levels.map((l) => ({ id: l.id, name: l.name, h: +l.h || 0, chain: l.chain || null }))
+    ? levels.map(mkLevel)
     : [
-      { id: 'floor', name: 'Пол', h: 0, chain: null },
-      { id: 'ceil', name: 'Потолок', h: 2700, chain: null },
+      { id: 'floor', name: 'Пол', h: 0, graph: { vertices: [], edges: [] } },
+      { id: 'ceil', name: 'Потолок', h: 2700, graph: { vertices: [], edges: [] } },
     ]);
-  if (!lv0.some((l) => l.id === 'floor')) lv0.unshift({ id: 'floor', name: 'Пол', h: 0, chain: null });
-  if (!lv0.some((l) => l.id === 'ceil')) lv0.push({ id: 'ceil', name: 'Потолок', h: 2700, chain: null });
+  if (!lv0.some((l) => l.id === 'floor')) lv0.unshift({ id: 'floor', name: 'Пол', h: 0, graph: { vertices: [], edges: [] } });
+  if (!lv0.some((l) => l.id === 'ceil')) lv0.push({ id: 'ceil', name: 'Потолок', h: 2700, graph: { vertices: [], edges: [] } });
 
-  const floorChain = lv0.find((l) => l.id === 'floor')?.chain || chain;
-  let g = floorChain?.walls?.length ? chainToGraph(floorChain) : { vertices: [], edges: [] };
+  // Если передали только chain без levels[].chain — положить на пол
+  if (chain?.walls?.length && !lv0.find((l) => l.id === 'floor').graph.edges.length) {
+    lv0.find((l) => l.id === 'floor').graph = chainToGraph(chain);
+  }
+  // Остальные уровни без графа — копия пола
+  {
+    const fg = lv0.find((l) => l.id === 'floor').graph;
+    lv0.forEach((l) => {
+      if (l.id === 'floor') return;
+      if (!l.graph?.edges?.length && fg.edges.length) l.graph = cloneGraph(fg);
+    });
+  }
+
+  let g = lv0.find((l) => l.id === 'floor').graph;
 
   const st = {
+    levels: lv0,
+    lv: 'floor',
     mode: g.edges.length ? 'edit' : 'start',
     thick: +wallThick || 100,
     cur: null,
@@ -104,12 +130,50 @@ export function openPlanEditorGraph({
     typed: { len: null, ang: null },
     sel: null,
     activeVertex: null,
-    refEdge: null, // ребро, относительно которого задаём угол при рисовании
+    refEdge: null,
     view: null,
     press: null,
     flip: 1,
     lastAng: 90,
   };
+  const L = (id) => st.levels.find((l) => l.id === id);
+  const lvColor = (id) => LEVEL_COLORS[Math.max(0, st.levels.findIndex((l) => l.id === id)) % LEVEL_COLORS.length];
+  const onFloor = () => st.lv === 'floor';
+
+  function saveActiveGraph() {
+    const lv = L(st.lv);
+    if (lv) lv.graph = g;
+  }
+
+  /** Топология других уровней как у пола; координаты сохраняются где возможно */
+  function syncLevelsTopology() {
+    saveActiveGraph();
+    const floor = L('floor');
+    if (!floor) return;
+    const fg = st.lv === 'floor' ? g : floor.graph;
+    floor.graph = fg;
+    st.levels.forEach((l) => {
+      if (l.id === 'floor') return;
+      l.graph = syncGraphTopology(l.graph, fg);
+    });
+    if (st.lv !== 'floor') g = L(st.lv).graph;
+  }
+
+  function selectLevel(id) {
+    if (!L(id) || id === st.lv) return;
+    saveActiveGraph();
+    if (st.mode === 'draw') finishDraw();
+    st.lv = id;
+    g = L(id).graph;
+    st.sel = null;
+    st.activeVertex = null;
+    st.refEdge = null;
+    st.typed = { len: null, ang: null };
+    if (id === 'floor' && !g.edges.length && !g.vertices.length) st.mode = 'start';
+    else st.mode = g.edges.length || g.vertices.length ? 'edit' : 'start';
+    sideSig = '';
+    render();
+  }
 
   const back = document.createElement('div');
   back.className = 'pe-back';
@@ -227,11 +291,12 @@ export function openPlanEditorGraph({
 
       const newVId = addVertex(g, r10(r.Q.x), r10(r.Q.z));
       const edge = addEdge(g, st.activeVertex, newVId, false);
-      st.typed = { len: null, ang: null };
-      st.refEdge = edge?.id || null;
-      st.activeVertex = newVId;
-      sideSig = '';
-      render();
+    st.typed = { len: null, ang: null };
+    st.refEdge = edge?.id || null;
+    st.activeVertex = newVId;
+    if (onFloor()) syncLevelsTopology();
+    sideSig = '';
+    render();
     } finally {
       committing = false;
     }
@@ -248,6 +313,7 @@ export function openPlanEditorGraph({
   }
 
   function undoEdge() {
+    if (!onFloor()) return hint('Удалять стены можно только на уровне «Пол»');
     if (!g.edges.length) return;
     const last = g.edges[g.edges.length - 1];
     if (last.lock) return hint('Последняя стена зафиксирована — снимите «Фикс.»');
@@ -258,6 +324,7 @@ export function openPlanEditorGraph({
       st.refEdge = edgesAtVertex(g, st.activeVertex).slice(-1)[0]?.id || null;
     }
     if (!g.edges.length && st.mode === 'edit') st.mode = g.vertices.length ? 'draw' : 'start';
+    syncLevelsTopology();
     sideSig = '';
     render();
   }
@@ -273,12 +340,17 @@ export function openPlanEditorGraph({
 
   function renderHint() {
     if (R('hint').classList.contains('warn')) return;
+    const lv = L(st.lv);
+    if (!onFloor()) {
+      R('hint').textContent = `Уровень «${lv.name}» (${Math.round(+lv.h)} мм): правьте длины и углы для наклона стен. Новые стены рисуются на «Пол».`;
+      return;
+    }
     R('hint').textContent = {
       start: 'Кликните точку, от которой пойдёт первая стена.',
       draw: st.activeVertex
-        ? 'Клик — поставить стену. Угол шагом 15° (Alt — свободно). Цифры + Enter — точная длина. Клик по другой вершине — рисовать от неё. Esc — закончить.'
+        ? 'Клик — поставить стену. Угол шагом 15° (Alt — свободно). Цифры + Enter — точная длина. Esc — закончить.'
         : 'Выберите вершину, от которой продолжить стену.',
-      edit: 'Потяните вершину — сдвинуть угол. Короткий клик по вершине — рисовать от неё. Длины/углы — в таблице справа. Колесо — масштаб.',
+      edit: 'Потяните вершину — сдвинуть угол. Короткий клик — рисовать от неё. Уровни справа — разные высоты замера.',
     }[st.mode];
   }
 
@@ -287,13 +359,26 @@ export function openPlanEditorGraph({
   function renderSide() {
     // Не пересобирать таблицу, пока пользователь печатает в поле — иначе «89» + старое «90» → «8990»
     const active = document.activeElement;
-    if (active?.closest?.('[data-r="walls"]') && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName || '')) {
+    if (active?.closest?.('[data-r="walls"], [data-r="levels"]') && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName || '')) {
       return;
     }
-    const sig = JSON.stringify([g.vertices, g.edges, st.sel, st.thick, st.flip]);
+    const sig = JSON.stringify([st.levels.map((l) => [l.id, l.name, l.h, l.graph]), st.lv, st.sel, st.thick, st.flip]);
     if (sig === sideSig) return;
     sideSig = sig;
     const focusKey = active?.dataset?.key;
+
+    R('levels').innerHTML = `<table class="pe-table">${[...st.levels].sort((a, b) => +a.h - +b.h).map((l) => `
+      <tr class="${l.id === st.lv ? 'sel' : ''}">
+        <td><button type="button" class="pe-lvbtn" data-lvsel="${l.id}" title="Править контур этого уровня"
+          style="border-color:${lvColor(l.id)}">${l.id === st.lv ? '●' : '○'}</button></td>
+        <td><input data-key="l${l.id}n" data-lv="${l.id}" data-f="name" value="${esc(l.name)}"></td>
+        <td><input type="number" step="10" data-key="l${l.id}h" data-lv="${l.id}" data-f="h" value="${Math.round(+l.h)}"
+          ${l.id === 'floor' ? 'disabled' : ''} title="Высота уровня от пола, мм"></td>
+        <td>${FIXED.has(l.id) ? '' : `<button type="button" class="danger" data-del-lv="${l.id}" title="Удалить уровень">×</button>`}</td>
+      </tr>`).join('')}</table>`;
+
+    const lv = L(st.lv);
+    R('wallsTitle').textContent = `Стены — «${lv.name}»`;
 
     const rows = g.edges.map((e, i) => {
       const info = wallTableAngle(g, e);
@@ -313,10 +398,10 @@ export function openPlanEditorGraph({
 
     R('walls').innerHTML = rows.length
       ? `<table class="pe-table"><tr><th>Стена</th><th>Длина, мм</th><th>Угол, °</th><th>Фикс.</th></tr>${rows.join('')}</table>`
-      : '<p class="muted">Стен пока нет. Нарисуйте первую стену, затем кликните её левый или правый конец, чтобы продолжить.</p>';
+      : '<p class="muted">Стен пока нет. Нарисуйте на уровне «Пол», затем настройте другие уровни.</p>';
     R('thick').value = st.thick;
     R('sum').textContent = g.edges.length
-      ? `Вершин: ${g.vertices.length} · Стен: ${g.edges.length}`
+      ? `Вершин: ${g.vertices.length} · Стен: ${g.edges.length} · Уровней: ${st.levels.length}`
       : '';
     if (focusKey) back.querySelector(`[data-key="${focusKey}"]`)?.focus();
   }
@@ -340,6 +425,19 @@ export function openPlanEditorGraph({
     </defs>`);
     out.push(`<rect x="${v.x}" y="${v.y}" width="${v.w}" height="${v.h}" fill="#fbfaf7"/>`);
     out.push(`<rect x="${v.x}" y="${v.y}" width="${v.w}" height="${v.h}" fill="url(#peG5)"/>`);
+
+    // Контуры других уровней — пунктиром
+    saveActiveGraph();
+    for (const l of st.levels) {
+      if (l.id === st.lv || !l.graph?.edges?.length) continue;
+      const pts = graphToOrderedPoints(l.graph);
+      if (pts.length < 2) continue;
+      if (isGraphClosed(l.graph)) pts.push(pts[0]);
+      out.push(`<polyline points="${pts.map((q) => `${q.x},${q.z}`).join(' ')}" fill="none" stroke="${lvColor(l.id)}"
+        stroke-width="${1.5 * sw}" stroke-dasharray="${7 * k} ${5 * k}" opacity="0.75"/>`);
+      out.push(`<text x="${pts[0].x + 10 * k}" y="${pts[0].z - 10 * k}" font-size="${fs * 0.85}"
+        style="fill:${lvColor(l.id)}">${esc(l.name)}</text>`);
+    }
 
     const T = st.thick;
     g.edges.forEach((edge, i) => {
@@ -416,7 +514,8 @@ export function openPlanEditorGraph({
 
     const btnDraw = back.querySelector('[data-a="draw"]');
     btnDraw.textContent = st.mode === 'draw' ? 'Готово' : g.edges.length ? 'Продолжить стены' : 'Рисовать';
-    back.querySelector('[data-a="undo"]').disabled = !g.edges.length;
+    btnDraw.disabled = !onFloor();
+    back.querySelector('[data-a="undo"]').disabled = !(onFloor() && g.edges.length);
     back.querySelector('[data-a="flip"]').disabled = !g.edges.length;
     renderHint();
     renderSide();
@@ -445,6 +544,13 @@ export function openPlanEditorGraph({
       }
       sideSig = '';
       render();
+    } else if (t.dataset.lv != null) {
+      const l = L(t.dataset.lv);
+      if (!l) return;
+      if (t.dataset.f === 'name') l.name = t.value.trim() || l.name;
+      else if (l.id !== 'floor') l.h = Math.max(1, Math.round(+t.value || 0));
+      sideSig = '';
+      render();
     } else if (t === R('thick')) {
       st.thick = Math.max(10, Math.round(+t.value || 100));
       sideSig = '';
@@ -453,8 +559,8 @@ export function openPlanEditorGraph({
   });
   // После ухода с поля — можно обновить таблицу актуальными значениями
   side.addEventListener('focusout', (e) => {
-    if (!e.target?.closest?.('[data-r="walls"]')) return;
-    if (e.relatedTarget?.closest?.('[data-r="walls"]')) return;
+    if (!e.target?.closest?.('[data-r="walls"], [data-r="levels"]')) return;
+    if (e.relatedTarget?.closest?.('[data-r="walls"], [data-r="levels"]')) return;
     sideSig = '';
     renderSide();
   });
@@ -462,6 +568,28 @@ export function openPlanEditorGraph({
     if (e.target.matches?.('input[type="number"]')) e.target.select();
   });
   side.addEventListener('click', (e) => {
+    const del = e.target.closest('[data-del-lv]');
+    if (del) {
+      const was = st.lv === del.dataset.delLv;
+      st.levels = st.levels.filter((l) => l.id !== del.dataset.delLv);
+      if (was || !L(st.lv)) {
+        saveActiveGraph();
+        st.lv = 'floor';
+        g = L('floor').graph;
+        st.sel = null;
+        st.activeVertex = null;
+        st.refEdge = null;
+        st.mode = g.edges.length || g.vertices.length ? 'edit' : 'start';
+      }
+      sideSig = '';
+      render();
+      return;
+    }
+    const pick = e.target.closest('[data-lvsel]');
+    if (pick) {
+      selectLevel(pick.dataset.lvsel);
+      return;
+    }
     const row = e.target.closest('[data-row]');
     if (row && e.target.tagName !== 'INPUT') {
       st.sel = row.dataset.row;
@@ -527,7 +655,9 @@ export function openPlanEditorGraph({
 
     // Старт: клик ставит первую точку сразу (как ожидает пользователь)
     if (e.button === 0 && st.mode === 'start') {
+      if (!onFloor()) return hint('Рисовать можно только на уровне «Пол»');
       g = emptyGraph(r10(st.cur.x), r10(st.cur.z));
+      L('floor').graph = g;
       st.mode = 'draw';
       st.activeVertex = g.vertices[0].id;
       st.refEdge = null;
@@ -576,7 +706,13 @@ export function openPlanEditorGraph({
     if (e.button !== 0) return;
 
     if (pr?.vtx && !pr.moved) {
-      // Короткий клик по вершине — начать/продолжить рисование от неё
+      // Короткий клик по вершине — начать/продолжить рисование от неё (только пол)
+      if (!onFloor()) {
+        st.sel = null;
+        sideSig = '';
+        render();
+        return;
+      }
       st.activeVertex = pr.vtx;
       st.refEdge = edgesAtVertex(g, pr.vtx).slice(-1)[0]?.id || null;
       st.mode = 'draw';
@@ -587,6 +723,8 @@ export function openPlanEditorGraph({
     }
 
     if (pr?.vtx && pr.moved) {
+      // Длина рёбер могла измениться — обновить; топологию других уровней не трогаем
+      g.edges.forEach((edge) => { edge.len = edgeLength(g, edge); });
       sideSig = '';
       render();
       return;
@@ -620,58 +758,78 @@ export function openPlanEditorGraph({
     render();
   }, { passive: false });
 
+  /** Ориентация контура: центроид слева по ходу; учёт «Сторона комнаты» */
+  function orientVertexOrder(graph, verts) {
+    let ordered = verts.map((v) => ({ id: v.id, x: Math.round(v.x), z: Math.round(v.z) }));
+    if (ordered.length >= 3) {
+      const c = graphCentroid(graph);
+      let leftVotes = 0;
+      for (let i = 0; i < ordered.length - 1; i++) {
+        const dx = ordered[i + 1].x - ordered[i].x, dz = ordered[i + 1].z - ordered[i].z;
+        const cross = dx * (c.z - ordered[i].z) - dz * (c.x - ordered[i].x);
+        if (cross > 0) leftVotes++;
+        else leftVotes--;
+      }
+      if (leftVotes < 0) ordered = ordered.slice().reverse();
+    }
+    if (st.flip < 0) ordered = ordered.slice().reverse();
+    return ordered;
+  }
+
   const actions = {
     cancel: () => { close(); onCancel?.(); },
     apply: () => {
-      if (!g.edges.length) return hint('Нарисуйте хотя бы одну стену');
-      g.edges.forEach((e) => { e.len = edgeLength(g, e); });
+      saveActiveGraph();
+      const floor = L('floor');
+      const fg = floor?.graph;
+      if (!fg?.edges?.length) return hint('Нарисуйте хотя бы одну стену на уровне «Пол»');
+      syncLevelsTopology();
 
-      let pts = graphToOrderedPoints(g).map((p) => ({ x: Math.round(p.x), z: Math.round(p.z) }));
-      if (pts.length < 2) return hint('Нарисуйте хотя бы одну стену');
+      st.levels.forEach((l) => {
+        (l.graph?.edges || []).forEach((e) => { e.len = edgeLength(l.graph, e); });
+      });
 
-      // Сторона комнаты: обход так, чтобы центроид был справа по ходу (как в roomPlan)
-      if (pts.length >= 3) {
-        const c = graphCentroid(g);
-        let rightVotes = 0;
-        for (let i = 0; i < pts.length - 1; i++) {
-          const dx = pts[i + 1].x - pts[i].x, dz = pts[i + 1].z - pts[i].z;
-          const len = Math.hypot(dx, dz) || 1;
-          // «вправо» от направления = (dz, -dx) в наших осях? roomPlan: комната справа → inward = (tz, -tx) wait
-          // В roomPlan nx,nz наружу = (dz,-dx)/len при CCW; внутрь = -n = (-dz, dx)
-          // «Справа по ходу» (tx,tz)=(dx,dz)/len → right = (tz, -tx) = (dz, -dx)/len = наружу при CCW
-          // Значит при обходе CCW наружу справа. Центроид должен быть СЛЕВА (= внутрь).
-          const cross = dx * (c.z - pts[i].z) - dz * (c.x - pts[i].x);
-          if (cross > 0) rightVotes++; // центроид слева от направленного ребра
-          else rightVotes--;
+      const floorVerts = graphToOrderedVertices(fg);
+      if (floorVerts.length < 2) return hint('Нарисуйте хотя бы одну стену');
+      const floorOrder = orientVertexOrder(fg, floorVerts);
+      let floorPts = floorOrder.map((v) => ({ x: v.x, z: v.z }));
+
+      const closed = isGraphClosed(fg)
+        || (floorPts.length >= 3
+          && Math.hypot(floorPts[0].x - floorPts[floorPts.length - 1].x, floorPts[0].z - floorPts[floorPts.length - 1].z) < 30);
+      if (closed && floorPts.length >= 3
+        && Math.hypot(floorPts[0].x - floorPts[floorPts.length - 1].x, floorPts[0].z - floorPts[floorPts.length - 1].z) < 30) {
+        floorPts = floorPts.slice(0, -1);
+      }
+      const orderIds = floorOrder.map((v) => v.id);
+      if (closed && orderIds.length > floorPts.length) orderIds.pop();
+
+      const outLevels = [...st.levels].sort((a, b) => +a.h - +b.h).map((l) => {
+        if (l.id === 'floor') {
+          return { id: l.id, name: l.name, h: Math.round(+l.h || 0), pts: floorPts.map((p) => ({ ...p })) };
         }
-        if (rightVotes < 0) pts = pts.slice().reverse();
-      }
-      if (st.flip < 0) pts = pts.slice().reverse();
-
-      const closed = isGraphClosed(g)
-        || (pts.length >= 3 && Math.hypot(pts[0].x - pts[pts.length - 1].x, pts[0].z - pts[pts.length - 1].z) < 30);
-      if (closed && pts.length >= 3
-        && Math.hypot(pts[0].x - pts[pts.length - 1].x, pts[0].z - pts[pts.length - 1].z) < 30) {
-        pts = pts.slice(0, -1);
-      }
-
-      const outLevels = lv0.map((l) => ({
-        id: l.id,
-        name: l.name,
-        h: Math.round(+l.h || 0),
-        pts: pts.map((p) => ({ x: p.x, z: p.z })),
-      }));
+        const byId = new Map((l.graph?.vertices || []).map((v) => [v.id, v]));
+        let pts = orderIds.map((id) => {
+          const v = byId.get(id);
+          return v ? { x: Math.round(v.x), z: Math.round(v.z) } : null;
+        }).filter(Boolean);
+        if (pts.length < 2) {
+          pts = orientVertexOrder(l.graph || fg, graphToOrderedVertices(l.graph || fg))
+            .map((v) => ({ x: v.x, z: v.z }));
+        }
+        return { id: l.id, name: l.name, h: Math.round(+l.h || 0), pts };
+      });
 
       close();
       onApply?.({ closed: !!closed, levels: outLevels, wallThick: st.thick });
     },
     fit: () => { fit(); render(); },
     draw: () => {
+      if (!onFloor()) return hint('Новые стены рисуются только на уровне «Пол»');
       if (st.mode === 'draw') return finishDraw();
       if (!g.vertices.length) { st.mode = 'start'; sideSig = ''; render(); return; }
       st.mode = 'draw';
       if (!st.activeVertex) {
-        // удобный старт: конец с одной стеной (свободный угол) или первая вершина
         const leaf = g.vertices.find((v) => edgesAtVertex(g, v.id).length === 1);
         st.activeVertex = leaf?.id || g.vertices[0].id;
         st.refEdge = edgesAtVertex(g, st.activeVertex).slice(-1)[0]?.id || null;
@@ -682,14 +840,29 @@ export function openPlanEditorGraph({
     undo: undoEdge,
     flip: () => { st.flip *= -1; sideSig = ''; render(); },
     clear: () => {
-      if (g.edges.length && !confirm('Удалить все стены и начать с новой точки?')) return;
-      g = { vertices: [], edges: [] };
+      if (!onFloor()) return hint('Очистка — на уровне «Пол»');
+      const any = st.levels.some((l) => l.graph?.edges?.length);
+      if (any && !confirm('Удалить все стены на всех уровнях и начать с новой точки?')) return;
+      st.levels.forEach((l) => { l.graph = { vertices: [], edges: [] }; });
+      g = L('floor').graph;
+      st.lv = 'floor';
       st.mode = 'start';
       st.activeVertex = null;
       st.refEdge = null;
       st.sel = null;
       st.flip = 1;
       fit();
+      sideSig = '';
+      render();
+    },
+    addLevel: () => {
+      const id = st.levels.some((l) => l.id === 'ref') ? 'lv' + Date.now().toString(36) : 'ref';
+      const name = id === 'ref' ? 'Столешница' : `Уровень ${st.levels.length - 1}`;
+      const h = id === 'ref' ? 900 : 1500;
+      saveActiveGraph();
+      const floor = L('floor');
+      const graph = floor?.graph?.edges?.length ? cloneGraph(floor.graph) : { vertices: [], edges: [] };
+      st.levels.push({ id, name, h, graph });
       sideSig = '';
       render();
     },

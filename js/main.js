@@ -16,7 +16,7 @@ import {
   levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
 } from './roomGeom.js?v=20261110a';
 import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
-import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123i';
+import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123k';
 import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
@@ -331,6 +331,10 @@ function refresh() {
   $('#fixShow').checked = project.showFixtures !== false;
   $('#wallLettersShow').checked = project.room.showWallLetters !== false;
   viewer.setWallLettersVisible(project.room.showWallLetters !== false);
+  if ($('#showRoomEdges')) {
+    $('#showRoomEdges').checked = project.room.showRoomEdges === true;
+    viewer.setRoomEdgesVisible(project.room.showRoomEdges === true);
+  }
   try { if (typeof renderPlanEditor === 'function') renderPlanEditor(); } catch(_){}
   try { if (typeof renderConstructionsLib === 'function') renderConstructionsLib(); } catch(_){}
   try { if (typeof syncLayersForm === 'function') syncLayersForm(); } catch(_){}
@@ -1217,6 +1221,11 @@ $('#wallLettersShow').onchange = (e) => {
   viewer.setWallLettersVisible(e.target.checked);
   save();
 };
+$('#showRoomEdges')?.addEventListener('change', (e) => {
+  project.room.showRoomEdges = e.target.checked;
+  viewer.setRoomEdgesVisible(e.target.checked);
+  save();
+});
 document.querySelectorAll('[data-view]').forEach((b) => b.onclick = () => viewer.setView(b.dataset.view));
 
 $('#cmdForm').onsubmit = (e) => {
