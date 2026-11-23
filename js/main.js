@@ -16,7 +16,7 @@ import {
   levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
 } from './roomGeom.js?v=20261110a';
 import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
-import { openPlanEditor } from './planEditor.js?v=20261110a';
+import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123g';
 import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
@@ -1698,19 +1698,22 @@ document.querySelector('.plan-layers')?.addEventListener('click', (e) => {
   renderPlanEditor();
 });
 
-/** Редактор «план сверху»: стены от точки, длины/углы, уровни замера. */
+/** Гибкий редактор плана: стены от любой вершины, длины/углы, без обязательного замыкания. */
 function openRoomPlan(isNew = false) {
   const room = project.room;
   ensureAdvancedFields(room);
   const closed = !isOpenRoom(room);
   const nW = wallEdgeCount(room);
   const levels = isNew
-    ? [{ id: 'floor', name: 'Пол', h: 0 }, { id: 'ceil', name: 'Потолок', h: +room.height || 2700 }]
+    ? [
+      { id: 'floor', name: 'Пол', h: 0 },
+      { id: 'ceil', name: 'Потолок', h: +room.height || 2700 },
+    ]
     : levelsWithPlans(room).map((l) => {
       const pts = (closed ? l.plan : l.plan.slice(0, nW + 1)).map((p) => ({ x: +p.x, z: +p.z }));
       return { id: l.id, name: l.name, h: l.h, chain: chainFromPoints(pts, closed) };
     });
-  openPlanEditor({
+  openPlanEditorGraph({
     levels,
     wallThick: room.wallThick || 100,
     onApply: ({ closed: cl, levels: lv, wallThick }) => {

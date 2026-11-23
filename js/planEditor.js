@@ -17,6 +17,18 @@ const fmtA = (a) => String(r1(a)).replace('.', ',');
 const LEVEL_COLORS = ['#1f6feb', '#b4530a', '#2e9d4f', '#8e44ad', '#c0392b', '#16a085'];
 const FIXED = new Set(['floor', 'ceil']);
 
+/** Snap угла к ближайшей оси (0/90/180/270°) если в пределах порога */
+const snapToAxis = (deg, threshold = 8) => {
+  const axes = [0, 90, 180, 270, 360];
+  const d = norm360(deg);
+  for (const a of axes) {
+    const diff = Math.abs(d - a);
+    const diffWrap = Math.abs(d - a + 360);
+    if (diff <= threshold || diffWrap <= threshold) return norm360(a);
+  }
+  return deg;
+};
+
 const HTML = `
 <div class="pe-dlg" tabindex="-1">
   <div class="pe-head">

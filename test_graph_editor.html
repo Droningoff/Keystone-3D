@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест графового редактора</title>
+    <link rel="stylesheet" href="css/app.css?v=20261123a">
+    <style>
+        body { margin: 0; padding: 20px; font-family: sans-serif; }
+        .test-controls { margin-bottom: 20px; padding: 16px; background: #f0f0f0; border-radius: 8px; }
+        button { padding: 12px 24px; font-size: 16px; cursor: pointer; margin: 8px; }
+        #result { margin-top: 20px; padding: 16px; background: #e8f5e9; border-radius: 8px; white-space: pre-wrap; min-height: 200px; }
+        .error { background: #ffebee !important; }
+        #debug { margin-top: 20px; padding: 16px; background: #fff3e0; border-radius: 8px; font-family: monospace; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="test-controls">
+        <h2>Тест графового редактора помещения</h2>
+        <p>Этот редактор позволяет рисовать стены от любой вершины:</p>
+        <ul>
+            <li>Клик по вершине → начать рисование от неё</li>
+            <li>Можно рисовать в любом направлении</li>
+            <li>Углы показываются между всеми стенами у вершины</li>
+            <li>Esc — закончить рисование</li>
+        </ul>
+        <button id="openEditor">Открыть редактор</button>
+        <button id="clearLog">Очистить лог</button>
+    </div>
+    <div id="result">Результат появится здесь...</div>
+    <div id="debug"></div>
+
+    <script>
+        function log(msg) {
+            const debug = document.getElementById('debug');
+            const time = new Date().toLocaleTimeString();
+            debug.innerHTML += `[${time}] ${msg}\n`;
+            console.log(msg);
+        }
+
+        document.getElementById('clearLog').onclick = () => {
+            document.getElementById('debug').innerHTML = '';
+        };
+
+        log('Страница загружена');
+        log('Попытка импорта модуля...');
+    </script>
+
+    <script type="module">
+        import { openPlanEditorGraph } from './js/planEditorGraph.js?v=20261123f';
+
+        function log(msg) {
+            const debug = document.getElementById('debug');
+            const time = new Date().toLocaleTimeString();
+            debug.innerHTML += `[${time}] ${msg}\n`;
+            console.log(msg);
+        }
+
+        log('Модуль успешно импортирован!');
+        log('Функция openPlanEditorGraph: ' + typeof openPlanEditorGraph);
+
+        document.getElementById('openEditor').addEventListener('click', () => {
+            try {
+                log('Клик по кнопке "Открыть редактор"');
+                log('Вызов openPlanEditorGraph...');
+                
+                openPlanEditorGraph({
+                    chain: null,
+                    wallThick: 100,
+                    onApply: (result) => {
+                        log('Применено!');
+                        document.getElementById('result').textContent =
+                            JSON.stringify(result, null, 2);
+                        console.log('Applied:', result);
+                    },
+                    onCancel: () => {
+                        log('Отменено');
+                        document.getElementById('result').textContent = 'Отменено';
+                    }
+                });
+                
+                log('Редактор открыт!');
+            } catch (error) {
+                log('ОШИБКА: ' + error.message);
+                log('Стек: ' + error.stack);
+                document.getElementById('result').textContent = 'Ошибка: ' + error.message;
+                document.getElementById('result').classList.add('error');
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
