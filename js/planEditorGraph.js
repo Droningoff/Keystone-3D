@@ -2,11 +2,12 @@
 // модель — граф, чтобы после первой стены рисовать от любого её конца.
 
 import {
-  emptyGraph, addVertex, addEdge, edgesAtVertex, edgeDirection, angleBetweenEdges,
+  emptyGraph, addVertex, addEdge, edgesAtVertex, edgeDirection,
   graphBBox, getVertex, undoLastEdge, chainToGraph, norm360,
   edgeOutwardNormal, setEdgeLength, setEdgeHeading, angBetween, edgeLength,
-  graphToOrderedPoints, isGraphClosed, graphCentroid,
-} from './roomGraph.js?v=20261123g';
+  graphToOrderedPoints, isGraphClosed, graphCentroid, roomCornerAngle, moveVertex,
+  wallTableAngle, setEdgeInteriorAngle,
+} from './roomGraph.js?v=20261123i';
 
 const RAD = Math.PI / 180;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -277,34 +278,41 @@ export function openPlanEditorGraph({
       draw: st.activeVertex
         ? 'Клик — поставить стену. Угол шагом 15° (Alt — свободно). Цифры + Enter — точная длина. Клик по другой вершине — рисовать от неё. Esc — закончить.'
         : 'Выберите вершину, от которой продолжить стену.',
-      edit: 'Клик по вершине — рисовать от неё. Длины и углы — в таблице справа. «Фикс.» защищает стену. Колесо — масштаб, фон — сдвиг.',
+      edit: 'Потяните вершину — сдвинуть угол. Короткий клик по вершине — рисовать от неё. Длины/углы — в таблице справа. Колесо — масштаб.',
     }[st.mode];
   }
 
   // ---------- правая панель ----------
   let sideSig = '';
   function renderSide() {
+    // Не пересобирать таблицу, пока пользователь печатает в поле — иначе «89» + старое «90» → «8990»
+    const active = document.activeElement;
+    if (active?.closest?.('[data-r="walls"]') && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName || '')) {
+      return;
+    }
     const sig = JSON.stringify([g.vertices, g.edges, st.sel, st.thick, st.flip]);
     if (sig === sideSig) return;
     sideSig = sig;
-    const focusKey = document.activeElement?.dataset?.key;
+    const focusKey = active?.dataset?.key;
 
     const rows = g.edges.map((e, i) => {
-      const from = getVertex(g, e.from);
-      const to = getVertex(g, e.to);
-      const heading = from && to ? r1(norm360(Math.atan2(to.z - from.z, to.x - from.x) / RAD)) : 0;
+      const info = wallTableAngle(g, e);
       const dis = e.lock ? 'disabled' : '';
+      const angTitle = info.kind === 'dir'
+        ? 'Направление первой стены: 0 — вправо, 90 — вниз'
+        : 'Внутренний угол между стенами со стороны комнаты';
       return `<tr class="${e.id === st.sel ? 'sel' : ''}${e.lock ? ' locked' : ''}" data-row="${e.id}">
         <td>${letter(i)}</td>
         <td><input type="number" step="10" min="10" data-key="w${e.id}len" data-e="${e.id}" data-f="len" value="${Math.round(e.len)}" ${dis}></td>
-        <td><input type="number" step="1" data-key="w${e.id}ang" data-e="${e.id}" data-f="ang" value="${heading}" ${dis}
-          title="Направление стены: 0 — вправо, 90 — вниз"></td>
+        <td><input type="number" step="1" data-key="w${e.id}ang" data-e="${e.id}" data-f="ang"
+          data-ang-kind="${info.kind}" data-pivot="${info.pivot || ''}" data-ref="${info.refId || ''}"
+          value="${r1(info.value)}" ${dis} title="${angTitle}"></td>
         <td><input type="checkbox" data-e="${e.id}" data-f="lock" ${e.lock ? 'checked' : ''} title="Зафиксировать стену"></td>
       </tr>`;
     });
 
     R('walls').innerHTML = rows.length
-      ? `<table class="pe-table"><tr><th>Стена</th><th>Длина, мм</th><th>Напр., °</th><th>Фикс.</th></tr>${rows.join('')}</table>`
+      ? `<table class="pe-table"><tr><th>Стена</th><th>Длина, мм</th><th>Угол, °</th><th>Фикс.</th></tr>${rows.join('')}</table>`
       : '<p class="muted">Стен пока нет. Нарисуйте первую стену, затем кликните её левый или правый конец, чтобы продолжить.</p>';
     R('thick').value = st.thick;
     R('sum').textContent = g.edges.length
@@ -363,10 +371,8 @@ export function openPlanEditorGraph({
       if (at.length < 2) return;
       for (let i = 0; i < at.length; i++) {
         for (let j = i + 1; j < at.length; j++) {
-          const ang = angleBetweenEdges(g, at[i], at[j], vertex.id);
-          const h1 = edgeDirection(g, at[i], vertex.id);
-          const h2 = edgeDirection(g, at[j], vertex.id);
-          const midH = ((h1 + h2) / 2) * RAD;
+          const { ang, bis } = roomCornerAngle(g, at[i], at[j], vertex.id);
+          const midH = bis * RAD;
           const dist = 30 * k;
           out.push(`<text x="${vertex.x + Math.cos(midH) * dist}" y="${vertex.z + Math.sin(midH) * dist}"
             font-size="${fs}" text-anchor="middle" dominant-baseline="central" class="pe-ang">${fmtA(ang)}°</text>`);
@@ -425,9 +431,17 @@ export function openPlanEditorGraph({
       if (t.dataset.f === 'lock') {
         edge.lock = t.checked;
       } else if (!edge.lock) {
-        const val = +t.value;
+        const raw = t.value.trim().replace(',', '.');
+        if (raw === '' || !Number.isFinite(+raw)) return; // пустое при наборе — не трогаем модель
+        const val = +raw;
         if (t.dataset.f === 'len' && val >= 10) setEdgeLength(g, edge.id, val);
-        else if (t.dataset.f === 'ang' && Number.isFinite(val)) setEdgeHeading(g, edge.id, val);
+        else if (t.dataset.f === 'ang') {
+          if (t.dataset.angKind === 'int' && t.dataset.ref && t.dataset.pivot) {
+            setEdgeInteriorAngle(g, edge.id, t.dataset.ref, t.dataset.pivot, val);
+          } else {
+            setEdgeHeading(g, edge.id, val);
+          }
+        }
       }
       sideSig = '';
       render();
@@ -436,6 +450,16 @@ export function openPlanEditorGraph({
       sideSig = '';
       render();
     }
+  });
+  // После ухода с поля — можно обновить таблицу актуальными значениями
+  side.addEventListener('focusout', (e) => {
+    if (!e.target?.closest?.('[data-r="walls"]')) return;
+    if (e.relatedTarget?.closest?.('[data-r="walls"]')) return;
+    sideSig = '';
+    renderSide();
+  });
+  side.addEventListener('focusin', (e) => {
+    if (e.target.matches?.('input[type="number"]')) e.target.select();
   });
   side.addEventListener('click', (e) => {
     const row = e.target.closest('[data-row]');
@@ -481,6 +505,17 @@ export function openPlanEditorGraph({
       st.view.x = pr.vx - (e.clientX - pr.sx) * k;
       st.view.y = pr.vy - (e.clientY - pr.sy) * k;
       if (Math.hypot(e.clientX - pr.sx, e.clientY - pr.sy) > 3) pr.moved = true;
+    } else if (pr?.vtx) {
+      if (Math.hypot(e.clientX - pr.sx, e.clientY - pr.sy) > 3) pr.moved = true;
+      if (pr.moved) {
+        const c = toWorld(e);
+        const ok = moveVertex(g, pr.vtx, r10(c.x), r10(c.z));
+        if (!ok && !pr.warned) {
+          pr.warned = true;
+          hint('Стена зафиксирована — снимите «Фикс.»');
+        }
+        sideSig = '';
+      }
     }
     render();
   });
@@ -510,13 +545,13 @@ export function openPlanEditorGraph({
 
     const vt = e.target.closest?.('.pe-vtx');
     if (vt) {
-      const vId = vt.dataset.v;
-      st.activeVertex = vId;
-      st.refEdge = edgesAtVertex(g, vId).slice(-1)[0]?.id || null;
-      st.mode = 'draw';
-      st.typed = { len: null, ang: null };
-      sideSig = '';
-      render();
+      // Зажимаем вершину: сдвиг — тянуть угол; короткий клик — рисовать от неё
+      st.press = {
+        vtx: vt.dataset.v,
+        sx: e.clientX,
+        sy: e.clientY,
+        moved: false,
+      };
       return;
     }
 
@@ -538,7 +573,26 @@ export function openPlanEditorGraph({
     const pr = st.press;
     st.press = null;
     try { svg.releasePointerCapture?.(e.pointerId); } catch (_) { /* */ }
-    if (!pr?.pan || pr.moved || e.button !== 0) return;
+    if (e.button !== 0) return;
+
+    if (pr?.vtx && !pr.moved) {
+      // Короткий клик по вершине — начать/продолжить рисование от неё
+      st.activeVertex = pr.vtx;
+      st.refEdge = edgesAtVertex(g, pr.vtx).slice(-1)[0]?.id || null;
+      st.mode = 'draw';
+      st.typed = { len: null, ang: null };
+      sideSig = '';
+      render();
+      return;
+    }
+
+    if (pr?.vtx && pr.moved) {
+      sideSig = '';
+      render();
+      return;
+    }
+
+    if (!pr?.pan || pr.moved) return;
     if (st.mode === 'edit') {
       st.sel = null;
       sideSig = '';

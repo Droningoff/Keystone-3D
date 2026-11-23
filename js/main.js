@@ -16,7 +16,7 @@ import {
   levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
 } from './roomGeom.js?v=20261110a';
 import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
-import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123g';
+import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123i';
 import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,

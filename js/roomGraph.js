@@ -48,11 +48,109 @@ export function edgeLength(g, edge) {
   return Math.round(Math.hypot(to.x - from.x, to.z - from.z));
 }
 
-/** Угол между двумя рёбрами у общей вершины (в градусах) */
+/** Угол между двумя рёбрами у общей вершины (в градусах) — один из двух секторов */
 export function angleBetweenEdges(g, edge1, edge2, atVertex) {
   const h1 = edgeDirection(g, edge1, atVertex);
   const h2 = edgeDirection(g, edge2, atVertex);
   return norm360(180 - (h2 - h1));
+}
+
+/**
+ * Угол комнаты у вершины между двумя стенами + бисектриса для подписи.
+ * Берётся сектор, обращённый к центроиду (внутрь помещения), а не «внешний» 360−α.
+ */
+export function roomCornerAngle(g, edge1, edge2, atVertex) {
+  const v = getVertex(g, atVertex);
+  if (!v) return { ang: 90, bis: 0 };
+  const h1 = edgeDirection(g, edge1, atVertex);
+  const h2 = edgeDirection(g, edge2, atVertex);
+  const sector1 = norm360(h2 - h1) || 360;
+  const sector2 = 360 - sector1;
+  const bis1 = norm360(h1 + sector1 / 2);
+  const bis2 = norm360(h1 + sector1 + sector2 / 2);
+  const c = graphCentroid(g);
+  const toC = norm360(Math.atan2(c.z - v.z, c.x - v.x) / RAD);
+  const diff = (a, b) => Math.min(norm360(a - b), norm360(b - a));
+  const use1 = diff(toC, bis1) <= diff(toC, bis2);
+  const ang = use1 ? sector1 : sector2;
+  return { ang: ang >= 359.5 ? 0 : r1(ang), bis: use1 ? bis1 : bis2 };
+}
+
+/** Переместить вершину (с проверкой фиксации рёбер) */
+export function moveVertex(g, vertexId, x, z) {
+  const v = getVertex(g, vertexId);
+  if (!v) return false;
+  const at = edgesAtVertex(g, vertexId);
+  if (at.some((e) => e.lock)) return false;
+  v.x = x;
+  v.z = z;
+  at.forEach((e) => { e.len = edgeLength(g, e); });
+  return true;
+}
+
+/** Абсолютное направление ребра from→to */
+export function edgeHeading(g, edge) {
+  const from = getVertex(g, edge.from);
+  const to = getVertex(g, edge.to);
+  if (!from || !to) return 0;
+  return norm360(Math.atan2(to.z - from.z, to.x - from.x) / RAD);
+}
+
+/**
+ * Задать направление ухода ребра от pivotId (поворачивает ветку вокруг pivot).
+ */
+export function setEdgeLeaveHeading(g, edgeId, pivotId, headingDeg) {
+  const edge = g.edges.find((e) => e.id === edgeId);
+  if (!edge || edge.lock) return false;
+  if (edge.from !== pivotId && edge.to !== pivotId) return false;
+  // Ориентируем ребро: from = pivot, чтобы setEdgeHeading вращал нужную ветку
+  if (edge.from !== pivotId) {
+    const t = edge.from;
+    edge.from = edge.to;
+    edge.to = t;
+  }
+  return setEdgeHeading(g, edgeId, headingDeg);
+}
+
+/**
+ * Внутренний угол у pivot между refEdge и edge → выставить угол newAng (со стороны комнаты).
+ */
+export function setEdgeInteriorAngle(g, edgeId, refEdgeId, pivotId, newAng) {
+  const edge = g.edges.find((e) => e.id === edgeId);
+  const ref = g.edges.find((e) => e.id === refEdgeId);
+  const pivot = getVertex(g, pivotId);
+  if (!edge || !ref || !pivot || edge.lock) return false;
+  const a = Math.min(359, Math.max(1, +newAng || 90));
+  const leaveRef = edgeDirection(g, ref, pivotId);
+  const c = graphCentroid(g);
+  const toC = norm360(Math.atan2(c.z - pivot.z, c.x - pivot.x) / RAD);
+  const diff = (x, y) => Math.min(norm360(x - y), norm360(y - x));
+  let best = norm360(leaveRef + a);
+  let bestDiff = Infinity;
+  for (const sign of [1, -1]) {
+    const leaveH = norm360(leaveRef + sign * a);
+    const bis = norm360(leaveRef + sign * (a / 2));
+    const d = diff(bis, toC);
+    if (d < bestDiff) { bestDiff = d; best = leaveH; }
+  }
+  return setEdgeLeaveHeading(g, edgeId, pivotId, best);
+}
+
+/**
+ * Описание угла стены для таблицы: первая / одиночная — направление;
+ * иначе — внутренний угол к соседней стене у общего угла.
+ */
+export function wallTableAngle(g, edge) {
+  const heading = edgeHeading(g, edge);
+  for (const vid of [edge.from, edge.to]) {
+    const others = edgesAtVertex(g, vid).filter((e) => e.id !== edge.id);
+    if (!others.length) continue;
+    // Берём самую «раннюю» соседнюю стену как опорную
+    const ref = others.slice().sort((a, b) => g.edges.indexOf(a) - g.edges.indexOf(b))[0];
+    const { ang } = roomCornerAngle(g, ref, edge, vid);
+    return { kind: 'int', value: ang, pivot: vid, refId: ref.id, heading };
+  }
+  return { kind: 'dir', value: r1(heading), pivot: edge.from, refId: null, heading };
 }
 
 /** Добавить новую вершину */
