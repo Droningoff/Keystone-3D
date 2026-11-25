@@ -1,0 +1,89 @@
+#VRML V2.0 utf8
+
+PROTO _OutlineObject 
+[
+ exposedField MFNode children []
+ field MFNode shapes []
+ field MFNode switches []
+ field MFNode contours []
+ field SFInt32 flags 15
+]
+{
+ 
+ Group 
+ {
+  children IS children
+ }
+ 
+ 
+}
+
+DEF _$Background _OutlineObject 
+{
+ flags 2148
+	children [
+		DEF SH1 Shape {
+			appearance Appearance {
+				textureTransform DEF TT TextureTransform {
+					scale 5 5
+				}
+
+		texture	ImageTexture {
+			url	"../addart/fds/sky4.png"
+		}
+	}
+	geometry IndexedFaceSet	{
+		coord Coordinate {
+			point [
+				-500 1000  500
+				 500 1000  500
+				 500 1000 -500
+				-500 1000 -500
+				-10000 10  10000
+				 10000 10  10000
+				 10000 10 -10000
+				-10000 10 -10000
+			]
+		}
+		coordIndex [
+			3,2,1,0,-1
+			3,7,6,2,-1,
+			2,6,5,1,-1,
+			1,5,4,0,-1,
+			0,4,7,3,-1,
+		]
+	}
+}
+
+#DEF	TS TimeSensor { loop TRUE cycleInterval 500} 
+#DEF	TI Position2Interpolator {
+#	key	[0,1]
+#	keyValue [0 0,2 1]
+#}
+#DEF	Scr Script {
+#	eventIn	SFVec2f	tcpos_in
+#	field SFNode SH USE	SH1
+#	url	"javascript:
+#		function tcpos_in(tcshift)
+#		{
+#			if (SH.appearance!=null)
+#			{
+#				if (SH.appearance.textureTransform==null)
+#					SH.appearance.textureTransform=new SFNode('TextureTransform {}');
+#				SH.appearance.textureTransform.translation=tcshift;
+#			}
+#		}
+#	"
+#}
+]
+shapes [USE SH1]
+ contours 
+ [ 
+  DEF $1 IndexedLineSet { coord Coordinate {} }
+  USE $1
+  USE $1
+ ]
+}
+
+#ROUTE TS.fraction_changed TO TI.set_fraction
+#ROUTE TI.value_changed TO Scr.tcpos_in

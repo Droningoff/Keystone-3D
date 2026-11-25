@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>C9085</Hash>
+	<Hash2>5393B</Hash2>
+	<Guid>E4CB35CE-5323-4FD9-A4E8-5648B103A9B0</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Без модели (Кюхен Хоф ТР)">910908</ModelBaseId>
+		<ModelId Name="(Нет модели)">000000</ModelId>
+		<ModelMaterial Name="???"/>
+		<ModelColorId Code="" Name="=Все цвета модели=">000000</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+		<BoardId Name="№1 КД Stage">910889</BoardId>
+		<BoardColorId Code="KDS.1.S-008" Name="KDS.1.S-008 Rieti [ПР1]">910726</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="(Нет модели)">000000</SocleId>
+		<SocleColorId Code="" Name="(Нет цвета)">000000</SocleColorId>
+		<SocleReshColorId Code="" Name="Серый">500001</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="КД Stage">910882</TableBoardId>
+		<TableBoardColorId Code="KDS.1.S-008" Name="KDS.1.S-008 Rieti [ПР1]">910724</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+		<ModelBaseId2 Name="Прихожая Стоун Колор">909380</ModelBaseId2>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Бибирево-Три</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.240</SalonPhone>
+		<SalonEmail>bib3@kxd.ru</SalonEmail>
+		<SalonAddress>М. Бибирево, г. Москва, ул. Пришвина, д. 26, ТЦ "Миллион мелочей" , пав. В17 c 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Карданова С.М.</SalonDirectorName>
+		<SalonDirectorPhone>+79264240588</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="96">Орлова Ольга Викторовна</SalonManagerName>
+		<ClientId create_date="24/09/2026">8967152764601</ClientId>
+		<ClientProjectsCount>1</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Иванова Ирина Бембулатовна</ClientName>
+		<ClientEmail>irakoff@mail.ru</ClientEmail>
+		<ClientPhone>89671527646</ClientPhone>
+		<ClientMetroStation>Отрадное</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>500000</ClientBudget>
+		<ClientAssemblingDate>13/10/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+			<InfoSource id="13">повторный клиент/дизайнер</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Дизайн</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>24-96-24-09-26-04</OrderNum>
+		<FabrikaCheckNum>65438</FabrikaCheckNum>
+		<FabrikaCheckInfo>maksimova.oy / 16.10.2026 / 13:20:34</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 16.10.26 (release 34), database: 15.10.2026, last update 16.10.2026</Version>
+		<UpdateNum>2635</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>5000 x 4000 мм</Bounds>
+		<Walls/>
+		<Celling>2900 мм</Celling>
+	</Room>
+	<Boxes/>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>96-13284</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2632.00024</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="№1 КД Stage">910889</MODELID>
+			<COLORID Code="KDS.1.S-008" Name="KDS.1.S-008 Rieti [ПР1]">910726</COLORID>
+			<P>1</P>
+			<L>40</L>
+			<H>700</H>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>3570</Price>
+			<ArtCode>96-25271</ArtCode>
+			<Name>Вклейка раковины подстольного монтажа</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>850</Price>
+			<ArtCode>96-13274</ArtCode>
+			<Name>Заворот камня 45 мм от переднего края</Name>
+			<Quantity>0.7</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1820</Price>
+			<ArtCode>96-25278</ArtCode>
+			<Name>Торцевая и задняя кромка (для Н-30,40мм)</Name>
+			<COLORID>54141</COLORID>
+			<Quantity>1.74</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2>
+		<KitchenItem>
+			<ArtCode>96-19765</ArtCode>
+			<ColorCategory>10</ColorCategory>
+			<Price>19852.19922</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="КД Stage">910882</MODELID>
+			<COLORID Code="KDS.1.S-008" Name="KDS.1.S-008 Rieti [ПР1]">910724</COLORID>
+			<L>520</L>
+			<H>700</H>
+			<P>40</P>
+			<Quantity>0.36</Quantity>
+			<deskFastCreator>
+				<page id="4">
+					<Hole type="1" width="0.54358" alignx="0" aligny="0" shiftx="0.00051" shifty="0"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>508344</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>97980</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,7</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>508449</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1,74</QUANTITY>
+					<ColorId>54141</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-25251</ArtCode>
+			<Name>AMALFI 101 Раковина подстольного монтажа</Name>
+			<COLORID Code="KDS.1.S-008" Name="KDS.1.S-008 Rieti [ПР1]">910724</COLORID>
+			<ColorCategory>10</ColorCategory>
+			<Price>21330</Price>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItemsM2>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>4092</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_sshot_00.jpg</Img>
+		<Img>96-CC3CC19C-369E-4AF4-BF40-E6B1D0727D96_sshot_01.jpg</Img>
+	</ScreenShots>
+	<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_all_tables_base_0.emf</Img>
+	<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_all_tables_kamen.jpg</Img>
+	<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_all_tables_base_0.emf</Img>
+	<Img>96-E4CB35CE-5323-4FD9-A4E8-5648B103A9B0_all_tables_kamen_2_z.jpg</Img>
+	<Boxes2>
+		<KitchenObject>
+			<ITEMID>110153</ITEMID>
+			<ArtCode>93-39160</ArtCode>
+			<NsTypes>1_Умен+2_Умен+3_Увел</NsTypes>
+			<PRICE type="+30%">13153</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 3 секции Цв: KHDL-759-18 Дуб Каселла коричневый [СТ3]</Name>
+			<LabelNum>1</LabelNum>
+			<WIDTH>1080</WIDTH>
+			<DEPTH>168</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>1080</Width>
+				<Height>200</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-759-18" Name="KHDL-759-18 Дуб Каселла коричневый [СТ3]">914491</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>112010</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-80585</ArtCode>
+			<NsTypes>А_Ручка_№474_ОКР</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба для ванной под раковину навесная 2 ящика;  Цвет корпуса: Д-020 Диамант серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-020-18 Диамант серый [КМ1]</Name>
+			<LabelNum>2</LabelNum>
+			<Discount>45</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>700</WIDTH>
+			<DEPTH>500</DEPTH>
+			<HEIGHT>540</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>267</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-12358</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>№_474NCS_S_7500-N</Art>
+					<Quantity>0.7</Quantity>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>3797</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>267</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-12358</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>№_474NCS_S_7500-N</Art>
+					<Quantity>0.7</Quantity>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>3797</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110445</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-72385</ArtCode>
+			<NsTypes>А_TIP ON+А_ДОП-ВПД+1_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">20928</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name> н Полка 1 дверь (зеркало);  Цвет корпуса: Д-020 Диамант серый ЛДСтП Цв: KHDL-020 Диамант серый [КМФЗк-1]/Зеркало серебро ZZ-100-000; Опции: Доп. вкладная полка ЛДСП [в цвет], Push to Open, Петли KD ProLine</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>10</Discount>
+			<DiscountAuto>10</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>150</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Зеркало без фацета</Type>
+				<Width>497</Width>
+				<Height>1077</Height>
+				<MODELID Name="Мираж">915257</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [КМФЗк-1]">905042</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка ЛДСП [в цвет]" ArtCode="94-30876" Count="1"/>
+			<OPTION Name="Push to Open" ArtCode="93-66273" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-71741</ArtCode>
+			<GLASSID Code="" Name="Зеркало серебро ZZ-100-000">000000</GLASSID>
+			<Name>Зеркало серебро</Name>
+			<WIDTH>497</WIDTH>
+			<HEIGHT>1077</HEIGHT>
+			<Quantity>0.54</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110409</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-61265</ArtCode>
+			<NsTypes>А_Ручка_№474_ОКР+1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">12705</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка 1 дверь;  Цвет корпуса: Д-020 Диамант серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-020-18 Диамант серый [КМ1]; Опции: Петли KD ProLine</Name>
+			<LabelNum>4</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>320</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>580</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>317</Width>
+				<Height>577</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-12358</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>№_474NCS_S_7500-N</Art>
+					<Quantity>0.32</Quantity>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>3797</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110094</ITEMID>
+			<ArtCode>94-30684</ArtCode>
+			<NsTypes>2_Умен</NsTypes>
+			<PRICE type="обычная">6558</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 1 секция Цв: KHDL-759-18 Дуб Каселла коричневый [СТ3]</Name>
+			<LabelNum>5</LabelNum>
+			<WIDTH>320</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>320</Width>
+				<Height>360</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-759-18" Name="KHDL-759-18 Дуб Каселла коричневый [СТ3]">914491</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110079</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>94-30298</ArtCode>
+			<NsTypes>А_TIP ON+А_ДОП-ВПД+1_Умен+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">50889</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name> н Полка 1 дверь;  Цвет корпуса: Д-020 Диамант серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-020-18 Диамант серый [КМ1]; Опции: Доп. вкладная полка ЛДСП [в цвет], Push to Open, Петли KD ProLine</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>45</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>320</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>317</Width>
+				<Height>1077</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка ЛДСП [в цвет]" ArtCode="94-30876" Count="1"/>
+			<OPTION Name="Push to Open" ArtCode="93-66273" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110081</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>94-30525</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="обычная">71584</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка 1 дверь;  Цвет корпуса: Д-020 Диамант серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-020-18 Диамант серый [КМ1]; Опции: Push to Open, Петли KD ProLine</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>45</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>340</WIDTH>
+			<DEPTH>530</DEPTH>
+			<HEIGHT>1270</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>422</Width>
+				<Height>1267</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66273" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110081</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>94-30525</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="обычная">71584</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка 1 дверь;  Цвет корпуса: Д-020 Диамант серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-020-18 Диамант серый [КМ1]; Опции: Push to Open, Петли KD ProLine</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>45</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>510</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>1270</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>422</Width>
+				<Height>1267</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [КМ1]">909368</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66273" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-73210</ArtCode>
+			<ColorCategory>2</ColorCategory>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<Quantity>0.8548</Quantity>
+			<Name>Карниз Фальшпанель горизонтальная</Name>
+			<WIDTH>855</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHDL-020-18" Name="KHDL-020-18 Диамант серый [ЛДк-2]">909368</COLORID>
+			</FRONT>
+		</KitchenObject>
+	</Boxes2>
+	<LongLengthItems2/>
+	<AdditionalObjects2/>
+	<Service2>
+		<AdditionalItem>
+			<Name>Скидка замер</Name>
+			<ArtCode>41-00101</ArtCode>
+			<Price>-1800</Price>
+			<Discount>0</Discount>
+			<DiscountAuto>0</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>8000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>18115</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service2>
+</Scene>

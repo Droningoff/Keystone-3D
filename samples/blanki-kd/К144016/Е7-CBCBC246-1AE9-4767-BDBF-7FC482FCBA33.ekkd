@@ -1,0 +1,2569 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Guid>CBCBC246-1AE9-4767-BDBF-7FC482FCBA33</Guid>
+	<Hash>97493</Hash>
+	<KitchenParameters>
+		<BaseColorId>23008</BaseColorId>
+		<BaseModelId>1</BaseModelId>
+		<BoardColorId>0</BoardColorId>
+		<BoardId>0</BoardId>
+		<CorniceColorId>0</CorniceColorId>
+		<CorniceDownColorId>0</CorniceDownColorId>
+		<CorniceDownId>0</CorniceDownId>
+		<CorniceHeight>60</CorniceHeight>
+		<CorniceId>0</CorniceId>
+		<FirstKpModelBaseId>139</FirstKpModelBaseId>
+		<GlossColorId>0</GlossColorId>
+		<GolaColorId>107409</GolaColorId>
+		<GolaLightColorId>0</GolaLightColorId>
+		<HandleModelId>0</HandleModelId>
+		<InfoSourceId2>2</InfoSourceId2>
+		<KorpusDepth>300</KorpusDepth>
+		<LegsColorId>105025</LegsColorId>
+		<LegsTypeId>205</LegsTypeId>
+		<LightPanelModelId>1</LightPanelModelId>
+		<ModelBaseId>139</ModelBaseId>
+		<ModelColorId>96212</ModelColorId>
+		<ModelColorId2>0</ModelColorId2>
+		<ModelId>1979</ModelId>
+		<ModelId2>0</ModelId2>
+		<OrderNumExId>11</OrderNumExId>
+		<OrderNumStatus>16</OrderNumStatus>
+		<PattinaColorId>0</PattinaColorId>
+		<SocleColorId>96214</SocleColorId>
+		<SocleHeight>150</SocleHeight>
+		<SocleId>119</SocleId>
+		<SocleReshColorId>97201</SocleReshColorId>
+		<TableBoardColorId>106743</TableBoardColorId>
+		<TableBoardId>178</TableBoardId>
+		<TableBoardTickness>38</TableBoardTickness>
+		<VitrageId>0</VitrageId>
+		<VitrageId2>0</VitrageId2>
+		<WallPanelColorId>106749</WallPanelColorId>
+		<WallPanelId>175</WallPanelId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+		<Options>147</Options>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<ACCESS_DISCOUNT>10.0</ACCESS_DISCOUNT>
+		<AllowSaveHash>6088c94d72ab6fa18e9e9fe4b4808a03</AllowSaveHash>
+		<Customer_Family>Галанина</Customer_Family>
+		<Customer_Name>Мария</Customer_Name>
+		<Customer_PatronymicName>Николаевна</Customer_PatronymicName>
+		<CustomerBudget>700000</CustomerBudget>
+		<CustomerCityStation>Москва</CustomerCityStation>
+		<CustomerDeliveryDate>25/11/2026</CustomerDeliveryDate>
+		<CustomerEmail>mashenkab86@gmail.com</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerMetroStation>Люблино</CustomerMetroStation>
+		<CustomerName>Галанина Мария Николаевна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89266009469</CustomerPhone>
+		<DOSTAVKA>8000</DOSTAVKA>
+		<DOSTAVKA_DISCOUNT>100.0</DOSTAVKA_DISCOUNT>
+		<ManagerName>Левина Анастасия Владимировна:Е7</ManagerName>
+		<MarketingActions>+9326:№ 326 - РА (30.09.2026 - 06.10.2026)</MarketingActions>
+		<MarketingActionsHistory>9326 9327 9367 9376</MarketingActionsHistory>
+		<MEBEL_DISCOUNT>8.0</MEBEL_DISCOUNT>
+		<MEBEL_DISCOUNT_TECH>3.0</MEBEL_DISCOUNT_TECH>
+		<OrderCreateDate>2026-10-26</OrderCreateDate>
+		<OrderNum>53-Е7-31-10-26-02</OrderNum>
+		<OrderNumExtNum>66110</OrderNumExtNum>
+		<ProjectChecked>ivanchilova.ye / 02.11.2026 / 22:24:48|</ProjectChecked>
+		<ProjectCost>689993</ProjectCost>
+		<ProjectCostForRoyalty>689993</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>479361</ProjectMebelFullCost>
+		<ProjectsSource>ExportToDbButt;</ProjectsSource>
+		<SalonAddress>М. Кузьминки, г. Москва, Волгоградский проспект, д. 132 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Видяева Н.Б.</SalonDirectorName>
+		<SalonDirectorPhone>+79258850600</SalonDirectorPhone>
+		<SalonEmail>volg@kxd.ru</SalonEmail>
+		<SalonName>Волгоградский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.530</SalonPhone>
+		<SROK_IZGOTOVLENIYA>15</SROK_IZGOTOVLENIYA>
+		<STOL_DISCOUNT>10.0</STOL_DISCOUNT>
+		<USTANOVKA>8.0</USTANOVKA>
+		<USTANOVKA_DISCOUNT>100.0</USTANOVKA_DISCOUNT>
+		<ZAMER>1800</ZAMER>
+		<ZAMER_DISCOUNT>100.0</ZAMER_DISCOUNT>
+		<ProjectCostBeforeCheck>688009</ProjectCostBeforeCheck>
+		<EuroRate>1</EuroRate>
+		<Version>program: 2.11.26 (release 34), database: 29.10.2026, last update 3.11.2026</Version>
+		<UpdateNum>2644</UpdateNum>
+		<PriceType date="2026-11-03">1</PriceType>
+	</AdditionalInfo>
+	<Viewpoints activeViewpoint="0">
+  DEF MainCamDown Viewpoint {
+   position -0.602962 1.144472 3.984414
+   orientation -0.000000 -1.000000 -0.000000 0.563668
+   fieldOfView 0.785
+  }
+  DEF MainCamUp Viewpoint {
+   position 1.575000 33.665001 1.005000
+   orientation -1.000000 -0.000000 -0.000000 1.570796
+   fieldOfView 0.1
+  }
+  DEF MainCamIso Viewpoint {
+   position 0.000000 0.000000 10.000000
+   orientation -0.678598 0.678598 0.281085 1.096060
+   fieldOfView 0.005
+  }
+</Viewpoints>
+	<Room>
+		<RoomHeight>2.6</RoomHeight>
+		<RoomTck>0.12</RoomTck>
+		<Points>
+			<point>0 0</point>
+			<point>3.15 0</point>
+			<point>3.15 2.01</point>
+			<point>0 2.01</point>
+		</Points>
+		<Appearance>Appearance
+{
+ material Material
+  {
+   ambientIntensity 1
+   
+  }
+  
+ texture ImageTexture
+  {
+   url "3d\\gallery\\data\\00037651.jpg" 
+   
+  }
+  
+ 
+}
+
+Group
+{
+ children 
+ [ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00274264.jpg" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00274264.jpg" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+ ]
+ bboxCenter 0 0 0 
+ bboxSize -1 -1 -1 
+ 
+}
+
+Appearance
+{
+ material Material
+  {
+   diffuseColor 0.15 0.15 0.15 
+   emissiveColor 0.85 0.85 0.85 
+   
+  }
+  
+ 
+}
+
+</Appearance>
+	</Room>
+	<DW/>
+	<Objects>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/space/UG60m(SP2).wrl</URL>
+			<CornerModuleShift>50</CornerModuleShift>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>22</SXDX>
+					<ANIMATION Angle="95" AngleLegal="95" type="auto">OPENRIGHT</ANIMATION>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-603</WIDTH>
+					<HEIGHT>(Height-30)-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>0.1264 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<LEFT>Fas1Width+3</LEFT>
+					<BOTTOM>Height-1.5</BOTTOM>
+					<ADDBOUNDS Tickness="65"/>
+					<WIDTH>75</WIDTH>
+					<HEIGHT>(Height-30)-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25888</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra65.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>0.0499 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<TOP>35</TOP>
+					<TICKNESS>15</TICKNESS>
+					<URL>3d/shelves/poddon60.wrl</URL>
+					<VISIBILITY>1</VISIBILITY>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<VERSION>3</VERSION>
+			<ITEMID>103454</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГН-КУ-60-750х1050х575-М1</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Стол угловой переход 600мм под мойку [Гориз.проф.]</ITEMNAME>
+			<WIDTH>1050</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<BOXPRID>10795</BOXPRID>
+			<OPTIONS Values="148">0</OPTIONS>
+			<ATTENDANTS Value="2050">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="11">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>22</CornerSxDx>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<MIRROR/>
+			<ArtCodeLastValid>ГН-КУ-60-750х1050х575-М1</ArtCodeLastValid>
+			<WidthBase>1050</WidthBase>
+			<DepthBase>575</DepthBase>
+			<HeightBase>750</HeightBase>
+			<LabelNum>6</LabelNum>
+			<uid>{7E204E1C-84D2-4476-BB59-C83F90183AB2</uid>
+			<CorniceModelId>2286</CorniceModelId>
+			<CorniceColorId>0</CorniceColorId>
+			<hash>7db23393ca379785173c4ee5b23b61a3</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>15</DISCOUNT>
+			<NsTypes>116</NsTypes>
+			<SuperviserChanged>1</SuperviserChanged>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>503264</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>6</ParentLabelNum>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>85692</ItemId>
+					<NOTES/>
+					<DISCOUNT>10</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>6</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>2.8625 0 0.525</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<Height4Export>720</Height4Export>
+			<Depth4Export>20</Depth4Export>
+			<URL>3d/base/space/facadeppm.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>32</SXDX>
+					<ANIMATION AnimType="PMM" Angle="90" AngleLegal="90" type="auto">OPENBOTTOM</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-30-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<DisableKorpusColor/>
+			<LABEL pos="8">ПММ</LABEL>
+			<ITEMID>102666</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ФГП-ПММ60</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Фасад на полновстраиваемую технику, с профилем [ПММ]</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<BOXPRID>3793</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2050">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="11">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ФГП-ПММ60</ArtCodeLastValid>
+			<WidthBase>600</WidthBase>
+			<DepthBase>575</DepthBase>
+			<HeightBase>750</HeightBase>
+			<uid>{063589EC-8CAA-4E7E-BA26-B7A2D71FFB65</uid>
+			<LabelNum>5</LabelNum>
+			<CorniceModelId>2286</CorniceModelId>
+			<CorniceColorId>0</CorniceColorId>
+			<hash>037572885d1f1e2a0f68074189c50f90</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>40</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>507540</ItemId>
+					<NOTES/>
+					<DISCOUNT>50</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>5</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<FacadesSlColor hide="0" type="auto"/>
+			<translation>2.21 0 0.2875</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/space/T1(SP2).wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>(Height-30)-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2479 -0.002 0.28745</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;800)&amp;(Height&lt;1100)</VISIBILITY> -->
+				<!-- <QUANTITY>2</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;1100)&amp;(Height&lt;1500)</VISIBILITY> -->
+				<!-- <QUANTITY>3</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;1500)&amp;(Height&lt;2050)</VISIBILITY> -->
+				<!-- <QUANTITY>4</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;2050)</VISIBILITY> -->
+				<!-- <QUANTITY>5</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ITEMID>103432</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГН-КЗ-750х600х575-1</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Стол 1 дверь [Гориз.проф.]</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<BOXPRID>10669</BOXPRID>
+			<OPTIONS Values="148">0</OPTIONS>
+			<ATTENDANTS Value="2050">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="11">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГН-КЗ-750х600х575-1</ArtCodeLastValid>
+			<WidthBase>600</WidthBase>
+			<DepthBase>575</DepthBase>
+			<HeightBase>750</HeightBase>
+			<LabelNum>3</LabelNum>
+			<uid>{6436F3AA-9FFB-461C-B421-ACBAF8D9DE22</uid>
+			<NsTypes>101</NsTypes>
+			<CorniceModelId>2286</CorniceModelId>
+			<CorniceColorId>0</CorniceColorId>
+			<hash>b9ceb490b160351fed6ea47ff26709b7</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>15</DISCOUNT>
+			<SuperviserChanged>1</SuperviserChanged>
+			<Label/>
+			<ShowSizeInfo showHeight="20737" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>1.06 0 0.2875</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>178</MODELID>
+			<COLORID>106743</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-0.81257" y="0"/>
+							<point x="0.9499" y="0"/>
+							<point x="0.9499" y="0.58"/>
+							<point x="0.94404" y="0.59414" type="arc"/>
+							<point x="0.9299" y="0.6"/>
+							<point x="0.9299" y="0.6"/>
+							<point x="-0.81257" y="0.6"/>
+						</points>
+					</contour>
+					<contour hole="true">
+						<points>
+							<point x="0.21002" y="0.1"/>
+							<point x="0.21002" y="0.5"/>
+							<point x="-0.28998" y="0.5"/>
+							<point x="-0.28998" y="0.1"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-0.81257</X1>
+					<X2>0.9299</X2>
+					<width>0.6</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+						<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="3" mode="4" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="4"/>
+					</deskFastCreator>
+				</IniData>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>0</ItemId2>
+					<ModelId>102</ModelId>
+					<ColorId>60638</ColorId>
+					<FLAGS>0 0 0 0 0 1</FLAGS>
+				</Kromka>
+			</DATA>
+			<Tickness>38</Tickness>
+			<ITEMNAME> Столешница; Мод: Лигрон HPL ПСФ; Цв: 2651 Дуб Корелла медиана</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{0319D4CE-1AE2-4112-A665-8EFA08772066</uid>
+			<hash>a793f6f70f44999d102002f144d5fbe1</hash>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<Width>600</Width>
+			<Length>1700</Length>
+			<translation>1.62005 0.9001 0.00005</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\00121863.wrl</URL>
+					<ID>121863</ID>
+					<ITEMNAME>ВП электро 5</ITEMNAME>
+					<uid>{7A0AAD22-7A7F-4788-917B-9794537139EA</uid>
+					<hash>9c3867a1131bbb8d20d588b2ec46afaa</hash>
+					<translation>-0.03998 0.0401 0.3</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<SpecialType>Moyka</SpecialType>
+				</Item>
+				<KITCHENITEM>
+					<ITEMID>27158</ITEMID>
+					<MODELID>175</MODELID>
+					<COLORID>106749</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-0.89998" y="0"/>
+							<point x="0.9699" y="0"/>
+							<point x="0.9699" y="0.58"/>
+							<point x="0.96404" y="0.59414" type="arc"/>
+							<point x="0.9499" y="0.6"/>
+							<point x="0.9499" y="0.6"/>
+							<point x="-0.89998" y="0.6"/>
+						</points>
+						<flags>1 0 0 0 0 0</flags>
+						<Kromka>
+							<ItemId>27164</ItemId>
+							<ModelId>99</ModelId>
+							<ColorId>1</ColorId>
+							<Flags>1 1 1 1</Flags>
+						</Kromka>
+					</DATA>
+					<ITEMNAME>Стен_панель; Стеновая панель; Мод: Лигрон HPL(СП); Цв: 2651 Дуб Корелла медиана</ITEMNAME>
+					<HEIGHT>600</HEIGHT>
+					<AddWidthLeft>-130</AddWidthLeft>
+					<AddWidthRight>600</AddWidthRight>
+					<NOTES/>
+					<Zamer>0</Zamer>
+					<uid>{3008FC16-9599-418A-AB27-2C5CDDEDC323</uid>
+					<hash>0547ee3ef209c98ce3f1febbd24772ea</hash>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+					<translation>-0.028 0.0385 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>10</ObjectType>
+				</KITCHENITEM>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>178</MODELID>
+			<COLORID>106743</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-0.69995" y="0"/>
+							<point x="0.69992" y="0"/>
+							<point x="0.69992" y="0.6"/>
+							<point x="-0.09995" y="0.6"/>
+							<point x="-0.10581" y="0.58576" type="arc"/>
+							<point x="-0.12005" y="0.5799"/>
+							<point x="-0.69995" y="0.5799"/>
+						</points>
+					</contour>
+					<contour hole="true" MoykaWidth="500" MoykaDepth="370">
+						<points>
+							<point x="0.34007" y="0.10245"/>
+							<point x="0.37542" y="0.11709" type="arc"/>
+							<point x="0.39007" y="0.15245"/>
+							<point x="0.39007" y="0.42245"/>
+							<point x="0.37542" y="0.45781" type="arc"/>
+							<point x="0.34007" y="0.47245"/>
+							<point x="-0.05993" y="0.47245"/>
+							<point x="-0.09529" y="0.45781" type="arc"/>
+							<point x="-0.10993" y="0.42245"/>
+							<point x="-0.10993" y="0.15245"/>
+							<point x="-0.09529" y="0.11709" type="arc"/>
+							<point x="-0.05993" y="0.10245"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-0.69995</X1>
+					<X2>0.69992</X2>
+					<width>0.6</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+						<page id="2" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="4">
+							<Hole type="3" width="0.5" depth="0.37" alignx="0" aligny="0" shiftx="0.14008" shifty="-0.01255"/>
+						</page>
+					</deskFastCreator>
+				</IniData>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>0</ItemId2>
+					<ModelId>102</ModelId>
+					<ColorId>60638</ColorId>
+					<FLAGS>0 1 0 0 0 0</FLAGS>
+				</Kromka>
+			</DATA>
+			<Tickness>38</Tickness>
+			<ITEMNAME> Столешница; Мод: Лигрон HPL ПСФ; Цв: 2651 Дуб Корелла медиана</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{C463B277-9B5B-4894-A345-6C57A132C4F9</uid>
+			<hash>4492502b8d52a63cce3f59bc155704e9</hash>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<Width>600</Width>
+			<Length>1400</Length>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>79798</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>60638</ColorId>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>505479</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>72635</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>3.14995 0.9001 0.7</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<KITCHENITEM>
+					<ITEMID>27158</ITEMID>
+					<MODELID>175</MODELID>
+					<COLORID>106749</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-0.59995" y="0"/>
+							<point x="0.5998" y="0"/>
+							<point x="0.5998" y="0.6"/>
+							<point x="0.00005" y="0.6"/>
+							<point x="-0.00581" y="0.58576" type="arc"/>
+							<point x="-0.02005" y="0.5799"/>
+							<point x="-0.59995" y="0.5799"/>
+						</points>
+						<flags>1 0 0 0 0 0</flags>
+						<Kromka>
+							<ItemId>27164</ItemId>
+							<ModelId>99</ModelId>
+							<ColorId>1</ColorId>
+							<Flags>1 1 1 1</Flags>
+						</Kromka>
+					</DATA>
+					<ITEMNAME>Стен_панель; Стеновая панель; Мод: Лигрон HPL(СП); Цв: 2651 Дуб Корелла медиана</ITEMNAME>
+					<HEIGHT>600</HEIGHT>
+					<NOTES/>
+					<Zamer>0</Zamer>
+					<uid>{18369D64-04C8-4ED0-AF63-D8A31618C0FC</uid>
+					<hash>88a15a756395828e94052b47c4461f65</hash>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+					<AddWidthLeft>0</AddWidthLeft>
+					<AddWidthRight>200</AddWidthRight>
+					<translation>-0.09 0.0385 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>10</ObjectType>
+				</KITCHENITEM>
+				<Item>
+					<URL>3d\gallery\data\lstone500.wrl</URL>
+					<ITEMNAME>lstone500</ITEMNAME>
+					<MoykaWidth readonly="1">500</MoykaWidth>
+					<MoykaDepth readonly="1">370</MoykaDepth>
+					<ItemID>120134</ItemID>
+					<ModelID>662</ModelID>
+					<ColorID>106367</ColorID>
+					<uid>{BAFC8A14-1BCD-4076-B4FB-6D911AEBA9AA</uid>
+					<AdditionalObjects/>
+					<QUANTITY>1</QUANTITY>
+					<hash>f93447816188c582d33d70d24322b52c</hash>
+					<translation>0.14 -0.1521 0.28745</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<StrParams>
+						<Param>Appearance { material Material { ambientIntensity 0.761 diffuseColor 0.6 0.607843 0.611765 shininess 0.506 specularColor 0.0313726 0.0313726 0.0313726 } texture ImageTexture { url "3d/textures/ligron/moyki/florensil_grey.jpg" } }</Param>
+						<Param/>
+						<Param>0</Param>
+					</StrParams>
+					<SpecialType>KMoyka</SpecialType>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<Item>
+			<URL>3d\gallery\data\00185990.wrl</URL>
+			<ID>185990</ID>
+			<ITEMNAME>ДШ 34</ITEMNAME>
+			<uid>{79F49BC2-FAD2-416F-A8FB-FEFCA1FF06EB</uid>
+			<hash>1671b4e45ea3f6e44861caa55a6a426e</hash>
+			<translation>2.8039 0.5885 1.7</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\00142048.wrl</URL>
+					<ID>142048</ID>
+					<ITEMNAME>СВЧ 8</ITEMNAME>
+					<uid>{2A81B2DF-F6AF-496E-9A45-446D7B7F0F52</uid>
+					<hash>dc1998dc8c1571450ba8697780938b8c</hash>
+					<translation>0 0.597 0.0289</translation>
+					<rotation>0.03513 -0.99938 0 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+				</Item>
+			</children>
+		</Item>
+		<KITCHENITEM>
+			<URL>3d/base/space/Pdeep1_nisha3.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-1403</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2986 1.4015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-344-31</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>10</SXDX>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>57</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2986 0.375 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<bottom>height-1.5</bottom>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="tanbox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>0.2804 0 0.28745</p0>
+							<p1>-0.2806 0 0.28745</p1>
+							<p2>-0.2806 0 -0.26945</p2>
+							<p3>0.2804 0 -0.26945</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>342</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="6" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>95880</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>height+18-Fas1Height</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVE>
+					<TOP>height+18-Fas1Height</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+				<SHELVE>
+					<TOP>Fas3Height+600+90</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+				<SHELVE>
+					<TOP>Fas3Height+56</TOP>
+					<TICKNESS>16</TICKNESS>
+					<FRONTSHIFT>40</FRONTSHIFT>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ConnectionPlaces>
+				<ConnectionPoint>
+					<type>8860</type>
+					<point>0 SocleHeight+Fas3Height+90+3.5 Depth/2-500</point>
+					<normal>0 0 1</normal>
+				</ConnectionPoint>
+				<ConnectionPoint>
+					<type>8845</type>
+					<point>0 SocleHeight+Fas3Height+90+3.5+600 Depth/2-500</point>
+					<normal>0 0 1</normal>
+				</ConnectionPoint>
+			</ConnectionPlaces>
+			<Variables>BackPanH1=0.35;BackPanH2=1.325;BPCount=2</Variables>
+			<VERSION>5</VERSION>
+			<ITEMID>103057</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГН-ДМ-11-2040х600х575-Т1</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Пенал 1 дверь + 1 ящик тандембокс под духовку и СВЧ</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<BOXPRID>12157</BOXPRID>
+			<OPTIONS Values="147 148 159">0</OPTIONS>
+			<ATTENDANTS Value="6">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+					<FLAGS>1 1 0 0</FLAGS>
+					<POINTCATEGORIES>3 3 3 3</POINTCATEGORIES>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГН-ДМ-11-2040х600х575-Т1</ArtCodeLastValid>
+			<uid>{1A5F9E55-0615-4373-9865-31F191E48AAE</uid>
+			<LabelNum>8</LabelNum>
+			<hash>c994cfc3212a2249e091dc7605dd3d62</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>50</DISCOUNT>
+			<MIRROR/>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>504127</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>8</ParentLabelNum>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>506629</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>8</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<Label/>
+			<ShowSizeInfo showHeight="20996" showDepth="773" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>2.8625 0 1.7</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 0 0</UpVec>
+			<ObjectType>5</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/baseHF_HProfilUp.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<variables>
+						<variable name="AventosUP">1</variable>
+					</variables>
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>42</SXDX>
+					<ANIMATION AnimType="hfaventos" Angle="84" AngleLegal="84">OPENTOP</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.3484 0.3615 0.15001</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>43</SXDX>
+					<ANIMATION>-1.1*OPENTOP</ANIMATION>
+					<GROUPWITHPREVIOUS/>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.3484 0.0015 0.15001</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31989</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3479 -0.002 0.15001</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31989</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3479 -0.002 0.15001</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33040</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3479 -0.002 0.15001</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<Variables>isGola=0;isVolpato=1</Variables>
+			<VERSION>3</VERSION>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,2,IF(Option95||Option98,1, 0))</QUANTITY>
+					<BOTTOM>200</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<!--
+-->
+				<!--	<SHELVESGROUP>
+-->
+				<!--		<VISIBILITY>(Height&gt;=980)</VISIBILITY>
+-->
+				<!--		<QUANTITY>3</QUANTITY>
+-->
+				<!--		<BOTTOM>18</BOTTOM>
+-->
+				<!--		<TOP>Height-18</TOP>
+-->
+				<!--		<TICKNESS>16</TICKNESS>
+-->
+				<!--		<ShelveAtTop>0</ShelveAtTop>
+-->
+				<!--		<ShelveAtBottom>0</ShelveAtBottom>
+-->
+				<!--	</SHELVESGROUP>
+-->
+				<!--	<SHELVESGROUP>
+-->
+				<!--		<VISIBILITY>((Height&gt;=840)&amp;&amp;(Height&lt;980))</VISIBILITY>
+-->
+				<!--		<QUANTITY>2</QUANTITY>
+-->
+				<!--		<BOTTOM>18</BOTTOM>
+-->
+				<!--		<TOP>Height-18</TOP>
+-->
+				<!--		<TICKNESS>16</TICKNESS>
+-->
+				<!--		<ShelveAtTop>0</ShelveAtTop>
+-->
+				<!--		<ShelveAtBottom>0</ShelveAtBottom>
+-->
+				<!--	</SHELVESGROUP>
+-->
+				<!--	<SHELVESGROUP>
+-->
+				<!--		<VISIBILITY>((Height&lt;=840)&amp;&amp;(Height&gt;500))</VISIBILITY>
+-->
+				<!--		<QUANTITY>1</QUANTITY>
+-->
+				<!--		<BOTTOM>18</BOTTOM>
+-->
+				<!--		<TOP>Height-18</TOP>
+-->
+				<!--		<TICKNESS>16</TICKNESS>
+-->
+				<!--		<ShelveAtTop>0</ShelveAtTop>
+-->
+				<!--		<ShelveAtBottom>0</ShelveAtBottom>
+-->
+				<!--	</SHELVESGROUP>
+-->
+				<!--	-->
+			</SHELVES>
+			<LABEL pos="8">S</LABEL>
+			<ITEMID>102630</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГВ-КК-720х700х300-ЗА</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Полка AVENTOS HF сушка заказчика [Volpato_ВВЕРХ20]</ITEMNAME>
+			<WIDTH>700</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>11457</BOXPRID>
+			<OPTIONS Values="118">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>120</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГВ-КК-720х700х300-ЗА</ArtCodeLastValid>
+			<WidthBase>700</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>720</HeightBase>
+			<NsTypes/>
+			<LabelNum>13</LabelNum>
+			<LightDno Name="LightFit" ColorName="черн. дневной" PlugName="сенс. врезной"/>
+			<uid>{A0B2FFEB-7D84-43E7-B0C3-61046F461E08</uid>
+			<hash>d85abbe59787beae87b0efdc2bc8cab3</hash>
+			<DISCOUNT>15</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500055</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>13</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>2.99 1.47 0.7</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/BA_300_HProfilUp.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>22</SXDX>
+					<ANIMATION Angle="95" type="auto">OPENRIGHT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-350-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.3634 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<LEFT>Fas1Width+3</LEFT>
+					<TOP>1.5</TOP>
+					<ADDBOUNDS Tickness="60"/>
+					<variables>
+						<variable name="FasTickness">50</variable>
+					</variables>
+					<WIDTH>50</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25881</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra60.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>0.0151 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31989</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3629 -0.002 0.14995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>102623</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГВ-КУ1-720х750х300-0</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка угловая 1 дверь переход 350мм [Гола 16]</ITEMNAME>
+			<WIDTH>730</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>11421</BOXPRID>
+			<OPTIONS Values="118 148">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>21</CornerSxDx>
+			<SocleModelId>120</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГВ-КУ1-720х750х300-0</ArtCodeLastValid>
+			<WidthBase>750</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>720</HeightBase>
+			<uid>{E16D9411-9393-4961-BE39-7ABD85900208</uid>
+			<LabelNum>12</LabelNum>
+			<LightDno Name="LightFit" ColorName="черн. дневной" PlugName="сенс. врезной"/>
+			<hash>049821c1187c6e91c54f3d5161f1f4c0</hash>
+			<DISCOUNT>15</DISCOUNT>
+			<NsTypes>101 119 200</NsTypes>
+			<SuperviserChanged>1</SuperviserChanged>
+			<translation>2.775 1.47 0.16</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0_HProfilUp.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>95880</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>95880</COLORID>
+					<ITEMID>33040</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<Variables>isGola=1</Variables>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>102607</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГВ-К1-720х500х300-0</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь [Гола 16]</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>11349</BOXPRID>
+			<OPTIONS Values="118 148">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>120</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГВ-К1-720х500х300-0</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>720</HeightBase>
+			<LabelNum>11</LabelNum>
+			<uid>{EC54057D-9303-49E1-8946-D281445EAC4D</uid>
+			<LightDno Name="LightFit" ColorName="черн. дневной" PlugName="сенс. врезной"/>
+			<hash>1eac67c159356083640e0d5e79e57e9c</hash>
+			<DISCOUNT>15</DISCOUNT>
+			<translation>2.16 1.47 0.16</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0_HProfilUp.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>95880</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>95880</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>95880</COLORID>
+					<ITEMID>33040</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<Variables>isGola=1</Variables>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>102607</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГВ-К1-720х500х300-0</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь [Гола 16]</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>11349</BOXPRID>
+			<OPTIONS Values="118 148">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>120</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГВ-К1-720х500х300-0</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>720</HeightBase>
+			<LabelNum>9</LabelNum>
+			<uid>{EC54057D-9303-49E1-8946-D281445EAC4D</uid>
+			<LightDno Name="LightFit" ColorName="черн. дневной" PlugName="сенс. врезной"/>
+			<hash>6041a3333a79e6304ee175948102fc1c</hash>
+			<DISCOUNT>15</DISCOUNT>
+			<NsTypes/>
+			<SuperviserChanged>1</SuperviserChanged>
+			<Label/>
+			<translation>1.06014 1.47001 0.16</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/space/LP_uni_tor.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1" ExternalAppearanceIndex="0">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>33010</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+			</LEGS>
+			<!-- <HideAtSpecification>1</HideAtSpecification> -->
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<FLAGS>0 1 1 0</FLAGS>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+			</ATTENDANTS>
+			<!-- <LEGS> -->
+			<!-- <HEIGHT>0</HEIGHT> -->
+			<!-- <URL></URL> -->
+			<!-- </LEGS> -->
+			<DisableKorpusColor/>
+			<ITEMID>102690</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ВН-ДТ-2040х70х595</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Профиль вертикальный терминальный</ITEMNAME>
+			<WIDTH>70</WIDTH>
+			<DEPTH>595</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<BOXPRID>11970</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="6">
+				<PARAM AttendantId="1"/>
+				<PARAM AttendantId="2"/>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ВН-ДТ-2040х70х595</ArtCodeLastValid>
+			<_shiftfromWall>0</_shiftfromWall>
+			<uid>{44351351-6F64-4416-8E2F-C6AA16EF81E2</uid>
+			<LabelNum>2</LabelNum>
+			<hash>8db077cf3f42e797bc3f14ce2c5ee481</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>15</DISCOUNT>
+			<AdditionalAppearances>
+				<ExternalAppearance ExternalIndex="0">Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</ExternalAppearance>
+			</AdditionalAppearances>
+			<FacadesSlColor hide="0" type="auto"/>
+			<translation>0.775 0 0.2975</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 0</UpVec>
+			<ObjectType>5</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_C_freeze_300_SL.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-720-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.7215 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>717</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31989</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2979 -0.002 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31989</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2979 -0.002 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2979 -0.002 0.28745</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<!--	<SHELVESGROUP>
+-->
+				<!--		<VISIBILITY>(Height&lt;=2280)</VISIBILITY>
+-->
+				<!--		<QUANTITY>4</QUANTITY>
+-->
+				<!--		<BOTTOM>720</BOTTOM>
+-->
+				<!--		<TOP>Height-18</TOP>
+-->
+				<!--		<TICKNESS>18</TICKNESS>
+-->
+				<!--		<ShelveAtTop>0</ShelveAtTop>
+-->
+				<!--		<ShelveAtBottom>1</ShelveAtBottom>
+-->
+				<!--	</SHELVESGROUP>
+-->
+				<!--	-->
+				<SHELVE>
+					<TOP>Height-180</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ConnectionPlaces>
+				<ConnectionPoint>
+					<type>6221</type>
+					<point>0 SocleHeight+18 0</point>
+					<normal>0 1 0</normal>
+				</ConnectionPoint>
+			</ConnectionPlaces>
+			<LABEL pos="5" pos_shift="0 -0.2 0">Хол-к</LABEL>
+			<FREEZEITEM/>
+			<ITEMID>103061</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>Н-ХД-2-2040х600х575</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Пенал 2 двери под холодильник без профиля</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<BOXPRID>12161</BOXPRID>
+			<OPTIONS Values="148">0</OPTIONS>
+			<ATTENDANTS Value="6">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>Н-ХД-2-2040х600х575</ArtCodeLastValid>
+			<LabelNum>1</LabelNum>
+			<uid>{3BC31171-9054-4727-8746-78D3D58D00F0</uid>
+			<hash>19be36fe43162d2086d6ff49a07c494e</hash>
+			<SocleColorId>96214</SocleColorId>
+			<DISCOUNT>50</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>508507</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>1</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>0.44 0 0.2875</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 0</UpVec>
+			<ObjectType>5</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/space/T2(SP2)_panel.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<BOTTOM>Height-1.5-344-172-31</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="tanbox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm3.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2804 0 0.28745</p0>
+							<p1>0.2806 0 0.28745</p1>
+							<p2>0.2806 0 -0.26945</p2>
+							<p3>-0.2804 0 -0.26945</p3>
+						</PointsInfo>
+					</box>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>170</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.5485 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5-344-31</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="tanbox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm3.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2804 0 0.28745</p0>
+							<p1>0.2806 0 0.28745</p1>
+							<p2>0.2806 0 -0.26945</p2>
+							<p3>-0.2804 0 -0.26945</p3>
+						</PointsInfo>
+					</box>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>170</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.3765 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="tanbox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm2.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2804 0 0.28745</p0>
+							<p1>0.2806 0 0.28745</p1>
+							<p2>0.2806 0 -0.26945</p2>
+							<p3>-0.2804 0 -0.26945</p3>
+						</PointsInfo>
+					</box>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>(Height/2-30)-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="6" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<WarningMessage>Уточняйте артикулы встраиваемой техники!
+Подходит для варочных панелей электрических и индукционных.
+Запрещена установка газовой варочной панели из-за особенностей конструкции прибора и запрета на наличие экрана снизу
+Внутреннее пространство  от дна верхнего ящика до экрана ЛДСП - 75мм</WarningMessage>
+			<VERSION>3</VERSION>
+			<ITEMID>104096</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГН-ВПЯЩ-21-750х600х575-Т1</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 3 ящика тандембокс под варку, экран ЛДСП [Гориз.проф.]</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<BOXPRID>13280</BOXPRID>
+			<OPTIONS Values="147">0</OPTIONS>
+			<ATTENDANTS Value="2050">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="11">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГН-ВПЯЩ-21-750х600х575-Т1</ArtCodeLastValid>
+			<LabelNum>4</LabelNum>
+			<uid>{6243CA16-98D1-40B5-8C98-DC306A41C48F</uid>
+			<DISCOUNT>15</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>509118</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<hash>41a91dbcd0a0ee0854e77eef461eaa9c</hash>
+			<translation>1.61 0 0.2875</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_air_vent_km.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33040</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+			</SHELVES>
+			<WarningMessage>Вытяжка закрыта передней панелью из ЛДСП жесткого крепления с вырезом под петлю
+Короб из ЛДСП для воздуховода установлен заподлицо с передним краем горизонта
+Фронтальная панель короба из ЛДСП – съемная на клипсах
+Нижняя петля устанавливается на высоте 218мм от нижнего края
+2 вкладные полки ЛДСП
+Пример вытяжек: KRONA KATE 600 INOX PB, KRONA ADEL 600 WHITE PB, KRONA Ameli 600 (900) inox PB, KRONA Asta 600 inox PB
+Внимание! Уточняйте артикулы встраиваемой техники</WarningMessage>
+			<VERSION>5</VERSION>
+			<ITEMID>101286</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>В-КВ1-720х600х300-Вр</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь под врезную вытяжку</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>6459</BOXPRID>
+			<OPTIONS Values="148 159">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>В-КВ1-720х600х300-Вр</ArtCodeLastValid>
+			<uid>{32E8DB71-B0FC-4747-9436-3EECA91BB713</uid>
+			<LabelNum>10</LabelNum>
+			<DISCOUNT>15</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500082</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<hash>4996b4fbe21c9f82bb0121399a3d4439</hash>
+			<Label/>
+			<ShowSizeInfo showHeight="258" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>1.61 1.47 0.16</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/space/T1(SP2).wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<variables>
+						<variable name="handle_side">12</variable>
+					</variables>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>(Height-30)-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.1486 0.0015 0.28745</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.1521 -0.002 0.28745</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;800)&amp;(Height&lt;1100)</VISIBILITY> -->
+				<!-- <QUANTITY>2</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;1100)&amp;(Height&lt;1500)</VISIBILITY> -->
+				<!-- <QUANTITY>3</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;1500)&amp;(Height&lt;2050)</VISIBILITY> -->
+				<!-- <QUANTITY>4</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+				<!-- <SHELVESGROUP> -->
+				<!-- <VISIBILITY>(Height&gt;2050)</VISIBILITY> -->
+				<!-- <QUANTITY>5</QUANTITY> -->
+				<!-- <BOTTOM>16</BOTTOM> -->
+				<!-- <TOP>Height-16</TOP> -->
+				<!-- <TICKNESS>16</TICKNESS> -->
+				<!-- <FRONTSHIFT>5</FRONTSHIFT> -->
+				<!-- <ShelveAtTop>0</ShelveAtTop> -->
+				<!-- <ShelveAtBottom>0</ShelveAtBottom> -->
+				<!-- </SHELVESGROUP> -->
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ITEMID>103432</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГН-КЗ-750х300х575-1</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Стол 1 дверь [Гориз.проф.]</ITEMNAME>
+			<WIDTH>300</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<BOXPRID>10669</BOXPRID>
+			<OPTIONS Values="148">0</OPTIONS>
+			<ATTENDANTS Value="2050">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } } Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="11">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГН-КЗ-750х300х575-1</ArtCodeLastValid>
+			<WidthBase>300</WidthBase>
+			<DepthBase>575</DepthBase>
+			<HeightBase>750</HeightBase>
+			<LabelNum>7</LabelNum>
+			<uid>{5339C12A-3F82-43A3-9E19-3BE758882EE8</uid>
+			<MIRROR/>
+			<DISCOUNT>15</DISCOUNT>
+			<hash>4ce923b6a16f1cf86e1e6cd62c5a8f6f</hash>
+			<translation>2.8625 0 1.25</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0_HProfilUp.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.1736 0.0015 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>31989</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>96212</COLORID>
+					<ITEMID>33040</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<Variables>isGola=1</Variables>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>102607</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ГВ-К1-720х350х300-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка 1 дверь [Гола 16]</ITEMNAME>
+			<WIDTH>350</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>11349</BOXPRID>
+			<OPTIONS Values="118 148">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<ArtCodeLastValid>ГВ-К1-720х350х300-0</ArtCodeLastValid>
+			<WidthBase>350</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>720</HeightBase>
+			<LabelNum>14</LabelNum>
+			<MIRROR/>
+			<uid>{B5DC0305-A252-4414-AAC1-3C68C5F6EBDC</uid>
+			<LightDno Name="LightFit" ColorName="черн. дневной" PlugName="сенс. врезной"/>
+			<DISCOUNT>15</DISCOUNT>
+			<hash>5ad9c26329ad989950ef98f099571a50</hash>
+			<Label/>
+			<translation>2.99 1.47 1.225</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<Depth4Export/>
+			<AUTOTURN/>
+			<URL>3d/base/VirtualBoxForFacadeBok.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<variables>
+						<!-- <variable name="FPPP">IF(Fas1ModelId==1634,1,0)</variable>  -->
+						<!-- 
+-->
+						<!--			<variable name="FPPP">0</variable>
+-->
+						<!--			-->
+					</variables>
+					<TOP>1.5</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>10</SXDX>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25054</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.0599 -0.0015 -0.00985</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<ATTENDANTS Value="0"/>
+			<DisableKorpusColor/>
+			<DisableNS/>
+			<ITEMID>104055</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ПФас-KHDL_16</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Панель фасадная [верх]</ITEMNAME>
+			<WIDTH>120</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>1320</HEIGHT>
+			<BOXPRID>7014</BOXPRID>
+			<OPTIONS>0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2"/>
+				<PARAM AttendantId="3"/>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<SocleModelId>119</SocleModelId>
+			<ArtCodeLastValid>ПФас-KHDL_16</ArtCodeLastValid>
+			<SuperviserChanged>1</SuperviserChanged>
+			<LabelNum>15</LabelNum>
+			<uid>{BADAC920-EE60-4AEF-82C4-3764CB1A9D09</uid>
+			<hash>53a1a3f21f0d73576bc9316d6088080d</hash>
+			<Label/>
+			<ShowSizeInfo showWidth="1" showHeight="515" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>0.08 0.87505 0.58</translation>
+			<rotation>0 -1 0 6.28319</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<Depth4Export/>
+			<AUTOTURN/>
+			<URL>3d/base/VirtualBoxForFacadeBok.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<variables>
+						<!-- <variable name="FPPP">IF(Fas1ModelId==1634,1,0)</variable>  -->
+						<!-- 
+-->
+						<!--			<variable name="FPPP">0</variable>
+-->
+						<!--			-->
+					</variables>
+					<TOP>1.5</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>10</SXDX>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1979</MODELID>
+					<COLORID>96212</COLORID>
+					<ITEMID>25054</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.0599 -0.0015 -0.00985</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<ATTENDANTS Value="0"/>
+			<DisableKorpusColor/>
+			<DisableNS/>
+			<ITEMID>104055</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23008</BaseColorId>
+			<ARTCODE>ПФас-KHDL_16</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Панель фасадная [верх]</ITEMNAME>
+			<WIDTH>120</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>7014</BOXPRID>
+			<OPTIONS>0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2"/>
+				<PARAM AttendantId="3"/>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<SocleModelId>119</SocleModelId>
+			<ArtCodeLastValid>ПФас-KHDL_16</ArtCodeLastValid>
+			<SuperviserChanged>1</SuperviserChanged>
+			<LabelNum>16</LabelNum>
+			<uid>{9482646C-CC04-4578-B714-5EE955CC28E9</uid>
+			<hash>682d3924d2b2f1232fa13596bc9e80a6</hash>
+			<Label/>
+			<ShowSizeInfo showHeight="515" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>0.08 0.15 0.575</translation>
+			<rotation>0 -1 0 6.28319</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+	</Objects>
+	<AdditionalObjects>
+		<ADDITIONALITEM>
+			<ItemId>506578</ItemId>
+			<NOTES/>
+			<QUANTITY>5</QUANTITY>
+		</ADDITIONALITEM>
+	</AdditionalObjects>
+	<AdditionalLabels>
+		<Label>
+			<text>огр</text>
+			<point>1.02426 2.09455 0.32595</point>
+		</Label>
+		<Label>
+			<text>огр</text>
+			<point>2.82405 2.05835 1.16828</point>
+		</Label>
+	</AdditionalLabels>
+	<ColorMaxId>120000</ColorMaxId>
+	<SceneName>C:\Users\volguser39\Downloads\66110 (1).ekkd</SceneName>
+</Scene>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>A85D9</Hash>
+	<Guid>16A5130E-7017-46AB-8E2D-12DC74795440</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Уна (Кюхен Хоф ПРОМО ТР)">490139</ModelBaseId>
+		<ModelId Name="Уна">904161</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 16мм">904094</SocleId>
+		<SocleColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый">914827</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Серый" Name="Серый">911626</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="KD-twins ПСФ">911279</TableBoardId>
+		<TableBoardColorId Code="H3303" Name="H3303 Дуб Гамильтон натуральный [1]">911305</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Каширский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.540</SalonPhone>
+		<SalonEmail>kashirskiy@kxd.ru</SalonEmail>
+		<SalonAddress>М. Каширская, г. Москва, Каширское шоссе, д. 78, корпус 5 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Кузовлева Д.Е.</SalonDirectorName>
+		<SalonDirectorPhone>+79039661390</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="17">Гернер Анна Валентиновна</SalonManagerName>
+		<ClientId create_date="28/07/2026">89032833464</ClientId>
+		<ClientProjectsCount>6</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>1</ClientProjectsPin1C>
+		<ClientName>Горшков Георгий Борисович</ClientName>
+		<ClientEmail>tip4eg@yandex.ru</ClientEmail>
+		<ClientPhone>89032833464</ClientPhone>
+		<ClientMetroStation>Домодедовская</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>450000</ClientBudget>
+		<ClientAssemblingDate>17/09/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Дизайн</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>54-17-21-10-26-01</OrderNum>
+		<FabrikaCheckNum>65686</FabrikaCheckNum>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 23.10.26 (release 34), database: 23.10.2026, last update 24.10.2026</Version>
+		<UpdateNum>2640</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3361 x 3177 мм</Bounds>
+		<Walls>3057x1046x1340</Walls>
+		<Celling>2528 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>101165</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-56507</ArtCode>
+			<NsTypes>2_Умен</NsTypes>
+			<PRICE type="обычная">5847</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>15</DiscountAuto>
+			<WIDTH>80</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>80</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100016</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-25073</ArtCode>
+			<NsTypes>А_ProLine ALP-CR-Б</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика тандембокс</Name>
+			<LabelNum>2</LabelNum>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100716</ITEMID>
+			<BaseColorId Name="Д-744 Светло-серый ЛДСтП + Серый" Code="Д-744/РЦЛДСП_Серый">911563+911626</BaseColorId>
+			<ArtCode>94-08935</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол с 2 фальшпанелями под духовку</Name>
+			<LabelNum>3</LabelNum>
+			<LABEL>ВП,ДШ</LABEL>
+			<Discount>27</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100013</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-25063</ArtCode>
+			<NsTypes>А_ProLine ALP-CR-Б</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 3 ящика тандембокс</Name>
+			<LabelNum>4</LabelNum>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>177</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>177</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100579</ITEMID>
+			<ArtCode>96-04162</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 450мм</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>37</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100710</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>94-08929</ArtCode>
+			<NsTypes>1_Умен+1_ДистУм_20+А_ProLine</NsTypes>
+			<PRICE type="обычная">36551</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол угловой переход 600мм к ПММ под мойку</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>910</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>40</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100016</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-25071</ArtCode>
+			<NsTypes>А_ProLine ALP-CR-А+1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">44314</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика тандембокс</Name>
+			<LabelNum>7</LabelNum>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>420</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101189</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-56493</ArtCode>
+			<NsTypes>2_Умен+3.1_Увел100</NsTypes>
+			<PRICE type="+1000 руб.">8052</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>80</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>80</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100986</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-60623</ArtCode>
+			<NsTypes>2_Умен+3.1_Увел100+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">31906</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>9</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103768</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-62190</ArtCode>
+			<NsTypes>2_Умен+3.1_Увел100+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">40232</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100986</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-60627</ArtCode>
+			<NsTypes>2_Умен+3.1_Увел100+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">36085</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103791</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-60685</ArtCode>
+			<NsTypes>2_Умен+3.1_Увел100+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">69389</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 2 двери сушка INOXA</Name>
+			<LabelNum>12</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>900</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101714</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-60724</ArtCode>
+			<NsTypes>4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">56174</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка угловая 2 двери переход 350мм</Name>
+			<LabelNum>13</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>11</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>1030</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>317</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>317</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Переходной уголок</Type>
+				<Width>50</Width>
+				<Height>1047</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100250</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>94-35439</ArtCode>
+			<NsTypes>А_TopS-SE+1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">26120</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка AVENTOS HK-XS</Name>
+			<LabelNum>14</LabelNum>
+			<Discount>27</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>670</WIDTH>
+			<DEPTH>370</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>667</Width>
+				<Height>357</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100250</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>94-35439</ArtCode>
+			<NsTypes>А_TopS-SE+1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">26120</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка AVENTOS HK-XS</Name>
+			<LabelNum>15</LabelNum>
+			<Discount>27</Discount>
+			<DiscountAuto>12</DiscountAuto>
+			<WIDTH>660</WIDTH>
+			<DEPTH>370</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>657</Width>
+				<Height>357</Height>
+				<MODELID Name="Лея">911708</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>94-40045</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>6061</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins ПСФ">911279</MODELID>
+			<COLORID Code="H3303" Name="H3303 Дуб Гамильтон натуральный [1]">911305</COLORID>
+			<L>460</L>
+			<H>430</H>
+			<P>38</P>
+			<Quantity>1</Quantity>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="4" roundRadius="0.1" roundRadius2="0.23" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.46" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.23" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.46" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500673</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>500661</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,46</QUANTITY>
+					<ColorId>60520</ColorId>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>94-40045</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>18425.44141</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins ПСФ">911279</MODELID>
+			<COLORID Code="H3303" Name="H3303 Дуб Гамильтон натуральный [1]">911305</COLORID>
+			<L>600</L>
+			<H>3040</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="0.86192" shifty="-0.02004" dashed="1"/>
+					<Hole type="102" width="0.5" depth="0.4" alignx="0" aligny="0" shiftx="-0.64008" shifty="-0.02005" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500676</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-03828</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2875</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 16мм">904094</MODELID>
+			<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый">914827</COLORID>
+			<P>100</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1778</Price>
+			<ArtCode>94-40059</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Скос, срез, изменение глубины столешницы, min скос 100х100</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>942</Price>
+			<ArtCode>94-40055</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Обработка бокового и заднего канта столешницы (кромка ABS в цвет)</Name>
+			<COLORID>60520</COLORID>
+			<Quantity>0.46</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1883</Price>
+			<ArtCode>94-40056</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Угловое соединение_еврозапил (стяжки и клей входят в стоимость)</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<ObjectNum>3</ObjectNum>
+				<Price>14999</Price>
+				<ArtCode>96-25507</ArtCode>
+				<Name>Indesit IRCM 160 Электрическая варочная поверхность 60см. черный</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>3</ObjectNum>
+				<Price>34999</Price>
+				<ArtCode>94-49643</ArtCode>
+				<Name>Indesit IFO 6951 BL Электрический духовой шкаф 60см. Черный</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>5</ObjectNum>
+				<Price>29999</Price>
+				<ArtCode>94-49644</ArtCode>
+				<Name>Indesit DIS 2C29 Встраиваемая посудомоечная машина, 45 см</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>0</Price>
+				<ArtCode>94-16620</ArtCode>
+				<Name>KRONA 00021456 Ameli 600 inox PB вытяжка кухонная</Name>
+				<Quantity>1</Quantity>
+				<ObjectNum>10</ObjectNum>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>34411</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_all_tables_base_11.emf</Img>
+	<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_all_tables_hpl.jpg</Img>
+	<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_all_tables_base_11.emf</Img>
+	<Img>17-16A5130E-7017-46AB-8E2D-12DC74795440_all_tables_hpl_2_z.jpg</Img>
+</Scene>

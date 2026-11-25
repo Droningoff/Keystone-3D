@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>2F881</Hash>
+	<Guid>50C3162A-EF0D-40DD-AADF-4A61CACAA8A6</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Марта Лайт (Кюхен Хоф ПРОМО ТР)">911237</ModelBaseId>
+		<ModelId Name="Марта">904160</ModelId>
+		<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+		<ModelColorId Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</ModelColorId>
+		<VitrageId Name="Марта">904160</VitrageId>
+		<VitrageColorId Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</VitrageColorId>
+		<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+		<BoardId Name="KD-twins">911284</BoardId>
+		<BoardColorId Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</BoardColorId>
+		<CorniceId Name="Фальшпанель горизонтальная (КХП)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">080009</SocleId>
+		<SocleColorId Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Черный" Name="Черный">911631</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="KD-twins">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</TableBoardColorId>
+		<WallPanelId Name="KD-twins">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</WallPanelColorId>
+		<Handle>РК662-С160</Handle>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<Customer_Family>Погребняк</Customer_Family>
+		<Customer_Name>Александр</Customer_Name>
+		<Customer_PatronymicName>Андреевич</Customer_PatronymicName>
+		<CustomerAddress>Воскресенск ул.Быковского, д.80 кв.3</CustomerAddress>
+		<CustomerBudget>200000</CustomerBudget>
+		<CustomerDeliveryDate>15/12/2026</CustomerDeliveryDate>
+		<CustomerEmail>kd-egorevsk@fkxd.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>Погребняк Александр Андреевич</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>8-924-690-99-11</CustomerPhone>
+		<ManagerName>Менеджер 1:01</ManagerName>
+		<MEBEL_DISCOUNT>5.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2026-11-05</OrderCreateDate>
+		<OrderNum>ФР-52050-20-10-26-01</OrderNum>
+		<OrderNumStart>52050</OrderNumStart>
+		<OrderStatusChangeDate>2026-11-05</OrderStatusChangeDate>
+		<OrderTech>плита электро соло=860В/500Ш/600Г~0
+</OrderTech>
+		<ProjectCost>237440</ProjectCost>
+		<ProjectCostForRoyalty>237440</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>200978</ProjectMebelFullCost>
+		<SalonAddress>г. Егорьевск, ул. Советская, 121</SalonAddress>
+		<SalonDirectorName>Хабиби Милад Хафизуллаевич</SalonDirectorName>
+		<SalonDirectorPhone>89250038109</SalonDirectorPhone>
+		<SalonEmail>kd-egorevsk@fkxd.ru</SalonEmail>
+		<SalonName>ИП Хабиби Х.Х. г. Егорьевск</SalonName>
+		<SalonPhone>8-925-918-78-13</SalonPhone>
+		<STOL_DISCOUNT>100.0</STOL_DISCOUNT>
+		<EuroRate>1</EuroRate>
+		<SalonCode>52050</SalonCode>
+		<Version>program: 29.10.26 (release 34), database: 10.11.2026, last update 11.11.2026</Version>
+		<UpdateNum>2647</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>2950 x 2735 мм</Bounds>
+		<Walls>2735x2710</Walls>
+		<Celling>2420 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100059</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Н-КЗ-720х600х360-1</ArtCode>
+			<NsTypes>А_ФБлев+А_Firmax-SL</NsTypes>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>360</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</BaseColorId>
+			<ObjectNum>1</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБП-KHMG</ArtCode>
+			<Quantity>0.26</Quantity>
+			<WIDTH>360</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>720</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100059</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Н-КЗ-720х600х360-1</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">12704</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ограничитель</LABEL>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>570</WIDTH>
+			<DEPTH>360</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>567</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100704</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Н-КУ-40-720х800х560-М1</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен+А_ДистУв_30+2_Умен</NsTypes>
+			<PRICE type="обычная">16140</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол угловой переход 400мм под мойку</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>780</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>40</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100013</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Н-ЯЩ-21-720х550х560-Т1</ArtCode>
+			<NsTypes>А_DBox-СС</NsTypes>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол 3 ящика тандембокс</Name>
+			<LabelNum>4</LabelNum>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>550</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>547</Width>
+				<Height>177</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>547</Width>
+				<Height>177</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>547</Width>
+				<Height>357</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100003</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Н-КЗ-720х900х560-2</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">20261</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол 2 двери</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>ограничитель справа</LABEL>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>870</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>432</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>432</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100414</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>В-КУ1-720х950х300-0</ArtCode>
+			<NsTypes>А_ФБлев+А_Firmax-SL</NsTypes>
+			<ColorCategory>3</ColorCategory>
+			<Name>Полка угловая 1 дверь переход 350мм</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>фасадl 517мм</LABEL>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>950</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>50</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</BaseColorId>
+			<ObjectNum>6</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБП-KHMG</ArtCode>
+			<Quantity>0.22</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>720</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100379</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>В-К1-720х600х300-И</ArtCode>
+			<NsTypes>А_ЦАР91+А_Firmax-SL+3.1_Увел100</NsTypes>
+			<PRICE type="+1000 руб.">19576</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Полка 1 дверь сушка INOXA</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>S</LABEL>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>380</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>В-К1-720х400х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен+2_Умен+3.1_Увел100</NsTypes>
+			<PRICE type="+1000 руб.">10708</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>370</WIDTH>
+			<DEPTH>380</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>367</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100394</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>В-К2-720х900х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен+1_З/С90+2_Умен+3.1_Увел100</NsTypes>
+			<PRICE type="+1000 руб.">19164</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Полка 2 двери</Name>
+			<LabelNum>9</LabelNum>
+			<LABEL>ограничитель справа</LABEL>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>870</WIDTH>
+			<DEPTH>380</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>432</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>432</Width>
+				<Height>717</Height>
+				<MODELID Name="Марта">904160</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+				<HANDLE>
+					<ArtCode>РК662-С160</ArtCode>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>253</Price>
+				</HANDLE>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100592</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>Д-Д</ArtCode>
+			<ColorCategory/>
+			<Name>Деталь из ЛДСтП (горизонтально)</Name>
+			<LabelNum>10</LabelNum>
+			<Quantity>0.2</Quantity>
+			<WIDTH>400</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>500</HEIGHT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.3029</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>303</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.731</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>731</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.147</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>147</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.9698</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>970</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.5</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>500</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>Г-ФП-100х1000х116</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<Quantity>0.8698</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>870</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная (КХП)">000000</MODELID>
+				<COLORID Code="KHMG-RAL1023" Name="KHMG-RAL1023 эмаль ультра глянец [KХП3]">904840</COLORID>
+			</FRONT>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>СТФ-4050х600х38-UПСФ</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5500</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>600</L>
+			<H>920</H>
+			<P>38</P>
+			<Quantity>1</Quantity>
+			<deskFastCreator/>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>56229</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>848</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>56229</ColorId>
+					<ParentObjectId>7</ParentObjectId>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СТФ-4050х600х38-UПСФ</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>7348.00049</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>600</L>
+			<H>1336</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.4" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>56229</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>1006</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80154</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>56229</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СТФ-4050х600х38-UПСФ</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>6682.5</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>400</L>
+			<H>1215</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.2" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.4" jointingLedge="0.4" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="4" roundRadius="0.1" roundRadius2="0.2" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.4" jointingLedge="0.4" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>56229</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>654</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_Стл_002.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80157</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,4</QUANTITY>
+					<ColorId>56229</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ОТ-Ф-3050-КВАДРО</ArtCode>
+			<ColorCategory/>
+			<Price>700</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="KD-twins">911284</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<P>1</P>
+			<L>25</L>
+			<H>0</H>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ОТ-Ф-1500-КВАДРО</ArtCode>
+			<ColorCategory/>
+			<Price>350</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="KD-twins">911284</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<P>1</P>
+			<L>25</L>
+			<H>0</H>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СП-4050х620х9-U</ArtCode>
+			<ColorCategory/>
+			<Price>14575.00098</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>620</L>
+			<H>2750</H>
+			<Quantity>2.75</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СП-4050х620х9-U</ArtCode>
+			<ColorCategory/>
+			<Price>13250.00098</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>620</L>
+			<H>2500</H>
+			<Quantity>2.5</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ1000-100</ArtCode>
+			<ColorCategory/>
+			<Price>901</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080009</MODELID>
+			<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+			<P>100</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ2000-100</ArtCode>
+			<ColorCategory/>
+			<Price>1801</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080009</MODELID>
+			<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+			<P>100</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>90</Price>
+				<ArtCode>ЗГ-КВАДРО-ЧЕР</ArtCode>
+				<Name>Комплект заглушек (КВАДРО) - чёрный 11</Name>
+				<Quantity>2</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>250</Price>
+				<ArtCode>ПР_Тр38Ф</ArtCode>
+				<Name>Профиль торцевой R2,5 для столешницы Н.38,8, алюминий (1520У)</Name>
+				<Quantity>2</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>9990</Price>
+				<ArtCode>26740</ArtCode>
+				<Name>Krona 26740 Настенная вытяжка, Черный (GABRIELE 500 )</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+				<Price>185</Price>
+				<ArtCode>ЦПВХ-100-Т</ArtCode>
+				<Name>ЦПВХ-100-Т | Цоколь пластиковый h=100 мм Торцевой</Name>
+				<Quantity>8</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+				<Price>289</Price>
+				<ArtCode>ЦПВХ-100-СУ</ArtCode>
+				<Name>Соединительный (универсальный) элемент для цоколя, ПВХ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1000</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>56229</COLORID>
+				<Quantity>0.6</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1900</Price>
+				<ArtCode>УС_Ф_38</ArtCode>
+				<Name>Угловое соединение - еврозапил стяжки и клей входят в стоимость</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1000</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>56229</COLORID>
+				<Quantity>0.6</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1800</Price>
+				<ArtCode>Скос_Ф-38</ArtCode>
+				<Name>Скос, срез (изменение глубины) минимальный скос - 100*100 Столешницы</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1000</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>56229</COLORID>
+				<Quantity>0.4</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<Tech>
+		<Item ObjectNum="-" name="плита электро соло" code="860В/500Ш/600Г">плита электро соло:860В/500Ш/600Г</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_base_11.emf</Img>
+	<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_hpl.jpg</Img>
+	<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_base_11.emf</Img>
+	<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_hpl_2_z.jpg</Img>
+	<Img>01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_base_1.emf</Img>
+	<Img>C:\Users\Zver\Documents\EKitchen KXD Dealer\export\01-50C3162A-EF0D-40DD-AADF-4A61CACAA8A6_all_tables_base_1.emf</Img>
+</Scene>

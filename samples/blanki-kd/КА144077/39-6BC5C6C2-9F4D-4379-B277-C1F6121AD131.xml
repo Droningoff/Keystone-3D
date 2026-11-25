@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash2>0B8E0</Hash2>
+	<Hash>0B8E0</Hash>
+	<Guid>6BC5C6C2-9F4D-4379-B277-C1F6121AD131</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Прихожая Стоун Колор">909380</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый [КМ1]">911184</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="(Нет модели)">000000</SocleId>
+		<SocleColorId Code="" Name="(Нет цвета)">000000</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Серый" Name="Серый">500001</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Комфорт</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.440</SalonPhone>
+		<SalonEmail>komfmk@kxd.ru</SalonEmail>
+		<SalonAddress>М. Лермонтовский проспект, г. Люберцы, Октябрьский проспект, д. 9 с 10:00 до 20:00</SalonAddress>
+		<SalonDirectorName>Мишина Н.М.</SalonDirectorName>
+		<SalonDirectorPhone>+79269040767</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="39">Лисогорская Анжела Сергеевна</SalonManagerName>
+		<ClientId create_date="26/10/2026">8985410998216</ClientId>
+		<ClientProjectsCount>2</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Галкина Алла Валерьевна</ClientName>
+		<ClientEmail>allagalkina13@yandex.ru</ClientEmail>
+		<ClientPhone>89854109982</ClientPhone>
+		<ClientMetroStation>Рязанский проспект</ClientMetroStation>
+		<ClientCityStation>Москква</ClientCityStation>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>300000</ClientBudget>
+		<ClientAssemblingDate>25/11/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+			<InfoSource id="13">повторный клиент/дизайнер</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Дизайн</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>44-39-27-10-26-04</OrderNum>
+		<FabrikaCheckNum/>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 2.11.26 (release 34), database: 29.10.2026, last update 2.11.2026</Version>
+		<UpdateNum>1364</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3758 x 4000 мм</Bounds>
+		<Walls>1258x2336</Walls>
+		<Celling>2623 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>111002</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-69062</ArtCode>
+			<NsTypes>А_БезНог</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (1 дверь) [ОЦ];  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Опции: Без ног</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>530</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>2400</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>1</ObjectNum>
+			<Quantity>0.276</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>497</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110319</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-63281</ArtCode>
+			<NsTypes>А_TIP ON+2_Умен+3_Увел+А_ProLine</NsTypes>
+			<PRICE type="обычная">19033</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба 1 дверь;  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-744-18 Светло-серый [КМ1]; Опции: Push to Open, Петли KD ProLine</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>490</DEPTH>
+			<HEIGHT>430</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>427</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый [КМ1]">911184</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66271" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111004</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-69066</ArtCode>
+			<NsTypes>А_БезНог</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ОЦ];  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Опции: Без ног</Name>
+			<LabelNum>3</LabelNum>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>900</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>2400</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.482</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>867</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.482</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>867</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.9</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111004</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-69066</ArtCode>
+			<NsTypes>А_БезНог</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ОЦ];  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Опции: Без ног</Name>
+			<LabelNum>4</LabelNum>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>900</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>2400</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>4</ObjectNum>
+			<Quantity>0.482</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>867</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>4</ObjectNum>
+			<Quantity>0.9</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>4</ObjectNum>
+			<Quantity>0.482</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>867</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-744 Светло-серый ЛДСтП</Name>
+			<ObjectNum>4</ObjectNum>
+			<Quantity>0.482</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>867</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110323</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-63227</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр</NsTypes>
+			<PRICE type="+10%">17988</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба навесная 1 ящик;  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-744-18 Светло-серый [КМ1]; Опции: DTC DragonBox серебристо-серый, Push to Open Alphalux скрытого монтажа</Name>
+			<LabelNum>5</LabelNum>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>620</WIDTH>
+			<DEPTH>490</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>617</Width>
+				<Height>197</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый [КМ1]">911184</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open Alphalux скрытого монтажа" ArtCode="94-50938" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110323</ITEMID>
+			<BaseColorId Code="Д-744" Name="Д-744 Светло-серый ЛДСтП">911563</BaseColorId>
+			<ArtCode>93-63227</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр</NsTypes>
+			<PRICE type="+10%">17988</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба навесная 1 ящик;  Цвет корпуса: Д-744 Светло-серый ЛДСтП; Мод: Прихожая Стоун Колор, Ванная Стоун Колор Цв: KHDL-744-18 Светло-серый [КМ1]; Опции: DTC DragonBox серебристо-серый, Push to Open Alphalux скрытого монтажа</Name>
+			<LabelNum>6</LabelNum>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>620</WIDTH>
+			<DEPTH>490</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>617</Width>
+				<Height>197</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый [КМ1]">911184</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open Alphalux скрытого монтажа" ArtCode="94-50938" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110151</ITEMID>
+			<ArtCode>93-39405</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Задняя стенка декоративная Цв: KHDL-744-18 Светло-серый</Name>
+			<LabelNum>7</LabelNum>
+			<Quantity>1.02</Quantity>
+			<WIDTH>600</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>1700</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>18</Width>
+				<Height>1700</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый">911184</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110150</ITEMID>
+			<ArtCode>93-39399</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Боковина декоративная [низ] Цв: KHDL-744-18 Светло-серый</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.204</Quantity>
+			<WIDTH>510</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>400</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>510</Width>
+				<Height>400</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый">911184</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>8</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110149</ITEMID>
+			<ArtCode>93-39393</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Покрытие декоративное Цв: KHDL-744-18 Светло-серый</Name>
+			<LabelNum>9</LabelNum>
+			<Quantity>0.643</Quantity>
+			<WIDTH>510</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>1260</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>510</Width>
+				<Height>1260</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый">911184</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110149</ITEMID>
+			<ArtCode>93-39393</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Покрытие декоративное Цв: KHDL-744-18 Светло-серый</Name>
+			<LabelNum>10</LabelNum>
+			<Quantity>0.335</Quantity>
+			<WIDTH>510</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>656</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>510</Width>
+				<Height>656</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый">911184</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110150</ITEMID>
+			<ArtCode>93-39399</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Боковина декоративная [низ] Цв: KHDL-744-18 Светло-серый</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.204</Quantity>
+			<WIDTH>510</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>400</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>510</Width>
+				<Height>400</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-744-18" Name="KHDL-744-18 Светло-серый">911184</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>11</ObjectNum>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems/>
+	<LongLengthItemsM2/>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>8000</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>16226</Price>
+			<Discount>0</Discount>
+			<DiscountAuto>0</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>39-6BC5C6C2-9F4D-4379-B277-C1F6121AD131_sshot_01.jpg</Img>
+	</ScreenShots>
+</Scene>

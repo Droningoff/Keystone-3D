@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash2>106F9</Hash2>
+	<Hash>106F9</Hash>
+	<Guid>25051953-BF13-482C-A984-F1F23E8C8BE4</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Гостиная Стоун Колор">909379</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">904094</SocleId>
+		<SocleColorId Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый">911671</SocleColorId>
+		<SocleReshColorId Code="" Name="(Нет цвета)">000000</SocleReshColorId>
+		<SocleHeight>60</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<Handle>РК603-С192</Handle>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Дмитровский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.680</SalonPhone>
+		<SalonEmail>dmt@kxd.ru</SalonEmail>
+		<SalonAddress>М. Петровско-Разумовская, г. Москва, Дмитровское шоссе, д. 42 с 11:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Сафоникова О.С.</SalonDirectorName>
+		<SalonDirectorPhone>+79691990707</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="75">Титова Екатерина Анатольевна</SalonManagerName>
+		<ClientId create_date="17/10/2026">8926172309703</ClientId>
+		<ClientProjectsCount>1</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Сейненская Любовь Михайловна</ClientName>
+		<ClientEmail>mgserv@inbox.ru</ClientEmail>
+		<ClientPhone>89261723097</ClientPhone>
+		<ClientMetroStation/>
+		<ClientCityStation>Москва</ClientCityStation>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>250000</ClientBudget>
+		<ClientAssemblingDate>16/11/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="9">увидели салон, проезжая (проходя) мимо</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Качество</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>68-75-17-10-26-02</OrderNum>
+		<FabrikaCheckNum>65685</FabrikaCheckNum>
+		<FabrikaCheckInfo>Timashova.mp / 05.11.2026 / 09:30:26</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 3.11.26 (release 34), database: 3.11.2026, last update 5.11.2026</Version>
+		<UpdateNum>1364</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3190 x 4542 мм</Bounds>
+		<Walls>1954x990x4362x1700</Walls>
+		<Celling>2390 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>110336</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-63308</ArtCode>
+			<NsTypes>4_Раскр</NsTypes>
+			<PRICE type="+10%">33382</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба напольная 2 ящика;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: DTC DragonBox серебристо-серый</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>670</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>332</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>332</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111004</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-69013</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ОЦ];  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>2</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>2250</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.89</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>2246</HEIGHT>
+			<ObjectNum>2</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>2246</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>96-24173</ArtCode>
+			<Name>РК603-С192 Ручка-скоба 192мм, отделка титан</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.89</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>2246</HEIGHT>
+			<ObjectNum>2</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>2246</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>96-24173</ArtCode>
+			<Name>РК603-С192 Ручка-скоба 192мм, отделка титан</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111009</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-64783</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Комод напольный 1 ящик;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]</Name>
+			<ObjectNum>2</ObjectNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>501</WIDTH>
+			<DEPTH>556</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>457</Width>
+				<Height>131</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111007</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65942</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Перемычка дополнительная вертикальная;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>1.1</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1979</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.426</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>767</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.426</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>766</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.5</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.279</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>501</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>415</Price>
+			<ArtCode>93-66277</ArtCode>
+			<Name>ПКД-110 | Петля 110 гр. KD ProLine</Name>
+			<Quantity>10</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>4531</Price>
+			<ArtCode>93-65952</ArtCode>
+			<Name>СВФ | Стяжка-выпрямитель фасада</Name>
+			<Quantity>2</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111004</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-69013</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ОЦ];  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>3</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>2250</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.89</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>2246</HEIGHT>
+			<ObjectNum>3</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>2246</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>96-24173</ArtCode>
+			<Name>РК603-С192 Ручка-скоба 192мм, отделка титан</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.89</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>2246</HEIGHT>
+			<ObjectNum>3</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>2246</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>96-24173</ArtCode>
+			<Name>РК603-С192 Ручка-скоба 192мм, отделка титан</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111009</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-64783</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Комод напольный 1 ящик;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]</Name>
+			<ObjectNum>3</ObjectNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>501</WIDTH>
+			<DEPTH>556</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>457</Width>
+				<Height>131</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.5</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.279</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>501</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111006</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65941</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП с брусом;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.426</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>767</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111007</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65942</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Перемычка дополнительная вертикальная;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>1.101</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1981</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111005</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65940</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Полка вкладная ЛДСП;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>3</ObjectNum>
+			<Quantity>0.138</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>249</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>415</Price>
+			<ArtCode>93-66277</ArtCode>
+			<Name>ПКД-110 | Петля 110 гр. KD ProLine</Name>
+			<Quantity>10</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>4531</Price>
+			<ArtCode>93-65952</ArtCode>
+			<Name>СВФ | Стяжка-выпрямитель фасада</Name>
+			<Quantity>2</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110336</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-63308</ArtCode>
+			<NsTypes>4_Раскр</NsTypes>
+			<PRICE type="+10%">33382</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Тумба напольная 2 ящика;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: DTC DragonBox серебристо-серый</Name>
+			<LabelNum>4</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>670</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>332</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>332</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110095</ITEMID>
+			<ArtCode>94-30689</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 2 секции Цв: KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]</Name>
+			<LabelNum>5</LabelNum>
+			<WIDTH>900</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>900</Width>
+				<Height>360</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-729-18" Name="KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]">909156</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110408</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-61232</ArtCode>
+			<NsTypes>1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">17939</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка декоративная 2 двери;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: Петли KD ProLine</Name>
+			<LabelNum>6</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>900</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>LEFT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110094</ITEMID>
+			<ArtCode>94-30684</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 1 секция Цв: KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]</Name>
+			<LabelNum>7</LabelNum>
+			<WIDTH>450</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>450</Width>
+				<Height>360</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-729-18" Name="KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]">909156</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110407</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-61227</ArtCode>
+			<NsTypes>1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">10732</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка декоративная 1 дверь;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: Петли KD ProLine</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110094</ITEMID>
+			<ArtCode>94-30684</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 1 секция Цв: KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]</Name>
+			<LabelNum>9</LabelNum>
+			<WIDTH>450</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>450</Width>
+				<Height>360</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-729-18" Name="KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]">909156</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110407</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-61227</ArtCode>
+			<NsTypes>1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">10732</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка декоративная 1 дверь;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: Петли KD ProLine</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110095</ITEMID>
+			<ArtCode>94-30689</ArtCode>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Стеллаж верхний, 2 секции Цв: KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]</Name>
+			<LabelNum>11</LabelNum>
+			<WIDTH>900</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>900</Width>
+				<Height>360</Height>
+				<MODELID Name="Открытые элементы [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-729-18" Name="KHDL-729-18 Каштан Кентукки (эко.струк.) [СТ3]">909156</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110408</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-61232</ArtCode>
+			<NsTypes>1_Умен+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">17939</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Полка декоративная 2 двери;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-746-18 Крем бежевый [КМ1]; Опции: Петли KD ProLine</Name>
+			<LabelNum>12</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>900</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>96-24170</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК603-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>LEFT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>602</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110133</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (вертикально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>13</LabelNum>
+			<Quantity>0.537</Quantity>
+			<WIDTH>1535</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>350</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110150</ITEMID>
+			<ArtCode>93-39399</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Боковина декоративная [низ] Цв: KHDL-746-18 Крем бежевый</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.218</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>725</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>300</Width>
+				<Height>725</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый">911671</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>14</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110150</ITEMID>
+			<ArtCode>93-39399</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Боковина декоративная [низ] Цв: KHDL-746-18 Крем бежевый</Name>
+			<LabelNum>15</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.218</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>725</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>300</Width>
+				<Height>725</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый">911671</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>15</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110133</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (вертикально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>16</LabelNum>
+			<Quantity>0.537</Quantity>
+			<WIDTH>1535</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>350</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110133</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (вертикально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>17</LabelNum>
+			<Quantity>0.725</Quantity>
+			<WIDTH>1000</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>725</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>17</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110150</ITEMID>
+			<ArtCode>93-39399</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Боковина декоративная [низ] Цв: KHDL-729-18 Каштан Кентукки (эко.струк.)</Name>
+			<LabelNum>18</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>1.41</Quantity>
+			<WIDTH>600</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>2350</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>600</Width>
+				<Height>2350</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-729-18" Name="KHDL-729-18 Каштан Кентукки (эко.струк.)">909156</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>18</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110133</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (вертикально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>19</LabelNum>
+			<Quantity>0.725</Quantity>
+			<WIDTH>1000</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>725</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>96-24840</ArtCode>
+			<Name>Мон_Наб_ДСП Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>19</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>62</Price>
+			<ArtCode>94-31151</ArtCode>
+			<Name>ЭК-01 Крепежный уголок 40х40 мм</Name>
+			<Quantity>15</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>93-56705</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>964</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18 мм [ШК]">914941+911671</MODELID>
+			<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+			<Quantity>0.45</Quantity>
+			<P>60</P>
+			<H>450</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-56705</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>964</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18 мм [ШК]">914941+911671</MODELID>
+			<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+			<Quantity>0.45</Quantity>
+			<P>60</P>
+			<H>450</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-56705</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>964</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18 мм [ШК]">914941+911671</MODELID>
+			<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый [КМ1]">911671</COLORID>
+			<Quantity>1.6</Quantity>
+			<P>60</P>
+			<H>1600</H>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>8000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>31304</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>75-25051953-BF13-482C-A984-F1F23E8C8BE4_sshot_01.jpg</Img>
+	</ScreenShots>
+</Scene>

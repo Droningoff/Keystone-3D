@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>97493</Hash>
+	<Guid>CBCBC246-1AE9-4767-BDBF-7FC482FCBA33</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Уна Лайт  SL">911688</ModelBaseId>
+		<ModelId Name="Уна">911173</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 16мм">904096</SocleId>
+		<SocleColorId Code="KHDL-020" Name="KHDL-020 Диамант серый">905042</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Черный" Name="Черный">911627</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="Лигрон HPL ПСФ">902969</TableBoardId>
+		<TableBoardColorId Code="" Name="2651 Дуб Корелла медиана">915273</TableBoardColorId>
+		<WallPanelId Name="Лигрон HPL(СП)">903019</WallPanelId>
+		<WallPanelColorId Code="" Name="2651 Дуб Корелла медиана">915274</WallPanelColorId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Волгоградский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.530</SalonPhone>
+		<SalonEmail>volg@kxd.ru</SalonEmail>
+		<SalonAddress>М. Кузьминки, г. Москва, Волгоградский проспект, д. 132 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Видяева Н.Б.</SalonDirectorName>
+		<SalonDirectorPhone>+79258850600</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="Е7">Левина Анастасия Владимировна</SalonManagerName>
+		<ClientId create_date="26/10/2026">89266009469</ClientId>
+		<ClientProjectsCount>3</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>1</ClientProjectsPin1C>
+		<ClientName>Галанина Мария Николаевна</ClientName>
+		<ClientEmail>mashenkab86@gmail.com</ClientEmail>
+		<ClientPhone>89266009469</ClientPhone>
+		<ClientMetroStation>Люблино</ClientMetroStation>
+		<ClientCityStation>Москва</ClientCityStation>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>700000</ClientBudget>
+		<ClientAssemblingDate>25/11/2026</ClientAssemblingDate>
+		<ClientInfoSource/>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Дизайн</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>53-Е7-31-10-26-02</OrderNum>
+		<FabrikaCheckNum>66110</FabrikaCheckNum>
+		<FabrikaCheckInfo>ivanchilova.ye / 02.11.2026 / 22:24:48</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 2.11.26 (release 34), database: 29.10.2026, last update 3.11.2026</Version>
+		<UpdateNum>2644</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3150 x 2010 мм</Bounds>
+		<Walls>3150x2010</Walls>
+		<Celling>2600 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>103061</ITEMID>
+			<BaseColorId Name="Д-020 Диамант серый ЛДСтП + Черный" Code="Д-020/РЦЛДСП_Черный">904474+911627</BaseColorId>
+			<ArtCode>93-51218</ArtCode>
+			<NsTypes>А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал 2 двери под холодильник без профиля</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>Хол-к</LABEL>
+			<Discount>50</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>1317</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102690</ITEMID>
+			<ArtCode>93-51879</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Профиль вертикальный терминальный</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>70</WIDTH>
+			<DEPTH>595</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей МДФ</Type>
+				<Width>595</Width>
+				<Height>2040</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>70</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103432</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-50941</ArtCode>
+			<NsTypes>А_Firmax-SL+1_Умен</NsTypes>
+			<PRICE type="обычная">25510</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>500</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104096</ITEMID>
+			<BaseColorId Name="Д-020 Диамант серый ЛДСтП + Черный" Code="Д-020/РЦЛДСП_Черный">904474+911627</BaseColorId>
+			<ArtCode>93-64665</ArtCode>
+			<NsTypes>А_DBox-СС</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 3 ящика тандембокс под варку, экран ЛДСП</Name>
+			<LabelNum>4</LabelNum>
+			<LABEL>ВП</LABEL>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>170</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>170</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102666</ITEMID>
+			<ArtCode>93-51885</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 600мм с профилем</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>40</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103454</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51064</ArtCode>
+			<NsTypes>А_Firmax-SL+1_ДистУм_10</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол угловой переход 600мм под мойку</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>1050</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>75</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>1050</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103432</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-50935</ArtCode>
+			<NsTypes>А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>297</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>300</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103057</ITEMID>
+			<BaseColorId Name="Д-020 Диамант серый ЛДСтП + Черный" Code="Д-020/РЦЛДСП_Черный">904474+911627</BaseColorId>
+			<ArtCode>93-51211</ArtCode>
+			<NsTypes>А_TIP ON+А_DBox-СС+А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал 1 дверь + 1 ящик тандембокс под духовку и СВЧ</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ДШ,СВЧ</LABEL>
+			<Discount>50</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>637</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Уна">911173</ModelID>
+				<COLORID Code="KHDLW-020-18" Name="KHDLW-020-18 Диамант серый-W">915507</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-48046" Count="1"/>
+			<Variables>BackPanH1=0.35;BackPanH2=1.325;BPCount=2</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102607</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51617</ArtCode>
+			<NsTypes>А_Гола16_Ч+А_Firmax-SL+А_СВ_LFit_Ч</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>9</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="96-20993" Count="0.5"/>
+			<OPTION Name="Светильник светодиодный LightFit (черн., дневной)" ArtCode="93-57813" Count="0.5"/>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101286</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-62180</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-48046" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102607</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51617</ArtCode>
+			<NsTypes>А_Гола16_Ч+А_Firmax-SL+А_СВ_LFit_Ч</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="96-20993" Count="0.5"/>
+			<OPTION Name="Светильник светодиодный LightFit (черн., дневной)" ArtCode="93-57813" Count="0.5"/>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102623</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51685</ArtCode>
+			<NsTypes>А_Гола16_Ч+А_Firmax-SL+А_СВ_LFit_Ч+1_Умен+А_ДистУв_10+2_Умен</NsTypes>
+			<PRICE type="обычная">25219</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка угловая 1 дверь переход 350мм</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>730</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>377</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>50</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="96-20993" Count="0.73"/>
+			<OPTION Name="Светильник светодиодный LightFit (черн., дневной)" ArtCode="93-57813" Count="0.73"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102630</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51722</ArtCode>
+			<NsTypes>А_Гола16_Ч+А_TopS-ST+А_СВ_LFit_Ч</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка AVENTOS HF сушка заказчика</Name>
+			<LabelNum>13</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>700</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="96-20993" Count="0.7"/>
+			<OPTION Name="Светильник светодиодный LightFit (черн., дневной)" ArtCode="93-57813" Count="0.7"/>
+			<Variables>isGola=0;isVolpato=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102607</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>93-51611</ArtCode>
+			<NsTypes>А_Гола16_Ч+А_Firmax-SL+А_СВ_LFit_Ч</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>15</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>350</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>347</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">911173</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="96-20993" Count="0.35"/>
+			<OPTION Name="Светильник светодиодный LightFit (черн., дневной)" ArtCode="93-57813" Count="0.35"/>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104055</ITEMID>
+			<ArtCode>93-64260</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [верх]</Name>
+			<LabelNum>15</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.158</Quantity>
+			<WIDTH>120</WIDTH>
+			<HEIGHT>1320</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>120</Width>
+				<Height>1320</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104055</ITEMID>
+			<ArtCode>93-64260</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [верх]</Name>
+			<LabelNum>16</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.086</Quantity>
+			<WIDTH>120</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>120</Width>
+				<Height>720</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый [KХП1]">905042</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-49033</ArtCode>
+			<Name>К-т подключения, выкл. сенсорный</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>575</Price>
+			<ArtCode>96-06111</ArtCode>
+			<Name>Уплотнитель Simple line</Name>
+			<Quantity>5</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>88-68905</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>14388.9209</Price>
+			<Discount>14</Discount>
+			<DiscountAuto>14</DiscountAuto>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон HPL ПСФ">902969</MODELID>
+			<COLORID Code="" Name="2651 Дуб Корелла медиана">915273</COLORID>
+			<L>600</L>
+			<H>1742</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="4" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_Стл_000.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>88-68905</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>11564.00098</Price>
+			<Discount>14</Discount>
+			<DiscountAuto>14</DiscountAuto>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон HPL ПСФ">902969</MODELID>
+			<COLORID Code="" Name="2651 Дуб Корелла медиана">915273</COLORID>
+			<L>600</L>
+			<H>1400</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="3" width="0.5" depth="0.37" alignx="0" aligny="0" shiftx="0.14008" shifty="-0.01255"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>79798</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>60638</ColorId>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>505479</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>72635</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-15486</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>11512.80078</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Лигрон HPL(СП)">903019</MODELID>
+			<COLORID Code="" Name="2651 Дуб Корелла медиана">915274</COLORID>
+			<L>600</L>
+			<H>2340</H>
+			<Quantity>2.34</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-15486</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>6888.00049</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Лигрон HPL(СП)">903019</MODELID>
+			<COLORID Code="" Name="2651 Дуб Корелла медиана">915274</COLORID>
+			<L>600</L>
+			<H>1400</H>
+			<Quantity>1.4</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-03831</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1743</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 16мм">904096</MODELID>
+			<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый">905042</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-03832</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>3431</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 16мм">904096</MODELID>
+			<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый">905042</COLORID>
+			<P>150</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>7480</Price>
+			<ArtCode>96-23372</ArtCode>
+			<Name>Телескопические держатели 1000мм</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>6</ObjectNum>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1105</Price>
+			<ArtCode>88-68913</ArtCode>
+			<ColorCategory>2</ColorCategory>
+			<Name>СОбрТ_38 2 кат. Обработка заднего и бокового канта (кромка как на переднем канте) Н=38</Name>
+			<COLORID>60638</COLORID>
+			<Quantity>0.6</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>5600</Price>
+			<ArtCode>96-21147</ArtCode>
+			<Name>Вклейка мойки подстольного монтажа</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>4645</Price>
+			<ArtCode>88-68915</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Угловое соединение - еврозапил Н=38</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2>
+		<KitchenItem>
+			<ArtCode>96-23369</ArtCode>
+			<Name>Мойка из кварцевого композита ЛИГСТОУН 500, грей</Name>
+			<COLORID Code="" Name="Грей">000000</COLORID>
+			<ColorCategory>1</ColorCategory>
+			<Price>22060</Price>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItemsM2>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<ObjectNum>6</ObjectNum>
+				<Price>17891</Price>
+				<ArtCode>94-42628</ArtCode>
+				<Name>Florentina 337.03Н.2123.305 смеситель Маэстро Грей</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>6</ObjectNum>
+				<Price>29188</Price>
+				<ArtCode>94-24443</ArtCode>
+				<Name>OMOIKIRI 4995060 Измельчитель пищевых отходов Nagare 500</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>5</ObjectNum>
+				<Price>45390</Price>
+				<ArtCode>94-48002</ArtCode>
+				<Name>KRONA КА-00012002 BRENTA 60 BI V2 посудомоечная машина 60 см</Name>
+				<Quantity>1</Quantity>
+				<Discount>50</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>8</ObjectNum>
+				<Price>29790</Price>
+				<ArtCode>94-43567</ArtCode>
+				<Name>KRONA КА-00007245 ELEMENT 60 BL/BL электрический духовой шкаф черный</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>8</ObjectNum>
+				<Price>27990</Price>
+				<ArtCode>96-22923</ArtCode>
+				<Name>KRONA КА-00007341 HIMMEL 60 BL встраиваемая микроволновая печь, чёрный</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>13</ObjectNum>
+				<Price>3320</Price>
+				<ArtCode>94-39016</ArtCode>
+				<Name>КАЛИБРА 265-16E Сушка для посуды, 700 мм (сталь, хром, 1 жёсткий поддон, регулируемая глубина 280-34</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>82490</Price>
+				<ArtCode>94-49646</ArtCode>
+				<Name>Indesit IBH 20 Встраиваемый холодильник с системой охлаждения Semi No Frost</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>4</ObjectNum>
+				<Price>19190</Price>
+				<ArtCode>94-50856</ArtCode>
+				<Name>KRONA КА-00002181 REMO 60 BL индукционная варочная поверхность, 60 см. чёрный</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>10</ObjectNum>
+				<Price>11990</Price>
+				<ArtCode>94-39047</ArtCode>
+				<Name>KRONA КА-00005278 KATE 600 GLASS BLACK PB K вытяжка кухонная черн.</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Скидка замер</Name>
+			<ArtCode>41-00101</ArtCode>
+			<Price>-1800</Price>
+			<Discount>0</Discount>
+			<DiscountAuto>0</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>8000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>39668</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_base_6.emf</Img>
+	<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_hpl.jpg</Img>
+	<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_base_6.emf</Img>
+	<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_hpl_2_z.jpg</Img>
+	<Img>Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_base_1.emf</Img>
+	<Img>\\192.168.100.132\ekitchen\export_ekitchen\530\Е7-CBCBC246-1AE9-4767-BDBF-7FC482FCBA33_all_tables_base_1.emf</Img>
+</Scene>

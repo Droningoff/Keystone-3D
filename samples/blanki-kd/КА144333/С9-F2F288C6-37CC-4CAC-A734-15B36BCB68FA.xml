@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>DD009</Hash>
+	<Guid>F2F288C6-37CC-4CAC-A734-15B36BCB68FA</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Астрид (Кюхен Хоф КЛАССИК ТР)">911316</ModelBaseId>
+		<ModelId Name="Астрид О-рамка">911317</ModelId>
+		<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+		<ModelColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+		<BoardId Name="№1 Staron">909073</BoardId>
+		<BoardColorId Code="CS.2.860" Name="CS.2.860 Aqua [1]">909487</BoardColorId>
+		<CorniceId Name="Фальшпанель горизонтальная">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">911610~914973</SocleId>
+		<SocleColorId Code="Ц_Белый" Name="Белый">911610~914973</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Белый" Name="Белый">911629</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="Staron">911232</TableBoardId>
+		<TableBoardColorId Code="CS.2.860" Name="CS.2.860 Aqua [1]">909485</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Маршала Жукова</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.640</SalonPhone>
+		<SalonEmail>mzk@kxd.ru</SalonEmail>
+		<SalonAddress>М. Народного Ополчения, г. Москва, проспект Маршала Жукова, д. 60, строение 2, 2 этаж с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Агеева О.А.</SalonDirectorName>
+		<SalonDirectorPhone>+79772967977</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="С9">Хальзова Наталья Борисовна</SalonManagerName>
+		<ClientId create_date="24/10/2026">89031316568</ClientId>
+		<ClientProjectsCount>4</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>1</ClientProjectsPin1C>
+		<ClientName>Мухатдинова Нина Аркадьевна</ClientName>
+		<ClientEmail>evgenia.arh2018@gmail.com</ClientEmail>
+		<ClientPhone>89031316568</ClientPhone>
+		<ClientMetroStation>Сокольники</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>700000</ClientBudget>
+		<ClientAssemblingDate>10/12/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Качество</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>64-С9-24-10-26-01</OrderNum>
+		<FabrikaCheckNum>66310</FabrikaCheckNum>
+		<FabrikaCheckInfo>Timashova.mp / 09.11.2026 / 14:05:56</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 3.11.26 (release 34), database: 3.11.2026, last update 6.11.2026</Version>
+		<UpdateNum>2646</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>4300 x 2700 мм</Bounds>
+		<Walls>2395x2662х1193</Walls>
+		<Celling>2710 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>101146</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>94-10775</ArtCode>
+			<NsTypes>А_ФБлев+2_Умен+А_ProLine ALP-CR-Б</NsTypes>
+			<PRICE type="обычная">58407</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 ящик тандембокс под сушку INOXA GOLD</Name>
+			<LabelNum>1</LabelNum>
+			<LABEL>S</LABEL>
+			<WIDTH>800</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид П-рамка верхняя</Type>
+				<Width>797</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка верхняя">911323</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Астрид П-рамка нижняя</Type>
+				<Width>797</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка нижняя">911324</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</BaseColorId>
+			<ObjectNum>1</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48510</ArtCode>
+			<Quantity>0.4</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>720</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100579</ITEMID>
+			<ArtCode>96-04160</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 450мм</Name>
+			<LabelNum>2</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>40</Discount>
+			<WIDTH>450</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка левая</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Астрид С-рамка левая">911321</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100710</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>94-10818</ArtCode>
+			<NsTypes>1_ДистУм_20+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол угловой переход 600мм к ПММ под мойку</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>R</BoxOri>
+			<WIDTH>1050</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка правая</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Астрид С-рамка правая">911322</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>40</Width>
+				<Height>717</Height>
+				<MODELID Name="Астрид О-рамка">911317</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104089</ITEMID>
+			<BaseColorId Name="Д-001 Белая ЛДСтП + Белый" Code="Д-001/РЦПВХ_Белый">900368+911629</BaseColorId>
+			<ArtCode>93-64624</ArtCode>
+			<NsTypes>4_Раскр+А_ProLine ALP-CR-Б</NsTypes>
+			<PRICE type="обычная">89400</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика+1 ящик скрытый тандембокс под варку, экран ЛДСП</Name>
+			<LabelNum>4</LabelNum>
+			<LABEL>ВП</LABEL>
+			<WIDTH>770</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид П-рамка верхняя</Type>
+				<Width>767</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка верхняя">911323</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Астрид П-рамка нижняя</Type>
+				<Width>767</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка нижняя">911324</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100179</ITEMID>
+			<BaseColorId Name="Д-001 Белая ЛДСтП + Белый" Code="Д-001/РЦПВХ_Белый">900368+911629</BaseColorId>
+			<ArtCode>94-11092</ArtCode>
+			<NsTypes>А_ФБлев+А_ProLine ALP-CR-Б+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал 1 дверь + 2 ящика тандембокс под духовку</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ДШ</LABEL>
+			<Discount>30</Discount>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид П-рамка нижняя</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Астрид П-рамка нижняя">911324</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Астрид П-рамка верхняя</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка верхняя">911323</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Астрид П-рамка нижняя</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Астрид П-рамка нижняя">911324</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<Variables>BackPanH1=0.715;BackPanH2=1.325;BPCount=2</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</BaseColorId>
+			<ObjectNum>5</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48510</ArtCode>
+			<Quantity>1.14</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>7836</Price>
+			<ArtCode>93-47996</ArtCode>
+			<Name>Ящик скрытый D DTC DragonBox серебристый</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>5</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103917</ITEMID>
+			<BaseColorId Name="Д-001 Белая ЛДСтП + Белый" Code="Д-001/РЦПВХ_Белый">900368+911629</BaseColorId>
+			<ArtCode>93-58762</ArtCode>
+			<NsTypes>4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="обычная">98668</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал 3 двери под холодильник</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>Хол-к</LABEL>
+			<Discount>30</Discount>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>2440</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид П-рамка верхняя</Type>
+				<Width>597</Width>
+				<Height>397</Height>
+				<MODELID Name="Астрид П-рамка верхняя">911323</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Астрид Линия2 вертикальная</Type>
+				<Width>597</Width>
+				<Height>1317</Height>
+				<MODELID Name="Астрид Линия2 вертикальная">913108</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Астрид П-рамка нижняя</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Астрид П-рамка нижняя">911324</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100990</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-26564</ArtCode>
+			<NsTypes>А_ФБлев+А_СВ_WGlow_Ал+3_Увел+3_Глуб350+А_ProLine</NsTypes>
+			<PRICE type="+2000 руб.">71022</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 2 двери</Name>
+			<LabelNum>7</LabelNum>
+			<WIDTH>950</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка левая</Type>
+				<Width>472</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка левая">911321</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Астрид С-рамка правая</Type>
+				<Width>472</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка правая">911322</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный WideGlow (алюм., дневной)" ArtCode="93-57762" Count="0.95"/>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</BaseColorId>
+			<ObjectNum>7</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48510</ArtCode>
+			<Quantity>0.38</Quantity>
+			<WIDTH>350</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103789</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-57653</ArtCode>
+			<NsTypes>А_СВ_WGlow_Ал+3_Глуб350+А_ProLine</NsTypes>
+			<PRICE type="+700 руб.">47649</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь сушка заказчика</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>S</LABEL>
+			<WIDTH>500</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка левая</Type>
+				<Width>497</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка левая">911321</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный WideGlow (алюм., дневной)" ArtCode="93-57762" Count="0.5"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100986</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-26552</ArtCode>
+			<NsTypes>А_СВ_WGlow_Ал+3_Глуб350+А_ProLine</NsTypes>
+			<PRICE type="+700 руб.">38744</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>9</LabelNum>
+			<BoxOri>R</BoxOri>
+			<WIDTH>450</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка правая</Type>
+				<Width>447</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка левая">911321</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный WideGlow (алюм., дневной)" ArtCode="93-57762" Count="0.45"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101713</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-25217</ArtCode>
+			<NsTypes>А_СВ_WGlow_Ал+2_Умен+3_Увел+3_Глуб350+А_ProLine</NsTypes>
+			<PRICE type="+1000 руб.">53705</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка угловая 1 дверь переход 350мм</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>L</BoxOri>
+			<WIDTH>770</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка левая</Type>
+				<Width>367</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка правая">911322</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>50</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид О-рамка">911317</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный WideGlow (алюм., дневной)" ArtCode="93-57762" Count="0.77"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103768</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-62155</ArtCode>
+			<NsTypes>3_Глуб350+А_ProLine</NsTypes>
+			<PRICE type="+700 руб.">52267</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид С-рамка правая</Type>
+				<Width>597</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид С-рамка левая">911321</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101189</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-55752</ArtCode>
+			<NsTypes>4_Раскр</NsTypes>
+			<PRICE type="+10%">7010</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<WIDTH>30</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>30</Width>
+				<Height>1077</Height>
+				<MODELID Name="Астрид О-рамка">911317</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100235</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>94-35175</ArtCode>
+			<NsTypes>А_ФБпр+А_ФБлев+3_Увел+А_ProLine</NsTypes>
+			<PRICE type="+2000 руб.">23462</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>13</LabelNum>
+			<BoxOri>R</BoxOri>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>400</HEIGHT>
+			<FRONT N="1">
+				<Type>Астрид П-рамка верхняя</Type>
+				<Width>597</Width>
+				<Height>397</Height>
+				<MODELID Name="Астрид П-рамка верхняя">911323</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+				<ModelMaterial Name="МДФ + экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHM-312" Name="KHM-312 АЛЕБАСТР [KХК1]">914935</BaseColorId>
+			<ObjectNum>13</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48510</ArtCode>
+			<Quantity>0.22</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>400</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</BaseColorId>
+			<ObjectNum>13</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48510</ArtCode>
+			<Quantity>0.22</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>400</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>94-10056</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.036</Quantity>
+			<WIDTH>50</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>50</Width>
+				<Height>720</Height>
+				<MODELID Name="Эмма">904173</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХ2]">914881</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>3944</Price>
+			<ArtCode>94-03507</ArtCode>
+			<Name>Деталь из ЛДСтП</Name>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<WIDTH>50</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1200</HEIGHT>
+			<Quantity>0.06</Quantity>
+			<ObjectNum>14</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>94-10056</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>15</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.066</Quantity>
+			<WIDTH>50</WIDTH>
+			<HEIGHT>1320</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>50</Width>
+				<Height>1320</Height>
+				<MODELID Name="Эмма">904173</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХ2]">914881</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>3944</Price>
+			<ArtCode>94-03507</ArtCode>
+			<Name>Деталь из ЛДСтП</Name>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<WIDTH>50</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1200</HEIGHT>
+			<Quantity>0.06</Quantity>
+			<ObjectNum>15</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>94-10056</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>16</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.02</Quantity>
+			<WIDTH>50</WIDTH>
+			<HEIGHT>400</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>50</Width>
+				<Height>400</Height>
+				<MODELID Name="Эмма">904173</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХ2]">914881</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-48751</ArtCode>
+			<Name>К-т подключения, выкл. сенсорный</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-61169</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<Quantity>0.35286</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>353</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>80</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-61169</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<Quantity>2.03095</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>2031</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>80</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-61169</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<Quantity>1.147</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>1147</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>80</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-61169</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<Quantity>0.2629</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>263</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>80</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-61169</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<Quantity>1.1838</Quantity>
+			<Name>Фальшпанель горизонтальная</Name>
+			<WIDTH>1184</WIDTH>
+			<DEPTH>100</DEPTH>
+			<HEIGHT>80</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<MODELID Name="Фальшпанель горизонтальная">000000</MODELID>
+				<COLORID Code="KHM-310" Name="KHM-310 БЕЛЫЙ ПРЕМИУМ [KХК1]">914881</COLORID>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Белый" Name="Белый">911610~914973</COLORID>
+			<Price>250</Price>
+			<ArtCode>93-49367</ArtCode>
+			<Name>Цоколь ПВХ, торцевой эл., 150</Name>
+			<Quantity>6</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Белый" Name="Белый">911610~914973</COLORID>
+			<Price>376</Price>
+			<ArtCode>93-49406</ArtCode>
+			<Name>Цоколь ПВХ, соединительный эл., 150</Name>
+			<Quantity>2</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>96-08264</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5980.00049</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="№1 Staron">909073</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909487</COLORID>
+			<P>1</P>
+			<L>40</L>
+			<H>2300</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-08264</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>3666.00024</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="№1 Staron">909073</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909487</COLORID>
+			<P>1</P>
+			<L>40</L>
+			<H>1410</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-08264</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1560.00012</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="№1 Staron">909073</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909487</COLORID>
+			<P>1</P>
+			<L>40</L>
+			<H>600</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-49382</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5463</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">911610</MODELID>
+			<COLORID Code="Ц_Белый" Name="Белый">911610</COLORID>
+			<P>150</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>4830</Price>
+			<ArtCode>96-08297</ArtCode>
+			<Name>Вариант 1 (подстольный монтаж)</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2>
+		<KitchenItem>
+			<ArtCode>96-19754</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>47304</Price>
+			<Zamer>1</Zamer>
+			<Name>Столешница</Name>
+			<MODELID Name="Staron">911232</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909485</COLORID>
+			<L>400</L>
+			<H>2000</H>
+			<P>40</P>
+			<Quantity>0.8</Quantity>
+			<deskFastCreator/>
+			<NOTES/>
+			<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_Стл_000.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-19754</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>85738.5</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Staron">911232</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909485</COLORID>
+			<L>630</L>
+			<H>2300</H>
+			<P>40</P>
+			<Quantity>1.45</Quantity>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0.03" overhangAdditionalBack2="0.03"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="4"/>
+				<page id="4">
+					<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="0.41992" shifty="-0.02005" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>90247</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-19754</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>28382.40039</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Staron">911232</MODELID>
+			<COLORID Code="CS.2.860" Name="CS.2.860 Aqua [1]">909485</COLORID>
+			<L>600</L>
+			<H>800</H>
+			<P>40</P>
+			<Quantity>0.48</Quantity>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="-0.01" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="4" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="4" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.35" depth="0.4" alignx="0" aligny="0" shiftx="0.01502" shifty="-0.02005" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_Стл_002.emf</Img>
+		</KitchenItem>
+	</LongLengthItemsM2>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>6520</Price>
+				<ArtCode>96-11174</ArtCode>
+				<Name>Аквафор Кристалл Н д/жест воды БЕЗ КРАНА</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>3</ObjectNum>
+				<Price>48488</Price>
+				<ArtCode>94-43516</ArtCode>
+				<Name>OMOIKIRI 4994494 Смеситель Makkari 2 Plus-SB-BN-BL латунь/нержавеющая сталь/черный</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>3</ObjectNum>
+				<Price>24488</Price>
+				<ArtCode>94-37716</ArtCode>
+				<Name>OMOIKIRI 4995061 Измельчитель пищевых отходов Nagare Slim 500</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Moyka>1</Moyka>
+				<ObjectNum>3</ObjectNum>
+				<Price>42588</Price>
+				<ArtCode>94-13584</ArtCode>
+				<Name>OMOIKIRI 4973046 Мойка Taki 54-U/IF-IN нерж. сталь/нержавеющая сталь</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>2</ObjectNum>
+				<Price>52990</Price>
+				<ArtCode>96-19882</ArtCode>
+				<Name>KORTING KDI 45017 Посудомоечная машина, 45 см. ПОД ЗАКАЗ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>6</ObjectNum>
+				<Price>118490</Price>
+				<ArtCode>94-37824</ArtCode>
+				<Name>KORTING KSI 17780 CVNF холодильник ПОД ЗАКАЗ</Name>
+				<Quantity>1</Quantity>
+				<Discount>50</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>28240</Price>
+				<ArtCode>94-43609</ArtCode>
+				<Name>Duslar 10030098 Сушка MATRIX, выдвижной фасад 800 мм, антрацит</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>11</ObjectNum>
+				<Price>34990</Price>
+				<ArtCode>96-14169</ArtCode>
+				<Name>KORTING KHI 6997 GN вытяжка, 60 см., чёрный ПОД ЗАКАЗ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>5</ObjectNum>
+				<Price>3190</Price>
+				<ArtCode>96-20170</ArtCode>
+				<Name>12250001 Лоток GRACE , ширина фасада 600 мм, 518х473х57,5 мм, серый</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>5</ObjectNum>
+				<Price>55490</Price>
+				<ArtCode>94-48179</ArtCode>
+				<Name>KORTING OKB 5111 CFGN духовой шкаф, 60 см.чёрный ПОД ЗАКАЗ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>8</ObjectNum>
+				<Price>13410</Price>
+				<ArtCode>94-47559</ArtCode>
+				<Name>Duslar 10310009 Сушка ARID в верхнюю секцию, распашной фасад 500 мм, антрацит</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>4</ObjectNum>
+				<Price>22790</Price>
+				<ArtCode>94-40560</ArtCode>
+				<Name>KORTING HK 43051 B варочная панель электрическая, 45 см., чёрный ПОД ЗАКАЗ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>84086</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_all_tables_base_0.emf</Img>
+	<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_all_tables_kamen.jpg</Img>
+	<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_all_tables_base_0.emf</Img>
+	<Img>С9-F2F288C6-37CC-4CAC-A734-15B36BCB68FA_all_tables_kamen_2_z.jpg</Img>
+</Scene>

@@ -1,0 +1,187 @@
+{
+    "source":  "D:\\EKitchen KxdDealer\\3d\\gallery",
+    "note":  "Свободно ставящиеся объекты eKitchen (не кухонная мебель): трубы, короба, колонны, лестницы, свет и т.п. Розетки в eKitchen отсутствуют.",
+    "copied_at":  "2026-11-25T10:02:47",
+    "files":  [
+                  {
+                      "bytes":  4768,
+                      "path":  "extra/vent01.png"
+                  },
+                  {
+                      "bytes":  1405,
+                      "path":  "extra/vent01.wrl"
+                  },
+                  {
+                      "bytes":  1085,
+                      "path":  "icons/arka.gif"
+                  },
+                  {
+                      "bytes":  649,
+                      "path":  "icons/banner.gif"
+                  },
+                  {
+                      "bytes":  2378,
+                      "path":  "icons/clouds.gif"
+                  },
+                  {
+                      "bytes":  546,
+                      "path":  "icons/column.gif"
+                  },
+                  {
+                      "bytes":  3043,
+                      "path":  "icons/globic.gif"
+                  },
+                  {
+                      "bytes":  414,
+                      "path":  "icons/height.gif"
+                  },
+                  {
+                      "bytes":  708,
+                      "path":  "icons/korob.gif"
+                  },
+                  {
+                      "bytes":  1520,
+                      "path":  "icons/light.gif"
+                  },
+                  {
+                      "bytes":  671,
+                      "path":  "icons/locked.gif"
+                  },
+                  {
+                      "bytes":  2505,
+                      "path":  "icons/picture.gif"
+                  },
+                  {
+                      "bytes":  915,
+                      "path":  "icons/round-stairs.gif"
+                  },
+                  {
+                      "bytes":  965,
+                      "path":  "icons/sstairs.gif"
+                  },
+                  {
+                      "bytes":  807,
+                      "path":  "icons/stair.gif"
+                  },
+                  {
+                      "bytes":  1816,
+                      "path":  "icons/superbox.gif"
+                  },
+                  {
+                      "bytes":  2926,
+                      "path":  "icons/supercover.gif"
+                  },
+                  {
+                      "bytes":  919,
+                      "path":  "icons/superpipe.gif"
+                  },
+                  {
+                      "bytes":  813,
+                      "path":  "icons/text.gif"
+                  },
+                  {
+                      "bytes":  488,
+                      "path":  "icons/tickness.gif"
+                  },
+                  {
+                      "bytes":  463,
+                      "path":  "icons/vent01.gif"
+                  },
+                  {
+                      "bytes":  1538,
+                      "path":  "icons/wall.gif"
+                  },
+                  {
+                      "bytes":  5042,
+                      "path":  "icons/wallpaper.gif"
+                  },
+                  {
+                      "bytes":  461,
+                      "path":  "icons/width.gif"
+                  },
+                  {
+                      "bytes":  21838,
+                      "path":  "system/arka_2.wrl"
+                  },
+                  {
+                      "bytes":  817,
+                      "path":  "system/banner.wrl"
+                  },
+                  {
+                      "bytes":  1540,
+                      "path":  "system/clouds.wrl"
+                  },
+                  {
+                      "bytes":  1358,
+                      "path":  "system/column.wrl"
+                  },
+                  {
+                      "bytes":  771,
+                      "path":  "system/ground.wrl"
+                  },
+                  {
+                      "bytes":  1104,
+                      "path":  "system/korob.wrl"
+                  },
+                  {
+                      "bytes":  208358,
+                      "path":  "system/light.wrl"
+                  },
+                  {
+                      "bytes":  597,
+                      "path":  "system/picture.wrl"
+                  },
+                  {
+                      "bytes":  2149,
+                      "path":  "system/round-stairs.wrl"
+                  },
+                  {
+                      "bytes":  1396,
+                      "path":  "system/ruler.wrl"
+                  },
+                  {
+                      "bytes":  1344,
+                      "path":  "system/ruler_ek.wrl"
+                  },
+                  {
+                      "bytes":  1021,
+                      "path":  "system/ruler_tiramisu.wrl"
+                  },
+                  {
+                      "bytes":  1501,
+                      "path":  "system/sstairs.wrl"
+                  },
+                  {
+                      "bytes":  4297,
+                      "path":  "system/stairs_2.wrl"
+                  },
+                  {
+                      "bytes":  720,
+                      "path":  "system/superbox.wrl"
+                  },
+                  {
+                      "bytes":  4390,
+                      "path":  "system/supercover_2.wrl"
+                  },
+                  {
+                      "bytes":  4499,
+                      "path":  "system/supercover_3.wrl"
+                  },
+                  {
+                      "bytes":  4569,
+                      "path":  "system/superpipe.wrl"
+                  },
+                  {
+                      "bytes":  507,
+                      "path":  "system/text.wrl"
+                  },
+                  {
+                      "bytes":  2806,
+                      "path":  "system/wall.wrl"
+                  },
+                  {
+                      "bytes":  3194,
+                      "path":  "system/wallpaper_2.wrl"
+                  }
+              ]
+}

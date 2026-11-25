@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>E2555</Hash>
+	<Guid>96712C55-1DBF-4662-A956-787B98F840C3</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Стоун Вуд Лайт (Кюхен Хоф ТР)">911492</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</ModelColorId>
+		<VitrageId Name="Стоун">904171</VitrageId>
+		<VitrageColorId Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</VitrageColorId>
+		<GlassId Code="" Name="Оптивайт, окрашенное в RAL 9011 (черный)">909448</GlassId>
+		<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">904096</SocleId>
+		<SocleColorId Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный">904091</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Черный" Name="Черный">911627</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="KD Compact">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="401 Terra Black">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<Customer_Family>Кулубекова</Customer_Family>
+		<Customer_Name>София</Customer_Name>
+		<Customer_PatronymicName>Владимировна</Customer_PatronymicName>
+		<CustomerAddress>Березовая</CustomerAddress>
+		<CustomerBudget>1</CustomerBudget>
+		<CustomerDeliveryDate>02/11/2026</CustomerDeliveryDate>
+		<CustomerEmail>89204059467@bk.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>Кулубекова София Владимировна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89204059467</CustomerPhone>
+		<ManagerName>Попов Владислав Юрьевич +79997216850:2</ManagerName>
+		<MEBEL_DISCOUNT>35.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2026-10-03</OrderCreateDate>
+		<OrderNum>ФР-236-03-10-26-02</OrderNum>
+		<OrderNumStart>236</OrderNumStart>
+		<OrderStatusChangeDate>2026-10-03</OrderStatusChangeDate>
+		<ProjectCost>459291</ProjectCost>
+		<ProjectCostForRoyalty>459291</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>534980</ProjectMebelFullCost>
+		<SalonAddress>г. Воронеж, Бульвар Победы 23Б, ТЦ АРЕНА</SalonAddress>
+		<SalonDirectorName>Макаров Иван Андреевич</SalonDirectorName>
+		<SalonDirectorPhone>89304245354</SalonDirectorPhone>
+		<SalonEmail>kd-vrn@fkxd.ru</SalonEmail>
+		<SalonName>ИП Макаров И.А. г.Воронеж</SalonName>
+		<SalonPhone>79304242354</SalonPhone>
+		<EuroRate>1</EuroRate>
+		<SalonCode>236</SalonCode>
+		<Version>program: 29.10.26 (release 34), database: 29.10.2026, last update 31.10.2026</Version>
+		<UpdateNum>2636</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3327 x 6000 мм</Bounds>
+		<Walls>6000x3207x6000</Walls>
+		<Celling>2664 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>101595</ITEMID>
+			<ArtCode>Н-К0-ЛД-720х300х300-2</ArtCode>
+			<NsTypes>1_Умен+3_Увел</NsTypes>
+			<PRICE type="+10%">10052</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол открытый, 2 секции</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>270</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>300</Width>
+				<Height>750</Height>
+				<MODELID Name="Открытые модули [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный (эко.струк.) [СТ3]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103450</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-КМ-750х600х575-М1</ArtCode>
+			<NsTypes>А_ФБпр+А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь под мойку</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</BaseColorId>
+			<ObjectNum>2</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-KHDL_18</ArtCode>
+			<Quantity>0.43</Quantity>
+			<WIDTH>575</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>750</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103446</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-ЯЩИ-02-750х900х575-Т1</ArtCode>
+			<NsTypes>А_DBox-СС+2_Умен</NsTypes>
+			<PRICE type="обычная">42637</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 ящик тандембокс под сушку INOXA GOLD</Name>
+			<LabelNum>3</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>797</Width>
+				<Height>342</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>797</Width>
+				<Height>342</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>800</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104049</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-ССМ-750х700х150</ArtCode>
+			<NsTypes>А_Firmax-SL+3_Увел</NsTypes>
+			<PRICE type="+10%">23519</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Модуль 2 двери под СОЛО СМ</Name>
+			<LabelNum>4</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>150</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>717</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>717</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>800</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102666</ITEMID>
+			<ArtCode>ФГП-ПММ60</ArtCode>
+			<ColorCategory>9</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 600мм с профилем</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102440</ITEMID>
+			<BaseColorId Name="Д-019 Серый камень ЛДСтП + Черный" Code="Д-019/РЦПВХ_Черный">904093+911631</BaseColorId>
+			<ArtCode>ГН-ДО-12-2040х600х575-Т1</ArtCode>
+			<NsTypes>А_DBox-СС+А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="обычная">81190</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Пенал 1 дверь + 2 ящика тандембокс под духовку</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>ДШ</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>675</DEPTH>
+			<HEIGHT>1870</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>457</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="5">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103441</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-ЯЩ-02-750х400х575-Т1</ArtCode>
+			<NsTypes>А_ФБпр+А_DBox-СС+3_Увел</NsTypes>
+			<PRICE type="+10%">47296</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Стол 2 ящика тандембокс</Name>
+			<LabelNum>7</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>675</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>342</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>342</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>400</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</BaseColorId>
+			<ObjectNum>7</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-КНMSTm</ArtCode>
+			<Quantity>0.51</Quantity>
+			<WIDTH>675</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>750</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103442</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-СЯ-23-750х800х575-Т2</ArtCode>
+			<NsTypes>А_ФБлев+А_DBox-СС</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика + 1 скрытый ящик тандембокс</Name>
+			<LabelNum>8</LabelNum>
+			<LABEL>ВП</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>797</Width>
+				<Height>342</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>797</Width>
+				<Height>342</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>800</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</BaseColorId>
+			<ObjectNum>8</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-KHDL_18</ArtCode>
+			<Quantity>0.43</Quantity>
+			<WIDTH>575</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>750</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101595</ITEMID>
+			<ArtCode>Н-К0-ЛД-720х300х300-2</ArtCode>
+			<NsTypes>1_Умен+3_Увел</NsTypes>
+			<PRICE type="+10%">10052</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>Стол открытый, 2 секции</Name>
+			<LabelNum>9</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>270</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>300</Width>
+				<Height>750</Height>
+				<MODELID Name="Открытые модули [СТ3]">000000</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный (эко.струк.) [СТ3]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103795</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>В-К2-1080х800х300-З</ArtCode>
+			<NsTypes>А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="+10%">61199</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Полка 2 двери сушка заказчика</Name>
+			<LabelNum>10</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>675</DEPTH>
+			<HEIGHT>1120</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>1117</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>1117</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100986</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>В-К1-1080х600х360-0</ArtCode>
+			<NsTypes>А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="+10%">40558</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>675</DEPTH>
+			<HEIGHT>1120</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>1117</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100986</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>В-К1-1080х400х360-0</ArtCode>
+			<NsTypes>А_ФБпр+А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="+10%">30487</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>675</DEPTH>
+			<HEIGHT>1120</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>1117</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</BaseColorId>
+			<ObjectNum>12</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-КНMSTm</ArtCode>
+			<Quantity>0.76</Quantity>
+			<WIDTH>675</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1120</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104054</ITEMID>
+			<ArtCode>ПФас-KHDL_18</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>13</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>1.424</Quantity>
+			<WIDTH>1600</WIDTH>
+			<HEIGHT>880</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>1600</Width>
+				<Height>890</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный [KХ1]">904091</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104058</ITEMID>
+			<ArtCode>ПФас-КНMSTm_18</ArtCode>
+			<ColorCategory>9</ColorCategory>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>1.397</Quantity>
+			<WIDTH>695</WIDTH>
+			<HEIGHT>2000</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>695</Width>
+				<Height>2010</Height>
+				<MODELID Name="Мира">915315</MODELID>
+				<COLORID Code="KHMr-014" Name="KHMr-014 Сталь [KХ9]">915328</COLORID>
+				<ModelMaterial Name="МДФ Smart Touch">915338</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>СТФ-3250х910х38-UАВС</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>22000</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins АВС">000000</MODELID>
+			<COLORID Code="" Name="F206 Камень Пьетра Гриджиа черный [1]">000000</COLORID>
+			<L>890</L>
+			<H>2200</H>
+			<P>38</P>
+			<deskFastCreator/>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>56229</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>2472</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>3,98</QUANTITY>
+					<ColorId>56229</ColorId>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>80157</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ4000-150</ArtCode>
+			<ColorCategory/>
+			<Price>4948</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080010</MODELID>
+			<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦЭп18-2700-150</ArtCode>
+			<ColorCategory/>
+			<Price>3699</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18мм">904096</MODELID>
+			<COLORID Code="KHDL-722-18" Name="KHDL-722-18 Орех Карини натуральный">904091</COLORID>
+			<P>150</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>24088</Price>
+				<ArtCode>4993766</ArtCode>
+				<Name>Мойка Amadare 50-IN нерж.сталь/нержавеющая сталь</Name>
+				<Quantity>1</Quantity>
+				<Discount>25</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>32588</Price>
+				<ArtCode>4994468</ArtCode>
+				<Name>Omoikiri Смеситель SINTO 2 PLUS BN-WH (4994468)</Name>
+				<Quantity>1</Quantity>
+				<Discount>25</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>3</ObjectNum>
+				<Price>12761</Price>
+				<ArtCode>ВС_нб_800</ArtCode>
+				<Name>ВС_нб_800 Корзина для посуды в нижнюю базу 800 мм</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>0</Price>
+				<ArtCode>HGG646WH</ArtCode>
+				<Name>Газовая варочная панель HOMSair HGG646WH</Name>
+				<Quantity>1</Quantity>
+				<ObjectNum>14</ObjectNum>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>0</Price>
+				<ArtCode>HGG646WH</ArtCode>
+				<Name>Газовая варочная панель HOMSair HGG646WH</Name>
+				<Quantity>1</Quantity>
+				<ObjectNum>13</ObjectNum>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+				<Price>227</Price>
+				<ArtCode>ЦПВХ-150-Т</ArtCode>
+				<Name>ЦПВХ-150-Т | Цоколь пластиковый h=150 мм Торцевой</Name>
+				<Quantity>4</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Черный" Name="Черный">911603~914446~911611~914982</COLORID>
+				<Price>341</Price>
+				<ArtCode>ЦПВХ-150-СУ</ArtCode>
+				<Name>Соединительный (универсальный) элемент для цоколя, ПВХ</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1000</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>56229</COLORID>
+				<Quantity>3.98</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1800</Price>
+				<ArtCode>Скос_Ф-38</ArtCode>
+				<Name>Скос, срез (изменение глубины) минимальный скос - 100*100 Столешницы</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<ScreenShots>
+		<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_all_tables_base_1.emf</Img>
+	<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_all_tables_hpl.jpg</Img>
+	<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_all_tables_base_1.emf</Img>
+	<Img>2-96712C55-1DBF-4662-A956-787B98F840C3_all_tables_hpl_2_z.jpg</Img>
+</Scene>

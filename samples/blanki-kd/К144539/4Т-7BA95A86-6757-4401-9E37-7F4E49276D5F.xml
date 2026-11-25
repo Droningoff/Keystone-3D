@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>935A1</Hash>
+	<Guid>7BA95A86-6757-4401-9E37-7F4E49276D5F</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Стоун Колор Лайт (Кюхен Хоф ТР)">911502</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">911602</SocleId>
+		<SocleColorId Code="Ц_Белый" Name="Белый">911602</SocleColorId>
+		<SocleReshColorId Code="" Name="Серый">500001</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Румянцево-2</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.880</SalonPhone>
+		<SalonEmail>rum2@kxd.ru</SalonEmail>
+		<SalonAddress>М. Румянцево, г. Москва, Киевское шоссе, 22-ой км, домовладение 4, строение 1, ТЦ"МебельРark", корпус А, 1-й этаж, вход в Торговую галерею "Мебель парк" с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Полякова О.Н.</SalonDirectorName>
+		<SalonDirectorPhone>+79165970284</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="4Т">Гиоева Ольга Александровна</SalonManagerName>
+		<ClientId create_date="21/10/2026">8912910406302</ClientId>
+		<ClientProjectsCount>1</ClientProjectsCount>
+		<ClientProjectsPinAdmin>1</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>1</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Сусолкин Сергей Владимирович</ClientName>
+		<ClientEmail>nata.sus.lit@mail.ru</ClientEmail>
+		<ClientPhone>89129104063</ClientPhone>
+		<ClientMetroStation>Новаторская</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>600000</ClientBudget>
+		<ClientAssemblingDate>20/11/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+			<InfoSource id="3">реклама на улице</InfoSource>
+			<InfoSource id="4">реклама на транспорте</InfoSource>
+			<InfoSource id="7">радио</InfoSource>
+			<InfoSource id="8">телевидение</InfoSource>
+			<InfoSource id="9">увидели салон, проезжая (проходя) мимо</InfoSource>
+			<InfoSource id="10">получил листовку на улице/в почтовый ящик</InfoSource>
+			<InfoSource id="13">повторный клиент/дизайнер</InfoSource>
+			<InfoSource id="14">реклама в Яндекс, Google</InfoSource>
+			<InfoSource id="15">фирменный сайт</InfoSource>
+			<InfoSource id="16">социальные сети</InfoSource>
+			<InfoSource id="17">YouTube</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Качество</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>88-4Т-14-11-26-01</OrderNum>
+		<FabrikaCheckNum>66572</FabrikaCheckNum>
+		<FabrikaCheckInfo>maksimova.oy / 16.11.2026 / 12:14:45</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 16.11.26 (release 34), database: 14.11.2026, last update 18.11.2026</Version>
+		<UpdateNum>2651</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>4160 x 1000 мм</Bounds>
+		<Walls>2080x100x2080</Walls>
+		<Celling>2600 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100010</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-02370</ArtCode>
+			<NsTypes>А_TIP ON+А_DBox-СС+4_Раскр+А_БезНог</NsTypes>
+			<PRICE type="+10%">58522</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 ящик тандембокс</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>730</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>727</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open для DragonBox" ArtCode="93-47981" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100010</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-02370</ArtCode>
+			<NsTypes>А_TIP ON+А_DBox-СС+4_Раскр+А_БезНог</NsTypes>
+			<PRICE type="+10%">58522</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 ящик тандембокс</Name>
+			<LabelNum>2</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>740</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>737</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open для DragonBox" ArtCode="93-47981" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103700</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-57056</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал терминальный 2 двери (глухой+стекло сбоку)</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>2220</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>297</Width>
+				<Height>2217</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ10" Name="АЛ10 Золотой брашированный [АЛ1]">909242</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Витраж</Type>
+				<Width>297</Width>
+				<Height>2217</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ10" Name="АЛ10 Золотой брашированный [АЛ1]">909242</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66330" Count="2"/>
+			<OPTION Name="Фасад Алюминиевая рамка Modus" ArtCode="96-15222" Count="0.66"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-80000</ArtCode>
+			<GLASSID Code="" Name="Бронза (дуплекс) SS-047-00D">915361</GLASSID>
+			<Name>Бронза (дуплекс)</Name>
+			<WIDTH>297</WIDTH>
+			<HEIGHT>2217</HEIGHT>
+			<Quantity>0.66</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-80000</ArtCode>
+			<GLASSID Code="" Name="Бронза (дуплекс) SS-047-00D">915361</GLASSID>
+			<Name>Бронза (дуплекс)</Name>
+			<WIDTH>297</WIDTH>
+			<HEIGHT>2217</HEIGHT>
+			<Quantity>0.66</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>3809</Price>
+			<ArtCode>96-06080</ArtCode>
+			<Name>Комплект для подключения, выключатель сенсорный</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>5264</Price>
+			<ArtCode>93-57734</ArtCode>
+			<Name>Светильник светодиодный Splitty внутр. (теплый)</Name>
+			<Quantity>2.22</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>97</Price>
+			<ArtCode>94-03783</ArtCode>
+			<Name>Полкодержатель для стекла</Name>
+			<Quantity>24</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>3</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103700</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-57056</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал терминальный 2 двери (глухой+стекло сбоку)</Name>
+			<LabelNum>4</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>2220</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>297</Width>
+				<Height>2217</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ10" Name="АЛ10 Золотой брашированный [АЛ1]">909242</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Витраж</Type>
+				<Width>297</Width>
+				<Height>2217</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ10" Name="АЛ10 Золотой брашированный [АЛ1]">909242</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66330" Count="2"/>
+			<OPTION Name="Фасад Алюминиевая рамка Modus" ArtCode="96-15222" Count="0.66"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-80000</ArtCode>
+			<GLASSID Code="" Name="Бронза (дуплекс) SS-047-00D">915361</GLASSID>
+			<Name>Бронза (дуплекс)</Name>
+			<WIDTH>297</WIDTH>
+			<HEIGHT>2217</HEIGHT>
+			<Quantity>0.66</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-80000</ArtCode>
+			<GLASSID Code="" Name="Бронза (дуплекс) SS-047-00D">915361</GLASSID>
+			<Name>Бронза (дуплекс)</Name>
+			<WIDTH>297</WIDTH>
+			<HEIGHT>2217</HEIGHT>
+			<Quantity>0.66</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>6858</Price>
+			<ArtCode>94-03529</ArtCode>
+			<Name>Полка вкладная, стекло 6 мм</Name>
+			<WIDTH>300</WIDTH>
+			<DEPTH>6</DEPTH>
+			<HEIGHT>300</HEIGHT>
+			<Quantity>0.09</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>97</Price>
+			<ArtCode>94-03783</ArtCode>
+			<Name>Полкодержатель для стекла</Name>
+			<Quantity>24</Quantity>
+			<ObjectNum>4</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100235</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-03013</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="+10%">27485</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>45</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-47975" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104055</ITEMID>
+			<ArtCode>93-64275</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [верх]</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.869</Quantity>
+			<WIDTH>420</WIDTH>
+			<HEIGHT>2070</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>420</Width>
+				<Height>2070</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>96-06649</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1768</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18мм">904094</MODELID>
+			<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый">909375</COLORID>
+			<P>100</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>19685</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>4Т-7BA95A86-6757-4401-9E37-7F4E49276D5F_sshot_00.jpg</Img>
+	</ScreenShots>
+</Scene>

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>6981A</Hash>
+	<Guid>A4D87D76-C73B-4B11-BD78-60CEBEFA3F51</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Стоун Колор (Кюхен Хоф ТР)">909377</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">904094</SocleId>
+		<SocleColorId Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный">909367</SocleColorId>
+		<SocleReshColorId Code="" Name="(Нет цвета)">000000</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Варшавский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.380</SalonPhone>
+		<SalonEmail>varshavka@kxd.ru</SalonEmail>
+		<SalonAddress>М. Нагатинская, г. Москва, Варшавское шоссе, д. 18, корп.1 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Шестакова Ю.В.</SalonDirectorName>
+		<SalonDirectorPhone>+79771107069</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="24">Прибыткова Наталья Сергеевна</SalonManagerName>
+		<ClientId create_date="11/09/2026">8926538087511</ClientId>
+		<ClientProjectsCount>5</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Салимова Лана и Юрий</ClientName>
+		<ClientEmail>lana.mihailova@gmail.com</ClientEmail>
+		<ClientPhone>89265380875</ClientPhone>
+		<ClientMetroStation>Коломенская</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>500000</ClientBudget>
+		<ClientAssemblingDate>13/10/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="9">увидели салон, проезжая (проходя) мимо</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Цена</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>38-24-13-09-26-02</OrderNum>
+		<FabrikaCheckNum/>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 23.10.26 (release 34), database: 29.10.2026, last update 29.10.2026</Version>
+		<UpdateNum>2644</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>2732 x 1740 мм</Bounds>
+		<Walls>547x547x2732</Walls>
+		<Celling>2800 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100016</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02481</ArtCode>
+			<NsTypes>А_ФБлев+А_TIP ON+4_Раскр+А_Хеттих-ЯщС</NsTypes>
+			<PRICE type="от пользователя">108400</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика тандембокс</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+			<WIDTH>810</WIDTH>
+			<DEPTH>440</DEPTH>
+			<HEIGHT>793</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>807</Width>
+				<Height>315</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>807</Width>
+				<Height>475</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Hettich InnoTech Atira серебристый" ArtCode="94-48624" Count="2"/>
+			<OPTION Name="Push to Open Hettich InnoTech Atira" ArtCode="94-48627" Count="2"/>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</BaseColorId>
+			<ObjectNum>1</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48509</ArtCode>
+			<Quantity>0.35</Quantity>
+			<WIDTH>440</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>793</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100752</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02778</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр+А_Хеттих-П+А_БезНог</NsTypes>
+			<PRICE type="обычная">39089</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+			<WIDTH>440</WIDTH>
+			<DEPTH>200</DEPTH>
+			<HEIGHT>880</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>217</Width>
+				<Height>877</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>217</Width>
+				<Height>877</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="94-48595" Count="1"/>
+			<OPTION Name="Push to Open Hettich" ArtCode="94-48605" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101617</ITEMID>
+			<ArtCode>93-48287</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">5064</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 1 секция</Name>
+			<LabelNum>3</LabelNum>
+			<WIDTH>440</WIDTH>
+			<DEPTH>220</DEPTH>
+			<HEIGHT>310</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>440</Width>
+				<Height>310</Height>
+				<MODELID Name="Открытые элементы [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-018" Name="KHDL-018 Серый пыльный (ЛДСП) [СТ1]">905040</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101630</ITEMID>
+			<ArtCode>93-48356</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">7070</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 2 секции</Name>
+			<LabelNum>4</LabelNum>
+			<WIDTH>440</WIDTH>
+			<DEPTH>220</DEPTH>
+			<HEIGHT>600</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>440</Width>
+				<Height>600</Height>
+				<MODELID Name="Открытые элементы [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-018" Name="KHDL-018 Серый пыльный (ЛДСП) [СТ1]">905040</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03303</ArtCode>
+			<NsTypes>А_ФБпр+А_TIP ON+А_ДОП-ВПД+1_Умен+2_Умен+3_Увел+А_Хеттих-П</NsTypes>
+			<PRICE type="+2000 руб.">35587</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+			<WIDTH>440</WIDTH>
+			<DEPTH>200</DEPTH>
+			<HEIGHT>870</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>437</Width>
+				<Height>867</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка ЛДСП [в цвет]" ArtCode="96-04493" Count="1"/>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="94-48595" Count="1"/>
+			<OPTION Name="Push to Open Hettich" ArtCode="94-48605" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</BaseColorId>
+			<ObjectNum>5</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48509</ArtCode>
+			<Quantity>0.17</Quantity>
+			<WIDTH>200</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>870</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101617</ITEMID>
+			<ArtCode>93-48326</ArtCode>
+			<NsTypes>1_БезЗ/С+1_Умен</NsTypes>
+			<PRICE type="+1000 руб.">6852</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 1 секция</Name>
+			<LabelNum>6</LabelNum>
+			<WIDTH>500</WIDTH>
+			<DEPTH>220</DEPTH>
+			<HEIGHT>450</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>500</Width>
+				<Height>450</Height>
+				<MODELID Name="Открытые элементы [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-018" Name="KHDL-018 Серый пыльный (ЛДСП) [СТ1]">905040</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100990</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-23335</ArtCode>
+			<NsTypes>А_TIP ON+1_БезЗ/С+4_Раскр+А_Хеттих-П</NsTypes>
+			<PRICE type="+2000 руб.">92756</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 2 двери</Name>
+			<LabelNum>7</LabelNum>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+			<WIDTH>1000</WIDTH>
+			<DEPTH>220</DEPTH>
+			<HEIGHT>1770</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>907</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>862</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>907</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>862</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="94-48601" Count="2"/>
+			<OPTION Name="Push to Open Hettich" ArtCode="94-48611" Count="2"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101617</ITEMID>
+			<ArtCode>93-48326</ArtCode>
+			<NsTypes>1_БезЗ/С+1_Умен</NsTypes>
+			<PRICE type="+1000 руб.">6852</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 1 секция</Name>
+			<LabelNum>8</LabelNum>
+			<WIDTH>500</WIDTH>
+			<DEPTH>220</DEPTH>
+			<HEIGHT>450</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>500</Width>
+				<Height>450</Height>
+				<MODELID Name="Открытые элементы [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-018" Name="KHDL-018 Серый пыльный (ЛДСП) [СТ1]">905040</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>9</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.396</Quantity>
+			<WIDTH>460</WIDTH>
+			<HEIGHT>860</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>460</Width>
+				<Height>860</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100594</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>88-50557</ArtCode>
+			<ColorCategory/>
+			<Name>Деталь из ЛДСтП (вертикально)</Name>
+			<LabelNum>10</LabelNum>
+			<Quantity>0.069</Quantity>
+			<WIDTH>460</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>150</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100594</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>88-50557</ArtCode>
+			<ColorCategory/>
+			<Name>Деталь из ЛДСтП (вертикально)</Name>
+			<LabelNum>11</LabelNum>
+			<Quantity>0.029</Quantity>
+			<WIDTH>190</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>150</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.194</Quantity>
+			<WIDTH>220</WIDTH>
+			<HEIGHT>880</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>220</Width>
+				<Height>880</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>13</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.365</Quantity>
+			<WIDTH>420</WIDTH>
+			<HEIGHT>870</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>420</Width>
+				<Height>870</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.382</Quantity>
+			<WIDTH>420</WIDTH>
+			<HEIGHT>910</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>420</Width>
+				<Height>910</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100594</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>88-50557</ArtCode>
+			<ColorCategory/>
+			<Name>Деталь из ЛДСтП (вертикально)</Name>
+			<LabelNum>15</LabelNum>
+			<Quantity>0.069</Quantity>
+			<WIDTH>460</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>150</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>16</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.44</Quantity>
+			<WIDTH>500</WIDTH>
+			<HEIGHT>880</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>500</Width>
+				<Height>880</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100594</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>88-50557</ArtCode>
+			<ColorCategory/>
+			<Name>Деталь из ЛДСтП (вертикально)</Name>
+			<LabelNum>17</LabelNum>
+			<Quantity>0.15</Quantity>
+			<WIDTH>1000</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>150</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>18</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.44</Quantity>
+			<WIDTH>500</WIDTH>
+			<HEIGHT>880</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>500</Width>
+				<Height>880</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный [KХ1]">909367</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>96-06654</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>3497</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18мм">904094</MODELID>
+			<COLORID Code="KHDL-018-18" Name="KHDL-018-18 Серый пыльный">909367</COLORID>
+			<P>100</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>16903</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<Tech>
+		<Item ObjectNum="-" name="Стиральная машина" code="Hisense WF5I9043BBFS">Стиральная машина:Hisense WF5I9043BBFS</Item>
+		<Item ObjectNum="-" name="Сушильная машина" code="Hisense DH5I804UB2D">Сушильная машина:Hisense DH5I804UB2D</Item>
+		<Item ObjectNum="-" name="Соединитель" code="Hisense WZ3I80B">Соединитель:Hisense WZ3I80B</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>24-A4D87D76-C73B-4B11-BD78-60CEBEFA3F51_sshot_00.jpg</Img>
+	</ScreenShots>
+</Scene>

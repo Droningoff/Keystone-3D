@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>3D6A8</Hash>
+	<Guid>43EFCDB4-23CA-49DE-95D8-123060C0D8F9</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Стоун Колор (Кюхен Хоф ТР)">909377</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">914986</SocleId>
+		<SocleColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый">909375</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Черный" Name="Черный">911627</SocleReshColorId>
+		<SocleHeight>130</SocleHeight>
+		<TableBoardId Name="Лигрон Laminat Plus ПСФ">902976</TableBoardId>
+		<TableBoardColorId Code="" Name="5069 Саленто">903038</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>148</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<Customer_Family>Новикова</Customer_Family>
+		<Customer_Name>Надежда</Customer_Name>
+		<Customer_PatronymicName>Вячеславовна</Customer_PatronymicName>
+		<CustomerAddress>М.О. г. Воскресенск, ул. Западная, д. 2, кв.21, 6 этаж</CustomerAddress>
+		<CustomerBudget>400 000</CustomerBudget>
+		<CustomerDeliveryDate>30/11/2026</CustomerDeliveryDate>
+		<CustomerEmail>kd-voskresensk@fkxd.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>Новикова Надежда Вячеславовна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>8-916-270-59-59</CustomerPhone>
+		<ManagerName>Менеджер 1:01</ManagerName>
+		<MEBEL_DISCOUNT>30.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2025-09-22</OrderCreateDate>
+		<OrderNum>ФР-51050-28-10-26-01</OrderNum>
+		<OrderNumStart>М4</OrderNumStart>
+		<OrderStatusChangeDate>2026-10-28</OrderStatusChangeDate>
+		<OrderTech>Духовой шкаф=ELECTROLUX EOD5C50Z~0
+Варочная панель=Bosch газовая~0
+Посудомоечная машина=Bosch 45 см.~0
+</OrderTech>
+		<ProjectCost>318239</ProjectCost>
+		<ProjectCostForRoyalty>318239</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>335088</ProjectMebelFullCost>
+		<SalonAddress>М.О., г. Воскресенск, ул. Цесиса, 15</SalonAddress>
+		<SalonDirectorName>Хабиби Хафизулла Хабибулла</SalonDirectorName>
+		<SalonDirectorPhone>89266226842</SalonDirectorPhone>
+		<SalonEmail>kd-voskresensk@fkxd.ru</SalonEmail>
+		<SalonName>ИП Хабиби Х.Х. г. Воскресенск</SalonName>
+		<SalonPhone>8(926)622-68-42</SalonPhone>
+		<EuroRate>1</EuroRate>
+		<SalonCode>51050</SalonCode>
+		<Version>program: 29.10.26 (release 34), database: 13.11.2026, last update 15.11.2026</Version>
+		<UpdateNum>2647</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3220 x 3000 мм</Bounds>
+		<Walls>2330x3100x3000x770</Walls>
+		<Celling>2420 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>103440</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГН-ЯЩ-21-750х700х575-Т1</ArtCode>
+			<NsTypes>А_Хеттих-ЯщС</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 3 ящика тандембокс</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>700</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>170</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>170</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>697</Width>
+				<Height>342</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>SpaceLine</Type>
+				<Width>700</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Hettich InnoTech Atira серебристый" ArtCode="Зам-ЯщХеттихИнА_M" Count="2"/>
+			<OPTION Name="Hettich InnoTech Atira серебристый" ArtCode="Зам-ЯщХеттихИнА_D" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103458</ITEMID>
+			<BaseColorId Name="Д-012 Бежевый песок ЛДСтП + Черный" Code="Д-012/РЦЛДСП_Черный">900375+911627</BaseColorId>
+			<ArtCode>ГН-ДО-20-750х600х575-0</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол с 2 фальшпанелями под духовку</Name>
+			<LabelNum>2</LabelNum>
+			<LABEL>ВП,ДШ</LABEL>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103432</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГН-КЗ-750х400х575-1</ArtCode>
+			<NsTypes>А_Хеттих-П+А_БОКпр100</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>400</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102666</ITEMID>
+			<ArtCode>ФГП-ПММ45</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 450мм с профилем</Name>
+			<LabelNum>4</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>450</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103454</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГН-КУ-60-750х1050х575-М1</ArtCode>
+			<NsTypes>А_Хеттих-П</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол угловой переход 600мм под мойку</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>1050</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>75</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>1050</Width>
+				<Height>48</Height>
+				<ModelID Name="Стоун">904171</ModelID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный">914792</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих3" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102636</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГВ-К1-900х500х300-0</ArtCode>
+			<NsTypes>А_Гола16_Ч+3.1_Увел100+А_Хеттих-П</NsTypes>
+			<PRICE type="+1000 руб.">22906</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="ДОПЦ_Гола16_Ч" Count="0.5"/>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих1" Count="1"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101286</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>В-КВ1-720х600х300-Вр</ArtCode>
+			<NsTypes>А_TIP ON+3.1_Увел100+А_Хеттих-П</NsTypes>
+			<PRICE type="+1000 руб.">23911</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих1" Count="1"/>
+			<OPTION Name="Push to Open Hettich" ArtCode="Зам-ПО-Хеттих1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102636</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГВ-К1-900х400х300-0</ArtCode>
+			<NsTypes>А_ФБпр+А_Гола16_Ч+3.1_Увел100+А_Хеттих-П</NsTypes>
+			<PRICE type="+1000 руб.">19954</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="ДОПЦ_Гола16_Ч" Count="0.4"/>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих1" Count="1"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</BaseColorId>
+			<ObjectNum>8</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-KHDL_18</ArtCode>
+			<Quantity>0.36</Quantity>
+			<WIDTH>400</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>900</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102648</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГВ-К2-900х800х300-Е</ArtCode>
+			<NsTypes>А_ФБлев+А_Хеттих-П</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 2 двери сушка ELLETIPI</Name>
+			<LabelNum>9</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>397</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих3" Count="2"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</BaseColorId>
+			<ObjectNum>9</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-KHDL_18</ArtCode>
+			<Quantity>0.27</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>900</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102652</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГВ-КУ1-900х800х300-0</ArtCode>
+			<NsTypes>А_Гола16_Ч+2_Умен+А_Хеттих-П</NsTypes>
+			<PRICE type="+1000 руб.">30144</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка угловая 1 дверь переход 350мм</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>770</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>417</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>50</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="ДОПЦ_Гола16_Ч" Count="0.77"/>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих3" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102636</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>ГВ-К1-900х500х300-0</ArtCode>
+			<NsTypes>А_Гола16_Ч+3.1_Увел100+А_Хеттих-П</NsTypes>
+			<PRICE type="+1000 руб.">22906</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>30</Discount>
+			<DiscountAuto>30</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>897</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доплата за цвет Гола16, черный" ArtCode="ДОПЦ_Гола16_Ч" Count="0.5"/>
+			<OPTION Name="Петли Hettich Sensys" ArtCode="Зам-П-Хеттих1" Count="1"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104058</ITEMID>
+			<ArtCode>ПФас-KHDL_18</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.522</Quantity>
+			<WIDTH>600</WIDTH>
+			<HEIGHT>860</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>600</Width>
+				<Height>870</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый [KХ1]">909375</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>СТ-ЛХХХ-900х38-ЛП1</ArtCode>
+			<ColorCategory/>
+			<Price>25725.00195</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон Laminat Plus ПСФ">902976</MODELID>
+			<COLORID Code="" Name="5069 Саленто">903038</COLORID>
+			<L>900</L>
+			<H>1750</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0.05" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="4" roundRadius="0.1" roundRadius2="0.45" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.9" jointingLedge="0.9" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.45" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.9" jointingLedge="0.9" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.5" depth="0.4" alignx="0" aligny="0" shiftx="0.27495" shifty="0.13745" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>100</MODELID>
+				<COLORID>54814</COLORID>
+				<ArtCode>?</ArtCode>
+				<ColorCategory/>
+				<Price>0</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_Стл_000.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СТ-ЛХХХ-600х38-ЛП1</ArtCode>
+			<ColorCategory/>
+			<Price>18550.00195</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон Laminat Plus ПСФ">902976</MODELID>
+			<COLORID Code="" Name="5069 Саленто">903038</COLORID>
+			<L>600</L>
+			<H>1855</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0.02" overhangRight="0.285" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="-0.19255" shifty="-0.01255" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>100</MODELID>
+				<COLORID>54814</COLORID>
+				<ArtCode>?</ArtCode>
+				<ColorCategory/>
+				<Price>0</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_Стл_001.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦЭп18-2700-130</ArtCode>
+			<ColorCategory/>
+			<Price>3482</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18мм">914986</MODELID>
+			<COLORID Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый">909375</COLORID>
+			<P>130</P>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>5200</Price>
+				<ArtCode>УС_Ев_Л</ArtCode>
+				<Name>Угловое соединение - еврозапил (категория ПВХ, Ламинат, 3D-Acryl)</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>2600</Price>
+				<ArtCode>ОбрТрц_Л</ArtCode>
+				<Name>Обработка бокового канта (кромка как на переднем канте) категория ПВХ и Ламинат</Name>
+				<Quantity>1.5</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>8990</Price>
+				<ArtCode>КА-00011819</ArtCode>
+				<Name>КА-00011819 Встраиваемая вытяжка, KRONA KATE 600 BLACK PB V2</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>1303</Price>
+				<ArtCode>CT701U-01DG</ArtCode>
+				<Name>FORMA лоток для столовых приборов для ящика c фасадом 700мм, цвет графит матовый</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>11460</Price>
+				<ArtCode> </ArtCode>
+				<Name>Произвольная позиция</Name>
+				<Notes>GRANULA Мойка (5102, ЧЁРНЫЙ)</Notes>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<Tech>
+		<Item ObjectNum="-" name="Духовой шкаф" code="ELECTROLUX EOD5C50Z">Духовой шкаф:ELECTROLUX EOD5C50Z</Item>
+		<Item ObjectNum="-" name="Варочная панель" code="Bosch газовая">Варочная панель:Bosch газовая</Item>
+		<Item ObjectNum="-" name="Посудомоечная машина" code="Bosch 45 см.">Посудомоечная машина:Bosch 45 см.</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_all_tables_base_7.emf</Img>
+	<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_all_tables_hpl.jpg</Img>
+	<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_all_tables_base_7.emf</Img>
+	<Img>01-43EFCDB4-23CA-49DE-95D8-123060C0D8F9_all_tables_hpl_2_z.jpg</Img>
+</Scene>

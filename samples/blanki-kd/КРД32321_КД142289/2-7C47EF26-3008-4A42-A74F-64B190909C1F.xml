@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>D067F</Hash>
+	<Guid>7C47EF26-3008-4A42-A74F-64B190909C1F</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Катарина Лайт (Кюхен Хоф ТР)">911468</ModelBaseId>
+		<ModelId Name="Катарина">36545</ModelId>
+		<ModelMaterial Name="Экомембрана">900380</ModelMaterial>
+		<ModelColorId Code="KHM-442" Name="KHM-442 VELLUTO DAKAR [KХ3]">914876</ModelColorId>
+		<VitrageId Name="Катарина с декоративной раскладкой">900396</VitrageId>
+		<VitrageColorId Code="KHM-442" Name="KHM-442 VELLUTO DAKAR [KХ3]">914876</VitrageColorId>
+		<GlassId Code="" Name="Кафедрал SS-030-000">911261</GlassId>
+		<BaseColorId Code="Д-022К" Name="Д-022К Дуб натуральный ЛДСтП">911561</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">904095</SocleId>
+		<SocleColorId Code="KHDL-716-18" Name="KHDL-716-18 Дуб Гамильтон натуральный">904085</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Бежевый" Name="Бежевый">911624</SocleReshColorId>
+		<SocleHeight>120</SocleHeight>
+		<TableBoardId Name="KD-twins">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="H3303 Дуб Гамильтон натуральный [1]">000000</TableBoardColorId>
+		<WallPanelId Name="Кухонный двор HPL Classic">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="7409/Pt">000000</WallPanelColorId>
+		<Handle>РК431-С64</Handle>
+		<FurnitureSuiteHeight>144</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<Customer_Family>Собенина</Customer_Family>
+		<Customer_Name>Анастасия</Customer_Name>
+		<Customer_PatronymicName>Александровна</Customer_PatronymicName>
+		<CustomerAddress>Киров Сандаловская, д. 4, кор. 1, кв. 65</CustomerAddress>
+		<CustomerBudget>200000</CustomerBudget>
+		<CustomerDeliveryDate>12/10/2026</CustomerDeliveryDate>
+		<CustomerEmail>8738@bk.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>Собенина Анастасия Александровна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>8/953/6788738</CustomerPhone>
+		<ManagerName>Скрябина Юлия:2</ManagerName>
+		<MEBEL_DISCOUNT>45.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2026-09-12</OrderCreateDate>
+		<OrderNum>ФР-02043-29-09-26-22</OrderNum>
+		<OrderNumStart>02043</OrderNumStart>
+		<OrderStatusChangeDate>2026-09-29</OrderStatusChangeDate>
+		<ProjectCost>105085</ProjectCost>
+		<ProjectCostForRoyalty>105085</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>28962352</ProjectMebelFullCost>
+		<SalonAddress>г. Киров, ул. Герцена д. 88 ТЦ Мебель 1 этаж</SalonAddress>
+		<SalonDirectorName>Шишкина Ольга Владимировна</SalonDirectorName>
+		<SalonDirectorPhone>89123308382</SalonDirectorPhone>
+		<SalonEmail>kd-kirov@fkxd.ru</SalonEmail>
+		<SalonName>ИП Шишкина О.В.</SalonName>
+		<SalonPhone>89823835323</SalonPhone>
+		<EuroRate>1</EuroRate>
+		<SalonCode>02043</SalonCode>
+		<Version>program: 27.9.26 (release 34), database: 30.9.2026, last update 30.9.2026</Version>
+		<UpdateNum>2623</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>4672 x 3224 мм</Bounds>
+		<Walls/>
+		<Celling>2610 мм</Celling>
+	</Room>
+	<Boxes/>
+	<LongLengthItems/>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>14425</Price>
+				<ArtCode>GR-6503-белый</ArtCode>
+				<Name>GRANULA Мойка (6503, АРКТИК)</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>10737</Price>
+				<ArtCode>BELL 60M White</ArtCode>
+				<Name>Кухонная вытяжка HOMSair BELL 60M белый</Name>
+				<Quantity>1</Quantity>
+				<Discount>8</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>31294</Price>
+				<ArtCode>DW47M</ArtCode>
+				<Name>MAUNFELD Посудомоечная машина HOMSair DW47M</Name>
+				<Quantity>1</Quantity>
+				<Discount>8</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>30826</Price>
+				<ArtCode>AEOH6062W</ArtCode>
+				<Name>Шкаф духовой электрический MAUNFELD AEOH6062W</Name>
+				<Quantity>1</Quantity>
+				<Discount>8</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>25687</Price>
+				<ArtCode>EGHG.43.73CW/G</ArtCode>
+				<Name>MAUNFELD EGHG.43.73CW/G Газовая варочная поверхность, Белый (4660248000291)</Name>
+				<Quantity>1</Quantity>
+				<Discount>8</Discount>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<ScreenShots>
+		<Img>2-7C47EF26-3008-4A42-A74F-64B190909C1F_sshot_00.jpg</Img>
+	</ScreenShots>
+</Scene>

@@ -1,0 +1,2604 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Guid>16A5130E-7017-46AB-8E2D-12DC74795440</Guid>
+	<Hash>A85D9</Hash>
+	<KitchenParameters>
+		<BaseColorId>98184</BaseColorId>
+		<BaseKromkaColorId>0</BaseKromkaColorId>
+		<BaseModelId>1</BaseModelId>
+		<BoardColorId>0</BoardColorId>
+		<BoardId>0</BoardId>
+		<CorniceColorId>0</CorniceColorId>
+		<CorniceDownColorId>0</CorniceDownColorId>
+		<CorniceDownId>0</CorniceDownId>
+		<CorniceHeight>100</CorniceHeight>
+		<CorniceId>0</CorniceId>
+		<FirstKpModelBaseId>139</FirstKpModelBaseId>
+		<GlossColorId>0</GlossColorId>
+		<GolaColorId>0</GolaColorId>
+		<GolaLightColorId>0</GolaLightColorId>
+		<HandleModelId>0</HandleModelId>
+		<InfoSourceId>2</InfoSourceId>
+		<InfoSourceId2>2</InfoSourceId2>
+		<KorpusDepth>300</KorpusDepth>
+		<LegsColorId>105025</LegsColorId>
+		<LegsTypeId>205</LegsTypeId>
+		<LightPanelModelId>1</LightPanelModelId>
+		<ModelBaseId>62</ModelBaseId>
+		<ModelColorId>105423</ModelColorId>
+		<ModelColorId2>0</ModelColorId2>
+		<ModelId>1657</ModelId>
+		<ModelId2>0</ModelId2>
+		<OrderNumExId>11</OrderNumExId>
+		<OrderNumStatus>16</OrderNumStatus>
+		<PattinaColorId>0</PattinaColorId>
+		<SocleColorId>105426</SocleColorId>
+		<SocleHeight>100</SocleHeight>
+		<SocleId>119</SocleId>
+		<SocleReshColorId>97199</SocleReshColorId>
+		<TableBoardColorId>54701</TableBoardColorId>
+		<TableBoardId>546</TableBoardId>
+		<TableBoardTickness>38</TableBoardTickness>
+		<VitrageId>0</VitrageId>
+		<VitrageId2>0</VitrageId2>
+		<WallPanelColorId>0</WallPanelColorId>
+		<WallPanelId>0</WallPanelId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+		<Options>220</Options>
+		<Phrases Val9999="Плитка по стенам А и С. Ручки Заказчика, установка на лицевой части фасада.">24 25 9999</Phrases>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<ACCESS_DISCOUNT>10.0</ACCESS_DISCOUNT>
+		<AllowSaveHash>3786d8875c57e9b50c51dfbb1d24dedd</AllowSaveHash>
+		<Customer_Family>Горшков</Customer_Family>
+		<Customer_Name>Георгий</Customer_Name>
+		<Customer_PatronymicName>Борисович</Customer_PatronymicName>
+		<CustomerBudget>450000</CustomerBudget>
+		<CustomerDeliveryDate>17/09/2026</CustomerDeliveryDate>
+		<CustomerEmail>tip4eg@yandex.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerMetroStation>Домодедовская</CustomerMetroStation>
+		<CustomerName>Горшков Георгий Борисович</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89032833464</CustomerPhone>
+		<DOSTAVKA>9000</DOSTAVKA>
+		<DOSTAVKA_DISCOUNT>100.0</DOSTAVKA_DISCOUNT>
+		<ManagerName>Гернер Анна Валентиновна:17</ManagerName>
+		<MarketingActions>9226:№ 226 - РА (22.07.2026 - 28.07.2026)</MarketingActions>
+		<MarketingActionsHistory>9226</MarketingActionsHistory>
+		<MEBEL_DISCOUNT>8.0</MEBEL_DISCOUNT>
+		<MEBEL_DISCOUNT_TECH>3.0</MEBEL_DISCOUNT_TECH>
+		<MEBEL_DISCOUNT_VIP>4.0</MEBEL_DISCOUNT_VIP>
+		<OrderCreateDate>2026-07-28</OrderCreateDate>
+		<OrderNum>54-17-21-10-26-01</OrderNum>
+		<OrderNumExtNum>65686</OrderNumExtNum>
+		<OrderStatusChangeDate>2026-07-28</OrderStatusChangeDate>
+		<ProjectCost>510138</ProjectCost>
+		<ProjectCostForRoyalty>510138</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>463896</ProjectMebelFullCost>
+		<ProjectsSource>ExportToDbButt;</ProjectsSource>
+		<SalonAddress>М. Каширская, г. Москва, Каширское шоссе, д. 78, корпус 5 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Кузовлева Д.Е.</SalonDirectorName>
+		<SalonDirectorPhone>+79039661390</SalonDirectorPhone>
+		<SalonEmail>kashirskiy@kxd.ru</SalonEmail>
+		<SalonName>Каширский</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.540</SalonPhone>
+		<SHEF_MONTAZH_DISCOUNT>100.0</SHEF_MONTAZH_DISCOUNT>
+		<SROK_IZGOTOVLENIYA>15</SROK_IZGOTOVLENIYA>
+		<USTANOVKA>8.0</USTANOVKA>
+		<USTANOVKA_DISCOUNT>100.0</USTANOVKA_DISCOUNT>
+		<ZAMER>1800</ZAMER>
+		<EuroRate>1</EuroRate>
+		<Version>program: 23.10.26 (release 34), database: 23.10.2026, last update 24.10.2026</Version>
+		<UpdateNum>2640</UpdateNum>
+		<PriceType date="2026-10-27">1</PriceType>
+	</AdditionalInfo>
+	<Viewpoints activeViewpoint="0">
+  DEF MainCamDown Viewpoint {
+   position 4.861015 1.850230 5.007133
+   orientation -0.109748 0.993010 0.043431 0.758437
+   fieldOfView 0.785
+  }
+  DEF MainCamUp Viewpoint {
+   position 1.500000 29.984768 1.984062
+   orientation -1.000000 -0.000000 -0.000000 1.570000
+   fieldOfView 0.1
+  }
+  DEF MainCamIso Viewpoint {
+   position 0.000000 0.000000 10.000000
+   orientation -0.678598 0.678598 0.281085 1.096060
+   fieldOfView 0.005
+  }
+</Viewpoints>
+	<Room>
+		<RoomHeight>2.528</RoomHeight>
+		<RoomTck>0.12</RoomTck>
+		<Points>
+			<point>1.046 0.474</point>
+			<point>2.021 0.474</point>
+			<point>2.021 0.398</point>
+			<point>2.021 0</point>
+			<point>3.361 0</point>
+			<point>3.361 3.057</point>
+			<point>0 3.057</point>
+			<point>0 0</point>
+			<point>1.046 0</point>
+		</Points>
+		<Appearance>Appearance
+{
+ material Material
+  {
+   ambientIntensity 1
+   
+  }
+  
+ texture ImageTexture
+  {
+   url "3d\\gallery\\data\\00366514.jpg" 
+   
+  }
+  
+ textureTransform TextureTransform
+  {
+   scale 1.25 1.25 
+   
+  }
+  
+ 
+}
+
+Group
+{
+ children 
+ [ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+ ]
+ bboxCenter 0 0 0 
+ bboxSize -1 -1 -1 
+ 
+}
+
+Appearance
+{
+ material Material
+  {
+   diffuseColor 0.15 0.15 0.15 
+   emissiveColor 0.85 0.85 0.85 
+   
+  }
+  
+ 
+}
+
+</Appearance>
+	</Room>
+	<DW>
+		<Door>
+			<WallInd>3</WallInd>
+			<K>0.28006</K>
+			<W>0.75</W>
+			<H>2.06</H>
+			<Item>
+				<URL>3d\gallery\data\00000089.wrl</URL>
+				<ITEMNAME>00000089</ITEMNAME>
+				<uid>{BA1E54C3-3711-45A8-B3B1-646BC9A93B2A</uid>
+				<hash>810d2227e0090f29f3aefac8a695eadf</hash>
+				<flip>0</flip>
+				<place>0</place>
+				<StrParams>
+					<Param/>
+					<Param/>
+					<Param/>
+				</StrParams>
+				<ObjectType>2</ObjectType>
+			</Item>
+		</Door>
+	</DW>
+	<Objects>
+		<KITCHENITEM>
+			<URL>3d/base/base_vst_nolegs.wrl</URL>
+			<Width4Export/>
+			<Height4Export/>
+			<RightPanel>0</RightPanel>
+			<LeftPanel>IF((Width&lt;30),0,1)</LeftPanel>
+			<BackPanel>IF((Width&lt;30),0,1)</BackPanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>10</SXDX>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.0399 0.0015 0.28005</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.0379 -0.002 0.28005</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.0379 -0.002 0.28005</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<!-- <ATTENDANTS Value="1" /> -->
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<VERSION>3</VERSION>
+			<ITEMID>101165</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-ФД-720х100х560</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фальшпанель для столов и полок с коробом</ITEMNAME>
+			<WIDTH>80</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>5579</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-ФД-720х100х560</ArtCodeLastValid>
+			<LabelNum>1</LabelNum>
+			<uid>{0DC7B031-D757-4917-AF6A-6B1ADC008F3B</uid>
+			<WidthBase>100</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<NsTypes>200</NsTypes>
+			<hash>9b67081551fe3bd67ff310d04b4bef43</hash>
+			<SocleColorId>105426</SocleColorId>
+			<Label/>
+			<ShowSizeInfo showHeight="4099" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.28 0 3.02</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_planki.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2324 0 0.27995</p0>
+							<p1>0.2326 0 0.27995</p1>
+							<p2>0.2326 0 -0.25585</p2>
+							<p3>-0.2324 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.3615 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2324 0 0.27995</p0>
+							<p1>0.2326 0 0.27995</p1>
+							<p2>0.2326 0 -0.25585</p2>
+							<p3>-0.2324 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<VERSION>3</VERSION>
+			<ITEMID>100016</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Н-ЯЩ-02-720х500х560-Т1</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 2 ящика</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1152</BOXPRID>
+			<OPTIONS Values="220">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<uid>{6CF7C17C-3094-4673-9006-A0ADCC22A9A8</uid>
+			<LabelNum>2</LabelNum>
+			<SocleHeight>100</SocleHeight>
+			<hash>0dea84a84bc45b9f9adab55e2b468598</hash>
+			<SocleModelId>119</SocleModelId>
+			<SocleColorId>105426</SocleColorId>
+			<ArtCodeLastValid>Н-ЯЩ-02-720х500х560-Т1</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<Label/>
+			<ShowSizeInfo showHeight="4351" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.28 0 2.73</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_DUH.wrl</URL>
+			<backpanel>0</backpanel>
+			<uppanel>0</uppanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<variables>
+						<variable name="AventosUP">1</variable>
+					</variables>
+					<TOP>1</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>9</SXDX>
+					<WIDTH>width-3</WIDTH>
+					<HEIGHT>57</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.662 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<variables>
+						<variable name="AventosUP">1</variable>
+					</variables>
+					<BOTTOM>Height-1</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>9</SXDX>
+					<WIDTH>width-3</WIDTH>
+					<HEIGHT>57</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2984 0.001 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<BOTTOM>60</BOTTOM>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ConnectionPlaces>
+				<ConnectionPoint>
+					<type>8860</type>
+					<point>0 SocleHeight+Fas1Height+3.5 Depth/2-500</point>
+					<normal>0 0 1</normal>
+				</ConnectionPoint>
+			</ConnectionPlaces>
+			<VERSION>3</VERSION>
+			<ITEMID>100716</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Н-ДО-20-720х600х560-0</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол с 2 фальшпанелями под духовку</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1290</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>Н-ДО-20-720х600х560-0</ArtCodeLastValid>
+			<WidthBase>600</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<uid>{914C0A77-D57F-4ADC-83B0-977CC57EC51F</uid>
+			<LabelNum>3</LabelNum>
+			<SocleHeight>100</SocleHeight>
+			<hash>ffac846fb911c1e9acbbb8e8a55470c6</hash>
+			<SocleColorId>105426</SocleColorId>
+			<DISCOUNT>27</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>508451</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>508508</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>0.28 0 2.18</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\00185990.wrl</URL>
+					<ID>185990</ID>
+					<ITEMNAME>ДШ 34</ITEMNAME>
+					<uid>{05517D92-1000-4672-A543-79450572EB1A</uid>
+					<hash>875c62884b43d1a9367dcfd9bbff11bd</hash>
+					<translation>0 0.1735 0.0611</translation>
+					<rotation>-1 0 0 0</rotation>
+					<scale>1.0118 1 1</scale>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_planki.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2324 0 0.27995</p0>
+							<p1>0.2326 0 0.27995</p1>
+							<p2>0.2326 0 -0.25585</p2>
+							<p3>-0.2324 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/4-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.5415 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<TOP>Height/4+1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2324 0 0.27995</p0>
+							<p1>0.2326 0 0.27995</p1>
+							<p2>0.2326 0 -0.25585</p2>
+							<p3>-0.2324 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/4-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.3615 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.2324 0 0.27995</p0>
+							<p1>0.2326 0 0.27995</p1>
+							<p2>0.2326 0 -0.25585</p2>
+							<p3>-0.2324 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="6" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ITEMID>100013</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Н-ЯЩ-21-720х500х560-Т1</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 3 ящика</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1119</BOXPRID>
+			<OPTIONS Values="220">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<uid>{BAACCD63-EAA6-47B2-9B36-91F2FF4C376F</uid>
+			<LabelNum>4</LabelNum>
+			<SocleHeight>100</SocleHeight>
+			<hash>88a4b85120959b11bff5b5e974d83343</hash>
+			<SocleModelId>119</SocleModelId>
+			<SocleColorId>105426</SocleColorId>
+			<ArtCodeLastValid>Н-ЯЩ-21-720х500х560-Т1</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.28 0 1.63</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/VirtualBox_PMM.wrl</URL>
+			<Depth4Export/>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>10</SXDX>
+					<ANIMATION AnimType="PMM" Angle="90" AngleLegal="90">OPENBOTTOM</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.2234 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<DisableKorpusColor/>
+			<LABEL pos="8">ПММ</LABEL>
+			<ITEMID>100579</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Ф-ПММ45</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Фасад на полновстраиваемую технику [ПММ]</ITEMNAME>
+			<WIDTH>450</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>3784</BOXPRID>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>Ф-ПММ45</ArtCodeLastValid>
+			<uid>{5E9EE8AE-CA27-495A-956C-BCA6E704ED69</uid>
+			<LabelNum>5</LabelNum>
+			<SocleHeight>100</SocleHeight>
+			<hash>536b62ccb0c15ca5381e2f11efc2fac4</hash>
+			<SocleColorId>105426</SocleColorId>
+			<DISCOUNT>37</DISCOUNT>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>508506</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>0.28 0 1.155</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/BAM_w.wrl</URL>
+			<UPPANEL>1</UPPANEL>
+			<BACKPANEL>0</BACKPANEL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>22</SXDX>
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>447</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.4534 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<LEFT>Fas1Width+3</LEFT>
+					<TOP>1.5</TOP>
+					<ADDBOUNDS Tickness="70"/>
+					<WIDTH>40</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25887</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra70.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.0049 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<COLORID>0</COLORID>
+					<BottomLeftPoint>-0.4529 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<COLORID>0</COLORID>
+					<BottomLeftPoint>-0.4529 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.4529 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<!--
+-->
+				<!--		<SHELVE>
+-->
+				<!--			<TOP>Height/2</TOP>
+-->
+				<!--			<TICKNESS>16</TICKNESS>
+-->
+				<!--		</SHELVE>
+-->
+				<!--	   -->
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ITEMID>100710</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Н-КУ70-60-720х1050х560-М1</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Стол угловой переход 600мм к ПММ под мойку</ITEMNAME>
+			<WIDTH>910</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1267</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>21</CornerSxDx>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>Н-КУ70-60-720х1050х560-М1</ArtCodeLastValid>
+			<WidthBase>1050</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<NsTypes>101 115</NsTypes>
+			<LabelNum hide="0" pos="1">6</LabelNum>
+			<uid>{42AD313B-119D-4154-A17A-3CAFC3F64D20</uid>
+			<hash>f544b4cee53b39d6512c8d53ddd4686a</hash>
+			<SocleColorId>105426</SocleColorId>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.28 0 0.475</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_planki.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.1824 0 0.20995</p0>
+							<p1>0.1826 0 0.20995</p1>
+							<p2>0.1826 0 -0.18585</p2>
+							<p3>-0.1824 0 -0.18585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.1984 0.3615 0.20995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.1824 0 0.20995</p0>
+							<p1>0.1826 0 0.20995</p1>
+							<p2>0.1826 0 -0.18585</p2>
+							<p3>-0.1824 0 -0.18585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1657</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_una_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }  Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }   Script { field SFInt32 promo_type 0 }</appearances>
+					<BottomLeftPoint>-0.1984 0.0015 0.20995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33041</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>100</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<VERSION>3</VERSION>
+			<ITEMID>100016</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>Н-ЯЩ-02-720х400х560-Т1</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 2 ящика</ITEMNAME>
+			<WIDTH>400</WIDTH>
+			<DEPTH>420</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1152</BOXPRID>
+			<OPTIONS Values="220">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } } Appearance { material Material { ambientIntensity 0.478 diffuseColor 0.61 0.61 0.61 shininess 0.9 specularColor 0.37 0.37 0.37 } texture ImageTexture { url "3d/textures/promo/KHDL-766.jpg" } }</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<uid>{C18FDA27-D9E0-4AE1-9D9A-78C682E590CD</uid>
+			<LabelNum>7</LabelNum>
+			<SocleHeight>100</SocleHeight>
+			<hash>d49005f217cca9f6436250fb86923d6a</hash>
+			<SocleModelId>119</SocleModelId>
+			<SocleColorId>105426</SocleColorId>
+			<ArtCodeLastValid>Н-ЯЩ-02-720х400х560-Т1</ArtCodeLastValid>
+			<NsTypes>101 200</NsTypes>
+			<WidthBase>400</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<Label/>
+			<ShowSizeInfo showHeight="255" showDepth="515" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.83 0 0.23</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0.wrl</URL>
+			<DownPanel>0</DownPanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION Angle="165">1.7*OPENLEFT</ANIMATION>
+					<!-- <ANIMATION>1.7*OPENLEFT</ANIMATION> -->
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width/2-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.4484 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<TOP>1.5</TOP>
+					<RIGHT>width-1.5</RIGHT>
+					<SXDX>22</SXDX>
+					<ANIMATION Angle="165">1.7*OPENRIGHT</ANIMATION>
+					<!-- <ANIMATION>1.7*OPENRIGHT</ANIMATION> -->
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width/2-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>0.0016 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.4479 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.4479 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<URL>3d/shelves/sushka_poddon60.wrl</URL>
+					<BOTTOM>IF(Option76,15+20,15)</BOTTOM>
+					<TICKNESS>15</TICKNESS>
+				</SHELVE>
+				<SHELVE>
+					<URL>3d/shelves/em_sushka.wrl</URL>
+					<BOTTOM>IF(Option76,30+20,30)</BOTTOM>
+					<TICKNESS>400</TICKNESS>
+				</SHELVE>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>600</BOTTOM>
+					<TOP>Height</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>1</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<LABEL pos="8">S</LABEL>
+			<ITEMID>103791</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-К2-1080х900х300-И</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Полка 2 двери сушка INOXA</ITEMNAME>
+			<WIDTH>900</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>3632</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-К2-1080х900х300-И</ArtCodeLastValid>
+			<WidthBase>900</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<uid>{E4FC447C-0E5B-400E-AE3C-A440E41639ED</uid>
+			<LabelNum>12</LabelNum>
+			<hash>54b6117b82b1544df2e3711ffc7db82f</hash>
+			<ModelBaseId>399</ModelBaseId>
+			<NsTypes>200 301</NsTypes>
+			<PriceType>2</PriceType>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.175 1.44 0.83</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0_00.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&lt;1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&gt;=1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100986</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-К1-1080х500х300-0</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>3345</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-К1-1080х500х300-0</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<LabelNum>9</LabelNum>
+			<uid>{716F763C-6295-44D8-A8EB-1C443EF4C5F1</uid>
+			<hash>d40966b4c143683f4aefc819c76ff1a1</hash>
+			<NsTypes>200 301</NsTypes>
+			<ModelBaseId>399</ModelBaseId>
+			<PriceType type="auto">2</PriceType>
+			<ShowSizeInfo showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.175 1.44 2.73</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0_00.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&lt;1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&gt;=1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100986</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-К1-1080х600х300-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка 1 дверь</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>3345</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-К1-1080х600х300-0</ArtCodeLastValid>
+			<WidthBase>600</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<LabelNum>11</LabelNum>
+			<uid>{6E5E7B74-7985-4E3C-A34C-79EC48F8C8D7</uid>
+			<hash>bfdbdccf202fd8c7fd904170b335a5f6</hash>
+			<ModelBaseId>399</ModelBaseId>
+			<MIRROR/>
+			<NsTypes>200 301</NsTypes>
+			<PriceType type="auto">2</PriceType>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.175 1.44 1.58</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_air_vent_km.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2984 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+			</SHELVES>
+			<WarningMessage>Вытяжка закрыта передней панелью из ЛДСП жесткого крепления с вырезом под петлю
+Короб из ЛДСП для воздуховода установлен заподлицо с передним краем горизонта
+Фронтальная панель короба из ЛДСП – съемная на клипсах
+Нижняя петля устанавливается на высоте 218мм от нижнего края
+4 вкладные полки ЛДСП
+Пример вытяжек: KRONA KATE 600 INOX PB, KRONA ADEL 600 WHITE PB, KRONA Ameli 600 (900) inox PB, KRONA Asta 600 inox PB
+Внимание! Уточняйте артикулы встраиваемой техники</WarningMessage>
+			<VERSION>5</VERSION>
+			<ITEMID>103768</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-КВ1-1080х600х300-Вр</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь под врезную вытяжку</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>6517</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-КВ1-1080х600х300-Вр</ArtCodeLastValid>
+			<LabelNum>10</LabelNum>
+			<uid>{9DB53F44-8DB4-4BE8-A13E-67A76F67A01B</uid>
+			<hash>892d05019fda8e188961f3beb307261b</hash>
+			<ModelBaseId>399</ModelBaseId>
+			<NsTypes>200 301</NsTypes>
+			<PriceType type="auto">2</PriceType>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>82145</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.175 1.44 2.18</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0.wrl</URL>
+			<RightPanel>0</RightPanel>
+			<LeftPanel>IF((Width&lt;30),0,1)</LeftPanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>10</SXDX>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0399 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.0379 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<VISIBILITY>(Options &amp; 32768)!=0</VISIBILITY>
+					<URL>3d/shelves/kapi75.wrl</URL>
+					<TOP>Height+76</TOP>
+					<TICKNESS>76.5</TICKNESS>
+					<FRONTSHIFT>-20</FRONTSHIFT>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>0</HEIGHT>
+				<URL/>
+			</LEGS>
+			<ITEMID>101189</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-ФД-1080х100х300</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фальшпанель для столов и полок с коробом</ITEMNAME>
+			<WIDTH>80</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>5519</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<ArtCodeLastValid>В-ФД-1080х100х300</ArtCodeLastValid>
+			<WidthBase>100</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<NsTypes>200 301</NsTypes>
+			<LabelNum hide="0" pos="-1">8</LabelNum>
+			<uid>{C7785D6B-BA13-4053-9D50-050A93F3505D</uid>
+			<hash>072e8efc081a48ab991af324cab33f6c</hash>
+			<ModelBaseId>399</ModelBaseId>
+			<PriceType type="auto">2</PriceType>
+			<ShowSizeInfo showHeight="255" showDepth="513" showLevelHeight="0" showFacadeWidth="-1" showWidth="1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<translation>0.175 1.4399 3.02</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<Item>
+			<URL>3d\gallery\data\00121855.wrl</URL>
+			<ID>121855</ID>
+			<ITEMNAME>Холодильник 16</ITEMNAME>
+			<uid>{8FF43EB7-C7F4-419B-9C45-68C179648789</uid>
+			<hash>e2aca13bd07df9d76d673d2318c42f89</hash>
+			<translation>3.08235 0 0.326</translation>
+			<rotation>0 0 1 0</rotation>
+			<scale>0.9964 0.94835 1.06882</scale>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+				<Param>0</Param>
+			</StrParams>
+		</Item>
+		<KITCHENITEM>
+			<URL>3d/base/baseHKXS.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>31</SXDX>
+					<ANIMATION AnimType="hkklapan" Angle="90" type="auto">OPENTOP</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3334 0.0015 0.18495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33041</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,2,IF(Option95||Option98,1, 0))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100250</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-КК-360х700х560-HK-XS</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Полка AVENTOS HK-XS</ITEMNAME>
+			<WIDTH>670</WIDTH>
+			<DEPTH>370</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<BOXPRID>2192</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<LabelNum>14</LabelNum>
+			<SocleModelId>119</SocleModelId>
+			<WidthBase>700</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>360</HeightBase>
+			<ArtCodeLastValid>В-КК-360х700х560-HK-XS</ArtCodeLastValid>
+			<NsTypes>101 200</NsTypes>
+			<uid>{6A1D1C6D-E341-49E3-B088-81BBAFCE7248</uid>
+			<ModelBaseId>399</ModelBaseId>
+			<hash>876ea32448e554005b9072ab089e05b8</hash>
+			<DISCOUNT>27</DISCOUNT>
+			<translation>2.356 2.13 0.185</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/baseHKXS.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>31</SXDX>
+					<ANIMATION AnimType="hkklapan" Angle="90" type="auto">OPENTOP</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3284 0.0015 0.18495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105423</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105423</COLORID>
+					<ITEMID>33041</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,2,IF(Option95||Option98,1, 0))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100250</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-КК-360х700х560-HK-XS</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Полка AVENTOS HK-XS</ITEMNAME>
+			<WIDTH>660</WIDTH>
+			<DEPTH>370</DEPTH>
+			<HEIGHT>360</HEIGHT>
+			<BOXPRID>2192</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<LabelNum>15</LabelNum>
+			<uid>{7EAF42FD-9E35-45FE-8EFA-4A8FB85FE258</uid>
+			<SocleModelId>119</SocleModelId>
+			<WidthBase>700</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>360</HeightBase>
+			<ArtCodeLastValid>В-КК-360х700х560-HK-XS</ArtCodeLastValid>
+			<NsTypes>101 200</NsTypes>
+			<ModelBaseId>399</ModelBaseId>
+			<hash>a4cd69443c564dd35d520b4d6d1991a4</hash>
+			<DISCOUNT>27</DISCOUNT>
+			<Label/>
+			<ShowSizeInfo showHeight="2" showDepth="771" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>3.021 2.13 0.185</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<Item>
+			<URL>3d\gallery\data\00366862.wrl</URL>
+			<ID>366862</ID>
+			<ITEMNAME>Силовая розетка</ITEMNAME>
+			<uid>{DEC1BE92-A79E-43CE-8177-710270040A29</uid>
+			<hash>4b6ba9eb063e23ec80479c6a7912bfb5</hash>
+			<translation>0 0.07964 2.30498</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175871.wrl</URL>
+			<ID>175871</ID>
+			<ITEMNAME>Вывод воды 01</ITEMNAME>
+			<uid>{A3F59303-0AB3-4107-A4CE-26805D90322B</uid>
+			<hash>0d72667e188f9a169e7f2eee2a7b1005</hash>
+			<translation>0 0.7084 0.74375</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00392453.wrl</URL>
+			<ID>392453</ID>
+			<ITEMNAME>Труба горизонтальная</ITEMNAME>
+			<uid>{BEB999AB-C60F-4284-9A84-7BB3B794C8A1</uid>
+			<hash>f3fa0d42ab00df7f59fef7f5bc462a31</hash>
+			<translation>0.08485 0.15737 0.0769</translation>
+			<rotation>-0.38306 0.86523 0.32349 1.74363</rotation>
+			<scale>0.65 0.37725 0.37725</scale>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>1</ObjectType>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{91ECFE62-D4DB-4D89-9A7D-341CA37E18AB</uid>
+			<hash>ffafbef5c78e40c331fc873e599eefa3</hash>
+			<translation>0 2.04688 2.10474</translation>
+			<rotation>-0.70723 -0.70698 -0.0001 3.1414</rotation>
+			<scale>1.001 1 1</scale>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175869.wrl</URL>
+			<ID>175869</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{D73B47BF-04DF-4143-AABC-52E7BCD95DB7</uid>
+			<hash>b30446023b34f99fce5a94ac454122bc</hash>
+			<translation>0 0.07617 2.17994</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<scale>0.99782 1 1</scale>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{C137E383-F60E-4F62-BA9E-5549EBEC9EEE</uid>
+			<hash>009703693fd0415500477c9ad0a649ce</hash>
+			<translation>0 1.08519 2.64525</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{68EC077E-6248-4E2C-88FE-B657DEA63181</uid>
+			<hash>7460e9b01578f1466ac7c367795714e7</hash>
+			<translation>0 1.08495 2.77812</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{CF9359B3-2A36-435C-AC20-2BFCABBC1D6E</uid>
+			<hash>a103a5c3b0bd925953f9132be03769fc</hash>
+			<translation>0 1.08513 1.57967</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{B8C1375F-6462-4126-816C-26C671B9EAEC</uid>
+			<hash>ca1c6a79b5a3105f3bd032399a3204c6</hash>
+			<translation>0 1.08832 1.71467</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<Item>
+			<URL>3d\gallery\data\00175870.wrl</URL>
+			<ID>175870</ID>
+			<ITEMNAME>Розетка с заземлением</ITEMNAME>
+			<uid>{F36B1A93-EB22-42EF-B911-A9693A3A6B97</uid>
+			<hash>bda5a23f44b760498c93735a77fc5457</hash>
+			<translation>0 0.74035 0.59151</translation>
+			<rotation>0.57735 0.57735 -0.57735 2.0944</rotation>
+			<UpVec>1 0 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+			</StrParams>
+		</Item>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>546</MODELID>
+			<COLORID>54701</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-0.25001" y="0"/>
+							<point x="0.2" y="0"/>
+							<point x="0.2" y="0.46"/>
+							<point x="-0.23001" y="0.46"/>
+							<point x="-0.23001" y="0.46"/>
+							<point x="-0.24415" y="0.45414" type="arc"/>
+							<point x="-0.25001" y="0.44"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-0.23001</X1>
+					<X2>0.2</X2>
+					<width>0.46</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+						<page id="2" mode="4" roundRadius="0.1" roundRadius2="0.23" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.46" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.23" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.46" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="4"/>
+					</deskFastCreator>
+				</IniData>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ModelId>550</ModelId>
+					<ColorId>60520</ColorId>
+					<ItemId2>27164</ItemId2>
+					<ModelId2>99</ModelId2>
+					<ColorId2>1</ColorId2>
+					<FLAGS>2 1 0 0 0 0</FLAGS>
+				</Kromka>
+			</DATA>
+			<Tickness>38</Tickness>
+			<ITEMNAME> Столешница; Мод: KD-twins ПСФ; Цв: H3303 Дуб Гамильтон натуральный [1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{179F8AFC-607F-4A17-8EB7-3557847F2222</uid>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500673</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>500661</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,46</QUANTITY>
+					<ColorId>60520</ColorId>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<hash>2132073c176ab50c8904605164b85626</hash>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<translation>0.83005 0.8201 0.02005</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>546</MODELID>
+			<COLORID>54701</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-1.51985" y="0"/>
+							<point x="1.5199" y="0"/>
+							<point x="1.5199" y="0.5799"/>
+							<point x="1.0799" y="0.5799"/>
+							<point x="1.06566" y="0.58576" type="arc"/>
+							<point x="1.0598" y="0.6"/>
+							<point x="-1.51985" y="0.6"/>
+						</points>
+					</contour>
+					<contour hole="true">
+						<points>
+							<point x="1.08695" y="0.02996"/>
+							<point x="1.08695" y="0.52996"/>
+							<point x="0.63695" y="0.52996"/>
+							<point x="0.63695" y="0.02996"/>
+						</points>
+					</contour>
+					<contour hole="true">
+						<points>
+							<point x="-0.39005" y="0.07995"/>
+							<point x="-0.39005" y="0.47995"/>
+							<point x="-0.89005" y="0.47995"/>
+							<point x="-0.89005" y="0.07995"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-1.51985</X1>
+					<X2>1.5199</X2>
+					<width>0.6</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+						<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="3" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.46" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="4">
+							<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="0.86192" shifty="-0.02004" dashed="1"/>
+							<Hole type="102" width="0.5" depth="0.4" alignx="0" aligny="0" shiftx="-0.64008" shifty="-0.02005" dashed="1"/>
+						</page>
+					</deskFastCreator>
+				</IniData>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ModelId>550</ModelId>
+					<ColorId>60520</ColorId>
+					<ItemId2>27164</ItemId2>
+					<ModelId2>99</ModelId2>
+					<ColorId2>1</ColorId2>
+					<FLAGS>2 2 0 0 0 2</FLAGS>
+				</Kromka>
+			</DATA>
+			<Tickness>38</Tickness>
+			<ITEMNAME> Столешница; Мод: KD-twins ПСФ; Цв: H3303 Дуб Гамильтон натуральный [1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{E5230AA9-39C4-4C5A-B5CB-CFBDEB7A57B8</uid>
+			<Label/>
+			<ShowSizeInfo showHeight="3" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<hash>f2b87913b1c40730a13da57b4b612f06</hash>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500676</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum/>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>0.00004 0.8201 1.53995</translation>
+			<rotation>0 1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\00192317.wrl</URL>
+					<ID>192317</ID>
+					<ITEMNAME>Мойка+смеситель 9</ITEMNAME>
+					<uid>{53871C99-6E2C-4B71-8C27-7A0614A0C0FE</uid>
+					<hash>5d7d32d5718896838d640066cbe075cd</hash>
+					<translation>0.86195 -0.10669 0.27996</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<StrParams>
+						<Param/>
+						<Param/>
+						<Param>-1</Param>
+					</StrParams>
+					<SpecialType>Moyka</SpecialType>
+				</Item>
+				<Item>
+					<URL>3d\gallery\data\00121863.wrl</URL>
+					<ID>121863</ID>
+					<ITEMNAME>ВП электро 5</ITEMNAME>
+					<uid>{65B69233-832C-4531-99BC-41C2BA625BDA</uid>
+					<hash>be4da0080a01fc64484e87b30d25131d</hash>
+					<translation>-0.64005 0.038 0.27995</translation>
+					<rotation>-1 0 0 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<SpecialType>Moyka</SpecialType>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<!-- <URL>3d/base/PAH_w300_2.wrl</URL> -->
+			<URL>3d/base/BA_300_up2.wrl</URL>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>101714</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>98184</BaseColorId>
+			<ARTCODE>В-КУ2-1080х950х300-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка угловая 2 двери переход 350мм</ITEMNAME>
+			<WIDTH>1030</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1050</HEIGHT>
+			<BOXPRID>3744</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>0</Visibility>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>22</CornerSxDx>
+			<SocleModelId>119</SocleModelId>
+			<appearances>Appearance { material Material { ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15 } texture ImageTexture { url "3d/textures/promo/KHDL-744-18.png" } textureTransform TextureTransform { scale 1.3 1.3 } }</appearances>
+			<MIRROR/>
+			<ArtCodeLastValid>В-КУ2-1080х950х300-0</ArtCodeLastValid>
+			<NsTypes>400</NsTypes>
+			<PriceType type="auto">6</PriceType>
+			<ModelBaseId>399</ModelBaseId>
+			<LabelNum hide="0" pos="-1">13</LabelNum>
+			<Guid>E1AFF83A-A934-42F9-B8FB-DC1070946C01</Guid>
+			<WidthBase>950</WidthBase>
+			<HeightBase>1080</HeightBase>
+			<DepthBase>300</DepthBase>
+			<uid>{2BFBD885-2C98-4F38-8880-1A38EED2D8C7</uid>
+			<ShowSizeInfo showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<DISCOUNT>11</DISCOUNT>
+			<panels date="2026-10-21_13_21_19">
+				<panel>
+					<name>SideTop</name>
+					<type>PanelHor</type>
+					<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 Height-DspTickness Height -Depth 0</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+				<panel>
+					<name>SideBottom</name>
+					<type>PanelHor</type>
+					<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 0 DspTickness -Depth 0</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+				<panel>
+					<name>SideLeft</name>
+					<type>PanelVert</type>
+					<point>-0.5*Width -0.5*Width+DspTickness 0 Height -Depth 0</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+				<panel>
+					<name>SideRight</name>
+					<type>PanelVert</type>
+					<point>0.5*Width-DspTickness 0.5*Width 0 Height -Depth 0</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+				<panel>
+					<name>BackSide</name>
+					<type>PanelBack</type>
+					<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 DspTickness+0.0005 Height-DspTickness-0.0005 -Depth+ZsShift -Depth+ZsShift+0.006</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+				<panel>
+					<name>FrontSide</name>
+					<type>PanelFront</type>
+					<point>-0.5*Width -0.5*Width+0.56 0 Height 0 DspTickness</point>
+					<corrL>0 0 0</corrL>
+					<corrR>0 0 0</corrR>
+					<position>0 0 0</position>
+				</panel>
+			</panels>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<SxDx>22</SxDx>
+					<ITEMID>25056</ITEMID>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<TOP>1</TOP>
+					<LEFT>2</LEFT>
+					<WIDTH>317</WIDTH>
+					<HEIGHT>1047</HEIGHT>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>0.1959 0.002 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<SxDx>21</SxDx>
+					<ITEMID>25056</ITEMID>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>LEFT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<TOP>1</TOP>
+					<LEFT>322</LEFT>
+					<WIDTH>317</WIDTH>
+					<HEIGHT>1047</HEIGHT>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_leya_dvr.xml</URL>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.1241 0.002 0.14995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<SxDx>11</SxDx>
+					<ITEMID>25881</ITEMID>
+					<MODELID>2212</MODELID>
+					<COLORID>98374</COLORID>
+					<TOP>1</TOP>
+					<LEFT>680</LEFT>
+					<WIDTH>50</WIDTH>
+					<HEIGHT>1047</HEIGHT>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra50.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\promo\KHPr-002.png" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2151 0.002 0.14995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<hash>caf53d17b50c9156cff7f12ef56c5465</hash>
+			<translation>0.515 1.44005 0.17</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<Item>
+			<URL>3d\gallery\data\00151581.wrl</URL>
+			<ID>151581</ID>
+			<ITEMNAME>Решетка вентиляционная круглая</ITEMNAME>
+			<uid>{8A03729B-204D-4868-AF14-5993F0A46127</uid>
+			<hash>999b9f77f0259e3dcdfd66c6c51fa764</hash>
+			<translation>0.15 2.528 2.18036</translation>
+			<rotation>1 0 0 3.1415</rotation>
+			<scale>1.00006 4.24803 1.01549</scale>
+			<UpVec>0 -1 0</UpVec>
+			<ObjectType>1</ObjectType>
+			<StrParams>
+				<Param/>
+				<Param>0</Param>
+			</StrParams>
+		</Item>
+	</Objects>
+	<ColorMaxId>120000</ColorMaxId>
+	<SceneName>C:\Users\kshuser19\Downloads\23-10-26-03.ekkd</SceneName>
+</Scene>

@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>8C0E9</Hash>
+	<Guid>CACD25C5-D5E7-4EEF-BAF1-91772293A739</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Флёр Лайт (Кюхен Хоф ТР)">914609</ModelBaseId>
+		<ModelId Name="Флёр">914610</ModelId>
+		<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+		<ModelColorId Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+		<BoardId Name="Уплотнитель Simple line">000000</BoardId>
+		<BoardColorId Code="" Name="Пластик прозрачный">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">080010</SocleId>
+		<SocleColorId Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Серый" Name="Серый">911630</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="KD-twins">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="F676 Камень Кальвия песочно-серый [1]">000000</TableBoardColorId>
+		<WallPanelId Name="KD-twins">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="F676 Камень Кальвия песочно-серый [1]">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<Customer_Family>Рубан</Customer_Family>
+		<Customer_Name>Наталья</Customer_Name>
+		<Customer_PatronymicName>Александровна</Customer_PatronymicName>
+		<CustomerAddress>п.Верхнетемерницкий ул.Венеры д.21 кв.286</CustomerAddress>
+		<CustomerBudget>500000</CustomerBudget>
+		<CustomerDeliveryDate>20/10/2026</CustomerDeliveryDate>
+		<CustomerEmail>jghgh@mail.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>Рубан Наталья Александровна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89281072159</CustomerPhone>
+		<ManagerName>Вамуш Ирина:1</ManagerName>
+		<MEBEL_DISCOUNT>35.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2026-09-18</OrderCreateDate>
+		<OrderNum>ФР-04061-17-11-26-11</OrderNum>
+		<OrderNumStart>04061</OrderNumStart>
+		<OrderStatusChangeDate>2026-11-17</OrderStatusChangeDate>
+		<OrderTech>Посудомоечная машина=MIDEA MID60S100i Посудомоечная машина 60см~0
+Вытяжка=MIDEA MH60I770B Встраиваемая вытяжка~0
+Микроволновая печь=MIDEA MI10257GB Встраиваемая СВЧ~0
+Варочная панель=MIDEA MCH64107F Электрическая варочная поверхность~0
+Духовой шкаф=MIDEA MO78107CGB Электрический духовой шкаф~0
+</OrderTech>
+		<ProjectCost>512375</ProjectCost>
+		<ProjectCostForRoyalty>512375</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>674207</ProjectMebelFullCost>
+		<SalonAddress>ТЦ "Мир Ремонта" 2 этаж, пр. Аксайский 21, г. Аксай</SalonAddress>
+		<SalonDirectorName>Пятовская Ольга Сергеевна</SalonDirectorName>
+		<SalonDirectorPhone>89613222103</SalonDirectorPhone>
+		<SalonEmail>kd-rnd@fkxd.ru</SalonEmail>
+		<SalonName>ИП Пятовская О.С.</SalonName>
+		<SalonPhone>89613222103</SalonPhone>
+		<EuroRate>1</EuroRate>
+		<SalonCode>04061</SalonCode>
+		<Version>program: 22.11.26 (release 34), database: 22.11.2026, last update 23.11.2026</Version>
+		<UpdateNum>2647</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>4608 x 3500 мм</Bounds>
+		<Walls>3500x4368</Walls>
+		<Celling>2565 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>104050</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-КТССМ-750х700х575</ArtCode>
+			<NsTypes>А_ФБлев+А_Firmax-SL</NsTypes>
+			<ColorCategory>6</ColorCategory>
+			<Name>Модуль терминальный 2 двери под СОЛО СМ</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>700</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>347</Width>
+				<Height>717</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>347</Width>
+				<Height>717</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>700</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</BaseColorId>
+			<ObjectNum>1</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-KHMCC</ArtCode>
+			<Quantity>0.52</Quantity>
+			<WIDTH>575</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>900</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103454</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-КУ-60-750х1150х575-М1</ArtCode>
+			<NsTypes>А_Firmax-SL</NsTypes>
+			<ColorCategory>6</ColorCategory>
+			<Name>Стол угловой переход 600мм под мойку</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>1150</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>547</Width>
+				<Height>717</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Переходной уголок</Type>
+				<Width>75</Width>
+				<Height>717</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>1150</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102666</ITEMID>
+			<ArtCode>ФГП-ПММ60</ArtCode>
+			<ColorCategory>6</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 600мм с профилем</Name>
+			<LabelNum>3</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>20</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104096</ITEMID>
+			<BaseColorId Name="Д-019 Серый камень ЛДСтП + Серый" Code="Д-019/РЦПВХ_Серый">904093+911630</BaseColorId>
+			<ArtCode>ГН-ВПЯЩ-21-750х600х575-Т1</ArtCode>
+			<NsTypes>А_DBox-СС</NsTypes>
+			<ColorCategory>6</ColorCategory>
+			<Name>Стол 3 ящика тандембокс под варку, экран ЛДСП</Name>
+			<LabelNum>4</LabelNum>
+			<LABEL>ВП</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>170</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>170</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103446</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГН-ЯЩИ-02-750х600х575-Т1</ArtCode>
+			<NsTypes>А_DBox-СС</NsTypes>
+			<ColorCategory>6</ColorCategory>
+			<Name>Стол 1 ящик тандембокс под сушку INOXA GOLD</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>S</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102453</ITEMID>
+			<BaseColorId Name="Д-019 Серый камень ЛДСтП + Серый" Code="Д-019/РЦПВХ_Серый">904093+911630</BaseColorId>
+			<ArtCode>ГН-ДМ-11-2220х600х575-Т1</ArtCode>
+			<NsTypes>А_TIP ON+А_DBox-СС+А_Firmax-SL+4_Раскр</NsTypes>
+			<PRICE type="+10%">75702</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Пенал 1 дверь + 1 ящик тандембокс под духовку и СВЧ</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ДШ,СВЧ</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>2390</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>977</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>57</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>342</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<FRONT N="4">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Флёр">914610</ModelID>
+				<COLORID Code="KHDL-019-18" Name="KHDL-019-18 Серый камень">911176</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-СЛ1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103261</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>Н-КЗС-1080х400х560-1</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL+А_СВ_SmLight</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол высокий 1 дверь (стекло)</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>397</Width>
+				<Height>1077</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ11" Name="АЛ11 Черный брашированный [АЛ1]">909243</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+				<OPTION Name="Витраж/Стекло" ArtCode="SS-055-000" Count="0.43" Price="0" Type="TO"/>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-СЛ4" Count="1"/>
+			<OPTION Name="LED Smart Light с механическим включением (дневной)" ArtCode="LEDSmartLight-Д" Count="1.08"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103261</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>Н-КЗС-1320х400х560-1</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL+А_СВ_SmLight+1_Умен+2_Умен+А_БезНог</NsTypes>
+			<PRICE type="обычная">40650</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол высокий 1 дверь (стекло)</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>400</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>1310</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>397</Width>
+				<Height>1307</Height>
+				<MODELID Name="Алюминиевая рамка Modus Лайт [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ11" Name="АЛ11 Черный брашированный [АЛ1]">909243</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+				<OPTION Name="Витраж/Стекло" ArtCode="SS-055-000" Count="0.52" Price="0" Type="TO"/>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-СЛ4" Count="1"/>
+			<OPTION Name="LED Smart Light с механическим включением (дневной)" ArtCode="LEDSmartLight-Д" Count="1.31"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103988</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГВ-К1-1080х600х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+А_СВ_LFit_Ал+1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">37165</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>9</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>580</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>577</Width>
+				<Height>997</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный LightFit (алюм., дневной)" ArtCode="LightFit-Ал-Д" Count="0.58"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103988</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГВ-К1-1080х600х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+А_СВ_LFit_Ал+2_Умен</NsTypes>
+			<PRICE type="обычная">37165</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>997</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный LightFit (алюм., дневной)" ArtCode="LightFit-Ал-Д" Count="0.6"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103988</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГВ-К1-1080х600х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+А_СВ_LFit_Ал+2_Умен</NsTypes>
+			<PRICE type="обычная">37165</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>11</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>997</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный LightFit (алюм., дневной)" ArtCode="LightFit-Ал-Д" Count="0.6"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103768</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>В-КВ1-1080х600х300-Вр</ArtCode>
+			<NsTypes>А_TIP ON+А_Firmax-SL+2_Умен</NsTypes>
+			<PRICE type="обычная">39706</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>997</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-СЛ1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103988</ITEMID>
+			<BaseColorId Code="Д-019" Name="Д-019 Серый камень ЛДСтП">904093</BaseColorId>
+			<ArtCode>ГВ-К1-1080х600х300-0</ArtCode>
+			<NsTypes>А_Firmax-SL+А_СВ_LFit_Ал+1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">37165</PRICE>
+			<ColorCategory>6</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>13</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>580</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>577</Width>
+				<Height>997</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный LightFit (алюм., дневной)" ArtCode="LightFit-Ал-Д" Count="0.58"/>
+			<UserNs>0</UserNs>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104055</ITEMID>
+			<ArtCode>ПФас-KHMCC_19</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [верх]</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.32</Quantity>
+			<WIDTH>320</WIDTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>320</Width>
+				<Height>1000</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104058</ITEMID>
+			<ArtCode>ПФас-KHMCC_19</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>15</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.96</Quantity>
+			<WIDTH>600</WIDTH>
+			<HEIGHT>1590</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>600</Width>
+				<Height>1600</Height>
+				<MODELID Name="Флёр">914610</MODELID>
+				<COLORID Code="KHCGC-006" Name="KHCGC-006 Кремовый бархат [Гл] [KХ6]">914646</COLORID>
+				<ModelMaterial Name="МДФ Complex Coat">914605</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104063</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>Д-Д</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Панель ЛДСП [верх]</Name>
+			<LabelNum>16</LabelNum>
+			<Quantity>0.224</Quantity>
+			<WIDTH>400</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>560</HEIGHT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode/>
+			<Name>К-т подключения, выкл. механический</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>СТФ-4050х600х38-UПСФ</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>17772.70117</Price>
+			<Discount>100</Discount>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F676 Камень Кальвия песочно-серый [1]">000000</COLORID>
+			<L>600</L>
+			<H>3020</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0.02" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.5" depth="0.5" alignx="0" aligny="0" shiftx="-0.57005" shifty="-0.01255" dashed="1"/>
+					<Hole type="1" width="0.05" alignx="0" aligny="0" shiftx="-0.5682" shifty="-0.15355" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>50040</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>1806</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>50040</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СТФ-4050х600х38-UПСФ</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5885</Price>
+			<Discount>100</Discount>
+			<Name>Столешница</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F676 Камень Кальвия песочно-серый [1]">000000</COLORID>
+			<L>600</L>
+			<H>770</H>
+			<P>38</P>
+			<Quantity>1</Quantity>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0.07" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<Kromka>
+				<ITEMID>27164</ITEMID>
+				<MODELID>600</MODELID>
+				<COLORID>50040</COLORID>
+				<ArtCode>Обр_СТ_Ф_9</ArtCode>
+				<ColorCategory/>
+				<Price>586</Price>
+			</Kromka>
+			<NOTES/>
+			<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>80153</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,6</QUANTITY>
+					<ColorId>50040</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>Упл-Sline</ArtCode>
+			<ColorCategory/>
+			<Price>1682.14014</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="Уплотнитель Simple line">000000</MODELID>
+			<COLORID Code="" Name="Пластик прозрачный">000000</COLORID>
+			<P>5</P>
+			<L>21</L>
+			<H>3020</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>Упл-Sline</ArtCode>
+			<ColorCategory/>
+			<Price>763.09009</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="Уплотнитель Simple line">000000</MODELID>
+			<COLORID Code="" Name="Пластик прозрачный">000000</COLORID>
+			<P>5</P>
+			<L>21</L>
+			<H>1370</H>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>СП-4050х620х9-U</ArtCode>
+			<ColorCategory/>
+			<Price>16899.58008</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="KD-twins">000000</MODELID>
+			<COLORID Code="" Name="F676 Камень Кальвия песочно-серый [1]">000000</COLORID>
+			<L>620</L>
+			<H>2980</H>
+			<Quantity>2.98</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ1000-150</ArtCode>
+			<ColorCategory/>
+			<Price>1237</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080010</MODELID>
+			<COLORID Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ2000-150</ArtCode>
+			<ColorCategory/>
+			<Price>2474</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080010</MODELID>
+			<COLORID Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>ЦПВХ4000-150</ArtCode>
+			<ColorCategory/>
+			<Price>4948</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080010</MODELID>
+			<COLORID Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>8906</Price>
+				<ArtCode>DRB4.B111.60SF.GR</ArtCode>
+				<Name>БАРРА Корзина-посудосушитель 4S 600мм, крепление к фасаду, полное выдвижение, плавное закрывание, пластиковый поддон, графит, BARRA (DRB4.B111.60SF.GR</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>5588</Price>
+				<ArtCode>4995026</ArtCode>
+				<Name>Дозатор для моющего средства OM-02-GB латунь/графит</Name>
+				<Quantity>1</Quantity>
+				<Discount>25</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>20288</Price>
+				<ArtCode>4993622</ArtCode>
+				<Name>Мойка Daisen 60-BL Artgranit/черный</Name>
+				<Quantity>1</Quantity>
+				<Discount>25</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>20288</Price>
+				<ArtCode>4994361</ArtCode>
+				<Name>Omoikiri Смеситель YAMADA GB (4994361)</Name>
+				<Quantity>1</Quantity>
+				<Discount>100</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>106</Price>
+				<ArtCode>Мон_Наб_ДСП</ArtCode>
+				<Name>Мон_Наб_ДСП | Монтажный набор для боковины ДСП</Name>
+				<Quantity>1</Quantity>
+				<ObjectNum>15</ObjectNum>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</COLORID>
+				<Price>243</Price>
+				<ArtCode>ЦПВХ-150-Т</ArtCode>
+				<Name>ЦПВХ-150-Т | Цоколь пластиковый h=150 мм Торцевой</Name>
+				<Quantity>4</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<COLORID Code="Ц_Серый камень" Name="Серый камень">911609~914448~911617~914980</COLORID>
+				<Price>365</Price>
+				<ArtCode>ЦПВХ-150-СУ</ArtCode>
+				<Name>Соединительный (универсальный) элемент для цоколя, ПВХ</Name>
+				<Quantity>2</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>4684</Price>
+				<ArtCode>КПВМ</ArtCode>
+				<Name>Источник питания с блоком распределителей, выключатель механический</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>0</Price>
+				<ArtCode>Скос_СТ_Ф-9</ArtCode>
+				<Name>Скос, вырез изменение глубины стеновой панели</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1070</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>50040</COLORID>
+				<Quantity>0.6</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>1070</Price>
+				<ArtCode>Обр_Тр_ФАВС_38</ArtCode>
+				<Name>Обработка бокового или заднего канта в цвет Столешницы</Name>
+				<COLORID>50040</COLORID>
+				<Quantity>0.6</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<Tech>
+		<Item ObjectNum="-" name="Посудомоечная машина" code="MIDEA MID60S100i Посудомоечная машина 60см">Посудомоечная машина:MIDEA MID60S100i Посудомоечная машина 60см</Item>
+		<Item ObjectNum="-" name="Вытяжка" code="MIDEA MH60I770B Встраиваемая вытяжка">Вытяжка:MIDEA MH60I770B Встраиваемая вытяжка</Item>
+		<Item ObjectNum="-" name="Микроволновая печь" code="MIDEA MI10257GB Встраиваемая СВЧ">Микроволновая печь:MIDEA MI10257GB Встраиваемая СВЧ</Item>
+		<Item ObjectNum="-" name="Варочная панель" code="MIDEA MCH64107F Электрическая варочная поверхность">Варочная панель:MIDEA MCH64107F Электрическая варочная поверхность</Item>
+		<Item ObjectNum="-" name="Духовой шкаф" code="MIDEA MO78107CGB Электрический духовой шкаф">Духовой шкаф:MIDEA MO78107CGB Электрический духовой шкаф</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_base_11.emf</Img>
+	<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_hpl.jpg</Img>
+	<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_base_11.emf</Img>
+	<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_hpl_2_z.jpg</Img>
+	<Img>1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_base_1.emf</Img>
+	<Img>C:\Users\term2\Documents\EKitchen KXD Dealer\export\1-CACD25C5-D5E7-4EEF-BAF1-91772293A739_all_tables_base_1.emf</Img>
+</Scene>

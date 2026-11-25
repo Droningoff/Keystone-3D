@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash2>686B5</Hash2>
+	<Hash>686B5</Hash>
+	<Guid>CC9C0DDC-90DA-45D4-B041-2EE9616EA8EF</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Гостиная Фаворит 1">915228</ModelBaseId>
+		<ModelId Name="Фаворит без фрезеровки">904152</ModelId>
+		<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+		<ModelColorId Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 18мм">904096</SocleId>
+		<SocleColorId Code="KHDL-738-18" Name="KHDL-738-18 Кашемир серый">909375</SocleColorId>
+		<SocleReshColorId Code="" Name="(Нет цвета)">000000</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<Handle>РК659-С320</Handle>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Ленинский-62</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.870</SalonPhone>
+		<SalonEmail>len62@kxd.ru</SalonEmail>
+		<SalonAddress>M. Университет, г. Москва, Ленинский проспект, д. 62/1 пн-пт, вс 11:00 до 20:00, сб 10:00 до 20:00.</SalonAddress>
+		<SalonDirectorName>Кузовлева Д.Е.</SalonDirectorName>
+		<SalonDirectorPhone>+79039661390</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="1М">Дворак Диана Вячеславовна</SalonManagerName>
+		<ClientId create_date="20/06/2026">8926381406701</ClientId>
+		<ClientProjectsCount>3</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Косенкова Алена -</ClientName>
+		<ClientEmail>kosenkoav86@mail.ru</ClientEmail>
+		<ClientPhone>89263814067</ClientPhone>
+		<ClientMetroStation>Академическая</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>500000</ClientBudget>
+		<ClientAssemblingDate>15/09/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Качество</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>87-1М-13-11-26-01</OrderNum>
+		<FabrikaCheckNum>66552</FabrikaCheckNum>
+		<FabrikaCheckInfo>borisova.ea / 17.11.2026 / 11:51:22</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 13.11.26 (release 34), database: 13.11.2026, last update 14.11.2026</Version>
+		<UpdateNum>1364</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>9169 x 6000 мм</Bounds>
+		<Walls>1853</Walls>
+		<Celling>2590 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>111004</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-68831</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ОЦ];  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>13</Discount>
+			<DiscountAuto>13</DiscountAuto>
+			<WIDTH>800</WIDTH>
+			<DEPTH>200</DEPTH>
+			<HEIGHT>1500</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.59</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>1496</HEIGHT>
+			<ObjectNum>1</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>1496</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-751-18" Name="KHDL-751-18 Зеленый шалфей [КМ1]">914493</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-31090</ArtCode>
+			<Name>Фасад Экоплита, Экоплита однотонная рамка 90</Name>
+			<Quantity>0.59</Quantity>
+			<WIDTH>396</WIDTH>
+			<HEIGHT>1496</HEIGHT>
+			<ObjectNum>1</ObjectNum>
+			<FRONT N="1">
+				<Width>396</Width>
+				<Height>1496</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-751-18" Name="KHDL-751-18 Зеленый шалфей [КМ1]">914493</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>876</Price>
+			<ArtCode>93-66282</ArtCode>
+			<Name>Ком-ПО-КД4 | Push to Open (прямой элемент, H до 1500мм)</Name>
+			<Quantity>2</Quantity>
+			<ObjectNum>1</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111003</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65215</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Шкаф открытый без фасада (2 двери) [ЗЦ];  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>2</LabelNum>
+			<Discount>13</Discount>
+			<DiscountAuto>13</DiscountAuto>
+			<WIDTH>750</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>1950</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-67010</ArtCode>
+			<Name>Фасад МДФ матовый с фрезеровкой, с калёвкой</Name>
+			<Quantity>0.74</Quantity>
+			<WIDTH>371</WIDTH>
+			<HEIGHT>1996</HEIGHT>
+			<ObjectNum>2</ObjectNum>
+			<FRONT N="1">
+				<Width>371</Width>
+				<Height>1996</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-79711</ArtCode>
+			<Name>РК659-С320 Ручка-скоба 320мм, отделка золото брашированное</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-67010</ArtCode>
+			<Name>Фасад МДФ матовый с фрезеровкой, с калёвкой</Name>
+			<Quantity>0.74</Quantity>
+			<WIDTH>371</WIDTH>
+			<HEIGHT>1996</HEIGHT>
+			<ObjectNum>2</ObjectNum>
+			<FRONT N="1">
+				<Width>371</Width>
+				<Height>1996</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-79711</ArtCode>
+			<Name>РК659-С320 Ручка-скоба 320мм, отделка золото брашированное</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.5</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111021</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-65942</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Перемычка с полкой справа;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.694</Quantity>
+			<WIDTH>556</WIDTH>
+			<DEPTH>720</DEPTH>
+			<HEIGHT>528</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>111025</ITEMID>
+			<ArtCode>93-65953</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Штанга прямоугольная</Name>
+			<ObjectNum>2</ObjectNum>
+			<Quantity>0.7</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>415</Price>
+			<ArtCode>93-66277</ArtCode>
+			<Name>ПКД-110 | Петля 110 гр. KD ProLine</Name>
+			<Quantity>10</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>4531</Price>
+			<ArtCode>93-65952</ArtCode>
+			<Name>СВФ | Стяжка-выпрямитель фасада</Name>
+			<Quantity>2</Quantity>
+			<ObjectNum>2</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110309</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-69686</ArtCode>
+			<NsTypes>А_TIP ON+1_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">12221</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Полка 1 дверь;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Фаворит 3 Цв: МГ-RAL 9001 [КМФ3]; Опции: Push to Open, Петли KD ProLine</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>13</Discount>
+			<DiscountAuto>13</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>500</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>297</Width>
+				<Height>497</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66271" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110100</ITEMID>
+			<ArtCode>94-30700</ArtCode>
+			<NsTypes>2_Умен</NsTypes>
+			<PRICE type="обычная">8702</PRICE>
+			<ColorCategory>2</ColorCategory>
+			<Name>  Стеллаж верхний, 2 секции Цв: KHDLN-746-18 Крем бежевый-N [СТ2]</Name>
+			<LabelNum>4</LabelNum>
+			<WIDTH>300</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>300</Width>
+				<Height>720</Height>
+				<MODELID Name="Открытые элементы [СТ2]">000000</MODELID>
+				<COLORID Code="KHDLN-746-18" Name="KHDLN-746-18 Крем бежевый-N [СТ2]">915508</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110094</ITEMID>
+			<ArtCode>94-30684</ArtCode>
+			<NsTypes>2_Умен</NsTypes>
+			<PRICE type="обычная">5688</PRICE>
+			<ColorCategory>2</ColorCategory>
+			<Name>  Стеллаж верхний, 1 секция Цв: KHDLN-746-18 Крем бежевый-N [СТ2]</Name>
+			<LabelNum>5</LabelNum>
+			<WIDTH>300</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>320</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>300</Width>
+				<Height>320</Height>
+				<MODELID Name="Открытые элементы [СТ2]">000000</MODELID>
+				<COLORID Code="KHDLN-746-18" Name="KHDLN-746-18 Крем бежевый-N [СТ2]">915508</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110329</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-69160</ArtCode>
+			<NsTypes>4_Раскр</NsTypes>
+			<PRICE type="+10%">54695</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Тумба навесная 2 ящика + 2 скрытых ящика;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Фаворит 3 Цв: МГ-RAL 9001 [КМФ3]; Опции: DTC DragonBox серебристо-серый</Name>
+			<LabelNum>6</LabelNum>
+			<Discount>13</Discount>
+			<DiscountAuto>13</DiscountAuto>
+			<WIDTH>1100</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>200</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>297</Width>
+				<Height>197</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>797</Width>
+				<Height>197</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110622</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-72538</ArtCode>
+			<NsTypes>1_Умен</NsTypes>
+			<PRICE type="обычная">4535</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Фальшпанель с коробом;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Стоун Колор Цв: KHDL-751-18 Зеленый шалфей [КМ1]</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>33</Discount>
+			<DiscountAuto>33</DiscountAuto>
+			<WIDTH>100</WIDTH>
+			<DEPTH>400</DEPTH>
+			<HEIGHT>800</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>100</Width>
+				<Height>797</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-751-18" Name="KHDL-751-18 Зеленый шалфей [КМ1]">914493</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110314</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>93-69703</ArtCode>
+			<NsTypes>А_TIP ON+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">26510</PRICE>
+			<ColorCategory>3</ColorCategory>
+			<Name>  Полка 2 двери;  Цвет корпуса: Д-746 Крем бежевый ЛДСтП; Мод: Гостиная Фаворит 3 Цв: МГ-RAL 9001 [КМФ3]; Опции: Push to Open, Петли KD ProLine</Name>
+			<LabelNum>8</LabelNum>
+			<Discount>13</Discount>
+			<DiscountAuto>13</DiscountAuto>
+			<WIDTH>750</WIDTH>
+			<DEPTH>578</DEPTH>
+			<HEIGHT>470</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>372</Width>
+				<Height>467</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>372</Width>
+				<Height>467</Height>
+				<MODELID Name="Фаворит без фрезеровки">904152</MODELID>
+				<COLORID Code="МГ-RAL 9001 (GL) [КМФ3]" Name="МГ-RAL 9001 [КМФ3]">901074</COLORID>
+				<ModelMaterial Name="МДФ+эмаль">020124</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66271" Count="2"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110133</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (вертикально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>9</LabelNum>
+			<Quantity>0.3</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1000</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110149</ITEMID>
+			<ArtCode>93-39393</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>  Покрытие декоративное Цв: KHDL-746-18 Крем бежевый</Name>
+			<LabelNum>10</LabelNum>
+			<Quantity>0.336</Quantity>
+			<WIDTH>420</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>800</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка детали из ЛДСП</Type>
+				<Width>420</Width>
+				<Height>800</Height>
+				<MODELID Name="Экоплита">000000</MODELID>
+				<COLORID Code="KHDL-746-18" Name="KHDL-746-18 Крем бежевый">911671</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>110130</ITEMID>
+			<BaseColorId Code="Д-746" Name="Д-746 Крем бежевый ЛДСтП">911564</BaseColorId>
+			<ArtCode>94-31102</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name> Деталь из ЛДСтП (горизонтально);  Цвет корпуса: Д-746 Крем бежевый ЛДСтП</Name>
+			<LabelNum>11</LabelNum>
+			<Quantity>0.08</Quantity>
+			<WIDTH>100</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>800</HEIGHT>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>93-56705</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>964</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18 мм [ШК]">914941</MODELID>
+			<Quantity>0.8</Quantity>
+			<P>60</P>
+			<H>800</H>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects/>
+	<Service>
+		<AdditionalItem>
+			<Name>Скидка замер</Name>
+			<ArtCode>41-00101</ArtCode>
+			<Price>-1800</Price>
+			<Discount>0</Discount>
+			<DiscountAuto>0</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>21459</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>1М-CC9C0DDC-90DA-45D4-B041-2EE9616EA8EF_sshot_01.jpg</Img>
+	</ScreenShots>
+</Scene>

@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>29074</Hash>
+	<Guid>984F3672-2AA8-4EB2-984A-A685D45FC8C3</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Стоун Колор (Кюхен Хоф ТР)">909377</ModelBaseId>
+		<ModelId Name="Стоун">904171</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+		<BoardId Name="(Нет модели)">000000</BoardId>
+		<BoardColorId Code="" Name="(Нет цвета)">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">914447</SocleId>
+		<SocleColorId Code="Ц_Серый пыльный" Name="Серый пыльный">914447</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Серый" Name="Серый">911630</SocleReshColorId>
+		<SocleHeight>120</SocleHeight>
+		<TableBoardId Name="(Нет модели)">000000</TableBoardId>
+		<TableBoardColorId Code="" Name="(Нет цвета)">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<Handle>РК582-С256</Handle>
+		<FurnitureSuiteHeight>144</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Бибирево-Три</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.240</SalonPhone>
+		<SalonEmail>bib3@kxd.ru</SalonEmail>
+		<SalonAddress>М. Бибирево, г. Москва, ул. Пришвина, д. 26, ТЦ "Миллион мелочей" , пав. В17 c 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Карданова С.М.</SalonDirectorName>
+		<SalonDirectorPhone>+79264240588</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="96">Орлова Ольга Викторовна</SalonManagerName>
+		<ClientId create_date="12/08/2026">8926574166301</ClientId>
+		<ClientProjectsCount>8</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>0</ClientProjectsPin1C>
+		<ClientName>Бычкова Наталия Николаевна</ClientName>
+		<ClientEmail>bychkovanataliya@yandex.ru</ClientEmail>
+		<ClientPhone>89265741663</ClientPhone>
+		<ClientMetroStation>Бибирево</ClientMetroStation>
+		<ClientCityStation/>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>400000</ClientBudget>
+		<ClientAssemblingDate>23/10/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="9">увидели салон, проезжая (проходя) мимо</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Дизайн</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>24-96-31-10-26-05</OrderNum>
+		<FabrikaCheckNum>66104</FabrikaCheckNum>
+		<FabrikaCheckInfo>morozova.iv / 06.11.2026 / 16:44:02</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 3.11.26 (release 34), database: 3.11.2026, last update 7.11.2026</Version>
+		<UpdateNum>2646</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>2297 x 3630 мм</Bounds>
+		<Walls>2297x3630x2260</Walls>
+		<Celling>3041 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100016</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02470</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ProLine ALP-CR-А+А_ProLine ALP-CR-А-ст+2_Умен</NsTypes>
+			<PRICE type="обычная">96653</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика тандембокс</Name>
+			<LabelNum>1</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>680</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>677</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>677</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="KD ProLine Alphalux Crystal, антрацит (стекло)" ArtCode="93-66334" Count="2"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100209</ITEMID>
+			<BaseColorId Name="Д-018 Серый пыльный ЛДСтП + Серый" Code="Д-018/РЦПВХ_Серый">904092+911630</BaseColorId>
+			<ArtCode>93-02936</ArtCode>
+			<NsTypes>А_ФБлев+А_Ручка_накл+А_ProLine ALP-CR-А+А_ProLine ALP-CR-А-ст+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">157774</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Пенал 1 дверь + 2 ящика тандембокс под духовку</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ДШ</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>2100</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>777</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="KD ProLine Alphalux Crystal, антрацит (стекло)" ArtCode="93-66334" Count="2"/>
+			<Variables>BackPanH1=0.715;BackPanH2=1.325;BPCount=2</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</BaseColorId>
+			<ObjectNum>2</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48509</ArtCode>
+			<Quantity>1.18</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>2100</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101165</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03601</ArtCode>
+			<NsTypes>3_Увел</NsTypes>
+			<PRICE type="+2000 руб.">10903</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>130</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>130</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100023</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02488</ArtCode>
+			<NsTypes>А_ФБпр+А_Ручка_накл</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол под выдвижную арматуру</Name>
+			<LabelNum>4</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>А</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>150</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>147</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64448</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С32</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>257</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</BaseColorId>
+			<ObjectNum>4</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48509</ArtCode>
+			<Quantity>0.4</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>720</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102750</ITEMID>
+			<BaseColorId Name="Д-018 Серый пыльный ЛДСтП + Серый" Code="Д-018/РЦПВХ_Серый">904092+911630</BaseColorId>
+			<ArtCode>94-23577</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ProLine ALP-CR-А+А_ProLine ALP-CR-А-ст</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика тандембокс под варку</Name>
+			<LabelNum>5</LabelNum>
+			<LABEL>ВП</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="KD ProLine Alphalux Crystal, антрацит (стекло)" ArtCode="93-66334" Count="2"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100013</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02405</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ProLine ALP-CR-А+А_ProLine ALP-CR-А-ст</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 3 ящика тандембокс</Name>
+			<LabelNum>6</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>177</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>177</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="3">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>357</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="KD ProLine Alphalux Crystal, антрацит (стекло)" ArtCode="93-66334" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100579</ITEMID>
+			<ArtCode>96-04158</ArtCode>
+			<NsTypes>А_Ручка_накл</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 450мм</Name>
+			<LabelNum>7</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100027</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-02524</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь под мойку</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100475</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03498</ArtCode>
+			<NsTypes>А_ФБлев+А_Ручка_накл+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">77404</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 2 двери</Name>
+			<LabelNum>9</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>830</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>820</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>412</Width>
+				<Height>817</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>412</Width>
+				<Height>817</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>LEFT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</BaseColorId>
+			<ObjectNum>9</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48509</ArtCode>
+			<Quantity>0.46</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>820</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101173</ITEMID>
+			<BaseColorId Code="Д-021" Name="Д-021 Черный мягкий ЛДСтП">909090</BaseColorId>
+			<ArtCode>93-56168</ArtCode>
+			<NsTypes>А_Ф-КР+2_Умен</NsTypes>
+			<PRICE type="обычная">2394</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>10</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>18</Discount>
+			<DiscountAuto>18</DiscountAuto>
+			<WIDTH>40</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>380</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>40</Width>
+				<Height>377</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный + КРЗ-HN001 Черный матовый [KХ9]">914792</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Замена кромки на фасадах" ArtCode="93-73249" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100271</ITEMID>
+			<BaseColorId Code="Д-021" Name="Д-021 Черный мягкий ЛДСтП">909090</BaseColorId>
+			<ArtCode>93-03078</ArtCode>
+			<NsTypes>1_Умен</NsTypes>
+			<PRICE type="обычная">6075</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая</Name>
+			<LabelNum>11</LabelNum>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>380</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103279</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>94-38053</ArtCode>
+			<NsTypes>А_TIP ON+А_ДОП-ВПС+А_СВ_Splitty+А_TopS-SE+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">23467</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка AVENTOS HK-XS (стекло)</Name>
+			<LabelNum>12</LabelNum>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>680</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>450</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>677</Width>
+				<Height>447</Height>
+				<MODELID Name="Алюминиевая рамка Modus [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ11" Name="АЛ11 Черный брашированный [АЛ1]">909243</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка стекло" ArtCode="96-04499" Count="1"/>
+			<OPTION Name="Светильник Splitty 45 с сенсорным включением (дневной)" ArtCode="93-57735" Count="0.45"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-03895</ArtCode>
+			<GLASSID Code="" Name="Планибел темно-серый SS-029-000">911259</GLASSID>
+			<Name>Планибел темно-серый</Name>
+			<WIDTH>677</WIDTH>
+			<HEIGHT>447</HEIGHT>
+			<Quantity>0.3</Quantity>
+			<ObjectNum>12</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100277</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>94-35038</ArtCode>
+			<NsTypes>А_TIP ON+А_TopS-SE+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">55954</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка AVENTOS HK-XS</Name>
+			<LabelNum>13</LabelNum>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>680</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>430</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>677</Width>
+				<Height>448</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101173</ITEMID>
+			<BaseColorId Code="Д-021" Name="Д-021 Черный мягкий ЛДСтП">909090</BaseColorId>
+			<ArtCode>93-56168</ArtCode>
+			<NsTypes>А_Ф-КР+2_Умен</NsTypes>
+			<PRICE type="обычная">2394</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>14</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>18</Discount>
+			<DiscountAuto>18</DiscountAuto>
+			<WIDTH>40</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>380</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>40</Width>
+				<Height>377</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-001" Name="KHHNpt-001 Черный + КРЗ-HN001 Черный матовый [KХ9]">914792</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Замена кромки на фасадах" ArtCode="93-73249" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103532</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>94-45511</ArtCode>
+			<NsTypes>А_TIP ON+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь над пеналом под технику</Name>
+			<LabelNum>15</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>450</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>447</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66323" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101190</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03607</ArtCode>
+			<NsTypes>2_Умен+3_Увел</NsTypes>
+			<PRICE type="+2000 руб.">19561</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>16</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>130</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1380</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>130</Width>
+				<Height>1377</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101190</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-56169</ArtCode>
+			<NsTypes>3_Увел</NsTypes>
+			<PRICE type="+2000 руб.">7575</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фальшпанель для столов и полок с коробом</Name>
+			<LabelNum>17</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>130</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>450</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>130</Width>
+				<Height>447</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101617</ITEMID>
+			<ArtCode>93-48259</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">4928</PRICE>
+			<ColorCategory>2</ColorCategory>
+			<Name>Полка открытая, 1 секция</Name>
+			<LabelNum>18</LabelNum>
+			<WIDTH>580</WIDTH>
+			<DEPTH>150</DEPTH>
+			<HEIGHT>170</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>580</Width>
+				<Height>170</Height>
+				<MODELID Name="Открытые элементы [СТ2]">000000</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [СТ2]">914495</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03294</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ДОП-ВПД+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">21965</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>19</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>150</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>372</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка ЛДСП [в цвет]" ArtCode="96-04493" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101286</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-61990</ArtCode>
+			<NsTypes>А_Ручка_накл+1_Умен-Ш/фас200+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">52418</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>20</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>372</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03303</ArtCode>
+			<NsTypes>А_Ручка_накл+А_ДОП-ВПД+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>21</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка ЛДСП [в цвет]" ArtCode="96-04493" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103288</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>94-38119</ArtCode>
+			<NsTypes>А_TIP ON+А_ДОП-ВПС+А_СВ_Splitty+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь (стекло)</Name>
+			<LabelNum>22</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>5</Discount>
+			<DiscountAuto>5</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Витраж</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Алюминиевая рамка Modus [АЛ1]">909241</MODELID>
+				<COLORID Code="АЛ11" Name="АЛ11 Черный брашированный [АЛ1]">909243</COLORID>
+				<ModelMaterial Name="Алюминиевая рамка">020024</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Доп. вкладная полка стекло" ArtCode="96-04497" Count="1"/>
+			<OPTION Name="Push to Open" ArtCode="93-66324" Count="1"/>
+			<OPTION Name="Светильник Splitty 45 с сенсорным включением (дневной)" ArtCode="93-57735" Count="0.72"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>94-03895</ArtCode>
+			<GLASSID Code="" Name="Планибел темно-серый SS-029-000">911259</GLASSID>
+			<Name>Планибел темно-серый</Name>
+			<WIDTH>447</WIDTH>
+			<HEIGHT>717</HEIGHT>
+			<Quantity>0.32</Quantity>
+			<ObjectNum>22</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100389</ITEMID>
+			<BaseColorId Code="Д-018" Name="Д-018 Серый пыльный ЛДСтП">904092</BaseColorId>
+			<ArtCode>93-03335</ArtCode>
+			<NsTypes>А_ЦАР91+А_Ручка_накл+А_ProLine</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь сушка заказчика</Name>
+			<LabelNum>23</LabelNum>
+			<BoxOri>R</BoxOri>
+			<LABEL>S</LABEL>
+			<Discount>48</Discount>
+			<DiscountAuto>48</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-64450</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК582-С256</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>628</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104054</ITEMID>
+			<ArtCode>93-64275</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>24</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.606</Quantity>
+			<WIDTH>600</WIDTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>600</Width>
+				<Height>1010</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>94-03780</ArtCode>
+			<Name>Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>24</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104054</ITEMID>
+			<ArtCode>93-64275</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [низ]</Name>
+			<LabelNum>25</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.152</Quantity>
+			<WIDTH>150</WIDTH>
+			<HEIGHT>1000</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>150</Width>
+				<Height>1010</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>109</Price>
+			<ArtCode>94-03780</ArtCode>
+			<Name>Монтажный набор для боковины ДСП</Name>
+			<Quantity>1</Quantity>
+			<ObjectNum>25</ObjectNum>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102820</ITEMID>
+			<ArtCode>82-00083</ArtCode>
+			<ColorCategory/>
+			<Name>Фасад глухой</Name>
+			<LabelNum>26</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.023</Quantity>
+			<WIDTH>150</WIDTH>
+			<HEIGHT>150</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>150</Width>
+				<Height>150</Height>
+				<MODELID Name="Стоун">904171</MODELID>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый [KХ1]">914495</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>82-00086</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>3356.54004</Price>
+			<Name>Световая панель</Name>
+			<MODELID Name="СП Экоплита">000000</MODELID>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый">914495</COLORID>
+			</FRONT>
+			<WIDTH>560</WIDTH>
+			<HEIGHT>680</HEIGHT>
+			<DEPTH>19</DEPTH>
+			<Quantity>0.38</Quantity>
+			<deskFastCreator/>
+			<NOTES/>
+			<Img>96-984F3672-2AA8-4EB2-984A-A685D45FC8C3_Вп_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>72159</ItemId>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>27</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Серый пыльный" Name="Серый пыльный">914447</COLORID>
+			<Price>376</Price>
+			<ArtCode>93-49405</ArtCode>
+			<Name>Цоколь ПВХ, соединительный эл., 120</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Серый пыльный" Name="Серый пыльный">914447</COLORID>
+			<Price>250</Price>
+			<ArtCode>93-49366</ArtCode>
+			<Name>Цоколь ПВХ, торцевой эл., 120</Name>
+			<Quantity>4</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>3809</Price>
+			<ArtCode>96-06080</ArtCode>
+			<Name>Комплект для подключения, выключатель сенсорный</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<Price>272</Price>
+			<ArtCode>94-03781</ArtCode>
+			<Name>Монтажный набор для светопотолка</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>93-49377</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1366</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">914447</MODELID>
+			<COLORID Code="Ц_Серый пыльный" Name="Серый пыльный">914447</COLORID>
+			<P>120</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-49379</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5463</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">914447</MODELID>
+			<COLORID Code="Ц_Серый пыльный" Name="Серый пыльный">914447</COLORID>
+			<P>120</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-06651</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1891</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 18мм">904095</MODELID>
+			<COLORID Code="KHDL-753-18" Name="KHDL-753-18 Синий дымчатый">914495</COLORID>
+			<P>120</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>4750</Price>
+				<ArtCode>94-40164</ArtCode>
+				<Name>NP 346.01.0700NBH Светильник ALUMOVE ALFA 700 в обрез, с датчиком, цвет черный/свет натуральный, без</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>8610</Price>
+				<ArtCode>94-40167</ArtCode>
+				<Name>NP 346.01.1600NBH Светильник ALUMOVE ALFA 1600 в обрез, с датчиком, цвет черный/свет натуральный, бе</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>3380</Price>
+				<ArtCode>94-47496</ArtCode>
+				<Name>NP 301003-ACT Трансформатор LUX Серия SUPER FLAT 12V/30W, для линейных светильников длиной до 2500мм</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>2</ObjectNum>
+				<Price>14860</Price>
+				<ArtCode>94-39059</ArtCode>
+				<Name>Duslar 10120055 Корзина STANDART, распашной фасад 600 мм, хром</Name>
+				<Quantity>2</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>6</ObjectNum>
+				<Price>3590</Price>
+				<ArtCode>94-16014</ArtCode>
+				<Name>12020020 Лоток LINE , ширина фасада 450 мм, 368х473х56 мм, антрацит</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>4</ObjectNum>
+				<Price>5190</Price>
+				<ArtCode>94-39007</ArtCode>
+				<Name>КАЛИБРА 3150L Механизм в базу 150 мм, глубина 500 мм, мягкий ход, квадрослайд с доводчиком (обратный</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>23</ObjectNum>
+				<Price>5360</Price>
+				<ArtCode>94-36491</ArtCode>
+				<Name>МАКМАРТ 701/60ZARP.551.F16 Сушка 2-уровневая в базу 600/16, отделка орион серый, поддон пластик</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>52374</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<Tech>
+		<Item ObjectNum="18" name="Микроволновая печь" code="Zigmund&amp;Shtain BMO 21 B">Микроволновая печь:Zigmund&amp;Shtain BMO 21 B</Item>
+		<Item ObjectNum="20" name="Вытяжка" code="Midea MH60I970GB">Вытяжка:Midea MH60I970GB</Item>
+		<Item ObjectNum="7" name="Посудомоечная машина" code="Midea MID45S730i">Посудомоечная машина:Midea MID45S730i</Item>
+		<Item ObjectNum="2" name="Духовой шкаф" code="595 х 595 х 540">Духовой шкаф:595 х 595 х 540</Item>
+		<Item ObjectNum="-" name="Винный шкаф" code="Meyvel MV9-KBT1">Винный шкаф:Meyvel MV9-KBT1</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>96-984F3672-2AA8-4EB2-984A-A685D45FC8C3_sshot_00.jpg</Img>
+	</ScreenShots>
+</Scene>

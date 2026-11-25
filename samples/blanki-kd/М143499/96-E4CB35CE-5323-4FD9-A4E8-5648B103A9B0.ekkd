@@ -1,0 +1,1723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Guid>E4CB35CE-5323-4FD9-A4E8-5648B103A9B0</Guid>
+	<Hash>C9085</Hash>
+	<KitchenParameters>
+		<BaseColorId>23008</BaseColorId>
+		<BaseKromkaColorId>0</BaseKromkaColorId>
+		<BaseModelId>1</BaseModelId>
+		<BoardColorId>54143</BoardColorId>
+		<BoardId>506</BoardId>
+		<CorniceColorId>0</CorniceColorId>
+		<CorniceDownColorId>0</CorniceDownColorId>
+		<CorniceDownId>0</CorniceDownId>
+		<CorniceHeight>100</CorniceHeight>
+		<CorniceId>0</CorniceId>
+		<FirstKpModelBaseId>168</FirstKpModelBaseId>
+		<GlossColorId>0</GlossColorId>
+		<GolaColorId>0</GolaColorId>
+		<GolaLightColorId>0</GolaLightColorId>
+		<HandleModelId>0</HandleModelId>
+		<InfoSourceId>8194</InfoSourceId>
+		<InfoSourceId2>2</InfoSourceId2>
+		<KorpusDepth>300</KorpusDepth>
+		<LegsColorId>105025</LegsColorId>
+		<LegsTypeId>205</LegsTypeId>
+		<LightPanelModelId>1</LightPanelModelId>
+		<ModelBaseId>134</ModelBaseId>
+		<ModelId>0</ModelId>
+		<ModelId2>0</ModelId2>
+		<OrderNumExId>11</OrderNumExId>
+		<OrderNumStatus>16</OrderNumStatus>
+		<PattinaColorId>0</PattinaColorId>
+		<SocleColorId>0</SocleColorId>
+		<SocleHeight>100</SocleHeight>
+		<SocleId>0</SocleId>
+		<SocleReshColorId>0</SocleReshColorId>
+		<TableBoardColorId>54141</TableBoardColorId>
+		<TableBoardId>512</TableBoardId>
+		<TableBoardTickness>40</TableBoardTickness>
+		<VitrageId>0</VitrageId>
+		<VitrageId2>0</VitrageId2>
+		<WallPanelColorId>0</WallPanelColorId>
+		<WallPanelId>0</WallPanelId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+		<Options>200</Options>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<ACCESS_DISCOUNT>10.0</ACCESS_DISCOUNT>
+		<AllowFullCatalog>Type1;</AllowFullCatalog>
+		<AllowSaveHash>0974eee39278bc9d1408248f35fe1af7</AllowSaveHash>
+		<Customer_Family>Иванова</Customer_Family>
+		<Customer_Name>Ирина</Customer_Name>
+		<Customer_PatronymicName>Бембулатовна</Customer_PatronymicName>
+		<CustomerBudget>500000</CustomerBudget>
+		<CustomerDeliveryDate>13/10/2026</CustomerDeliveryDate>
+		<CustomerEmail>irakoff@mail.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerMetroStation>Отрадное</CustomerMetroStation>
+		<CustomerName>Иванова Ирина Бембулатовна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>8967152764601</CustomerPhone>
+		<DISCOUNT_PROMO_MODEL>50.0;38% - Стоун Колор</DISCOUNT_PROMO_MODEL>
+		<DOSTAVKA>0</DOSTAVKA>
+		<DOSTAVKA_DISCOUNT>100.0</DOSTAVKA_DISCOUNT>
+		<ManagerName>Орлова Ольга Викторовна:96</ManagerName>
+		<MarketingActions>9318:№ 318 - РА (23.09.2026 - 29.09.2026)</MarketingActions>
+		<MarketingActionsHistory>9318</MarketingActionsHistory>
+		<MEBEL_DISCOUNT>8.0</MEBEL_DISCOUNT>
+		<MEBEL_DISCOUNT_VIP>5.0</MEBEL_DISCOUNT_VIP>
+		<OrderCreateDate>2026-09-24</OrderCreateDate>
+		<OrderNum>24-96-24-09-26-04</OrderNum>
+		<OrderNumExtNum>65438</OrderNumExtNum>
+		<OrderStatusChangeDate>2026-09-24</OrderStatusChangeDate>
+		<ProjectChecked>maksimova.oy / 16.10.2026 / 13:20:34|</ProjectChecked>
+		<ProjectCost>51146</ProjectCost>
+		<ProjectCostForRoyalty>51146</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>30518336</ProjectMebelFullCost>
+		<ProjectsSource>ExportToDbButt;</ProjectsSource>
+		<SalonAddress>М. Бибирево, г. Москва, ул. Пришвина, д. 26, ТЦ "Миллион мелочей" , пав. В17 c 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Карданова С.М.</SalonDirectorName>
+		<SalonDirectorPhone>+79264240588</SalonDirectorPhone>
+		<SalonEmail>bib3@kxd.ru</SalonEmail>
+		<SalonName>Бибирево-Три</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.240</SalonPhone>
+		<SHEF_MONTAZH_DISCOUNT>100.0</SHEF_MONTAZH_DISCOUNT>
+		<SROK_IZGOTOVLENIYA>15</SROK_IZGOTOVLENIYA>
+		<USTANOVKA>8.0</USTANOVKA>
+		<USTANOVKA_DISCOUNT>100.0</USTANOVKA_DISCOUNT>
+		<ZAMER>1800</ZAMER>
+		<ProjectCostBeforeCheck>51146</ProjectCostBeforeCheck>
+		<EuroRate>1</EuroRate>
+		<Version>program: 16.10.26 (release 34), database: 15.10.2026, last update 16.10.2026</Version>
+		<UpdateNum>2635</UpdateNum>
+		<PriceType date="2026-10-16">1</PriceType>
+	</AdditionalInfo>
+	<Viewpoints activeViewpoint="0">
+  DEF MainCamDown Viewpoint {
+   position 4.941057 1.559026 4.138583
+   orientation -0.062302 0.997967 0.013435 0.425612
+   fieldOfView 0.785
+  }
+  DEF MainCamUp Viewpoint {
+   position 1.500000 50.000000 2.000000
+   orientation 1.000000 0.000000 0.000000 -1.570000
+   fieldOfView 0.1
+  }
+  DEF MainCamIso Viewpoint {
+   position 0.000000 0.000000 10.000000
+   orientation -0.678598 0.678598 0.281085 1.096060
+   fieldOfView 0.005
+  }
+</Viewpoints>
+	<Room>
+		<RoomHeight>2.9</RoomHeight>
+		<RoomTck>0.12</RoomTck>
+		<Points>
+			<point>0 0</point>
+			<point>5 0</point>
+			<point>5 4</point>
+			<point>0 4</point>
+		</Points>
+		<Appearance>Appearance
+{
+ material Material
+  {
+   ambientIntensity 0.7
+   
+  }
+  
+ texture ImageTexture
+  {
+   url "3d\\gallery\\data\\00141885.jpg" 
+   
+  }
+  
+ 
+}
+
+Group
+{
+ children 
+ [ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+ ]
+ bboxCenter 0 0 0 
+ bboxSize -1 -1 -1 
+ 
+}
+
+Appearance
+{
+ material Material
+  {
+   diffuseColor 0.15 0.15 0.15 
+   emissiveColor 0.85 0.85 0.85 
+   
+  }
+  
+ 
+}
+
+</Appearance>
+	</Room>
+	<DW/>
+	<Objects>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>512</MODELID>
+			<COLORID>54141</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-0.35" y="0"/>
+							<point x="0.35" y="0"/>
+							<point x="0.35" y="0.52"/>
+							<point x="-0.35" y="0.52"/>
+						</points>
+					</contour>
+					<contour hole="true" MoykaLeftSize="68" MoykaRightSize="68" MoykaFrontSize="80" MoykaWidth="564" MoykaDepth="348">
+						<points>
+							<point x="-0.05449" y="0.089"/>
+							<point x="-0.10749" y="0.099"/>
+							<point x="-0.15649" y="0.115"/>
+							<point x="-0.19849" y="0.137"/>
+							<point x="-0.23349" y="0.163"/>
+							<point x="-0.25949" y="0.193"/>
+							<point x="-0.27549" y="0.226"/>
+							<point x="-0.28149" y="0.26"/>
+							<point x="-0.27549" y="0.294"/>
+							<point x="-0.25949" y="0.327"/>
+							<point x="-0.23349" y="0.357"/>
+							<point x="-0.19849" y="0.383"/>
+							<point x="-0.15649" y="0.405"/>
+							<point x="-0.10749" y="0.421"/>
+							<point x="-0.05449" y="0.431"/>
+							<point x="0.00051" y="0.434"/>
+							<point x="0.05551" y="0.431"/>
+							<point x="0.10851" y="0.421"/>
+							<point x="0.15751" y="0.405"/>
+							<point x="0.19951" y="0.383"/>
+							<point x="0.23451" y="0.357"/>
+							<point x="0.26051" y="0.327"/>
+							<point x="0.27651" y="0.294"/>
+							<point x="0.28251" y="0.26"/>
+							<point x="0.27651" y="0.226"/>
+							<point x="0.26051" y="0.193"/>
+							<point x="0.23451" y="0.163"/>
+							<point x="0.19951" y="0.137"/>
+							<point x="0.15751" y="0.115"/>
+							<point x="0.10851" y="0.099"/>
+							<point x="0.05551" y="0.089"/>
+							<point x="0.00051" y="0.086"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-0.35</X1>
+					<X2>0.35</X2>
+					<width>0.52</width>
+					<deskFastCreator>
+						<page id="4">
+							<Hole type="1" width="0.54358" alignx="0" aligny="0" shiftx="0.00051" shifty="0"/>
+						</page>
+					</deskFastCreator>
+				</IniData>
+				<Zavorot>
+					<FLAGS>0 0 1 0</FLAGS>
+				</Zavorot>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>27164</ItemId2>
+					<ModelId>514</ModelId>
+					<ColorId>54141</ColorId>
+					<FLAGS>2 2 1 2</FLAGS>
+					<ModelId2>519</ModelId2>
+					<ColorId2>54141</ColorId2>
+				</Kromka>
+			</DATA>
+			<Tickness>40</Tickness>
+			<ITEMNAME> Столешница; Мод: КД Stage; Цв: KDS.1.S-008 Rieti [ПР1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{77E6AE9B-1249-44DD-B056-BF8AD608AEFA</uid>
+			<hash>ad75a8ed13abfa16e04dd38c71a7c1de</hash>
+			<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+			<Label/>
+			<ShowSizeInfo showHeight="3" showDepth="1" showLevelHeight="-1" showFacadeWidth="-1" showWidth="1"/>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>508344</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>97980</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>0,7</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>508449</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1,74</QUANTITY>
+					<ColorId>54141</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>1.94985 0.7501 0.00005</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\amalfi101.wrl</URL>
+					<ITEMNAME>amalfi101</ITEMNAME>
+					<MoykaWidth readonly="1">564</MoykaWidth>
+					<MoykaDepth readonly="1">348</MoykaDepth>
+					<ItemID>120136</ItemID>
+					<ModelID>686</ModelID>
+					<ColorID>55078</ColorID>
+					<uid>{EF6E66EC-8BA2-45D8-9EC4-2DE3CD0C0B34</uid>
+					<MoykaLeftSize>68</MoykaLeftSize>
+					<MoykaRightSize>68</MoykaRightSize>
+					<MoykaFrontSize>80</MoykaFrontSize>
+					<hash>3aa5c7a35085f44e050e074c916dbb3b</hash>
+					<QUANTITY>1</QUANTITY>
+					<AdditionalObjects/>
+					<translation>0.00051 -0.09 0.26</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<StrParams>
+						<Param>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\Hanex\KDS.1.S-008-Rieti.jpg" } textureTransform TextureTransform { rotation 0 scale 3 4 }}</Param>
+						<Param/>
+						<Param>0</Param>
+					</StrParams>
+					<SpecialType>KMoyka</SpecialType>
+				</Item>
+				<KITCHENITEM>
+					<ITEMID>27157</ITEMID>
+					<MODELID>506</MODELID>
+					<COLORID>54143</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-0.35" y="0"/>
+							<point x="0.35" y="0"/>
+							<point x="0.35" y="0.52"/>
+							<point x="-0.35" y="0.52"/>
+						</points>
+						<flags>1 0 0 0</flags>
+						<POINTCATEGORIES>0 0 0 0</POINTCATEGORIES>
+					</DATA>
+					<ITEMNAME> Бортик; Мод: №1 КД Stage; Цв: KDS.1.S-008 Rieti [ПР1]</ITEMNAME>
+					<Width>1</Width>
+					<Height>40</Height>
+					<NOTES/>
+					<uid>{F5BF5865-97D8-48E3-8F75-4B2102A906F1</uid>
+					<hash>9b5166232606c9b91ce3d1822bb889b5</hash>
+					<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+					<translation>0 0.0205 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>9</ObjectType>
+				</KITCHENITEM>
+			</children>
+		</KITCHENITEM>
+	</Objects>
+	<ColorMaxId>120000</ColorMaxId>
+	<SceneName>C:\Users\bibkduser25\Downloads\65438 кор.ekkd</SceneName>
+	<Scene2>
+		<Guid>CC3CC19C-369E-4AF4-BF40-E6B1D0727D96</Guid>
+		<Hash>5393B</Hash>
+		<KitchenParameters>
+			<BaseColorId>23007</BaseColorId>
+			<BaseKromkaColorId>0</BaseKromkaColorId>
+			<BaseModelId>1</BaseModelId>
+			<BoardColorId>0</BoardColorId>
+			<BoardId>0</BoardId>
+			<CorniceColorId>118255</CorniceColorId>
+			<CorniceDownColorId>0</CorniceDownColorId>
+			<CorniceDownId>0</CorniceDownId>
+			<CorniceHeight>100</CorniceHeight>
+			<CorniceId>2466</CorniceId>
+			<FirstKpModelBaseId>0</FirstKpModelBaseId>
+			<GlossColorId>0</GlossColorId>
+			<GolaColorId>0</GolaColorId>
+			<GolaLightColorId>0</GolaLightColorId>
+			<HandleItemId>498025</HandleItemId>
+			<HandleModelId>2549</HandleModelId>
+			<InfoSourceId>8194</InfoSourceId>
+			<InfoSourceId2>2</InfoSourceId2>
+			<KorpusDepth>300</KorpusDepth>
+			<LegsColorId>105025</LegsColorId>
+			<LegsTypeId>205</LegsTypeId>
+			<LightPanelModelId>1</LightPanelModelId>
+			<ModelBaseId>213</ModelBaseId>
+			<ModelColorId>81524</ModelColorId>
+			<ModelColorId2>98236</ModelColorId2>
+			<ModelId>1883</ModelId>
+			<ModelId2>1843</ModelId2>
+			<OrderNumExId>11</OrderNumExId>
+			<OrderNumStatus>0</OrderNumStatus>
+			<PattinaColorId>0</PattinaColorId>
+			<SocleColorId>0</SocleColorId>
+			<SocleHeight>100</SocleHeight>
+			<SocleId>0</SocleId>
+			<SocleReshColorId>0</SocleReshColorId>
+			<TableBoardColorId>0</TableBoardColorId>
+			<TableBoardId>0</TableBoardId>
+			<TableBoardTickness>0</TableBoardTickness>
+			<VitrageColorId2>173397879</VitrageColorId2>
+			<VitrageId>0</VitrageId>
+			<VitrageId2>2449</VitrageId2>
+			<WallPanelColorId>0</WallPanelColorId>
+			<WallPanelId>0</WallPanelId>
+			<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+			<Options>200</Options>
+			<Phrases Val9999="Горизонтальная фальшпланка Н-100мм упил по высоте  на адресе. Эл. 7 открывание правое!!">9999</Phrases>
+		</KitchenParameters>
+		<AdditionalInfo>
+			<ACCESS_DISCOUNT>-0.1</ACCESS_DISCOUNT>
+			<AllowFullCatalog>Type1;</AllowFullCatalog>
+			<AllowSaveHash>eda12212515fa8a33af4d096e514d311</AllowSaveHash>
+			<Customer_Family>Иванова</Customer_Family>
+			<Customer_Name>Ирина</Customer_Name>
+			<Customer_PatronymicName>Бембулатовна</Customer_PatronymicName>
+			<CustomerBudget>500000</CustomerBudget>
+			<CustomerDeliveryDate>13/10/2026</CustomerDeliveryDate>
+			<CustomerEmail>irakoff@mail.ru</CustomerEmail>
+			<CustomerFirmCheck>0</CustomerFirmCheck>
+			<CustomerMetroStation>Отрадное</CustomerMetroStation>
+			<CustomerName>Иванова Ирина Бембулатовна</CustomerName>
+			<CustomerPersonalData>1</CustomerPersonalData>
+			<CustomerPhone>8967152764601</CustomerPhone>
+			<DISCOUNT_PROMO_MODEL>40.0;35% - Стоун Колор</DISCOUNT_PROMO_MODEL>
+			<DOSTAVKA>8000</DOSTAVKA>
+			<DOSTAVKA_DISCOUNT>100.0</DOSTAVKA_DISCOUNT>
+			<INNO_DISCOUNT>-0.1</INNO_DISCOUNT>
+			<ManagerName>Орлова Ольга Викторовна:96</ManagerName>
+			<MarketingActions>9318:№ 318 - РА (23.09.2026 - 29.09.2026)</MarketingActions>
+			<MarketingActionsHistory>9318</MarketingActionsHistory>
+			<MEBEL_DISCOUNT>5.0</MEBEL_DISCOUNT>
+			<MEBEL_DISCOUNT_TECH>-0.1</MEBEL_DISCOUNT_TECH>
+			<MEBEL_DISCOUNT_VIP>5.0</MEBEL_DISCOUNT_VIP>
+			<OrderCreateDate>2026-09-24</OrderCreateDate>
+			<OrderNum>24-96-24-09-26-04</OrderNum>
+			<OrderNumExtNum>65438</OrderNumExtNum>
+			<OrderRoomSize>5000</OrderRoomSize>
+			<OrderStatusChangeDate>2026-09-24</OrderStatusChangeDate>
+			<ProjectChecked>maksimova.oy / 16.10.2026 / 14:50:08|</ProjectChecked>
+			<ProjectCost>181150</ProjectCost>
+			<ProjectCostForRoyalty>181150</ProjectCostForRoyalty>
+			<ProjectMebelFullCost>284730</ProjectMebelFullCost>
+			<ProjectsSource>ExportToDbButt;</ProjectsSource>
+			<SalonAddress>М. Бибирево, г. Москва, ул. Пришвина, д. 26, ТЦ "Миллион мелочей" , пав. В17 c 10:00 до 21:00</SalonAddress>
+			<SalonDirectorName>Карданова С.М.</SalonDirectorName>
+			<SalonDirectorPhone>+79264240588</SalonDirectorPhone>
+			<SalonEmail>bib3@kxd.ru</SalonEmail>
+			<SalonName>Бибирево-Три</SalonName>
+			<SalonPhone>8-(495)-500-04-04, доб.240</SalonPhone>
+			<SHEF_MONTAZH_DISCOUNT>100.0</SHEF_MONTAZH_DISCOUNT>
+			<SROK_IZGOTOVLENIYA>20</SROK_IZGOTOVLENIYA>
+			<STOL_DISCOUNT>-0.1</STOL_DISCOUNT>
+			<TECH_DISCOUNT>-0.1</TECH_DISCOUNT>
+			<USTANOVKA>10.0</USTANOVKA>
+			<USTANOVKA_DISCOUNT>100.0</USTANOVKA_DISCOUNT>
+			<ZAMER>0</ZAMER>
+			<ZAMER_DISCOUNT>100.0</ZAMER_DISCOUNT>
+			<ProjectCostBeforeCheck>134079</ProjectCostBeforeCheck>
+			<EuroRate>1</EuroRate>
+			<Version>program: 16.10.26 (release 34), database: 15.10.2026, last update 16.10.2026</Version>
+			<UpdateNum>1364</UpdateNum>
+			<PriceType date="2026-10-16">1</PriceType>
+		</AdditionalInfo>
+		<Viewpoints activeViewpoint="0">
+  DEF MainCamDown Viewpoint {
+   position 4.941057 1.559026 4.138583
+   orientation -0.062302 0.997967 0.013435 0.425612
+   fieldOfView 0.785
+  }
+  DEF MainCamUp Viewpoint {
+   position 1.500000 50.000000 2.000000
+   orientation 1.000000 0.000000 0.000000 -1.570000
+   fieldOfView 0.1
+  }
+  DEF MainCamIso Viewpoint {
+   position 0.000000 0.000000 10.000000
+   orientation -0.678598 0.678598 0.281085 1.096060
+   fieldOfView 0.005
+  }
+</Viewpoints>
+		<Room>
+			<RoomHeight>2.9</RoomHeight>
+			<RoomTck>0.12</RoomTck>
+			<Points>
+				<point>0 0</point>
+				<point>5 0</point>
+				<point>5 4</point>
+				<point>0 4</point>
+			</Points>
+			<Appearance>Appearance
+{
+ material Material
+  {
+   ambientIntensity 0.7
+   
+  }
+  
+ texture ImageTexture
+  {
+   url "3d\\gallery\\data\\00141885.jpg" 
+   
+  }
+  
+ 
+}
+
+Group
+{
+ children 
+ [ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+ ]
+ bboxCenter 0 0 0 
+ bboxSize -1 -1 -1 
+ 
+}
+
+Appearance
+{
+ material Material
+  {
+   diffuseColor 0.15 0.15 0.15 
+   emissiveColor 0.85 0.85 0.85 
+   
+  }
+  
+ 
+}
+
+</Appearance>
+		</Room>
+		<DW/>
+		<Objects>
+			<KITCHENITEM>
+				<!-- <URL>3d/base/base0_00.wrl</URL> -->
+				<URL>3d/base/base0.wrl</URL>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<TOP>1.5</TOP>
+						<LEFT>1.5</LEFT>
+						<SXDX>21</SXDX>
+						<ANIMATION type="auto">OPENLEFT</ANIMATION>
+						<HANDLES>
+						</HANDLES>
+						<HandleAtBottom>1</HandleAtBottom>
+						<WIDTH>Width-3</WIDTH>
+						<HEIGHT>Height-3</HEIGHT>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>25056</ITEMID>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.1586 0.0015 0.14995</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="2" ExternalAppearanceIndex="1">
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<MODELID>0</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>31988</ITEMID>
+						<SXDX>21</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+					<FRONT N="3" ExternalAppearanceIndex="2">
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<MODELID>0</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>31988</ITEMID>
+						<SXDX>22</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+					<FRONT N="4" ExternalAppearanceIndex="3">
+						<ModelID>0</ModelID>
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<COLORID>81524</COLORID>
+						<ITEMID>33036</ITEMID>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+					<FRONT N="5" ExternalAppearanceIndex="0">
+						<ModelID>0</ModelID>
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<COLORID>81524</COLORID>
+						<ITEMID>33040</ITEMID>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+				</FRONTITEMS>
+				<SHELVES>
+					<SHELVESGROUP>
+						<VISIBILITY>1</VISIBILITY>
+						<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+				</SHELVES>
+				<NsEnableType1_2/>
+				<ITEMID>110079</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ПЛ-КГ1-1080х450х300-0</ARTCODE>
+				<SxDx>22</SxDx>
+				<ITEMNAME>Полка 1 дверь</ITEMNAME>
+				<WIDTH>320</WIDTH>
+				<DEPTH>300</DEPTH>
+				<HEIGHT>1080</HEIGHT>
+				<BOXPRID>1357</BOXPRID>
+				<OPTIONS Values="95 150 224">0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="0">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<SocleModelId>120</SocleModelId>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>ПЛ-КГ1-1080х450х300-0</ArtCodeLastValid>
+				<NsTypes>101</NsTypes>
+				<LabelNum>6</LabelNum>
+				<uid>{DB0021F3-AE33-47D7-955B-444D9C87013B</uid>
+				<hash>0c9cecd17cbd0bdf90a40f1e82108a3e</hash>
+				<ShowSizeInfo showHeight="516" showDepth="259" showLevelHeight="-1" showFacadeWidth="-1" showWidth="1"/>
+				<MIRROR/>
+				<PriceType type="auto">2</PriceType>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<Label/>
+				<translation>2.46 1.15505 0.15</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<!-- <URL>3d/base/base0_318.wrl</URL> -->
+				<URL>3d/base/base0_ST_0.wrl</URL>
+				<FRONTITEMS>
+					<FRONT N="1" ExternalAppearanceIndex="0">
+						<MODELID>1843</MODELID>
+						<COLORID>98236</COLORID>
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<ITEMID>33009</ITEMID>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+						<URL>none.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.329 diffuseColor 0.61 0.61 0.61 shininess 0.161 specularColor 0.39 0.39 0.39 } texture ImageTexture { url "3d/textures/promo/KHDL-759-18-dub-kasella-korichnevyy.jpg" } textureTransform TextureTransform { rotation 1.5708 scale 1.25 1.25  } }</appearances>
+					</FRONT>
+				</FRONTITEMS>
+				<SHELVES>
+				</SHELVES>
+				<DisableKorpusColor/>
+				<NsEnableType1_2/>
+				<ITEMID>110094</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>СТ-В-360х450х318-1</ARTCODE>
+				<SxDx>0</SxDx>
+				<ITEMNAME>Стеллаж верхний, 1 секция</ITEMNAME>
+				<WIDTH>320</WIDTH>
+				<DEPTH>318</DEPTH>
+				<HEIGHT>360</HEIGHT>
+				<BOXPRID>1469</BOXPRID>
+				<OPTIONS Values="">0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="-1089886539">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<SocleModelId>120</SocleModelId>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>СТ-В-360х450х318-1</ArtCodeLastValid>
+				<LabelNum>5</LabelNum>
+				<uid>{3960637D-8E3C-495E-8221-DF41AE7C9CBF</uid>
+				<hash>1b399ad9122ef5e874e147cf32e81347</hash>
+				<WidthBase>450</WidthBase>
+				<DepthBase>318</DepthBase>
+				<HeightBase>360</HeightBase>
+				<NsTypes>200</NsTypes>
+				<ShowSizeInfo showHeight="516" showDepth="259" showLevelHeight="-1" showFacadeWidth="-1" showWidth="-1"/>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<AdditionalAppearances>
+					<ExternalAppearance ExternalIndex="0">Appearance { material Material { ambientIntensity 0.329 diffuseColor 0.61 0.61 0.61 shininess 0.161 specularColor 0.39 0.39 0.39 } texture ImageTexture { url "3d/textures/promo/KHDL-759-18-dub-kasella-korichnevyy.jpg" } textureTransform TextureTransform { rotation 1.5708 scale 1.25 1.25  } }</ExternalAppearance>
+				</AdditionalAppearances>
+				<translation>2.46 0.79505 0.159</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<URL>3d/base/base0.wrl</URL>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<TOP>1.5</TOP>
+						<LEFT>1.5</LEFT>
+						<SXDX>21</SXDX>
+						<ANIMATION type="auto">OPENLEFT</ANIMATION>
+						<HANDLES>
+							<HANDLE>
+								<VALIGN>TOP</VALIGN>
+								<HALIGN>CENTER</HALIGN>
+								<ORIENTATION>HORIZONTAL</ORIENTATION>
+								<MODELID>2549</MODELID>
+								<ITEMID>498025</ITEMID>
+								<URL>3d\handle\n389_NCS_S_7500-N.wrl</URL>
+							</HANDLE>
+						</HANDLES>
+						<HandleAtBottom>1</HandleAtBottom>
+						<WIDTH>Width-3</WIDTH>
+						<HEIGHT>Height-3</HEIGHT>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>25056</ITEMID>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.1586 0.0015 0.14995</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="2" ExternalAppearanceIndex="1">
+						<MODELID>0</MODELID>
+						<ITEMID>31988</ITEMID>
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>21</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>-0.1421 -0.002 0.14995</BottomLeftPoint>
+						<COLORID>0</COLORID>
+					</FRONT>
+					<FRONT N="3" ExternalAppearanceIndex="2">
+						<MODELID>0</MODELID>
+						<ITEMID>31988</ITEMID>
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>22</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>-0.1421 -0.002 0.14995</BottomLeftPoint>
+						<COLORID>0</COLORID>
+					</FRONT>
+				</FRONTITEMS>
+				<SHELVES>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&lt;800)&amp;&amp;(Height&gt;500))</VISIBILITY>
+						<QUANTITY>1</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&lt;=1080)&amp;&amp;(Height&gt;=800))</VISIBILITY>
+						<QUANTITY>2</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&gt;1080)&amp;&amp;(Height&lt;1500))</VISIBILITY>
+						<QUANTITY>3</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>(Height&gt;=1500)</VISIBILITY>
+						<QUANTITY>4</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+				</SHELVES>
+				<VERSION>4</VERSION>
+				<ITEMID>110409</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ПЛ-КГ1-600х350х450</ARTCODE>
+				<SxDx>22</SxDx>
+				<ITEMNAME>Полка 1 дверь</ITEMNAME>
+				<WIDTH>320</WIDTH>
+				<DEPTH>300</DEPTH>
+				<HEIGHT>580</HEIGHT>
+				<BOXPRID>2360</BOXPRID>
+				<OPTIONS Values="224">0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="4">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<SocleHeight>60</SocleHeight>
+				<SocleModelId>285</SocleModelId>
+				<SocleColorId>23007</SocleColorId>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>ПЛ-КГ1-600х350х450</ArtCodeLastValid>
+				<NsTypes>101 200</NsTypes>
+				<WidthBase>350</WidthBase>
+				<DepthBase>450</DepthBase>
+				<HeightBase>600</HeightBase>
+				<uid>{7943AF18-64D5-43D4-96C7-4A4312781C0D</uid>
+				<LabelNum>4</LabelNum>
+				<hash>7f3702618c23f7d01c9a2f5ece9b235a</hash>
+				<MIRROR/>
+				<Label/>
+				<ShowSizeInfo showHeight="516" showDepth="515" showLevelHeight="-1" showFacadeWidth="-1"/>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<translation>2.46 0.21505 0.15</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<!-- <URL>3d/base/base0_318.wrl</URL> -->
+				<URL>3d/base/base0_ST_2.wrl</URL>
+				<FRONTITEMS>
+					<FRONT N="1" ExternalAppearanceIndex="0">
+						<!-- <MODELID>1734</MODELID> -->
+						<!-- <MODELID>1841</MODELID> -->
+						<!-- <COLORID>27519</COLORID> -->
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<MODELID>1843</MODELID>
+						<COLORID>98236</COLORID>
+						<ITEMID>33009</ITEMID>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+						<URL>none.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.329 diffuseColor 0.61 0.61 0.61 shininess 0.161 specularColor 0.39 0.39 0.39 } texture ImageTexture { url "3d/textures/promo/KHDL-759-18-dub-kasella-korichnevyy.jpg" } textureTransform TextureTransform { rotation 1.5708 scale 1.25 1.25  } }</appearances>
+					</FRONT>
+				</FRONTITEMS>
+				<SHELVES>
+					<!--
+-->
+					<!--   <SHELVE>
+-->
+					<!--		<VISIBILITY>Height&gt;=185</VISIBILITY>
+-->
+					<!--		<BOTTOM>110</BOTTOM>
+-->
+					<!--		<TICKNESS>18</TICKNESS>
+-->
+					<!--	</SHELVE>
+-->
+					<!--	-->
+					<!-- <SHELVE> -->
+					<!-- <VISIBILITY>Height&lt;185</VISIBILITY> -->
+					<!-- <URL>3d/shelves/polka_dspV2.wrl</URL> -->
+					<!-- <TICKNESS>Height-0.032</TICKNESS> -->
+					<!-- <BOTTOM>16</BOTTOM> -->
+					<!-- </SHELVE> -->
+					<!-- <SHELVESGROUP> -->
+					<!-- <VISIBILITY>Height&gt;=185</VISIBILITY> -->
+					<!-- <TYPE>VERTICAL</TYPE> -->
+					<!-- <URL>3d/shelves/polka_dspV.wrl</URL> -->
+					<!-- <QUANTITY>2</QUANTITY> -->
+					<!-- <TICKNESS>18</TICKNESS> -->
+					<!-- <LEFT>-WIDTH*0.5</LEFT> -->
+					<!-- <RIGHT>WIDTH*0.5</RIGHT> -->
+					<!-- <ShelveAtLeft>0</ShelveAtLeft> -->
+					<!-- <ShelveAtRight>0</ShelveAtRight> -->
+					<!-- </SHELVESGROUP> -->
+					<!--
+-->
+					<!--	<SHELVESGROUP>
+-->
+					<!--	<VISIBILITY>(WIDTH&lt;=500) &amp;&amp; (WIDTH&gt;400)</VISIBILITY>
+-->
+					<!--		<TYPE>VERTICAL</TYPE>
+-->
+					<!--		<QUANTITY>2</QUANTITY>
+-->
+					<!--		<TICKNESS>18</TICKNESS>
+-->
+					<!--		<LEFT>-WIDTH*0.5</LEFT>
+-->
+					<!--		<RIGHT>WIDTH*0.5</RIGHT>
+-->
+					<!--		<ShelveAtLeft>0</ShelveAtLeft>
+-->
+					<!--		<ShelveAtRight>0</ShelveAtRight>
+-->
+					<!--	</SHELVESGROUP>
+-->
+					<!--	<SHELVESGROUP>
+-->
+					<!--	<VISIBILITY>(WIDTH&gt;500)</VISIBILITY>
+-->
+					<!--		<TYPE>VERTICAL</TYPE>
+-->
+					<!--		<QUANTITY>3</QUANTITY>
+-->
+					<!--		<TICKNESS>18</TICKNESS>
+-->
+					<!--		<LEFT>-WIDTH*0.5</LEFT>
+-->
+					<!--		<RIGHT>WIDTH*0.5</RIGHT>
+-->
+					<!--		<ShelveAtLeft>0</ShelveAtLeft>
+-->
+					<!--		<ShelveAtRight>0</ShelveAtRight>
+-->
+					<!--	</SHELVESGROUP>
+-->
+					<!--	-->
+				</SHELVES>
+				<DisableKorpusColor/>
+				<ITEMID>110153</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>СТ-ВЗ-180х1200х318-3</ARTCODE>
+				<SxDx>0</SxDx>
+				<ITEMNAME>Стеллаж верхний, 3 секции</ITEMNAME>
+				<WIDTH>1080</WIDTH>
+				<DEPTH>168</DEPTH>
+				<HEIGHT>200</HEIGHT>
+				<BOXPRID>1717</BOXPRID>
+				<OPTIONS>0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="0">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>СТ-ВЗ-180х1200х318-3</ArtCodeLastValid>
+				<NsTypes>101 200 300</NsTypes>
+				<PriceType type="auto">1</PriceType>
+				<LabelNum>1</LabelNum>
+				<uid>{835F1C8F-8E8C-4EC6-B3DF-48B630FD8695</uid>
+				<ShowSizeInfo showWidth="-1" showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+				<hash>fd7709da0dd2b8c3a58ac293212d2cfd</hash>
+				<SuperviserChanged>1</SuperviserChanged>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<AdditionalAppearances>
+					<ExternalAppearance ExternalIndex="0">Appearance { material Material { ambientIntensity 0.329 diffuseColor 0.61 0.61 0.61 shininess 0.161 specularColor 0.39 0.39 0.39 } texture ImageTexture { url "3d/textures/promo/KHDL-759-18-dub-kasella-korichnevyy.jpg" } textureTransform TextureTransform { rotation 1.5708 scale 1.25 1.25  } }</ExternalAppearance>
+				</AdditionalAppearances>
+				<translation>1.8 1.695 0.084</translation>
+				<rotation>0 0 1 1.5708</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<URL>3d/base/base0.wrl</URL>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<TOP>1.5</TOP>
+						<LEFT>1.5</LEFT>
+						<SXDX>21</SXDX>
+						<ANIMATION type="auto">OPENLEFT</ANIMATION>
+						<HANDLES>
+							<HANDLE AutoPos="1">
+								<VALIGN>BOTTOM</VALIGN>
+								<HALIGN>RIGHT</HALIGN>
+								<ORIENTATION>VERTICAL</ORIENTATION>
+								<MODELID>0</MODELID>
+							</HANDLE>
+						</HANDLES>
+						<HandleAtBottom>1</HandleAtBottom>
+						<WIDTH>Width-3</WIDTH>
+						<HEIGHT>Height-3</HEIGHT>
+						<MODELID>2449</MODELID>
+						<COLORID>173397879</COLORID>
+						<ITEMID>25157</ITEMID>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_mirrage00_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }   Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }  Script { field SFInt32 promo_type 0 } Appearance { material Material { ambientIntensity .0933 diffuseColor .13 .13 .33 shininess .07 specularColor .05 .05 .05 transparency 0 } texture ImageTexture { url "3d/textures/zerk_serebro.png" } }</appearances>
+						<BottomLeftPoint>-0.2486 0.0015 0.07495</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="2" ExternalAppearanceIndex="1">
+						<MODELID>0</MODELID>
+						<ITEMID>31988</ITEMID>
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>21</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>0.0979 -0.002 0.07495</BottomLeftPoint>
+						<COLORID>0</COLORID>
+					</FRONT>
+					<FRONT N="3" ExternalAppearanceIndex="2">
+						<MODELID>0</MODELID>
+						<ITEMID>31988</ITEMID>
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>22</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>0.0979 -0.002 0.07495</BottomLeftPoint>
+						<COLORID>0</COLORID>
+					</FRONT>
+					<FRONT N="4">
+						<MODELID>0</MODELID>
+						<ITEMID>33036</ITEMID>
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>-0.2521 -0.002 0.07495</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="5">
+						<MODELID>0</MODELID>
+						<ITEMID>33040</ITEMID>
+						<WIDTH>Width</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<TOP>2</TOP>
+						<LEFT>2</LEFT>
+						<SXDX>11</SXDX>
+						<Visibility>1</Visibility>
+						<BottomLeftPoint>-0.2521 -0.002 0.07495</BottomLeftPoint>
+					</FRONT>
+				</FRONTITEMS>
+				<SHELVES>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&lt;800)&amp;&amp;(Height&gt;500))</VISIBILITY>
+						<QUANTITY>1</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&lt;=1080)&amp;&amp;(Height&gt;=800))</VISIBILITY>
+						<QUANTITY>2</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>((Height&gt;1080)&amp;&amp;(Height&lt;1500))</VISIBILITY>
+						<QUANTITY>3</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+					<SHELVESGROUP>
+						<VISIBILITY>(Height&gt;=1500)</VISIBILITY>
+						<QUANTITY>4</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+				</SHELVES>
+				<VERSION>4</VERSION>
+				<ITEMID>110445</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ПЛЗ-1-1080х500х300-0</ARTCODE>
+				<SxDx>22</SxDx>
+				<ITEMNAME>Полка 1 дверь (зеркало)</ITEMNAME>
+				<WIDTH>500</WIDTH>
+				<DEPTH>150</DEPTH>
+				<HEIGHT>1080</HEIGHT>
+				<BOXPRID>2866</BOXPRID>
+				<OPTIONS Values="95 150 224">0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="4">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<SocleHeight>60</SocleHeight>
+				<SocleModelId>285</SocleModelId>
+				<SocleColorId>23007</SocleColorId>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>ПЛЗ-1-1080х500х300-0</ArtCodeLastValid>
+				<WidthBase>500</WidthBase>
+				<DepthBase>300</DepthBase>
+				<HeightBase>1080</HeightBase>
+				<NsTypes>101</NsTypes>
+				<LabelNum>3</LabelNum>
+				<uid>{DB2F54ED-8B05-4616-8D98-2D1BA4E6D9D0</uid>
+				<MIRROR/>
+				<hash>736ed2aafe5ee13655283df2d05d805d</hash>
+				<Label/>
+				<ShowSizeInfo showHeight="255" showDepth="260" showLevelHeight="-1" showFacadeWidth="-1"/>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<translation>2.05 1.15505 0.075</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<!-- <URL>3d/base/base0_00.wrl</URL> -->
+				<URL>3d/base/base0.wrl</URL>
+				<SHELVES>
+					<SHELVESGROUP>
+						<VISIBILITY>1</VISIBILITY>
+						<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+				</SHELVES>
+				<NsEnableType1_2/>
+				<ITEMID>110081</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ПЛ-КГ1-1320х600х300-0</ARTCODE>
+				<SxDx>21</SxDx>
+				<ITEMNAME>Полка 1 дверь</ITEMNAME>
+				<WIDTH>340</WIDTH>
+				<DEPTH>530</DEPTH>
+				<HEIGHT>1270</HEIGHT>
+				<BOXPRID>1364</BOXPRID>
+				<OPTIONS Values="150 224">0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="1">
+									<point x="0" y="0"/>
+									<point x="-0.01" y="0"/>
+									<point x="0" y="-0.01"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<ArtCodeLastValid>ПЛ-КГ1-1320х600х300-0</ArtCodeLastValid>
+				<NsTypes>400</NsTypes>
+				<PriceType>0</PriceType>
+				<Guid>BB0AAD51-95B0-4B4D-9ADE-507BD7B70A87</Guid>
+				<WidthBase>600</WidthBase>
+				<HeightBase>1320</HeightBase>
+				<DepthBase>300</DepthBase>
+				<SuperviserChanged>1</SuperviserChanged>
+				<LabelNum>7</LabelNum>
+				<uid>{A8D8CBB6-087C-408B-AF1C-56BEFAD3431C</uid>
+				<CorniceModelId>0</CorniceModelId>
+				<CorniceColorId>0</CorniceColorId>
+				<ShowSizeInfo showHeight="255" showDepth="1" showLevelHeight="-1" showFacadeWidth="-1"/>
+				<panels date="2026-10-16_14_43_04">
+					<panel>
+						<name>SideTop</name>
+						<type>PanelHor</type>
+						<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 Height-DspTickness Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideBottom</name>
+						<type>PanelHor</type>
+						<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 0 DspTickness -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideLeft</name>
+						<type>PanelVert</type>
+						<point>-0.5*Width -0.5*Width+DspTickness 0 Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideRight</name>
+						<type>PanelVert</type>
+						<point>0.5*Width-DspTickness 0.5*Width 0 Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>BackSide</name>
+						<type>PanelBack</type>
+						<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 DspTickness+0.0005 Height-DspTickness-0.0005 -Depth+ZsShift -Depth+ZsShift+0.006</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+				</panels>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<SxDx>21</SxDx>
+						<ITEMID>25056</ITEMID>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<HANDLES>
+						</HANDLES>
+						<ANIMATION type="auto">OPENLEFT</ANIMATION>
+						<TOP>1</TOP>
+						<LEFT>2</LEFT>
+						<WIDTH>422</WIDTH>
+						<HEIGHT>1267</HEIGHT>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.1679 0.002 0.26495</BottomLeftPoint>
+					</FRONT>
+				</FRONTITEMS>
+				<hash>01e855987b2f0bd136c56eeab461e3ec</hash>
+				<translation>3.525 1.12 0.265</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<ITEMID>27153</ITEMID>
+				<MODELID>2466</MODELID>
+				<COLORID>118255</COLORID>
+				<DATA>
+					<points ccwSgn="-1">
+						<point x="0.69514" y="0.52995"/>
+						<point x="0.35534" y="0.52995"/>
+						<point x="0.35534" y="0.30005"/>
+						<point x="0.35534" y="0.00005"/>
+						<point x="0.69514" y="0.00005"/>
+						<point x="0.69514" y="0.30005"/>
+					</points>
+					<flags>1 0 0 0 0 0</flags>
+					<EdgeGroups>0 0 0 0 0 0</EdgeGroups>
+				</DATA>
+				<ITEMNAME> Карниз; Мод: Фальшпанель горизонтальная; Цв: KHDL-020-18 Диамант серый [ЛДк-2]</ITEMNAME>
+				<AddWidthLeft>0</AddWidthLeft>
+				<AddWidthRight>515</AddWidthRight>
+				<NOTES/>
+				<uid>{F2159904-E362-46B7-99EF-3EF1B026BD57</uid>
+				<hash>21ffde80195c1fdd5f91e3b2f87f9775</hash>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<translation>3 2.3901 0.02</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 1 0</UpVec>
+				<ObjectType>12</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<!-- <URL>3d/base/base0_00.wrl</URL> -->
+				<URL>3d/base/base0.wrl</URL>
+				<SHELVES>
+					<SHELVESGROUP>
+						<VISIBILITY>1</VISIBILITY>
+						<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+						<BOTTOM>16</BOTTOM>
+						<TOP>Height-16</TOP>
+						<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+						<FRONTSHIFT>5</FRONTSHIFT>
+						<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+						<ShelveAtTop>0</ShelveAtTop>
+						<ShelveAtBottom>0</ShelveAtBottom>
+					</SHELVESGROUP>
+				</SHELVES>
+				<NsEnableType1_2/>
+				<ITEMID>110081</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ПЛ-КГ1-1320х600х300-0</ARTCODE>
+				<SxDx>21</SxDx>
+				<ITEMNAME>Полка 1 дверь</ITEMNAME>
+				<WIDTH>510</WIDTH>
+				<DEPTH>100</DEPTH>
+				<HEIGHT>1270</HEIGHT>
+				<BOXPRID>1364</BOXPRID>
+				<OPTIONS Values="150 224">0</OPTIONS>
+				<ATTENDANTS Value="8">
+					<PARAM AttendantId="2">
+						<Visibility>1</Visibility>
+						<Appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</Appearances>
+						<ProfileContours>
+							<ProfileContour>
+								<points ccwSgn="0">
+									<point x="-0.18" y="0"/>
+									<point x="-0.02" y="0"/>
+									<point x="-0.02" y="0.12345"/>
+									<point x="-0.036" y="0.12345"/>
+									<point x="-0.036" y="0.016"/>
+									<point x="-0.18" y="0.016"/>
+									<point x="-0.18" y="0"/>
+								</points>
+							</ProfileContour>
+						</ProfileContours>
+					</PARAM>
+					<PARAM AttendantId="3">
+						<Visibility>0</Visibility>
+					</PARAM>
+				</ATTENDANTS>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<CorniceModelId>2466</CorniceModelId>
+				<ArtCodeLastValid>ПЛ-КГ1-1320х600х300-0</ArtCodeLastValid>
+				<NsTypes>400</NsTypes>
+				<PriceType>0</PriceType>
+				<SuperviserChanged>1</SuperviserChanged>
+				<LabelNum>8</LabelNum>
+				<Guid>A656B687-CDC5-4D4F-B859-DD85ACF989A2</Guid>
+				<uid>{01629A49-173F-4E03-8AF9-C34B9C6F655F</uid>
+				<ShowSizeInfo showHeight="4" showDepth="259" showLevelHeight="-1" showFacadeWidth="-1"/>
+				<WidthBase>600</WidthBase>
+				<HeightBase>1320</HeightBase>
+				<DepthBase>300</DepthBase>
+				<panels date="2026-10-16_14_45_07">
+					<panel>
+						<name>SideTop</name>
+						<type>PanelHor</type>
+						<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 Height-DspTickness Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideBottom</name>
+						<type>PanelHor</type>
+						<point>-0.5*Width+DspTickness+0.0005 0.5*Width-DspTickness-0.0005 0 DspTickness -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideLeft</name>
+						<type>PanelVert</type>
+						<point>-0.5*Width -0.5*Width+DspTickness 0 Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+					<panel>
+						<name>SideRight</name>
+						<type>PanelVert</type>
+						<point>0.5*Width-DspTickness 0.5*Width 0 Height -Depth 0</point>
+						<corrL>0 0 0</corrL>
+						<corrR>0 0 0</corrR>
+						<position>0 0 0</position>
+					</panel>
+				</panels>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<SxDx>22</SxDx>
+						<ITEMID>25056</ITEMID>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<HANDLES>
+						</HANDLES>
+						<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+						<TOP>1.5</TOP>
+						<LEFT>86.5</LEFT>
+						<WIDTH>422</WIDTH>
+						<HEIGHT>1267</HEIGHT>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.1684 0.0015 0.04995</BottomLeftPoint>
+					</FRONT>
+				</FRONTITEMS>
+				<hash>2373768b39a7323d6820163232589a4b</hash>
+				<translation>3.95 1.12 0.48</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+			<KITCHENITEM>
+				<URL>3d/base/base0_R_nolegs.wrl</URL>
+				<FurnitureSuiteHeight>IF(Height==360,SocleHeight+360,SocleHeight+180)</FurnitureSuiteHeight>
+				<FRONTITEMS>
+					<FRONT N="1">
+						<TOP>1.5</TOP>
+						<LEFT>1.5</LEFT>
+						<SXDX>12</SXDX>
+						<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+						<box>
+							<!--<type>NoScaleY</type>-->
+							<URL>3d/boxes/ya_van_vyrez.wrl</URL>
+							<Visibility>1</Visibility>
+							<PointsInfo>
+								<p0>-0.3304 0 0.24995</p0>
+								<p1>0.3306 0 0.24995</p1>
+								<p2>0.3306 0 -0.22585</p2>
+								<p3>-0.3304 0 -0.22585</p3>
+							</PointsInfo>
+						</box>
+						<HANDLES>
+							<HANDLE AutoPos="1">
+								<VALIGN>TOP</VALIGN>
+								<HALIGN>CENTER</HALIGN>
+								<MODELID>2549</MODELID>
+								<ITEMID>498025</ITEMID>
+								<URL>3d\handle\n389_NCS_S_7500-N.wrl</URL>
+							</HANDLE>
+						</HANDLES>
+						<WIDTH>Width-3</WIDTH>
+						<HEIGHT>Height/2-3</HEIGHT>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>25056</ITEMID>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.3484 0.2715 0.24995</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="2">
+						<BOTTOM>Height-1.5</BOTTOM>
+						<LEFT>1.5</LEFT>
+						<SXDX>12</SXDX>
+						<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+						<box>
+							<!--<type>NoScaleY</type>-->
+							<URL>3d/boxes/ya_van_192.wrl</URL>
+							<Visibility>1</Visibility>
+							<PointsInfo>
+								<p0>-0.3304 0 0.24995</p0>
+								<p1>0.3306 0 0.24995</p1>
+								<p2>0.3306 0 -0.22585</p2>
+								<p3>-0.3304 0 -0.22585</p3>
+							</PointsInfo>
+						</box>
+						<HANDLES>
+							<HANDLE AutoPos="1">
+								<VALIGN>TOP</VALIGN>
+								<HALIGN>CENTER</HALIGN>
+								<MODELID>2549</MODELID>
+								<ITEMID>498025</ITEMID>
+								<URL>3d\handle\n389_NCS_S_7500-N.wrl</URL>
+							</HANDLE>
+						</HANDLES>
+						<WIDTH>Width-3</WIDTH>
+						<HEIGHT>Height/2-3</HEIGHT>
+						<MODELID>1883</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>25056</ITEMID>
+						<Visibility>1</Visibility>
+						<URL>3d/facade/kd_stone_dvr.xml</URL>
+						<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+						<BottomLeftPoint>-0.3484 0.0015 0.24995</BottomLeftPoint>
+					</FRONT>
+					<FRONT N="3" ExternalAppearanceIndex="1">
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<MODELID>0</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>31988</ITEMID>
+						<SXDX>21</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+					<FRONT N="4" ExternalAppearanceIndex="2">
+						<WIDTH>Depth</WIDTH>
+						<HEIGHT>Height</HEIGHT>
+						<MODELID>0</MODELID>
+						<COLORID>81524</COLORID>
+						<ITEMID>31988</ITEMID>
+						<SXDX>22</SXDX>
+						<Visibility>1</Visibility>
+					</FRONT>
+				</FRONTITEMS>
+				<ATTENDANTS Value="0">
+				</ATTENDANTS>
+				<WarningMessage>Максимальная нагрузка на навесы - 200кг
+Навеска элемента допустима только на капитальные стены из монолитного бетона, полнотелого кирпича или цельного бруса ≥ 100мм</WarningMessage>
+				<ITEMID>112010</ITEMID>
+				<BaseModelId>1</BaseModelId>
+				<BaseColorId>23007</BaseColorId>
+				<ARTCODE>ТМВВ-ЯЩТ02-540х700х500-Р</ARTCODE>
+				<SxDx>0</SxDx>
+				<ITEMNAME>Тумба для ванной под раковину навесная 2 ящика</ITEMNAME>
+				<WIDTH>700</WIDTH>
+				<DEPTH>500</DEPTH>
+				<HEIGHT>540</HEIGHT>
+				<BOXPRID>8987</BOXPRID>
+				<OPTIONS>0</OPTIONS>
+				<ATTENDANTS Value="12">
+					<PARAM AttendantId="2"/>
+					<PARAM AttendantId="3"/>
+				</ATTENDANTS>
+				<appearances>Appearance { material Material { ambientIntensity 0.255 diffuseColor 0.27451 0 0.690196 shininess 0.169 specularColor 0.113725 0.113725 0.113725 } texture ImageTexture { url "3d/textures/korpus/LDSP/LDSP-diamant.png" } textureTransform TextureTransform { scale 2.5 2.5 } }</appearances>
+				<CorniceModelId>2466</CorniceModelId>
+				<ArtCodeLastValid>ТМВВ-ЯЩТ02-540х700х500-Р</ArtCodeLastValid>
+				<WidthBase>700</WidthBase>
+				<DepthBase>500</DepthBase>
+				<HeightBase>540</HeightBase>
+				<SuperviserChanged>1</SuperviserChanged>
+				<LabelNum>2</LabelNum>
+				<uid>{D403887E-4CB1-427D-BA9D-78D75CD3BCFF</uid>
+				<Label/>
+				<ShowSizeInfo showHeight="3" showDepth="260" showLevelHeight="-1" showFacadeWidth="-1" showWidth="1"/>
+				<hash>a86f4dfbb33b775c2cf0507b15a0bc07</hash>
+				<translation>1.95008 0.215 0.25</translation>
+				<rotation>0 0 1 0</rotation>
+				<UpVec>0 0 1</UpVec>
+				<ObjectType>6</ObjectType>
+			</KITCHENITEM>
+		</Objects>
+		<AdditionalLabels>
+			<Label>
+				<text>навес от пола 200 мм</text>
+				<point>2.04653 0 0.24539</point>
+			</Label>
+			<Label>
+				<text>Туалет (с/узел 2)</text>
+				<point>3.48551 2.81494 0</point>
+			</Label>
+			<Label>
+				<text>Ванная (с/узел 1)</text>
+				<point>1.92074 2.9 0.01771</point>
+			</Label>
+			<Label>
+				<text>смеситель в столешницу</text>
+				<point>0.62131 1.02055 0</point>
+				<pointStrelka>1.73058 0.89455 0</pointStrelka>
+			</Label>
+			<Label>
+				<text>200</text>
+				<point>1.60003 2.75899 0</point>
+			</Label>
+		</AdditionalLabels>
+		<ColorMaxId>120000</ColorMaxId>
+		<SceneName>C:\Users\bibkduser25\Downloads\65438 кор.ekkd</SceneName>
+	</Scene2>
+	<ColorMaxId>120000</ColorMaxId>
+</Scene>

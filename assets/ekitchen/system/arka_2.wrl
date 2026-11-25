@@ -1,0 +1,886 @@
+#VRML V2.0 utf8			
+
+PROTO DWObjectPro 
+[
+ field MFNode childrenStatic []
+ field MFNode childrenRotatable []
+ field MFNode shapes []
+ field MFNode contours []
+ field SFNode BuildScript NULL
+ field MFString BuildScriptFields []
+ field MFFloat bounds []
+ field SFColor jambColor 1 1 1 
+ field SFInt32 jambStatus 15
+
+ field MFNode  SkipNodes []
+]
+{}
+
+DWObjectPro {
+	childrenStatic [
+			  DEF TS TouchSensor	{enabled FALSE}
+			  DEF swSub Switch {
+				  choice [
+				    Group	{
+					 children [
+						DEF Paper Shape {
+							appearance Appearance {
+								material Material {
+									transparency 1
+								}
+							}
+							geometry IndexedFaceSet {
+								coord Coordinate {point [-0.55 0  0.01,-0.55 2.05  0.01,0.55 2.05  0.01,0.55 0 0.01,-0.55 0  -0.01,-0.55 2.05  -0.01,0.55 2.05  -0.01,0.55 0 -0.01]}
+								coordIndex [3,2,1,0,-1,4,5,6,7,-1]
+							}
+						}
+						DEF	Cursor Transform {
+							children [
+								DEF swCursor Switch	{
+									whichChoice	-1
+									choice [
+										Shape {
+										 appearance	Appearance {
+											 material Material {
+												 emissiveColor 0.8 0.8 0.8 
+												 diffuseColor 0 0 0
+											 }
+										 }
+										}
+										Shape {
+										 geometry IndexedLineSet {
+											 coord Coordinate {}
+											 coordIndex	[0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,5,-1,9,5,-1,10,7,-1,11,7,-1]
+										 }
+										}
+										Shape {
+										 geometry IndexedLineSet {
+											 coord Coordinate {}
+											 coordIndex	[0,1,2,3,0,-1,4,5,-1,6,7,-1,8,5,-1,9,5,-1,10,7,-1,11,7,-1,12,13,-1,14,15,-1,16,13,-1,17,13,-1,18,15,-1,19,15,-1]
+										 }
+										}
+
+										Shape {
+										 geometry IndexedLineSet {
+											 coord Coordinate {}
+											 coordIndex	[4,5,-1,6,7,-1,8,5,-1,9,5,-1,10,7,-1,11,7,-1,12,13,-1,14,15,-1,16,13,-1,17,13,-1,18,15,-1,19,15,-1]
+										 }
+										}
+										Shape {
+										 geometry IndexedLineSet {
+											 coord Coordinate {}
+											 coordIndex	[0,1,2,3,0,-1,4,5,6,7,4,-1]
+										 }
+										}
+									]
+								}
+							]
+						}
+					 ]
+					}
+
+				  ]
+			  }
+			  #MyGeometry
+			  DEF Geom Group {
+			   children [
+				DEF SH1 Shape {
+					appearance Appearance {
+						material Material {emissiveColor 0 0 0}
+					}
+					geometry IndexedFaceSet {
+						coord DEF Crd Coordinate {}
+						texCoord TextureCoordinate {}
+						convex FALSE
+					}
+				}
+				DEF SH2 Shape {
+					appearance Appearance {
+						material Material { emissiveColor 0 0 0 }
+					}
+					geometry IndexedFaceSet {
+						coord USE Crd
+						texCoord TextureCoordinate {}
+						convex FALSE
+					}
+				}
+				DEF SH3 Shape {
+					appearance Appearance {
+						material Material {emissiveColor 0.6 0.6 0.6 diffuseColor 0.4 0.4 0.4}
+					}
+					geometry IndexedFaceSet {
+						coord USE Crd
+						texCoord TextureCoordinate {}
+						creaseAngle	0.6
+						convex FALSE
+					}
+				}
+			  ]
+			 }
+			  #Visible bounds
+			  DEF swBounds Switch {
+				  whichChoice -1
+				  #whichChoice 0
+				  choice 
+				  [
+					  Group	{
+						  children [
+							DEF	LineSet Shape {
+								geometry IndexedLineSet	{
+									coord Coordinate {
+									}
+								}
+							}
+							DEF	PointSet Shape {
+								geometry IndexedLineSet	{
+									coord Coordinate {
+									}
+								}
+							}
+						]
+					}
+				  ]
+				}
+			  #...
+
+	  DEF OWScr Script {
+			#flags 1 - object implement move
+			field SFInt32 flags 4
+			#system fields
+			eventIn SFBool update
+			field	SFVec3f	scale 1 1 1
+			field	SFVec3f	JambSize 0 0 0
+			field MFNode Apps []
+			field MFVec2f tc []
+			eventIn SFInt32 set_ActiveSensor
+			eventIn SFBool setBound
+			field SFInt32 flip 0
+			field SFInt32 place 0
+			field SFInt32 keyState 1
+
+
+			#BuildScriptFields
+			field SFString PointsStr "[-0.4 0 0,-0.4 1.9 0,0.4 1.9 0,0.4 0 0]"
+
+			#Script Internal Fields
+			field	MFVec3f	points []
+			field	SFNode Paper USE Paper
+
+			field	SFInt32	cActiveSensor -1
+			# -1 - no active sensor 0 - PlaneSensor 1 - Cylinder Sensor
+
+			field	SFNode swBounds USE	swBounds
+
+			field SFNode swSub USE swSub
+			field	SFNode TS USE TS
+			eventIn	SFVec3f	touchPos
+			eventIn	SFBool isActive
+
+			field SFInt32 mode 1
+
+			field SFFloat dh 0.05
+			field SFNode LineSet USE LineSet
+			field SFNode PointSet USE PointSet
+			field SFNode Cover USE Geom
+			field SFNode Contur Transform { children Shape { geometry IndexedLineSet { coord Coordinate {} coordIndex	[0,1,2,3,0,-1]} }}
+
+			field SFVec3f tPos 0 0 0
+			field SFVec3f cPos 0 0 0
+
+			field SFInt32 stage 2
+			field SFNode  Cursor USE Cursor
+			field SFNode  swCursor USE swCursor
+			field SFInt32 cPnt -1
+			field SFInt32 ncPnt -1
+			field MFInt32 lpIndex []
+
+			field SFFloat acc 0.00001
+
+			field SFInt32 state 0
+
+		  url "javascript:
+		    function initialize()
+			{
+				updateCursors();
+			}
+
+			function setBound(val)
+			{
+				if (val)
+				 swBounds.whichChoice=0;
+				else
+				 swBounds.whichChoice=-1;
+			}
+
+
+		function set_ActiveSensor(val)
+		{
+			if (val==cActiveSensor)
+			 return;
+
+			if (cActiveSensor==4)
+			{
+				TS.enabled=false;
+				swSub.whichChoice=-1;
+			} 
+
+			cActiveSensor=val;
+			if (val==4)
+			{
+				TS.enabled=true;
+				swSub.whichChoice=0;
+			} 
+		}
+
+		function touchPos(pnt)
+		{
+			tPos=pnt;
+			state|=1;
+		}
+
+		function eventsProcessed()
+		{
+			if (state!=0)
+			{
+				if ((state&1)!=0)
+				{
+					 touchPos_e1();
+				}
+				state=0;
+			}		 
+		}
+
+		function isInside(pnt,pnt0)
+		{
+			return (((pnt0.x-dh)<pnt.x)&&((pnt0.x+dh)>pnt.x)&&((pnt0.y-dh)<pnt.y)&&((pnt0.y+dh)>pnt.y));
+		}
+
+		function isPntOnSegment(pnt,_p1,_p2)
+		{
+			var p1=new SFVec3f(_p1.x,_p1.y,0);
+			var p2=new SFVec3f(_p2.x,_p2.y,0);
+			var v0=p2.subtract(p1);
+			var v1=new SFVec3f(p1.x-pnt.x,p1.y-pnt.y,0);
+			// var v1=p1.subtract(pnt);
+			//(v1+v0*t)^2
+			var t=-v1.dot(v0)/v0.dot(v0);
+			if ((t>=0)&&(t<=1))
+			{
+				var d2=v1.add(v0.multiply(t)).length();
+				if (d2<dh)
+				{
+					return p1.add(v0.multiply(t));
+				}
+				else
+					return null;
+			}
+			else
+				return null;
+		}
+
+		function touchPos_e1()
+		{
+			if (stage==2)
+			{
+				var j;
+				var pnt;
+				//else 
+				var n=points.length;
+				ncPnt=-1;
+				
+				for(j=0;j<n;j++)
+				{																			  
+					if (isInside(tPos,new SFVec3f(points[j].x,points[j].y,0)))
+					{
+						cPnt=j;
+						if ((keyState&1)!=0)
+						{
+							ncPnt=-1;
+							if (swCursor.whichChoice!=3)
+							{
+								swCursor.whichChoice=3;
+								Cursor.rotation=new SFRotation(0,0,1,0);
+							}
+							cPos=new SFVec3f(points[j].x,points[j].y,tPos.z);
+							Cursor.translation=cPos;
+						}
+						else
+						{
+							ncPnt=-2;
+							if (swCursor.whichChoice!=4)
+							{
+								swCursor.whichChoice=4;
+								Cursor.rotation=new SFRotation(0,0,1,0);
+							}
+							cPos=new SFVec3f(points[j].x,points[j].y,tPos.z);
+							Cursor.translation=cPos;
+						}
+						return;
+					}
+				}
+
+				for(j=0;j<n-1;j++)
+				{
+					pnt=isPntOnSegment(tPos,points[j],points[j+1]);
+					if (pnt!=null)
+					{
+						if ((keyState&1)!=0)
+						{
+							if (swCursor.whichChoice!=0)
+							{
+								swCursor.whichChoice=0;
+								Cursor.rotation=new SFRotation(0,0,1,0);
+							}
+							cPos=pnt;
+							Cursor.translation=new SFVec3f(cPos.x,cPos.y,tPos.z);
+							cPnt=j;
+							ncPnt=j;
+
+							return;
+						}
+						else if ((keyState&3)==0)
+						{
+							if (swCursor.whichChoice!=1)
+							{
+								swCursor.whichChoice=1;
+								Cursor.rotation=new SFRotation(0,0,1,0);
+							}
+							cPos=pnt;
+							ncPnt=-1;
+							Cursor.translation=cPos;
+							
+							var rv=points[j].subtract(points[j+1]);
+							rv=new SFVec3f(rv.x,rv.y,0).normalize();
+							Cursor.rotation=new SFRotation(new SFVec3f(0,0,-1),new SFVec3f(rv.y,-rv.x,0));
+
+							cPnt=j;
+
+							lpIndex=new MFInt32(cPnt,cPnt+1);
+							return;
+						}
+						else if ((keyState&2)!=0)
+						{
+							if (swCursor.whichChoice!=2)
+							{
+								swCursor.whichChoice=2;
+								Cursor.rotation=new SFRotation(0,0,1,0);
+							}
+							lpIndex=new MFInt32(j,j+1);
+							cPos=pnt;
+							Cursor.translation=cPos;
+							cPnt=j;
+							ncPnt=-1;
+							return;
+						}
+					}
+				}
+
+				cPnt=-1;
+				if (swCursor.whichChoice!=-1)
+					swCursor.whichChoice=-1;
+			}
+			else if (stage==3)
+			{
+				var j;
+				var N=(new SFVec3f((-points[lpIndex[0]].y+points[lpIndex[1]].y),(points[lpIndex[0]].x-points[lpIndex[1]].x)),0).normalize();
+				var v=N.multiply((tPos.subtract(new SFVec3f(points[lpIndex[0]].x,points[lpIndex[0]].y,0))).dot(N));
+
+				var lnn=lpIndex.length;
+				for(j=0;j<lnn;j++)
+					points[lpIndex[j]]=points[lpIndex[j]].add(new SFVec3f(v.x,v.y,0));
+				UpdateAll(false);
+				Cursor.translation=Cursor.translation.add(v);										 
+			}
+			else if (stage==4)
+			{
+				var j;
+				var v=tPos.subtract(cPos);
+				var lnn=lpIndex.length;
+				for(j=0;j<lnn/*2*/;j++)
+				{
+					points[lpIndex[j]]=points[lpIndex[j]].add(new SFVec3f(v.x,v.y,0));
+				}
+				UpdateAll(false);
+				Cursor.translation=tPos;
+				cPos=tPos;
+			}
+			else if (stage==5)
+			{
+				var v=tPos.subtract(cPos);
+				var n=points.length;
+				points[cPnt]=points[cPnt].add(new SFVec3f(v.x,v.y,0));
+				UpdateAll(false);															 
+				Cursor.translation=tPos;
+				cPos=tPos;
+			}
+		}
+
+		function isActive(val)
+		{
+			
+			if ((stage<-1)&&(!val))
+			{
+				stage=-stage;
+			}
+			else if ((stage==2)&&(val))
+			{
+				if (cPnt!=-1)
+				{
+					if ((ncPnt==-2)&&((keyState&1)==0))
+					{
+						stage=-1;
+						lpIndex=new MFInt32(cPnt);
+						swCursor.whichChoice=-1;
+						ncPnt=-1;
+					}
+					else if ((keyState&3)==0)
+					{
+						stage=3;
+
+						var nv=(new SFVec3f((-points[lpIndex[0]].y+points[lpIndex[1]].y),(points[lpIndex[0]].x-points[lpIndex[1]].x),0)).normalize();
+						var d=nv.dot(points[lpIndex[0]]);
+						var n0,j,k,i;
+						var lnn=2;
+						for(i=0;i<lnn;i++)
+						{
+							for(j=0;j<n;j++)
+							{
+								n0=-1;
+								if (j==lpIndex[i])
+									n0=j+1;
+								else if ((j+1)==lpIndex[i])
+									n0=j;
+								if (n0!=-1)
+								{
+									if (Math.abs(nv.dot(points[n0])-d)<=dh)
+									{
+										for(k=0;k<lnn;k++)
+										{
+											if (lpIndex[k]==n0)	
+											 break;
+										}
+										if (k==lnn)
+											lpIndex[lnn++]=n0;
+									}
+								}
+							}
+						}
+
+					}
+					else if ((keyState&2)!=0)
+					{
+						stage=4;
+						print('stage4');
+					}
+					else if ((keyState&1)!=0)
+					{
+						Cursor.rotation=new SFRotation(0,0,1,0);
+						stage=5;
+						print('stage5 ncPnt='+ncPnt);
+						if (ncPnt!=-1)
+						{
+							insertValue(points,new SFVec3f(cPos.x,cPos.y,0),ncPnt+1);
+							UpdateAll(false);
+							swCursor.whichChoice=3;
+							cPnt=ncPnt+1;
+						}
+					}
+				}
+			}
+			else if ((stage==3)&&(!val))
+			{
+			 cPnt=-1;
+			 stage=2;
+			}
+			else if ((stage==4)&&(!val))
+			{
+			 cPnt=-1;
+			 stage=2;
+			}
+			else if ((stage==5)&&(!val))
+			{
+			 //after move
+			 var n=points.length;
+			 if (n>2)
+			 {
+				 if ((isInside(new SFVec3f(points[cPnt].x,points[cPnt].y,0),new SFVec3f(points[(cPnt+1)%n].x,points[(cPnt+1)%n].y,0))&&(cPnt<n-1))
+				 ||(isInside(new SFVec3f(points[cPnt].x,points[cPnt].y,0),new SFVec3f(points[(cPnt-1+n)%n].x,points[(cPnt-1+n)%n].y,0))&&(cPnt>0)))
+				 {
+					 var j;
+					 for(j=cPnt+1;j<n;j++)
+					  points[j-1]=points[j];
+					 points.length--;
+					 UpdateAll(false);
+				 }
+			 }
+
+			 cPnt=-1;
+			 stage=2;
+			}
+		}
+		
+		function updateCursors()
+		{
+			var dy=0.0;
+			Contur.children[0].geometry.coord.point=new MFVec3f(
+    			new SFVec3f(-dh,dh,dy),
+    			new SFVec3f( dh,dh,dy),
+    			new SFVec3f( dh,-dh,dy),
+    			new SFVec3f(-dh,-dh,dy));
+			swCursor.choice[0].geometry=Contur.children[0].geometry;
+			swCursor.choice[1].geometry.coord.point=new MFVec3f(
+    			new SFVec3f(-dh,dh,dy),
+    			new SFVec3f( dh,dh,dy),
+    			new SFVec3f( dh,-dh,dy),
+    			new SFVec3f(-dh,-dh,dy),
+    			new SFVec3f(-dh,-dh,dy),
+    			new SFVec3f( dh,-dh,dy),
+    			new SFVec3f( dh, dh,dy),
+    			new SFVec3f(-dh, dh,dy),
+    			new SFVec3f(   0,  -dh,dy),
+    			new SFVec3f(   0,-2.5*dh,dy),
+    			new SFVec3f(   0,   dh,dy),
+    			new SFVec3f(   0, 2.5*dh,dy),
+    			new SFVec3f(-0.5*dh,  -2*dh,dy),
+    			new SFVec3f( 0.5*dh,  -2*dh,dy),
+    			new SFVec3f(-0.5*dh,   2*dh,dy),
+    			new SFVec3f( 0.5*dh,   2*dh,dy));
+
+			swCursor.choice[2].geometry.coord.point=new MFVec3f(
+    			new SFVec3f(-dh, -dh,dy),
+    			new SFVec3f(dh,dy,  -dh,dy),
+    			new SFVec3f(dh,dy,   dh,dy),
+    			new SFVec3f(-dh,dy,  dh,dy),
+    			new SFVec3f(0,dy,  -dh,dy),
+    			new SFVec3f(0,dy,-2.5*dh,dy),
+    			new SFVec3f(0,dy,   dh,dy),
+    			new SFVec3f(0,dy, 2.5*dh,dy),
+    			new SFVec3f(-0.5*dh, -2*dh,dy),
+    			new SFVec3f(0.5*dh,  -2*dh,dy),
+    			new SFVec3f(-0.5*dh,  2*dh,dy),
+    			new SFVec3f(0.5*dh,   2*dh,dy),
+    			new SFVec3f(-dh,    0,dy),
+    			new SFVec3f(-2.5*dh,  0,dy),
+    			new SFVec3f(dh,     0,dy),
+    			new SFVec3f(2.5*dh,   0,dy),
+    			new SFVec3f(-2*dh, -0.5*dh,dy),
+    			new SFVec3f(-2*dh,  0.5*dh,dy),
+    			new SFVec3f(2*dh,  -0.5*dh,dy),
+    			new SFVec3f(2*dh,   0.5*dh,dy));
+			swCursor.choice[3].geometry.coord.point=new MFVec3f(
+    			new SFVec3f(-dh, -dh,dy),
+    			new SFVec3f(dh, -dh,dy),
+    			new SFVec3f(dh, dh,dy),
+    			new SFVec3f(-dh, dh,dy),
+    			new SFVec3f(0, -dh,dy),
+    			new SFVec3f(0, -2.5*dh,dy),
+    			new SFVec3f(0, dh,dy),
+    			new SFVec3f(0, 2.5*dh,dy),
+    			new SFVec3f(-0.5*dh, -2*dh,dy),
+    			new SFVec3f(0.5*dh, -2*dh,dy),
+    			new SFVec3f(-0.5*dh, 2*dh,dy),
+    			new SFVec3f(0.5*dh, 2*dh,dy),
+    			new SFVec3f(-dh, 0,dy),
+    			new SFVec3f(-2.5*dh, 0,dy),
+    			new SFVec3f(dh, 0,dy),
+    			new SFVec3f(2.5*dh, 0,dy),
+    			new SFVec3f(-2*dh, -0.5*dh,dy),
+    			new SFVec3f(-2*dh, 0.5*dh,dy),
+    			new SFVec3f(2*dh, -0.5*dh,dy),
+    			new SFVec3f(2*dh, 0.5*dh,dy));
+
+			swCursor.choice[4].geometry.coord.point=new MFVec3f(
+    			new SFVec3f( 0,  dh,dy),
+    			new SFVec3f( dh,  0,dy),
+    			new SFVec3f( 0, -dh,dy),
+    			new SFVec3f(-dh,  0,dy),
+				new SFVec3f(  dh,  dh,dy),
+				new SFVec3f(  dh, -dh,dy),
+				new SFVec3f( -dh, -dh,dy),
+				new SFVec3f( -dh,  dh,dy));
+		}
+
+		function insertValue(mf,val,ii)
+		{
+			mf.length=mf.length+1;
+			for(var j=mf.length-2;j>=ii;j--)
+				mf[j+1]=mf[j];
+			mf[ii]=val;
+		}
+
+		function update()
+		{
+			UpdateAll(true);
+		}
+
+		function UpdateAll(bExternal)
+		{
+			/*
+			print('update begin!');
+			print('JambSize='+JambSize);
+			print('flip='+flip);
+			print('place'+place);
+			print('tc'+tc+'('+tc.length+')');
+			*/
+
+			if (bExternal)
+			{
+				var nd=new SFNode('Coordinate { point '+PointsStr+'}');
+				points=nd.point;
+			}
+			else
+				PointsStr=points.toString();
+
+			var z0;
+			if ((flip==1)||(flip==2))
+				z0=-0.5*JambSize.z+place*0.5*JambSize.z;
+			else
+				z0=-0.5*JambSize.z+place*JambSize.z*((flip==1)?1.5:-0.5);
+			var z1=z0+JambSize.z;
+
+			var CS=new MFVec3f();CS.length=8;
+			CS[0].x=-0.5;CS[0].y=0;CS[0].z=z1+0.01;
+			CS[1].x=-0.5;CS[1].y=2;CS[1].z=z1+0.01;
+			CS[2].x=0.5;CS[2].y=2;CS[2].z=z1+0.01;
+			CS[3].x=0.5;CS[3].y=0;CS[3].z=z1+0.01;
+			CS[4].x=-0.5;CS[4].y=0;CS[4].z=z0-0.01;
+			CS[5].x=-0.5;CS[5].y=2;CS[5].z=z0-0.01;
+			CS[6].x=0.5;CS[6].y=2;CS[6].z=z0-0.01;
+			CS[7].x=0.5;CS[7].y=0;CS[7].z=z0-0.01;
+			Paper.geometry.coord.point=CS;
+
+			if (Apps.length>=2)
+			{
+				if ((flip==0)||(flip==3))
+				{
+					Cover.children[0].appearance=Apps[1];
+					Cover.children[1].appearance=Apps[0];
+				}
+				else
+				{
+					Cover.children[0].appearance=Apps[0];
+					Cover.children[1].appearance=Apps[1];
+				}
+			}
+
+			var n=points.length;
+			var CS=new MFVec3f();CS.length=2*n;
+			var k;	
+			for(k=0;k<n;k++)
+			{
+				CS[k].x=points[k].x;
+				CS[k].y=points[k].y;
+				CS[k].z=z1+0.01;
+				CS[k+n].x=points[k].x;
+				CS[k+n].y=points[k].y;
+				CS[k+n].z=z0-0.01;
+			}
+			LineSet.geometry.coord.point=CS;
+
+			var CS2=new MFVec3f();CS2.length=4*n*2;
+			for(k=0;k<n;k++)
+			{
+				CS2[4*k+0].x=CS[k].x-dh;
+				CS2[4*k+0].y=CS[k].y+dh;
+				CS2[4*k+0].z=z1+0.01;
+				CS2[4*k+1].x=CS[k].x-dh;
+				CS2[4*k+1].y=CS[k].y-dh;
+				CS2[4*k+1].z=z1+0.01;
+				CS2[4*k+2].x=CS[k].x+dh;
+				CS2[4*k+2].y=CS[k].y-dh;
+				CS2[4*k+2].z=z1+0.01;
+				CS2[4*k+3].x=CS[k].x+dh;
+				CS2[4*k+3].y=CS[k].y+dh;
+				CS2[4*k+3].z=z1+0.01;
+			}
+			for(k=0;k<4*n;k++)
+			{
+				CS2[4*n+k].x=CS2[k].x;CS2[4*n+k].y=CS2[k].y;CS2[4*n+k].z=z0-0.01;
+			}
+
+			PointSet.geometry.coord.point=CS2;
+			
+			CS=new MFVec3f();CS.length=(n+4)*2;
+		    CS[0].x= 0.5;CS[0].y=0;CS[0].z=z1;
+		    CS[1].x= 0.5;CS[1].y=2;CS[1].z=z1;
+		    CS[2].x=-0.5;CS[2].y=2;CS[2].z=z1;
+		    CS[3].x=-0.5;CS[3].y=0;CS[3].z=z1;
+			for(k=0;k<n;k++)
+			{
+				CS[k+4].x=points[k].x;
+				CS[k+4].y=points[k].y;
+				CS[k+4].z=z1;
+			}
+			for(k=0;k<n+4;k++)
+			{
+				CS[n+4+k].x=CS[n+3-k].x;CS[n+4+k].y=CS[n+3-k].y;CS[n+4+k].z=z0;
+			}
+			Cover.children[0].geometry.coord.point=CS;
+
+			var TsCoors=new MFVec2f();TsCoors.length=n+4;
+			var vv;
+
+			var tc_upd=new MFVec2f();tc_upd.length=4;
+			if (flip==1)
+			{
+				for(k=0;k<4;k++)
+					tc_upd[k]=tc[k];
+			}
+			else if (flip==0)
+			{
+				for(k=0;k<4;k++)
+					tc_upd[k]=tc[(k+2)%4];
+			}
+			else 
+			{
+				for(k=0;k<4;k++)
+					tc_upd[k].y=tc[k].y;
+
+				if (flip==2)
+				{
+					tc_upd[0].x=tc[1].x;
+					tc_upd[1].x=tc[0].x;
+					tc_upd[2].x=tc[3].x;
+					tc_upd[3].x=tc[2].x;
+				}
+				else
+				{
+					tc_upd[0].x=tc[3].x;
+					tc_upd[1].x=tc[2].x;
+					tc_upd[2].x=tc[1].x;
+					tc_upd[3].x=tc[0].x;
+				}
+			}
+
+			TsCoors[0].x=tc_upd[1].x;TsCoors[0].y=tc_upd[0].y;
+			TsCoors[1]=tc_upd[1];
+			TsCoors[2].x=tc_upd[0].x;TsCoors[2].y=tc_upd[1].y;
+			TsCoors[3]=tc_upd[0];
+			for(k=0;k<n;k++)
+			{
+				TsCoors[k+4].x=tc_upd[0].x+(tc_upd[1].x-tc_upd[0].x)*(points[k].x+0.5);
+				TsCoors[k+4].y=tc_upd[0].y+(tc_upd[1].y-tc_upd[0].y)*(points[k].y/2.0);
+			}
+			Cover.children[0].geometry.texCoord.point=TsCoors;
+
+			TsCoors=new MFVec2f();TsCoors.length=n+4;
+			TsCoors[n+3]=tc_upd[2];
+			TsCoors[n+2].x=tc_upd[2].x;TsCoors[n+2].y=tc_upd[3].y;
+			TsCoors[n+1]=tc_upd[3];
+			TsCoors[n].x=tc_upd[3].x;TsCoors[n].y=tc_upd[2].y;
+			for(k=0;k<n;k++)
+			{
+				TsCoors[k].x=tc_upd[3].x+(tc_upd[2].x-tc_upd[3].x)*(points[n-1-k].x+0.5);
+				TsCoors[k].y=tc_upd[2].y+(tc_upd[3].y-tc_upd[2].y)*(points[n-1-k].y/2.0);
+			}
+			Cover.children[1].geometry.texCoord.point=TsCoors;
+
+			TsCoors=new MFVec2f();TsCoors.length=2*(n+2);
+			var tcl=0;
+			for(k=0;k<n+2;k++)
+			{
+				TsCoors[2*k].x=0;
+				TsCoors[2*k].y=tcl;
+				TsCoors[2*k+1].x=z1;
+				TsCoors[2*k+1].y=tcl;
+				tcl+=CS[k+4].subtract(CS[k+3]).length();
+			}
+			Cover.children[2].geometry.texCoord.point=TsCoors;
+
+			var pointIndex=new MFInt32();pointIndex.length=2*(n+1);
+			for(k=0;k<n;k++)
+				pointIndex[k]=k;
+			pointIndex[k]=-1;
+			for(k=0;k<n;k++)
+				pointIndex[n+1+k]=k+n;
+			pointIndex[2*n+1]=-1;
+			LineSet.geometry.set_coordIndex=pointIndex;
+			print('pointIndex='+pointIndex);
+
+			pointIndex=new MFInt32();pointIndex.length=n*6*2;
+			for(k=0;k<2*n;k++)
+			{
+				pointIndex[6*k+0]=4*k;
+				pointIndex[6*k+1]=4*k+1;
+				pointIndex[6*k+2]=4*k+2;
+				pointIndex[6*k+3]=4*k+3;
+				pointIndex[6*k+4]=4*k;
+				pointIndex[6*k+5]=-1;
+			}
+			PointSet.geometry.set_coordIndex=pointIndex;
+
+			pointIndex=new MFInt32();pointIndex.length=n+4+1;
+			for(k=0;k<n+4;k++)
+				pointIndex[k]=k;
+			pointIndex[n+4]=-1;
+			Cover.children[0].geometry.set_coordIndex=pointIndex;
+			Cover.children[0].geometry.set_texCoordIndex=pointIndex;
+			Cover.children[1].geometry.set_texCoordIndex=pointIndex;
+
+			pointIndex=new MFInt32();pointIndex.length=n+4+1;
+			for(k=0;k<n+4;k++)
+				pointIndex[k]=k+n+4;
+			pointIndex[n+4]=-1;
+			Cover.children[1].geometry.set_coordIndex=pointIndex;
+
+			pointIndex=new MFInt32();pointIndex.length=5*(n+1);
+			for(k=0;k<n-1;k++)
+			{
+				pointIndex[5*k+0]=k+5;
+				pointIndex[5*k+1]=k+4;
+				pointIndex[5*k+2]=2*n+3-k;
+				pointIndex[5*k+3]=2*n+3-k-1;
+				pointIndex[5*k+4]=-1;
+			}
+			pointIndex[5*k+0]=4;
+			pointIndex[5*k+1]=3;
+			pointIndex[5*k+2]=2*n+4;
+			pointIndex[5*k+3]=2*n+3;
+			pointIndex[5*k+4]=-1;
+			k++;
+			pointIndex[5*k+0]=0;
+			pointIndex[5*k+1]=n+3;
+			pointIndex[5*k+2]=n+4;
+			pointIndex[5*k+3]=2*n+7;
+			pointIndex[5*k+4]=-1;
+			Cover.children[2].geometry.set_coordIndex=pointIndex;
+
+			pointIndex=new MFInt32();pointIndex.length=5*(n+1);
+			for(k=0;k<n-1;k++)
+			{
+				pointIndex[5*k+0]=2*(k+2);
+				pointIndex[5*k+1]=2*(k+1);
+				pointIndex[5*k+2]=2*(k+1)+1;
+				pointIndex[5*k+3]=2*(k+2)+1;
+				pointIndex[5*k+4]=-1;
+			}
+			pointIndex[5*k+0]=1;
+			pointIndex[5*k+1]=0;
+			pointIndex[5*k+2]=2;
+			pointIndex[5*k+3]=3;
+			pointIndex[5*k+4]=-1;
+			k++;
+			pointIndex[5*k+0]=2*(n+1);
+			pointIndex[5*k+1]=2*(n);
+			pointIndex[5*k+2]=2*(n)+1;
+			pointIndex[5*k+3]=2*(n+1)+1;
+			pointIndex[5*k+4]=-1;
+			Cover.children[2].geometry.set_texCoordIndex=pointIndex;
+
+			print('update end');
+		}
+	   "
+	  }
+	]
+	jambStatus 0
+	bounds [-0.5 0.5 0 2 0 0]
+	shapes [Group {} Group {} USE SH3]
+	BuildScript	USE OWScr
+	BuildScriptFields ["xxx","PointsStr"]
+
+	SkipNodes [ USE OWScr, USE swBounds, USE TS, USE swSub ]
+}
+ROUTE TS.hitPoint_changed TO OWScr.touchPos
+ROUTE TS.isActive TO OWScr.isActive
+
+

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>7FCC9</Hash>
+	<Guid>41B5F5CD-456A-464B-9681-FC8C6028D524</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Фрейя  SL">914602</ModelBaseId>
+		<ModelId Name="Фрейя">914604</ModelId>
+		<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+		<ModelColorId Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+		<BoardId Name="Лигрон HPL(Бортик)">901728</BoardId>
+		<BoardColorId Code="" Name="347 Уни бланко">915269</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">911610~914973</SocleId>
+		<SocleColorId Code="Ц_Белый" Name="Белый">911610~914973</SocleColorId>
+		<SocleReshColorId Code="" Name="Серый">500001</SocleReshColorId>
+		<SocleHeight>150</SocleHeight>
+		<TableBoardId Name="Лигрон HPL ПСФ">902969</TableBoardId>
+		<TableBoardColorId Code="" Name="347 Уни бланко">915267</TableBoardColorId>
+		<WallPanelId Name="Лигрон HPL(СП)">903019</WallPanelId>
+		<WallPanelColorId Code="" Name="347 Уни бланко">915268</WallPanelColorId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Румер</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.900</SalonPhone>
+		<SalonEmail>roomer@kxd.ru</SalonEmail>
+		<SalonAddress>М. Автозаводская, г. Москва, ул. Ленинская слобода, д. 26, ТЦ"ROOMER", 3 этаж, пав. 369 с 10-00 до 22-00</SalonAddress>
+		<SalonDirectorName>Шестакова Ю.В.</SalonDirectorName>
+		<SalonDirectorPhone>+79771107069</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="0К">Ляпунов Иван Васильевич</SalonManagerName>
+		<ClientId create_date="18/10/2026">89265017925</ClientId>
+		<ClientProjectsCount>1</ClientProjectsCount>
+		<ClientProjectsPinAdmin>1</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>3</ClientProjectsPin1C>
+		<ClientName>Пяткин Михаил Викторович</ClientName>
+		<ClientEmail>levicheva_73@mail.ru</ClientEmail>
+		<ClientPhone>89265017925</ClientPhone>
+		<ClientMetroStation>Автозаводская</ClientMetroStation>
+		<ClientCityStation>Москва</ClientCityStation>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>250000</ClientBudget>
+		<ClientAssemblingDate>19/11/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="9">увидели салон, проезжая (проходя) мимо</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Цена</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>90-0К-18-10-26-01</OrderNum>
+		<FabrikaCheckNum>66108</FabrikaCheckNum>
+		<FabrikaCheckInfo>logacheva.ea / 05.11.2026 / 14:27:59</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 3.11.26 (release 34), database: 3.11.2026, last update 5.11.2026</Version>
+		<UpdateNum>2646</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3943 x 4000 мм</Bounds>
+		<Walls>3943x4000</Walls>
+		<Celling>2450 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>103450</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-51044</ArtCode>
+			<NsTypes>А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Стол 1 дверь под мойку</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Фрейя">914604</ModelID>
+				<COLORID Code="KHDL-001-18" Name="KHDL-001-18 Белый">909365</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103434</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-50952</ArtCode>
+			<NsTypes>А_ProLine ALP-CR-А+А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Стол 1 дверь + 1 ящик тандембокс</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>170</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>514</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="3">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Фрейя">914604</ModelID>
+				<COLORID Code="KHDL-001-18" Name="KHDL-001-18 Белый">909365</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100216</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>94-09009</ArtCode>
+			<NsTypes>2_Умен</NsTypes>
+			<PRICE type="обычная">2818</PRICE>
+			<ColorCategory>4</ColorCategory>
+			<Name>Подиум в пенал под холодильник</Name>
+			<LabelNum>3</LabelNum>
+			<WIDTH>565</WIDTH>
+			<DEPTH>520</DEPTH>
+			<HEIGHT>40</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103432</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-50941</ArtCode>
+			<NsTypes>А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>4</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>575</DEPTH>
+			<HEIGHT>750</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<FRONT N="2">
+				<Type>SpaceLine</Type>
+				<Width>600</Width>
+				<Height>48</Height>
+				<ModelID Name="Фрейя">914604</ModelID>
+				<COLORID Code="KHDL-001-18" Name="KHDL-001-18 Белый">909365</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100389</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-47205</ArtCode>
+			<NsTypes>А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь сушка заказчика</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>S</LABEL>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Фрейя">914603</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102607</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-51621</ArtCode>
+			<NsTypes>А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101281</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-62175</ArtCode>
+			<NsTypes>А_TIP ON+А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь под врезную вытяжку</Name>
+			<LabelNum>7</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>ВТ</LABEL>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>610</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>607</Height>
+				<MODELID Name="Фрейя">914603</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="93-66550" Count="1"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102607</ITEMID>
+			<BaseColorId Code="Д-001" Name="Д-001 Белая ЛДСтП">900368</BaseColorId>
+			<ArtCode>93-51621</ArtCode>
+			<NsTypes>А_ProLine</NsTypes>
+			<ColorCategory>4</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>8</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>12</Discount>
+			<DiscountAuto>9</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>717</Height>
+				<MODELID Name="Фрейя">914604</MODELID>
+				<COLORID Code="KHPr-002" Name="KHPr-002 СЕРЫЙ КВАРЦ [KХП4]">911711</COLORID>
+				<ModelMaterial Name="МДФ + Экомембрана">910970</ModelMaterial>
+			</FRONT>
+			<Variables>isGola=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Белый" Name="Белый">911610~914973</COLORID>
+			<Price>250</Price>
+			<ArtCode>93-49502</ArtCode>
+			<Name>Цоколь ПВХ, торцевой эл., 150</Name>
+			<Quantity>4</Quantity>
+		</KitchenObject>
+		<KitchenObject>
+			<COLORID Code="Ц_Белый" Name="Белый">911610~914973</COLORID>
+			<Price>376</Price>
+			<ArtCode>93-49523</ArtCode>
+			<Name>Цоколь ПВХ, соединительный эл., 150</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>88-68905</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>10325</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон HPL ПСФ">902969</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915267</COLORID>
+			<L>600</L>
+			<H>1250</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0.05" overhangAdditionalLeft2="0.05" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+				<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+				<page id="4">
+					<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="-0.30005" shifty="-0.01255" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_Стл_000.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>79798</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1,2</QUANTITY>
+					<ColorId>60636</ColorId>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>88-68905</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>8260</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Лигрон HPL ПСФ">902969</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915267</COLORID>
+			<L>600</L>
+			<H>600</H>
+			<P>38</P>
+			<Quantity>1</Quantity>
+			<deskFastCreator>
+				<page id="1"/>
+				<page id="2" mode="3" jointingCutType="10"/>
+				<page id="3"/>
+				<page id="4"/>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_Стл_001.emf</Img>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>79798</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1,2</QUANTITY>
+					<ColorId>60636</ColorId>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>84646</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>88-68931</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2685</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="Лигрон HPL(Бортик)">901728</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915269</COLORID>
+			<P>1</P>
+			<L>30</L>
+			<H>2000</H>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-15486</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>12300.00098</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Лигрон HPL(СП)">903019</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915268</COLORID>
+			<L>600</L>
+			<H>2500</H>
+			<Quantity>2.5</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-15486</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2952.00024</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Лигрон HPL(СП)">903019</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915268</COLORID>
+			<L>600</L>
+			<H>600</H>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-15486</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2952.00024</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Лигрон HPL(СП)">903019</MODELID>
+			<COLORID Code="" Name="347 Уни бланко">915268</COLORID>
+			<L>110</L>
+			<H>600</H>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-49512</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>1366</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">911610</MODELID>
+			<COLORID Code="Ц_Белый" Name="Белый">911610</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>93-49513</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2732</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">911610</MODELID>
+			<COLORID Code="Ц_Белый" Name="Белый">911610</COLORID>
+			<P>150</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1105</Price>
+			<ArtCode>88-68913</ArtCode>
+			<ColorCategory>2</ColorCategory>
+			<Name>СОбрТ_38 2 кат. Обработка заднего и бокового канта (кромка как на переднем канте) Н=38</Name>
+			<COLORID>60636</COLORID>
+			<Quantity>1.2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1125</Price>
+			<ArtCode>88-68933</ArtCode>
+			<Name>Заглушки к треугольному бортику (комплект)</Name>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>1105</Price>
+			<ArtCode>88-68913</ArtCode>
+			<ColorCategory>2</ColorCategory>
+			<Name>СОбрТ_38 2 кат. Обработка заднего и бокового канта (кромка как на переднем канте) Н=38</Name>
+			<COLORID>60636</COLORID>
+			<Quantity>1.2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>3475</Price>
+			<ArtCode>88-85506</ArtCode>
+			<Name>Скос, срез стеновой панели</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<Price>265</Price>
+				<ArtCode>88-68998</ArtCode>
+				<Name>Алюминиевый профиль на торец ( для Н-38мм)</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>8990</Price>
+				<ArtCode>96-23808</ArtCode>
+				<Name>KRONA КА-00011821 KATE 600 INOX PB V2 вытяжка кухонная</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>-</ObjectNum>
+				<Price>14188</Price>
+				<ArtCode>94-12711</ArtCode>
+				<Name>OMOIKIRI 4993189 Мойка Omi 44-U/I-IN нерж. сталь/нержавеющая сталь</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>5</ObjectNum>
+				<Price>2790</Price>
+				<ArtCode>94-39013</ArtCode>
+				<Name>КАЛИБРА 256-16E Сушка для посуды, 600 мм (сталь, хром, 1 жёсткий поддон, регулируемая глубина 280-34</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<Price>265</Price>
+				<ArtCode>88-68998</ArtCode>
+				<Name>Алюминиевый профиль на торец ( для Н-38мм)</Name>
+				<Quantity>1</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>20306</Price>
+			<Discount>100</Discount>
+			<DiscountAuto>100</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<ScreenShots>
+		<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_base_6.emf</Img>
+	<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_hpl.jpg</Img>
+	<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_base_6.emf</Img>
+	<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_hpl_2_z.jpg</Img>
+	<Img>0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_base_1.emf</Img>
+	<Img>\\192.168.100.132\ekitchen\export_ekitchen\900\0К-41B5F5CD-456A-464B-9681-FC8C6028D524_all_tables_base_1.emf</Img>
+</Scene>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест синтаксиса planEditor.js</title>
+</head>
+<body>
+    <h1>Проверка синтаксиса JavaScript</h1>
+    <div id="result">Загрузка...</div>
+    
+    <script>
+        async function testSyntax() {
+            try {
+                const response = await fetch('js/planEditor.js?v=20260123b');
+                const code = await response.text();
+                
+                // Попытка парсинга
+                new Function(code);
+                
+                document.getElementById('result').innerHTML = 
+                    '<p style="color: green;">✓ Синтаксис корректен!</p>' +
+                    '<p>Размер файла: ' + code.length + ' символов</p>';
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    '<p style="color: red;">✗ Ошибка синтаксиса:</p>' +
+                    '<pre>' + error.message + '</pre>';
+            }
+        }
+        
+        testSyntax();
+    </script>
+</body>
+</html>

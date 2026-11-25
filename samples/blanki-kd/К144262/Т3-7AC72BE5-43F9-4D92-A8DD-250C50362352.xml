@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>2E94A</Hash>
+	<Guid>7AC72BE5-43F9-4D92-A8DD-250C50362352</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Уна Лайт (Кюхен Хоф ПРОМО ТР)">911234</ModelBaseId>
+		<ModelId Name="Уна">904161</ModelId>
+		<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+		<ModelColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+		<BoardId Name="Бортики из акрила Velle H=6">915256</BoardId>
+		<BoardColorId Code="" Name="Beige-003 беж с вкраплениями">913115</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="Экоплита 16мм">904094</SocleId>
+		<SocleColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый">914827</SocleColorId>
+		<SocleReshColorId Code="РЦЛДСП_Бежевый" Name="Бежевый">911624</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="Предварительный Расчет HPL">902969</TableBoardId>
+		<TableBoardColorId Code="947" Name="947 Солнечная альгамбра [Лигрон]">901774</TableBoardColorId>
+		<WallPanelId Name="Предварительный Расчет HPL(СП)">903019</WallPanelId>
+		<WallPanelColorId Code="947" Name="947 Солнечная альгамбра [Лигрон]">902186</WallPanelColorId>
+		<Handle>РК632-С160</Handle>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<SalonName>Подольск КД</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.320</SalonPhone>
+		<SalonEmail>podolsk@kxd.ru</SalonEmail>
+		<SalonAddress>Московская область, г. Подольск, ул. Большая Серпуховская, д. 43 с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Петрова А.А</SalonDirectorName>
+		<SalonDirectorPhone>+79261963686</SalonDirectorPhone>
+		<SalonInn/>
+		<SalonManagerName code="Т3">Нешитая Людмила Викторовна</SalonManagerName>
+		<ClientId create_date="02/11/2026">89265454452</ClientId>
+		<ClientProjectsCount>2</ClientProjectsCount>
+		<ClientProjectsPinAdmin>0</ClientProjectsPinAdmin>
+		<ClientProjectsPinSms>0</ClientProjectsPinSms>
+		<ClientProjectsPin1C>1</ClientProjectsPin1C>
+		<ClientName>Щёболев Денис Александрович</ClientName>
+		<ClientEmail>shchegolev_denis@mail.ru</ClientEmail>
+		<ClientPhone>89265454452</ClientPhone>
+		<ClientMetroStation/>
+		<ClientCityStation>Подольск</ClientCityStation>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<ClientBudget>300000</ClientBudget>
+		<ClientAssemblingDate>02/12/2026</ClientAssemblingDate>
+		<ClientInfoSource>
+			<InfoSource id="1">по рекомендации</InfoSource>
+		</ClientInfoSource>
+		<Consultation>0</Consultation>
+		<Los>0</Los>
+		<Sample>0</Sample>
+		<ClientImportantInfo>Качество</ClientImportantInfo>
+		<OrderComments/>
+		<DeliveryComments/>
+		<OrderNum>32-Т3-02-11-26-01</OrderNum>
+		<FabrikaCheckNum>66468</FabrikaCheckNum>
+		<FabrikaCheckInfo>glushko.ee / 13.11.2026 / 13:51:09</FabrikaCheckInfo>
+		<IsDesigner>0</IsDesigner>
+		<Version>program: 13.11.26 (release 34), database: 14.11.2026, last update 14.11.2026</Version>
+		<UpdateNum>2651</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>3120 x 4000 мм</Bounds>
+		<Walls>3120</Walls>
+		<Celling>2400 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100027</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>94-08908</ArtCode>
+			<NsTypes>А_Firmax-SL</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 1 дверь под мойку</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>550</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>547</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100147</ITEMID>
+			<BaseColorId Name="Д-012 Бежевый песок ЛДСтП + Бежевый" Code="Д-012/РЦЛДСП_Бежевый">900375+911624</BaseColorId>
+			<ArtCode>93-46852</ArtCode>
+			<NsTypes>А_ФБпр+А_DBox-СС</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол высокий 2 ящика тандембокс под духовку</Name>
+			<LabelNum>2</LabelNum>
+			<LABEL>ДШ</LABEL>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>1320</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+			<Variables>BackPanH1=0.35;BackPanH2=1.02;BPCount=1</Variables>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</BaseColorId>
+			<ObjectNum>2</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48537</ArtCode>
+			<Quantity>0.74</Quantity>
+			<WIDTH>560</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>1320</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>102752</ITEMID>
+			<BaseColorId Name="Д-012 Бежевый песок ЛДСтП + Бежевый" Code="Д-012/РЦЛДСП_Бежевый">900375+911624</BaseColorId>
+			<ArtCode>94-23625</ArtCode>
+			<NsTypes>А_DBox-СС</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Стол 2 ящика + 1 ящик скрытый тандембокс под варку</Name>
+			<LabelNum>3</LabelNum>
+			<LABEL>ВП</LABEL>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+			<FRONT N="2">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>357</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100579</ITEMID>
+			<ArtCode>96-04162</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Фасад на полновстраиваемую технику, 450мм</Name>
+			<LabelNum>4</LabelNum>
+			<LABEL>ПММ</LABEL>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>450</WIDTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>447</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>TOP</VALIGN>
+					<HALIGN>CENTER</HALIGN>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>94-09061</ArtCode>
+			<NsTypes>А_ФБлев+А_Firmax-SL+А_СВ_Fusion</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный Fusion (белый, теплый)" ArtCode="93-57821" Count="0.5"/>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>L</BoxOri>
+			<BaseColorId Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</BaseColorId>
+			<ObjectNum>5</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>93-48537</ArtCode>
+			<Quantity>0.22</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>720</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100389</ITEMID>
+			<BaseColorId Code="Д-012" Name="Д-012 Бежевый песок ЛДСтП">900375</BaseColorId>
+			<ArtCode>93-47201</ArtCode>
+			<NsTypes>А_ЦАР91+А_Firmax-SL+А_СВ_Fusion</NsTypes>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка 1 дверь сушка заказчика</Name>
+			<LabelNum>6</LabelNum>
+			<BoxOri>L</BoxOri>
+			<LABEL>S</LABEL>
+			<Discount>8</Discount>
+			<DiscountAuto>8</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>717</Height>
+				<MODELID Name="Уна">904161</MODELID>
+				<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый [KХП1]">914827</COLORID>
+				<ModelMaterial Name="Экоплита">490142</ModelMaterial>
+				<HANDLE>
+					<ArtCode>93-80179</ArtCode>
+					<ColorCategory>1</ColorCategory>
+					<Art>РК632-С160</Art>
+					<VALIGN>BOTTOM</VALIGN>
+					<HALIGN>RIGHT</HALIGN>
+					<ORIENTATION>VERTICAL</ORIENTATION>
+					<Price>560</Price>
+				</HANDLE>
+			</FRONT>
+			<OPTION Name="Светильник светодиодный Fusion (белый, теплый)" ArtCode="93-57821" Count="0.5"/>
+		</KitchenObject>
+		<KitchenObject>
+			<ArtCode>93-49032</ArtCode>
+			<Name>К-т подключения, выкл. механический</Name>
+			<Quantity>1</Quantity>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>96-10749</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>5960</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Предварительный Расчет HPL">902969</MODELID>
+			<COLORID Code="947" Name="947 Солнечная альгамбра [Лигрон]">901774</COLORID>
+			<L>600</L>
+			<H>600</H>
+			<P>38</P>
+			<Quantity>1</Quantity>
+			<deskFastCreator/>
+			<NOTES/>
+			<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_Стл_000.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-10749</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>9536</Price>
+			<Name>Столешница</Name>
+			<MODELID Name="Предварительный Расчет HPL">902969</MODELID>
+			<COLORID Code="947" Name="947 Солнечная альгамбра [Лигрон]">901774</COLORID>
+			<L>600</L>
+			<H>1600</H>
+			<P>38</P>
+			<deskFastCreator>
+				<page id="4">
+					<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="0.52495" shifty="-0.02005" dashed="1"/>
+					<Hole type="102" width="0.5" depth="0.5" alignx="0" aligny="0" shiftx="-0.50005" shifty="-0.02005" dashed="1"/>
+				</page>
+			</deskFastCreator>
+			<NOTES/>
+			<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_Стл_001.emf</Img>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-24912</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>4210</Price>
+			<Name>Бортик</Name>
+			<MODELID Name="Бортики из акрила Velle H=6">915256</MODELID>
+			<COLORID Code="" Name="Beige-003 беж с вкраплениями">913115</COLORID>
+			<P>1</P>
+			<L>6</L>
+			<H>1820</H>
+			<Quantity>2</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-23380</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>7168.00049</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Предварительный Расчет HPL(СП)">903019</MODELID>
+			<COLORID Code="947" Name="947 Солнечная альгамбра [Лигрон]">902186</COLORID>
+			<L>600</L>
+			<H>1600</H>
+			<Quantity>1.6</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-23380</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2643.2002</Price>
+			<Name>Стеновая панель</Name>
+			<MODELID Name="Предварительный Расчет HPL(СП)">903019</MODELID>
+			<COLORID Code="947" Name="947 Солнечная альгамбра [Лигрон]">902186</COLORID>
+			<L>560</L>
+			<H>590</H>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<ArtCode>96-03828</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Price>2875</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="Экоплита 16мм">904094</MODELID>
+			<COLORID Code="KHDL-766" Name="KHDL-766 Зеленый оливковый">914827</COLORID>
+			<P>100</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+		<KitchenItem>
+			<Price>2850</Price>
+			<ArtCode>96-23458</ArtCode>
+			<Name>Скос, срез стеновой панели</Name>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>13860</Price>
+				<ArtCode>94-34769</ArtCode>
+				<Name>Duslar 10310001 Система SIDE с 2 корзинами 129 мм, распашной фасад от 250 мм, антрацит</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>10750</Price>
+				<ArtCode>88-85085</ArtCode>
+				<Name>Florentina 20.280.B0460.102 мойка ЛИПСИ-460 черный</Name>
+				<Quantity>1</Quantity>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>14617</Price>
+				<ArtCode>94-42640</ArtCode>
+				<Name>Florentina 317.08H.1223.102 смеситель Палермо Черный</Name>
+				<Quantity>1</Quantity>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>1</ObjectNum>
+				<Price>27170</Price>
+				<ArtCode>94-35894</ArtCode>
+				<Name>BONE CRUSHER BC610-AS Измельчитель пищевых отходов бытовой</Name>
+				<Quantity>1</Quantity>
+				<Discount>25</Discount>
+			</AdditionalItem>
+			<AdditionalItem>
+				<ObjectNum>6</ObjectNum>
+				<Price>4450</Price>
+				<ArtCode>94-39019</ArtCode>
+				<Name>КАЛИБРА 650-16N Сушка для посуды КАЛИБРА, 500 мм (нержавеющая сталь, 1 жёсткий поддон, глубина 280-3</Name>
+				<Quantity>1</Quantity>
+				<Discount>10</Discount>
+				<DiscountAuto>10</DiscountAuto>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service>
+		<AdditionalItem>
+			<Name>Скидка замер</Name>
+			<ArtCode>41-00101</ArtCode>
+			<Price>-1800</Price>
+			<Discount>0</Discount>
+			<DiscountAuto>0</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Доставка</Name>
+			<ArtCode>00000008</ArtCode>
+			<Price>9000</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+		<AdditionalItem>
+			<Name>Установка</Name>
+			<ArtCode>00-00005</ArtCode>
+			<Price>25025</Price>
+			<Discount>50</Discount>
+			<DiscountAuto>50</DiscountAuto>
+		</AdditionalItem>
+	</Service>
+	<Tech>
+		<Item ObjectNum="2" name="Духовой шкаф" code="Beko BBIR13301BC">Духовой шкаф:Beko BBIR13301BC</Item>
+		<Item ObjectNum="4" name="Посудомоечная машина" code="Beko BDIS38121Q">Посудомоечная машина:Beko BDIS38121Q</Item>
+		<Item ObjectNum="3" name="Вытяжка" code="KRONA JINA 500 BLACK PB V2">Вытяжка:KRONA JINA 500 BLACK PB V2</Item>
+		<Item ObjectNum="3" name="Варочная панель" code="Evelux HEG 425 BG">Варочная панель:Evelux HEG 425 BG</Item>
+	</Tech>
+	<ScreenShots>
+		<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_sshot_00.jpg</Img>
+	</ScreenShots>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_0.emf</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_kamen.jpg</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_0.emf</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_kamen_2_z.jpg</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_3.emf</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_hpl.jpg</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_3.emf</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_hpl_2_z.jpg</Img>
+	<Img>Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_1.emf</Img>
+	<Img>\\192.168.100.132\ekitchen\export_ekitchen\320\Т3-7AC72BE5-43F9-4D92-A8DD-250C50362352_all_tables_base_1.emf</Img>
+</Scene>

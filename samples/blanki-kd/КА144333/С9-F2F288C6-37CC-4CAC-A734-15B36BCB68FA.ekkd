@@ -1,0 +1,2850 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Guid>F2F288C6-37CC-4CAC-A734-15B36BCB68FA</Guid>
+	<Hash>DD009</Hash>
+	<KitchenParameters>
+		<BaseColorId>23011</BaseColorId>
+		<BaseModelId>1</BaseModelId>
+		<BoardColorId>53976</BoardColorId>
+		<BoardId>312</BoardId>
+		<CorniceColorId>105652</CorniceColorId>
+		<CorniceDownColorId>0</CorniceDownColorId>
+		<CorniceDownId>0</CorniceDownId>
+		<CorniceHeight>80</CorniceHeight>
+		<CorniceId>2287</CorniceId>
+		<FirstKpModelBaseId>171</FirstKpModelBaseId>
+		<GlossColorId>0</GlossColorId>
+		<GolaColorId>0</GolaColorId>
+		<GolaLightColorId>0</GolaLightColorId>
+		<HandleModelId>0</HandleModelId>
+		<InfoSourceId>2</InfoSourceId>
+		<InfoSourceId2>1</InfoSourceId2>
+		<KorpusDepth>350</KorpusDepth>
+		<LegsColorId>105025</LegsColorId>
+		<LegsTypeId>205</LegsTypeId>
+		<LightPanelModelId>1</LightPanelModelId>
+		<ModelBaseId>142</ModelBaseId>
+		<ModelColorId>105652</ModelColorId>
+		<ModelColorId2>0</ModelColorId2>
+		<ModelId>1983</ModelId>
+		<ModelId2>0</ModelId2>
+		<OrderNumExId>11</OrderNumExId>
+		<OrderNumStatus>16</OrderNumStatus>
+		<PattinaColorId>0</PattinaColorId>
+		<SocleColorId>23022</SocleColorId>
+		<SocleHeight>150</SocleHeight>
+		<SocleId>108</SocleId>
+		<SocleReshColorId>97197</SocleReshColorId>
+		<TableBoardColorId>53974</TableBoardColorId>
+		<TableBoardId>241</TableBoardId>
+		<TableBoardTickness>40</TableBoardTickness>
+		<VitrageId>0</VitrageId>
+		<VitrageId2>0</VitrageId2>
+		<WallPanelColorId>0</WallPanelColorId>
+		<WallPanelId>0</WallPanelId>
+		<FurnitureSuiteHeight>147</FurnitureSuiteHeight>
+		<Options>220</Options>
+		<Phrases>10 26</Phrases>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<ACCESS_DISCOUNT>-0.1</ACCESS_DISCOUNT>
+		<AllowSaveHash>f1af0f0a75a1ca499e484309c2ec786f</AllowSaveHash>
+		<Customer_Family>Мухатдинова</Customer_Family>
+		<Customer_Name>Нина</Customer_Name>
+		<Customer_PatronymicName>Аркадьевна</Customer_PatronymicName>
+		<CustomerBudget>700000</CustomerBudget>
+		<CustomerDeliveryDate>10/12/2026</CustomerDeliveryDate>
+		<CustomerEmail>evgenia.arh2018@gmail.com</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerMetroStation>Сокольники</CustomerMetroStation>
+		<CustomerName>Мухатдинова Нина Аркадьевна</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89031316568</CustomerPhone>
+		<DISCOUNT_PROMO_MODEL>-0.1</DISCOUNT_PROMO_MODEL>
+		<DOSTAVKA>9000</DOSTAVKA>
+		<DOSTAVKA_DISCOUNT>100.0</DOSTAVKA_DISCOUNT>
+		<INNO_DISCOUNT>-0.1</INNO_DISCOUNT>
+		<ManagerName>Хальзова Наталья Борисовна:С9</ManagerName>
+		<MarketingActions>9367:№ 367 - РА (21.10.2026 - 27.10.2026)</MarketingActions>
+		<MarketingActionsHistory>9367</MarketingActionsHistory>
+		<MEBEL_DISCOUNT>-0.1</MEBEL_DISCOUNT>
+		<MEBEL_DISCOUNT_MODEL>-0.1</MEBEL_DISCOUNT_MODEL>
+		<MEBEL_DISCOUNT_PROMO>-0.1</MEBEL_DISCOUNT_PROMO>
+		<MEBEL_DISCOUNT_TECH>-0.1</MEBEL_DISCOUNT_TECH>
+		<MEBEL_DISCOUNT_VIP>-0.1</MEBEL_DISCOUNT_VIP>
+		<OrderCreateDate>2026-10-24</OrderCreateDate>
+		<OrderFurnitureSize>2300x2660х1000</OrderFurnitureSize>
+		<OrderNum>64-С9-24-10-26-01</OrderNum>
+		<OrderNumExtNum>66310</OrderNumExtNum>
+		<OrderRoomSize>2395x2662х1193</OrderRoomSize>
+		<ProjectChecked>Timashova.mp / 09.11.2026 / 14:05:56|babashkina.aa / 10.11.2026 / 14:08:30</ProjectChecked>
+		<ProjectCost>1276574</ProjectCost>
+		<ProjectCostForRoyalty>1276574</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>792875</ProjectMebelFullCost>
+		<ProjectsSource>ClientPinCodeMaster;ExportToDbButt;</ProjectsSource>
+		<SalonAddress>М. Народного Ополчения, г. Москва, проспект Маршала Жукова, д. 60, строение 2, 2 этаж с 10:00 до 21:00</SalonAddress>
+		<SalonDirectorName>Агеева О.А.</SalonDirectorName>
+		<SalonDirectorPhone>+79772967977</SalonDirectorPhone>
+		<SalonEmail>mzk@kxd.ru</SalonEmail>
+		<SalonName>Маршала Жукова</SalonName>
+		<SalonPhone>8-(495)-500-04-04, доб.640</SalonPhone>
+		<SHEF_MONTAZH_DISCOUNT>100.0</SHEF_MONTAZH_DISCOUNT>
+		<SROK_IZGOTOVLENIYA>15</SROK_IZGOTOVLENIYA>
+		<STOL_DISCOUNT>-0.1</STOL_DISCOUNT>
+		<TECH_DISCOUNT>-0.1</TECH_DISCOUNT>
+		<USTANOVKA>8.0</USTANOVKA>
+		<USTANOVKA_DISCOUNT>100.0</USTANOVKA_DISCOUNT>
+		<ZAMER>1800</ZAMER>
+		<ProjectCostBeforeCheck>1364245</ProjectCostBeforeCheck>
+		<EuroRate>1</EuroRate>
+		<Version>program: 3.11.26 (release 34), database: 3.11.2026, last update 6.11.2026</Version>
+		<UpdateNum>2646</UpdateNum>
+		<PriceType date="2026-11-10">1</PriceType>
+	</AdditionalInfo>
+	<Viewpoints activeViewpoint="0">
+  DEF MainCamDown Viewpoint {
+   position -2.004361 1.882901 5.076771
+   orientation -0.092375 -0.994805 -0.042777 0.871356
+   fieldOfView 0.785
+  }
+  DEF MainCamUp Viewpoint {
+   position 1.500000 50.000000 2.000000
+   orientation 1.000000 0.000000 0.000000 -1.570000
+   fieldOfView 0.1
+  }
+  DEF MainCamIso Viewpoint {
+   position 0.000000 0.000000 10.000000
+   orientation -0.678598 0.678598 0.281085 1.096060
+   fieldOfView 0.005
+  }
+</Viewpoints>
+	<Room>
+		<RoomHeight>2.71</RoomHeight>
+		<RoomTck>0.12</RoomTck>
+		<Points>
+			<point>0 0</point>
+			<point>4.3 0</point>
+			<point>4.3 2.7</point>
+			<point>0 2.7</point>
+		</Points>
+		<Appearance>Appearance
+{
+ material Material
+  {
+   ambientIntensity 1
+   
+  }
+  
+ texture ImageTexture
+  {
+   url "3d\\gallery\\data\\00135771.jpg" 
+   
+  }
+  
+ 
+}
+
+Group
+{
+ children 
+ [ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+  Appearance
+ {
+  material Material
+   {
+    ambientIntensity 1
+    
+   }
+   
+  texture ImageTexture
+   {
+    url "3d\\gallery\\data\\00027257.gif" 
+    
+   }
+   
+  
+ }
+ 
+ ]
+ bboxCenter 0 0 0 
+ bboxSize -1 -1 -1 
+ 
+}
+
+Appearance
+{
+ material Material
+  {
+   diffuseColor 0.15 0.15 0.15 
+   emissiveColor 0.85 0.85 0.85 
+   
+  }
+  
+ 
+}
+
+</Appearance>
+	</Room>
+	<DW/>
+	<Objects>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/BAM_w.wrl</URL>
+			<UPPANEL>1</UPPANEL>
+			<BACKPANEL>0</BACKPANEL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>22</SXDX>
+					<HANDLES>
+						<HANDLE>
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-603</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25112</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaRight.xml</URL>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.5234 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<LEFT>Fas1Width+3</LEFT>
+					<TOP>1.5</TOP>
+					<ADDBOUNDS Tickness="70"/>
+					<WIDTH>40</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25887</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra70.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0749 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.5229 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.5229 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.5229 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<!--
+-->
+				<!--		<SHELVE>
+-->
+				<!--			<TOP>Height/2</TOP>
+-->
+				<!--			<TICKNESS>16</TICKNESS>
+-->
+				<!--		</SHELVE>
+-->
+				<!--	   -->
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ITEMID>100710</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Н-КУ70-60-720х1050х560-М1</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Стол угловой переход 600мм к ПММ под мойку</ITEMNAME>
+			<WIDTH>1050</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>1267</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>21</CornerSxDx>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Н-КУ70-60-720х1050х560-М1</ArtCodeLastValid>
+			<WidthBase>1050</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<uid>{8E78B79B-5EA3-4A70-8FD1-E053AF6E98D8</uid>
+			<LabelNum>3</LabelNum>
+			<SocleHeight>150</SocleHeight>
+			<hash>9c1f45c5eecd354472d2974357f0005c</hash>
+			<SocleColorId>23022</SocleColorId>
+			<NsTypes>115</NsTypes>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>504179</ItemId>
+					<NOTES/>
+					<DISCOUNT>10</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>98700</ItemId>
+					<NOTES/>
+					<DISCOUNT>10</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>79886</ItemId>
+					<NOTES/>
+					<DISCOUNT>10</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>3.775 0 0.28</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/VirtualBox_PMM.wrl</URL>
+			<Depth4Export/>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>10</SXDX>
+					<ANIMATION AnimType="PMM" Angle="90" AngleLegal="90">OPENBOTTOM</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25111</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaLeft.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2234 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<DisableKorpusColor/>
+			<LABEL pos="8">ПММ</LABEL>
+			<ITEMID>100579</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Ф-ПММ45</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Фасад на полновстраиваемую технику [ПММ]</ITEMNAME>
+			<WIDTH>450</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>3784</BOXPRID>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Ф-ПММ45</ArtCodeLastValid>
+			<uid>{CD38B067-F4F4-45DB-8F34-A5F03C979E35</uid>
+			<LabelNum>2</LabelNum>
+			<SocleHeight>150</SocleHeight>
+			<hash>2e25fb60f92c15d2630aeb20840b6721</hash>
+			<SocleColorId>23022</SocleColorId>
+			<DISCOUNT>40</DISCOUNT>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>504644</ItemId>
+					<NOTES/>
+					<DISCOUNT>0</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>3.025 0 0.28</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_C_freeze_300.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>397</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25107</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaUp.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 2.0415 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>height-720-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<NoTipon/>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>1317</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25134</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_LineV2.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.7215 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<BOTTOM>height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<NoTipon/>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>717</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25108</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaDown.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<COLORID>0</COLORID>
+					<BottomLeftPoint>-0.2621 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<COLORID>0</COLORID>
+					<BottomLeftPoint>-0.2621 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="6">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3021 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<VISIBILITY>(Height&gt;2300)</VISIBILITY>
+					<TOP>height+18-0.5*Fas1Height</TOP>
+					<TICKNESS>16</TICKNESS>
+					<FRONTSHIFT>15</FRONTSHIFT>
+				</SHELVE>
+				<SHELVE>
+					<TOP>height+18-Fas1Height</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ConnectionPlaces>
+				<ConnectionPoint>
+					<type>6221</type>
+					<point>0 SocleHeight+18 0</point>
+					<normal>0 1 0</normal>
+				</ConnectionPoint>
+			</ConnectionPlaces>
+			<LABEL pos="5" pos_shift="0 -0.2 0">Хол-к</LABEL>
+			<FREEZEITEM/>
+			<VERSION>3</VERSION>
+			<ITEMID>103917</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Н-ХД-3-2400х600х560</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Пенал 3 двери под холодильник</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>2440</HEIGHT>
+			<BOXPRID>1951</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="6">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+					<FLAGS>1 1 0 0</FLAGS>
+					<POINTCATEGORIES>3 3 3 3</POINTCATEGORIES>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Н-ХД-3-2400х600х560</ArtCodeLastValid>
+			<MIRROR/>
+			<uid>{D24AE580-99B0-4185-B8DE-0E999EB73DFB</uid>
+			<LabelNum>6</LabelNum>
+			<hash>292bec0d3830b6fd8189b79c33e510cf</hash>
+			<SocleColorId>23022</SocleColorId>
+			<DISCOUNT>30</DISCOUNT>
+			<ShowSizeInfo showWidth="0" showHeight="8706" showDepth="771" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<NsTypes>400</NsTypes>
+			<PriceType>0</PriceType>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<SuperviserChanged>1</SuperviserChanged>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>98789</ItemId>
+					<NOTES/>
+					<DISCOUNT>50</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>4.02 0 2.30001</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 0 0</UpVec>
+			<ObjectType>5</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<!-- <URL>3d/base/base0_00.wrl</URL> -->
+			<URL>3d/base/base0.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25107</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaUp.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-312-alebastr.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,2,IF(Option95||Option98,1, 0))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100235</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-К1-360х600х560-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка 1 дверь</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>400</HEIGHT>
+			<BOXPRID>2032</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<FLAGS>1 0 0 0 0 1</FLAGS>
+					<POINTCATEGORIES>0 0 0 0 0 0</POINTCATEGORIES>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-К1-360х600х560-0</ArtCodeLastValid>
+			<MIRROR/>
+			<WidthBase>600</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>360</HeightBase>
+			<uid>{E0F1D6C2-D776-4A10-BE47-DF14CF1E4B02</uid>
+			<LabelNum>13</LabelNum>
+			<hash>813b8d991054c20396e8bb87bf14cd1f</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<NsTypes>300</NsTypes>
+			<PriceType type="auto">4</PriceType>
+			<SuperviserChanged>1</SuperviserChanged>
+			<AdditionalAppearances>
+				<ExternalAppearance ExternalIndex="1">Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-312-alebastr.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</ExternalAppearance>
+				<ExternalAppearance ExternalIndex="2">Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</ExternalAppearance>
+			</AdditionalAppearances>
+			<translation>4.02 2.1901 1.70001</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_planki.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<box>
+						<!-- <type>NoScaleY</type> -->
+						<!-- <URL>3d/boxes/korzina_3.wrl</URL> -->
+						<URL type="select">
+							<VARIANT condition="(!Option904) &amp; (!Option905) &amp; (!Option908)  &amp; (!Option909) &amp; (!Option915) &amp; (!Option916)">3d/boxes/korzina_3.wrl</VARIANT>
+							<VARIANT condition="Option904">3d/accessories/korzina_setka.wrl</VARIANT>
+							<VARIANT condition="Option905">3d/accessories/sushka_setka.wrl</VARIANT>
+							<VARIANT condition="Option908">3d/accessories/korzina_steklo.wrl</VARIANT>
+							<VARIANT condition="Option909">3d/accessories/sushka_steklo.wrl</VARIANT>
+							<VARIANT condition="Option915">3d/accessories/korzina_wood.wrl</VARIANT>
+							<VARIANT condition="Option916">3d/accessories/sushka_wood.wrl</VARIANT>
+						</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.3824 0 0.27995</p0>
+							<p1>0.3826 0 0.27995</p1>
+							<p2>0.3826 0 -0.25585</p2>
+							<p3>-0.3824 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25107</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaUp.xml</URL>
+					<ANIMATION type="auto">SLIDEBACK</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3984 0.3615 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.3824 0 0.27995</p0>
+							<p1>0.3826 0 0.27995</p1>
+							<p2>0.3826 0 -0.25585</p2>
+							<p3>-0.3824 0 -0.25585</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25108</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaDown.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3984 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<LABEL pos="2">S</LABEL>
+			<WarningMessage>Арматура в стоимость элемента не входит. Проверьте, добавлен ли необходимый аксессуар в проект</WarningMessage>
+			<ITEMID>101146</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Н-ЯЩИ-02-720х900х560-Т1</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 1 ящик под сушку INOXA GOLD</ITEMNAME>
+			<WIDTH>800</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>4761</BOXPRID>
+			<OPTIONS Values="220">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+					<FLAGS>1 1 0 0</FLAGS>
+					<POINTCATEGORIES>3 3 3 3</POINTCATEGORIES>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Н-ЯЩИ-02-720х900х560-Т1</ArtCodeLastValid>
+			<WidthBase>900</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<NsTypes>200</NsTypes>
+			<uid>{09B5F3FA-6EA4-46FE-8488-D0F66BC97B61</uid>
+			<LabelNum>1</LabelNum>
+			<SocleColorId>23022</SocleColorId>
+			<hash>d273a9a451a3b4a0311346d532584638</hash>
+			<ShowSizeInfo showHeight="20993" showDepth="769" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>504285</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<AdditionalAppearances>
+				<ExternalAppearance ExternalIndex="1">Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</ExternalAppearance>
+			</AdditionalAppearances>
+			<translation>2.4 0 0.28</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_air_vent_km.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25112</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaRight.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+			</SHELVES>
+			<WarningMessage>Вытяжка закрыта передней панелью из ЛДСП жесткого крепления с вырезом под петлю
+Короб из ЛДСП для воздуховода установлен заподлицо с передним краем горизонта
+Фронтальная панель короба из ЛДСП – съемная на клипсах
+Нижняя петля устанавливается на высоте 218мм от нижнего края
+4 вкладные полки ЛДСП
+Пример вытяжек: KRONA KATE 600 INOX PB, KRONA ADEL 600 WHITE PB, KRONA Ameli 600 (900) inox PB, KRONA Asta 600 inox PB
+Внимание! Уточняйте артикулы встраиваемой техники</WarningMessage>
+			<VERSION>5</VERSION>
+			<ITEMID>103768</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-КВ1-1080х600х300-Вр</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка 1 дверь под врезную вытяжку</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>6480</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<PriceType>5</PriceType>
+			<NsTypes>302</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-КВ1-1080х600х300-Вр</ArtCodeLastValid>
+			<MIRROR/>
+			<uid>{CF559857-ED77-47BE-994F-E9218C438737</uid>
+			<LabelNum>11</LabelNum>
+			<hash>316d53f59ad239368195cecdc3d9f290</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<Label/>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>509360</ItemId>
+					<NOTES/>
+					<DISCOUNT>0</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>4.125 1.51 1.07001</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<InvertSxDx/>
+			<URL>3d/base/BA_300_up.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>22</SXDX>
+					<ANIMATION Angle="90" AngleLegal="95" type="auto">OPENRIGHT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-400-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25111</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaLeft.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>0.0164 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<LEFT>Fas1Width+3</LEFT>
+					<TOP>1.5</TOP>
+					<ADDBOUNDS Tickness="50"/>
+					<variables>
+						<variable name="FasTickness">50</variable>
+					</variables>
+					<WIDTH>50</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25881</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/ra50.wrl</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0351 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="6">
+					<MODELID>0</MODELID>
+					<ITEMID>33057</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3871 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<GolaWidth>Fas1Width+3</GolaWidth>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>101713</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-КУ1-1080х800х300-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка угловая 1 дверь переход 350мм</ITEMNAME>
+			<WIDTH>770</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>7745</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<CornerSxDx>22</CornerSxDx>
+			<PriceType type="auto">2</PriceType>
+			<NsTypes>200 300 302</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<MIRROR/>
+			<ArtCodeLastValid>В-КУ1-1080х800х300-0</ArtCodeLastValid>
+			<WidthBase>800</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<LabelNum>10</LabelNum>
+			<uid>{645CC1E7-6E88-4DAD-8D21-17EEB29AF1FA</uid>
+			<LightDno Name="WideGlow" ColorName="ал. дневной" PlugName="сенс. врезной"/>
+			<hash>f461532a2882709232748dd7f27a5747</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<translation>4.125 1.51 0.38501</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width/2-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25111</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaLeft.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.4734 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<TOP>1.5</TOP>
+					<RIGHT>width-1.5</RIGHT>
+					<SXDX>22</SXDX>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>LEFT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width/2-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25112</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaRight.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>0.0016 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="6" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&lt;1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&gt;=1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100990</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-К2-1080х900х300-0</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Полка 2 двери</ITEMNAME>
+			<WIDTH>950</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>3431</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<FLAGS>1 1 1 0 0 0</FLAGS>
+					<POINTCATEGORIES>0 0 0 0 0 0</POINTCATEGORIES>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<PriceType type="auto">4</PriceType>
+			<NsTypes>300 302</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-К2-1080х900х300-0</ArtCodeLastValid>
+			<WidthBase>900</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<LabelNum>7</LabelNum>
+			<uid>{BEF74ACC-595E-4D69-A4B5-C2C38F99D3E2</uid>
+			<LightDno Name="WideGlow" ColorName="ал. дневной" PlugName="сенс. врезной"/>
+			<hash>e21972833935ce9bcf207f96de20800b</hash>
+			<ShowSizeInfo showHeight="513" showDepth="257" showLevelHeight="0" showFacadeWidth="-1"/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<Label/>
+			<AdditionalAppearances>
+				<ExternalAppearance ExternalIndex="1">Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</ExternalAppearance>
+			</AdditionalAppearances>
+			<translation>2.475 1.51 0.175</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>241</MODELID>
+			<COLORID>53974</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-1" y="0"/>
+							<point x="1" y="0"/>
+							<point x="1" y="0.4"/>
+							<point x="-1" y="0.4"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-1</X1>
+					<X2>1</X2>
+					<width>0.4</width>
+					<deskFastCreator/>
+				</IniData>
+				<Podsvetka/>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>27164</ItemId2>
+					<ModelId>455</ModelId>
+					<ColorId>53974</ColorId>
+					<FLAGS>0 2 1 2</FLAGS>
+					<ModelId2>453</ModelId2>
+					<ColorId2>53974</ColorId2>
+				</Kromka>
+			</DATA>
+			<Tickness>40</Tickness>
+			<ITEMNAME> Столешница; Мод: Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>1</Zamer>
+			<uid>{1F24E8A1-BD04-4239-9D89-BF362D179320</uid>
+			<hash>29f46b482b486dc5643f644d4ca176bc</hash>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<Label/>
+			<ShowSizeInfo showWidth="255" showHeight="255" showDepth="3" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<translation>1.53995 0.4701 2.69995</translation>
+			<rotation>0 -1 0 3.14159</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_C_DUH_300.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<ORIENTATION>HORIZONTAL</ORIENTATION>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-1323</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25108</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaDown.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 1.3215 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<TOP>Height-720+1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>0.2824 0 0.24795</p0>
+							<p1>-0.2826 0 0.24795</p1>
+							<p2>-0.2826 0 -0.20895</p2>
+							<p3>0.2824 0 -0.20895</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>357</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25107</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaUp.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.3615 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3">
+					<TOP>Height-720+360+1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>0.2824 0 0.24795</p0>
+							<p1>-0.2826 0 0.24795</p1>
+							<p2>-0.2826 0 -0.20895</p2>
+							<p3>0.2824 0 -0.20895</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+							<ITEMID>-1</ITEMID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>357</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25108</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaDown.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2986 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105708</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<URL>none.xml</URL>
+					<ANIMATION type="auto">OPENRIGHT</ANIMATION>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+				</FRONT>
+				<FRONT N="6" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105708</COLORID>
+					<ITEMID>33042</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<TOP>height+18-Fas1Height</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+				<SHELVE>
+					<TOP>Fas2Height + Fas3Height + 6</TOP>
+					<TICKNESS>16</TICKNESS>
+				</SHELVE>
+				<SHELVE>
+					<TOP>360</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>15</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+				</SHELVE>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>height+18-Fas1Height</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<ConnectionPlaces>
+				<ConnectionPoint>
+					<type>8860</type>
+					<point>0 SocleHeight+720.5 Depth/2-500</point>
+					<normal>0 0 1</normal>
+				</ConnectionPoint>
+			</ConnectionPlaces>
+			<Variables>BackPanH1=0.715;BackPanH2=1.325;BPCount=2</Variables>
+			<ITEMID>100179</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Н-ДО-12-2040х600х560-Т1</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Пенал 1 дверь + 2 ящика под духовку</ITEMNAME>
+			<WIDTH>600</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>2040</HEIGHT>
+			<BOXPRID>1724</BOXPRID>
+			<OPTIONS Values="220 224">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Н-ДО-12-2040х600х560-Т1</ArtCodeLastValid>
+			<WidthBase>600</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>2040</HeightBase>
+			<uid>{3017C44B-EEC8-4FB3-8102-4ED486A121E6</uid>
+			<LabelNum>5</LabelNum>
+			<SocleColorId>23022</SocleColorId>
+			<hash>063c7a0b2587c2e9649f3743228c4c81</hash>
+			<DISCOUNT>30</DISCOUNT>
+			<MIRROR/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<SuperviserChanged>1</SuperviserChanged>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>503388</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+					<ParentLabelNum>6</ParentLabelNum>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>505386</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+				<ADDITIONALITEM>
+					<ItemId>507694</ItemId>
+					<NOTES/>
+					<DISCOUNT>0</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<AdditionalAppearances>
+				<ExternalAppearance ExternalIndex="2">Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</ExternalAppearance>
+			</AdditionalAppearances>
+			<translation>4.02 0 1.70001</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 0 0</UpVec>
+			<ObjectType>5</ObjectType>
+			<children>
+				<Item>
+					<URL>3d\gallery\data\00041460.wrl</URL>
+					<ID>41460</ID>
+					<ITEMNAME>ДШ 9</ITEMNAME>
+					<uid>{0045CEEC-5019-4D6B-985F-8465ED75A659</uid>
+					<hash>cb9b2127bfb566c4af0e1546e6ee6df5</hash>
+					<translation>0 0.8705 0.0927</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<StrParams>
+						<Param/>
+					</StrParams>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/VirtualBoxForFacade.wrl</URL>
+			<Depth4Export/>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>0</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1084</MODELID>
+					<COLORID>105630</COLORID>
+					<ITEMID>25046</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_emma_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0249 0 0.0001</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<FLAGS>0 0 1 0</FLAGS>
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+			</ATTENDANTS>
+			<WarningMessage>Внимание! Проверьте необходимость установки петель на фасад и настройки отображения петель на Виде в линиях</WarningMessage>
+			<DisableKorpusColor/>
+			<DisableNS/>
+			<ITEMID>102820</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>КН</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фасад глухой</ITEMNAME>
+			<WIDTH>50</WIDTH>
+			<DEPTH>0</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>6659</BOXPRID>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1"/>
+				<PARAM AttendantId="2"/>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>КН</ArtCodeLastValid>
+			<ModelBaseId>54</ModelBaseId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>71805</ItemId>
+					<ModelId>1</ModelId>
+					<ColorId>23011</ColorId>
+					<L>50</L>
+					<H>1200</H>
+					<P>16</P>
+					<NOTES/>
+					<QUANTITY>0.06</QUANTITY>
+					<ParentLabelNum>18</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<uid>{F19785A9-054C-4D81-BC7A-58558402DD2D</uid>
+			<LabelNum>14</LabelNum>
+			<hash>6e78a8f4ca6dbe954ed147393b359697</hash>
+			<Label/>
+			<ShowSizeInfo showWidth="-1" showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<translation>3.73495 0 2.625</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/VirtualBoxForFacade.wrl</URL>
+			<Depth4Export/>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>0</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1084</MODELID>
+					<COLORID>105630</COLORID>
+					<ITEMID>25046</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_emma_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0249 -0.15 0.0001</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<ATTENDANTS Value="0">
+				<PARAM AttendantId="1">
+					<FLAGS>0 0 1 0</FLAGS>
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+			</ATTENDANTS>
+			<WarningMessage>Внимание! Проверьте необходимость установки петель на фасад и настройки отображения петель на Виде в линиях</WarningMessage>
+			<DisableKorpusColor/>
+			<DisableNS/>
+			<ITEMID>102820</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>КН</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фасад глухой</ITEMNAME>
+			<WIDTH>50</WIDTH>
+			<DEPTH>0</DEPTH>
+			<HEIGHT>1320</HEIGHT>
+			<BOXPRID>6659</BOXPRID>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1"/>
+				<PARAM AttendantId="2"/>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>КН</ArtCodeLastValid>
+			<ModelBaseId>54</ModelBaseId>
+			<LabelNum>15</LabelNum>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>71805</ItemId>
+					<ModelId>1</ModelId>
+					<ColorId>23011</ColorId>
+					<L>50</L>
+					<H>1200</H>
+					<P>16</P>
+					<NOTES/>
+					<QUANTITY>0.06</QUANTITY>
+					<ParentLabelNum>19</ParentLabelNum>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<uid>{18848BA5-2EA4-4621-9D25-6E0AB61DBD21</uid>
+			<hash>c1e9617c07fd67f5ccce201678f105b8</hash>
+			<Label/>
+			<ShowSizeInfo showWidth="-1" showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<translation>3.73005 0.87 2.625</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/VirtualBoxForFacade.wrl</URL>
+			<Depth4Export/>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>0</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>1084</MODELID>
+					<COLORID>105630</COLORID>
+					<ITEMID>25046</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_emma_dvr.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0249 -0.15 0.0001</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<ATTENDANTS Value="0">
+				<PARAM AttendantId="1">
+					<FLAGS>0 0 1 0</FLAGS>
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+			</ATTENDANTS>
+			<WarningMessage>Внимание! Проверьте необходимость установки петель на фасад и настройки отображения петель на Виде в линиях</WarningMessage>
+			<DisableKorpusColor/>
+			<DisableNS/>
+			<ITEMID>102820</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>КН</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фасад глухой</ITEMNAME>
+			<WIDTH>50</WIDTH>
+			<DEPTH>0</DEPTH>
+			<HEIGHT>400</HEIGHT>
+			<BOXPRID>6659</BOXPRID>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1"/>
+				<PARAM AttendantId="2"/>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>КН</ArtCodeLastValid>
+			<ModelBaseId>54</ModelBaseId>
+			<LabelNum>16</LabelNum>
+			<uid>{F57389C1-1A78-4B6F-8E6A-F01FFD9F4D87</uid>
+			<hash>44f31ef621a8ec267a025e40003e10d3</hash>
+			<ShowSizeInfo showWidth="1" showHeight="255" showDepth="255" showLevelHeight="-1" showFacadeWidth="-1"/>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<translation>3.73005 2.1901 2.62501</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<!-- <URL>3d/base/base0_00.wrl</URL> -->
+			<URL>3d/base/base0.wrl</URL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION type="auto">OPENLEFT</ANIMATION>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25112</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaRight.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2236 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<MODELID>0</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>31988</ITEMID>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="3">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105652</COLORID>
+					<ITEMID>33036</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+				<FRONT N="5" ExternalAppearanceIndex="0">
+					<ModelID>0</ModelID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<COLORID>105652</COLORID>
+					<ITEMID>33057</ITEMID>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&lt;1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,4,IF(Option95||Option98,3, 2))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVESGROUP>
+					<VISIBILITY>(Height&gt;=1281)</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,5,IF(Option95||Option98,4, 3))</QUANTITY>
+					<BOTTOM>16</BOTTOM>
+					<TOP>Height-16</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>0</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<ITEMID>100986</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-К1-1080х450х300-0</ARTCODE>
+			<SxDx>22</SxDx>
+			<ITEMNAME>Полка 1 дверь</ITEMNAME>
+			<WIDTH>450</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>3345</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<PriceType>5</PriceType>
+			<NsTypes>302</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-К1-1080х450х300-0</ArtCodeLastValid>
+			<MIRROR/>
+			<WidthBase>450</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<uid>{6B2669F5-01D2-411B-A925-07A21C7D2BE3</uid>
+			<LabelNum>9</LabelNum>
+			<LightDno Name="WideGlow" ColorName="ал. дневной" PlugName="сенс. врезной"/>
+			<hash>69ab05879d7d4432f4cd1974798f0e73</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<translation>3.675 1.51 0.175</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0.wrl</URL>
+			<downpanel>0</downpanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>21</SXDX>
+					<ANIMATION Angle="165">1.7*OPENLEFT</ANIMATION>
+					<!-- <ANIMATION>1.7*OPENLEFT</ANIMATION> -->
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>BOTTOM</VALIGN>
+							<HALIGN>RIGHT</HALIGN>
+							<ORIENTATION>VERTICAL</ORIENTATION>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<HandleAtBottom>1</HandleAtBottom>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25111</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_sRamkaLeft.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.2484 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2479 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2479 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4">
+					<MODELID>0</MODELID>
+					<ITEMID>33057</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.2479 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<VERSION>4</VERSION>
+			<SHELVES>
+				<SHELVESGROUP>
+					<QUANTITY>1</QUANTITY>
+					<BOTTOM>0</BOTTOM>
+					<TOP>Height</TOP>
+					<TICKNESS>16</TICKNESS>
+					<FRONTSHIFT>150</FRONTSHIFT>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>1</ShelveAtBottom>
+				</SHELVESGROUP>
+				<SHELVESGROUP>
+					<VISIBILITY>1</VISIBILITY>
+					<QUANTITY>IF(Option96||Option99,3,IF(Option95||Option98,2, 1))</QUANTITY>
+					<BOTTOM>600</BOTTOM>
+					<TOP>Height</TOP>
+					<TICKNESS>IF((Option99)||(Option98)||(Option97),6,16)</TICKNESS>
+					<FRONTSHIFT>5</FRONTSHIFT>
+					<Appearance>IF((Option97)||(Option98)||(Option99),glass,default)</Appearance>
+					<ShelveAtTop>0</ShelveAtTop>
+					<ShelveAtBottom>1</ShelveAtBottom>
+				</SHELVESGROUP>
+			</SHELVES>
+			<LABEL pos="8">S</LABEL>
+			<ITEMID>103789</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-К1-1080х500х300-З</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Полка 1 дверь сушка заказчика</ITEMNAME>
+			<WIDTH>500</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>3592</BOXPRID>
+			<OPTIONS Values="224">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<PriceType>5</PriceType>
+			<NsTypes>302</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-К1-1080х500х300-З</ArtCodeLastValid>
+			<WidthBase>500</WidthBase>
+			<DepthBase>300</DepthBase>
+			<HeightBase>1080</HeightBase>
+			<LabelNum>8</LabelNum>
+			<uid>{20E14116-E71D-4E9C-A754-62CD4638ECB7</uid>
+			<LightDno Name="WideGlow" ColorName="ал. дневной" PlugName="сенс. врезной"/>
+			<hash>b625ae7999e3e48c8aaf0f460cbfbd6e</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>507093</ItemId>
+					<NOTES/>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>3.2 1.51 0.175</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 0 1</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>241</MODELID>
+			<COLORID>53974</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-1.14985" y="-0.03">
+								<label value="упил 30 мм на адресе">
+									<anchor distance="-0.01435" fraction="0.56674"/>
+									<text distance="0.29064" angle="-0.6896"/>
+								</label>
+							</point>
+							<point x="1.1499" y="-0.03"/>
+							<point x="1.1499" y="0.6"/>
+							<point x="0.5498" y="0.6"/>
+							<point x="0.5498" y="0.6"/>
+							<point x="-1.14985" y="0.6"/>
+						</points>
+					</contour>
+					<contour hole="true" MoykaRightSize="500" MoykaFrontSize="80" MoykaWidth="500">
+						<points>
+							<point x="0.64494" y="0.02995"/>
+							<point x="0.64494" y="0.52995"/>
+							<point x="0.19494" y="0.52995"/>
+							<point x="0.19494" y="0.02995"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-1.14985</X1>
+					<X2>1.1499</X2>
+					<width>0.6</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="0" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0.03" overhangAdditionalBack2="0.03"/>
+						<page id="2" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="3" mode="3" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="4"/>
+						<page id="4">
+							<Hole type="102" width="0.45" depth="0.5" alignx="0" aligny="0" shiftx="0.41992" shifty="-0.02005" dashed="1"/>
+						</page>
+					</deskFastCreator>
+				</IniData>
+				<Podsvetka/>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>0</ItemId2>
+					<ModelId>455</ModelId>
+					<ColorId>53974</ColorId>
+					<FLAGS>0 0 0 0 1 1</FLAGS>
+				</Kromka>
+			</DATA>
+			<Tickness>40</Tickness>
+			<ITEMNAME> Столешница; Мод: Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{D86FE2E0-C5A4-4807-BAD2-965749A51B4F</uid>
+			<hash>e5f90396f43e6beb2398ac6d31ca5ccf</hash>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>90247</ItemId>
+					<Place>-1</Place>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>3.15005 0.8701 0.00005</translation>
+			<rotation>0 0 1 0</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<KITCHENITEM>
+					<ITEMID>27157</ITEMID>
+					<MODELID>312</MODELID>
+					<COLORID>53976</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-1.14985" y="0"/>
+							<point x="1.1499" y="0"/>
+							<point x="1.1499" y="0.6"/>
+							<point x="0.5498" y="0.6"/>
+							<point x="0.5498" y="0.6"/>
+							<point x="-1.14985" y="0.6"/>
+						</points>
+						<flags>1 1 0 0 0 0</flags>
+						<POINTCATEGORIES>0 1 0 0 0 0</POINTCATEGORIES>
+					</DATA>
+					<ITEMNAME> Бортик; Мод: №1 Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+					<Width>1</Width>
+					<Height>40</Height>
+					<NOTES/>
+					<uid>{C8B9D7B9-7812-45E5-991D-856295F172DF</uid>
+					<hash>e28ffeb090bbe263001abdeae5cb181e</hash>
+					<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+					<translation>0 0.0405 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>9</ObjectType>
+				</KITCHENITEM>
+				<Item>
+					<URL>3d\gallery\data\00192287.wrl</URL>
+					<ID>192287</ID>
+					<ITEMNAME>Мойка+смеситель 4</ITEMNAME>
+					<uid>{1E1753DB-A2D8-49C2-AD7E-A48C13E28795</uid>
+					<hash>5147f128c8d0b8064a86b8b04125d9db</hash>
+					<MoykaWidth>500</MoykaWidth>
+					<MoykaRightSize>500</MoykaRightSize>
+					<MoykaFrontSize>80</MoykaFrontSize>
+					<translation>0.41995 -0.1201 0.27995</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<StrParams>
+						<Param/>
+						<Param/>
+						<Param>0</Param>
+					</StrParams>
+					<SpecialType>Moyka</SpecialType>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<ITEMID>27159</ITEMID>
+			<MODELID>241</MODELID>
+			<COLORID>53974</COLORID>
+			<DATA>
+				<contours>
+					<contour>
+						<points>
+							<point x="-0.42" y="0"/>
+							<point x="0.37985" y="0"/>
+							<point x="0.37985" y="0.6"/>
+							<point x="-0.42" y="0.6"/>
+						</points>
+					</contour>
+					<contour hole="true" MoykaRightSize="160" MoykaWidth="450">
+						<points>
+							<point x="0.17494" y="0.07995"/>
+							<point x="0.17494" y="0.47995"/>
+							<point x="-0.17505" y="0.47995"/>
+							<point x="-0.17505" y="0.07995"/>
+						</points>
+					</contour>
+				</contours>
+				<IniData>
+					<X1>-0.42</X1>
+					<X2>0.38985</X2>
+					<width>0.6</width>
+					<deskFastCreator>
+						<page id="1" overhangLeft="0" overhangRight="-0.01" overhangBack="0" overhangFront="0" overhangAdditionalLeft1="0" overhangAdditionalLeft2="0" overhangAdditionalRight1="0" overhangAdditionalRight2="0" overhangAdditionalBack1="0" overhangAdditionalBack2="0"/>
+						<page id="2" mode="4" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="4" jointingCutType="0"/>
+						<page id="3" mode="0" roundRadius="0.1" roundRadius2="0.3" cutFront="0" cutSide="0" frontCutSectorFront="0" frontCutSectorSide="0" backCutSectorBack="0" backCutSectorSide="0" jointingCut="0.6" jointingLedge="0.6" jointingLedgeType="0" jointingCutType="0"/>
+						<page id="4">
+							<Hole type="102" width="0.35" depth="0.4" alignx="0" aligny="0" shiftx="0.01502" shifty="-0.02005" dashed="1"/>
+						</page>
+					</deskFastCreator>
+				</IniData>
+				<Podsvetka/>
+				<Zavorot/>
+				<Kromka>
+					<ItemId>27164</ItemId>
+					<ItemId2>27164</ItemId2>
+					<ModelId>455</ModelId>
+					<ColorId>53974</ColorId>
+					<FLAGS>0 2 1 0</FLAGS>
+					<ModelId2>453</ModelId2>
+					<ColorId2>53974</ColorId2>
+				</Kromka>
+			</DATA>
+			<Tickness>40</Tickness>
+			<ITEMNAME> Столешница; Мод: Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+			<NOTES/>
+			<Zamer>0</Zamer>
+			<uid>{4B584119-CD47-402B-B20D-F16F8E75C872</uid>
+			<hash>5a6beac8f73c83d51363caba2669f921</hash>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<translation>4.29995 0.8701 1.02005</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>7</ObjectType>
+			<children>
+				<KITCHENITEM>
+					<ITEMID>27157</ITEMID>
+					<MODELID>312</MODELID>
+					<COLORID>53976</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-0.42" y="0"/>
+							<point x="0.38985" y="0"/>
+							<point x="0.38985" y="0.6"/>
+							<point x="-0.42" y="0.6"/>
+						</points>
+						<flags>1 0 0 0</flags>
+						<POINTCATEGORIES>0 0 0 0</POINTCATEGORIES>
+					</DATA>
+					<ITEMNAME> Бортик; Мод: №1 Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+					<Width>1</Width>
+					<Height>40</Height>
+					<NOTES/>
+					<uid>{A17F0701-F717-41D7-8E57-A3234F32C47D</uid>
+					<hash>1c41220936cd4f4877001b099b86490a</hash>
+					<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+					<translation>0 0.0405 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>9</ObjectType>
+				</KITCHENITEM>
+				<KITCHENITEM>
+					<ITEMID>27157</ITEMID>
+					<MODELID>312</MODELID>
+					<COLORID>53976</COLORID>
+					<DATA>
+						<points ccwSgn="-1">
+							<point x="-0.42" y="0"/>
+							<point x="0.38985" y="0"/>
+							<point x="0.38985" y="0.6"/>
+							<point x="-0.42" y="0.6"/>
+						</points>
+						<flags>0 1 0 0</flags>
+						<POINTCATEGORIES>0 0 0 0</POINTCATEGORIES>
+					</DATA>
+					<ITEMNAME> Бортик; Мод: №1 Staron; Цв: CS.2.860 Aqua [1]</ITEMNAME>
+					<Width>1</Width>
+					<Height>40</Height>
+					<NOTES/>
+					<uid>{5EEEA345-408A-448C-A223-3A45BB7F1B69</uid>
+					<hash>37d1928ddbffefae22375e18df2675f9</hash>
+					<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+					<translation>0 0.0405 0</translation>
+					<rotation>0 0 1 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>9</ObjectType>
+				</KITCHENITEM>
+				<Item>
+					<URL>3d\gallery\data\00121861.wrl</URL>
+					<ID>121861</ID>
+					<ITEMNAME>ВП электро 1</ITEMNAME>
+					<uid>{4BBA3AE3-3504-43EA-AAA9-6652F202FCD5</uid>
+					<hash>30c5fa797c91812b8ee347b3c922b88d</hash>
+					<MoykaWidth>450</MoykaWidth>
+					<MoykaRightSize>160</MoykaRightSize>
+					<translation>-0.00005 0.04 0.27995</translation>
+					<rotation>0.03513 -0.99938 0 0</rotation>
+					<UpVec>0 1 0</UpVec>
+					<ObjectType>1</ObjectType>
+					<SpecialType>Moyka</SpecialType>
+				</Item>
+			</children>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base_varka_panel.wrl</URL>
+			<UPPANEL>0</UPPANEL>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<!-- <type>1/3</type> -->
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxm.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.3674 0 0.27995</p0>
+							<p1>0.3676 0 0.27995</p1>
+							<p2>0.3676 0 -0.26395</p2>
+							<p3>-0.3674 0 -0.26395</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25107</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaUp.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3834 0.3615 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2">
+					<BOTTOM>Height-1.5</BOTTOM>
+					<LEFT>1.5</LEFT>
+					<SXDX>12</SXDX>
+					<ANIMATION AnimType="unibox" type="auto">SLIDEBACK</ANIMATION>
+					<box>
+						<type>NoScaleY</type>
+						<URL>3d/boxes/emilia_bxb.wrl</URL>
+						<Visibility>1</Visibility>
+						<PointsInfo>
+							<p0>-0.3674 0 0.27995</p0>
+							<p1>0.3676 0 0.27995</p1>
+							<p2>0.3676 0 -0.26395</p2>
+							<p3>-0.3674 0 -0.26395</p3>
+						</PointsInfo>
+					</box>
+					<HANDLES>
+						<HANDLE AutoPos="1">
+							<VALIGN>TOP</VALIGN>
+							<HALIGN>CENTER</HALIGN>
+							<MODELID>0</MODELID>
+						</HANDLE>
+					</HANDLES>
+					<WIDTH>Width-3</WIDTH>
+					<HEIGHT>Height/2-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25108</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_pRamkaDown.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.3834 0.0015 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="3" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3829 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="4" ExternalAppearanceIndex="2">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>22</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3829 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="5">
+					<MODELID>0</MODELID>
+					<ITEMID>33042</ITEMID>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>11</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.3829 -0.002 0.27995</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<TOP>650</TOP>
+					<TICKNESS>100</TICKNESS>
+					<URL>3d/shelves/vtandem.wrl</URL>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>150</HEIGHT>
+				<URL>3d/base/leg.wrl</URL>
+			</LEGS>
+			<WarningMessage>Уточняйте артикулы встраиваемой техники!
+Подходит для варочных панелей электрических и индукционных.
+Запрещена установка газовой варочной панели из-за особенностей конструкции прибора и запрета на наличие экрана снизу
+Внутреннее пространство  от дна верхнего ящика до экрана ЛДСП - 99мм</WarningMessage>
+			<VERSION>3</VERSION>
+			<ITEMID>104089</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>Н-ВПСЯ-23-720х800х560-Т2</ARTCODE>
+			<SxDx>0</SxDx>
+			<ITEMNAME>Стол 2 ящика+1 ящик скрытый тандембокс под варку, экран ЛДСП</ITEMNAME>
+			<WIDTH>770</WIDTH>
+			<DEPTH>560</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<BOXPRID>13262</BOXPRID>
+			<OPTIONS Values="220">0</OPTIONS>
+			<ATTENDANTS Value="2">
+				<PARAM AttendantId="1">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</Appearances>
+				</PARAM>
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+			</ATTENDANTS>
+			<SocleModelId>108</SocleModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>Н-ВПСЯ-23-720х800х560-Т2</ArtCodeLastValid>
+			<LabelNum>4</LabelNum>
+			<WidthBase>800</WidthBase>
+			<DepthBase>560</DepthBase>
+			<HeightBase>720</HeightBase>
+			<NsTypes>400</NsTypes>
+			<PriceType>0</PriceType>
+			<uid>{5766788F-469D-4067-AC08-7E44FCC081C6</uid>
+			<hash>03a075854811543157d3f03b8c5f0218</hash>
+			<CorniceModelId>2287</CorniceModelId>
+			<CorniceColorId>105652</CorniceColorId>
+			<AdditionalObjects>
+				<ADDITIONALITEM>
+					<ItemId>500577</ItemId>
+					<NOTES/>
+					<DISCOUNT>0</DISCOUNT>
+					<QUANTITY>1</QUANTITY>
+				</ADDITIONALITEM>
+			</AdditionalObjects>
+			<translation>4.02 0 1.015</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>0 1 0</UpVec>
+			<ObjectType>4</ObjectType>
+		</KITCHENITEM>
+		<KITCHENITEM>
+			<URL>3d/base/base0.wrl</URL>
+			<RightPanel>0</RightPanel>
+			<LeftPanel>IF((Width&lt;30),0,1)</LeftPanel>
+			<FRONTITEMS>
+				<FRONT N="1">
+					<TOP>1.5</TOP>
+					<LEFT>0</LEFT>
+					<SXDX>10</SXDX>
+					<WIDTH>Width</WIDTH>
+					<HEIGHT>Height-3</HEIGHT>
+					<MODELID>1983</MODELID>
+					<COLORID>105652</COLORID>
+					<ITEMID>25056</ITEMID>
+					<Visibility>1</Visibility>
+					<URL>3d/facade/kd_astrid_oRamka.xml</URL>
+					<appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12 } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 01.5709 scale 1.42857 1.66667 translation 0.6 0.757 }} Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</appearances>
+					<BottomLeftPoint>-0.0149 0.0015 0.17495</BottomLeftPoint>
+				</FRONT>
+				<FRONT N="2" ExternalAppearanceIndex="1">
+					<MODELID>0</MODELID>
+					<ITEMID>31988</ITEMID>
+					<WIDTH>Depth</WIDTH>
+					<HEIGHT>Height</HEIGHT>
+					<TOP>2</TOP>
+					<LEFT>2</LEFT>
+					<SXDX>21</SXDX>
+					<Visibility>1</Visibility>
+					<BottomLeftPoint>-0.0129 -0.002 0.17495</BottomLeftPoint>
+				</FRONT>
+			</FRONTITEMS>
+			<SHELVES>
+				<SHELVE>
+					<VISIBILITY>(Options &amp; 32768)!=0</VISIBILITY>
+					<URL>3d/shelves/kapi75.wrl</URL>
+					<TOP>Height+76</TOP>
+					<TICKNESS>76.5</TICKNESS>
+					<FRONTSHIFT>-20</FRONTSHIFT>
+				</SHELVE>
+			</SHELVES>
+			<LEGS>
+				<HEIGHT>0</HEIGHT>
+				<URL/>
+			</LEGS>
+			<ITEMID>101189</ITEMID>
+			<BaseModelId>1</BaseModelId>
+			<BaseColorId>23011</BaseColorId>
+			<ARTCODE>В-ФД-1080х50х360</ARTCODE>
+			<SxDx>21</SxDx>
+			<ITEMNAME>Фальшпанель для столов и полок с коробом</ITEMNAME>
+			<WIDTH>30</WIDTH>
+			<DEPTH>350</DEPTH>
+			<HEIGHT>1080</HEIGHT>
+			<BOXPRID>5482</BOXPRID>
+			<OPTIONS Values="">0</OPTIONS>
+			<ATTENDANTS Value="12">
+				<PARAM AttendantId="2">
+					<Visibility>1</Visibility>
+					<Appearances>Appearance { material Material { ambientIntensity 0.24 diffuseColor 0.69 0.69 0.69 emissiveColor 0.14 0.14 0.14 shininess 0.17 specularColor 0.12 0.12 0.12  } texture ImageTexture { url "3d\textures\pvc\knM-310-belyy-premium.jpg" } textureTransform TextureTransform { rotation 0 scale 1.42857 1.66667 translation 0.6 0.757 }}</Appearances>
+					<ProfileContours>
+						<ProfileContour>
+							<points ccwSgn="0">
+								<point x="-0.18" y="0"/>
+								<point x="-0.02" y="0"/>
+								<point x="-0.02" y="0.12345"/>
+								<point x="-0.036" y="0.12345"/>
+								<point x="-0.036" y="0.016"/>
+								<point x="-0.18" y="0.016"/>
+								<point x="-0.18" y="0"/>
+							</points>
+						</ProfileContour>
+					</ProfileContours>
+				</PARAM>
+				<PARAM AttendantId="3">
+					<Visibility>0</Visibility>
+				</PARAM>
+			</ATTENDANTS>
+			<PriceType type="auto">6</PriceType>
+			<NsTypes>400</NsTypes>
+			<SocleModelId>108</SocleModelId>
+			<CorniceModelId>2287</CorniceModelId>
+			<appearances>Appearance { material Material {ambientIntensity 0.671 diffuseColor 1 1 1 shininess 0.557 specularColor 0.15 0.15 0.15} texture ImageTexture {url "3d\textures\korpus\LDSP\belii.jpg" } textureTransform TextureTransform { scale 1.3 1.3 }}</appearances>
+			<ArtCodeLastValid>В-ФД-1080х50х360</ArtCodeLastValid>
+			<LabelNum>12</LabelNum>
+			<uid>{57FC60C2-9CD6-4DEE-A591-FD96B559EE5A</uid>
+			<hash>261c9e6dedc7127175d26b3eddc05963</hash>
+			<translation>4.125 1.51 1.38501</translation>
+			<rotation>0 -1 0 1.5708</rotation>
+			<UpVec>-1 0 0</UpVec>
+			<ObjectType>6</ObjectType>
+		</KITCHENITEM>
+	</Objects>
+	<AdditionalObjects>
+		<ADDITIONALITEM>
+			<ItemId>91451</ItemId>
+			<NOTES/>
+			<QUANTITY>1</QUANTITY>
+		</ADDITIONALITEM>
+	</AdditionalObjects>
+	<ColorMaxId>120000</ColorMaxId>
+	<SceneName>C:\Users\mzkuser02\Downloads\10-11-26-01 (1).ekkd</SceneName>
+</Scene>

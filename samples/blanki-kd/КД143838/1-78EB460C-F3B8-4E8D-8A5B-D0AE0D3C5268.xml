@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Scene>
+	<Hash>CB43A</Hash>
+	<Guid>78EB460C-F3B8-4E8D-8A5B-D0AE0D3C5268</Guid>
+	<KitchenParameters>
+		<ModelBaseId Name="Ханна Натив (Кюхен Хоф ТР)">904215</ModelBaseId>
+		<ModelId Name="Ханна">904218</ModelId>
+		<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+		<ModelColorId Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</ModelColorId>
+		<VitrageId Name="(Нет модели)">000000</VitrageId>
+		<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+		<BoardId Name="Уплотнитель Simple line">000000</BoardId>
+		<BoardColorId Code="" Name="Пластик прозрачный">000000</BoardColorId>
+		<CorniceId Name="(Нет модели)">000000</CorniceId>
+		<CorniceDownId Name="(Нет модели)">000000</CorniceDownId>
+		<CorniceColorId Code="" Name="(Нет цвета)">000000</CorniceColorId>
+		<CorniceDownColorId Code="" Name="(Нет цвета)">000000</CorniceDownColorId>
+		<SocleId Name="ПВХ">080009</SocleId>
+		<SocleColorId Code="Ц_Диамант серый" Name="Диамант серый">911607~914445~911615~914974</SocleColorId>
+		<SocleReshColorId Code="РЦПВХ_Серый" Name="Серый">911630</SocleReshColorId>
+		<SocleHeight>100</SocleHeight>
+		<TableBoardId Name="Лигрон HPL ПВХ">902972</TableBoardId>
+		<TableBoardColorId Code="" Name="347 Уни бланко">000000</TableBoardColorId>
+		<WallPanelId Name="(Нет модели)">000000</WallPanelId>
+		<WallPanelColorId Code="" Name="(Нет цвета)">000000</WallPanelColorId>
+		<FurnitureSuiteHeight>142</FurnitureSuiteHeight>
+	</KitchenParameters>
+	<AdditionalInfo>
+		<AllowFullCatalog>Type1;</AllowFullCatalog>
+		<Customer_Family>ИП Пруцаков</Customer_Family>
+		<Customer_Name>Алексей</Customer_Name>
+		<Customer_PatronymicName>Валентинович</Customer_PatronymicName>
+		<CustomerAddress>г. Сочи, ул.Макаренко д.13/2,кв.4</CustomerAddress>
+		<CustomerBudget>200000</CustomerBudget>
+		<CustomerDeliveryDate>31/10/2019</CustomerDeliveryDate>
+		<CustomerEmail>89384002330i@mail.ru</CustomerEmail>
+		<CustomerFirmCheck>0</CustomerFirmCheck>
+		<CustomerName>ИП Пруцаков Алексей Валентинович</CustomerName>
+		<CustomerPersonalData>1</CustomerPersonalData>
+		<CustomerPhone>89384002330</CustomerPhone>
+		<ManagerName>Вакуленко Мария Олеговна:1</ManagerName>
+		<MEBEL_DISCOUNT>35.0</MEBEL_DISCOUNT>
+		<OrderCreateDate>2019-09-14</OrderCreateDate>
+		<OrderNum>ФР-423-31-10-26-21</OrderNum>
+		<OrderNumStart>КХ232</OrderNumStart>
+		<OrderStatusChangeDate>2026-10-31</OrderStatusChangeDate>
+		<ProjectCost>165075</ProjectCost>
+		<ProjectCostForRoyalty>165075</ProjectCostForRoyalty>
+		<ProjectMebelFullCost>243784</ProjectMebelFullCost>
+		<SalonAddress>ТЦ «Панорама», Сочи, Пластунская улица, 29.</SalonAddress>
+		<SalonDirectorName>Вакуленко Мария Олеговна</SalonDirectorName>
+		<SalonDirectorPhone>89649403195</SalonDirectorPhone>
+		<SalonEmail>kd-sochi@fkxd.ru</SalonEmail>
+		<SalonName>ИП Шаповалова И.А., ИП Шаповалов К.Г.</SalonName>
+		<SalonPhone>8 966 77 77 450</SalonPhone>
+		<STOL_DISCOUNT>100.0</STOL_DISCOUNT>
+		<EuroRate>1</EuroRate>
+		<SalonCode>423</SalonCode>
+		<Version>program: 29.10.26 (release 34), database: 19.11.2026, last update 20.11.2026</Version>
+		<UpdateNum>2647</UpdateNum>
+	</AdditionalInfo>
+	<Room>
+		<Bounds>2000 x 2000 мм</Bounds>
+		<Walls>2000x2000</Walls>
+		<Celling>2900 мм</Celling>
+	</Room>
+	<Boxes>
+		<KitchenObject>
+			<ITEMID>100761</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>Н-КЗ-900х500х300-1</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">27236</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>1</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>500</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>840</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>497</Width>
+				<Height>837</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-КД1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100761</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>Н-КЗ-900х600х300-1</ArtCode>
+			<NsTypes>А_ФБпр+А_TIP ON+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">31254</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>2</LabelNum>
+			<BoxOri>R</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>840</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>837</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-КД1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<Name>Фасадная боковина</Name>
+			<BoxOri>R</BoxOri>
+			<BaseColorId Code="KHHNpt-006" Name="KHHNpt-006 Графит">914797</BaseColorId>
+			<ObjectNum>2</ObjectNum>
+			<ColorCategory>1</ColorCategory>
+			<ArtCode>ФБ-КНМPT</ArtCode>
+			<Quantity>0.25</Quantity>
+			<WIDTH>300</WIDTH>
+			<DEPTH>16</DEPTH>
+			<HEIGHT>840</HEIGHT>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100374</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>В-К1-720х300х300-0</ArtCode>
+			<NsTypes>А_TIP ON+А_ProLine</NsTypes>
+			<ColorCategory>9</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>3</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>297</Width>
+				<Height>717</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-КД1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103731</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>В-К1-1320х300х300-0</ArtCode>
+			<NsTypes>А_TIP ON+2_Умен+А_ProLine</NsTypes>
+			<PRICE type="обычная">25941</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Полка 1 дверь</Name>
+			<LabelNum>4</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>300</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>1240</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>297</Width>
+				<Height>1237</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-КД4" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>100761</ITEMID>
+			<BaseColorId Code="Д-020" Name="Д-020 Диамант серый ЛДСтП">904474</BaseColorId>
+			<ArtCode>Н-КЗ-900х600х300-1</ArtCode>
+			<NsTypes>А_TIP ON+4_Раскр+А_ProLine</NsTypes>
+			<PRICE type="+10%">31254</PRICE>
+			<ColorCategory>9</ColorCategory>
+			<Name>Стол 1 дверь</Name>
+			<LabelNum>5</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>600</WIDTH>
+			<DEPTH>300</DEPTH>
+			<HEIGHT>840</HEIGHT>
+			<FRONT N="1">
+				<Type>Фасад</Type>
+				<Width>597</Width>
+				<Height>837</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<OPTION Name="Push to Open" ArtCode="Зам-ПО-КД1" Count="1"/>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101630</ITEMID>
+			<ArtCode>В-К0-ЛД-720х250х318-2</ArtCode>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 2 секции</Name>
+			<LabelNum>6</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>250</WIDTH>
+			<DEPTH>318</DEPTH>
+			<HEIGHT>720</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>250</Width>
+				<Height>720</Height>
+				<MODELID Name="Открытые модули [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый (ЛДСП) [СТ1]">905042</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101647</ITEMID>
+			<ArtCode>В-К0-ЛД-1320х250х360-4</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="+10%">13638</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 4 секции</Name>
+			<LabelNum>7</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>250</WIDTH>
+			<DEPTH>320</DEPTH>
+			<HEIGHT>1240</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>250</Width>
+				<Height>1240</Height>
+				<MODELID Name="Открытые модули [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый (ЛДСП) [СТ1]">905042</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103003</ITEMID>
+			<ArtCode>КП-Д-900х200</ArtCode>
+			<ColorCategory>5</ColorCategory>
+			<Name>Полка настенная</Name>
+			<LabelNum>8</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>200</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>ОбвязкаPOLKA</Type>
+				<Width>900</Width>
+				<Height>18</Height>
+				<MODELID Name="Настенная полка [СТ5]">000000</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [СТ5]">914797</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>103003</ITEMID>
+			<ArtCode>КП-Д-900х200</ArtCode>
+			<ColorCategory>5</ColorCategory>
+			<Name>Полка настенная</Name>
+			<LabelNum>9</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>200</WIDTH>
+			<DEPTH>18</DEPTH>
+			<HEIGHT>900</HEIGHT>
+			<FRONT N="1">
+				<Type>ОбвязкаPOLKA</Type>
+				<Width>900</Width>
+				<Height>18</Height>
+				<MODELID Name="Настенная полка [СТ5]">000000</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [СТ5]">914797</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101647</ITEMID>
+			<ArtCode>В-К0-ЛД-1320х500х300-4</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">15028</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 4 секции</Name>
+			<LabelNum>10</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>470</WIDTH>
+			<DEPTH>200</DEPTH>
+			<HEIGHT>980</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>470</Width>
+				<Height>980</Height>
+				<MODELID Name="Открытые модули [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый (ЛДСП) [СТ1]">905042</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>101647</ITEMID>
+			<ArtCode>В-К0-ЛД-1320х500х300-4</ArtCode>
+			<NsTypes>1_Умен+2_Умен</NsTypes>
+			<PRICE type="обычная">15028</PRICE>
+			<ColorCategory>1</ColorCategory>
+			<Name>Полка открытая, 4 секции</Name>
+			<LabelNum>11</LabelNum>
+			<Discount>35</Discount>
+			<DiscountAuto>35</DiscountAuto>
+			<WIDTH>470</WIDTH>
+			<DEPTH>200</DEPTH>
+			<HEIGHT>980</HEIGHT>
+			<FRONT N="1">
+				<Type>Обвязка Открытых модулей KHDL</Type>
+				<Width>470</Width>
+				<Height>980</Height>
+				<MODELID Name="Открытые модули [СТ1]">000000</MODELID>
+				<COLORID Code="KHDL-020" Name="KHDL-020 Диамант серый (ЛДСП) [СТ1]">905042</COLORID>
+				<ModelMaterial Name="???"/>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+		<KitchenObject>
+			<ITEMID>104055</ITEMID>
+			<ArtCode>ПФас-КНMPT_18</ArtCode>
+			<ColorCategory/>
+			<Name>Панель фасадная [верх]</Name>
+			<LabelNum>12</LabelNum>
+			<BoxOri>L</BoxOri>
+			<Quantity>0.544</Quantity>
+			<WIDTH>320</WIDTH>
+			<HEIGHT>1700</HEIGHT>
+			<FRONT N="1">
+				<Type>Панель</Type>
+				<Width>320</Width>
+				<Height>1700</Height>
+				<MODELID Name="Ханна">904218</MODELID>
+				<COLORID Code="KHHNpt-006" Name="KHHNpt-006 Графит [KХ9]">914797</COLORID>
+				<ModelMaterial Name="МДФ лак (PerfectTouch)">914773</ModelMaterial>
+			</FRONT>
+			<UserNs>0</UserNs>
+		</KitchenObject>
+	</Boxes>
+	<LongLengthItems>
+		<KitchenItem>
+			<ArtCode>ЦПВХ2000-100</ArtCode>
+			<ColorCategory/>
+			<Price>1801</Price>
+			<Name>Цоколь</Name>
+			<MODELID Name="ПВХ">080009</MODELID>
+			<COLORID Code="Ц_Диамант серый" Name="Диамант серый">911607~914445~911615~914974</COLORID>
+			<P>100</P>
+			<Quantity>1</Quantity>
+		</KitchenItem>
+	</LongLengthItems>
+	<LongLengthItemsM2/>
+	<AdditionalObjects>
+		<OtherItems>
+			<AdditionalItem>
+				<COLORID Code="Ц_Диамант серый" Name="Диамант серый">911607~914445~911615~914974</COLORID>
+				<Price>185</Price>
+				<ArtCode>ЦПВХ-100-Т</ArtCode>
+				<Name>ЦПВХ-100-Т | Цоколь пластиковый h=100 мм Торцевой</Name>
+				<Quantity>2</Quantity>
+			</AdditionalItem>
+		</OtherItems>
+	</AdditionalObjects>
+	<Service/>
+	<ScreenShots>
+		<Img>1-78EB460C-F3B8-4E8D-8A5B-D0AE0D3C5268_sshot_00.jpg</Img>
+	</ScreenShots>
+</Scene>
