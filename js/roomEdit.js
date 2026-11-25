@@ -101,20 +101,25 @@ export function renderPlanSvg(container, room, opts = {}) {
         { x: 0, z: 0 }, { x: +room.length || 4000, z: 0 },
         { x: +room.length || 4000, z: +room.depth || 3500 }, { x: 0, z: +room.depth || 3500 },
       ];
-  const pad = 28;
+  // отступ под подписи длин / углов / тег слоя
+  const padX = 28;
+  const padY = 26;
   let x1 = Infinity, z1 = Infinity, x2 = -Infinity, z2 = -Infinity;
   for (const p of verts) {
     x1 = Math.min(x1, p.x); x2 = Math.max(x2, p.x);
     z1 = Math.min(z1, p.z); z2 = Math.max(z2, p.z);
   }
   const bw = Math.max(100, x2 - x1), bd = Math.max(100, z2 - z1);
-  const W = container.clientWidth || 280;
-  const H = Math.round(W * (bd / bw));
-  const sx = (W - pad * 2) / bw;
-  const sz = (H - pad * 2) / bd;
+  // ширина — от контейнера; высота — под пропорции плана, чтобы комната заполняла поле
+  const W = Math.max(120, container.clientWidth || 280);
+  const aspectH = Math.round((W - padX * 2) * (bd / bw) + padY * 2);
+  const H = Math.max(150, Math.min(320, aspectH));
+  if (container.style.height !== `${H}px`) container.style.height = `${H}px`;
+  const sx = (W - padX * 2) / bw;
+  const sz = (H - padY * 2) / bd;
   const s = Math.min(sx, sz);
-  const ox = pad + (W - pad * 2 - bw * s) / 2;
-  const oz = pad + (H - pad * 2 - bd * s) / 2;
+  const ox = padX + (W - padX * 2 - bw * s) / 2;
+  const oz = padY + (H - padY * 2 - bd * s) / 2;
   const tx = (x) => ox + (x - x1) * s;
   const tz = (z) => oz + (z - z1) * s;
   const n = verts.length;
@@ -124,6 +129,7 @@ export function renderPlanSvg(container, room, opts = {}) {
   let handles = '';
   let angles = '';
   const nWalls = +room.wallCount > 0 && +room.wallCount < n ? +room.wallCount : n;
+  const labelOffPx = 14;
   for (let i = 0; i < n; i++) {
     const a = verts[i], b = verts[(i + 1) % n];
     if (i >= nWalls) {
@@ -132,12 +138,27 @@ export function renderPlanSvg(container, room, opts = {}) {
     }
     const len = Math.round(Math.hypot(b.x - a.x, b.z - a.z));
     const letter = String.fromCharCode(65 + (i % 26));
-    const mx = (tx(a.x) + tx(b.x)) / 2, mz = (tz(a.z) + tz(b.z)) / 2;
+    const ax = tx(a.x), az = tz(a.z), bx = tx(b.x), bz = tz(b.z);
+    const mx = (ax + bx) / 2, mz = (az + bz) / 2;
+    const sdx = bx - ax, sdz = bz - az;
+    const sl = Math.hypot(sdx, sdz) || 1;
+    // наружная нормаль в экранных координатах (CCW → наружу)
+    const snx = sdz / sl, snz = -sdx / sl;
+    let lx = mx + snx * labelOffPx;
+    let lz = mz + snz * labelOffPx;
+    // если подпись уезжает за край — зеркалим внутрь
+    if (lx < 10 || lx > W - 10 || lz < 14 || lz > H - 10) {
+      lx = mx - snx * labelOffPx;
+      lz = mz - snz * labelOffPx;
+    }
+    lx = Math.max(10, Math.min(W - 10, lx));
+    lz = Math.max(14, Math.min(H - 10, lz));
     const sel = opts.selectedEdge === i;
     const focLen = sel && opts.propFocus && String(opts.propFocus).startsWith('length');
-    edges += `<line data-edge="${i}" x1="${tx(a.x)}" y1="${tz(a.z)}" x2="${tx(b.x)}" y2="${tz(b.z)}" class="plan-edge${sel ? ' sel' : ''}${focLen ? ' focus' : ''}"/>`;
-    labels += `<text data-edge-label="${i}" x="${mx}" y="${mz - 6}" class="plan-len${focLen ? ' focus' : ''}">${letter} ${len}</text>`;
+    edges += `<line data-edge="${i}" x1="${ax}" y1="${az}" x2="${bx}" y2="${bz}" class="plan-edge${sel ? ' sel' : ''}${focLen ? ' focus' : ''}"/>`;
+    labels += `<text data-edge-label="${i}" x="${lx.toFixed(1)}" y="${lz.toFixed(1)}" class="plan-len${focLen ? ' focus' : ''}">${letter} ${len}</text>`;
   }
+  const angOffPx = 18;
   for (let i = 0; i < n; i++) {
     handles += `<circle data-vert="${i}" cx="${tx(verts[i].x)}" cy="${tz(verts[i].z)}" r="6" class="plan-vert"/>`;
     if (nWalls < n && !(i >= 1 && i < nWalls)) continue;
@@ -148,9 +169,11 @@ export function renderPlanSvg(container, room, opts = {}) {
     const ix = (prev.x + next.x) / 2 - cur.x;
     const iz = (prev.z + next.z) / 2 - cur.z;
     const il = Math.hypot(ix, iz) || 1;
-    const ax = tx(cur.x + (ix / il) * 80);
-    const az = tz(cur.z + (iz / il) * 80);
-    angles += `<text class="plan-ang" x="${ax}" y="${az}">${ang}°</text>`;
+    let angX = tx(cur.x) + (ix / il) * angOffPx;
+    let angZ = tz(cur.z) + (iz / il) * angOffPx;
+    angX = Math.max(10, Math.min(W - 10, angX));
+    angZ = Math.max(14, Math.min(H - 10, angZ));
+    angles += `<text class="plan-ang" x="${angX.toFixed(1)}" y="${angZ.toFixed(1)}">${ang}°</text>`;
   }
   // Базовое состояние при drag: пунктир исходных рёбер у вершины
   let baseline = '';
@@ -167,9 +190,9 @@ export function renderPlanSvg(container, room, opts = {}) {
     baseline += `<circle cx="${tx(bv[bi].x)}" cy="${tz(bv[bi].z)}" r="5" class="plan-baseline-vert"/>`;
   }
   const layerTag = opts.layerLabel
-    ? `<text class="plan-layer-tag" x="${pad}" y="${18}">${opts.layerLabel}</text>`
+    ? `<text class="plan-layer-tag" x="${padX}" y="14">${opts.layerLabel}</text>`
     : '';
-  container.innerHTML = `<svg class="plan-svg" width="${W}" height="${Math.max(H, 160)}" viewBox="0 0 ${W} ${Math.max(H, 160)}">
+  container.innerHTML = `<svg class="plan-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
     <polygon points="${pts}" class="plan-fill"/>
     ${baseline}${edges}${labels}${angles}${handles}${layerTag}
   </svg>`;

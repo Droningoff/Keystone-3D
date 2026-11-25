@@ -149,7 +149,11 @@ export function defaultRoom() {
     wallColors: {},
     show: 'auto',
     showWallLetters: true,
+    showWallDims: true, // мастер-флаг длин стен на 3D
+    showHeightDim: true, // вертикальный размер высоты помещения
     showRoomEdges: false, // окантовка стен/пола/потолка линией (углы виднее)
+    edgeWidth: 4.5, // толщина окантовки, px (LineMaterial)
+    showWallLens: { floor: true, mid: true, ceil: true }, // длины на уровнях
   };
 }
 
@@ -160,7 +164,8 @@ export function defaultLighting() {
     sunAzimuth: 35,
     sunElevation: 55,
     fill: 0.35,
-    ceiling: true,
+    // новый проект: светильники на сцене не ставятся (только базовый hemi/sun/fill)
+    ceiling: false,
     ceilingCount: 4,
     ceilingIntensity: 0.6,
     accent: false,
@@ -196,6 +201,15 @@ export function migrateProject(prj) {
   }
   if (!prj.lighting) prj.lighting = defaultLighting();
   if (!prj.fixtures) prj.fixtures = [];
+  for (const f of prj.fixtures) {
+    if (f.type === 'socket_double' || f.type === 'socket_kitchen') {
+      f.type = 'socket_block';
+      if (f.count == null) f.count = 2;
+    }
+    if (f.type === 'socket_block') {
+      f.count = Math.max(1, Math.min(8, Math.round(+f.count) || 2));
+    }
+  }
   for (const m of prj.modules || []) {
     if (m.z == null) m.z = 0;
     if (m.rot == null) m.rot = 0;
@@ -211,7 +225,20 @@ export function migrateProject(prj) {
   }
   if (!prj.room.show) prj.room.show = 'auto';
   if (prj.room.showWallLetters == null) prj.room.showWallLetters = true;
+  if (prj.room.showWallDims == null) prj.room.showWallDims = true;
+  if (prj.room.showHeightDim == null) prj.room.showHeightDim = true;
   if (prj.room.showRoomEdges == null) prj.room.showRoomEdges = false;
+  if (prj.room.edgeWidth == null || !Number.isFinite(+prj.room.edgeWidth)) prj.room.edgeWidth = 4.5;
+  if (!prj.room.showWallLens || typeof prj.room.showWallLens !== 'object') {
+    prj.room.showWallLens = { floor: true, mid: true, ceil: true };
+  } else {
+    const w = prj.room.showWallLens;
+    prj.room.showWallLens = {
+      floor: w.floor !== false,
+      mid: w.mid !== false,
+      ceil: w.ceil !== false,
+    };
+  }
   if (!Array.isArray(prj.room.features)) prj.room.features = [];
   if (prj.room.yRef == null) prj.room.yRef = 900;
   if (!prj.room.ceiling) prj.room.ceiling = { mode: 'flat', height: prj.room.height || 2700, samples: [] };
@@ -652,91 +679,307 @@ export function sideOccupied(prj, hostId, side, tol = 6) {
   return false;
 }
 
+/** Занята ли верхняя/нижняя грань host (стек модулей). */
+export function faceOccupied(prj, hostId, face, tol = 8) {
+  if (face === 'left' || face === 'right') return sideOccupied(prj, hostId, face, tol);
+  const h = prj.modules.find((q) => q.id === hostId);
+  if (!h) return true;
+  const hw = moduleLocalSize(h);
+  for (const o of prj.modules) {
+    if (o.id === hostId) continue;
+    if (Math.abs((+o.rot || 0) - (+h.rot || 0)) > 1) continue;
+    const ow = moduleLocalSize(o);
+    const ol = worldToLocal(h, +o.x, +o.z);
+    if (!_rangeOverlap(0, hw.w, ol.lx, ol.lx + ow.w, 40)) continue;
+    if (!_rangeOverlap(0, hw.d, ol.lz, ol.lz + ow.d, 40)) continue;
+    if (face === 'top' && Math.abs(ow.elev - (hw.elev + hw.h)) <= tol) return true;
+    if (face === 'bottom' && Math.abs(hw.elev - (ow.elev + ow.h)) <= tol) return true;
+  }
+  return false;
+}
+
+/** Выравнивание бок-о-бок: низ/верх + зад/фасад. */
+export function dockAlignments(mover, host) {
+  const mw = mover ? moduleLocalSize(mover) : null;
+  const hw = host ? moduleLocalSize(host) : null;
+  const vList = ['bottom'];
+  if (mw && hw && Math.abs(hw.h - mw.h) > 15) vList.push('top');
+  const dList = ['back'];
+  if (mw && hw && Math.abs(hw.d - mw.d) > 15) dList.push('front');
+  const out = [];
+  for (const vAlign of vList) {
+    for (const dAlign of dList) out.push({ vAlign, dAlign });
+  }
+  if (mw && hw && (vList.length > 1 || dList.length > 1)) {
+    out.push({ vAlign: 'center', dAlign: 'center' });
+  }
+  return out.length ? out : [{ vAlign: 'bottom', dAlign: 'back' }];
+}
+
+/** Выравнивание стека верх↔низ: левый/правый угол + зад/фасад. */
+export function stackAlignments(mover, host) {
+  const mw = mover ? moduleLocalSize(mover) : null;
+  const hw = host ? moduleLocalSize(host) : null;
+  const hList = ['left'];
+  if (mw && hw && Math.abs(hw.w - mw.w) > 15) hList.push('right');
+  const dList = ['back'];
+  if (mw && hw && Math.abs(hw.d - mw.d) > 15) dList.push('front');
+  const out = [];
+  for (const hAlign of hList) {
+    for (const dAlign of dList) out.push({ hAlign, dAlign });
+  }
+  if (mw && hw && (hList.length > 1 || dList.length > 1)) {
+    out.push({ hAlign: 'center', dAlign: 'center' });
+  }
+  return out.length ? out : [{ hAlign: 'left', dAlign: 'back' }];
+}
+
 /**
- * Поза модуля mover у стороны host (как в eKitchen: привязка к объекту + стык бок о бок).
- * side: 'left'|'right'; corner: 'back'|'front' (выравнивание по глубине).
+ * Поза mover у грани host.
+ * face/side: 'left'|'right'|'top'|'bottom'
+ * opts: бок — { vAlign, dAlign }; стек — { hAlign, dAlign }.
  */
-export function dockPose(mover, host, side, corner = 'back') {
+export function dockPose(mover, host, side, cornerOrOpts = 'back') {
+  const opts = typeof cornerOrOpts === 'string'
+    ? { dAlign: cornerOrOpts, vAlign: 'bottom', hAlign: 'left' }
+    : (cornerOrOpts || {});
+  const face = opts.face || side;
+  const dAlign = opts.dAlign || opts.corner || 'back';
   const mw = moduleLocalSize(mover);
   const hw = moduleLocalSize(host);
-  const lz = corner === 'front' ? (hw.d - mw.d) : 0;
-  const lx = side === 'left' ? -mw.w : hw.w;
   const a = ((+host.rot || 0) * Math.PI) / 180;
   const c = Math.cos(a), s = Math.sin(a);
+
+  if (face === 'top' || face === 'bottom') {
+    const hAlign = opts.hAlign || 'left';
+    let lx = 0;
+    if (hAlign === 'right') lx = hw.w - mw.w;
+    else if (hAlign === 'center') lx = (hw.w - mw.w) / 2;
+    let lz = 0;
+    if (dAlign === 'front') lz = hw.d - mw.d;
+    else if (dAlign === 'center') lz = (hw.d - mw.d) / 2;
+    const elev = face === 'top' ? hw.elev + hw.h : hw.elev - mw.h;
+    return {
+      x: Math.round(+host.x + lx * c + lz * s),
+      z: Math.round(+host.z - lx * s + lz * c),
+      rot: +host.rot || 0,
+      elev: Math.round(elev),
+      face,
+      side: face,
+      stack: true,
+      hAlign,
+      dAlign,
+      vAlign: face === 'top' ? 'top' : 'bottom',
+    };
+  }
+
+  const vAlign = opts.vAlign || 'bottom';
+  let lz = 0;
+  if (dAlign === 'front') lz = hw.d - mw.d;
+  else if (dAlign === 'center') lz = (hw.d - mw.d) / 2;
+  let elev = hw.elev;
+  if (vAlign === 'top') elev = hw.elev + hw.h - mw.h;
+  else if (vAlign === 'center') elev = hw.elev + (hw.h - mw.h) / 2;
+  const lx = face === 'left' ? -mw.w : hw.w;
   return {
     x: Math.round(+host.x + lx * c + lz * s),
     z: Math.round(+host.z - lx * s + lz * c),
     rot: +host.rot || 0,
+    elev: Math.round(elev),
+    face,
+    side: face,
+    stack: false,
+    vAlign,
+    dAlign,
   };
 }
 
+/** Ближайший вариант стыка к текущей позе mover (или prefer {x,z,elev,vAlign?,hAlign?}). */
+export function bestDockPose(mover, host, side, prefer = null) {
+  const face = prefer?.face || side;
+  const px = prefer?.x ?? +mover.x;
+  const pz = prefer?.z ?? +mover.z;
+  const pe = prefer?.elev ?? (+mover.p.elev || 0);
+  const forceV = prefer?.vAlign || null;
+  const forceH = prefer?.hAlign || null;
+  const forceD = prefer?.dAlign || null;
+  let best = null, bestD = Infinity;
+  const seen = new Set();
+  const stack = face === 'top' || face === 'bottom';
+  const alist = stack ? stackAlignments(mover, host) : dockAlignments(mover, host);
+  for (const al of alist) {
+    if (!stack && forceV && al.vAlign !== forceV) continue;
+    if (stack && forceH && al.hAlign !== forceH) continue;
+    if (forceD && al.dAlign !== forceD) continue;
+    const pose = dockPose(mover, host, face, { ...al, face });
+    const key = `${pose.x}|${pose.z}|${pose.elev}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const elevW = stack ? 0.35 : 0.15;
+    const dd = Math.hypot(pose.x - px, pose.z - pz) + Math.abs(pose.elev - pe) * elevW;
+    if (dd < bestD) {
+      bestD = dd;
+      best = { ...pose, side: face, corner: pose.dAlign };
+    }
+  }
+  return best;
+}
+
 /**
- * Маркеры стыковки на свободных боках (по одному на сторону, как точки привязки eKitchen).
- * При moverId — только совместимые по ряду/повороту хосты + готовая поза.
+ * Сокеты магнитного стыка:
+ * - бок left/right: зоны низ/верх (тот же ряд);
+ * - стек top/bottom: зоны левый/правый угол (любой ряд, тот же поворот).
  */
 export function listDockSockets(prj, opt = {}) {
   const excludeId = opt.excludeId || null;
   const mover = opt.moverId ? prj.modules.find((q) => q.id === opt.moverId) : null;
+  const prefer = opt.prefer || null;
   const out = [];
   for (const h of prj.modules) {
     if (!h || h.id === excludeId || h.id === mover?.id) continue;
     if (String(h.id).startsWith('__top')) continue;
-    if (mover) {
-      if (moduleRow(h) !== moduleRow(mover)) continue;
-      if (Math.abs((+h.rot || 0) - (+mover.rot || 0)) > 1) continue;
-    }
+    if (mover && Math.abs((+h.rot || 0) - (+mover.rot || 0)) > 1) continue;
     const { w, d, h: hh, elev } = moduleLocalSize(h);
-    const y = elev + Math.min(hh * 0.55, Math.max(280, hh * 0.4));
-    for (const side of ['left', 'right']) {
-      if (sideOccupied(prj, h.id, side)) continue;
-      // маркер по центру свободного бока (удобнее попасть мышью, чем в угол)
-      const lx = side === 'left' ? -55 : w + 55;
-      const lz = d * 0.45;
-      const wp = localToWorld(h, lx, y, lz);
-      const sock = {
-        id: `${h.id}:${side}`,
-        hostId: h.id,
-        side,
-        corner: 'back',
-        x: wp.x, y: wp.y, z: wp.z,
-        label: side === 'left' ? '◀' : '▶',
-      };
-      if (mover) sock.pose = dockPose(mover, h, side, 'back');
-      out.push(sock);
+    const ms = mover ? moduleLocalSize(mover) : null;
+    const sameRow = !mover || moduleRow(h) === moduleRow(mover);
+
+    // —— бок о бок ——
+    if (sameRow) {
+      const vZones = (ms && Math.abs(hh - ms.h) > 15) ? ['bottom', 'top'] : ['bottom'];
+      const gap = vZones.length > 1 ? hh * 0.06 : 0;
+      for (const side of ['left', 'right']) {
+        if (faceOccupied(prj, h.id, side)) continue;
+        const lx = side === 'left' ? -2 : w + 2;
+        for (const vAlign of vZones) {
+          const stripH = vZones.length > 1 ? (hh - gap) * 0.5 : hh;
+          const ly = vAlign === 'top'
+            ? elev + hh - stripH * 0.5
+            : elev + stripH * 0.5;
+          const lz = d * 0.5;
+          const wp = localToWorld(h, lx, ly, lz);
+          const pose = mover
+            ? bestDockPose(mover, h, side, { ...(prefer || {}), vAlign, face: side })
+            : null;
+          const sock = {
+            id: `${h.id}:${side}:${vAlign}`,
+            hostId: h.id,
+            side,
+            face: side,
+            stack: false,
+            corner: pose?.dAlign || 'back',
+            vAlign,
+            dAlign: pose?.dAlign || 'back',
+            x: wp.x, y: wp.y, z: wp.z,
+            hostX: +h.x, hostZ: +h.z, rot: +h.rot || 0,
+            lx, ly, lz,
+            stripH,
+            stripD: Math.max(60, d * 0.92),
+            stripMode: 'side',
+          };
+          if (pose) sock.pose = pose;
+          if (ms) sock.ghost = { w: ms.w, d: ms.d, h: ms.h, elev: pose?.elev ?? ms.elev };
+          out.push(sock);
+        }
+      }
+    }
+
+    // —— стек верх ↔ низ ——
+    for (const face of ['top', 'bottom']) {
+      if (faceOccupied(prj, h.id, face)) continue;
+      const hZones = (ms && Math.abs(w - ms.w) > 15) ? ['left', 'right'] : ['left'];
+      const gap = hZones.length > 1 ? w * 0.06 : 0;
+      for (const hAlign of hZones) {
+        const stripW = hZones.length > 1 ? (w - gap) * 0.5 : w;
+        const lx = hAlign === 'right' ? w - stripW * 0.5 : stripW * 0.5;
+        const ly = face === 'top' ? elev + hh + 3 : elev - 3;
+        const lz = d * 0.5;
+        const wp = localToWorld(h, lx, ly, lz);
+        const pose = mover
+          ? bestDockPose(mover, h, face, { ...(prefer || {}), hAlign, face })
+          : null;
+        const sock = {
+          id: `${h.id}:${face}:${hAlign}`,
+          hostId: h.id,
+          side: face,
+          face,
+          stack: true,
+          corner: pose?.dAlign || 'back',
+          hAlign,
+          vAlign: face,
+          dAlign: pose?.dAlign || 'back',
+          x: wp.x, y: wp.y, z: wp.z,
+          hostX: +h.x, hostZ: +h.z, rot: +h.rot || 0,
+          lx, ly, lz,
+          stripW,
+          stripH: 8,
+          stripD: Math.max(60, d * 0.92),
+          stripMode: 'stack',
+        };
+        if (pose) sock.pose = pose;
+        if (ms) sock.ghost = { w: ms.w, d: ms.d, h: ms.h, elev: pose?.elev ?? ms.elev };
+        out.push(sock);
+      }
     }
   }
   return out;
 }
 
-/** Ближайшая свободная сторона host для пристыковки mover (Ctrl+клик по модулю). */
+/** Ближайшая свободная грань host для пристыковки mover (Ctrl+клик по модулю). */
 export function nearestDockSide(prj, moverId, hostId, preferWorldX = null, preferWorldZ = null) {
   const mover = prj.modules.find((q) => q.id === moverId);
   const host = prj.modules.find((q) => q.id === hostId);
   if (!mover || !host || mover.id === host.id) return null;
   if (Math.abs((+mover.rot || 0) - (+host.rot || 0)) > 1) return null;
-  const free = ['left', 'right'].filter((s) => !sideOccupied(prj, hostId, s));
-  if (!free.length) return null;
-  if (free.length === 1) {
-    return { hostId, side: free[0], corner: 'back', pose: dockPose(mover, host, free[0], 'back') };
+  const prefer = {
+    x: preferWorldX ?? +mover.x,
+    z: preferWorldZ ?? +mover.z,
+    elev: +mover.p.elev || 0,
+  };
+  const faces = [];
+  if (moduleRow(mover) === moduleRow(host)) {
+    for (const s of ['left', 'right']) {
+      if (!faceOccupied(prj, hostId, s)) faces.push(s);
+    }
   }
-  // выбрать сторону ближе к текущей позиции mover / точке клика
-  const px = preferWorldX ?? +mover.x;
-  const pz = preferWorldZ ?? +mover.z;
+  for (const s of ['top', 'bottom']) {
+    if (!faceOccupied(prj, hostId, s)) faces.push(s);
+  }
+  if (!faces.length) return null;
   let best = null, bestD = Infinity;
-  for (const side of free) {
-    const pose = dockPose(mover, host, side, 'back');
-    const dd = Math.hypot(pose.x - px, pose.z - pz);
-    if (dd < bestD) { bestD = dd; best = { hostId, side, corner: 'back', pose }; }
+  for (const face of faces) {
+    const pose = bestDockPose(mover, host, face, { ...prefer, face });
+    if (!pose) continue;
+    const elevW = pose.stack ? 0.5 : 0.85;
+    const dd = Math.hypot(pose.x - prefer.x, pose.z - prefer.z)
+      + Math.abs(pose.elev - prefer.elev) * elevW;
+    if (dd < bestD) {
+      bestD = dd;
+      best = {
+        hostId, side: face, face,
+        corner: pose.dAlign, vAlign: pose.vAlign, dAlign: pose.dAlign,
+        hAlign: pose.hAlign, stack: !!pose.stack, pose,
+      };
+    }
   }
   return best;
 }
 
-/** Пристыковать moverId к сокету {hostId, side, corner}. */
+/** Пристыковать moverId к сокету {hostId, side/face, ...}. */
 export function applyDock(prj, moverId, socket) {
   const mover = prj.modules.find((q) => q.id === moverId);
   const host = prj.modules.find((q) => q.id === socket.hostId);
   if (!mover || !host || mover.id === host.id) return null;
-  return dockPose(mover, host, socket.side, socket.corner || 'back');
+  if (socket.pose?.x != null) return socket.pose;
+  const face = socket.face || socket.side;
+  return bestDockPose(mover, host, face, {
+    x: +mover.x, z: +mover.z, elev: +mover.p.elev || 0, face,
+    vAlign: socket.vAlign, hAlign: socket.hAlign, dAlign: socket.dAlign,
+  }) || dockPose(mover, host, face, {
+    face,
+    vAlign: socket.vAlign || 'bottom',
+    hAlign: socket.hAlign || 'left',
+    dAlign: socket.dAlign || socket.corner || 'back',
+  });
 }
 
 export function nextFreeX(prj, type, row = MODULE_TYPES[type]?.row || 'floor') {

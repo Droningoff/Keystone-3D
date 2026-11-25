@@ -2,7 +2,7 @@
 // Объект хранит moduleId и локальное смещение (lx, ly, lz) в СК модуля; мировая позиция вычисляется заново
 // при каждой сборке, поэтому объект следует за модулем при перемещении и повороте.
 
-import { FIXTURE_CATALOG } from './fixtures.js';
+import { FIXTURE_CATALOG, resolveFixtureType, isWallPlateKind } from './fixtures.js?v=20261124be';
 import { moduleGen, frontT, isLib, localToWorld, worldToLocal, th } from './model.js?v=20261110a';
 
 const TOP_T = (prj) => th(prj.settings.topMat);
@@ -87,10 +87,21 @@ export const resolveFixtures = (prj) => prj.fixtures.map((f) => resolveFixture(p
 
 // Предпросмотр и постановка: возвращает поля для объекта
 export function snapFixture(prj, type, point, hit) {
-  const def = FIXTURE_CATALOG[type];
-  const m = findModuleAt(prj, type, point.x, point.z, hit?.moduleId);
-  if (m && def.kind !== 'socket' && def.kind !== 'pipe' && type !== 'fridge_60') {
-    const lp = localPlacement(prj, type, m);
+  const t = resolveFixtureType(type);
+  const def = FIXTURE_CATALOG[t];
+  if (!def) {
+    return {
+      moduleId: null,
+      x: Math.round(+point?.x || 0),
+      z: Math.round(+point?.z || 0),
+      elev: Math.max(0, Math.round(+point?.y || 0)),
+      rot: hit?.rot ?? 0,
+    };
+  }
+  const m = findModuleAt(prj, t, point.x, point.z, hit?.moduleId);
+  // розетки / решётки / трубы — только на стену/пол, не в модуль
+  if (m && !isWallPlateKind(def.kind) && def.kind !== 'pipe' && t !== 'fridge_60') {
+    const lp = localPlacement(prj, t, m);
     const w = localToWorld(m, lp.lx, lp.ly, lp.lz);
     return { moduleId: m.id, lx: lp.lx, ly: lp.ly, lz: lp.lz, lrot: 0, x: w.x, z: w.z, elev: w.y, rot: +m.rot || 0, module: m };
   }
@@ -98,12 +109,19 @@ export function snapFixture(prj, type, point, hit) {
   const room = prj.room;
   let x = point.x, z = point.z, rot = hit?.rot ?? 0, elev = def.elev ?? 0;
   if (hit?.wall) {
-    elev = Math.round(point.y - (def.kind === 'pipe' ? 0 : def.h / 2));
     if (def.kind === 'pipe') elev = def.elev ?? 0;
+    else if (isWallPlateKind(def.kind)) elev = Math.round(point.y); // середина пластины
+    else elev = Math.round(point.y - def.h / 2);
     if (hit.wall === 'back') { rot = 0; z = 0; }
     else if (hit.wall === 'front') { rot = 180; z = room.depth; }
     else if (hit.wall === 'left') { rot = 90; x = 0; }
-    else { rot = 270; x = room.length; }
+    else if (hit.wall === 'right') { rot = 270; x = room.length; }
+    // произвольное ребро (буквы A…): ориентируем по нормали, координаты — точка клика
+    else if (hit.nx != null && hit.nz != null) {
+      rot = Math.round((Math.atan2(-hit.nx, -hit.nz) * 180) / Math.PI);
+      x = point.x;
+      z = point.z;
+    }
   }
   return { moduleId: null, x: Math.round(x), z: Math.round(z), elev: Math.max(0, Math.round(elev)), rot };
 }

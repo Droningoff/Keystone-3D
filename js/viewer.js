@@ -1,14 +1,18 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { MATERIALS } from './catalog.js?v=20261028m';
-import { panelBox } from './model.js?v=20261110a';
-import { buildFixtureMesh, FIXTURE_CATALOG, SINK_RIM } from './fixtures.js?v=20261028m';
+import { panelBox } from './model.js?v=20261123n';
+import { buildFixtureMesh, FIXTURE_CATALOG, SINK_RIM, fixtureDims, fixtureCenter } from './fixtures.js?v=20261124be';
 import { WALL_BY_ID } from './walls.js?v=20261110a';
 import {
   roomOutline, roomWallSegments, roomBounds, isAdvanced, ensureAdvancedFields,
   roomWallSegments3D, ceilingHeightAt, planAtHeight, edgeLetter, pointInPolygon,
-} from './roomGeom.js?v=20261110a';
+  isOpenRoom, wallEdgeCount, wallCornerFillPts,
+} from './roomGeom.js?v=20261124bb';
 import { buildHardwareMesh } from './hardware.js?v=20261029j';
 
 /**
@@ -18,7 +22,7 @@ import { buildHardwareMesh } from './hardware.js?v=20261029j';
  *  onPlace(x, z, wall?)
  *  onToggleFront(moduleId, panelKey)
  *  snap(moduleId, x, z) -> {x,z}
- *  dockSockets(excludeId|null) -> [{id,hostId,side,corner,x,y,z,label,pose?}]
+ *  dockSockets(excludeId|null) -> [{id,hostId,side,corner,x,y,z,strip*,pose?,ghost?}]
  *  onDock(moduleId, socket) — пристыковка к маркеру
  *  onRoomPick(part) — { kind:'wall'|'ceiling', edgeIndex?, letter?, point, y }
  *  onRoomContext(part, clientX, clientY)
@@ -26,6 +30,9 @@ import { buildHardwareMesh } from './hardware.js?v=20261029j';
  *  onMoveObstacle(id, x, z)
  *  onMoveOpening(id, offset, sill?)
  *  onDraggingCtor(kind, id, fields) — live обновление полей в props
+ *  onMoveFixture(id, {x,z,elev?})
+ *  onResizeFixture(id, {w?,d?,h?,elev?})
+ *  onPatchModule(id, {x?,z?,rot?,elev?,w?,d?,h?}) — CAD-gizmo модуля
  */
 export class Viewer {
   constructor(el, handlers) {
@@ -55,6 +62,7 @@ export class Viewer {
     this.showDims = true;
     this.dimMode = 'basic'; // none | basic | all — как BPlanner
     this.roomEdgeHelpers = [];
+    this.roomEdgeMats = [];
     this.layers = {
       ceiling: true, walls: true, floor: true,
       appliances: true, communications: true, furniture: true,
@@ -117,6 +125,7 @@ export class Viewer {
     this.lightRoot.add(this.hemi, this.sun, this.fill, this.ceilingGroup, this.accent);
 
     this.roomGroup = new THREE.Group();
+    this.roomEdgeGroup = new THREE.Group(); // окантовка отдельно — видна и в режиме «В линиях»
     this.furnGroup = new THREE.Group();
     this.fixGroup = new THREE.Group();
     this.ghostGroup = new THREE.Group();
@@ -124,11 +133,19 @@ export class Viewer {
     this.measureGroup = new THREE.Group(); // сетка + размеры
     this.wallHandleGroup = new THREE.Group(); // интерактивные точки пол/yRef/потолок
     this.wallHandleBaseGroup = new THREE.Group(); // пунктир базового состояния при drag
+    this.fixHandleGroup = new THREE.Group(); // ручки растягивания коммуникаций
+    this.ctorLineGroup = new THREE.Group(); // конструкции/проёмы в режиме «Линии» (roomGroup скрыт)
+    this.tapeGroup = new THREE.Group(); // рулетка: произвольные замеры
+    this.tapeMode = false;
+    this.tapePending = null; // THREE.Vector3 | null
     this.scene.add(
-      this.roomGroup, this.furnGroup, this.fixGroup, this.ghostGroup,
+      this.roomGroup, this.roomEdgeGroup, this.furnGroup, this.fixGroup, this.ghostGroup,
       this.dockGroup, this.measureGroup, this.wallHandleGroup, this.wallHandleBaseGroup,
+      this.fixHandleGroup, this.ctorLineGroup, this.tapeGroup,
     );
     this._wallHandleBaseline = null;
+    this._fixtureById = new Map();
+    this.fixMeshes = new Map();
 
     this.floorMesh = null;
     this.wallMeshes = [];
@@ -158,6 +175,7 @@ export class Viewer {
     this.labels.setSize(w, h);
     this.camera.aspect = w / Math.max(1, h);
     this.camera.updateProjectionMatrix();
+    for (const m of this.roomEdgeMats || []) m.resolution?.set(w, h);
   }
 
   setMode(mode, payload = null) {
@@ -170,9 +188,122 @@ export class Viewer {
       this.roomSel = null;
       this.setPropFocus(null);
       this._applyRoomHighlight();
+      if (this.tapeMode) this.setTapeMode(false);
     }
-    this.el.style.cursor = mode.startsWith('place') ? 'crosshair' : '';
+    this.el.style.cursor = mode.startsWith('place') ? 'crosshair' : (this.tapeMode ? 'crosshair' : '');
     this._applyViewControls(this.navMode || 'orbit');
+  }
+
+  /** Рулетка: два клика по сцене → расстояние в мм. */
+  setTapeMode(on) {
+    const next = !!on;
+    this.tapeMode = next;
+    if (!next) {
+      this.tapePending = null;
+      this._clearTapePreview();
+    } else {
+      this.setMode('select');
+    }
+    this.el.style.cursor = next ? 'crosshair' : '';
+    this.h.onTapeMode?.(next);
+  }
+
+  clearTapeMeasures() {
+    this.tapePending = null;
+    this._clearTapePreview();
+    this.tapeGroup.traverse((o) => {
+      if (o.isCSS2DObject && o.element?.parentNode) o.element.parentNode.removeChild(o.element);
+    });
+    this.tapeGroup.clear();
+  }
+
+  _clearTapePreview() {
+    const prev = this.tapeGroup.getObjectByName('tapePreview');
+    if (prev) {
+      prev.traverse((o) => {
+        if (o.isCSS2DObject && o.element?.parentNode) o.element.parentNode.removeChild(o.element);
+      });
+      this.tapeGroup.remove(prev);
+    }
+  }
+
+  _hitTapePoint(e) {
+    this.ray.setFromCamera(this._ndc(e), this.camera);
+    const meshes = [];
+    const push = (root) => {
+      if (!root) return;
+      root.traverse((o) => {
+        if (o.isMesh && this._visible(o) && o.geometry) meshes.push(o);
+      });
+    };
+    push(this.floorMesh);
+    for (const w of this.wallMeshes || []) push(w);
+    push(this.furnGroup);
+    push(this.fixGroup);
+    push(this.ctorLineGroup);
+    for (const [, m] of this.ctorObstacleMeshes || []) push(m);
+    const hit = this.ray.intersectObjects(meshes, true)[0];
+    if (hit?.point) return hit.point.clone();
+    const pt = new THREE.Vector3();
+    if (this.ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), pt)) return pt;
+    return null;
+  }
+
+  _tapeMarker(p, color = 0xeab308) {
+    const m = new THREE.Mesh(
+      new THREE.SphereGeometry(28, 12, 10),
+      new THREE.MeshBasicMaterial({ color, depthTest: false }),
+    );
+    m.position.copy(p);
+    m.renderOrder = 999;
+    return m;
+  }
+
+  _addTapeSegment(a, b) {
+    const dist = a.distanceTo(b);
+    const g = new THREE.Group();
+    g.userData.tape = true;
+    const pts = [a.clone(), b.clone()];
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(pts),
+      new THREE.LineDashedMaterial({
+        color: 0xca8a04, dashSize: 40, gapSize: 24, depthTest: false,
+      }),
+    );
+    line.computeLineDistances();
+    line.renderOrder = 998;
+    g.add(line, this._tapeMarker(a), this._tapeMarker(b));
+    const div = document.createElement('div');
+    div.className = 'mlabel tape-dim';
+    div.textContent = `${Math.round(dist)} мм`;
+    const lab = new CSS2DObject(div);
+    lab.position.copy(a).add(b).multiplyScalar(0.5);
+    lab.position.y += 40;
+    g.add(lab);
+    this.tapeGroup.add(g);
+    this.h.onTapeMeasure?.(Math.round(dist), a, b);
+  }
+
+  _tapeClick(e) {
+    const p = this._hitTapePoint(e);
+    if (!p) {
+      this.h.onTapeHint?.('Кликните по полу, стене или объекту');
+      return;
+    }
+    if (!this.tapePending) {
+      this.tapePending = p;
+      this._clearTapePreview();
+      const preview = new THREE.Group();
+      preview.name = 'tapePreview';
+      preview.add(this._tapeMarker(p, 0xf59e0b));
+      this.tapeGroup.add(preview);
+      this.h.onTapeHint?.('Вторая точка — конец отрезка');
+      return;
+    }
+    const a = this.tapePending.clone();
+    this.tapePending = null;
+    this._clearTapePreview();
+    this._addTapeSegment(a, p);
   }
 
   setRoomSelection(sel) {
@@ -200,7 +331,7 @@ export class Viewer {
     g.clear();
   }
 
-  /** Ручки углов выбранной стены на трёх высотах: пол / yRef / потолок. */
+  /** Ручки углов выбранной стены — по одной паре на каждый уровень room.levels. */
   _rebuildWallHandles() {
     this._clearWallHandleGroup(this.wallHandleGroup);
     if (this._wallHandleDrag) return; // не сбрасывать во время drag
@@ -214,21 +345,27 @@ export class Viewer {
     const n = room.planFloor.length;
     const i0 = sel.edgeIndex;
     const i1 = (sel.edgeIndex + 1) % n;
-    const yRef = +room.yRef || 900;
-    const pts = [
-      { p: s.a0, y: 40, vertIndex: i0, layer: 'floor' },
-      { p: s.b0, y: 40, vertIndex: i1, layer: 'floor' },
-      { p: s.aR, y: yRef, vertIndex: i0, layer: 'ref' },
-      { p: s.bR, y: yRef, vertIndex: i1, layer: 'ref' },
-      { p: s.a1, y: s.hA || (+room.height || 2700), vertIndex: i0, layer: 'ceil' },
-      { p: s.b1, y: s.hB || (+room.height || 2700), vertIndex: i1, layer: 'ceil' },
+    const H = +room.height || 2700;
+    const belts = s.belts?.length ? s.belts : [
+      { id: 'floor', a: s.a0, b: s.b0, yA: 0, yB: 0 },
+      { id: 'ceil', a: s.a1, b: s.b1, yA: s.hA || H, yB: s.hB || H },
     ];
-    const col = { floor: 0x0969da, ref: 0x0d9488, ceil: 0x8b5cf6 };
+    const named = { floor: 0x0969da, ref: 0x0d9488, ceil: 0x8b5cf6 };
+    const fallback = [0x0969da, 0x0d9488, 0xf59e0b, 0x8b5cf6, 0xec4899, 0x64748b];
+    const pts = [];
+    belts.forEach((belt, bi) => {
+      if (!belt?.a || !belt?.b) return;
+      const yA = belt.id === 'floor' ? 40 : (+belt.yA || 0);
+      const yB = belt.id === 'floor' ? 40 : (+belt.yB || 0);
+      const color = named[belt.id] ?? fallback[bi % fallback.length];
+      pts.push({ p: belt.a, y: yA, vertIndex: i0, layer: belt.id, color });
+      pts.push({ p: belt.b, y: yB, vertIndex: i1, layer: belt.id, color });
+    });
     for (const h of pts) {
       const mesh = new THREE.Mesh(
         new THREE.SphereGeometry(55, 14, 14),
         new THREE.MeshBasicMaterial({
-          color: col[h.layer] || 0x0969da,
+          color: h.color,
           depthTest: false,
           transparent: true,
           opacity: 0.95,
@@ -414,7 +551,7 @@ export class Viewer {
     this._roomSelOverlay.clear();
   }
 
-  /** Явное выделение: заливка + яркий контур выбранной стены/потолка. */
+  /** Выделение стены/потолка: мягкая заливка, без обводки внутренних блоков сетки. */
   _applyRoomHighlight() {
     const sel = this.roomSel;
     if (!this._roomSelOverlay) {
@@ -424,34 +561,37 @@ export class Viewer {
     }
     this._clearRoomSelOverlay();
 
-    const edgesOn = this.room?.showRoomEdges === true;
     for (const m of this.wallMeshes || []) {
-      const mat = m.material;
       const on = sel?.kind === 'wall' && sel.edgeIndex != null && m.userData.edgeIndex === sel.edgeIndex;
-      if (mat?.emissive) {
-        mat.emissive = new THREE.Color(on ? 0x0d9488 : 0x000000);
-        mat.emissiveIntensity = on ? 0.55 : 0;
-      }
-      // окантовка помещения — отдельная опция; выделение стены рисует свой overlay
-      if (m.userData._edgeHelper) m.userData._edgeHelper.visible = edgesOn;
-      if (on) this._addSelOverlayForMesh(m);
+      const apply = (obj) => {
+        const mat = obj.material;
+        if (mat?.emissive) {
+          mat.emissive = new THREE.Color(on ? 0x0d9488 : 0x000000);
+          mat.emissiveIntensity = on ? 0.45 : 0;
+        }
+        // только полупрозрачная заливка — EdgesGeometry показывал бы швы проёмов как «блоки»
+        if (on && obj.isMesh && obj.geometry) this._addSelOverlayForMesh(obj, { edges: false });
+      };
+      if (m.isMesh) apply(m);
+      else m.traverse((o) => { if (o.isMesh) apply(o); });
     }
+    this.setRoomEdgesVisible(this.room?.showRoomEdges === true);
 
     const ceilOn = sel?.kind === 'ceiling' && this.ceilMesh;
     if (this.ceilMesh?.material?.emissive) {
       this.ceilMesh.material.emissive = new THREE.Color(ceilOn ? 0x0d9488 : 0x000000);
       this.ceilMesh.material.emissiveIntensity = ceilOn ? 0.4 : 0;
     }
-    if (ceilOn) this._addSelOverlayForMesh(this.ceilMesh);
+    if (ceilOn) this._addSelOverlayForMesh(this.ceilMesh, { edges: false });
   }
 
-  _addSelOverlayForMesh(src) {
+  _addSelOverlayForMesh(src, opts = {}) {
     if (!src?.geometry || !this._roomSelOverlay) return;
     src.updateWorldMatrix(true, false);
     const fillMat = new THREE.MeshBasicMaterial({
       color: 0x2dd4bf,
       transparent: true,
-      opacity: 0.32,
+      opacity: 0.28,
       depthTest: true,
       side: THREE.DoubleSide,
     });
@@ -460,6 +600,7 @@ export class Viewer {
     fill.renderOrder = 10;
     this._roomSelOverlay.add(fill);
 
+    if (opts.edges === false) return;
     const edgeMat = new THREE.LineBasicMaterial({
       color: 0xfbbf24,
       depthTest: false,
@@ -470,26 +611,13 @@ export class Viewer {
     edges.applyMatrix4(src.matrixWorld);
     edges.renderOrder = 11;
     this._roomSelOverlay.add(edges);
-
-    // второй контур чуть крупнее — «обводка»
-    const edgeMat2 = new THREE.LineBasicMaterial({
-      color: 0xf59e0b,
-      depthTest: false,
-      transparent: true,
-      opacity: 0.85,
-    });
-    const edges2 = new THREE.LineSegments(new THREE.EdgesGeometry(src.geometry, 20), edgeMat2);
-    edges2.applyMatrix4(src.matrixWorld);
-    edges2.scale.multiplyScalar(1.004);
-    edges2.renderOrder = 12;
-    this._roomSelOverlay.add(edges2);
   }
 
   _hitRoomPart(e) {
     this.ray.setFromCamera(this._ndc(e), this.camera);
     const targets = [...(this.wallMeshes || [])];
     if (this.ceilMesh) targets.push(this.ceilMesh);
-    const hits = this.ray.intersectObjects(targets, false);
+    const hits = this.ray.intersectObjects(targets, true);
     if (!hits.length) return null;
     const h = hits[0];
     const ud = h.object.userData || {};
@@ -541,6 +669,8 @@ export class Viewer {
       // как eKitchen: прячем стены/потолок — остаются линии мебели на белом
       if (this.roomGroup) this.roomGroup.visible = false;
       if (this.ceilingGroup) this.ceilingGroup.visible = false;
+      // окантовка комнаты — отдельная группа, оставляем если включена
+      this.setRoomEdgesVisible(this.room?.showRoomEdges === true);
     } else if (this._savedLight) {
       this.hemi.intensity = this._savedLight.hemi || 0.55;
       this.sun.intensity = this._savedLight.sun || 1.2;
@@ -549,8 +679,14 @@ export class Viewer {
       this._savedLight = null;
       if (this.ceilingGroup) this.ceilingGroup.visible = true;
       this._updateWallVisibility();
+      this.setRoomEdgesVisible(this.room?.showRoomEdges === true);
     }
     if (this.build) this.render(this.build, this.sel, this.fixtures || []);
+    // setRoom вызывается из render/refresh не всегда до lineMode — обновить каркас конструкций
+    if (this.room) {
+      // openings/obstacles уже в maps после последнего setRoom
+      this._rebuildCtorLineOverlay();
+    }
   }
 
   /** Ч/Б: почти невидимая заливка (pick) — контур даёт EdgesGeometry / wireframe. */
@@ -570,11 +706,48 @@ export class Viewer {
 
   _toLineWire(root) {
     root.traverse((o) => {
-      if (!o.isMesh) return;
-      o.material = this._lineWireMat();
+      if (!o.isMesh || !o.geometry) return;
+      o.material = this._lineFillMat();
       o.castShadow = false;
       o.receiveShadow = false;
+      // чёрный контур поверх почти невидимой заливки (как у мебели)
+      if (!o.userData._lineEdges) {
+        const edges = new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 20), this._lineEdgeMat());
+        edges.userData = { ...(o.userData || {}), lineEdge: true };
+        o.add(edges);
+        o.userData._lineEdges = true;
+      }
     });
+  }
+
+  /**
+   * В режиме «Линии» roomGroup скрыт — конструкции и проёмы рисуем отдельно чёрным каркасом.
+   */
+  _rebuildCtorLineOverlay() {
+    const g = this.ctorLineGroup;
+    if (!g) return;
+    g.clear();
+    if (!this.lineMode) {
+      g.visible = false;
+      return;
+    }
+    g.visible = true;
+    const addWorldEdges = (src) => {
+      if (!src) return;
+      src.updateWorldMatrix(true, true);
+      src.traverse((o) => {
+        if (!o.isMesh || !o.geometry) return;
+        const fill = new THREE.Mesh(o.geometry, this._lineFillMat());
+        o.matrixWorld.decompose(fill.position, fill.quaternion, fill.scale);
+        fill.userData = { ...(o.userData || {}) };
+        const edges = new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 20), this._lineEdgeMat());
+        o.matrixWorld.decompose(edges.position, edges.quaternion, edges.scale);
+        edges.userData = { ...(o.userData || {}) };
+        g.add(fill, edges);
+      });
+    };
+    for (const [, mesh] of this.ctorObstacleMeshes || []) addWorldEdges(mesh);
+    for (const [, pack] of this.ctorOpeningMeshes || []) addWorldEdges(pack?.mesh || pack?.root || pack);
   }
 
   applyLighting(L) {
@@ -631,6 +804,8 @@ export class Viewer {
     if (this.lineMode) {
       this.roomGroup.visible = false;
       if (this.ceilingGroup) this.ceilingGroup.visible = false;
+      // окантовка не в roomGroup — не гасим
+      if (this.roomEdgeGroup) this.roomEdgeGroup.visible = this.room?.showRoomEdges === true;
       return;
     }
     const mode = this.room.show || 'auto';
@@ -679,6 +854,19 @@ export class Viewer {
       }
     });
     g.clear();
+    // окантовка вне roomGroup — чистим отдельно
+    if (this.roomEdgeGroup) {
+      this.roomEdgeGroup.traverse((o) => {
+        o.geometry?.dispose?.();
+        if (o.material) {
+          if (Array.isArray(o.material)) o.material.forEach((m) => m.dispose?.());
+          else o.material.dispose?.();
+        }
+      });
+      this.roomEdgeGroup.clear();
+    }
+    this.roomEdgeHelpers = [];
+    this.roomEdgeMats = [];
     this.wallMeshes = [];
     this.wallGroups = {};
     this.ctorObstacleMeshes = new Map();
@@ -738,22 +926,8 @@ export class Viewer {
     g.add(ceil);
     this.ceilMesh = ceil;
 
-    // Окантовка рёбер комнаты (опция) — углы стен/пола/потолка не сливаются
     this.roomEdgeHelpers = [];
-    const edgeMat = () => new THREE.LineBasicMaterial({
-      color: 0x3d4654, transparent: true, opacity: 0.9, depthTest: true, depthWrite: false,
-    });
-    const attachRoomEdges = (mesh, threshold = 20) => {
-      if (!mesh?.geometry) return;
-      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry, threshold), edgeMat());
-      edges.renderOrder = 3;
-      edges.visible = false;
-      mesh.add(edges);
-      mesh.userData._edgeHelper = edges;
-      this.roomEdgeHelpers.push(edges);
-    };
-    attachRoomEdges(floor, 1);
-    attachRoomEdges(ceil, 1);
+    this.roomEdgeMats = [];
 
     for (const name of ['back', 'front', 'left', 'right']) {
       const wg = new THREE.Group();
@@ -763,37 +937,49 @@ export class Viewer {
     }
 
     const segs3 = roomWallSegments3D(room);
-    const yRef = +room.yRef || 900;
+    const WALL_THICK = Math.max(40, +room.wallThick || 140);
+    const nWalls = wallEdgeCount(room);
+    const closedWalls = !isOpenRoom(room);
     for (const s of segs3) {
       const wg = this.wallGroups[s.wall] || g;
-      const a0 = s.a0, b0 = s.b0, aR = s.aR || a0, bR = s.bR || b0, a1 = s.a1, b1 = s.b1;
-      // пояса между соседними уровнями (пол → … → потолок) → сложный контур при разных длинах
-      const belts = s.belts?.length >= 2 ? s.belts : [
-        { a: a0, b: b0, yA: 0, yB: 0 }, { a: aR, b: bR, yA: yRef, yB: yRef }, { a: a1, b: b1, yA: s.hA, yB: s.hB },
-      ];
-      const pos = [], idx = [];
-      for (let k = 0; k < belts.length - 1; k++) {
-        const lo = belts[k], hi = belts[k + 1], o = pos.length / 3;
-        pos.push(lo.a.x, lo.yA, lo.a.z, lo.b.x, lo.yB, lo.b.z, hi.b.x, hi.yB, hi.b.z, hi.a.x, hi.yA, hi.a.z);
-        idx.push(o, o + 1, o + 2, o, o + 2, o + 3);
-      }
-      const geo = new THREE.BufferGeometry();
-      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-      geo.setIndex(idx);
-      geo.computeVertexNormals();
       const wmat = wallMat.clone();
       if (!wmat.emissive) wmat.emissive = new THREE.Color(0x000000);
       const wc = room.wallColors?.[s.edgeIndex] ?? room.wallColors?.[s.wall];
       if (wc != null) wmat.color = new THREE.Color(wc);
-      const mesh = new THREE.Mesh(geo, wmat);
-      mesh.userData = {
+      const edgeOps = (room.openings || []).filter((op) => {
+        if (op.edgeIndex != null) return +op.edgeIndex === s.edgeIndex;
+        if (op.wall !== s.wall) return false;
+        // без edgeIndex — только первое ребро с этим wall, иначе дырки дублируются
+        const first = segs3.find((seg) => seg.wall === op.wall);
+        return first && first.edgeIndex === s.edgeIndex;
+      });
+      const wallUd = {
         plane: 'wall', wall: s.wall, edgeIndex: s.edgeIndex, pickPlane: true,
         roomPart: 'wall', letter: edgeLetter(s.edgeIndex),
       };
-      attachRoomEdges(mesh, 15);
-      wg.add(mesh);
-      this.wallMeshes.push(mesh);
+      const ei = s.edgeIndex;
+      const nSeg = segs3.length;
+      const next = segs3[(ei + 1) % nSeg];
+      // торцы на стыках не строим; угол вшит в эту же стену (без отдельного «столбика» и без запила 45°)
+      const noCapStart = closedWalls || ei > 0;
+      const noCapEnd = closedWalls || ei < nWalls - 1;
+      const mesh = this._wallWithOpenings(s, edgeOps, wmat, WALL_THICK, {
+        noCapStart,
+        noCapEnd,
+        cornerEnd: noCapEnd ? next : null,
+      });
+      if (mesh) {
+        mesh.userData = { ...mesh.userData, ...wallUd };
+        mesh.traverse((o) => {
+          if (o.isMesh) o.userData = { ...o.userData, ...wallUd, pickPlane: true };
+        });
+        wg.add(mesh);
+        this.wallMeshes.push(mesh);
+      }
     }
+
+    // Окантовка в отдельной группе (видна и при «В линиях»)
+    this._buildRoomEdgeOverlay(this.roomEdgeGroup || g, room, segs3, H);
     for (const ob of room.obstacles || []) {
       if (!ob.id) continue;
       const oh = Math.max(10, +ob.y1 - +ob.y0);
@@ -854,6 +1040,7 @@ export class Viewer {
     this._refreshHighlights();
     this._applyPropFocusHighlight();
     if (!this._wallHandleDrag) this._rebuildWallHandles();
+    this._rebuildCtorLineOverlay();
   }
 
   /** Подсветка выбранной конструкции (колонна / проём). */
@@ -875,19 +1062,24 @@ export class Viewer {
     }
     for (const [id, pack] of this.ctorOpeningMeshes || []) {
       const on = id === opid;
-      for (const mesh of [pack.mesh, pack.frame].filter(Boolean)) {
-        if (mesh.material?.emissive) {
-          mesh.material.emissive.setHex(on ? 0x0d9488 : 0x000000);
-          mesh.material.emissiveIntensity = on ? 0.45 : 0;
-        }
+      const root = pack.root || pack.mesh;
+      root?.traverse((o) => {
+        if (!o.isMesh || !o.material?.emissive) return;
+        o.material.emissive.setHex(on ? 0x0d9488 : 0x000000);
+        o.material.emissiveIntensity = on ? 0.45 : 0;
+      });
+      if (on && root) {
+        root.traverse((o) => {
+          if (o.isMesh && o.geometry && !o.userData?.isSill) this._addSelOverlayForMesh(o);
+        });
       }
-      if (on && pack.mesh) this._addSelOverlayForMesh(pack.mesh);
     }
   }
 
   _refreshHighlights() {
     this._applyRoomHighlight();
     this._applyCtorHighlight();
+    if (!this._fixHandleDrag) this._rebuildFixtureHandles();
   }
 
   _hitCtor(e) {
@@ -942,7 +1134,7 @@ export class Viewer {
       this.fixGroup.traverse((o) => {
         const kind = o.userData?.fixtureKind;
         if (!kind) return;
-        if (kind === 'socket' || kind === 'pipe') o.visible = L.communications !== false;
+        if (kind === 'socket' || kind === 'vent' || kind === 'pipe') o.visible = L.communications !== false;
         else o.visible = L.appliances !== false;
       });
     }
@@ -955,6 +1147,7 @@ export class Viewer {
       if (o.isCSS2DObject && o.element?.parentNode) o.element.parentNode.removeChild(o.element);
     });
     g.clear();
+    this._dimPacks = new Map();
     if (!room) return;
     const L = +room.length || 4000;
     const D = +room.depth || 3500;
@@ -1011,62 +1204,363 @@ export class Viewer {
     }
 
     const dimMode = this.dimMode || (this.showDims ? 'basic' : 'none');
+    const dimsOn = room.showWallDims !== false;
+    const lens = room.showWallLens || { floor: true, mid: true, ceil: true };
     if (dimMode !== 'none') {
       const off = 180;
-      const dy = 25;
-      this._dimLine(g, 0, dy, -off, L, dy, -off, `${Math.round(L)}`, true);
-      this._dimLine(g, -off, dy, 0, -off, dy, D, `${Math.round(D)}`, false);
-      this._dimLine(g, -off * 0.55, 0, -off * 0.55, -off * 0.55, H, -off * 0.55, `${Math.round(H)}`, false);
-      // три длины на каждой стене: пол / yRef / потолок — отрезки с засечками
-      try {
+      // габарит высоты — опционально; L/D не дублируем (есть длины на стенах)
+      if (room.showHeightDim !== false) {
+        this._dimTickLabel(g, String(Math.round(H)), -off * 0.55, H / 2, -off * 0.55);
+        const hGeo = new THREE.BufferGeometry();
+        hGeo.setAttribute('position', new THREE.Float32BufferAttribute([
+          -off * 0.55, 0, -off * 0.55, -off * 0.55, H, -off * 0.55,
+        ], 3));
+        const hLine = new THREE.Line(hGeo, new THREE.LineDashedMaterial({
+          color: 0x111111, dashSize: 40, gapSize: 24, transparent: true, opacity: 0.75,
+        }));
+        hLine.computeLineDistances();
+        g.add(hLine);
+      }
+
+      // длины стен: чёрный пунктир по плоскости + подпись без рамки
+      if (dimsOn) try {
         const segs3 = roomWallSegments3D(room);
-        const yRef = +room.yRef || 900;
         for (const s of segs3) {
-          const letter = edgeLetter(s.edgeIndex ?? 0);
-          // наружу от стены, чтобы не лежало на плоскости
-          const ox = s.nx * 80, oz = s.nz * 80;
-          this._dimSeg(
-            g,
-            s.a0.x + ox, 50, s.a0.z + oz,
-            s.b0.x + ox, 50, s.b0.z + oz,
-            `${letter} ${Math.round(s.lenFloor)}`,
-          );
-          this._dimSeg(
-            g,
-            s.aR.x + ox, yRef, s.aR.z + oz,
-            s.bR.x + ox, yRef, s.bR.z + oz,
-            `${Math.round(s.lenRef)}`,
-          );
-          const yC = ((s.hA || H) + (s.hB || H)) / 2;
-          this._dimSeg(
-            g,
-            s.a1.x + ox, yC, s.a1.z + oz,
-            s.b1.x + ox, yC, s.b1.z + oz,
-            `${Math.round(s.lenCeil)}`,
-          );
+          const belts = s.belts?.length ? s.belts : [
+            { id: 'floor', a: s.a0, b: s.b0, yA: 0, yB: 0 },
+            { id: 'ref', a: s.aR, b: s.bR, yA: s.yRef || 900, yB: s.yRef || 900 },
+            { id: 'ceil', a: s.a1, b: s.b1, yA: s.hA || H, yB: s.hB || H },
+          ];
+          for (const belt of belts) {
+            const id = belt.id || 'mid';
+            const isFloor = id === 'floor';
+            const isCeil = id === 'ceil';
+            const isMid = !isFloor && !isCeil;
+            if (isFloor && lens.floor === false) continue;
+            if (isCeil && lens.ceil === false) continue;
+            if (isMid && lens.mid === false) continue;
+            const a = belt.a, b = belt.b;
+            if (!a || !b) continue;
+            const len = Math.round(Math.hypot(b.x - a.x, b.z - a.z));
+            if (len < 1) continue;
+            const yA = +belt.yA || 0, yB = +belt.yB || 0;
+            this._wallLenDash(g, a.x, yA, a.z, b.x, yB, b.z, s.nx, s.nz, String(len));
+          }
         }
+        // зазоры проёмов/колонн до соседей и до уровней стены
+        this._addCtorClearanceDims(g, room, segs3);
       } catch (_) { /* */ }
       if (dimMode === 'all') {
+        const dy = 25;
         for (let x = 500; x < L; x += 500) this._dimTickLabel(g, String(x), x, dy + 8, -off * 0.55);
         for (let z = 500; z < D; z += 500) this._dimTickLabel(g, String(z), -off * 0.55, dy + 8, z);
-        for (const op of room.openings || []) {
-          const w = +op.width || 0;
-          const yMid = (+op.sill || 0) + (+op.height || 0) / 2;
-          let x1, z1, x2, z2;
-          if (op.wall === 'back') {
-            x1 = +op.offset; z1 = -60; x2 = x1 + w; z2 = -60;
-          } else if (op.wall === 'front') {
-            x1 = L - (+op.offset) - w; z1 = D + 60; x2 = x1 + w; z2 = D + 60;
-          } else if (op.wall === 'left') {
-            x1 = -60; z1 = +op.offset; x2 = -60; z2 = z1 + w;
-          } else {
-            x1 = L + 60; z1 = D - (+op.offset) - w; x2 = L + 60; z2 = z1 + w;
-          }
-          this._dimSeg(g, x1, yMid, z1, x2, yMid, z2, `${op.type === 'door' ? 'Д' : 'О'} ${w}`);
-        }
       }
     }
     g.visible = this.showGrid || dimMode !== 'none';
+  }
+
+  /**
+   * Жирная окантовка: углы — ломаная по поясам; свободные концы открытого контура тоже.
+   * Периметр пола/потолка — по реальному контуру. Чуть внутрь — без z-fight.
+   */
+  _buildRoomEdgeOverlay(parent, room, segs3, H) {
+    const pts = [];
+    const inset = 12;
+    const pushSeg = (ax, ay, az, bx, by, bz) => {
+      pts.push(ax, ay, az, bx, by, bz);
+    };
+    const inward = (nx, nz) => {
+      let x = -(nx || 0), z = -(nz || 0);
+      const L = Math.hypot(x, z) || 1;
+      return { x: (x / L) * inset, z: (z / L) * inset };
+    };
+    /** Ломаная угла по поясам: side 'a'|'b' */
+    const pushCorner = (seg, side, ox, oz) => {
+      const belts = seg.belts?.length >= 2 ? seg.belts : [
+        { a: seg.a0, b: seg.b0, yA: 0, yB: 0 },
+        { a: seg.a1, b: seg.b1, yA: seg.hA || H, yB: seg.hB || H },
+      ];
+      for (let k = 0; k < belts.length - 1; k++) {
+        const lo = belts[k], hi = belts[k + 1];
+        const p0 = side === 'b' ? lo?.b : lo?.a;
+        const p1 = side === 'b' ? hi?.b : hi?.a;
+        const y0 = side === 'b' ? (+lo?.yB || 0) : (+lo?.yA || 0);
+        const y1 = side === 'b' ? (+hi?.yB || 0) : (+hi?.yA || 0);
+        if (!p0 || !p1) continue;
+        pushSeg(p0.x + ox, y0, p0.z + oz, p1.x + ox, y1, p1.z + oz);
+      }
+    };
+
+    const segs = segs3 || [];
+    const n = segs.length;
+    const open = isOpenRoom(room);
+
+    // Углы у начала каждой стены (+ стык с предыдущей)
+    for (let i = 0; i < n; i++) {
+      const cur = segs[i];
+      const hasPrev = !open || i > 0;
+      const prev = hasPrev ? segs[(i - 1 + n) % n] : null;
+      const nrm = prev
+        ? inward((cur.nx || 0) + (prev.nx || 0), (cur.nz || 0) + (prev.nz || 0))
+        : inward(cur.nx, cur.nz);
+      pushCorner(cur, 'a', nrm.x, nrm.z);
+    }
+    // Свободный конец открытого контура — конец последней стены
+    if (open && n > 0) {
+      const last = segs[n - 1];
+      const nrm = inward(last.nx, last.nz);
+      pushCorner(last, 'b', nrm.x, nrm.z);
+    }
+
+    // Периметр пола и потолка по поясам
+    for (const s of segs) {
+      const belts = s.belts?.length ? s.belts : null;
+      const floorB = belts?.[0] || { a: s.a0, b: s.b0, yA: 0, yB: 0 };
+      const ceilB = belts?.[belts.length - 1] || { a: s.a1, b: s.b1, yA: s.hA || H, yB: s.hB || H };
+      const ix = -(s.nx || 0) * inset, iz = -(s.nz || 0) * inset;
+      if (floorB.a && floorB.b) {
+        pushSeg(floorB.a.x + ix, (+floorB.yA || 0) + 1, floorB.a.z + iz,
+          floorB.b.x + ix, (+floorB.yB || 0) + 1, floorB.b.z + iz);
+      }
+      if (ceilB.a && ceilB.b) {
+        pushSeg(ceilB.a.x + ix, (+ceilB.yA || H) - 1, ceilB.a.z + iz,
+          ceilB.b.x + ix, (+ceilB.yB || H) - 1, ceilB.b.z + iz);
+      }
+    }
+
+    if (!pts.length) return;
+
+    const geo = new LineSegmentsGeometry();
+    geo.setPositions(pts);
+    const lw = Math.max(1, Math.min(16, +room.edgeWidth || 4.5));
+    const mat = new LineMaterial({
+      color: 0x0f172a,
+      linewidth: lw,
+      transparent: true,
+      opacity: 1,
+      depthTest: true,
+      depthWrite: false,
+      worldUnits: false,
+    });
+    const w = this.el.clientWidth || 800, h = this.el.clientHeight || 600;
+    mat.resolution.set(w, h);
+    const lines = new LineSegments2(geo, mat);
+    lines.computeLineDistances();
+    lines.renderOrder = 5;
+    lines.visible = false;
+    lines.name = 'roomEdgeOverlay';
+    parent.add(lines);
+    this.roomEdgeHelpers.push(lines);
+    this.roomEdgeMats.push(mat);
+  }
+
+  /** Толщина окантовки (px) без полной пересборки комнаты */
+  setRoomEdgeWidth(px) {
+    const lw = Math.max(1, Math.min(16, +px || 4.5));
+    if (this.room) this.room.edgeWidth = lw;
+    for (const m of this.roomEdgeMats || []) {
+      m.linewidth = lw;
+      m.needsUpdate = true;
+    }
+  }
+
+  /** Длина стены: тонкий чёрный пунктир по плоскости + подпись без рамки */
+  _wallLenDash(g, x1, y1, z1, x2, y2, z2, nx, nz, text) {
+    // внутрь комнаты + без depthTest — иначе линия тонет в толще стены (видна только в проёмах)
+    const inset = 55;
+    const ix = -(nx || 0) * inset, iz = -(nz || 0) * inset;
+    const ax = x1 + ix, az = z1 + iz, bx = x2 + ix, bz = z2 + iz;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute([ax, y1, az, bx, y2, bz], 3));
+    const mat = new THREE.LineDashedMaterial({
+      color: 0x111111,
+      dashSize: 36,
+      gapSize: 22,
+      transparent: true,
+      opacity: 0.85,
+      depthTest: false,
+      depthWrite: false,
+    });
+    const line = new THREE.Line(geo, mat);
+    line.computeLineDistances();
+    line.renderOrder = 6;
+    g.add(line);
+
+    const dimId = `d${(this._dimSeq = (this._dimSeq || 0) + 1)}`;
+    line.userData.dimId = dimId;
+
+    const mx = (ax + bx) / 2 - (nx || 0) * 22;
+    const my = (y1 + y2) / 2 + 28;
+    const mz = (az + bz) / 2 - (nz || 0) * 22;
+    const div = document.createElement('div');
+    div.className = 'mlabel dim-wall';
+    div.textContent = String(text).replace(/\s*мм\s*$/i, '').trim();
+    div.dataset.dimId = dimId;
+    div.title = 'Клик — подсветить размер';
+    div.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this._selectDim(dimId);
+    });
+    const lab = new CSS2DObject(div);
+    lab.position.set(mx, my, mz);
+    lab.userData.dimId = dimId;
+    g.add(lab);
+
+    if (!this._dimPacks) this._dimPacks = new Map();
+    this._dimPacks.set(dimId, { line, mat, lab, div });
+    if (this._selectedDimId === dimId) this._applyDimHighlight(dimId, true);
+  }
+
+  _clearDimSelection() {
+    if (this._dimPacks) {
+      for (const id of this._dimPacks.keys()) this._applyDimHighlight(id, false);
+    }
+    this._selectedDimId = null;
+  }
+
+  _selectDim(dimId) {
+    const prev = this._selectedDimId;
+    if (prev && prev !== dimId) this._applyDimHighlight(prev, false);
+    if (prev === dimId) {
+      this._applyDimHighlight(dimId, false);
+      this._selectedDimId = null;
+      return;
+    }
+    this._selectedDimId = dimId;
+    this._applyDimHighlight(dimId, true);
+  }
+
+  _applyDimHighlight(dimId, on) {
+    const pack = this._dimPacks?.get(dimId);
+    if (!pack) return;
+    pack.mat.color.setHex(on ? 0x0d9488 : 0x111111);
+    pack.mat.opacity = on ? 1 : 0.85;
+    pack.mat.dashSize = on ? 48 : 36;
+    pack.mat.gapSize = on ? 16 : 22;
+    pack.mat.needsUpdate = true;
+    pack.div?.classList.toggle('sel', !!on);
+  }
+
+  /**
+   * Пунктир зазоров: проём/колонна → сосед / угол стены;
+   * по вертикали — до уровней стены (пол, столешница, потолок…).
+   */
+  _addCtorClearanceDims(g, room, segs3) {
+    const segs = segs3 || [];
+    const openings = room.openings || [];
+    const obstacles = room.obstacles || [];
+
+    const pointOnSeg = (s, tAlong, y) => {
+      const len = Math.max(1, s.lenFloor || s.len || 1);
+      const t = Math.max(0, Math.min(len, tAlong)) / len;
+      return {
+        x: s.a0.x + (s.b0.x - s.a0.x) * t,
+        y,
+        z: s.a0.z + (s.b0.z - s.a0.z) * t,
+      };
+    };
+
+    for (const s of segs) {
+      const len = Math.max(1, s.lenFloor || s.len || 1);
+      const opsOnWall = openings.filter((op) => {
+        if (op.edgeIndex != null) return +op.edgeIndex === s.edgeIndex;
+        if (op.wall !== s.wall) return false;
+        const first = segs.find((x) => x.wall === op.wall);
+        return first && first.edgeIndex === s.edgeIndex;
+      });
+
+      const intervals = opsOnWall.map((op) => {
+        const t0 = Math.max(0, +op.offset || 0);
+        const t1 = Math.min(len, t0 + (+op.width || 900));
+        return {
+          t0, t1,
+          y0: Math.max(0, +op.sill || 0),
+          y1: Math.max(0, (+op.sill || 0) + (+op.height || 1400)),
+          kind: op.type || 'opening',
+        };
+      }).filter((iv) => iv.t1 - iv.t0 > 10);
+
+      for (const ob of obstacles) {
+        const cx = +ob.x + (+ob.w || 0) / 2;
+        const cz = +ob.z + (+ob.d || 0) / 2;
+        const dx = s.b0.x - s.a0.x, dz = s.b0.z - s.a0.z;
+        const t = ((cx - s.a0.x) * dx + (cz - s.a0.z) * dz) / (len * len);
+        const px = s.a0.x + t * dx, pz = s.a0.z + t * dz;
+        const dout = (cx - px) * (s.nx || 0) + (cz - pz) * (s.nz || 0);
+        // у стены изнутри комнаты (outward normal → внутрь = −n)
+        if (dout > 80 || dout < -500) continue;
+        if (t < -0.02 || t > 1.02) continue;
+        const half = Math.max(+ob.w || 0, +ob.d || 0) * 0.5;
+        intervals.push({
+          t0: Math.max(0, t * len - half),
+          t1: Math.min(len, t * len + half),
+          y0: +ob.y0 || 0,
+          y1: +ob.y1 || (+ob.y0 || 0) + 100,
+          kind: 'obstacle',
+        });
+      }
+
+      intervals.sort((a, b) => a.t0 - b.t0);
+
+      const cuts = [0, len];
+      for (const iv of intervals) cuts.push(iv.t0, iv.t1);
+      cuts.sort((a, b) => a - b);
+      const uniq = [];
+      for (const c of cuts) {
+        if (!uniq.length || Math.abs(c - uniq[uniq.length - 1]) > 2) uniq.push(c);
+      }
+
+      for (let i = 0; i < uniq.length - 1; i++) {
+        const a = uniq[i], b = uniq[i + 1];
+        const gap = b - a;
+        if (gap < 40) continue;
+        const mid = (a + b) / 2;
+        if (intervals.some((iv) => mid > iv.t0 + 2 && mid < iv.t1 - 2)) continue;
+        // высота линии — середина ближайшего объекта по вертикали, иначе ~1.1 м
+        let yDim = 1100;
+        let best = Infinity;
+        for (const iv of intervals) {
+          const d = Math.min(Math.abs(iv.t0 - mid), Math.abs(iv.t1 - mid));
+          if (d < best) {
+            best = d;
+            yDim = (iv.y0 + iv.y1) / 2;
+          }
+        }
+        const p0 = pointOnSeg(s, a, yDim);
+        const p1 = pointOnSeg(s, b, yDim);
+        this._wallLenDash(g, p0.x, p0.y, p0.z, p1.x, p1.y, p1.z, s.nx, s.nz, String(Math.round(gap)));
+      }
+
+      // вертикаль: от краёв объекта до уровней стены (пол / столешница / потолок / свои)
+      const belts = (s.belts?.length ? s.belts : [
+        { id: 'floor', yA: 0, yB: 0 },
+        { id: 'ref', yA: s.yRef || 900, yB: s.yRef || 900 },
+        { id: 'ceil', yA: s.hA || 2700, yB: s.hB || 2700 },
+      ]).map((b) => ({
+        id: b.id,
+        y: ((+b.yA || 0) + (+b.yB || 0)) / 2,
+      })).sort((a, b) => a.y - b.y);
+
+      for (const iv of intervals) {
+        const tMid = (iv.t0 + iv.t1) / 2;
+        const edgeYs = [iv.y0, iv.y1];
+        for (const yEdge of edgeYs) {
+          const below = [...belts].reverse().find((b) => b.y < yEdge - 25);
+          const above = belts.find((b) => b.y > yEdge + 25);
+          if (below) {
+            const p0 = pointOnSeg(s, tMid, below.y);
+            const p1 = pointOnSeg(s, tMid, yEdge);
+            this._wallLenDash(g, p0.x, p0.y, p0.z, p1.x, p1.y, p1.z, s.nx, s.nz, String(Math.round(yEdge - below.y)));
+          }
+          if (above) {
+            const p0 = pointOnSeg(s, tMid, yEdge);
+            const p1 = pointOnSeg(s, tMid, above.y);
+            this._wallLenDash(g, p0.x, p0.y, p0.z, p1.x, p1.y, p1.z, s.nx, s.nz, String(Math.round(above.y - yEdge)));
+          }
+        }
+      }
+    }
   }
 
   /** Размерный отрезок: линия + засечки на концах + подпись в середине. */
@@ -1131,9 +1625,27 @@ export class Viewer {
   setRoomEdgesVisible(v) {
     const on = !!v;
     if (this.room) this.room.showRoomEdges = on;
+    if (this.roomEdgeGroup) this.roomEdgeGroup.visible = on;
     for (const e of this.roomEdgeHelpers || []) {
       e.visible = on;
     }
+  }
+
+  /** Видимость длин стен по уровням: { floor, mid, ceil } */
+  setWallLensVisible(partial) {
+    if (!this.room) return;
+    const cur = this.room.showWallLens || { floor: true, mid: true, ceil: true };
+    this.room.showWallLens = {
+      floor: partial.floor != null ? !!partial.floor : cur.floor !== false,
+      mid: partial.mid != null ? !!partial.mid : cur.mid !== false,
+      ceil: partial.ceil != null ? !!partial.ceil : cur.ceil !== false,
+    };
+    this._rebuildMeasureOverlay(this.room);
+  }
+
+  setWallDimsVisible(v) {
+    if (this.room) this.room.showWallDims = !!v;
+    if (this.room) this._rebuildMeasureOverlay(this.room);
   }
 
   _dimLabel(g, text, x, y, z) {
@@ -1146,61 +1658,403 @@ export class Viewer {
     g.add(lab);
   }
 
-  _addOpening(g, op, L, D, H) {
-    if (!op.id) return;
-    const fillCol = op.color != null ? +op.color : (op.type === 'door' ? 0x6b4f2a : 0x9ec9e8);
-    const frameCol = op.frameColor != null ? +op.frameColor : 0x8b7355;
-    const frameMat = new THREE.MeshStandardMaterial({ color: frameCol, roughness: 0.7 });
+  /**
+   * Стена с толщей по поясам кривизны. openings=[] — глухая стена.
+   * opts.cornerEnd — соседняя стена: квадратный угол вшивается в эту же геометрию (без 45° и без отдельного меша).
+   */
+  _wallWithOpenings(s, openings, wallMat, thick = 140, opts = {}) {
+    const noCapStart = !!opts.noCapStart;
+    const noCapEnd = !!opts.noCapEnd;
+    const cornerEnd = opts.cornerEnd || null;
+    const len = Math.max(100, s.lenFloor || s.len || 1);
+    const hWall = Math.max(200, s.hA || 2700, s.hB || 2700);
+    const refNx = s.nx || 0, refNz = s.nz || 0;
+    const belts = (s.belts?.length >= 2 ? s.belts : [
+      { a: s.a0, b: s.b0, yA: 0, yB: 0 },
+      { a: s.aR || s.a0, b: s.bR || s.b0, yA: s.yRef || 900, yB: s.yRef || 900 },
+      { a: s.a1, b: s.b1, yA: s.hA || hWall, yB: s.hB || hWall },
+    ]).map((b) => ({
+      a: b.a, b: b.b,
+      yA: +b.yA || 0, yB: +b.yB || 0,
+    }));
+
+    const root = new THREE.Group();
+    root.userData.wallThick = thick;
+    root.userData.wallLen = len;
+    root.userData.nx = refNx;
+    root.userData.nz = refNz;
+
+    /** Точка на внутренней поверхности: along — мм от a0 по полу, y — высота. */
+    const sampleWall = (along, y) => {
+      const t = Math.max(0, Math.min(len, +along || 0)) / len;
+      const yy = Math.max(0, +y || 0);
+      let lo = belts[0], hi = belts[belts.length - 1];
+      for (let k = 0; k < belts.length - 1; k++) {
+        const a = belts[k], b = belts[k + 1];
+        const yLo = (a.yA + a.yB) * 0.5;
+        const yHi = (b.yA + b.yB) * 0.5;
+        if (yy >= yLo - 1e-3 && yy <= yHi + 1e-3) { lo = a; hi = b; break; }
+        if (k === belts.length - 2) { lo = a; hi = b; }
+      }
+      const yLo = (lo.yA + lo.yB) * 0.5;
+      const yHi = (hi.yA + hi.yB) * 0.5;
+      const u = Math.abs(yHi - yLo) > 1e-3 ? (yy - yLo) / (yHi - yLo) : 0;
+      const ax = lo.a.x + (hi.a.x - lo.a.x) * u;
+      const az = lo.a.z + (hi.a.z - lo.a.z) * u;
+      const bx = lo.b.x + (hi.b.x - lo.b.x) * u;
+      const bz = lo.b.z + (hi.b.z - lo.b.z) * u;
+      const yA = lo.yA + (hi.yA - lo.yA) * u;
+      const yB = lo.yB + (hi.yB - lo.yB) * u;
+      const px = ax + (bx - ax) * t;
+      const pz = az + (bz - az) * t;
+      const py = yA + (yB - yA) * t;
+      const dx = bx - ax, dz = bz - az;
+      const segLen = Math.hypot(dx, dz) || 1;
+      const tx = dx / segLen, tz = dz / segLen;
+      let nx = dz / segLen, nz = -dx / segLen;
+      if (nx * refNx + nz * refNz < 0) { nx = -nx; nz = -nz; }
+      return { x: px, y: py, z: pz, tx, tz, nx, nz };
+    };
+    root.userData.sampleWall = sampleWall;
+    // проём: вертикаль/горизонталь в мире; XZ берём на высоте центра (глубина едет со стеной)
+    root.userData.placeOpening = (mesh, along, y, zDepth = thick / 2) => {
+      const p = sampleWall(along, y);
+      mesh.position.set(p.x + p.nx * zDepth, y, p.z + p.nz * zDepth);
+      const basis = new THREE.Matrix4().makeBasis(
+        new THREE.Vector3(-p.tx, 0, -p.tz),
+        new THREE.Vector3(0, 1, 0),
+        new THREE.Vector3(p.nx, 0, p.nz),
+      );
+      mesh.quaternion.setFromRotationMatrix(basis);
+    };
+
+    const mat = wallMat.clone();
+    mat.side = THREE.DoubleSide;
+    mat.flatShading = false;
+
+    const pad = 4;
+    const holes = openings.map((op) => {
+      const t0 = Math.max(0, (+op.offset || 0) - pad);
+      const t1 = Math.min(len, (+op.offset || 0) + (+op.width || 900) + pad);
+      const y0 = Math.max(0, (+op.sill || 0) - pad);
+      const y1 = Math.min(hWall, (+op.sill || 0) + (+op.height || 1400) + pad);
+      const yMid = (y0 + y1) / 2;
+      const L = sampleWall(t0, yMid);
+      const R = sampleWall(t1, yMid);
+      return { t0, t1, y0, y1, yMid, L, R };
+    }).filter((h) => h.t1 > h.t0 + 20 && h.y1 > h.y0 + 20);
+
+    /** Угол проёма: отвесные стойки + горизонтальные ригеля (XZ с yMid проёма). */
+    const sampleOpeningAware = (t, y) => {
+      for (const h of holes) {
+        const onV = y >= h.y0 - 1 && y <= h.y1 + 1;
+        const onH = t >= h.t0 - 1 && t <= h.t1 + 1;
+        if (onV && Math.abs(t - h.t0) < 1.5) {
+          return { x: h.L.x, y, z: h.L.z, tx: h.L.tx, tz: h.L.tz, nx: h.L.nx, nz: h.L.nz };
+        }
+        if (onV && Math.abs(t - h.t1) < 1.5) {
+          return { x: h.R.x, y, z: h.R.z, tx: h.R.tx, tz: h.R.tz, nx: h.R.nx, nz: h.R.nz };
+        }
+        if (onH && (Math.abs(y - h.y0) < 1.5 || Math.abs(y - h.y1) < 1.5)) {
+          const u = (t - h.t0) / Math.max(1, h.t1 - h.t0);
+          return {
+            x: h.L.x + (h.R.x - h.L.x) * u,
+            y,
+            z: h.L.z + (h.R.z - h.L.z) * u,
+            tx: h.L.tx, tz: h.L.tz, nx: h.L.nx, nz: h.L.nz,
+          };
+        }
+      }
+      return sampleWall(t, y);
+    };
+
+    // геометрия стены: прямоугольная толща + верх/низ с нормалью ±Y (однотонно, без запила 45°)
+    const pos = [];
+    const nrm = [];
+    const idx = [];
+    const vmap = new Map();
+    /** side: 0 внутр, 1 наруж; face: 's' бок / 'u' верх / 'd' низ — раздельные нормали */
+    const vid = (t, y, side, face = 's') => {
+      const k = `${t.toFixed(2)}_${y.toFixed(2)}_${side}_${face}`;
+      if (vmap.has(k)) return vmap.get(k);
+      const p = sampleOpeningAware(t, y);
+      const i = pos.length / 3;
+      if (side === 0) {
+        pos.push(p.x, p.y, p.z);
+      } else {
+        pos.push(p.x + p.nx * thick, p.y, p.z + p.nz * thick);
+      }
+      if (face === 'u') nrm.push(0, 1, 0);
+      else if (face === 'd') nrm.push(0, -1, 0);
+      else if (side === 0) nrm.push(-p.nx, 0, -p.nz);
+      else nrm.push(p.nx, 0, p.nz);
+      vmap.set(k, i);
+      return i;
+    };
+    const quad = (a, b, c, d) => {
+      idx.push(a, b, c, a, c, d);
+    };
+    const addPrism = (t0, t1, y0, y1) => {
+      if (t1 - t0 < 2 || y1 - y0 < 2) return;
+      const i00 = vid(t0, y0, 0), i10 = vid(t1, y0, 0);
+      const i11 = vid(t1, y1, 0), i01 = vid(t0, y1, 0);
+      const o00 = vid(t0, y0, 1), o10 = vid(t1, y0, 1);
+      const o11 = vid(t1, y1, 1), o01 = vid(t0, y1, 1);
+      quad(i00, i10, i11, i01); // внутренняя
+      quad(o10, o00, o01, o11); // наружная
+      // верх/низ — отдельные вершины с нормалью ±Y (однотонный торец)
+      const d00 = vid(t0, y0, 0, 'd'), d10 = vid(t1, y0, 0, 'd');
+      const d1o = vid(t1, y0, 1, 'd'), d0o = vid(t0, y0, 1, 'd');
+      quad(d00, d0o, d1o, d10);
+      const u00 = vid(t0, y1, 0, 'u'), u10 = vid(t1, y1, 0, 'u');
+      const u1o = vid(t1, y1, 1, 'u'), u0o = vid(t0, y1, 1, 'u');
+      quad(u00, u10, u1o, u0o);
+      // торцы на стыках соседей пропускаем — иначе Z-fighting
+      if (!(noCapStart && Math.abs(t0) < 1.5)) {
+        const c00 = vid(t0, y0, 0), c01 = vid(t0, y1, 0);
+        const c0o1 = vid(t0, y1, 1), c0o0 = vid(t0, y0, 1);
+        quad(c00, c01, c0o1, c0o0);
+      }
+      if (!(noCapEnd && Math.abs(t1 - len) < 1.5)) {
+        const c10 = vid(t1, y0, 0), c1o0 = vid(t1, y0, 1);
+        const c1o1 = vid(t1, y1, 1), c11 = vid(t1, y1, 0);
+        quad(c10, c1o0, c1o1, c11);
+      }
+    };
+
+    // резы только по контуру проёмов (не по каждому поясу) — меньше швов
+    const tCuts = [0, len];
+    for (const h of holes) tCuts.push(h.t0, h.t1);
+    tCuts.sort((a, b) => a - b);
+    const ts = [];
+    for (const t of tCuts) {
+      if (!ts.length || Math.abs(t - ts[ts.length - 1]) > 2) ts.push(t);
+    }
+    const yCuts = [0, hWall];
+    for (const h of holes) yCuts.push(h.y0, h.y1);
+    // на завальной стене — ещё узлы поясов, чтобы кривизна не спрямлялась
+    if (s.complex) {
+      for (const b of belts) yCuts.push((b.yA + b.yB) * 0.5);
+    }
+    yCuts.sort((a, b) => a - b);
+    const ys = [];
+    for (const y of yCuts) {
+      if (!ys.length || Math.abs(y - ys[ys.length - 1]) > 2) ys.push(y);
+    }
+
+    for (let i = 0; i < ts.length - 1; i++) {
+      const t0 = ts[i], t1 = ts[i + 1];
+      const tMid = (t0 + t1) * 0.5;
+      for (let j = 0; j < ys.length - 1; j++) {
+        const y0 = ys[j], y1 = ys[j + 1];
+        const yMid = (y0 + y1) * 0.5;
+        if (holes.some((h) => tMid > h.t0 && tMid < h.t1 && yMid > h.y0 && yMid < h.y1)) continue;
+        addPrism(t0, t1, y0, y1);
+      }
+    }
+
+    // квадратный наружный угол в той же геометрии (без 45° и без второго меша)
+    // только выпуклый наружный угол (CCW): на вогнутом заливка торчит «столбиком»
+    if (cornerEnd && noCapEnd) {
+      const vx = s.b0?.x, vz = s.b0?.z;
+      if (vx != null && vz != null) {
+        const d1x = (+s.b0.x) - (+s.a0.x), d1z = (+s.b0.z) - (+s.a0.z);
+        const d2x = (+cornerEnd.b0.x) - (+cornerEnd.a0.x);
+        const d2z = (+cornerEnd.b0.z) - (+cornerEnd.a0.z);
+        const l1 = Math.hypot(d1x, d1z) || 1;
+        const l2 = Math.hypot(d2x, d2z) || 1;
+        const sinTurn = (d1x * d2z - d1z * d2x) / (l1 * l2);
+        const fill = sinTurn > 0.06 ? wallCornerFillPts(vx, vz, s, cornerEnd, thick) : null;
+        if (fill) {
+          const hC = Math.max(hWall, +s.hB || 0, +cornerEnd.hA || 0, +cornerEnd.hB || 0);
+          // микросдвиг по Y — убирает Z-fighting с торцом соседней стены / полом
+          const yBot = 0.15;
+          const yTop = hC + 0.15;
+          const [va, vm, vb] = fill;
+          const bot = [{ x: vx, z: vz }, va, vm, vb];
+          const pushCorner = (x, y, z, nx, ny, nz) => {
+            pos.push(x, y, z);
+            nrm.push(nx, ny, nz);
+            return pos.length / 3 - 1;
+          };
+          const di = bot.map((p) => pushCorner(p.x, yBot, p.z, 0, -1, 0));
+          const ui = bot.map((p) => pushCorner(p.x, yTop, p.z, 0, 1, 0));
+          quad(di[0], di[1], di[2], di[3]);
+          quad(ui[0], ui[3], ui[2], ui[1]);
+          for (const [a, b] of [[0, 1], [1, 2], [2, 3], [3, 0]]) {
+            const pa = bot[a], pb = bot[b];
+            const dx = pb.x - pa.x, dz = pb.z - pa.z;
+            const sl = Math.hypot(dx, dz) || 1;
+            let sx = dz / sl, sz = -dx / sl;
+            const mx = (pa.x + pb.x) * 0.5 - vx, mz = (pa.z + pb.z) * 0.5 - vz;
+            if (sx * mx + sz * mz < 0) { sx = -sx; sz = -sz; }
+            const i0 = pushCorner(pa.x, yBot, pa.z, sx, 0, sz);
+            const i1 = pushCorner(pb.x, yBot, pb.z, sx, 0, sz);
+            const i2 = pushCorner(pb.x, yTop, pb.z, sx, 0, sz);
+            const i3 = pushCorner(pa.x, yTop, pa.z, sx, 0, sz);
+            quad(i0, i1, i2, i3);
+          }
+        }
+      }
+    }
+
+    if (pos.length) {
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      geo.setAttribute('normal', new THREE.Float32BufferAttribute(nrm, 3));
+      geo.setIndex(idx);
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      root.add(mesh);
+    }
+
+    return root;
+  }
+
+  /** Модель окна/двери: рама + стекло/полотно + раскладка (не сплошной бокс). */
+  _buildOpeningModel(op) {
+    const root = new THREE.Group();
+    const W = Math.max(100, +op.width || 900);
+    const H = Math.max(100, +op.height || 1400);
+    const isWin = op.type !== 'door';
+    const fillCol = op.color != null ? +op.color : (isWin ? 0x9ec9e8 : 0x6b4f2a);
+    const frameCol = op.frameColor != null ? +op.frameColor : (isWin ? 0x1a1a1a : 0x4a3728);
+    const frameMat = new THREE.MeshStandardMaterial({ color: frameCol, roughness: 0.65, metalness: 0.05 });
     frameMat.emissive = new THREE.Color(0x000000);
     frameMat.emissiveIntensity = 0;
-    const glassMat = new THREE.MeshStandardMaterial({
+    const fillMat = new THREE.MeshStandardMaterial({
       color: fillCol,
-      transparent: op.type === 'window',
-      opacity: op.type === 'window' ? 0.45 : 1,
-      roughness: 0.2,
-      metalness: 0.1,
+      transparent: isWin,
+      opacity: isWin ? 0.42 : 1,
+      roughness: isWin ? 0.12 : 0.75,
+      metalness: isWin ? 0.15 : 0,
       side: THREE.DoubleSide,
+      depthWrite: !isWin,
     });
-    glassMat.emissive = new THREE.Color(0x000000);
-    glassMat.emissiveIntensity = 0;
-    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(op.width, op.height), glassMat);
+    fillMat.emissive = new THREE.Color(0x000000);
+    fillMat.emissiveIntensity = 0;
+
+    const ft = Math.max(28, Math.min(55, Math.round(Math.min(W, H) * 0.045))); // ширина профиля
+    const fd = isWin ? 70 : 50; // глубина рамы
+    const mt = Math.max(18, Math.round(ft * 0.55)); // штапик / импост
+
+    const addBox = (w, h, d, x, y, z, mat) => {
+      const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+      m.position.set(x, y, z);
+      root.add(m);
+      return m;
+    };
+
+    // наружная рама (полый прямоугольник из 4 брусков)
+    addBox(W, ft, fd, 0, H / 2 - ft / 2, 0, frameMat); // верх
+    addBox(W, ft, fd, 0, -H / 2 + ft / 2, 0, frameMat); // низ
+    addBox(ft, H - 2 * ft, fd, -W / 2 + ft / 2, 0, 0, frameMat); // лево
+    addBox(ft, H - 2 * ft, fd, W / 2 - ft / 2, 0, 0, frameMat); // право
+
+    const innerW = W - 2 * ft;
+    const innerH = H - 2 * ft;
+    // раскладка: 1–2 стойки / ригеля по габариту
+    const nCol = isWin ? (W >= 1500 ? 2 : W >= 900 ? 1 : 0) : 0;
+    const nRow = isWin ? (H >= 1400 ? 1 : 0) : 0;
+    const cellsX = nCol + 1;
+    const cellsY = nRow + 1;
+    const cellW = (innerW - nCol * mt) / cellsX;
+    const cellH = (innerH - nRow * mt) / cellsY;
+
+    for (let c = 0; c < nCol; c++) {
+      const x = -innerW / 2 + cellW * (c + 1) + mt * c + mt / 2;
+      addBox(mt, innerH, fd * 0.85, x, 0, 0, frameMat);
+    }
+    for (let r = 0; r < nRow; r++) {
+      const y = -innerH / 2 + cellH * (r + 1) + mt * r + mt / 2;
+      addBox(innerW, mt, fd * 0.85, 0, y, 0, frameMat);
+    }
+
+    // стёкла / полотно двери — только внутри ячеек (цвет заполнения)
+    const glassZ = isWin ? fd * 0.08 : -fd * 0.15;
+    const glassD = isWin ? 8 : fd * 0.55;
+    for (let iy = 0; iy < cellsY; iy++) {
+      for (let ix = 0; ix < cellsX; ix++) {
+        const cx = -innerW / 2 + cellW * ix + mt * ix + cellW / 2;
+        const cy = -innerH / 2 + cellH * iy + mt * iy + cellH / 2;
+        const gw = Math.max(10, cellW - 4);
+        const gh = Math.max(10, cellH - 4);
+        addBox(gw, gh, glassD, cx, cy, glassZ, fillMat);
+      }
+    }
+
+    // подоконник внутрь комнаты (−Z: у стены +Z = наружу в толщу)
+    if (isWin) {
+      const sillD = 120, sillH = 28, sillOver = 40;
+      const sillMat = new THREE.MeshStandardMaterial({ color: 0xd8d0c4, roughness: 0.7 });
+      sillMat.emissive = new THREE.Color(0x000000);
+      const sill = addBox(
+        W + sillOver, sillH, sillD,
+        0, -H / 2 + sillH / 2, -(fd / 2 + sillD / 2 - 12),
+        sillMat,
+      );
+      sill.userData.isSill = true;
+    }
+
+    return root;
+  }
+
+  _addOpening(g, op, L, D, H) {
+    if (!op.id) return;
+    const WALL_THICK = 140;
+    const root = this._buildOpeningModel(op);
     const off = (+op.offset || 0) + (+op.width || 0) / 2;
     const y = (+op.sill || 0) + (+op.height || 0) / 2;
-    let placed = false;
     let edgeIndex = op.edgeIndex != null ? +op.edgeIndex : null;
-    if (edgeIndex != null && this.room) {
-      try {
-        const segs = roomWallSegments(this.room);
-        const s = segs[edgeIndex];
-        if (s && s.len > 1) {
-          const tx = (s.x2 - s.x1) / s.len, tz = (s.z2 - s.z1) / s.len;
-          mesh.position.set(s.x1 + tx * off, y, s.z1 + tz * off);
-          mesh.rotation.y = Math.atan2(-s.nx, -s.nz);
-          placed = true;
-        }
-      } catch { /* fallback ниже */ }
-    }
-    if (!placed) {
-      if (op.wall === 'back') mesh.position.set(off, y, 2);
-      else if (op.wall === 'front') { mesh.position.set(L - off, y, D - 2); mesh.rotation.y = Math.PI; }
-      else if (op.wall === 'left') { mesh.position.set(2, y, off); mesh.rotation.y = Math.PI / 2; }
-      else { mesh.position.set(L - 2, y, D - off); mesh.rotation.y = -Math.PI / 2; }
-    }
+
+    const wallRoot = (this.wallMeshes || []).find(
+      (m) => !m.isMesh && edgeIndex != null && m.userData?.edgeIndex === edgeIndex,
+    ) || (this.wallMeshes || []).find(
+      (m) => !m.isMesh && op.wall && m.userData?.wall === op.wall,
+    );
+
     const ctorUd = {
       pickCtor: true, ctorKind: 'opening', ctorId: op.id,
       edgeIndex, wall: op.wall, offset: +op.offset || 0, width: +op.width || 0,
       sill: +op.sill || 0, height: +op.height || 0,
     };
-    mesh.userData = { ...ctorUd };
-    g.add(mesh);
-    const fw = 40;
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(op.width + fw, op.height + fw, 30), frameMat);
-    frame.position.copy(mesh.position);
-    frame.rotation.copy(mesh.rotation);
-    frame.translateZ(-8);
-    frame.userData = { ...ctorUd };
-    g.add(frame);
-    this.ctorOpeningMeshes.set(op.id, { mesh, frame });
+    root.userData = { ...ctorUd };
+    root.traverse((o) => {
+      if (o.isMesh) o.userData = { ...o.userData, ...ctorUd };
+    });
+
+    if (wallRoot) {
+      edgeIndex = wallRoot.userData.edgeIndex;
+      ctorUd.edgeIndex = edgeIndex;
+      root.userData.edgeIndex = edgeIndex;
+      const thick = wallRoot.userData.wallThick || WALL_THICK;
+      const place = wallRoot.userData.placeOpening;
+      if (place) place(root, off, y, thick / 2);
+      else {
+        root.position.set(off, y, thick / 2);
+        root.rotation.set(0, 0, 0);
+      }
+      wallRoot.add(root);
+      if (op.type !== 'door') {
+        const sky = new THREE.Mesh(
+          new THREE.PlaneGeometry((+op.width || 900) + 200, (+op.height || 1400) + 200),
+          new THREE.MeshBasicMaterial({ color: 0x7eb6e8, side: THREE.DoubleSide }),
+        );
+        if (place) place(sky, off, y, thick + 40);
+        else sky.position.set(off, y, thick + 40);
+        sky.userData = { ...ctorUd, isExterior: true };
+        wallRoot.add(sky);
+        root.userData.exterior = sky;
+      }
+    } else {
+      if (op.wall === 'back') root.position.set(off, y, -WALL_THICK / 2);
+      else if (op.wall === 'front') { root.position.set(L - off, y, D + WALL_THICK / 2); root.rotation.y = Math.PI; }
+      else if (op.wall === 'left') { root.position.set(-WALL_THICK / 2, y, off); root.rotation.y = Math.PI / 2; }
+      else { root.position.set(L + WALL_THICK / 2, y, D - off); root.rotation.y = -Math.PI / 2; }
+      g.add(root);
+    }
+    this.ctorOpeningMeshes.set(op.id, { mesh: root, frame: null, root, wallRoot: wallRoot || null });
   }
 
   render(build, sel, fixtures = []) {
@@ -1420,8 +2274,10 @@ export class Viewer {
       this.modGroups.set(mid, root);
     }
 
-    this.fixGroup.visible = this.lineMode ? true : (this._fixturesWanted !== false);
+    this.fixMeshes.clear();
+    this._fixtureById.clear();
     for (const f of fixtures) {
+      this._fixtureById.set(f.id, f);
       const mesh = buildFixtureMesh(THREE, f);
       if (!mesh) continue;
       const fk = FIXTURE_CATALOG[f.type]?.kind || 'appliance';
@@ -1439,9 +2295,541 @@ export class Viewer {
         });
       }
       this.fixGroup.add(mesh);
+      this.fixMeshes.set(f.id, mesh);
     }
     this._applyLayers();
+    // в «Линиях» коммуникации всегда видны (как каркас мебели), даже если roomGroup скрыт
+    if (this.lineMode) {
+      this.fixGroup.visible = true;
+      this.fixGroup.traverse((o) => {
+        if (o.userData?.fixtureKind) o.visible = true;
+      });
+    }
     this._rebuildDocks();
+    this._rebuildFixtureHandles();
+    this._rebuildCtorLineOverlay();
+  }
+
+  /**
+   * CAD-gizmo: модули каталога, коммуникации / техника, конструкции.
+   * Стрелки — сдвиг, кольцо — поворот (yaw у модулей), кубики — размер.
+   */
+  _rebuildFixtureHandles(live = false) {
+    if (this._fixHandleDrag && !live) return;
+    this.fixHandleGroup.clear();
+    this._gizmoOrigin = null;
+    this._gizmoRingR = null;
+    if (this.lineMode) return;
+
+    let target = null; // { kind, id, w,d,h, origin, rotX,rotY,rotZ, scaleMode, fullRot }
+    if (this.sel?.fixtureId) {
+      const id = this.sel.fixtureId;
+      const f = this._fixtureById.get(id);
+      const mesh = this.fixMeshes.get(id);
+      if (!f || !mesh) return;
+      const def = FIXTURE_CATALOG[f.type] || FIXTURE_CATALOG[f.type === 'socket_kitchen' || f.type === 'socket_double' ? 'socket_block' : ''];
+      if (!def) return;
+      const livePose = live ? this._fixGizmoLive : null;
+      const { w, d, h } = fixtureDims({
+        ...f,
+        type: def === FIXTURE_CATALOG.socket_block && (f.type === 'socket_kitchen' || f.type === 'socket_double')
+          ? 'socket_block' : f.type,
+        w: livePose?.w ?? f.w,
+        d: livePose?.d ?? f.d,
+        h: livePose?.h ?? f.h,
+      });
+      const pose = { ...f, ...(livePose || {}) };
+      const c0 = fixtureCenter(pose, { w, d, h, def });
+      target = {
+        kind: 'fixture',
+        id,
+        w, d, h,
+        origin: new THREE.Vector3(c0.x, c0.y, c0.z),
+        rotX: +pose.rx || 0,
+        rotY: +pose.rot || 0,
+        rotZ: +pose.rz || 0,
+        scaleMode: def.kind === 'pipe' ? 'pipe' : 'box',
+        fullRot: true,
+        compactHint: def.kind === 'socket' || def.kind === 'vent',
+      };
+    } else if (this.sel?.obstacleId) {
+      const id = this.sel.obstacleId;
+      const mesh = this.ctorObstacleMeshes.get(id);
+      const ud = mesh?.userData;
+      if (!mesh || !ud) return;
+      const livePose = live ? this._fixGizmoLive : null;
+      const w = +(livePose?.w ?? ud.w) || 400;
+      const d = +(livePose?.d ?? ud.d) || 400;
+      const y0 = +(livePose?.y0 ?? ud.y0) || 0;
+      const y1 = +(livePose?.y1 ?? ud.y1) || 2700;
+      const h = Math.max(10, y1 - y0);
+      const x = +(livePose?.x ?? ud.x) || 0;
+      const z = +(livePose?.z ?? ud.z) || 0;
+      const rotY = +(livePose?.rot ?? ud.rot) || 0;
+      target = {
+        kind: 'obstacle',
+        id,
+        w, d, h, y0, y1, x, z,
+        origin: new THREE.Vector3(x + w / 2, y0 + h / 2, z + d / 2),
+        rotX: 0,
+        rotY,
+        rotZ: 0,
+        scaleMode: 'box',
+        fullRot: false, // только yaw
+        compactHint: false,
+      };
+    } else if (this.sel?.openingId) {
+      const id = this.sel.openingId;
+      const pack = this.ctorOpeningMeshes.get(id);
+      const mesh = pack?.mesh;
+      if (!mesh) return;
+      const livePose = live ? this._fixGizmoLive : null;
+      const ud = mesh.userData || {};
+      const w = +(livePose?.width ?? ud.width ?? 900);
+      const h = +(livePose?.height ?? ud.height ?? 1400);
+      const sill = +(livePose?.sill ?? ud.sill ?? 0);
+      const world = new THREE.Vector3();
+      mesh.getWorldPosition(world);
+      // центр проёма в мире
+      target = {
+        kind: 'opening',
+        id,
+        w, d: 80, h, sill,
+        origin: world.clone(),
+        rotX: 0, rotY: 0, rotZ: 0,
+        scaleMode: 'opening',
+        fullRot: false,
+        compactHint: false,
+        wallAlong: null,
+      };
+      // ось стены — из родителя
+      const wr = pack.wallRoot;
+      if (wr?.userData) {
+        const nx = +wr.userData.nx || 0, nz = +wr.userData.nz || 0;
+        // вдоль стены = перпендикуляр нормали
+        target.wallAlong = new THREE.Vector3(-nz, 0, nx).normalize();
+        target.wallNormal = new THREE.Vector3(nx, 0, nz).normalize();
+        const eul = new THREE.Euler().setFromQuaternion(wr.getWorldQuaternion(new THREE.Quaternion()), 'YXZ');
+        target.rotY = (eul.y * 180) / Math.PI;
+      }
+    } else if (this.sel?.moduleId && !String(this.sel.moduleId).startsWith('__top')) {
+      const id = this.sel.moduleId;
+      const m = (this.build?.items || []).find((q) => q.module?.id === id)?.module;
+      if (!m?.p) return;
+      const livePose = live ? this._fixGizmoLive : null;
+      const w = +(livePose?.w ?? m.p.width) || 600;
+      const d = +(livePose?.d ?? m.p.depth) || 560;
+      const h = +(livePose?.h ?? m.p.height) || 720;
+      const elev = +(livePose?.elev ?? m.p.elev) || 0;
+      const x = +(livePose?.x ?? m.x) || 0;
+      const z = +(livePose?.z ?? m.z) || 0;
+      const rotY = +(livePose?.rot ?? m.rot) || 0;
+      const a = (rotY * Math.PI) / 180;
+      const c = Math.cos(a), s = Math.sin(a);
+      const lx = w * 0.5, lz = d * 0.5;
+      target = {
+        kind: 'module',
+        id,
+        w, d, h, elev, x, z,
+        origin: new THREE.Vector3(x + lx * c + lz * s, elev + h * 0.5, z - lx * s + lz * c),
+        rotX: 0,
+        rotY,
+        rotZ: 0,
+        scaleMode: 'box',
+        fullRot: false,
+        compactHint: false,
+      };
+    } else {
+      return;
+    }
+
+    const { w, d, h, origin } = target;
+    const eul = new THREE.Euler(
+      (target.rotX * Math.PI) / 180,
+      (target.rotY * Math.PI) / 180,
+      (target.rotZ * Math.PI) / 180,
+      'YXZ',
+    );
+    const m4 = new THREE.Matrix4().makeRotationFromEuler(eul);
+    const xAxis = new THREE.Vector3(1, 0, 0).applyMatrix4(m4).normalize();
+    const yAxis = new THREE.Vector3(0, 1, 0).applyMatrix4(m4).normalize();
+    const zAxis = new THREE.Vector3(0, 0, 1).applyMatrix4(m4).normalize();
+    if (target.kind === 'opening' && target.wallAlong) {
+      xAxis.copy(target.wallAlong);
+      zAxis.copy(target.wallNormal || zAxis);
+      yAxis.set(0, 1, 0);
+    }
+
+    const size = Math.max(w, d, h);
+    const compact = target.compactHint || size < 220;
+    const ringR = compact
+      ? Math.max(48, Math.min(95, size * 0.85 + 36))
+      : Math.max(90, Math.min(220, Math.max(w, d, h * 0.25) * 0.45 + 70));
+    const arrowLen = compact
+      ? Math.max(55, Math.min(110, size * 0.75 + 40))
+      : Math.max(120, Math.min(280, Math.min(h, 2000) * 0.2 + 100));
+    const tube = compact ? Math.max(6, Math.min(12, ringR * 0.11)) : Math.max(10, Math.min(18, ringR * 0.1));
+    const hubR = compact ? 10 : 18;
+    const cubeS = compact ? 14 : 26;
+    this._gizmoOrigin = origin.clone();
+    this._gizmoRingR = ringR;
+    const tag = (obj, axis) => {
+      const meta = { id: target.id, axis, kind: target.kind };
+      obj.userData = { ...(obj.userData || {}), fixHandle: meta, pick: true };
+      obj.traverse((o) => {
+        if (o.isMesh || o.isLine) {
+          o.userData = { fixHandle: meta, pick: true };
+          o.renderOrder = 1000;
+          if (o.material) {
+            o.material.depthTest = false;
+            o.material.depthWrite = false;
+            if (o.material.color && o.material.userData.baseColor == null) {
+              o.material.userData.baseColor = o.material.color.getHex();
+            }
+            if (o.material.userData.baseOpacity == null) {
+              o.material.userData.baseOpacity = o.material.opacity ?? 1;
+            }
+          }
+        }
+      });
+      this.fixHandleGroup.add(obj);
+    };
+
+    if (target.kind === 'opening') {
+      // проём: вдоль стены, высота подоконника, ширина/высота
+      tag(this._gizmoArrow(origin, xAxis, 0xe11d48, arrowLen, compact), 'moveX');
+      tag(this._gizmoArrow(origin, yAxis, 0x16a34a, arrowLen * 0.75, compact), 'moveY');
+      const hub = new THREE.Mesh(
+        new THREE.OctahedronGeometry(hubR, 0),
+        new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.95 }),
+      );
+      hub.position.copy(origin);
+      tag(hub, 'moveX');
+      const cube = (axis, color, pos) => {
+        const m = new THREE.Mesh(
+          new THREE.BoxGeometry(cubeS, cubeS, cubeS),
+          new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.95 }),
+        );
+        m.position.copy(pos);
+        tag(m, axis);
+      };
+      cube('w', 0x3b82f6, origin.clone().add(xAxis.clone().multiplyScalar(w / 2 + 18)));
+      cube('h', 0x22c55e, origin.clone().add(yAxis.clone().multiplyScalar(h / 2 + 18)));
+      return;
+    }
+
+    tag(this._gizmoArrow(origin, xAxis, 0xe11d48, arrowLen, compact), 'moveX');
+    tag(this._gizmoArrow(origin, yAxis, 0x16a34a, arrowLen, compact), 'moveY');
+    tag(this._gizmoArrow(origin, zAxis, 0x2563eb, arrowLen * 0.85, compact), 'moveZ');
+
+    const hub = new THREE.Mesh(
+      new THREE.OctahedronGeometry(hubR, 0),
+      new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.95 }),
+    );
+    hub.position.copy(origin);
+    tag(hub, 'moveXZ');
+
+    if (target.fullRot) {
+      tag(this._gizmoRotRing(origin, ringR, 0xf87171, xAxis, tube), 'rotX');
+      tag(this._gizmoRotRing(origin, ringR, 0xf59e0b, yAxis, tube), 'rotY');
+      tag(this._gizmoRotRing(origin, ringR, 0x60a5fa, zAxis, tube), 'rotZ');
+    } else {
+      tag(this._gizmoRotRing(origin, ringR, 0xf59e0b, yAxis, tube), 'rotY');
+    }
+
+    const cube = (axis, color, pos) => {
+      const m = new THREE.Mesh(
+        new THREE.BoxGeometry(cubeS, cubeS, cubeS),
+        new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.95 }),
+      );
+      m.position.copy(pos);
+      tag(m, axis);
+    };
+    cube('h', 0x22c55e, origin.clone().add(yAxis.clone().multiplyScalar(h * 0.5 + (compact ? 12 : 20))));
+    if (target.scaleMode === 'pipe') {
+      const rad = Math.max(w, d) / 2 + (compact ? 20 : 36);
+      cube('diam', 0x3b82f6, origin.clone().add(xAxis.clone().multiplyScalar(rad)));
+    } else {
+      cube('w', 0x3b82f6, origin.clone().add(xAxis.clone().multiplyScalar(w / 2 + (compact ? 10 : 18))));
+      cube('d', 0xa855f7, origin.clone().add(zAxis.clone().multiplyScalar(d / 2 + (compact ? 12 : 24))));
+    }
+  }
+
+  _gizmoArrow(origin, dir, color, length = 180, compact = false) {
+    const g = new THREE.Group();
+    const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.95 });
+    const tip = compact ? 28 : 42;
+    const rad = compact ? 3.5 : 5.5;
+    const shaftH = Math.max(28, length - tip);
+    const shaft = new THREE.Mesh(new THREE.CylinderGeometry(rad, rad, shaftH, 10), mat);
+    shaft.position.y = shaftH / 2;
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(compact ? 10 : 15, tip, 14), mat.clone());
+    cone.position.y = shaftH + tip / 2;
+    g.add(shaft, cone);
+    g.position.copy(origin);
+    const nd = dir.clone().normalize();
+    if (nd.lengthSq() > 1e-8) g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), nd);
+    return g;
+  }
+
+  /** Пунктирное кольцо; tube тонкий — центр остаётся кликабельным для drag объекта. */
+  _gizmoRotRing(origin, radius, color, axisDir = new THREE.Vector3(0, 1, 0), tube = 12) {
+    const g = new THREE.Group();
+    const pts = [];
+    const N = 72;
+    for (let i = 0; i <= N; i++) {
+      const a = (i / N) * Math.PI * 2;
+      pts.push(new THREE.Vector3(Math.cos(a) * radius, 0, Math.sin(a) * radius));
+    }
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
+    const line = new THREE.Line(geo, new THREE.LineDashedMaterial({
+      color, dashSize: Math.max(10, radius * 0.18), gapSize: Math.max(6, radius * 0.12),
+      transparent: true, opacity: 0.95,
+    }));
+    line.computeLineDistances();
+    const hit = new THREE.Mesh(
+      new THREE.TorusGeometry(radius, tube, 8, 48),
+      new THREE.MeshBasicMaterial({
+        color, transparent: true, opacity: 0.16, depthTest: false, depthWrite: false,
+      }),
+    );
+    hit.rotation.x = Math.PI / 2;
+    const hitPad = new THREE.Mesh(
+      new THREE.TorusGeometry(radius, tube * 1.7, 6, 40),
+      new THREE.MeshBasicMaterial({ visible: false, depthTest: false }),
+    );
+    hitPad.rotation.x = Math.PI / 2;
+    g.add(line, hit, hitPad);
+    g.position.copy(origin);
+    const nd = axisDir.clone().normalize();
+    if (nd.lengthSq() > 1e-8) g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), nd);
+    return g;
+  }
+
+  /** Подсветка элемента gizmo при наведении / активном drag (только цвет, без scale). */
+  _setGizmoHover(axis) {
+    if (this._gizmoHoverAxis === axis) return;
+    this._gizmoHoverAxis = axis;
+    for (const root of this.fixHandleGroup.children) {
+      const a = root.userData?.fixHandle?.axis;
+      const on = !!(axis && a === axis);
+      root.traverse((o) => {
+        const mat = o.material;
+        if (!mat?.color || !o.userData?.fixHandle) return;
+        if (mat.userData.baseColor == null) mat.userData.baseColor = mat.color.getHex();
+        if (mat.userData.baseOpacity == null) mat.userData.baseOpacity = mat.opacity ?? 1;
+        const base = mat.userData.baseColor;
+        const baseOp = mat.userData.baseOpacity;
+        if (on) {
+          mat.color.setHex(0xffe066);
+          mat.opacity = Math.min(1, Math.max(0.45, baseOp < 0.2 ? 0.45 : baseOp + 0.35));
+        } else {
+          mat.color.setHex(base);
+          mat.opacity = baseOp;
+        }
+      });
+    }
+    if (this.renderer?.domElement) {
+      this.renderer.domElement.style.cursor = axis ? 'grab' : '';
+    }
+  }
+
+  _hitFixHandle(e) {
+    if (!this.fixHandleGroup.children.length) return null;
+    this.ray.setFromCamera(this._ndc(e), this.camera);
+    this.ray.params.Line = { threshold: 16 };
+    const hits = this.ray.intersectObjects(this.fixHandleGroup.children, true);
+    // экранный «просвет» в центре колец — там тянем объект (hub / корпус), не rot
+    let rotDead = 0;
+    let centerDist = Infinity;
+    if (this._gizmoOrigin && this._gizmoRingR) {
+      const rect = this.renderer.domElement.getBoundingClientRect();
+      const c = this._gizmoOrigin.clone().project(this.camera);
+      const sx = (c.x * 0.5 + 0.5) * rect.width + rect.left;
+      const sy = (-c.y * 0.5 + 0.5) * rect.height + rect.top;
+      centerDist = Math.hypot(e.clientX - sx, e.clientY - sy);
+      const edge = this._gizmoOrigin.clone().add(new THREE.Vector3(this._gizmoRingR, 0, 0)).project(this.camera);
+      const ex = (edge.x * 0.5 + 0.5) * rect.width + rect.left;
+      const ey = (-edge.y * 0.5 + 0.5) * rect.height + rect.top;
+      const ringPx = Math.max(24, Math.hypot(ex - sx, ey - sy));
+      rotDead = ringPx * 0.58;
+    }
+    // на ободе кольца чуть приоритетнее стрелок; в центре — наоборот
+    const nearRim = centerDist >= rotDead;
+    hits.sort((a, b) => {
+      const ax = (() => { let o = a.object; while (o && !o.userData?.fixHandle) o = o.parent; return o?.userData?.fixHandle?.axis || ''; })();
+      const bx = (() => { let o = b.object; while (o && !o.userData?.fixHandle) o = o.parent; return o?.userData?.fixHandle?.axis || ''; })();
+      const pr = (s) => {
+        if (s.startsWith('rot')) return nearRim ? 0 : 2;
+        if (s === 'moveXZ') return nearRim ? 1 : 0;
+        return 1;
+      };
+      const d = pr(ax) - pr(bx);
+      return d !== 0 ? d : a.distance - b.distance;
+    });
+    for (const h of hits) {
+      let o = h.object;
+      while (o && !o.userData?.fixHandle) o = o.parent;
+      const axis = o?.userData?.fixHandle?.axis;
+      if (!axis) continue;
+      if (axis.startsWith('rot') && centerDist < rotDead) continue;
+      return { ...h, object: o };
+    }
+    return null;
+  }
+
+  /** Угол точки вокруг оси axis через origin. */
+  _angleAroundAxis(origin, axis, point) {
+    const n = axis.clone().normalize();
+    let ref = Math.abs(n.y) < 0.9 ? new THREE.Vector3(0, 1, 0) : new THREE.Vector3(1, 0, 0);
+    const u = new THREE.Vector3().crossVectors(n, ref).normalize();
+    const v = new THREE.Vector3().crossVectors(n, u).normalize();
+    const d = point.clone().sub(origin);
+    return Math.atan2(d.dot(v), d.dot(u));
+  }
+
+  /** Экранный угол мыши вокруг проекции центра — стабильный поворот колец. */
+  _screenAngleAround(origin, e) {
+    const v = origin.clone().project(this.camera);
+    const rect = this.renderer.domElement.getBoundingClientRect();
+    const sx = (v.x * 0.5 + 0.5) * rect.width + rect.left;
+    const sy = (-v.y * 0.5 + 0.5) * rect.height + rect.top;
+    return Math.atan2(e.clientY - sy, e.clientX - sx);
+  }
+
+  /** Live-превью объекта + gizmo следует за ним. */
+  _applyFixtureLive(id, base, patch, hoverAxis = null) {
+    const live = { ...base, ...patch };
+    this._fixGizmoLive = live;
+    const cLive = fixtureCenter(live, live);
+    const mesh = this.fixMeshes.get(id);
+    if (mesh) {
+      mesh.position.set(cLive.x, cLive.y, cLive.z);
+      mesh.rotation.order = 'YXZ';
+      mesh.rotation.x = ((+live.rx || 0) * Math.PI) / 180;
+      mesh.rotation.y = ((+live.rot || 0) * Math.PI) / 180;
+      mesh.rotation.z = ((+live.rz || 0) * Math.PI) / 180;
+      const sx = base.w > 0 ? live.w / base.w : 1;
+      const sy = base.h > 0 ? live.h / base.h : 1;
+      const sz = base.d > 0 ? live.d / base.d : 1;
+      mesh.scale.set(sx, sy, sz);
+    }
+    if (this.press?.gizmoOrigin) this.press.gizmoOrigin.set(cLive.x, cLive.y, cLive.z);
+    this.h.onDraggingFixture?.(id, live);
+    this._gizmoHoverAxis = null;
+    this._rebuildFixtureHandles(true);
+    if (hoverAxis) this._setGizmoHover(hoverAxis);
+  }
+
+  _applyObstacleLive(id, base, patch, hoverAxis = null) {
+    const live = { ...base, ...patch };
+    if (live.y1 == null && live.h != null) live.y1 = (+live.y0 || 0) + (+live.h || 100);
+    if (live.h == null) live.h = Math.max(10, (+live.y1 || 0) - (+live.y0 || 0));
+    this._fixGizmoLive = live;
+    const mesh = this.ctorObstacleMeshes.get(id);
+    if (mesh) {
+      const w = +live.w || 400, d = +live.d || 400;
+      const y0 = +live.y0 || 0, y1 = +live.y1 || (y0 + (+live.h || 100));
+      const oh = Math.max(10, y1 - y0);
+      mesh.position.set(+live.x + w / 2, y0 + oh / 2, +live.z + d / 2);
+      mesh.rotation.y = ((+live.rot || 0) * Math.PI) / 180;
+      const sx = base.w > 0 ? w / base.w : 1;
+      const sy = base.h > 0 ? oh / base.h : 1;
+      const sz = base.d > 0 ? d / base.d : 1;
+      mesh.scale.set(sx, sy, sz);
+      mesh.userData = {
+        ...mesh.userData,
+        x: +live.x, z: +live.z, w, d, y0, y1, rot: +live.rot || 0,
+      };
+      if (this.press?.gizmoOrigin) {
+        this.press.gizmoOrigin.set(+live.x + w / 2, y0 + oh / 2, +live.z + d / 2);
+      }
+    }
+    this.h.onDraggingCtor?.('obstacle', id, {
+      x: live.x, z: live.z, w: live.w, d: live.d, y0: live.y0, y1: live.y1, rot: live.rot,
+    });
+    this._gizmoHoverAxis = null;
+    this._rebuildFixtureHandles(true);
+    if (hoverAxis) this._setGizmoHover(hoverAxis);
+  }
+
+  _applyOpeningLive(id, base, patch, hoverAxis = null) {
+    const live = { ...base, ...patch };
+    this._fixGizmoLive = live;
+    const pack = this.ctorOpeningMeshes.get(id);
+    if (pack?.mesh) {
+      const w = +live.width || 900;
+      const h = +live.height || 1400;
+      const sill = +live.sill || 0;
+      const offC = (+live.offset || 0) + w / 2;
+      const y = sill + h / 2;
+      const thick = pack.wallRoot?.userData?.wallThick || 140;
+      const place = pack.wallRoot?.userData?.placeOpening;
+      if (place) {
+        place(pack.mesh, offC, y, thick / 2);
+        const sky = pack.mesh.userData?.exterior;
+        if (sky) place(sky, offC, y, thick + 40);
+      } else {
+        pack.mesh.position.set(offC, y, thick / 2);
+      }
+      pack.mesh.userData = {
+        ...pack.mesh.userData,
+        width: w, height: h, sill, offset: +live.offset || 0,
+      };
+      if (this.press?.gizmoOrigin) pack.mesh.getWorldPosition(this.press.gizmoOrigin);
+    }
+    this.h.onDraggingCtor?.('opening', id, {
+      offset: live.offset, sill: live.sill, width: live.width, height: live.height,
+    });
+    this._gizmoHoverAxis = null;
+    this._rebuildFixtureHandles(true);
+    if (hoverAxis) this._setGizmoHover(hoverAxis);
+  }
+
+  /** Live-превью модуля под CAD-gizmo (позиция / elev / поворот / габарит). */
+  _applyModuleLive(id, base, patch, hoverAxis = null) {
+    const live = { ...base, ...patch };
+    this._fixGizmoLive = live;
+    const grp = this.modGroups.get(id);
+    if (grp) {
+      const elevY = (+live.elev || 0) - (+base.elev || 0);
+      grp.position.set(+live.x, elevY, +live.z);
+      grp.rotation.y = ((+live.rot || 0) * Math.PI) / 180;
+      const body = grp.children.find((c) => c.isGroup) || grp.children[0];
+      if (body) {
+        const sx = base.w > 0 ? (+live.w || base.w) / base.w : 1;
+        const sy = base.h > 0 ? (+live.h || base.h) / base.h : 1;
+        const sz = base.d > 0 ? (+live.d || base.d) / base.d : 1;
+        body.scale.set(sx, sy, sz);
+      }
+      const a = ((+live.rot || 0) * Math.PI) / 180;
+      const c = Math.cos(a), s = Math.sin(a);
+      const w = +live.w || base.w, d = +live.d || base.d, h = +live.h || base.h;
+      const elev = +live.elev || 0;
+      const lx = w * 0.5, lz = d * 0.5;
+      if (this.press?.gizmoOrigin) {
+        this.press.gizmoOrigin.set(
+          +live.x + lx * c + lz * s,
+          elev + h * 0.5,
+          +live.z - lx * s + lz * c,
+        );
+      }
+    }
+    this.h.onDragging?.(id, +live.x, +live.z);
+    this._gizmoHoverAxis = null;
+    this._rebuildFixtureHandles(true);
+    if (hoverAxis) this._setGizmoHover(hoverAxis);
+  }
+
+  _cameraVerticalPlane(at) {
+    const camDir = new THREE.Vector3();
+    this.camera.getWorldDirection(camDir);
+    const up = new THREE.Vector3(0, 1, 0);
+    let right = new THREE.Vector3().crossVectors(up, camDir);
+    if (right.lengthSq() < 1e-6) right = new THREE.Vector3(1, 0, 0);
+    else right.normalize();
+    const n = new THREE.Vector3().crossVectors(right, up).normalize();
+    return new THREE.Plane().setFromNormalAndCoplanarPoint(n, at);
   }
 
   // Столешница с вырезами под мойки, лежащие на ней. Столешница всегда без поворота (rot = 0).
@@ -1530,28 +2918,48 @@ export class Viewer {
     this.walkDrag = null;
     this._lookPitch = 0;
 
-    // проекции на стены A–D как в BPlanner
-    if (/^wall[A-Da-d]$/.test(kind) || /^wall:[A-Da-d]$/.test(kind)) {
+    // проекция на ребро стены сцены (wallEdge:0 …) или legacy wallA–D → индекс 0–3
+    let edgeIdx = null;
+    const we = /^wallEdge:?(\d+)$/i.exec(kind);
+    if (we) edgeIdx = +we[1];
+    else if (/^wall[A-Za-z]$/.test(kind) || /^wall:[A-Za-z]$/.test(kind)) {
       const letter = kind.replace(/^wall:?/i, '').toUpperCase();
+      edgeIdx = letter.charCodeAt(0) - 65;
+    }
+    if (edgeIdx != null && edgeIdx >= 0) {
       this.navMode = 'orbit';
       this._applyViewControls('orbit');
-      const dist = Math.max(L, D) * 0.85;
+      const segs = this.room ? roomWallSegments3D(this.room) : [];
+      const s = segs.find((x) => x.edgeIndex === edgeIdx) || segs[edgeIdx];
       const eyeY = H * 0.55;
-      if (letter === 'A') {
-        this.camera.position.set(L / 2, eyeY, dist);
-        this.controls.target.set(L / 2, eyeY * 0.7, 0);
-      } else if (letter === 'C') {
-        this.camera.position.set(L / 2, eyeY, D - dist);
-        this.controls.target.set(L / 2, eyeY * 0.7, D);
-      } else if (letter === 'D') {
-        this.camera.position.set(dist, eyeY, D / 2);
-        this.controls.target.set(0, eyeY * 0.7, D / 2);
+      if (s) {
+        const midX = s.midX ?? ((s.a0.x + s.b0.x) / 2);
+        const midZ = s.midZ ?? ((s.a0.z + s.b0.z) / 2);
+        const nx = s.nx || 0, nz = s.nz || 0;
+        const wallLen = s.lenFloor || s.len || Math.hypot(s.b0.x - s.a0.x, s.b0.z - s.a0.z) || 1000;
+        const dist = Math.max(wallLen * 0.55, Math.max(L, D) * 0.25, 1200);
+        this.camera.position.set(midX - nx * dist, eyeY, midZ - nz * dist);
+        this.controls.target.set(midX, eyeY * 0.7, midZ);
       } else {
-        this.camera.position.set(L - dist, eyeY, D / 2);
-        this.controls.target.set(L, eyeY * 0.7, D / 2);
+        // AABB-fallback для A–D без контура
+        const dist = Math.max(L, D) * 0.85;
+        const letter = edgeLetter(edgeIdx);
+        if (letter === 'A') {
+          this.camera.position.set(L / 2, eyeY, dist);
+          this.controls.target.set(L / 2, eyeY * 0.7, 0);
+        } else if (letter === 'C') {
+          this.camera.position.set(L / 2, eyeY, D - dist);
+          this.controls.target.set(L / 2, eyeY * 0.7, D);
+        } else if (letter === 'D') {
+          this.camera.position.set(dist, eyeY, D / 2);
+          this.controls.target.set(0, eyeY * 0.7, D / 2);
+        } else {
+          this.camera.position.set(L - dist, eyeY, D / 2);
+          this.controls.target.set(L, eyeY * 0.7, D / 2);
+        }
       }
       this.controls.update();
-      this.h.onNavMode?.(`wall${letter}`);
+      this.h.onNavMode?.(`wallEdge:${edgeIdx}`);
       return;
     }
     const map = { walk: 'walk', inside: 'walk', orbit: 'orbit', '3d': 'orbit', top: 'top', front: 'front' };
@@ -1602,35 +3010,44 @@ export class Viewer {
     this.controls.update();
   }
 
-  /** Поворот / наклон камеры вокруг target (градусы). */
-  orbitCamera(yawDeg = 0, pitchDeg = 0) {
+  /**
+   * Сдвиг камеры и target в плоскости экрана (угол взгляда не меняется).
+   * sx: −1 влево / +1 вправо; sy: −1 вниз / +1 вверх.
+   */
+  panCamera(sx = 0, sy = 0, stepMm = null) {
+    if (!sx && !sy) return;
     if (this.navMode === 'walk') {
-      const q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), (-yawDeg * Math.PI) / 180);
-      this.camera.quaternion.premultiply(q);
-      this._lookPitch = THREE.MathUtils.clamp((this._lookPitch || 0) + (pitchDeg * Math.PI) / 180, -1.2, 1.2);
-      const eu = new THREE.Euler().setFromQuaternion(this.camera.quaternion, 'YXZ');
-      eu.x = this._lookPitch;
-      this.camera.quaternion.setFromEuler(eu);
+      const forward = new THREE.Vector3();
+      this.camera.getWorldDirection(forward);
+      forward.y = 0;
+      if (forward.lengthSq() < 1e-6) forward.set(0, 0, -1);
+      forward.normalize();
+      const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
+      const sp = stepMm ?? 250;
+      this.camera.position.addScaledVector(right, sx * sp);
+      this.camera.position.y += sy * sp;
+      this.camera.position.y = THREE.MathUtils.clamp(this.camera.position.y, 1200, 1800);
       return;
     }
-    if (this.navMode === 'top') {
-      // сверху — панорамирование target
-      const pan = 200;
-      this.controls.target.x += (yawDeg > 0 ? -pan : yawDeg < 0 ? pan : 0);
-      this.controls.target.z += (pitchDeg > 0 ? -pan : pitchDeg < 0 ? pan : 0);
-      this.camera.position.x += (yawDeg > 0 ? -pan : yawDeg < 0 ? pan : 0);
-      this.camera.position.z += (pitchDeg > 0 ? -pan : pitchDeg < 0 ? pan : 0);
-      this.controls.update();
-      return;
-    }
-    const t = this.controls.target.clone();
+    const t = this.controls.target;
     const offset = this.camera.position.clone().sub(t);
-    const spherical = new THREE.Spherical().setFromVector3(offset);
-    spherical.theta -= (yawDeg * Math.PI) / 180;
-    spherical.phi = THREE.MathUtils.clamp(spherical.phi - (pitchDeg * Math.PI) / 180, 0.12, Math.PI - 0.12);
-    offset.setFromSpherical(spherical);
-    this.camera.position.copy(t).add(offset);
+    const dist = Math.max(400, offset.length());
+    const toTarget = t.clone().sub(this.camera.position).normalize();
+    const right = new THREE.Vector3().crossVectors(toTarget, new THREE.Vector3(0, 1, 0));
+    if (right.lengthSq() < 1e-8) right.set(1, 0, 0);
+    else right.normalize();
+    const up = new THREE.Vector3().crossVectors(right, toTarget).normalize();
+    const sp = stepMm ?? Math.min(800, Math.max(120, dist * 0.08));
+    const delta = right.multiplyScalar(sx * sp).add(up.multiplyScalar(sy * sp));
+    this.camera.position.add(delta);
+    t.add(delta);
     this.controls.update();
+  }
+
+  /** @deprecated угол больше не крутим с панели — оставлен для совместимости, делает pan/zoom. */
+  orbitCamera(yawDeg = 0, pitchDeg = 0) {
+    if (pitchDeg) this.zoomCamera(pitchDeg > 0 ? 1 / 1.15 : 1.15);
+    if (yawDeg) this.panCamera(yawDeg > 0 ? 1 : -1, 0);
   }
 
   _navSpeed() {
@@ -1647,7 +3064,6 @@ export class Viewer {
     if (this.press?.drag || this.press?.dockClick) return;
 
     const speed = 1800 * this._navSpeed(); // мм/с
-    const turn = 1.4 * this._navSpeed();
 
     if (this.navMode === 'walk') {
       const forward = new THREE.Vector3();
@@ -1657,17 +3073,13 @@ export class Viewer {
       forward.normalize();
       const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
 
-      let mx = 0, mz = 0, yaw = 0, pitch = 0;
+      // WASD / стрелки — только перемещение (без поворота угла)
+      let mx = 0, mz = 0;
       if (this.keysHeld.has('ArrowUp') || this.keysHeld.has('KeyW')) { mx += forward.x; mz += forward.z; }
       if (this.keysHeld.has('ArrowDown') || this.keysHeld.has('KeyS')) { mx -= forward.x; mz -= forward.z; }
-      if (this.keysHeld.has('KeyA')) { mx -= right.x; mz -= right.z; }
-      if (this.keysHeld.has('KeyD')) { mx += right.x; mz += right.z; }
-      if (this.keysHeld.has('ArrowLeft')) yaw += 1;
-      if (this.keysHeld.has('ArrowRight')) yaw -= 1;
-      if (this.keysHeld.has('Digit3') || this.keysHeld.has('Numpad3') || this.keysHeld.has('PageUp')) pitch += 1;
-      if (this.keysHeld.has('Digit4') || this.keysHeld.has('Numpad4') || this.keysHeld.has('PageDown')) pitch -= 1;
+      if (this.keysHeld.has('ArrowLeft') || this.keysHeld.has('KeyA')) { mx -= right.x; mz -= right.z; }
+      if (this.keysHeld.has('ArrowRight') || this.keysHeld.has('KeyD')) { mx += right.x; mz += right.z; }
 
-      // мышь: смещение от точки нажатия задаёт скорость (как eKitchen)
       if (this.walkDrag) {
         mx += forward.x * this.walkDrag.vz + right.x * this.walkDrag.vx;
         mz += forward.z * this.walkDrag.vz + right.z * this.walkDrag.vx;
@@ -1678,17 +3090,6 @@ export class Viewer {
         this.camera.position.x += (mx / len) * speed * dt;
         this.camera.position.z += (mz / len) * speed * dt;
       }
-      if (yaw) {
-        const q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), yaw * turn * dt);
-        this.camera.quaternion.premultiply(q);
-      }
-      if (pitch) {
-        this._lookPitch = THREE.MathUtils.clamp(this._lookPitch + pitch * turn * dt, -1.2, 1.2);
-        const e = new THREE.Euler().setFromQuaternion(this.camera.quaternion, 'YXZ');
-        e.x = this._lookPitch;
-        this.camera.quaternion.setFromEuler(e);
-      }
-      // держим глаза на уровне
       this.camera.position.y = THREE.MathUtils.clamp(this.camera.position.y, 1200, 1800);
       const L = this.room?.length || 4000, D = this.room?.depth || 3500;
       this.camera.position.x = THREE.MathUtils.clamp(this.camera.position.x, 80, L - 80);
@@ -1714,31 +3115,56 @@ export class Viewer {
       return;
     }
 
-    // Изометрия / спереди: стрелки крутят камеру вокруг кухни (разные ракурсы)
+    // Изометрия / спереди: WASD и стрелки — панорама и зум (угол не крутим)
     if (this.navMode === 'orbit' || this.navMode === 'front') {
-      let yaw = 0, pitch = 0, dolly = 0;
-      if (this.keysHeld.has('ArrowLeft') || this.keysHeld.has('KeyA')) yaw += 1;
-      if (this.keysHeld.has('ArrowRight') || this.keysHeld.has('KeyD')) yaw -= 1;
-      if (this.keysHeld.has('ArrowUp') || this.keysHeld.has('KeyW')) pitch += 1;
-      if (this.keysHeld.has('ArrowDown') || this.keysHeld.has('KeyS')) pitch -= 1;
+      let panX = 0, panY = 0, dolly = 0;
+      if (this.keysHeld.has('ArrowLeft') || this.keysHeld.has('KeyA')) panX -= 1;
+      if (this.keysHeld.has('ArrowRight') || this.keysHeld.has('KeyD')) panX += 1;
+      if (this.keysHeld.has('ArrowUp') || this.keysHeld.has('KeyW')) dolly -= 1; // приблизить
+      if (this.keysHeld.has('ArrowDown') || this.keysHeld.has('KeyS')) dolly += 1; // отдалить
       if (this.keysHeld.has('PageUp')) dolly -= 1;
       if (this.keysHeld.has('PageDown')) dolly += 1;
-      if (!yaw && !pitch && !dolly) return;
+      if (!panX && !panY && !dolly) return;
       const tgt = this.controls.target;
       const offset = this.camera.position.clone().sub(tgt);
-      const sph = new THREE.Spherical().setFromVector3(offset);
-      sph.theta += yaw * turn * dt;
-      sph.phi = THREE.MathUtils.clamp(sph.phi - pitch * turn * dt, 0.15, Math.PI - 0.15);
-      if (dolly) sph.radius = Math.max(800, sph.radius * (1 + dolly * 0.6 * dt * this._navSpeed()));
-      offset.setFromSpherical(sph);
-      this.camera.position.copy(tgt).add(offset);
+      const dist = Math.max(400, offset.length());
+      if (panX || panY) {
+        const toTarget = tgt.clone().sub(this.camera.position).normalize();
+        const right = new THREE.Vector3().crossVectors(toTarget, new THREE.Vector3(0, 1, 0));
+        if (right.lengthSq() < 1e-8) right.set(1, 0, 0);
+        else right.normalize();
+        const up = new THREE.Vector3().crossVectors(right, toTarget).normalize();
+        const sp = Math.min(900, Math.max(150, dist * 0.55)) * this._navSpeed() * dt;
+        const delta = right.multiplyScalar(panX * sp).add(up.multiplyScalar(panY * sp));
+        this.camera.position.add(delta);
+        tgt.add(delta);
+      }
+      if (dolly) {
+        const sph = new THREE.Spherical().setFromVector3(this.camera.position.clone().sub(tgt));
+        sph.radius = THREE.MathUtils.clamp(
+          sph.radius * (1 + dolly * 0.7 * dt * this._navSpeed()),
+          400,
+          60000,
+        );
+        offset.setFromSpherical(sph);
+        this.camera.position.copy(tgt).add(offset);
+      }
       this.camera.lookAt(tgt);
+      this.controls.update();
     }
   }
 
   _ndc(e) {
     const r = this.renderer.domElement.getBoundingClientRect();
     return new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  }
+
+  /** Точка на плоскости drag под курсором (не hit меша — иначе объект «улетает»). */
+  _hitDragPlane(e, plane, out = new THREE.Vector3()) {
+    if (!plane) return null;
+    this.ray.setFromCamera(this._ndc(e), this.camera);
+    if (!this.ray.ray.intersectPlane(plane, out)) return null;
+    return out;
   }
 
   _hitFurniture(e) {
@@ -1756,7 +3182,7 @@ export class Viewer {
     this.ray.setFromCamera(this._ndc(e), this.camera);
     const walls = this.wallMeshes.filter((w) => this._visible(w));
     const planes = [this.floorMesh, ...walls].filter(Boolean);
-    const hit = this.ray.intersectObjects(planes, false)[0];
+    const hit = this.ray.intersectObjects(planes, true)[0];
     if (hit) return hit;
     // Помещение скрыто — ставим на плоскость пола
     const pt = new THREE.Vector3();
@@ -1764,16 +3190,39 @@ export class Viewer {
     return null;
   }
 
-  // Для объектов: сначала мебель (столешница, корпус), потом пол/стены
+  // Для объектов: сначала мебель (столешница, корпус), потом пол/стены.
+  // Настенные коммуникации (розетки/решётки) — сразу стена, без привязки к модулю.
   _hitForFixture(e) {
     this.ray.setFromCamera(this._ndc(e), this.camera);
-    const meshes = [];
-    this.furnGroup.traverse((o) => { if (o.userData?.pick && o.isMesh) meshes.push(o); });
-    const f = this.ray.intersectObjects(meshes, false)[0];
-    if (f && f.object.userData?.moduleId) return { point: f.point, moduleId: f.object.userData.moduleId, wall: null };
+    const def = this.placeFixture ? FIXTURE_CATALOG[this.placeFixture] : null;
+    const wallOnly = def && (def.kind === 'socket' || def.kind === 'vent' || def.kind === 'pipe');
+    if (!wallOnly) {
+      const meshes = [];
+      this.furnGroup.traverse((o) => { if (o.userData?.pick && o.isMesh) meshes.push(o); });
+      const f = this.ray.intersectObjects(meshes, false)[0];
+      if (f && f.object.userData?.moduleId) return { point: f.point, moduleId: f.object.userData.moduleId, wall: null };
+    }
     const p = this._hitPlane(e);
     if (!p) return null;
-    return { point: p.point, moduleId: null, wall: p.object.userData?.wall || null };
+    const ud = p.object?.userData || {};
+    // подняться к корню стены (userData.wall / edgeIndex / nx)
+    let o = p.object;
+    let wallUd = ud;
+    while (o) {
+      if (o.userData?.wall || o.userData?.edgeIndex != null || o.userData?.roomPart === 'wall') {
+        wallUd = { ...wallUd, ...o.userData };
+        break;
+      }
+      o = o.parent;
+    }
+    return {
+      point: p.point,
+      moduleId: null,
+      wall: wallUd.wall || (wallUd.plane === 'wall' ? 'edge' : null),
+      edgeIndex: wallUd.edgeIndex,
+      nx: wallUd.nx,
+      nz: wallUd.nz,
+    };
   }
 
   _fixtureRoot(obj) {
@@ -1793,7 +3242,9 @@ export class Viewer {
     if (!this._dockActive() || !this.dockGroup.children.length) return null;
     this.ray.setFromCamera(this._ndc(e), this.camera);
     const meshes = [];
-    this.dockGroup.traverse((o) => { if (o.userData?.dock && o.isMesh) meshes.push(o); });
+    this.dockGroup.traverse((o) => {
+      if (o.userData?.dock && o.isMesh && o.parent?.name !== 'dockGhost') meshes.push(o);
+    });
     const hit = this.ray.intersectObjects(meshes, false)[0];
     return hit?.object?.userData?.dock || null;
   }
@@ -1817,58 +3268,138 @@ export class Viewer {
       });
     }
     this._dockHotId = null;
+    this._dockHotSock = null;
+    this._dockGhostKey = null;
     if (!this._dockActive() || this.mode !== 'select') return;
     const moverId = this.sel.moduleId || this.press?.moduleId || null;
     const socks = this.h.dockSockets?.(moverId) || [];
     for (const s of socks) {
       const g = new THREE.Group();
-      g.position.set(s.x, s.y, s.z);
-      const mat = new THREE.MeshStandardMaterial({
-        color: 0x1f6feb, emissive: 0x1f6feb, emissiveIntensity: 0.65,
-        transparent: true, opacity: 0.95, depthTest: false, depthWrite: false,
-      });
-      // крупная зона попадания + видимый октаэдр
-      const hit = new THREE.Mesh(new THREE.SphereGeometry(70, 12, 10), mat.clone());
-      hit.material.opacity = 0.18;
+      g.position.set(s.hostX ?? s.x, 0, s.hostZ ?? s.z);
+      g.rotation.y = ((s.rot || 0) * Math.PI) / 180;
+      const lx = s.lx != null ? s.lx : 0;
+      const ly = s.ly != null ? s.ly : 0;
+      const lz = s.lz != null ? s.lz : 0;
+      const stack = !!s.stack || s.stripMode === 'stack';
+      // бок: вертикальная полоска; стек: горизонтальная пластина на верху/низу
+      const hitGeo = stack
+        ? new THREE.BoxGeometry(s.stripW || 300, 40, s.stripD || 500)
+        : new THREE.BoxGeometry(56, s.stripH || 700, s.stripD || 500);
+      const visGeo = stack
+        ? new THREE.BoxGeometry(s.stripW || 300, 5, s.stripD || 500)
+        : new THREE.BoxGeometry(5, s.stripH || 700, s.stripD || 500);
+      const hit = new THREE.Mesh(
+        hitGeo,
+        new THREE.MeshBasicMaterial({
+          color: 0x1f6feb, transparent: true, opacity: 0.05,
+          depthTest: false, depthWrite: false, side: THREE.DoubleSide,
+        }),
+      );
+      hit.position.set(lx, ly, lz);
       hit.userData.dock = s;
       hit.renderOrder = 19;
-      const mesh = new THREE.Mesh(new THREE.OctahedronGeometry(42, 0), mat);
-      mesh.userData.dock = s;
-      mesh.renderOrder = 20;
+      const vis = new THREE.Mesh(
+        visGeo,
+        new THREE.MeshBasicMaterial({
+          color: stack ? 0x0d9488 : 0x1f6feb, transparent: true, opacity: 0.55,
+          depthTest: false, depthWrite: false, side: THREE.DoubleSide,
+        }),
+      );
+      vis.position.set(lx, ly, lz);
+      vis.userData.dock = s;
+      vis.userData.dockVis = true;
+      vis.renderOrder = 20;
       g.add(hit);
-      g.add(mesh);
-      const el = document.createElement('div');
-      el.className = 'dock-mark';
-      el.textContent = s.label || (s.side === 'left' ? '◀' : '▶');
-      el.title = `Привязать сюда (${s.side === 'left' ? 'слева' : 'справа'})`;
-      const lab = new CSS2DObject(el);
-      lab.position.set(0, 50, 0);
-      lab.userData.dock = s;
-      g.add(lab);
+      g.add(vis);
       g.userData.dock = s;
       this.dockGroup.add(g);
     }
   }
 
-  _setDockHot(id) {
-    if (this._dockHotId === id) return;
+  _clearDockGhost() {
+    const old = this.dockGroup.getObjectByName('dockGhost');
+    if (!old) return;
+    old.traverse((c) => {
+      c.geometry?.dispose?.();
+      if (c.material) {
+        if (Array.isArray(c.material)) c.material.forEach((m) => m.dispose());
+        else c.material.dispose?.();
+      }
+    });
+    this.dockGroup.remove(old);
+    this._dockGhostKey = null;
+  }
+
+  _updateDockGhost() {
+    // во время drag модуль сам на позе — ghost не нужен
+    if (!this._dockHotId || this.press?.drag) {
+      this._clearDockGhost();
+      return;
+    }
+    const sock = this._dockHotSock;
+    if (!sock?.pose || !sock.ghost) {
+      this._clearDockGhost();
+      return;
+    }
+    const { w, d, h, elev } = sock.ghost;
+    const key = `${sock.pose.x}|${sock.pose.z}|${elev}|${sock.pose.rot}|${w}|${d}|${h}`;
+    if (key === this._dockGhostKey && this.dockGroup.getObjectByName('dockGhost')) return;
+    this._clearDockGhost();
+    this._dockGhostKey = key;
+    const g = new THREE.Group();
+    g.name = 'dockGhost';
+    g.position.set(sock.pose.x, 0, sock.pose.z);
+    g.rotation.y = ((sock.pose.rot || 0) * Math.PI) / 180;
+    // depthTest:false — без Z-fight мерцания с модулями
+    const mat = new THREE.MeshBasicMaterial({
+      color: 0x067647, transparent: true, opacity: 0.2,
+      depthTest: false, depthWrite: false, side: THREE.DoubleSide,
+    });
+    const box = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+    box.position.set(w * 0.5, elev + h * 0.5, d * 0.5);
+    box.renderOrder = 22;
+    const edges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(w, h, d)),
+      new THREE.LineBasicMaterial({
+        color: 0x067647, transparent: true, opacity: 0.9,
+        depthTest: false, depthWrite: false,
+      }),
+    );
+    edges.position.copy(box.position);
+    edges.renderOrder = 23;
+    g.add(box);
+    g.add(edges);
+    g.traverse((o) => { o.raycast = () => {}; });
+    this.dockGroup.add(g);
+  }
+
+  _setDockHot(id, sock = null) {
+    if (this._dockHotId === id) {
+      if (sock) this._dockHotSock = sock;
+      return;
+    }
     this._dockHotId = id;
+    this._dockHotSock = id ? sock : null;
     this.dockGroup.traverse((o) => {
       if (!o.isMesh || !o.userData?.dock) return;
+      if (o.parent?.name === 'dockGhost') return;
       const on = o.userData.dock.id === id;
       o.material.color.setHex(on ? 0x067647 : 0x1f6feb);
-      o.material.emissive.setHex(on ? 0x067647 : 0x1f6feb);
-      if (o.geometry?.type !== 'SphereGeometry') o.scale.setScalar(on ? 1.25 : 1);
+      if (o.userData.dockVis) o.material.opacity = on ? 0.9 : 0.5;
+      else o.material.opacity = on ? 0.14 : 0.06;
     });
-    this.dockGroup.traverse((o) => {
-      if (o.element?.classList) o.element.classList.toggle('hot', o.userData?.dock?.id === id);
-    });
+    this._updateDockGhost();
   }
 
   _down(e) {
     if (e.button !== 0 && e.button !== 2) return;
     this.ctrlHeld = e.ctrlKey || e.metaKey;
     this.shiftHeld = e.shiftKey;
+    if (this.tapeMode && e.button === 0) {
+      this.press = { x: e.clientX, y: e.clientY, tape: true };
+      this.controls.enabled = false;
+      return;
+    }
     if (this.mode === 'place' || this.mode === 'placeFixture' || this.mode === 'placeCtor') {
       if (e.button !== 0) return;
       this.press = { x: e.clientX, y: e.clientY, placing: true };
@@ -1887,6 +3418,11 @@ export class Viewer {
     const wh = this._hitWallHandle(e);
     if (wh?.object?.userData?.wallHandle) {
       const info = { ...wh.object.userData.wallHandle };
+      const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -info.y);
+      const start = this._hitDragPlane(e, plane);
+      if (!start) return;
+      const hx = wh.object?.position?.x ?? wh.point?.x ?? start.x;
+      const hz = wh.object?.position?.z ?? wh.point?.z ?? start.z;
       this.controls.enabled = false;
       try { this.renderer.domElement.setPointerCapture?.(e.pointerId); } catch (_) { /* */ }
       this._wallHandleDrag = info;
@@ -1894,12 +3430,137 @@ export class Viewer {
         x: e.clientX, y: e.clientY,
         wallHandle: info,
         drag: true,
-        plane: new THREE.Plane(new THREE.Vector3(0, 1, 0), -info.y),
+        plane,
+        start: start.clone(),
+        wallBase: { x: hx, z: hz },
       };
       this.h.onWallHandleDown?.(info);
       this._drawWallHandleBaseline();
       e.preventDefault();
       return;
+    }
+
+    // CAD-gizmo: коммуникации / объекты / конструкции
+    const fh = this._hitFixHandle(e);
+    if (fh?.object?.userData?.fixHandle) {
+      const info = { ...fh.object.userData.fixHandle };
+      const gizmoKind = info.kind || 'fixture';
+      let origin = null;
+      let fixBase = null;
+      let rotX = 0, rotY = 0, rotZ = 0;
+      if (gizmoKind === 'fixture') {
+        const f = this._fixtureById.get(info.id);
+        if (!f) { /* skip */ } else {
+          const dims = fixtureDims(f);
+          const c0 = fixtureCenter(f, dims);
+          origin = new THREE.Vector3(c0.x, c0.y, c0.z);
+          rotX = +f.rx || 0; rotY = +f.rot || 0; rotZ = +f.rz || 0;
+          fixBase = {
+            x: +f.x, z: +f.z, elev: +f.elev || 0,
+            rot: rotY, rx: rotX, rz: rotZ,
+            w: dims.w, d: dims.d, h: dims.h,
+            kind: c0.kind,
+          };
+        }
+      } else if (gizmoKind === 'obstacle') {
+        const mesh = this.ctorObstacleMeshes.get(info.id);
+        const ud = mesh?.userData;
+        if (ud) {
+          const w = +ud.w || 400, d = +ud.d || 400;
+          const y0 = +ud.y0 || 0, y1 = +ud.y1 || 2700;
+          const h = Math.max(10, y1 - y0);
+          origin = new THREE.Vector3(+ud.x + w / 2, y0 + h / 2, +ud.z + d / 2);
+          rotY = +ud.rot || 0;
+          fixBase = {
+            x: +ud.x, z: +ud.z, y0, y1, w, d, h, rot: rotY,
+            elev: y0, kind: 'obstacle',
+          };
+        }
+      } else if (gizmoKind === 'opening') {
+        const pack = this.ctorOpeningMeshes.get(info.id);
+        const op = (this.room?.openings || []).find((q) => q.id === info.id);
+        if (pack?.mesh && op) {
+          origin = new THREE.Vector3();
+          pack.mesh.getWorldPosition(origin);
+          fixBase = {
+            offset: +op.offset || 0,
+            sill: +op.sill || 0,
+            width: +op.width || 900,
+            height: +op.height || 1400,
+            edgeIndex: op.edgeIndex != null ? +op.edgeIndex : null,
+            wall: op.wall,
+            kind: 'opening',
+          };
+          const wr = pack.wallRoot;
+          if (wr) {
+            const eul = new THREE.Euler().setFromQuaternion(wr.getWorldQuaternion(new THREE.Quaternion()), 'YXZ');
+            rotY = (eul.y * 180) / Math.PI;
+          }
+        }
+      } else if (gizmoKind === 'module') {
+        const m = (this.build?.items || []).find((q) => q.module?.id === info.id)?.module;
+        if (m?.p) {
+          const w = +m.p.width || 600, d = +m.p.depth || 560, h = +m.p.height || 720;
+          const elev = +m.p.elev || 0;
+          rotY = +m.rot || 0;
+          const a = (rotY * Math.PI) / 180;
+          const c = Math.cos(a), s = Math.sin(a);
+          const lx = w * 0.5, lz = d * 0.5;
+          origin = new THREE.Vector3(
+            +m.x + lx * c + lz * s,
+            elev + h * 0.5,
+            +m.z - lx * s + lz * c,
+          );
+          fixBase = {
+            x: +m.x, z: +m.z, rot: rotY, elev,
+            w, d, h, kind: 'module',
+          };
+        }
+      }
+      if (origin && fixBase) {
+        this.controls.enabled = false;
+        try { this.renderer.domElement.setPointerCapture?.(e.pointerId); } catch (_) { /* */ }
+        this._fixHandleDrag = info;
+        const axis = info.axis;
+        const eul0 = new THREE.Euler(
+          (rotX * Math.PI) / 180, (rotY * Math.PI) / 180, (rotZ * Math.PI) / 180, 'YXZ',
+        );
+        const m0 = new THREE.Matrix4().makeRotationFromEuler(eul0);
+        const axX = new THREE.Vector3(1, 0, 0).applyMatrix4(m0).normalize();
+        const axY = new THREE.Vector3(0, 1, 0).applyMatrix4(m0).normalize();
+        const axZ = new THREE.Vector3(0, 0, 1).applyMatrix4(m0).normalize();
+        let plane;
+        let rotAxisWorld = null;
+        if (axis === 'h' || axis === 'moveY') {
+          plane = this._cameraVerticalPlane(origin);
+        } else if (axis === 'rotX' || axis === 'rotY' || axis === 'rotZ') {
+          rotAxisWorld = axis === 'rotX' ? axX : axis === 'rotY' ? axY : axZ;
+          plane = new THREE.Plane().setFromNormalAndCoplanarPoint(rotAxisWorld.clone(), origin);
+        } else {
+          plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -origin.y);
+        }
+        const isRot = axis === 'rotX' || axis === 'rotY' || axis === 'rotZ';
+        const startPt = (!isRot && plane) ? (this._hitDragPlane(e, plane) || fh.point) : fh.point;
+        const startAng = isRot
+          ? this._screenAngleAround(origin, e)
+          : Math.atan2(startPt.z - origin.z, startPt.x - origin.x);
+        this._setGizmoHover(axis);
+        if (this.renderer?.domElement) this.renderer.domElement.style.cursor = 'grabbing';
+        this.press = {
+          x: e.clientX, y: e.clientY,
+          fixHandle: info,
+          drag: true,
+          plane,
+          start: startPt.clone(),
+          startAng,
+          screenRot: isRot,
+          gizmoOrigin: origin.clone(),
+          rotAxisWorld: rotAxisWorld?.clone?.() || null,
+          fixBase,
+        };
+        e.preventDefault();
+        return;
+      }
     }
 
     // Режим привязки (Ctrl / «Стык»): маркер или клик по хосту — как CTRL в eKitchen
@@ -1950,26 +3611,52 @@ export class Viewer {
     const canDrag = mid && mid !== '__top' && !String(mid).startsWith('__top')
       && (e.shiftKey || mid === this.sel.moduleId);
     if (canDrag) {
+      const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+      const start = this._hitDragPlane(e, plane);
+      if (!start) return;
       this.sel = { moduleId: mid, panelKey: null, fixtureId: null, obstacleId: null, openingId: null };
       this.controls.enabled = false;
       try { this.renderer.domElement.setPointerCapture?.(e.pointerId); } catch (_) { /* */ }
-      this.press.plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-      this.press.start = hit.point.clone();
+      this.press.plane = plane;
+      this.press.start = start.clone();
       this.press.drag = true;
       this.press.moduleId = mid;
       this.press.axisLock = !!e.shiftKey; // Shift = ортогональ вдоль ряда (ось стены)
       if (this._dockActive()) this._rebuildDocks();
       e.preventDefault();
     } else if (fix && fix.userData.fixtureId === this.sel.fixtureId) {
+      const f = this._fixtureById.get(fix.userData.fixtureId);
+      const dims = f ? fixtureDims(f) : null;
+      const c0 = f && dims ? fixtureCenter(f, dims) : null;
+      const elev = +(f?.elev || 0);
+      // Shift — менять высоту от пола в вертикальной плоскости, иначе сдвиг по полу
+      const vert = !!e.shiftKey;
+      const plane = vert
+        ? this._cameraVerticalPlane(new THREE.Vector3(c0?.x ?? +f.x, c0?.y ?? elev, c0?.z ?? +f.z))
+        : new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+      const start = this._hitDragPlane(e, plane);
+      if (!start) return;
       this.controls.enabled = false;
-      this.press.plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-      this.press.start = hit.point.clone();
+      try { this.renderer.domElement.setPointerCapture?.(e.pointerId); } catch (_) { /* */ }
+      this.press.plane = plane;
+      this.press.start = start.clone();
       this.press.drag = true;
       this.press.fixtureId = fix.userData.fixtureId;
+      this.press.fixVert = vert;
+      this.press.fixBase = f && dims
+        ? {
+          x: +f.x, z: +f.z, elev, rot: +f.rot || 0, rx: +f.rx || 0, rz: +f.rz || 0,
+          w: dims.w, d: dims.d, h: dims.h, kind: FIXTURE_CATALOG[f.type]?.kind,
+        }
+        : null;
+      e.preventDefault();
     } else if (ctorHit && (
       (ctorHit.ctorKind === 'obstacle' && (e.shiftKey || ctorHit.ctorId === this.sel.obstacleId))
       || (ctorHit.ctorKind === 'opening' && (e.shiftKey || ctorHit.ctorId === this.sel.openingId))
     )) {
+      const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+      const start = this._hitDragPlane(e, plane);
+      if (!start) return;
       this.sel = {
         moduleId: null, panelKey: null, fixtureId: null,
         obstacleId: ctorHit.ctorKind === 'obstacle' ? ctorHit.ctorId : null,
@@ -1978,8 +3665,8 @@ export class Viewer {
       this.setRoomSelection(null);
       this.controls.enabled = false;
       try { this.renderer.domElement.setPointerCapture?.(e.pointerId); } catch (_) { /* */ }
-      this.press.plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-      this.press.start = ctorHit.point.clone();
+      this.press.plane = plane;
+      this.press.start = start.clone();
       this.press.drag = true;
       this.press.ctorKind = ctorHit.ctorKind;
       this.press.ctorId = ctorHit.ctorId;
@@ -2018,25 +3705,296 @@ export class Viewer {
     }
     if (this._dockActive() && !this.press?.drag) {
       const d = this._hitDock(e);
-      this._setDockHot(d?.id || null);
+      // sticky: при промахе ghost не гасим (иначе мигает, когда курсор на превью)
+      if (d) this._setDockHot(d.id, d);
+    }
+    // hover подсветка элементов gizmo (когда не тянем)
+    if (!this.press?.drag && !this._fixHandleDrag) {
+      const fh = this._hitFixHandle(e);
+      this._setGizmoHover(fh?.object?.userData?.fixHandle?.axis || null);
     }
     const pr = this.press;
     if (!pr || !pr.drag) return;
     if (!pr.dragging && Math.hypot(e.clientX - pr.x, e.clientY - pr.y) < 4) return;
-    pr.dragging = true;
+    if (!pr.dragging) {
+      pr.dragging = true;
+      this._clearDockGhost();
+    }
+    // поворот колец — только экранный угол (без плоскости, иначе срывается)
+      if (pr.fixHandle && pr.screenRot) {
+      const base = pr.fixBase || {};
+      const axis = pr.fixHandle.axis;
+      const gk = pr.fixHandle.kind || 'fixture';
+      const origin = pr.gizmoOrigin || new THREE.Vector3(+base.x, +base.elev || 0, +base.z);
+      const ang = this._screenAngleAround(origin, e);
+      let delta = ((ang - (pr.startAng || 0)) * 180) / Math.PI;
+      if (delta > 180) delta -= 360;
+      if (delta < -180) delta += 360;
+      const snapAng = (deg) => {
+        let d = deg % 360;
+        if (d < 0) d += 360;
+        const snapped = Math.round(d / 15) * 15;
+        return Math.abs(snapped - d) < 4 ? snapped % 360 : Math.round(d);
+      };
+      const patch = {};
+      if (axis === 'rotY') patch.rot = snapAng((+base.rot || 0) + delta);
+      else if (axis === 'rotX') patch.rx = snapAng((+base.rx || 0) + delta);
+      else patch.rz = snapAng((+base.rz || 0) + delta);
+      pr.newFix = patch;
+      if (gk === 'obstacle') this._applyObstacleLive(pr.fixHandle.id, base, patch, axis);
+      else if (gk === 'opening') this._applyOpeningLive(pr.fixHandle.id, base, patch, axis);
+      else if (gk === 'module') this._applyModuleLive(pr.fixHandle.id, base, patch, axis);
+      else this._applyFixtureLive(pr.fixHandle.id, base, patch, axis);
+      return;
+    }
     this.ray.setFromCamera(this._ndc(e), this.camera);
     const pt = new THREE.Vector3();
-    if (!this.ray.ray.intersectPlane(pr.plane, pt)) return;
+    if (!pr.plane || !this.ray.ray.intersectPlane(pr.plane, pt)) return;
     if (pr.wallHandle) {
-      this.h.onWallHandleDrag?.(pr.wallHandle, pt.x, pt.z);
+      const bx = pr.wallBase?.x ?? pr.start?.x ?? pt.x;
+      const bz = pr.wallBase?.z ?? pr.start?.z ?? pt.z;
+      const nx = bx + (pt.x - (pr.start?.x ?? pt.x));
+      const nz = bz + (pt.z - (pr.start?.z ?? pt.z));
+      this.h.onWallHandleDrag?.(pr.wallHandle, nx, nz);
       // сдвинуть саму ручку визуально
       for (const o of this.wallHandleGroup.children) {
         const ud = o.userData?.wallHandle;
         if (ud && ud.vertIndex === pr.wallHandle.vertIndex && ud.layer === pr.wallHandle.layer) {
-          o.position.x = pt.x;
-          o.position.z = pt.z;
+          o.position.x = nx;
+          o.position.z = nz;
         }
       }
+      return;
+    }
+    if (pr.fixHandle) {
+      const base = pr.fixBase || {};
+      const axis = pr.fixHandle.axis;
+      const gk = pr.fixHandle.kind || 'fixture';
+      const patch = {};
+      const eul0 = new THREE.Euler(
+        ((+base.rx || 0) * Math.PI) / 180,
+        ((+base.rot || 0) * Math.PI) / 180,
+        ((+base.rz || 0) * Math.PI) / 180,
+        'YXZ',
+      );
+      const m0 = new THREE.Matrix4().makeRotationFromEuler(eul0);
+      const xAxis = new THREE.Vector3(1, 0, 0).applyMatrix4(m0).normalize();
+      const zAxis = new THREE.Vector3(0, 0, 1).applyMatrix4(m0).normalize();
+      if (gk === 'obstacle') {
+        const cx0 = +base.x + (+base.w || 0) / 2;
+        const cz0 = +base.z + (+base.d || 0) / 2;
+        if (axis === 'moveX') {
+          const dx = pt.x - (pr.start?.x ?? cx0);
+          const dz = pt.z - (pr.start?.z ?? cz0);
+          const along = dx * xAxis.x + dz * xAxis.z;
+          const ncx = cx0 + along * xAxis.x;
+          const ncz = cz0 + along * xAxis.z;
+          patch.x = Math.round((ncx - (+base.w || 0) / 2) / 10) * 10;
+          patch.z = Math.round((ncz - (+base.d || 0) / 2) / 10) * 10;
+        } else if (axis === 'moveZ') {
+          const dx = pt.x - (pr.start?.x ?? cx0);
+          const dz = pt.z - (pr.start?.z ?? cz0);
+          const along = dx * zAxis.x + dz * zAxis.z;
+          const ncx = cx0 + along * zAxis.x;
+          const ncz = cz0 + along * zAxis.z;
+          patch.x = Math.round((ncx - (+base.w || 0) / 2) / 10) * 10;
+          patch.z = Math.round((ncz - (+base.d || 0) / 2) / 10) * 10;
+        } else if (axis === 'moveXZ') {
+          const ncx = Math.round(pt.x / 10) * 10;
+          const ncz = Math.round(pt.z / 10) * 10;
+          patch.x = ncx - (+base.w || 0) / 2;
+          patch.z = ncz - (+base.d || 0) / 2;
+        } else if (axis === 'moveY') {
+          const h = +base.h || 100;
+          const cy = Math.round(pt.y / 10) * 10;
+          const y0 = Math.max(0, cy - h / 2);
+          patch.y0 = Math.round(y0 / 10) * 10;
+          patch.y1 = patch.y0 + h;
+        } else if (axis === 'h') {
+          const y0 = +base.y0 || 0;
+          patch.y1 = Math.max(y0 + 40, Math.round(pt.y / 10) * 10);
+          patch.h = patch.y1 - y0;
+        } else if (axis === 'w') {
+          const t = (pt.x - cx0) * xAxis.x + (pt.z - cz0) * xAxis.z;
+          const nw = Math.max(50, Math.round(Math.abs(t) * 2 / 10) * 10);
+          patch.w = nw;
+          patch.x = Math.round((cx0 - nw / 2) / 10) * 10;
+        } else if (axis === 'd') {
+          const t = (pt.x - cx0) * zAxis.x + (pt.z - cz0) * zAxis.z;
+          const nd = Math.max(50, Math.round(Math.abs(t) * 2 / 10) * 10);
+          patch.d = nd;
+          patch.z = Math.round((cz0 - nd / 2) / 10) * 10;
+        }
+        pr.newFix = { ...patch };
+        this._applyObstacleLive(pr.fixHandle.id, base, patch, axis);
+        return;
+      }
+      if (gk === 'opening') {
+        if (axis === 'moveX' || axis === 'moveXZ') {
+          try {
+            const segs = roomWallSegments(this.room);
+            let s = null;
+            if (base.edgeIndex != null) s = segs[base.edgeIndex];
+            else s = segs.find((q) => q.wall === base.wall) || segs[0];
+            if (s && s.len > 1) {
+              const tx = (s.x2 - s.x1) / s.len, tz = (s.z2 - s.z1) / s.len;
+              const along = (pt.x - s.x1) * tx + (pt.z - s.z1) * tz;
+              const ww = +base.width || 900;
+              patch.offset = Math.max(0, Math.round((along - ww / 2) / 10) * 10);
+            }
+          } catch (_) { /* */ }
+        } else if (axis === 'moveY') {
+          const sill = Math.max(0, Math.round((pt.y - (+base.height || 1400) / 2) / 10) * 10);
+          patch.sill = sill;
+        } else if (axis === 'h') {
+          const sill = +base.sill || 0;
+          patch.height = Math.max(200, Math.round((pt.y - sill) / 10) * 10);
+        } else if (axis === 'w') {
+          const origin = pr.gizmoOrigin || pt;
+          const dist = Math.hypot(pt.x - origin.x, pt.z - origin.z);
+          patch.width = Math.max(200, Math.round(dist * 2 / 10) * 10);
+        }
+        pr.newFix = { ...patch };
+        this._applyOpeningLive(pr.fixHandle.id, base, patch, axis);
+        return;
+      }
+      if (gk === 'module') {
+        // центр модуля в мире (для осей и resize)
+        const a0 = ((+base.rot || 0) * Math.PI) / 180;
+        const c0 = Math.cos(a0), s0 = Math.sin(a0);
+        const ocx = +base.x + (+base.w || 0) * 0.5 * c0 + (+base.d || 0) * 0.5 * s0;
+        const ocz = +base.z - (+base.w || 0) * 0.5 * s0 + (+base.d || 0) * 0.5 * c0;
+        if (axis === 'moveX') {
+          const dx = pt.x - (pr.start?.x ?? ocx);
+          const dz = pt.z - (pr.start?.z ?? ocz);
+          const along = dx * xAxis.x + dz * xAxis.z;
+          let nx = +base.x + along * xAxis.x;
+          let nz = +base.z + along * xAxis.z;
+          const sn = this.h.snap?.(pr.fixHandle.id, nx, nz) || { x: nx, z: nz };
+          patch.x = Math.round(sn.x / 10) * 10;
+          patch.z = Math.round(sn.z / 10) * 10;
+        } else if (axis === 'moveZ') {
+          const dx = pt.x - (pr.start?.x ?? ocx);
+          const dz = pt.z - (pr.start?.z ?? ocz);
+          const along = dx * zAxis.x + dz * zAxis.z;
+          let nx = +base.x + along * zAxis.x;
+          let nz = +base.z + along * zAxis.z;
+          const sn = this.h.snap?.(pr.fixHandle.id, nx, nz) || { x: nx, z: nz };
+          patch.x = Math.round(sn.x / 10) * 10;
+          patch.z = Math.round(sn.z / 10) * 10;
+        } else if (axis === 'moveXZ') {
+          const ncx = Math.round(pt.x / 10) * 10;
+          const ncz = Math.round(pt.z / 10) * 10;
+          // pt — на полу у центра; переводим в угол модуля
+          let nx = ncx - (+base.w || 0) * 0.5 * c0 - (+base.d || 0) * 0.5 * s0;
+          let nz = ncz + (+base.w || 0) * 0.5 * s0 - (+base.d || 0) * 0.5 * c0;
+          const sn = this.h.snap?.(pr.fixHandle.id, nx, nz) || { x: nx, z: nz };
+          patch.x = Math.round(sn.x / 10) * 10;
+          patch.z = Math.round(sn.z / 10) * 10;
+        } else if (axis === 'moveY') {
+          const h = +base.h || 720;
+          const cy = Math.round(pt.y / 10) * 10;
+          patch.elev = Math.max(0, Math.round((cy - h / 2) / 10) * 10);
+        } else if (axis === 'h') {
+          const elev = +base.elev || 0;
+          patch.h = Math.max(200, Math.round((pt.y - elev) / 10) * 10);
+        } else if (axis === 'w') {
+          const t = (pt.x - ocx) * xAxis.x + (pt.z - ocz) * xAxis.z;
+          patch.w = Math.max(150, Math.round(Math.abs(t) * 2 / 10) * 10);
+        } else if (axis === 'd') {
+          const t = (pt.x - ocx) * zAxis.x + (pt.z - ocz) * zAxis.z;
+          patch.d = Math.max(150, Math.round(Math.abs(t) * 2 / 10) * 10);
+        }
+        let applied = { ...patch };
+        if (this._dockActive() && (patch.x != null || patch.z != null || patch.elev != null)) {
+          const live = { ...base, ...patch };
+          const socks = this.h.dockSockets?.(pr.fixHandle.id, {
+            x: live.x, z: live.z, elev: live.elev,
+          }) || [];
+          let best = null, bestScore = Infinity;
+          for (const s of socks) {
+            if (!s.pose) continue;
+            const dd = Math.hypot(s.pose.x - live.x, s.pose.z - live.z);
+            if (s.stack) {
+              if (dd > 110) continue;
+              const score = dd + (s.hAlign === 'left' ? 0 : 14);
+              if (score < bestScore) { bestScore = score; best = s; }
+            } else if (dd <= 80) {
+              const score = dd + (s.vAlign === 'bottom' ? 0 : 18);
+              if (score < bestScore) { bestScore = score; best = s; }
+            }
+          }
+          if (best?.pose) {
+            applied = {
+              ...applied,
+              x: best.pose.x, z: best.pose.z,
+              elev: best.pose.elev, rot: best.pose.rot,
+            };
+            this._setDockHot(best.id, best);
+          }
+        }
+        pr.newFix = { ...applied };
+        this._applyModuleLive(pr.fixHandle.id, base, applied, axis);
+        return;
+      }
+      if (axis === 'moveX') {
+        const dx = pt.x - (pr.start?.x ?? base.x);
+        const dz = pt.z - (pr.start?.z ?? base.z);
+        const along = dx * xAxis.x + dz * xAxis.z;
+        patch.x = Math.round((base.x + along * xAxis.x) / 10) * 10;
+        patch.z = Math.round((base.z + along * xAxis.z) / 10) * 10;
+      } else if (axis === 'moveZ') {
+        const dx = pt.x - (pr.start?.x ?? base.x);
+        const dz = pt.z - (pr.start?.z ?? base.z);
+        const along = dx * zAxis.x + dz * zAxis.z;
+        patch.x = Math.round((base.x + along * zAxis.x) / 10) * 10;
+        patch.z = Math.round((base.z + along * zAxis.z) / 10) * 10;
+      } else if (axis === 'moveY') {
+        // pt.y — центр; elev = низ (для труб центр − h/2)
+        const cy = Math.round(pt.y / 10) * 10;
+        const elev = (base.kind === 'socket' || base.kind === 'vent') ? cy : cy - (+base.h || 100) * 0.5;
+        patch.elev = Math.max(0, Math.round(elev / 10) * 10);
+      } else if (axis === 'moveXZ') {
+        const ncx = Math.round(pt.x / 10) * 10;
+        const ncz = Math.round(pt.z / 10) * 10;
+        // для fixture x/z — опорная точка (как в данных), не обязательно центр
+        patch.x = Math.round((+base.x + (ncx - (pr.start?.x ?? ncx))) / 10) * 10;
+        patch.z = Math.round((+base.z + (ncz - (pr.start?.z ?? ncz))) / 10) * 10;
+      } else if (axis === 'h') {
+        const origin = pr.gizmoOrigin;
+        const bottom = origin ? origin.y - (+base.h || 100) * 0.5 : (+base.elev || 0);
+        patch.h = Math.max(40, Math.round((pt.y - bottom) / 10) * 10);
+      } else if (axis === 'diam') {
+        const dist = Math.hypot(pt.x - (+base.x || 0), pt.z - (+base.z || 0));
+        const diam = Math.max(16, Math.round((dist - 36) * 2 / 2) * 2);
+        patch.w = diam;
+        patch.d = diam;
+      } else if (axis === 'w') {
+        const t = (pt.x - (+base.x || 0)) * xAxis.x + (pt.z - (+base.z || 0)) * xAxis.z;
+        patch.w = Math.max(20, Math.round(Math.abs(t) * 2 / 5) * 5);
+      } else if (axis === 'd') {
+        const t = (pt.x - (+base.x || 0)) * zAxis.x + (pt.z - (+base.z || 0)) * zAxis.z;
+        patch.d = Math.max(4, Math.round(Math.max(0, Math.abs(t) - 24) / 2) * 2);
+      }
+      pr.newFix = { ...patch };
+      this._applyFixtureLive(pr.fixHandle.id, base, patch, axis);
+      return;
+    }
+    if (pr.fixtureId && pr.fixBase) {
+      const base = pr.fixBase;
+      let patch = {};
+      if (pr.fixVert || e.shiftKey) {
+        const cy = Math.round(pt.y / 10) * 10;
+        const elev = Math.max(0, Math.round((cy - ((base.kind === 'socket' || base.kind === 'vent') ? 0 : (base.h || 0) * 0.5)) / 10) * 10);
+        patch = { elev };
+      } else {
+        const nx = Math.round((base.x + (pt.x - pr.start.x)) / 10) * 10;
+        const nz = Math.round((base.z + (pt.z - pr.start.z)) / 10) * 10;
+        patch = { x: nx, z: nz };
+      }
+      pr.newFix = patch;
+      // gizmo едет вместе с предметом
+      this._applyFixtureLive(pr.fixtureId, base, patch, null);
       return;
     }
     if (pr.moduleId) {
@@ -2056,22 +4014,43 @@ export class Viewer {
       const nz = +m.z + dz;
       let sn = this.h.snap?.(pr.moduleId, nx, nz) || { x: nx, z: nz };
       if (this._dockActive()) {
-        const socks = this.h.dockSockets?.(pr.moduleId) || [];
-        let best = null, bestD = 120;
+        // магнит: бок — по XZ; стек — по XZ (elev подтягивается к верху/низу)
+        const curElev = +m.p.elev || 0;
+        const socks = this.h.dockSockets?.(pr.moduleId, {
+          x: nx, z: nz, elev: curElev,
+        }) || [];
+        let best = null, bestScore = Infinity;
         for (const s of socks) {
           if (!s.pose) continue;
           const dd = Math.hypot(s.pose.x - nx, s.pose.z - nz);
-          if (dd < bestD) { bestD = dd; best = s; }
+          if (s.stack) {
+            if (dd > 110) continue;
+            const hBias = s.hAlign === 'left' ? 0 : s.hAlign === 'right' ? 14 : 8;
+            const score = dd + hBias;
+            if (score < bestScore) { bestScore = score; best = s; }
+          } else {
+            if (dd > 80) continue;
+            const vBias = s.vAlign === 'bottom' ? 0 : s.vAlign === 'top' ? 18 : 8;
+            const score = dd + vBias;
+            if (score < bestScore) { bestScore = score; best = s; }
+          }
         }
         if (best) {
-          sn = { x: best.pose.x, z: best.pose.z, rot: best.pose.rot, dock: best };
-          this._setDockHot(best.id);
-        } else this._setDockHot(null);
+          sn = {
+            x: best.pose.x, z: best.pose.z, rot: best.pose.rot,
+            elev: best.pose.elev, dock: best,
+          };
+          this._setDockHot(best.id, best);
+        }
       }
       pr.newPos = sn;
       const grp = this.modGroups.get(pr.moduleId);
       if (grp) {
-        grp.position.set(sn.x, 0, sn.z);
+        // elev в геометрии локальный — на время snap сдвигаем группу по Y
+        const elevY = (sn.elev != null && sn.dock)
+          ? (sn.elev - (+m.p.elev || 0))
+          : 0;
+        grp.position.set(sn.x, elevY, sn.z);
         if (sn.rot != null) grp.rotation.y = (sn.rot * Math.PI) / 180;
       }
       this.h.onDragging?.(pr.moduleId, sn.x, sn.z);
@@ -2110,22 +4089,20 @@ export class Viewer {
       pr.newCtor = { offset, sill };
       const pack = this.ctorOpeningMeshes.get(pr.ctorId);
       if (pack?.mesh) {
-        const w = +base.width || 900, h = +base.height || 1400;
+        const w = +base.width || 900;
         const offC = offset + w / 2;
-        const y = sill + h / 2;
-        try {
-          const segs = roomWallSegments(this.room);
-          const s = segs[base.edgeIndex != null ? +base.edgeIndex : 0];
-          if (s && s.len > 1) {
-            const tx = (s.x2 - s.x1) / s.len, tz = (s.z2 - s.z1) / s.len;
-            pack.mesh.position.set(s.x1 + tx * offC, y, s.z1 + tz * offC);
-            if (pack.frame) {
-              pack.frame.position.copy(pack.mesh.position);
-              pack.frame.rotation.copy(pack.mesh.rotation);
-              pack.frame.translateZ(-8);
-            }
-          }
-        } catch (_) { /* */ }
+        const y = sill + (+base.height || 1400) / 2;
+        const thick = pack.wallRoot?.userData?.wallThick || 140;
+        const place = pack.wallRoot?.userData?.placeOpening;
+        if (place) {
+          place(pack.mesh, offC, y, thick / 2);
+          const sky = pack.mesh.userData?.exterior;
+          if (sky) place(sky, offC, y, thick + 40);
+        } else {
+          pack.mesh.position.set(offC, y, thick / 2);
+          const sky = pack.mesh.userData?.exterior;
+          if (sky) sky.position.set(offC, y, thick + 40);
+        }
       }
       this.h.onDraggingCtor?.('opening', pr.ctorId, pr.newCtor);
     }
@@ -2139,6 +4116,12 @@ export class Viewer {
     this.controls.enabled = this.navMode !== 'walk';
     try { this.renderer.domElement.releasePointerCapture?.(e.pointerId); } catch (_) { /* */ }
     if (!pr) return;
+
+    if (pr.tape) {
+      if (Math.hypot(e.clientX - pr.x, e.clientY - pr.y) <= 8) this._tapeClick(e);
+      this._lastTap = null;
+      return;
+    }
 
     if (pr.dockClick) {
       if (Math.hypot(e.clientX - pr.x, e.clientY - pr.y) <= 10) {
@@ -2202,6 +4185,23 @@ export class Viewer {
         this._lastTap = null;
         return;
       }
+      if (pr.fixHandle && pr.newFix) {
+        this._fixHandleDrag = null;
+        this._fixGizmoLive = null;
+        this._gizmoHoverAxis = null;
+        const gk = pr.fixHandle.kind || 'fixture';
+        if (gk === 'obstacle') this.h.onPatchObstacle?.(pr.fixHandle.id, pr.newFix);
+        else if (gk === 'opening') this.h.onPatchOpening?.(pr.fixHandle.id, pr.newFix);
+        else if (gk === 'module') this.h.onPatchModule?.(pr.fixHandle.id, pr.newFix);
+        else this.h.onResizeFixture?.(pr.fixHandle.id, pr.newFix);
+        this._lastTap = null;
+        return;
+      }
+      if (pr.fixtureId && pr.newFix) {
+        this.h.onMoveFixture?.(pr.fixtureId, pr.newFix);
+        this._lastTap = null;
+        return;
+      }
       if (pr.moduleId && pr.newPos) {
         if (pr.newPos.dock) this.h.onDock?.(pr.moduleId, pr.newPos.dock);
         else this.h.onMove?.(pr.moduleId, pr.newPos.x, pr.newPos.z);
@@ -2213,6 +4213,13 @@ export class Viewer {
         this.h.onMoveOpening?.(pr.ctorId, pr.newCtor.offset, pr.newCtor.sill);
       }
       this._lastTap = null;
+      return;
+    }
+    if (pr.fixHandle) {
+      this._fixHandleDrag = null;
+      this._fixGizmoLive = null;
+      this._gizmoHoverAxis = null;
+      this._rebuildFixtureHandles();
       return;
     }
     if (pr.wallHandle) {
@@ -2321,9 +4328,10 @@ export class Viewer {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
     if (e.code) this.keysHeld.add(e.code);
     if (e.key === 'Control' || e.key === 'Meta') {
+      // key-repeat при удержании Ctrl иначе каждые ~30мс сносит ghost
+      const was = this.ctrlHeld;
       this.ctrlHeld = true;
-      // в walk Ctrl — ускорение; маркеры стыковки только без стрелок / WASD
-      if (!this._navKeysDown()) {
+      if (!was && !this._navKeysDown()) {
         this._rebuildDocks();
         this.h.onDockMode?.(true);
       }
@@ -2359,6 +4367,17 @@ export class Viewer {
       if (key) this.h.onToggleFront?.(mid, key);
     }
     if (e.key === 'Escape') {
+      if (this.tapeMode) {
+        if (this.tapePending) {
+          this.tapePending = null;
+          this._clearTapePreview();
+          this.h.onTapeHint?.('Первая точка сброшена. Esc ещё раз — выключить рулетку.');
+        } else {
+          this.setTapeMode(false);
+        }
+        e.preventDefault();
+        return;
+      }
       this.setMode('select');
       this.h.onCancelPlace?.();
     }

@@ -161,6 +161,31 @@ export function wallEdgeCount(room) {
   return w > 0 && w < n ? w : n;
 }
 
+/**
+ * Miter-смещение наружного угла для двух единичных наружных нормалей.
+ * null — почти 180° (стык коллинеарен, заливка не нужна).
+ * Габарит комнаты (внутренний контур) не меняется — только наружная толща.
+ */
+export function wallCornerMiter(n1x, n1z, n2x, n2z, thick) {
+  const T = +thick || 0;
+  if (T < 1) return null;
+  const den = 1 + n1x * n2x + n1z * n2z;
+  if (den < 0.08) return null;
+  return { x: ((n1x + n2x) * T) / den, z: ((n1z + n2z) * T) / den };
+}
+
+/** Треугольник заливки наружного угла: [Va, M, Vb] (без вершины внутреннего контура). */
+export function wallCornerFillPts(vx, vz, n1, n2, thick) {
+  const m = wallCornerMiter(n1.nx, n1.nz, n2.nx, n2.nz, thick);
+  if (!m) return null;
+  const T = +thick || 0;
+  return [
+    { x: vx + n1.nx * T, z: vz + n1.nz * T },
+    { x: vx + m.x, z: vz + m.z },
+    { x: vx + n2.nx * T, z: vz + n2.nz * T },
+  ];
+}
+
 export const isOpenRoom = (room) => wallEdgeCount(room) < (room?.planFloor?.length || 0);
 
 /** Вершина — угол между двумя настоящими стенами (у открытого контура концы цепочки и достройка — нет). */
@@ -864,8 +889,8 @@ export function newOpening(partial = {}) {
     width: 1200,
     sill: 900,
     height: 1400,
-    color: null, // null → цвет по типу
-    frameColor: 0x8b7355,
+    color: null, // null → цвет по типу (окно: голубое стекло)
+    frameColor: 0x1a1a1a, // чёрная рама по умолчанию
     ...partial,
   };
 }
@@ -874,7 +899,7 @@ export function ensureCtorIds(room) {
   if (!room) return;
   for (const op of room.openings || []) {
     if (!op.id) op.id = 'op' + Date.now().toString(36) + Math.floor(Math.random() * 1000);
-    if (op.frameColor == null) op.frameColor = 0x8b7355;
+    if (op.frameColor == null) op.frameColor = op.type === 'door' ? 0x4a3728 : 0x1a1a1a;
   }
   for (const ob of room.obstacles || []) {
     if (!ob.id) ob.id = 'ob' + Date.now().toString(36) + Math.floor(Math.random() * 1000);

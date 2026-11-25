@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261123k">
+  <link rel="stylesheet" href="css/app.css?v=20261125i">
   <script type="importmap">
   {
     "imports": {
@@ -19,7 +19,8 @@
     <div class="spacer"></div>
     <span id="modeBadge" class="mode-badge"></span>
     <span id="total" class="total"></span>
-    <button data-act="undo" title="Ctrl+Z">↶</button>
+    <button data-act="undo" title="Отменить · Ctrl+Z">↶</button>
+    <button data-act="redo" title="Повторить · Ctrl+Y / Ctrl+Shift+Z">↷</button>
     <button data-act="new">Новый</button>
     <button data-act="demoKitchen" title="Новая сцена: кухня из линейки Самолет">Пример кухни</button>
     <a class="btn-link" href="module.html?v=20261028n" title="Конструктор модуля v1 — детали вручную">Модуль v1</a>
@@ -33,21 +34,25 @@
     <button data-act="csv">CSV</button>
     <button data-act="onec">В 1С</button>
     <input type="file" id="fileOpen" accept=".json" hidden>
+    <input type="file" id="fileEkkd" accept=".ekkd,.xml,text/xml" hidden>
     <input type="file" id="libImport" accept=".json" hidden>
   </header>
 
   <main>
     <aside class="left">
-      <div class="tabs">
-        <button class="tab active" data-tab="lib">Библиотека</button>
-        <button class="tab" data-tab="sam">Каталог</button>
-        <button class="tab" data-tab="room">Помещение</button>
-        <button class="tab" data-tab="light">Свет</button>
-        <button class="tab" data-tab="fix">Объекты</button>
-        <button class="tab" data-tab="brief">ТЗ → ИИ</button>
-      </div>
+      <nav class="tabs" aria-label="Разделы">
+        <div class="tabs-row" role="tablist">
+          <button class="tab active" data-tab="room" role="tab" aria-selected="true">Помещение</button>
+          <button class="tab" data-tab="sam" role="tab">Каталог</button>
+          <button class="tab" data-tab="fix" role="tab">Объекты</button>
+        </div>
+        <div class="tabs-row" role="tablist">
+          <button class="tab" data-tab="lib" role="tab" title="Процедурные модули, избранное и слои сцены">Библиотека</button>
+          <button class="tab" data-tab="brief" role="tab">ТЗ → ИИ</button>
+        </div>
+      </nav>
 
-      <div class="tab-pane active" id="tab-lib">
+      <div class="tab-pane" id="tab-lib">
         <p class="muted">Клик по модулю → режим «по плоскости»: кликните пол или стену. <kbd>R</kbd> — поворот, <kbd>Esc</kbd> — отмена.</p>
         <div id="library" class="library"></div>
         <div class="btnrow" style="margin-top:8px">
@@ -58,30 +63,15 @@
         <h3>Столешница</h3>
         <label class="chk"><input type="checkbox" id="topOn"> Над нижними у задней стены</label>
         <label>Материал <select id="topMat"></select></label>
-        <h3>Вид (как eKitchen)</h3>
-        <div class="btnrow">
-          <button type="button" data-view="walk" title="Ходьба изнутри">Изнутри</button>
-          <button type="button" data-view="3d" title="Изометрия">Изометрия</button>
-          <button type="button" data-view="top" title="Вид сверху — план">Сверху</button>
-          <button type="button" data-view="front">Спереди</button>
-        </div>
-        <div class="btnrow" title="Проекции на стены как в BPlanner">
-          <button type="button" data-view="wallA">Стена A</button>
-          <button type="button" data-view="wallB">B</button>
-          <button type="button" data-view="wallC">C</button>
-          <button type="button" data-view="wallD">D</button>
-        </div>
-        <div class="btnrow">
-          <button type="button" id="btnLines" title="Черно-белая сцена в линиях">В линиях</button>
-        </div>
         <label class="chk"><input type="checkbox" id="showGrid" checked> Сетка 100/500 мм</label>
-        <label>Размеры
+        <label>Габариты сцены
           <select id="dimMode">
-            <option value="none">нет</option>
+            <option value="none">скрыть</option>
             <option value="basic" selected>базовые</option>
             <option value="all">все</option>
           </select>
         </label>
+        <p class="muted" style="font-size:12px;margin:4px 0 0">Буквы и длины стен — вкладка «Помещение» → «Подписи на 3D».</p>
         <h4>Слои</h4>
         <label class="chk"><input type="checkbox" id="layFloor" checked> Пол</label>
         <label class="chk"><input type="checkbox" id="layWalls" checked> Стены</label>
@@ -110,7 +100,6 @@
           </select>
         </label>
         <label class="chk"><input type="checkbox" id="fixShow"> Показывать технику и коммуникации</label>
-        <label class="chk"><input type="checkbox" id="wallLettersShow" checked> Буквы стен A–D</label>
         <label class="chk"><input type="checkbox" id="commsMode"> Замер коммуникаций</label>
       </div>
 
@@ -143,38 +132,36 @@
         </p>
       </div>
 
-      <div class="tab-pane" id="tab-room">
+      <div class="tab-pane active" id="tab-room">
         <p class="muted">Помещение как BPlanner Arch System: план сверху и проекции стен.</p>
 
         <details class="room-block" open>
-          <summary>Проекции</summary>
-          <div class="btnrow room-views">
-            <button type="button" data-view="top" class="primary" title="План сверху">Сверху</button>
-            <button type="button" data-view="3d" title="Изометрия">3D</button>
-            <button type="button" data-view="wallA">A</button>
-            <button type="button" data-view="wallB">B</button>
-            <button type="button" data-view="wallC">C</button>
-            <button type="button" data-view="wallD">D</button>
+          <summary>Настройки отображения</summary>
+          <label class="chk"><input type="checkbox" id="wallLettersShow" checked> Буквы стен (A, B, C…)</label>
+          <label class="chk"><input type="checkbox" id="wallDimsShow" checked> Размеры длин стен</label>
+          <div id="wallLenLevels" style="margin:4px 0 8px 14px">
+            <label class="chk"><input type="checkbox" id="wallLenFloor" checked> На полу</label>
+            <label class="chk"><input type="checkbox" id="wallLenMid" checked> На промежуточных уровнях</label>
+            <label class="chk"><input type="checkbox" id="wallLenCeil" checked> Длины у потолка</label>
           </div>
-        </details>
-
-        <details class="room-block" open>
-          <summary>Габариты и отделка</summary>
-          <label>Длина (X), мм <input type="number" id="roomL" step="10"></label>
-          <label>Глубина (Z), мм <input type="number" id="roomD" step="10"></label>
-          <label>Высота, мм <input type="number" id="roomH" step="10"></label>
-          <button id="btnApplyRoomSize" type="button" class="primary">Применить (прямоугольник)</button>
-          <label>Высота столешницы yRef, мм <input type="number" id="roomYRef" step="10" value="900"></label>
+          <label class="chk"><input type="checkbox" id="showHeightDim" checked> Высота помещения (до потолка)</label>
+          <label class="chk"><input type="checkbox" id="showRoomEdges"> Окантовка углов (стены / пол / потолок)</label>
+          <label id="edgeWidthWrap">Толщина окантовки
+            <input type="range" id="edgeWidth" min="1" max="12" step="0.5" value="4.5">
+            <span id="edgeWidthVal" class="muted">4.5</span>
+          </label>
           <label>Цвет пола <input type="color" id="floorColor" value="#cfc6b8"></label>
           <label>Цвет стен (общий) <input type="color" id="wallColor" value="#f6f4f0"></label>
-          <label class="chk"><input type="checkbox" id="showRoomEdges"> Окантовка стен, пола и потолка</label>
-          <p class="muted" style="font-size:12px;margin:2px 0 0">Линии по рёбрам — углы не сливаются, удобнее ставить модуль в угол.</p>
+          <p class="muted" style="font-size:12px;margin:4px 0 0">Снимите галочки — подписи и линии на сцене исчезнут.</p>
         </details>
 
         <details class="room-block" open>
           <summary>План (вид сверху)</summary>
-          <button id="btnPlanFromPoint" type="button" class="primary" title="Гибкий план: стены от любой вершины, длины и углы">План от точки…</button>
-          <p class="muted">Контур на каждом уровне замера (пол, потолок, столешница…). Углы считаются сами.</p>
+          <div class="btnrow">
+            <button id="btnPlanFromPoint" type="button" class="primary" title="Гибкий план: стены от любой вершины, длины и углы">План от точки…</button>
+            <button type="button" data-act="importEkkd" title="Новый проект из бланка eKitchen (.ekkd): контур комнаты, двери/окна, короба">Из eKKD…</button>
+          </div>
+          <p class="muted">Контур на каждом уровне замера (пол, потолок, столешница…). Углы считаются сами. «Из eKKD…» — загрузить помещение из бланка eKitchen.</p>
           <div class="btnrow plan-layers"></div>
           <div id="planSvgWrap" class="plan-wrap"></div>
           <div class="btnrow">
@@ -194,55 +181,31 @@
           <div id="constructionsLib" class="ctor-grid"></div>
         </details>
 
-        <details class="room-block">
-          <summary>Проёмы</summary>
-          <div id="openings"></div>
-          <button id="btnAddOpening">+ Проём</button>
+        <details class="room-block" open>
+          <summary>Коммуникации</summary>
+          <p class="muted">Розетки, выключатели, трубы — клик, затем пол или стена.</p>
+          <div id="commLib" class="ctor-grid"></div>
         </details>
 
         <details class="room-block">
-          <summary>Препятствия (короба)</summary>
-          <div id="obstacles"></div>
-          <button id="btnAddObstacle" type="button">+ Короб</button>
+          <summary>Свет</summary>
+          <p class="muted">В новом проекте светильники на сцене выключены — включите ниже при необходимости.</p>
+          <label>Окружающий <input type="range" id="ltAmbient" min="0" max="2" step="0.05"></label>
+          <label>Солнце <input type="range" id="ltSun" min="0" max="3" step="0.05"></label>
+          <label>Азимут солнца <input type="range" id="ltAz" min="0" max="360" step="5"></label>
+          <label>Высота солнца <input type="range" id="ltEl" min="5" max="85" step="1"></label>
+          <label>Заполнение <input type="range" id="ltFill" min="0" max="2" step="0.05"></label>
+          <label class="chk"><input type="checkbox" id="ltCeil"> Потолочные светильники</label>
+          <label>Число светильников <input type="number" id="ltCeilN" min="1" max="8" step="1"></label>
+          <label>Яркость светильников <input type="range" id="ltCeilI" min="0" max="2" step="0.05"></label>
+          <label class="chk"><input type="checkbox" id="ltAccent"> Акцентный свет</label>
+          <label>Цвет акцента <input type="color" id="ltAccentC" value="#ffe6c2"></label>
         </details>
 
-        <details class="room-block">
-          <summary>Потолок</summary>
-          <label>Режим
-            <select id="ceilMode">
-              <option value="flat">Плоский</option>
-              <option value="samples">По точкам (высоты вдоль стен)</option>
-            </select>
-          </label>
-          <label id="ceilFlatWrap">Высота, мм <input type="number" id="ceilFlatH" step="10"></label>
-          <p class="muted" id="ceilSamplesHint">Точки высоты задаются при замере вдоль стены (не координатами).</p>
-        </details>
-
-        <details class="room-block">
-          <summary>Пригодность кухни</summary>
-          <label>Мин. проход, мм <input type="number" id="fitPassage" step="10" value="1000"></label>
-          <label>Зазор навесных до потолка, мм <input type="number" id="fitClear" step="5" value="40"></label>
-          <div id="fitReport" class="fit-report"></div>
-          <button id="btnFitRefresh" type="button">Обновить проверку</button>
-        </details>
-      </div>
-
-      <div class="tab-pane" id="tab-light">
-        <h3>Освещение</h3>
-        <label>Окружающий <input type="range" id="ltAmbient" min="0" max="2" step="0.05"></label>
-        <label>Солнце <input type="range" id="ltSun" min="0" max="3" step="0.05"></label>
-        <label>Азимут солнца <input type="range" id="ltAz" min="0" max="360" step="5"></label>
-        <label>Высота солнца <input type="range" id="ltEl" min="5" max="85" step="1"></label>
-        <label>Заполнение <input type="range" id="ltFill" min="0" max="2" step="0.05"></label>
-        <label class="chk"><input type="checkbox" id="ltCeil"> Потолочные светильники</label>
-        <label>Число светильников <input type="number" id="ltCeilN" min="1" max="8" step="1"></label>
-        <label>Яркость светильников <input type="range" id="ltCeilI" min="0" max="2" step="0.05"></label>
-        <label class="chk"><input type="checkbox" id="ltAccent"> Акцентный свет</label>
-        <label>Цвет акцента <input type="color" id="ltAccentC" value="#ffe6c2"></label>
       </div>
 
       <div class="tab-pane" id="tab-fix">
-        <p class="muted">Техника, мойки, смесители, розетки, трубы. Ставятся кликом по полу/стене.</p>
+        <p class="muted">Техника, мойки, смесители. Коммуникации — во вкладке «Помещение». Ставятся кликом по полу/стене или модулю.</p>
         <div id="fixturesLib" class="library"></div>
       </div>
 
@@ -358,10 +321,10 @@
             <button type="button" data-cam="zoomIn" title="Приблизить">＋</button>
             <button type="button" data-cam="zoomOut" title="Отдалить">－</button>
             <button type="button" data-cam="reset" title="Сбросить ракурс">⌂</button>
-            <button type="button" data-cam="left" title="Повернуть влево">◀</button>
-            <button type="button" data-cam="right" title="Повернуть вправо">▶</button>
-            <button type="button" data-cam="up" title="Поднять камеру">▲</button>
-            <button type="button" data-cam="down" title="Опустить камеру">▼</button>
+            <button type="button" data-cam="left" title="Сдвинуть влево">◀</button>
+            <button type="button" data-cam="right" title="Сдвинуть вправо">▶</button>
+            <button type="button" data-cam="up" title="Приблизить">▲</button>
+            <button type="button" data-cam="down" title="Отдалить">▼</button>
           </div>
           <div class="view-cmd-sep"></div>
           <div class="view-cmd-group" title="Режим просмотра">
@@ -371,21 +334,17 @@
             <button type="button" data-view="front" title="Спереди">Спереди</button>
           </div>
           <div class="view-cmd-sep"></div>
-          <div class="view-cmd-group" title="Проекции на стены">
-            <button type="button" data-view="wallA" title="Стена A">A</button>
-            <button type="button" data-view="wallB" title="Стена B">B</button>
-            <button type="button" data-view="wallC" title="Стена C">C</button>
-            <button type="button" data-view="wallD" title="Стена D">D</button>
-          </div>
+          <div class="view-cmd-group wall-view-btns" data-wall-views title="Проекции на стены"></div>
           <div class="view-cmd-sep"></div>
           <div class="view-cmd-group">
             <button type="button" id="btnLinesBar" title="Черно-белый каркас">Линии</button>
+            <button type="button" id="btnTapeBar" title="Рулетка: два клика по сцене — расстояние в мм. Esc — отмена / выкл.">Рулетка</button>
           </div>
         </div>
       </div>
       <div class="hint">
-        <b>Изометрия</b>: стрелки/WASD — ракурс · <b>Изнутри</b>: ЛКМ — ехать, ПКМ — смотреть ·
-        панель внизу сцены — камера и виды
+        <b>Изометрия</b>: A/D и ◀▶ — влево/вправо · W/S и ▲▼ — приблизить/отдалить ·
+        <b>Изнутри</b>: WASD/стрелки — ход · ПКМ — смотреть · панель внизу — камера и виды
       </div>
       <div class="cmd">
         <div id="log" class="log"></div>
@@ -407,6 +366,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261123k"></script>
+  <script type="module" src="js/main.js?v=20261125k"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ import {
   emptyChain, chainPoints, chainHeadings, chainSegments, chainFloor, chainFromPoints,
   reverseChain, isChainReversed, angBetween, norm360, bboxOf,
 } from './roomPlan.js?v=20261110a';
+import { wallCornerFillPts } from './roomGeom.js?v=20261124bb';
 
 const RAD = Math.PI / 180;
 const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -320,6 +321,18 @@ export function openPlanEditor({ levels = null, wallThick = 100, onApply, onCanc
         if (bl < 1e-6) { bx = -b.nx; bz = -b.nz; } else { bx /= bl; bz /= bl; }
         out.push(`<text x="${a.x2 + bx * 30 * k}" y="${a.z2 + bz * 30 * k}" font-size="${fs}" text-anchor="middle"
           dominant-baseline="central" class="pe-ang">${fmtA(ang)}°</text>`);
+        // заливка наружного угла (miter)
+        const fill = wallCornerFillPts(a.x2, a.z2, a, b, T);
+        if (fill) {
+          const poly = [
+            [a.x2, a.z2],
+            [fill[0].x, fill[0].z],
+            [fill[1].x, fill[1].z],
+            [fill[2].x, fill[2].z],
+          ];
+          out.push(`<polygon class="pe-wall-corner" points="${poly.map((q) => q.join(',')).join(' ')}"
+            fill="#8d96a1" stroke="#2f343a" stroke-width="${sw * 0.8}"/>`);
+        }
       }
     }
 

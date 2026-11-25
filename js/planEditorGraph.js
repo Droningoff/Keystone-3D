@@ -9,6 +9,7 @@ import {
   roomCornerAngle, moveVertex, wallTableAngle, setEdgeInteriorAngle,
   cloneGraph, syncGraphTopology,
 } from './roomGraph.js?v=20261123k';
+import { wallCornerFillPts, openChainFloorExtra } from './roomGeom.js?v=20261125f';
 
 const RAD = Math.PI / 180;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -51,9 +52,11 @@ const HTML = `
         <button data-a="draw" class="primary">Рисовать</button>
         <button data-a="undo" title="Backspace">Удалить последнюю</button>
         <button data-a="clear" class="danger">Начать заново</button>
+        <button class="primary" data-a="apply" title="Записать план в проект">Применить</button>
       </div>
       <div class="btnrow">
         <button data-a="flip" title="Комната окажется по другую сторону стен">Сторона комнаты ⇄</button>
+        <button type="button" data-a="importEkkd" title="Загрузить помещение из бланка eKitchen (.ekkd)">Из eKKD…</button>
       </div>
       <h4>Уровни замера</h4>
       <div data-r="levels"></div>
@@ -90,6 +93,7 @@ export function openPlanEditorGraph({
   wallThick = 100,
   onApply,
   onCancel,
+  onImportEkkd,
 } = {}) {
   const mkLevel = (l) => {
     const ch = l.chain || null;
@@ -440,6 +444,22 @@ export function openPlanEditorGraph({
     }
 
     const T = st.thick;
+
+    // Открытый контур: заливка + пунктир достройки пола (как virt на вкладке «Помещение»)
+    let virtSegs = null;
+    if (g.edges.length && !isGraphClosed(g)) {
+      let chain = graphToOrderedPoints(g);
+      if (chain.length >= 2) {
+        if (st.flip < 0) chain = chain.slice().reverse();
+        const extra = openChainFloorExtra(chain);
+        if (extra.length) {
+          out.push(`<polygon points="${[...chain, ...extra].map((q) => `${q.x},${q.z}`).join(' ')}"
+            fill="#e8f0fe" fill-opacity="0.35" stroke="none" pointer-events="none"/>`);
+          virtSegs = [chain[chain.length - 1], ...extra, chain[0]];
+        }
+      }
+    }
+
     g.edges.forEach((edge, i) => {
       const from = getVertex(g, edge.from);
       const to = getVertex(g, edge.to);
@@ -462,6 +482,38 @@ export function openPlanEditorGraph({
       const lx = mx + nx * o, lz = mz + nz * o;
       out.push(`<text x="${lx}" y="${lz}" font-size="${fs}" text-anchor="middle" dominant-baseline="middle"
         transform="rotate(${a} ${lx} ${lz})" class="pe-len">${letter(i)} ${edge.len}${locked ? ' (фикс.)' : ''}</text>`);
+    });
+
+    if (virtSegs) {
+      for (let i = 0; i < virtSegs.length - 1; i++) {
+        const a = virtSegs[i], b = virtSegs[i + 1];
+        out.push(`<line class="pe-virt" x1="${a.x}" y1="${a.z}" x2="${b.x}" y2="${b.z}"
+          stroke="#b8b0a2" stroke-width="${1.8 * sw}" stroke-dasharray="${7 * k} ${5 * k}"
+          fill="none" pointer-events="none"/>`);
+      }
+    }
+
+    // заливка наружных углов (miter) — габарит комнаты не меняется
+    g.vertices.forEach((vertex) => {
+      const at = edgesAtVertex(g, vertex.id);
+      if (at.length < 2) return;
+      for (let i = 0; i < at.length; i++) {
+        for (let j = i + 1; j < at.length; j++) {
+          const e1 = at[i], e2 = at[j];
+          const n1 = edgeOutwardNormal(g, e1, st.flip);
+          const n2 = edgeOutwardNormal(g, e2, st.flip);
+          const fill = wallCornerFillPts(vertex.x, vertex.z, n1, n2, T);
+          if (!fill) continue;
+          const poly = [
+            [vertex.x, vertex.z],
+            [fill[0].x, fill[0].z],
+            [fill[1].x, fill[1].z],
+            [fill[2].x, fill[2].z],
+          ];
+          out.push(`<polygon class="pe-wall-corner" points="${poly.map((q) => q.join(',')).join(' ')}"
+            fill="#8d96a1" stroke="#2f343a" stroke-width="${sw * 0.8}"/>`);
+        }
+      }
     });
 
     g.vertices.forEach((vertex) => {
@@ -778,6 +830,10 @@ export function openPlanEditorGraph({
 
   const actions = {
     cancel: () => { close(); onCancel?.(); },
+    importEkkd: () => {
+      close();
+      onImportEkkd?.();
+    },
     apply: () => {
       saveActiveGraph();
       const floor = L('floor');

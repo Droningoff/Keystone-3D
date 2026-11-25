@@ -3,34 +3,39 @@ import {
   MODULE_TYPES, BUTT_SIDES, createModule, newProject, buildProject, snapPos, nextFreeX,
   moduleTitle, panelSize, resolveDoors, migrateProject, toggleFront, setAllFronts,
   createLibModule, isLib, moduleRow, listDockSockets, applyDock, nearestDockSide,
-} from './model.js?v=20261110a';
+} from './model.js?v=20261125k';
 import { loadSamoletIndex, samoletIndex, libGeomTried, libGeom, libPreview, ensureLibGeoms, loadLibGeom, libSpec, findLib } from './samolet.js?v=20261029j';
 import { ExplodeView } from './explode.js?v=20261028m';
 import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261110a';
 import {
   newObstacle, newOpening, ensureAdvancedFields, unifyRoomPlan, syncSimpleAABB,
-  setRoomFootprint, setRoomHeight, ensureCtorIds,
+  ensureCtorIds,
   rectPlan, wallSurvey, setWallLengthAt, roomWallSegments, edgeLetter,
   planByLayer, planLayerLabel, insertVertexOnEdge, resetPlanLayerToRect,
   newFeature, featureTitle,
   levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
-} from './roomGeom.js?v=20261110a';
+} from './roomGeom.js?v=20261124bb';
 import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
-import { openPlanEditorGraph } from './planEditorGraph.js?v=20261123k';
+import { openPlanEditorGraph } from './planEditorGraph.js?v=20261125f';
 import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
-} from './roomEdit.js?v=20261110a';
+} from './roomEdit.js?v=20261124d';
 import { loadBrief, saveBrief, buildAiPrompt } from './brief.js?v=20261028m';
 import { loadLlmSettings, saveLlmSettings, listModels } from './llm.js?v=20261028m';
 import { planKitchenWithLlm } from './planner.js?v=20261028m';
-import { Viewer } from './viewer.js?v=20261110a';
 import { toBazisScript, bazisSmokeTest, bazisExportCheck, resolveSamoletBase, resolveUserCatalogBase } from './bazis.js?v=20261028m';
 import { computeSpec, specToCSV, specTo1C } from './report.js?v=20261028m';
 import { runCommand } from './commands.js?v=20261028m';
 import { loadLibrary, addToLibrary, removeFromLibrary, exportLibraryJSON, importLibraryJSON, libraryByCategory } from './library.js?v=20261028m';
-import { FIXTURE_CATALOG, createFixture, fixtureTitle, fixturesByCategory } from './fixtures.js?v=20261028m';
-import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261110a';
+import {
+  FIXTURE_CATALOG, FIXTURE_ICONS, createFixture, fixtureTitle, fixtureDims,
+  fixturesByCategory, communicationsCatalog, socketBlockCount, socketBlockWidth,
+  isWallPlateKind, resolveFixtureType,
+} from './fixtures.js?v=20261124be';
+import { Viewer } from './viewer.js?v=20261125k';
+import { projectFromEkkd } from './ekkd.js?v=20261124as';
+import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261124bc';
 import {
   loadUserCatalog, userCatalogItems, userCatalogAll, addUserB3dFiles,
   archiveCatalogEntry, deleteUserEntry, isCatalogArchived, catalogArchivedCount,
@@ -48,6 +53,7 @@ let build = null;
 let placeEntry = null;
 let _selPaintTimer = 0;
 const undo = [];
+const redo = [];
 
 const emptySel = () => ({ moduleId: null, panelKey: null, fixtureId: null, obstacleId: null, openingId: null });
 const viewer = new Viewer($('#viewport'), {
@@ -84,14 +90,40 @@ const viewer = new Viewer($('#viewport'), {
     refresh();
   },
   onDraggingCtor: (kind, id, fields) => {
+    const set = (nid, v) => {
+      const el = $('#' + nid);
+      if (el && v != null && Number.isFinite(+v)) el.value = Math.round(+v);
+    };
     if (kind === 'obstacle') {
-      const elx = $('#ctor_x'), elz = $('#ctor_z');
-      if (elx && fields.x != null) elx.value = fields.x;
-      if (elz && fields.z != null) elz.value = fields.z;
+      set('ctor_x', fields.x);
+      set('ctor_z', fields.z);
+      set('ctor_w', fields.w);
+      set('ctor_d', fields.d);
+      set('ctor_y0', fields.y0);
+      set('ctor_y1', fields.y1 ?? (fields.y0 != null && fields.h != null ? +fields.y0 + +fields.h : null));
+      set('ctor_rot', fields.rot);
     } else if (kind === 'opening') {
-      const elo = $('#ctor_offset'), els = $('#ctor_sill');
-      if (elo && fields.offset != null) elo.value = fields.offset;
-      if (els && fields.sill != null) els.value = fields.sill;
+      set('ctor_offset', fields.offset);
+      set('ctor_sill', fields.sill);
+      set('ctor_width', fields.width);
+      set('ctor_height', fields.height);
+    }
+  },
+  onDraggingFixture: (id, fields) => {
+    if (!fields) return;
+    const set = (nid, v) => {
+      const el = $('#' + nid);
+      if (el && v != null && Number.isFinite(+v)) el.value = Math.round(+v);
+    };
+    set('fx_x', fields.x);
+    set('fx_z', fields.z);
+    set('fx_elev', fields.elev);
+    set('fx_rot', fields.rot);
+    set('fx_w', fields.w);
+    set('fx_h', fields.h);
+    set('fx_d', fields.d);
+    if (fields.w != null && fields.d != null && Math.abs(+fields.w - +fields.d) < 1) {
+      set('fx_diam', Math.max(+fields.w, +fields.d));
     }
   },
   onRotateObstacle: (id, d) => {
@@ -101,11 +133,38 @@ const viewer = new Viewer($('#viewport'), {
     sel = { ...emptySel(), obstacleId: id };
     refresh();
   },
+  onPatchObstacle: (id, patch) => {
+    commit();
+    const ob = (project.room.obstacles || []).find((q) => q.id === id);
+    if (!ob || !patch) return;
+    if (patch.x != null) ob.x = +patch.x;
+    if (patch.z != null) ob.z = +patch.z;
+    if (patch.w != null) ob.w = +patch.w;
+    if (patch.d != null) ob.d = +patch.d;
+    if (patch.y0 != null) ob.y0 = +patch.y0;
+    if (patch.y1 != null) ob.y1 = +patch.y1;
+    if (patch.rot != null) ob.rot = +patch.rot;
+    if (patch.h != null && patch.y1 == null) ob.y1 = (+ob.y0 || 0) + +patch.h;
+    sel = { ...emptySel(), obstacleId: id };
+    refresh();
+  },
+  onPatchOpening: (id, patch) => {
+    commit();
+    const op = (project.room.openings || []).find((q) => q.id === id);
+    if (!op || !patch) return;
+    if (patch.offset != null) op.offset = +patch.offset;
+    if (patch.sill != null) op.sill = +patch.sill;
+    if (patch.width != null) op.width = +patch.width;
+    if (patch.height != null) op.height = +patch.height;
+    sel = { ...emptySel(), openingId: id };
+    refresh();
+  },
   snap: (id, x, z) => snapPos(project, id, x, z),
-  // excludeId = двигаемый модуль; маркеры на свободных боках остальных (как привязка Ctrl в eKitchen)
-  dockSockets: (moverId) => listDockSockets(project, {
+  // excludeId = двигаемый модуль; prefer {x,z,elev} — выбор top/bottom/front/back
+  dockSockets: (moverId, prefer = null) => listDockSockets(project, {
     excludeId: moverId || sel.moduleId,
     moverId: moverId || sel.moduleId,
+    prefer: prefer || null,
   }),
   onDock: (id, socket) => dockModule(id, socket),
   onDockToHost: (moverId, hostId, wx, wz) => {
@@ -116,17 +175,8 @@ const viewer = new Viewer($('#viewport'), {
     }
     dockModule(moverId, sock);
   },
-  onDockMode: (on) => {
+  onDockMode: () => {
     $('#btnDock')?.classList.toggle('active', !!viewer.dockMode);
-    if (on) {
-      const n = listDockSockets(project, { moverId: sel.moduleId, excludeId: sel.moduleId }).length;
-      log(
-        sel.moduleId
-          ? `Привязка (как Ctrl в eKitchen): ${n} свободных боков. Клик ◀/▶ или по модулю-соседу`
-          : 'Привязка: сначала выберите модуль, затем Ctrl / G / «Стык» и клик по соседу',
-        'ok',
-      );
-    }
   },
   onDragging: (id, x, z) => {
     const elx = $('#f_x'), elz = $('#f_z');
@@ -138,6 +188,20 @@ const viewer = new Viewer($('#viewport'), {
     const m = mod(id);
     if (m) { m.x = x; m.z = z; }
     sel = { moduleId: id, panelKey: null, fixtureId: null };
+    refresh();
+  },
+  onPatchModule: (id, patch) => {
+    const m = mod(id);
+    if (!m || !patch) return;
+    commit();
+    if (patch.x != null) m.x = +patch.x;
+    if (patch.z != null) m.z = +patch.z;
+    if (patch.rot != null) m.rot = ((+patch.rot) % 360 + 360) % 360;
+    if (patch.elev != null) m.p.elev = Math.max(0, +patch.elev);
+    if (patch.w != null) m.p.width = Math.max(150, +patch.w);
+    if (patch.d != null) m.p.depth = Math.max(150, +patch.d);
+    if (patch.h != null) m.p.height = Math.max(200, +patch.h);
+    sel = { ...emptySel(), moduleId: id };
     refresh();
   },
   onPlace: (x, z, wall, y, rot, edgeIndex) => placeModuleAt(x, z, wall, y, rot, edgeIndex),
@@ -162,8 +226,36 @@ const viewer = new Viewer($('#viewport'), {
     else if (f) f.rot = ((+f.rot || 0) + d) % 360;
     refresh();
   },
+  onMoveFixture: (id, patch) => {
+    const f = project.fixtures.find((q) => q.id === id);
+    if (!f || !patch) return;
+    commit();
+    if (patch.x != null) f.x = +patch.x;
+    if (patch.z != null) f.z = +patch.z;
+    if (patch.elev != null) f.elev = +patch.elev;
+    if (patch.rot != null) f.rot = +patch.rot;
+    if (patch.rx != null) f.rx = +patch.rx;
+    if (patch.rz != null) f.rz = +patch.rz;
+    refresh();
+  },
+  onResizeFixture: (id, patch) => {
+    const f = project.fixtures.find((q) => q.id === id);
+    if (!f || !patch) return;
+    commit();
+    if (patch.w != null) f.w = +patch.w;
+    if (patch.d != null) f.d = +patch.d;
+    if (patch.h != null) f.h = +patch.h;
+    if (patch.elev != null) f.elev = +patch.elev;
+    if (patch.x != null) f.x = +patch.x;
+    if (patch.z != null) f.z = +patch.z;
+    if (patch.rot != null) f.rot = +patch.rot;
+    if (patch.rx != null) f.rx = +patch.rx;
+    if (patch.rz != null) f.rz = +patch.rz;
+    refresh();
+  },
   onCancelPlace: () => { placeEntry = null; viewer.setMode('select'); updateModeBadge(); },
 });
+window.__viewer = viewer;
 
 function demoProject() {
   const p = newProject();
@@ -184,14 +276,41 @@ function demoProject() {
   bind('sink_single', p.modules[2]);
   bind('mixer_chrome', p.modules[2]);
   bind('hob_60', p.modules[3]);
-  p.fixtures.push(createFixture('socket_kitchen', 2300, 0, 0, 1100));
+  p.fixtures.push(createFixture('socket_block', 2300, 0, 0, 1100));
   p.fixtures.push(createFixture('pipe_water', 1300, 30, 0, 0));
   return p;
 }
 
 function load() { try { return JSON.parse(localStorage.getItem(STORE)); } catch { return null; } }
 function save() { localStorage.setItem(STORE, JSON.stringify(project)); }
-function commit() { undo.push(JSON.stringify(project)); if (undo.length > 50) undo.shift(); }
+/** Снимок сцены перед изменением. Любое действие на сцене через commit() попадает в Ctrl+Z / Ctrl+Y. */
+function commit() {
+  undo.push(JSON.stringify(project));
+  if (undo.length > 80) undo.shift();
+  redo.length = 0;
+}
+function restoreSnapshot(s) {
+  project = migrateProject(JSON.parse(s));
+  sel = emptySel();
+  placeEntry = null;
+  placeCtorEntry = null;
+  viewer.setMode?.('select');
+  refresh();
+}
+function doUndo() {
+  if (!undo.length) { log('Нечего отменять', 'warn'); return; }
+  redo.push(JSON.stringify(project));
+  if (redo.length > 80) redo.shift();
+  restoreSnapshot(undo.pop());
+  log('Отменено (Ctrl+Z)');
+}
+function doRedo() {
+  if (!redo.length) { log('Нечего повторять', 'warn'); return; }
+  undo.push(JSON.stringify(project));
+  if (undo.length > 80) undo.shift();
+  restoreSnapshot(redo.pop());
+  log('Повторено (Ctrl+Y)');
+}
 const mod = (id) => project.modules.find((m) => m.id === id);
 const fix = (id) => project.fixtures.find((f) => f.id === id);
 
@@ -329,14 +448,15 @@ function refresh() {
   viewer.setFixturesVisible(project.showFixtures !== false);
   $('#roomShow').value = project.room.show || 'auto';
   $('#fixShow').checked = project.showFixtures !== false;
-  $('#wallLettersShow').checked = project.room.showWallLetters !== false;
-  viewer.setWallLettersVisible(project.room.showWallLetters !== false);
-  if ($('#showRoomEdges')) {
-    $('#showRoomEdges').checked = project.room.showRoomEdges === true;
-    viewer.setRoomEdgesVisible(project.room.showRoomEdges === true);
+  syncWallLabelsForm();
+  syncWallViewButtons();
+  if ($('#dimMode')) {
+    $('#dimMode').value = project.room.dimMode || viewer.dimMode || 'basic';
+    viewer.setDimMode($('#dimMode').value);
   }
   try { if (typeof renderPlanEditor === 'function') renderPlanEditor(); } catch(_){}
   try { if (typeof renderConstructionsLib === 'function') renderConstructionsLib(); } catch(_){}
+  try { if (typeof renderCommLib === 'function') renderCommLib(); } catch(_){}
   try { if (typeof syncLayersForm === 'function') syncLayersForm(); } catch(_){}
   try { if (typeof renderWallPropsPanel === 'function') renderWallPropsPanel(); } catch(_){}
   renderFeatures();
@@ -358,10 +478,20 @@ function refresh() {
 // ---------- Вкладки ----------
 document.querySelectorAll('.tab').forEach((t) => {
   t.onclick = () => {
-    document.querySelectorAll('.tab').forEach((x) => x.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach((x) => {
+      x.classList.remove('active');
+      x.setAttribute('aria-selected', 'false');
+    });
     document.querySelectorAll('.tab-pane').forEach((x) => x.classList.remove('active'));
     t.classList.add('active');
+    t.setAttribute('aria-selected', 'true');
     $('#tab-' + t.dataset.tab).classList.add('active');
+    // план SVG рисуется с clientWidth — после показа вкладки пересчитать fit
+    if (t.dataset.tab === 'room') {
+      requestAnimationFrame(() => {
+        try { renderPlanEditor(); } catch (_) {}
+      });
+    }
   };
 });
 
@@ -399,25 +529,50 @@ function renderLibrary() {
   }
 }
 
+function startPlaceFixture(e) {
+  viewer.setMode('placeFixture', e.id);
+  updateModeBadge();
+  try { renderCommLib(); } catch (_) {}
+  const intoModule = e.kind === 'sink' || e.kind === 'mixer'
+    || ['hob_60', 'oven_60', 'dishwasher_60', 'microwave', 'hood_60'].includes(e.id);
+  const onWall = e.kind === 'socket' || e.kind === 'vent' || e.place === 'wall';
+  log(`Постановка: ${e.title}. ${intoModule ? 'Наведите на модуль — встанет по его центру (зелёный призрак).' : onWall ? 'Кликните по стене.' : 'Кликните по полу/стене.'}`, 'ok');
+}
+
 function renderFixturesLib() {
   const el = $('#fixturesLib');
   el.innerHTML = '';
   for (const [cat, items] of fixturesByCategory()) {
+    if (cat === 'Коммуникации') continue; // превью во вкладке «Помещение»
     const h = document.createElement('h4');
     h.textContent = cat;
     el.appendChild(h);
     for (const e of items) {
       const b = document.createElement('button');
       b.textContent = e.title;
-      b.onclick = () => {
-        viewer.setMode('placeFixture', e.id);
-        updateModeBadge();
-        const intoModule = e.kind === 'sink' || e.kind === 'mixer' || ['hob_60', 'oven_60', 'dishwasher_60', 'microwave', 'hood_60'].includes(e.id);
-        log(`Постановка: ${e.title}. ${intoModule ? 'Наведите на модуль — встанет по его центру (зелёный призрак).' : 'Кликните по полу/стене.'}`, 'ok');
-      };
+      b.onclick = () => startPlaceFixture(e);
       el.appendChild(b);
     }
   }
+}
+
+function renderCommLib() {
+  const el = $('#commLib');
+  if (!el) return;
+  const items = communicationsCatalog();
+  const activeId = viewer.mode === 'placeFixture' ? viewer.placeFixture : null;
+  el.innerHTML = items.map((c) => `
+    <button type="button" class="ctor-card${activeId === c.id ? ' active' : ''}" data-comm="${c.id}">
+      <div class="ctor-ico">${FIXTURE_ICONS[c.id] || ''}</div>
+      <div class="ctor-title">${c.title}</div>
+      <div class="muted">${c.place === 'wall' ? 'на стену' : 'на пол'}</div>
+    </button>`).join('');
+  el.querySelectorAll('[data-comm]').forEach((node) => {
+    node.onclick = () => {
+      const c = items.find((q) => q.id === node.dataset.comm);
+      if (c) startPlaceFixture(c);
+    };
+  });
 }
 
 // ---------- Библиотека «Самолет» ----------
@@ -650,7 +805,7 @@ async function samoletKitchen() {
   bind('hob_60', oven);
   bind('oven_60', oven);
   bind('hood_60', hoodCab);
-  p.fixtures.push(createFixture('socket_kitchen', 2700, 0, 0, 1100));
+  p.fixtures.push(createFixture('socket_block', 2700, 0, 0, 1100));
   p.fixtures.push(createFixture('pipe_water', 1250, 30, 0, 0));
   return p;
 }
@@ -686,17 +841,155 @@ $('#btnDock')?.addEventListener('click', () => {
 });
 $('#showGrid')?.addEventListener('change', (e) => viewer.setGridVisible(e.target.checked));
 $('#showDims')?.addEventListener('change', (e) => viewer.setDimsVisible(e.target.checked));
-$('#btnLines')?.addEventListener('click', () => {
-  viewer.setLineMode(!viewer.lineMode);
-  $('#btnLines')?.classList.toggle('active', !!viewer.lineMode);
+$('#dimMode')?.addEventListener('change', (e) => {
+  project.room.dimMode = e.target.value;
+  viewer.setDimMode(e.target.value);
+  save();
 });
+function syncWallLabelsForm() {
+  const letters = project.room.showWallLetters !== false;
+  const dims = project.room.showWallDims !== false;
+  const heightDim = project.room.showHeightDim !== false;
+  const edges = project.room.showRoomEdges === true;
+  const edgeW = Math.max(1, Math.min(16, +project.room.edgeWidth || 4.5));
+  const lens = project.room.showWallLens || { floor: true, mid: true, ceil: true };
+  if ($('#wallLettersShow')) $('#wallLettersShow').checked = letters;
+  if ($('#wallDimsShow')) $('#wallDimsShow').checked = dims;
+  if ($('#showHeightDim')) $('#showHeightDim').checked = heightDim;
+  if ($('#wallLenFloor')) $('#wallLenFloor').checked = lens.floor !== false;
+  if ($('#wallLenMid')) $('#wallLenMid').checked = lens.mid !== false;
+  if ($('#wallLenCeil')) $('#wallLenCeil').checked = lens.ceil !== false;
+  if ($('#showRoomEdges')) $('#showRoomEdges').checked = edges;
+  if ($('#edgeWidth')) $('#edgeWidth').value = String(edgeW);
+  if ($('#edgeWidthVal')) $('#edgeWidthVal').textContent = String(edgeW);
+  const levels = $('#wallLenLevels');
+  if (levels) levels.style.opacity = dims ? '1' : '0.45';
+  ['wallLenFloor', 'wallLenMid', 'wallLenCeil'].forEach((id) => {
+    const el = $('#' + id);
+    if (el) el.disabled = !dims;
+  });
+  const ew = $('#edgeWidthWrap');
+  if (ew) ew.style.opacity = edges ? '1' : '0.45';
+  if ($('#edgeWidth')) $('#edgeWidth').disabled = !edges;
+  viewer.setWallLettersVisible(letters);
+  viewer.setRoomEdgesVisible(edges);
+  viewer.setRoomEdgeWidth(edgeW);
+  if (viewer.room) {
+    viewer.room.showWallDims = dims;
+    viewer.room.showHeightDim = heightDim;
+    viewer.room.showWallLens = { ...lens };
+    viewer.room.edgeWidth = edgeW;
+    viewer._rebuildMeasureOverlay(viewer.room);
+  }
+}
+function syncWallLensFromForm() {
+  project.room.showWallLens = {
+    floor: !!$('#wallLenFloor')?.checked,
+    mid: !!$('#wallLenMid')?.checked,
+    ceil: !!$('#wallLenCeil')?.checked,
+  };
+  syncWallLabelsForm();
+  save();
+}
+$('#wallLenFloor')?.addEventListener('change', syncWallLensFromForm);
+$('#wallLenMid')?.addEventListener('change', syncWallLensFromForm);
+$('#wallLenCeil')?.addEventListener('change', syncWallLensFromForm);
+$('#wallDimsShow')?.addEventListener('change', (e) => {
+  project.room.showWallDims = e.target.checked;
+  syncWallLabelsForm();
+  save();
+});
+$('#showHeightDim')?.addEventListener('change', (e) => {
+  project.room.showHeightDim = e.target.checked;
+  syncWallLabelsForm();
+  save();
+});
+$('#edgeWidth')?.addEventListener('input', (e) => {
+  const v = Math.max(1, Math.min(16, +e.target.value || 4.5));
+  project.room.edgeWidth = v;
+  if ($('#edgeWidthVal')) $('#edgeWidthVal').textContent = String(v);
+  viewer.setRoomEdgeWidth(v);
+});
+$('#edgeWidth')?.addEventListener('change', () => save());
 
+let _viewMode = '3d';
 function syncViewButtons(mode) {
   const map = { walk: 'walk', orbit: '3d', top: 'top', front: 'front' };
-  const cur = map[mode] || '3d';
-  document.querySelectorAll('[data-view]').forEach((b) => b.classList.toggle('active', b.dataset.view === cur));
+  const cur = map[mode] || mode || '3d';
+  _viewMode = cur;
+  document.querySelectorAll('.view-cmd-group:not([data-wall-views]) [data-view]').forEach((b) => {
+    b.classList.toggle('active', b.dataset.view === cur);
+  });
+  document.querySelectorAll('.wall-view-toggle').forEach((btn) => {
+    const m = /^wallEdge:(\d+)$/.exec(cur);
+    if (m) {
+      btn.textContent = `Стена ${edgeLetter(+m[1])} ▾`;
+      btn.classList.add('active');
+    } else {
+      btn.textContent = 'От стены ▾';
+      btn.classList.remove('active');
+    }
+  });
+  document.querySelectorAll('.wall-view-dropdown [data-view]').forEach((b) => {
+    b.classList.toggle('active', b.dataset.view === cur);
+  });
 }
 viewer.h.onNavMode = (mode) => syncViewButtons(mode);
+
+/** Подменю «От стены» — список проекций по рёбрам (A, B, …). */
+function syncWallViewButtons() {
+  const n = wallEdgeCount(project.room) || 0;
+  const hosts = document.querySelectorAll('[data-wall-views]');
+  const cur = _viewMode || '';
+  hosts.forEach((host) => {
+    host.replaceChildren();
+    if (n < 1) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'wall-view-menu';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'wall-view-toggle';
+    btn.title = 'Проекция от стены';
+    btn.setAttribute('aria-haspopup', 'true');
+    const m = /^wallEdge:(\d+)$/.exec(cur);
+    if (m && +m[1] < n) {
+      btn.textContent = `Стена ${edgeLetter(+m[1])} ▾`;
+      btn.classList.add('active');
+    } else {
+      btn.textContent = 'От стены ▾';
+    }
+    const menu = document.createElement('div');
+    menu.className = 'wall-view-dropdown';
+    menu.hidden = true;
+    menu.setAttribute('role', 'menu');
+    for (let i = 0; i < n; i++) {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.dataset.view = `wallEdge:${i}`;
+      item.textContent = `Стена ${edgeLetter(i)}`;
+      item.setAttribute('role', 'menuitem');
+      if (cur === item.dataset.view) item.classList.add('active');
+      menu.appendChild(item);
+    }
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = menu.hidden;
+      document.querySelectorAll('.wall-view-dropdown').forEach((d) => { d.hidden = true; });
+      menu.hidden = !open;
+    });
+    wrap.append(btn, menu);
+    host.appendChild(wrap);
+  });
+}
+document.addEventListener('click', (e) => {
+  if (e.target.closest?.('.wall-view-menu')) return;
+  document.querySelectorAll('.wall-view-dropdown').forEach((d) => { d.hidden = true; });
+});
+document.addEventListener('click', (e) => {
+  const item = e.target.closest?.('.wall-view-dropdown [data-view]');
+  if (!item) return;
+  document.querySelectorAll('.wall-view-dropdown').forEach((d) => { d.hidden = true; });
+}, true);
 
 function dockModule(id, socket) {
   const m = mod(id);
@@ -707,9 +1000,17 @@ function dockModule(id, socket) {
   m.x = pose.x;
   m.z = pose.z;
   m.rot = pose.rot;
+  if (pose.elev != null) m.p.elev = pose.elev;
   const host = mod(socket.hostId);
+  const face = socket.face || socket.side;
+  const where = face === 'top' ? 'сверху'
+    : face === 'bottom' ? 'снизу'
+    : face === 'left' ? 'слева' : 'справа';
+  const align = socket.stack
+    ? (socket.hAlign === 'right' ? ', правый угол' : socket.hAlign === 'center' ? ', по центру' : ', левый угол')
+    : (socket.vAlign === 'top' ? ', по верху' : socket.vAlign === 'center' ? ', по центру' : '');
   log(
-    `Привязка: «${moduleTitle(m)}» → ${socket.side === 'left' ? 'слева' : 'справа'} от «${host ? moduleTitle(host) : '?'}»`,
+    `Привязка: «${moduleTitle(m)}» → ${where} от «${host ? moduleTitle(host) : '?'}»${align}`,
     'ok',
   );
   refresh();
@@ -718,29 +1019,23 @@ function dockModule(id, socket) {
 // ---------- Помещение ----------
 function syncRoomForm() {
   const r = project.room;
-  $('#roomL').value = r.length;
-  $('#roomD').value = r.depth;
-  $('#roomH').value = r.height;
-  $('#floorColor').value = '#' + (r.floorColor >>> 0).toString(16).padStart(6, '0');
-  $('#wallColor').value = '#' + (r.wallColor >>> 0).toString(16).padStart(6, '0');
+  const fc = $('#floorColor');
+  const wc = $('#wallColor');
+  if (fc) fc.value = '#' + (r.floorColor >>> 0).toString(16).padStart(6, '0');
+  if (wc) wc.value = '#' + (r.wallColor >>> 0).toString(16).padStart(6, '0');
 }
 function hexToInt(h) { return parseInt(h.replace('#', ''), 16); }
 
-['roomL', 'roomD', 'roomH'].forEach((id) => {
-  $('#' + id).onchange = (e) => {
-    commit();
-    if (id === 'roomH') {
-      setRoomHeight(project.room, +e.target.value);
-    } else {
-      const L = id === 'roomL' ? +e.target.value : +project.room.length;
-      const D = id === 'roomD' ? +e.target.value : +project.room.depth;
-      setRoomFootprint(project.room, L, D);
-    }
-    refresh();
-  };
+$('#floorColor')?.addEventListener('input', (e) => {
+  project.room.floorColor = hexToInt(e.target.value);
+  viewer.setRoom(project.room);
+  save();
 });
-$('#floorColor').oninput = (e) => { project.room.floorColor = hexToInt(e.target.value); viewer.setRoom(project.room); save(); };
-$('#wallColor').oninput = (e) => { project.room.wallColor = hexToInt(e.target.value); viewer.setRoom(project.room); save(); };
+$('#wallColor')?.addEventListener('input', (e) => {
+  project.room.wallColor = hexToInt(e.target.value);
+  viewer.setRoom(project.room);
+  save();
+});
 
 function renderFeatures() {
   const el = $('#features');
@@ -830,13 +1125,16 @@ function renderOpenings() {
     };
   });
 }
-$('#btnAddOpening').onclick = () => {
-  commit();
-  const op = newOpening({ wall: 'back', type: 'window', offset: 500, width: 1200, sill: 900, height: 1400 });
-  project.room.openings.push(op);
-  sel = { ...emptySel(), openingId: op.id };
-  refresh();
-};
+const btnAddOpening = $('#btnAddOpening');
+if (btnAddOpening) {
+  btnAddOpening.onclick = () => {
+    commit();
+    const op = newOpening({ wall: 'back', type: 'window', offset: 500, width: 1200, sill: 900, height: 1400 });
+    project.room.openings.push(op);
+    sel = { ...emptySel(), openingId: op.id };
+    refresh();
+  };
+}
 
 // ---------- Свет ----------
 function syncLightForm() {
@@ -934,7 +1232,7 @@ function renderCtorProps(el) {
       ${numField('ctor_sill', 'Подоконник', op.sill, 10)}
       ${numField('ctor_height', 'Высота', op.height, 10)}
       <label>Цвет заполнения<input type="color" id="ctor_color" value="${colorToHex(op.color, defFill)}"></label>
-      <label>Цвет рамы<input type="color" id="ctor_frame" value="${colorToHex(op.frameColor, '#8b7355')}"></label>
+      <label>Цвет рамы<input type="color" id="ctor_frame" value="${colorToHex(op.frameColor, op.type === 'door' ? '#4a3728' : '#1a1a1a')}"></label>
     </div>
     <p class="muted">Перетаскивание вдоль стены · Shift+drag — подоконник · Delete — удалить</p>
     <div class="btnrow" style="margin-top:8px">
@@ -1080,19 +1378,55 @@ function renderFixtureProps(el, f) {
     };
     $('#fx_host').onclick = (e) => { e.preventDefault(); sel = { moduleId: host.id, panelKey: null, fixtureId: null }; refresh(); };
   } else {
+    const dims = fixtureDims(f);
+    const type = resolveFixtureType(f.type);
+    const isComm = def?.kind === 'pipe' || isWallPlateKind(def?.kind);
+    const isSocketBlock = type === 'socket_block';
+    const sizeFields = isComm
+      ? (def.kind === 'pipe'
+        ? `${numField('fx_diam', 'Диаметр Ø', Math.round(Math.max(dims.w, dims.d)), 2)}
+           ${numField('fx_h', 'Длина / высота', Math.round(dims.h), 10)}`
+        : isSocketBlock
+          ? `${numField('fx_count', 'Число розеток', socketBlockCount(f), 1)}
+             ${numField('fx_h', 'Высота', Math.round(dims.h), 5)}
+             ${numField('fx_d', 'Глубина', Math.round(dims.d), 1)}`
+          : `${numField('fx_w', 'Ширина', Math.round(dims.w), 5)}
+             ${numField('fx_h', 'Высота', Math.round(dims.h), 5)}
+             ${numField('fx_d', 'Глубина', Math.round(dims.d), 1)}`)
+      : '';
     el.innerHTML = head + `
       <div class="props-grid">
         ${numField('fx_x', 'X', f.x, 10)}
         ${numField('fx_z', 'Z', f.z, 10)}
         ${numField('fx_elev', 'Высота от пола', f.elev, 10)}
         ${numField('fx_rot', 'Поворот °', f.rot || 0, 90)}
+        ${sizeFields}
       </div>
+      ${isComm ? '<p class="muted">Манипулятор: стрелки RGB — сдвиг; 3 пунктирных кольца — поворот X/Y/Z (онлайн); кубики — растяжение. Наведение подсвечивает элемент.</p>' : ''}
       <label>Наименование<input type="text" id="fx_name" value="${f.name || ''}"></label>
       <div class="btnrow"><button id="fx_rot">Повернуть 90°</button><button id="fx_del" class="danger">Удалить</button></div>`;
     bind('fx_x', (i) => f.x = +i.value);
     bind('fx_z', (i) => f.z = +i.value);
     bind('fx_elev', (i) => f.elev = +i.value);
     bind('fx_rot', (i) => f.rot = +i.value);
+    if (def?.kind === 'pipe') {
+      bind('fx_diam', (i) => { const v = Math.max(16, +i.value); f.w = v; f.d = v; });
+      bind('fx_h', (i) => f.h = Math.max(40, +i.value));
+    } else if (isSocketBlock) {
+      bind('fx_count', (i) => {
+        f.count = Math.max(1, Math.min(8, Math.round(+i.value) || 2));
+        f.w = socketBlockWidth(f.count, f.h || dims.h);
+      });
+      bind('fx_h', (i) => {
+        f.h = Math.max(40, +i.value);
+        f.w = socketBlockWidth(socketBlockCount(f), f.h);
+      });
+      bind('fx_d', (i) => f.d = Math.max(4, +i.value));
+    } else if (isWallPlateKind(def?.kind)) {
+      bind('fx_w', (i) => f.w = Math.max(20, +i.value));
+      bind('fx_h', (i) => f.h = Math.max(20, +i.value));
+      bind('fx_d', (i) => f.d = Math.max(4, +i.value));
+    }
     $('#fx_rot').onclick = () => { commit(); f.rot = ((+f.rot || 0) + 90) % 360; refresh(); };
   }
   bind('fx_name', (i) => f.name = i.value.trim());
@@ -1216,17 +1550,21 @@ $('#topMat').onchange = (e) => { commit(); project.settings.topMat = e.target.va
 $('#frontMode').onchange = (e) => viewer.setFrontMode(e.target.value);
 $('#roomShow').onchange = (e) => { project.room.show = e.target.value; viewer.setRoom(project.room); save(); };
 $('#fixShow').onchange = (e) => { project.showFixtures = e.target.checked; viewer.setFixturesVisible(e.target.checked); save(); };
-$('#wallLettersShow').onchange = (e) => {
+$('#wallLettersShow')?.addEventListener('change', (e) => {
   project.room.showWallLetters = e.target.checked;
   viewer.setWallLettersVisible(e.target.checked);
   save();
-};
+});
 $('#showRoomEdges')?.addEventListener('change', (e) => {
   project.room.showRoomEdges = e.target.checked;
-  viewer.setRoomEdgesVisible(e.target.checked);
+  syncWallLabelsForm(); // включить/выключить «Толщина окантовки»
   save();
 });
-document.querySelectorAll('[data-view]').forEach((b) => b.onclick = () => viewer.setView(b.dataset.view));
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-view]');
+  if (!b?.dataset?.view) return;
+  viewer.setView(b.dataset.view);
+});
 
 $('#cmdForm').onsubmit = (e) => {
   e.preventDefault();
@@ -1313,12 +1651,14 @@ function initExplode(mods) {
 $('#specDlg').addEventListener('close', () => { explodeView?.dispose(); explodeView = null; });
 
 const actions = {
-  undo: () => { const s = undo.pop(); if (s) { project = migrateProject(JSON.parse(s)); refresh(); log('Отменено'); } },
+  undo: () => doUndo(),
+  redo: () => doRedo(),
   new: () => {
     if (!confirm('Создать новый проект?')) return;
     commit(); project = newProject(); sel = { moduleId: null, panelKey: null, fixtureId: null }; refresh();
     openRoomPlan(true);
   },
+  importEkkd: () => $('#fileEkkd').click(),
   demoKitchen: async () => {
     if (project.modules.length && !confirm('Открыть «Кухня Самолет (пример)»? Текущий проект можно вернуть через ?.')) return;
     try {
@@ -1377,9 +1717,41 @@ $('#fileOpen').onchange = async (e) => {
   e.target.value = '';
 };
 
+$('#fileEkkd').onchange = async (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  try {
+    if (project.modules.length || project.fixtures.length || (project.room?.openings || []).length) {
+      if (!confirm('Создать новый проект из eKKD? Текущая сцена будет заменена (можно отменить ↶).')) {
+        e.target.value = '';
+        return;
+      }
+    }
+    const text = await f.text();
+    const { project: p, meta } = projectFromEkkd(text, f.name);
+    commit();
+    project = migrateProject(p);
+    sel = emptySel();
+    refresh();
+    viewer.setView?.('3d');
+    document.querySelector('.tab[data-tab="room"]')?.click();
+    log(
+      `eKKD «${project.name}»: ${meta.verts} вершин, ${meta.openings} проёмов, ${meta.obstacles} коробов · ${meta.roomHeightMm} мм`,
+      'ok',
+    );
+  } catch (err) {
+    log('Не удалось импортировать eKKD: ' + (err?.message || err), 'err');
+  }
+  e.target.value = '';
+};
+
 window.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
-  if (e.ctrlKey && e.key.toLowerCase() === 'z') { e.preventDefault(); actions.undo(); }
+  const chord = e.ctrlKey || e.metaKey;
+  const k = e.key.toLowerCase();
+  // Ctrl+Z — назад; Ctrl+Y / Ctrl+Shift+Z — вперёд (любые действия на сцене)
+  if (chord && k === 'z' && !e.shiftKey) { e.preventDefault(); doUndo(); return; }
+  if (chord && (k === 'y' || (k === 'z' && e.shiftKey))) { e.preventDefault(); doRedo(); return; }
   if (e.key === 'Delete') {
     commit();
     if (sel.obstacleId) {
@@ -1599,6 +1971,7 @@ let placeCtorEntry = null;
 let planEditLayer = 'floor';
 let _planResizeObs = null;
 let _planLastW = 0;
+let _planLastH = 0;
 let _planDragBase = null;
 
 function renderWallPropsPanel(part) {
@@ -1667,18 +2040,19 @@ async function placeCommOnWall(part) {
   const res = await showRoomPrompt({
     title: `Коммуникация на стене ${part.letter}`,
     fields: [
-      { key: 'kind', label: 'Тип: socket | pipe_water | pipe_sewer | pipe_gas', type: 'text', value: 'socket' },
+      { key: 'kind', label: 'Тип: socket_block | vent_round | vent_square | pipe_water | pipe_sewer | pipe_gas', type: 'text', value: 'socket_block' },
       { key: 'offset', label: 'Отступ вдоль стены, мм', value: Math.max(0, along), step: 10 },
       { key: 'elev', label: 'Высота от пола, мм', value: Math.round(part.y || 1100), step: 10 },
     ],
   });
   if (!res) return;
-  const kindRaw = String(res.kind || 'socket').trim().toLowerCase();
-  const type = kindRaw === 'socket' || kindRaw === 'socket_kitchen' ? 'socket_kitchen'
+  const kindRaw = String(res.kind || 'socket_block').trim().toLowerCase();
+  const type = kindRaw.includes('vent_round') || kindRaw === 'vent_r' ? 'vent_round'
+    : kindRaw.includes('vent') ? 'vent_square'
     : kindRaw.includes('sewer') ? 'pipe_sewer'
     : kindRaw.includes('gas') ? 'pipe_gas'
     : kindRaw.includes('water') || kindRaw.includes('pipe') ? 'pipe_water'
-    : 'socket_kitchen';
+    : 'socket_block';
   const wall = seg.wall || 'back';
   const pose = placeOnWall(project.room, wall, +res.offset || 0, 0, 40);
   commit();
@@ -1725,6 +2099,7 @@ function openRoomPlan(isNew = false) {
   openPlanEditorGraph({
     levels,
     wallThick: room.wallThick || 100,
+    onImportEkkd: () => $('#fileEkkd')?.click(),
     onApply: ({ closed: cl, levels: lv, wallThick }) => {
       if (!isNew) commit();
       if (isNew) room.openings = [];
@@ -1791,11 +2166,16 @@ function renderPlanEditor() {
   };
   renderPlanSvg(wrap, project.room, opts);
   _planLastW = Math.round(wrap.clientWidth);
+  _planLastH = Math.round(wrap.clientHeight);
   if (!_planResizeObs) {
     _planResizeObs = new ResizeObserver((entries) => {
-      const w = Math.round(entries[0]?.contentRect?.width || wrap.clientWidth);
-      if (!wrap.isConnected || w < 40 || w === _planLastW) return;
+      const r = entries[0]?.contentRect;
+      const w = Math.round(r?.width || wrap.clientWidth);
+      const h = Math.round(r?.height || wrap.clientHeight);
+      if (!wrap.isConnected || w < 40 || h < 40) return;
+      if (w === _planLastW && h === _planLastH) return;
       _planLastW = w;
+      _planLastH = h;
       renderPlanEditor();
     });
     _planResizeObs.observe(wrap);
@@ -1907,9 +2287,21 @@ function initColumnResize() {
 
 function setLineModeUi(on) {
   viewer.setLineMode(!!on);
-  document.querySelector('#btnLines')?.classList.toggle('active', !!viewer.lineMode);
   document.querySelector('#btnLinesBar')?.classList.toggle('active', !!viewer.lineMode);
 }
+
+function setTapeModeUi(on) {
+  viewer.setTapeMode(!!on);
+  document.querySelector('#btnTapeBar')?.classList.toggle('active', !!viewer.tapeMode);
+  if (viewer.tapeMode) {
+    log('Рулетка: клик — первая точка, второй клик — длина в мм. Esc — сброс/выкл. Кнопка ещё раз — выкл.', 'ok');
+  }
+}
+viewer.h.onTapeMode = (on) => {
+  document.querySelector('#btnTapeBar')?.classList.toggle('active', !!on);
+};
+viewer.h.onTapeHint = (msg) => log(msg, 'warn');
+viewer.h.onTapeMeasure = (mm) => log(`Замер: ${mm.toLocaleString('ru-RU')} мм`, 'ok');
 
 // wire viewer placeCtor / wall hooks if viewer already constructed
 if (typeof viewer !== 'undefined' && viewer.h) {
@@ -1973,10 +2365,19 @@ if (typeof viewer !== 'undefined' && viewer.h) {
     viewer.setMode('select');
     if (typeof updateModeBadge === 'function') updateModeBadge();
     renderConstructionsLib();
+    renderCommLib();
   };
 }
 
 document.querySelector('#btnLinesBar')?.addEventListener('click', () => setLineModeUi(!viewer.lineMode));
+document.querySelector('#btnTapeBar')?.addEventListener('click', () => {
+  if (viewer.tapeMode) {
+    viewer.clearTapeMeasures();
+    setTapeModeUi(false);
+  } else {
+    setTapeModeUi(true);
+  }
+});
 document.querySelectorAll('#viewCmdBar [data-cam]').forEach((b) => {
   b.addEventListener('click', (e) => {
     e.preventDefault(); e.stopPropagation();
@@ -1984,10 +2385,10 @@ document.querySelectorAll('#viewCmdBar [data-cam]').forEach((b) => {
     if (act === 'zoomIn') viewer.zoomCamera?.(1 / 1.2);
     else if (act === 'zoomOut') viewer.zoomCamera?.(1.2);
     else if (act === 'reset') viewer.setView(viewer.navMode === 'orbit' ? '3d' : (viewer.navMode || '3d'));
-    else if (act === 'left') viewer.orbitCamera?.(-15, 0);
-    else if (act === 'right') viewer.orbitCamera?.(15, 0);
-    else if (act === 'up') viewer.orbitCamera?.(0, 12);
-    else if (act === 'down') viewer.orbitCamera?.(0, -12);
+    else if (act === 'left') viewer.panCamera?.(-1, 0);
+    else if (act === 'right') viewer.panCamera?.(1, 0);
+    else if (act === 'up') viewer.zoomCamera?.(1 / 1.2);
+    else if (act === 'down') viewer.zoomCamera?.(1.2);
   });
 });
 
@@ -2014,6 +2415,7 @@ if (document.querySelector('#btnAddFloorVert')) {
 
 initColumnResize();
 try { renderConstructionsLib(); } catch (_) {}
+try { renderCommLib(); } catch (_) {}
 try { renderPlanEditor(); } catch (_) {}
 
 refresh();
