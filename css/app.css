@@ -1,7 +1,15 @@
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; font: 13px/1.35 "Segoe UI", Arial, sans-serif; color: #1f2328; background: #f4f5f7; }
-header { display: flex; gap: 6px; align-items: center; padding: 6px 10px; background: #fff; border-bottom: 1px solid #d8dbe0; height: 46px; flex-wrap: wrap; }
-header .spacer { flex: 1; }
+html, body {
+  margin: 0; height: 100%; overflow: hidden;
+  font: 13px/1.35 "Segoe UI", Arial, sans-serif; color: #1f2328; background: #f4f5f7;
+}
+body { display: flex; flex-direction: column; }
+header {
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+  padding: 6px 10px; background: #fff; border-bottom: 1px solid #d8dbe0;
+  min-height: 46px; height: auto; flex-shrink: 0; z-index: 5;
+}
+header .spacer { flex: 1 1 40px; min-width: 12px; }
 .prj-name { font-size: 15px; font-weight: 600; border: 1px solid transparent; padding: 4px 6px; width: 220px; }
 .prj-name:hover, .prj-name:focus { border-color: #c9ced6; }
 .total { font-weight: 600; margin-right: 8px; color: #0b5; white-space: nowrap; }
@@ -13,7 +21,7 @@ button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb; }
 button.primary:hover { background: #1a5fd0; }
 button.danger { color: #c62828; }
 kbd { font: 11px Consolas, monospace; background: #eef0f3; border: 1px solid #cfd3d9; border-radius: 3px; padding: 0 4px; }
-main { display: flex; height: calc(100% - 46px); min-width: 0; }
+main { display: flex; flex: 1 1 auto; min-height: 0; min-width: 0; }
 aside { padding: 8px 10px; overflow: auto; background: #fff; flex-shrink: 0; }
 aside.left {
   width: 270px; min-width: 180px; max-width: min(560px, 50vw);
@@ -33,8 +41,8 @@ aside.right {
   content: ''; position: absolute; inset: 0 -3px; /* шире зона захвата */
 }
 .tabs {
-  display: flex; flex-direction: column; gap: 4px;
-  margin: 0 0 10px; padding: 0 0 0;
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 0 0 10px; padding: 0 0 8px;
   border-bottom: 1px solid #c3c8d0;
 }
 .tabs-row {
@@ -42,15 +50,15 @@ aside.right {
 }
 .tab {
   flex: 1 1 0; min-width: 0; font-size: 11px; line-height: 1.2;
-  padding: 6px 6px; margin: 0 0 -1px;
-  border: 1px solid #c3c8d0; border-radius: 6px 6px 0 0;
+  padding: 6px 6px; margin: 0;
+  border: 1px solid #c3c8d0; border-radius: 6px;
   background: #eef0f3; color: #3d4450; white-space: nowrap;
   text-overflow: ellipsis; overflow: hidden;
 }
 .tab:hover { background: #f7f8fa; color: #1f2328; }
 .tab.active {
   background: #fff; color: #1f6feb; font-weight: 600;
-  border-color: #c3c8d0; border-bottom-color: #fff;
+  border-color: #1f6feb;
   box-shadow: inset 0 2px 0 #1f6feb;
 }
 .tab-pane { display: none; }
@@ -148,6 +156,40 @@ header a.btn-link:hover { border-color: #1f6feb; color: #1f6feb; background: #f0
   border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 4px;
   padding: 1px 6px; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
   white-space: nowrap;
+}
+/* размеры модулей по эскизам: без рамки/плашки, только число + ореол */
+.mlabel.dim-mod {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.01em;
+  color: #1d4ed8; background: transparent; border: none; border-radius: 0;
+  padding: 0; box-shadow: none; opacity: 0.95; white-space: nowrap;
+  text-shadow:
+    0 0 3px #fff, 0 0 5px #fff,
+    1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff;
+  pointer-events: none;
+}
+.mlabel.dim-mod.dim-edit {
+  pointer-events: auto; cursor: text;
+}
+.mlabel.dim-tick.dim-edit {
+  pointer-events: auto; cursor: text;
+  color: #111; font-weight: 600;
+}
+.mlabel.dim-edit.editing {
+  padding: 0;
+}
+.dim-inline-input {
+  width: 4.2em; max-width: 72px;
+  margin: 0; padding: 1px 3px;
+  font: inherit; font-weight: 700; font-size: 11px;
+  color: #0d9488; text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #0d9488; border-radius: 3px;
+  outline: none; box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+  -moz-appearance: textfield;
+}
+.dim-inline-input::-webkit-outer-spin-button,
+.dim-inline-input::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
 }
 .hint { font-size: 11px; color: #6a737d; padding: 3px 10px; background: #fafbfc; border-top: 1px solid #e3e6ea; }
 .hint kbd {

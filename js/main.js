@@ -3,7 +3,7 @@ import {
   MODULE_TYPES, BUTT_SIDES, createModule, newProject, buildProject, snapPos, nextFreeX,
   moduleTitle, panelSize, resolveDoors, migrateProject, toggleFront, setAllFronts,
   createLibModule, isLib, moduleRow, listDockSockets, applyDock, nearestDockSide,
-} from './model.js?v=20261125k';
+} from './model.js?v=20261125m';
 import { loadSamoletIndex, samoletIndex, libGeomTried, libGeom, libPreview, ensureLibGeoms, loadLibGeom, libSpec, findLib } from './samolet.js?v=20261029j';
 import { ExplodeView } from './explode.js?v=20261028m';
 import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261110a';
@@ -33,9 +33,9 @@ import {
   fixturesByCategory, communicationsCatalog, socketBlockCount, socketBlockWidth,
   isWallPlateKind, resolveFixtureType,
 } from './fixtures.js?v=20261124be';
-import { Viewer } from './viewer.js?v=20261125k';
+import { Viewer } from './viewer.js?v=20261126a';
 import { projectFromEkkd } from './ekkd.js?v=20261124as';
-import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261124bc';
+import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261125u';
 import {
   loadUserCatalog, userCatalogItems, userCatalogAll, addUserB3dFiles,
   archiveCatalogEntry, deleteUserEntry, isCatalogArchived, catalogArchivedCount,
@@ -203,6 +203,104 @@ const viewer = new Viewer($('#viewport'), {
     if (patch.h != null) m.p.height = Math.max(200, +patch.h);
     sel = { ...emptySel(), moduleId: id };
     refresh();
+  },
+  /** Двойной клик по размеру на сцене → объект подтягивается к новому значению. */
+  onEditDim: (edit, value) => {
+    if (!edit) return;
+    const v = Math.max(0, Math.round(+value));
+    if (!Number.isFinite(v)) return;
+    commit();
+    const room = project.room;
+
+    if (edit.kind === 'wallLen') {
+      const len = Math.max(50, v);
+      if (edit.levelId) setWallLengthAtLevel(room, edit.edgeIndex, edit.levelId, len);
+      else setWallLengthAt(room, edit.edgeIndex, 0, len);
+      refresh();
+      return;
+    }
+
+    if (edit.kind === 'roomHeight') {
+      const H = Math.max(2000, v);
+      room.height = H;
+      ensureAdvancedFields(room);
+      const ceil = (room.levels || []).find((l) => l.id === 'ceil');
+      if (ceil) ceil.h = H;
+      refresh();
+      return;
+    }
+
+    if (edit.kind === 'modDim') {
+      const m = mod(edit.moduleId);
+      if (!m) return;
+      if (edit.axis === 'w') m.p.width = Math.max(150, v);
+      else if (edit.axis === 'd') m.p.depth = Math.max(150, v);
+      else if (edit.axis === 'h') m.p.height = Math.max(200, v);
+      sel = { ...emptySel(), moduleId: edit.moduleId };
+      refresh();
+      return;
+    }
+
+    if (edit.kind === 'clearH' && edit.move) {
+      const mv = edit.move;
+      const anchor = +edit.anchorT || 0;
+      if (mv.type === 'opening') {
+        const op = (room.openings || []).find((q) => q.id === mv.id);
+        if (!op) return;
+        const w = +op.width || 900;
+        if (mv.edge === 'start') op.offset = Math.max(0, Math.round(anchor + v));
+        else op.offset = Math.max(0, Math.round(anchor - v - w));
+        sel = { ...emptySel(), openingId: op.id };
+      } else if (mv.type === 'obstacle') {
+        const ob = (room.obstacles || []).find((q) => q.id === mv.id);
+        if (!ob) return;
+        try {
+          const segs = roomWallSegments(room);
+          const s = segs.find((seg) => seg.edgeIndex === edit.edgeIndex) || segs[edit.edgeIndex];
+          if (!s) return;
+          const len = Math.max(1, s.len || Math.hypot(s.x2 - s.x1, s.z2 - s.z1));
+          const half = Math.max(+ob.w || 0, +ob.d || 0) * 0.5;
+          let along = mv.edge === 'start' ? anchor + v + half : anchor - v - half;
+          along = Math.max(half, Math.min(len - half, along));
+          const t = along / len;
+          const cx = s.x1 + (s.x2 - s.x1) * t;
+          const cz = s.z1 + (s.z2 - s.z1) * t;
+          const inset = 40;
+          const nx = s.nx || 0, nz = s.nz || 0;
+          ob.x = Math.round(cx - (+ob.w || 0) / 2 - nx * inset);
+          ob.z = Math.round(cz - (+ob.d || 0) / 2 - nz * inset);
+          sel = { ...emptySel(), obstacleId: ob.id };
+        } catch (_) { /* */ }
+      }
+      refresh();
+      return;
+    }
+
+    if (edit.kind === 'clearV') {
+      if (edit.type === 'opening') {
+        const op = (room.openings || []).find((q) => q.id === edit.id);
+        if (!op) return;
+        if (edit.edge === 'sill') {
+          op.sill = Math.max(0, Math.round((+edit.fixedY || 0) + v));
+        } else if (edit.edge === 'top') {
+          const sill = +op.sill || 0;
+          op.height = Math.max(100, Math.round((+edit.fixedY || 0) - v - sill));
+        }
+        sel = { ...emptySel(), openingId: op.id };
+      } else if (edit.type === 'obstacle') {
+        const ob = (room.obstacles || []).find((q) => q.id === edit.id);
+        if (!ob) return;
+        if (edit.edge === 'sill') {
+          const h = Math.max(10, (+ob.y1 || 0) - (+ob.y0 || 0));
+          ob.y0 = Math.max(0, Math.round((+edit.fixedY || 0) + v));
+          ob.y1 = ob.y0 + h;
+        } else if (edit.edge === 'top') {
+          ob.y1 = Math.max((+ob.y0 || 0) + 10, Math.round((+edit.fixedY || 0) - v));
+        }
+        sel = { ...emptySel(), obstacleId: ob.id };
+      }
+      refresh();
+    }
   },
   onPlace: (x, z, wall, y, rot, edgeIndex) => placeModuleAt(x, z, wall, y, rot, edgeIndex),
   onPlaceFixture: (hit, rot) => placeFixtureAt(hit, rot),
@@ -853,12 +951,16 @@ function syncWallLabelsForm() {
   const edges = project.room.showRoomEdges === true;
   const edgeW = Math.max(1, Math.min(16, +project.room.edgeWidth || 4.5));
   const lens = project.room.showWallLens || { floor: true, mid: true, ceil: true };
+  const modDims = project.room.showModuleDims || { w: true, d: true, h: true };
   if ($('#wallLettersShow')) $('#wallLettersShow').checked = letters;
   if ($('#wallDimsShow')) $('#wallDimsShow').checked = dims;
   if ($('#showHeightDim')) $('#showHeightDim').checked = heightDim;
   if ($('#wallLenFloor')) $('#wallLenFloor').checked = lens.floor !== false;
   if ($('#wallLenMid')) $('#wallLenMid').checked = lens.mid !== false;
   if ($('#wallLenCeil')) $('#wallLenCeil').checked = lens.ceil !== false;
+  if ($('#modDimW')) $('#modDimW').checked = modDims.w !== false;
+  if ($('#modDimD')) $('#modDimD').checked = modDims.d !== false;
+  if ($('#modDimH')) $('#modDimH').checked = modDims.h !== false;
   if ($('#showRoomEdges')) $('#showRoomEdges').checked = edges;
   if ($('#edgeWidth')) $('#edgeWidth').value = String(edgeW);
   if ($('#edgeWidthVal')) $('#edgeWidthVal').textContent = String(edgeW);
@@ -878,9 +980,24 @@ function syncWallLabelsForm() {
     viewer.room.showWallDims = dims;
     viewer.room.showHeightDim = heightDim;
     viewer.room.showWallLens = { ...lens };
+    viewer.room.showModuleDims = {
+      w: modDims.w !== false,
+      d: modDims.d !== false,
+      h: modDims.h !== false,
+    };
     viewer.room.edgeWidth = edgeW;
     viewer._rebuildMeasureOverlay(viewer.room);
+    viewer.setModuleDimsVisible(viewer.room.showModuleDims);
   }
+}
+function syncModuleDimsFromForm() {
+  project.room.showModuleDims = {
+    w: !!$('#modDimW')?.checked,
+    d: !!$('#modDimD')?.checked,
+    h: !!$('#modDimH')?.checked,
+  };
+  viewer.setModuleDimsVisible(project.room.showModuleDims);
+  save();
 }
 function syncWallLensFromForm() {
   project.room.showWallLens = {
@@ -904,6 +1021,9 @@ $('#showHeightDim')?.addEventListener('change', (e) => {
   syncWallLabelsForm();
   save();
 });
+$('#modDimW')?.addEventListener('change', syncModuleDimsFromForm);
+$('#modDimD')?.addEventListener('change', syncModuleDimsFromForm);
+$('#modDimH')?.addEventListener('change', syncModuleDimsFromForm);
 $('#edgeWidth')?.addEventListener('input', (e) => {
   const v = Math.max(1, Math.min(16, +e.target.value || 4.5));
   project.room.edgeWidth = v;
@@ -949,7 +1069,7 @@ function syncWallViewButtons() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'wall-view-toggle';
-    btn.title = 'Проекция от стены';
+    btn.title = '2D-развёртка стены (без перспективы)';
     btn.setAttribute('aria-haspopup', 'true');
     const m = /^wallEdge:(\d+)$/.exec(cur);
     if (m && +m[1] < n) {

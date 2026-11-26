@@ -108,21 +108,34 @@ export function snapFixture(prj, type, point, hit) {
   // Свободная постановка: стена или пол
   const room = prj.room;
   let x = point.x, z = point.z, rot = hit?.rot ?? 0, elev = def.elev ?? 0;
-  if (hit?.wall) {
+  const onWall = !!(hit?.wall || hit?.edgeIndex != null || (hit?.nx != null && hit?.nz != null));
+  if (onWall) {
     if (def.kind === 'pipe') elev = def.elev ?? 0;
     else if (isWallPlateKind(def.kind)) elev = Math.round(point.y); // середина пластины
     else elev = Math.round(point.y - def.h / 2);
-    if (hit.wall === 'back') { rot = 0; z = 0; }
+    // сначала нормаль — работает и на косых стенах (A/B/…), не только AABB back/front/left/right
+    if (hit.nx != null && hit.nz != null && Number.isFinite(+hit.nx) && Number.isFinite(+hit.nz)) {
+      const nl = Math.hypot(+hit.nx, +hit.nz) || 1;
+      const nx = +hit.nx / nl, nz = +hit.nz / nl;
+      rot = Math.round((Math.atan2(-nx, -nz) * 180) / Math.PI);
+      // чуть внутрь комнаты от плоскости стены (локальный +Z смотрит внутрь)
+      const inset = Math.max(2, Math.round((+def.d || 20) * 0.5));
+      x = point.x - nx * inset;
+      z = point.z - nz * inset;
+    } else if (hit.wall === 'back') { rot = 0; z = 0; }
     else if (hit.wall === 'front') { rot = 180; z = room.depth; }
     else if (hit.wall === 'left') { rot = 90; x = 0; }
     else if (hit.wall === 'right') { rot = 270; x = room.length; }
-    // произвольное ребро (буквы A…): ориентируем по нормали, координаты — точка клика
-    else if (hit.nx != null && hit.nz != null) {
-      rot = Math.round((Math.atan2(-hit.nx, -hit.nz) * 180) / Math.PI);
-      x = point.x;
-      z = point.z;
-    }
   }
-  return { moduleId: null, x: Math.round(x), z: Math.round(z), elev: Math.max(0, Math.round(elev)), rot };
+  return {
+    moduleId: null,
+    x: Math.round(x),
+    z: Math.round(z),
+    elev: Math.max(0, Math.round(elev)),
+    rot,
+    edgeIndex: hit?.edgeIndex != null ? +hit.edgeIndex : null,
+    nx: hit?.nx != null ? +hit.nx : null,
+    nz: hit?.nz != null ? +hit.nz : null,
+  };
 }
 

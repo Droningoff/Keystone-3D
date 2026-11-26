@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261125i">
+  <link rel="stylesheet" href="css/app.css?v=20261126a">
   <script type="importmap">
   {
     "imports": {
@@ -145,6 +145,10 @@
             <label class="chk"><input type="checkbox" id="wallLenCeil" checked> Длины у потолка</label>
           </div>
           <label class="chk"><input type="checkbox" id="showHeightDim" checked> Высота помещения (до потолка)</label>
+          <p class="muted" style="font-size:12px;margin:8px 0 2px">Размеры модулей на сцене</p>
+          <label class="chk"><input type="checkbox" id="modDimW" checked> Ширина модулей</label>
+          <label class="chk"><input type="checkbox" id="modDimD" checked> Глубина модулей</label>
+          <label class="chk"><input type="checkbox" id="modDimH" checked> Высота модулей</label>
           <label class="chk"><input type="checkbox" id="showRoomEdges"> Окантовка углов (стены / пол / потолок)</label>
           <label id="edgeWidthWrap">Толщина окантовки
             <input type="range" id="edgeWidth" min="1" max="12" step="0.5" value="4.5">
@@ -366,6 +370,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261125k"></script>
+  <script type="module" src="js/main.js?v=20261126a"></script>
 </body>
 </html>

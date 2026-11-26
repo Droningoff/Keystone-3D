@@ -154,6 +154,8 @@ export function defaultRoom() {
     showRoomEdges: false, // окантовка стен/пола/потолка линией (углы виднее)
     edgeWidth: 4.5, // толщина окантовки, px (LineMaterial)
     showWallLens: { floor: true, mid: true, ceil: true }, // длины на уровнях
+    // размеры модулей на 3D (как на эскизах eKitchen в режиме линий)
+    showModuleDims: { w: true, d: true, h: true },
   };
 }
 
@@ -237,6 +239,16 @@ export function migrateProject(prj) {
       floor: w.floor !== false,
       mid: w.mid !== false,
       ceil: w.ceil !== false,
+    };
+  }
+  if (!prj.room.showModuleDims || typeof prj.room.showModuleDims !== 'object') {
+    prj.room.showModuleDims = { w: true, d: true, h: true };
+  } else {
+    const md = prj.room.showModuleDims;
+    prj.room.showModuleDims = {
+      w: md.w !== false,
+      d: md.d !== false,
+      h: md.h !== false,
     };
   }
   if (!Array.isArray(prj.room.features)) prj.room.features = [];
