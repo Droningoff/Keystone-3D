@@ -16,6 +16,7 @@ import {
   movePanelBy, moveFittingBy, snapPanelDelta, resolvePanelDelta,
   makeDragPlane, rayPlaneHit, nearestHingeSlot,
 } from './moduleInteract.js?v=20261028n';
+import { gatePage } from './authGate.js?v=20261127g';
 
 const $ = (s) => document.querySelector(s);
 const STORE = 'furniture-module-ctor-v4';
@@ -1174,6 +1175,12 @@ function wire() {
 async function boot() {
   if (booted) return;
   booted = true;
+  try {
+    await gatePage();
+  } catch (e) {
+    status('Вход: ' + e.message, 'err');
+    return;
+  }
   try {
     await loadHwCatalog();
   } catch (e) {

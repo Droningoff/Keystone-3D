@@ -1,0 +1,19 @@
+{
+  "salt": "ks3d-v1",
+  "users": [
+    {
+      "login": "admin",
+      "name": "Администратор",
+      "role": "admin",
+      "active": true,
+      "passHash": "983cbbdddca8f79161400fb24d521e82d6d177538993010cedb50a3796b0fbfe"
+    },
+    {
+      "login": "user",
+      "name": "Сотрудник",
+      "role": "user",
+      "active": true,
+      "passHash": "1dd6c419130a5ad6bf890cdf8c0b93f8746ca89759ed795df541257d1924dd32"
+    }
+  ]
+}

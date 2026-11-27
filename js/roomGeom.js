@@ -92,7 +92,47 @@ export function ensureAdvancedFields(room) {
   }
   if (!Array.isArray(room.obstacles)) room.obstacles = [];
   ensureLevels(room);
+  ensureWallIds(room);
   return room;
+}
+
+// ---------- Постоянные id и имена стен ----------
+// room.wallIds[edgeIndex] — id стены, не меняется при перестроении плана; room.wallNames[id] — своё имя.
+// Проём хранит wallId, edgeIndex пересчитывается по нему.
+
+export const newWallId = () => 'w' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+export function ensureWallIds(room) {
+  if (!room) return [];
+  const n = wallEdgeCount(room);
+  const seen = new Set();
+  const ids = (Array.isArray(room.wallIds) ? room.wallIds : []).slice(0, n).map((id) => {
+    if (typeof id !== 'string' || !id || seen.has(id)) id = newWallId();
+    seen.add(id);
+    return id;
+  });
+  while (ids.length < n) ids.push(newWallId());
+  room.wallIds = ids;
+  if (!room.wallNames || typeof room.wallNames !== 'object') room.wallNames = {};
+  syncOpeningWalls(room);
+  return ids;
+}
+
+/** Проёмы: wallId ↔ edgeIndex. Проём без живого wallId привязывается к стене по edgeIndex. */
+export function syncOpeningWalls(room) {
+  const ids = room?.wallIds || [];
+  for (const op of room?.openings || []) {
+    const i = op.wallId ? ids.indexOf(op.wallId) : -1;
+    if (i >= 0) op.edgeIndex = i;
+    else if (op.edgeIndex != null && ids[+op.edgeIndex]) op.wallId = ids[+op.edgeIndex];
+  }
+}
+
+/** Подпись стены: своё имя или буква A, B, C… */
+export function wallLabel(room, edgeIndex) {
+  const id = room?.wallIds?.[+edgeIndex];
+  const name = id && room.wallNames?.[id];
+  return name ? String(name) : edgeLetter(edgeIndex);
 }
 
 // ---------- Уровни замера и открытый контур ----------
@@ -284,7 +324,7 @@ export function applyDrawnRoom(room, { levels, closed }) {
   setRoomHeight(room, ceil ? +ceil.h : room.height);
   ensureAdvancedFields(room);
   syncSimpleAABB(room);
-  return room;
+  return { dx: -b.x1, dz: -b.z1 };
 }
 
 export function simpleToAdvanced(room) {
@@ -399,6 +439,8 @@ export function insertVertexOnEdge(room, edgeIndex) {
   const n = room.planFloor.length;
   if (i < 0 || i >= n) return -1;
   const j = (i + 1) % n;
+  const isWall = i < wallEdgeCount(room);
+  const half = Math.hypot(room.planFloor[j].x - room.planFloor[i].x, room.planFloor[j].z - room.planFloor[i].z) / 2;
   const mid = (plan, a, b) => ({
     id: 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
     x: Math.round((plan[a].x + plan[b].x) / 2),
@@ -412,6 +454,29 @@ export function insertVertexOnEdge(room, edgeIndex) {
     if (!LEVEL_FIXED[lv.id] && lv.plan?.length === n) lv.plan.splice(insertAt, 0, mid(lv.plan, i, j));
   }
   if (+room.wallCount > 0 && i < +room.wallCount) room.wallCount = +room.wallCount + 1;
+  if (isWall) {
+    const oldId = room.wallIds[i];
+    const nid = newWallId();
+    room.wallIds.splice(insertAt, 0, nid);
+    if (room.wallNames?.[oldId]) room.wallNames[nid] = room.wallNames[oldId] + '′';
+    const cols = room.wallColors || {};
+    const nextCols = {};
+    for (const [k, c] of Object.entries(cols)) {
+      const ki = +k;
+      if (!Number.isInteger(ki) || String(ki) !== k) nextCols[k] = c;
+      else nextCols[ki > i ? ki + 1 : ki] = c;
+    }
+    if (cols[i] != null) nextCols[insertAt] = cols[i];
+    room.wallColors = nextCols;
+    for (const op of room.openings || []) {
+      if (op.wallId !== oldId) continue;
+      if (+op.offset + (+op.width || 0) / 2 > half) {
+        op.wallId = nid;
+        op.offset = Math.max(0, Math.round(+op.offset - half));
+      }
+    }
+  }
+  ensureWallIds(room);
   syncSimpleAABB(room);
   return insertAt;
 }

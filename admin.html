@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Админ — Keystone-3D</title>
+  <link rel="stylesheet" href="css/app.css?v=20261127h">
+</head>
+<body class="admin-page auth-locked">
+  <header>
+    <a class="btn-link" href="index.html?v=20261127g">← Сцена</a>
+    <span class="prj-name">Админ-панель</span>
+    <div class="spacer"></div>
+    <span id="authUserLabel" class="auth-user"></span>
+    <a class="btn-link" id="authAdminLink" href="admin.html?v=20261127g">Админ</a>
+    <button type="button" id="authLogout" hidden>Выйти</button>
+  </header>
+
+  <main>
+    <div class="admin-note">
+      Мягкий режим без сервера: изменения сохраняются в <b>localStorage этого браузера</b>.
+      Чтобы раздать всем сотрудникам — скачайте JSON и положите в папку <code>data/</code> на сервере.
+    </div>
+
+    <h2>Пользователи</h2>
+    <div class="admin-actions">
+      <button type="button" id="admUserAdd" class="primary">+ Пользователь</button>
+      <button type="button" id="admUsersExport">Скачать users.json</button>
+      <button type="button" id="admUsersReset">Сбросить локальных пользователей</button>
+    </div>
+    <table class="admin-table" id="admUsersTable">
+      <thead>
+        <tr>
+          <th>Логин</th>
+          <th>Имя</th>
+          <th>Роль</th>
+          <th>Активен</th>
+          <th>Новый пароль</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Настройки сайта</h2>
+    <div class="admin-actions">
+      <button type="button" id="admSettingsSave" class="primary">Сохранить настройки</button>
+      <button type="button" id="admSettingsExport">Скачать site-settings.json</button>
+      <button type="button" id="admSettingsReset">Сбросить локальные настройки</button>
+    </div>
+
+    <h3>Пути Базиса</h3>
+    <div class="admin-grid">
+      <label>Папка .b3d линейки <input id="admSamoletPath" type="text"></label>
+      <label>Папка моих .b3d <input id="admUserCatalogPath" type="text"></label>
+      <label>Папка .f3d фурнитуры <input id="admFurniturePath" type="text"></label>
+    </div>
+
+    <h3>Свет по умолчанию</h3>
+    <div class="admin-grid">
+      <label>Окружающий <input id="admLtAmbient" type="number" min="0" max="2" step="0.05"></label>
+      <label>Солнце <input id="admLtSun" type="number" min="0" max="3" step="0.05"></label>
+      <label>Азимут <input id="admLtAz" type="number" min="0" max="360" step="5"></label>
+      <label>Высота <input id="admLtEl" type="number" min="5" max="85" step="1"></label>
+      <label>Заполнение <input id="admLtFill" type="number" min="0" max="2" step="0.05"></label>
+      <label class="chk"><input id="admLtCeil" type="checkbox"> Потолочные светильники</label>
+    </div>
+
+    <h3>Видимость вкладок</h3>
+    <div class="admin-grid">
+      <label class="chk"><input id="admTabRoom" type="checkbox"> Помещение</label>
+      <label class="chk"><input id="admTabSam" type="checkbox"> Каталог</label>
+      <label class="chk"><input id="admTabFix" type="checkbox"> Объекты</label>
+      <label class="chk"><input id="admTabLib" type="checkbox"> Библиотека</label>
+      <label class="chk"><input id="admTabBrief" type="checkbox"> ТЗ → ИИ</label>
+    </div>
+
+    <h3>Ссылки в шапке</h3>
+    <div class="admin-grid">
+      <label class="chk"><input id="admLinkM1" type="checkbox"> Модуль v1</label>
+      <label class="chk"><input id="admLinkM2" type="checkbox"> Модуль v2</label>
+      <label class="chk"><input id="admLinkM3" type="checkbox"> Модуль v3</label>
+    </div>
+
+    <p id="admStatus" class="muted" style="margin-top:20px"></p>
+  </main>
+
+  <script type="module" src="js/admin.js?v=20261127g"></script>
+</body>
+</html>

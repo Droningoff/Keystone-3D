@@ -4,7 +4,7 @@
  * Координаты eKKD — метры; у нас — мм. Ось плана: X / Z (вторая координата point).
  */
 import { newProject, defaultRoom } from './model.js?v=20261124ap';
-import { newOpening, newObstacle, ensureAdvancedFields, syncSimpleAABB } from './roomGeom.js?v=20261110a';
+import { newOpening, newObstacle, ensureAdvancedFields, syncSimpleAABB } from './roomGeom.js?v=20261127n';
 
 const m2mm = (v) => Math.round((+v || 0) * 1000);
 

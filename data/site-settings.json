@@ -1,0 +1,25 @@
+{
+  "samoletPath": "",
+  "userCatalogPath": "",
+  "furniturePath": "",
+  "lighting": {
+    "ambient": 0.55,
+    "sun": 1.2,
+    "sunAzimuth": 35,
+    "sunElevation": 55,
+    "fill": 0.35,
+    "ceiling": false
+  },
+  "tabs": {
+    "room": true,
+    "sam": true,
+    "fix": true,
+    "lib": true,
+    "brief": true
+  },
+  "headerLinks": {
+    "module1": true,
+    "module2": true,
+    "module3": true
+  }
+}

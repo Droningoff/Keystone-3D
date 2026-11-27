@@ -1,5 +1,5 @@
 // UI редактора помещения: свойства стены, план SVG, каталог конструкций.
-import { cornerAngleDeg } from './roomGeom.js?v=20261110a';
+import { cornerAngleDeg } from './roomGeom.js?v=20261127n';
 
 function el(html) {
   const t = document.createElement('template');

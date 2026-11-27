@@ -1,6 +1,8 @@
 // Каталог техники, моек, смесителей, коммуникаций.
 // Модели процедурные (примитивы Three.js) — без внешних GLB.
-// Позже можно подменить builder на загрузку .glb из папки assets/.
+// Свои объекты пользователя (userobj) — сетки из личного каталога OBJ (userObjects.js).
+
+import { buildUserObjectNode, getUserObject, getUserObjectMesh } from './userObjects.js?v=20261127k';
 
 export const FIXTURE_CATALOG = {
   // --- Техника ---
@@ -83,6 +85,12 @@ export const FIXTURE_CATALOG = {
     title: 'Газовая труба', category: 'Коммуникации', kind: 'pipe',
     w: 30, d: 30, h: 900, price: 0, place: 'wall', color: 0xd4a017, elev: 200,
   },
+
+  // --- Свои объекты (личный каталог OBJ, userObjects.js) ---
+  userobj: {
+    title: 'Мой объект', category: 'Мои объекты', kind: 'userobj',
+    w: 400, d: 400, h: 400, price: 0, place: 'floor', color: 0xb8bcc2, elev: 0,
+  },
 };
 
 /** Старые типы → актуальные (розетки объединены в блок). */
@@ -113,6 +121,13 @@ export function socketBlockWidth(count, h = 80) {
 
 export function isWallPlateKind(kind) {
   return kind === 'socket' || kind === 'vent';
+}
+
+/** Свой объект на стене (как розетка): elev = центр по высоте. */
+export function isUserObjWall(f, def = null) {
+  const d = def || FIXTURE_CATALOG[resolveFixtureType(f?.type)] || {};
+  if (d.kind !== 'userobj') return false;
+  return (f?.place || d.place || 'floor') === 'wall';
 }
 
 // Ширина обода мойки; вырез в столешнице = габарит мойки минус два обода
@@ -146,7 +161,7 @@ export function fixtureDims(f) {
   const def = FIXTURE_CATALOG[type] || {};
   let w = Math.max(8, +(f?.w ?? def.w ?? 40));
   const d = Math.max(4, +(f?.d ?? def.d ?? w));
-  const h = Math.max(20, +(f?.h ?? def.h ?? 100));
+  const h = Math.max(10, +(f?.h ?? def.h ?? 100));
   if (type === 'socket_block') {
     w = socketBlockWidth(socketBlockCount(f), h);
   }
@@ -163,7 +178,7 @@ export function fixtureCenter(f, dims = null) {
   const def = FIXTURE_CATALOG[type] || {};
   const { w, d, h } = dims || fixtureDims(f);
   const elev = +f?.elev || 0;
-  const y = isWallPlateKind(def.kind) ? elev : elev + h * 0.5;
+  const y = (isWallPlateKind(def.kind) || isUserObjWall(f, def)) ? elev : elev + h * 0.5;
   return { x: +f?.x || 0, y, z: +f?.z || 0, w, d, h, elev, kind: def.kind };
 }
 
@@ -175,6 +190,7 @@ export function fixtureTitle(f) {
 export function fixturesByCategory() {
   const map = new Map();
   for (const [id, def] of Object.entries(FIXTURE_CATALOG)) {
+    if (id === 'userobj') continue; // карточки — во вкладке «Помещение» → Мои объекты
     const c = def.category;
     if (!map.has(c)) map.set(c, []);
     map.get(c).push({ id, ...def });
@@ -362,6 +378,40 @@ function _buildCommVent(THREE, g, f, dims) {
   }
 }
 
+/**
+ * Свой объект из личного каталога: сетка масштабируется под габарит экземпляра (w/h/d),
+ * зеркалится по X, цвет экземпляра перекрывает материалы модели.
+ * Если модели нет (удалена или каталог другого пользователя) — полупрозрачная коробка-заглушка.
+ */
+function _buildUserObj(THREE, g, f, dims) {
+  const { w, d, h } = dims;
+  const onWall = isUserObjWall(f);
+  const item = getUserObject(f.objId);
+  const meshRec = getUserObjectMesh(f.objId);
+  if (meshRec?.positions?.length) {
+    g.add(buildUserObjectNode(meshRec, {
+      w, h, d,
+      mirror: !!f.mirror,
+      color: f.color || null,
+      useMaterials: item ? item.useMaterials !== false : true,
+      baseColor: item?.color,
+      onWall,
+    }));
+    return;
+  }
+  const box = new THREE.Mesh(
+    new THREE.BoxGeometry(w, h, d),
+    new THREE.MeshStandardMaterial({ color: 0xd97706, transparent: true, opacity: 0.35, roughness: 0.8 }),
+  );
+  box.position.y = onWall ? 0 : h / 2;
+  const edge = new THREE.LineSegments(
+    new THREE.EdgesGeometry(box.geometry),
+    new THREE.LineBasicMaterial({ color: 0xb45309 }),
+  );
+  edge.position.copy(box.position);
+  g.add(box, edge);
+}
+
 /** Построить группу Three.js для объекта (вызывается из viewer). */
 export function buildFixtureMesh(THREE, f) {
   const type = resolveFixtureType(f.type);
@@ -413,6 +463,8 @@ export function buildFixtureMesh(THREE, f) {
     _buildCommSocket(THREE, g, { ...f, type }, dims);
   } else if (def.kind === 'vent') {
     _buildCommVent(THREE, g, { ...f, type }, dims);
+  } else if (def.kind === 'userobj') {
+    _buildUserObj(THREE, g, f, dims);
   } else {
     const body = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
     body.position.set(0, h / 2, d / 2);

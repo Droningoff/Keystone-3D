@@ -6,13 +6,13 @@ import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { MATERIALS } from './catalog.js?v=20261028m';
 import { panelBox, localToWorld } from './model.js?v=20261125m';
-import { buildFixtureMesh, FIXTURE_CATALOG, SINK_RIM, fixtureDims, fixtureCenter } from './fixtures.js?v=20261124be';
+import { buildFixtureMesh, FIXTURE_CATALOG, SINK_RIM, fixtureDims, fixtureCenter } from './fixtures.js?v=20261127k';
 import { WALL_BY_ID } from './walls.js?v=20261110a';
 import {
   roomOutline, roomWallSegments, roomBounds, isAdvanced, ensureAdvancedFields,
-  roomWallSegments3D, ceilingHeightAt, planAtHeight, edgeLetter, pointInPolygon,
+  roomWallSegments3D, ceilingHeightAt, planAtHeight, wallLabel, edgeLetter, pointInPolygon,
   isOpenRoom, wallEdgeCount, wallCornerFillPts, levelsWithPlans,
-} from './roomGeom.js?v=20261125q';
+} from './roomGeom.js?v=20261127n';
 import { buildHardwareMesh } from './hardware.js?v=20261029j';
 
 /**
@@ -740,7 +740,7 @@ export class Viewer {
     return {
       kind: 'wall',
       edgeIndex,
-      letter: edgeIndex != null ? edgeLetter(edgeIndex) : (ud.wall ? WALL_BY_ID[ud.wall]?.letter : '?'),
+      letter: edgeIndex != null ? wallLabel(this.room, edgeIndex) : (ud.wall ? WALL_BY_ID[ud.wall]?.letter : '?'),
       wall: ud.wall,
       point: h.point.clone(),
       y: h.point.y,
@@ -1062,7 +1062,7 @@ export class Viewer {
       });
       const wallUd = {
         plane: 'wall', wall: s.wall, edgeIndex: s.edgeIndex, pickPlane: true,
-        roomPart: 'wall', letter: edgeLetter(s.edgeIndex),
+        roomPart: 'wall', letter: wallLabel(this.room, s.edgeIndex),
         // нормаль наружу — нужна для розеток/решёток на косых стенах
         nx: s.nx, nz: s.nz,
       };
@@ -1121,7 +1121,7 @@ export class Viewer {
     // Буква на каждом ребре контура (A, B, C… включая новые после добавления вершин)
     const labelHBase = (isAdvanced(room) ? ceilingHeightAt(room, L / 2, D / 2) : H) - 80;
     for (const s of segs3) {
-      const letter = edgeLetter(s.edgeIndex);
+      const letter = wallLabel(this.room, s.edgeIndex);
       const div = document.createElement('div');
       div.className = 'mlabel wall-letter';
       div.textContent = letter;
@@ -2072,7 +2072,7 @@ export class Viewer {
 
       const wallUd = {
         plane: 'wall', wall: s.wall, edgeIndex: s.edgeIndex, pickPlane: true,
-        roomPart: 'wall', letter: edgeLetter(s.edgeIndex),
+        roomPart: 'wall', letter: wallLabel(this.room, s.edgeIndex),
         nx: s.nx, nz: s.nz,
       };
       const fresh = this._wallWithOpenings(s, edgeOps, wallMat, WALL_THICK, {
@@ -2494,33 +2494,63 @@ export class Viewer {
         const sinTurn = (d1x * d2z - d1z * d2x) / (l1 * l2);
         const fill = sinTurn > 0.06 ? wallCornerFillPts(vx, vz, s, cornerEnd, thick) : null;
         if (fill) {
-          const hC = Math.max(hWall, +s.hB || 0, +cornerEnd.hA || 0, +cornerEnd.hB || 0);
+          // Угол повторяет форму стен по поясам (пол → столешница → потолок): если уровни
+          // сместились, наружный угол идёт по наклону вместе со стенами, а не торчит столбом.
+          const bs = s.belts || [];
+          const bc = cornerEnd.belts || [];
+          const nLv = Math.min(bs.length, bc.length);
+          const unit = (a, b, ref) => {
+            const dx = b.x - a.x, dz = b.z - a.z;
+            const l = Math.hypot(dx, dz);
+            if (l < 1) return { nx: ref.nx || 0, nz: ref.nz || 0 };
+            let nx = dz / l, nz = -dx / l;
+            if (nx * (ref.nx || 0) + nz * (ref.nz || 0) < 0) { nx = -nx; nz = -nz; }
+            return { nx, nz };
+          };
+          const rings = [];
+          if (nLv >= 2) {
+            for (let k = 0; k < nLv; k++) {
+              const V = bs[k].b || { x: vx, z: vz };
+              const n1 = unit(bs[k].a, bs[k].b, s);
+              const n2 = unit(bc[k].a, bc[k].b, cornerEnd);
+              const f = wallCornerFillPts(V.x, V.z, n1, n2, thick) || [V, V, V];
+              rings.push({ y: +bs[k].yB || 0, pts: [{ x: V.x, z: V.z }, f[0], f[1], f[2]] });
+            }
+          } else {
+            const hC = Math.max(hWall, +s.hB || 0, +cornerEnd.hA || 0, +cornerEnd.hB || 0);
+            rings.push({ y: 0, pts: [{ x: vx, z: vz }, ...fill] }, { y: hC, pts: [{ x: vx, z: vz }, ...fill] });
+          }
+          rings.sort((p, q) => p.y - q.y);
           // микросдвиг по Y — убирает Z-fighting с торцом соседней стены / полом
-          const yBot = 0.15;
-          const yTop = hC + 0.15;
-          const [va, vm, vb] = fill;
-          const bot = [{ x: vx, z: vz }, va, vm, vb];
+          rings[0].y += 0.15;
+          rings[rings.length - 1].y += 0.15;
           const pushCorner = (x, y, z, nx, ny, nz) => {
             pos.push(x, y, z);
             nrm.push(nx, ny, nz);
             return pos.length / 3 - 1;
           };
-          const di = bot.map((p) => pushCorner(p.x, yBot, p.z, 0, -1, 0));
-          const ui = bot.map((p) => pushCorner(p.x, yTop, p.z, 0, 1, 0));
+          const first = rings[0], last = rings[rings.length - 1];
+          const di = first.pts.map((p) => pushCorner(p.x, first.y, p.z, 0, -1, 0));
+          const ui = last.pts.map((p) => pushCorner(p.x, last.y, p.z, 0, 1, 0));
           quad(di[0], di[1], di[2], di[3]);
           quad(ui[0], ui[3], ui[2], ui[1]);
-          for (const [a, b] of [[0, 1], [1, 2], [2, 3], [3, 0]]) {
-            const pa = bot[a], pb = bot[b];
-            const dx = pb.x - pa.x, dz = pb.z - pa.z;
-            const sl = Math.hypot(dx, dz) || 1;
-            let sx = dz / sl, sz = -dx / sl;
-            const mx = (pa.x + pb.x) * 0.5 - vx, mz = (pa.z + pb.z) * 0.5 - vz;
-            if (sx * mx + sz * mz < 0) { sx = -sx; sz = -sz; }
-            const i0 = pushCorner(pa.x, yBot, pa.z, sx, 0, sz);
-            const i1 = pushCorner(pb.x, yBot, pb.z, sx, 0, sz);
-            const i2 = pushCorner(pb.x, yTop, pb.z, sx, 0, sz);
-            const i3 = pushCorner(pa.x, yTop, pa.z, sx, 0, sz);
-            quad(i0, i1, i2, i3);
+          for (let k = 0; k < rings.length - 1; k++) {
+            const lo = rings[k], hi = rings[k + 1];
+            if (hi.y - lo.y < 0.5) continue;
+            for (const [a, b] of [[0, 1], [1, 2], [2, 3], [3, 0]]) {
+              const pa = lo.pts[a], pb = lo.pts[b];
+              const qa = hi.pts[a], qb = hi.pts[b];
+              const dx = pb.x - pa.x, dz = pb.z - pa.z;
+              const sl = Math.hypot(dx, dz) || 1;
+              let sx = dz / sl, sz = -dx / sl;
+              const mx = (pa.x + pb.x) * 0.5 - lo.pts[0].x, mz = (pa.z + pb.z) * 0.5 - lo.pts[0].z;
+              if (sx * mx + sz * mz < 0) { sx = -sx; sz = -sz; }
+              const i0 = pushCorner(pa.x, lo.y, pa.z, sx, 0, sz);
+              const i1 = pushCorner(pb.x, lo.y, pb.z, sx, 0, sz);
+              const i2 = pushCorner(qb.x, hi.y, qb.z, sx, 0, sz);
+              const i3 = pushCorner(qa.x, hi.y, qa.z, sx, 0, sz);
+              quad(i0, i1, i2, i3);
+            }
           }
         }
       }

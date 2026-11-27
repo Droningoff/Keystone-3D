@@ -2,7 +2,7 @@
 // Объект хранит moduleId и локальное смещение (lx, ly, lz) в СК модуля; мировая позиция вычисляется заново
 // при каждой сборке, поэтому объект следует за модулем при перемещении и повороте.
 
-import { FIXTURE_CATALOG, resolveFixtureType, isWallPlateKind } from './fixtures.js?v=20261124be';
+import { FIXTURE_CATALOG, resolveFixtureType, isWallPlateKind } from './fixtures.js?v=20261127k';
 import { moduleGen, frontT, isLib, localToWorld, worldToLocal, th } from './model.js?v=20261110a';
 
 const TOP_T = (prj) => th(prj.settings.topMat);
@@ -99,8 +99,8 @@ export function snapFixture(prj, type, point, hit) {
     };
   }
   const m = findModuleAt(prj, t, point.x, point.z, hit?.moduleId);
-  // розетки / решётки / трубы — только на стену/пол, не в модуль
-  if (m && !isWallPlateKind(def.kind) && def.kind !== 'pipe' && t !== 'fridge_60') {
+  // розетки / решётки / трубы / свои объекты — только на стену/пол, не в модуль
+  if (m && !isWallPlateKind(def.kind) && def.kind !== 'pipe' && def.kind !== 'userobj' && t !== 'fridge_60') {
     const lp = localPlacement(prj, t, m);
     const w = localToWorld(m, lp.lx, lp.ly, lp.lz);
     return { moduleId: m.id, lx: lp.lx, ly: lp.ly, lz: lp.lz, lrot: 0, x: w.x, z: w.z, elev: w.y, rot: +m.rot || 0, module: m };
@@ -108,18 +108,28 @@ export function snapFixture(prj, type, point, hit) {
   // Свободная постановка: стена или пол
   const room = prj.room;
   let x = point.x, z = point.z, rot = hit?.rot ?? 0, elev = def.elev ?? 0;
+  const isUserObj = def.kind === 'userobj';
+  const objPlace = hit?.objPlace || def.place;
+  const objAsWall = isUserObj && objPlace === 'wall';
+  const objH = +(hit?.objH || def.h || 100);
   const onWall = !!(hit?.wall || hit?.edgeIndex != null || (hit?.nx != null && hit?.nz != null));
+  if (isUserObj && !onWall) {
+    // напольный — на поверхность под курсором (пол, столешница); настенный без стены — не ниже пола
+    elev = objAsWall ? Math.max(objH / 2, +point.y || 0) : Math.max(0, +point.y || 0);
+  }
   if (onWall) {
     if (def.kind === 'pipe') elev = def.elev ?? 0;
-    else if (isWallPlateKind(def.kind)) elev = Math.round(point.y); // середина пластины
-    else elev = Math.round(point.y - def.h / 2);
+    else if (isWallPlateKind(def.kind) || objAsWall) elev = Math.round(point.y); // середина по высоте
+    else if (isUserObj) elev = 0; // напольный у стены — прижат к стене, стоит на полу
+    else elev = Math.round(point.y - (def.h || 100) / 2);
     // сначала нормаль — работает и на косых стенах (A/B/…), не только AABB back/front/left/right
     if (hit.nx != null && hit.nz != null && Number.isFinite(+hit.nx) && Number.isFinite(+hit.nz)) {
       const nl = Math.hypot(+hit.nx, +hit.nz) || 1;
       const nx = +hit.nx / nl, nz = +hit.nz / nl;
       rot = Math.round((Math.atan2(-nx, -nz) * 180) / Math.PI);
       // чуть внутрь комнаты от плоскости стены (локальный +Z смотрит внутрь)
-      const inset = Math.max(2, Math.round((+def.d || 20) * 0.5));
+      const depth = +(hit?.objD ?? def.d) || 20;
+      const inset = Math.max(2, Math.round(depth * 0.5));
       x = point.x - nx * inset;
       z = point.z - nz * inset;
     } else if (hit.wall === 'back') { rot = 0; z = 0; }

@@ -11,7 +11,7 @@ import { MATERIALS } from './catalog.js?v=20261028m';
 import { libPanels, libModuleData } from './samolet.js?v=20261029j';
 import {
   isAdvanced, ensureAdvancedFields, unifyRoomPlan, ceilingHeightAt, footprintInsideRoom, roomOutline,
-} from './roomGeom.js?v=20261110a';
+} from './roomGeom.js?v=20261127n';
 
 export const th = (id) => (MATERIALS[id] || MATERIALS.ldsp16_white).t;
 

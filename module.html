@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор модуля — детали</title>
-  <link rel="stylesheet" href="css/app.css?v=20261028n">
+  <link rel="stylesheet" href="css/app.css?v=20261127g">
   <link rel="stylesheet" href="css/module.css?v=20261028n">
   <script type="importmap">
   {
@@ -14,12 +14,15 @@
   }
   </script>
 </head>
-<body class="module-page">
+<body class="module-page auth-locked">
   <header>
-    <a class="btn-link" href="index.html?v=20261028n">← Сцена</a>
-    <a class="btn-link" href="module2.html?v=20261028v2" title="Шаблоны и мебельные правила">Модуль v2</a>
+    <a class="btn-link" href="index.html?v=20261127g">← Сцена</a>
+    <a class="btn-link" href="module2.html?v=20261127g" title="Шаблоны и мебельные правила">Модуль v2</a>
     <input id="modName" class="prj-name" value="Новый модуль" title="Имя модуля">
     <div class="spacer"></div>
+    <span id="authUserLabel" class="auth-user"></span>
+    <a class="btn-link" id="authAdminLink" href="admin.html?v=20261127g" hidden>Админ</a>
+    <button type="button" id="authLogout" hidden>Выйти</button>
     <span id="modStatus" class="muted"></span>
     <button type="button" id="btnTpl" title="Принудительно пересобрать из шаблона">Пересобрать</button>
     <button type="button" id="btnAddPanel">+ Деталь</button>
@@ -100,6 +103,6 @@
     </aside>
   </main>
 
-  <script type="module" src="js/moduleCtor.js?v=20261028n"></script>
+  <script type="module" src="js/moduleCtor.js?v=20261127g"></script>
 </body>
 </html>

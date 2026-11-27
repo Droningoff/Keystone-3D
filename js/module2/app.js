@@ -14,6 +14,7 @@ import {
   TYPOLOGIES, RULES, RULES_DEFAULT, applyRules, resetRules, cloneRules,
 } from './rules.js?v=20261028v2b';
 import { generateModule } from './generator.js?v=20261028v2b';
+import { gatePage } from '../authGate.js?v=20261127g';
 
 const $ = (s) => document.querySelector(s);
 const STORE = 'furniture-module-ctor-v2-doc';
@@ -779,7 +780,13 @@ function wire() {
   setTool(state.tool);
 }
 
-function boot() {
+async function boot() {
+  try {
+    await gatePage();
+  } catch (e) {
+    console.error(e);
+    return;
+  }
   restore();
   initScene();
   wire();

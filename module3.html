@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор модулей v3</title>
-  <link rel="stylesheet" href="css/app.css?v=20261125v3">
+  <link rel="stylesheet" href="css/app.css?v=20261127g">
   <link rel="stylesheet" href="css/module3.css?v=20261125v3">
 </head>
-<body>
+<body class="auth-locked">
   <header>
-    <a class="btn-link" href="index.html?v=20261125v3">← Сцена</a>
+    <a class="btn-link" href="index.html?v=20261127g">← Сцена</a>
     <span class="prj-name">Модуль v3</span>
     <div class="spacer"></div>
+    <span id="authUserLabel" class="auth-user"></span>
+    <a class="btn-link" id="authAdminLink" href="admin.html?v=20261127g" hidden>Админ</a>
+    <button type="button" id="authLogout" hidden>Выйти</button>
   </header>
   <main id="v3root"></main>
-  <script type="module" src="js/module3/app.js?v=20261125v3"></script>
+  <script type="module" src="js/module3/app.js?v=20261127g"></script>
 </body>
 </html>

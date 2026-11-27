@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Конструктор модулей v2 — правила и шаблоны</title>
-  <link rel="stylesheet" href="css/app.css?v=20261028v2b">
+  <link rel="stylesheet" href="css/app.css?v=20261127g">
   <link rel="stylesheet" href="css/module2.css?v=20261028v2b">
   <script type="importmap">
   {
@@ -14,12 +14,15 @@
   }
   </script>
 </head>
-<body class="v2-page">
+<body class="v2-page auth-locked">
   <header>
-    <a class="btn-link" href="index.html?v=20261028v2b">← Сцена</a>
-    <a class="btn-link" href="module.html?v=20261028n" title="Классический редактор деталей">Модуль v1</a>
+    <a class="btn-link" href="index.html?v=20261127g">← Сцена</a>
+    <a class="btn-link" href="module.html?v=20261127g" title="Классический редактор деталей">Модуль v1</a>
     <input id="v2Name" class="prj-name" value="Новый модуль" title="Имя модуля">
     <div class="spacer"></div>
+    <span id="authUserLabel" class="auth-user"></span>
+    <a class="btn-link" id="authAdminLink" href="admin.html?v=20261127g" hidden>Админ</a>
+    <button type="button" id="authLogout" hidden>Выйти</button>
     <span id="v2Status" class="muted"></span>
     <button type="button" id="v2Rebuild">Пересобрать</button>
     <button type="button" id="v2Export">JSON</button>
@@ -91,6 +94,6 @@
     </aside>
   </main>
 
-  <script type="module" src="js/module2/app.js?v=20261028v2b"></script>
+  <script type="module" src="js/module2/app.js?v=20261127g"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ import {
   emptyChain, chainPoints, chainHeadings, chainSegments, chainFloor, chainFromPoints,
   reverseChain, isChainReversed, angBetween, norm360, bboxOf,
 } from './roomPlan.js?v=20261110a';
-import { wallCornerFillPts } from './roomGeom.js?v=20261124bb';
+import { wallCornerFillPts } from './roomGeom.js?v=20261127n';
 
 const RAD = Math.PI / 180;
 const clone = (o) => JSON.parse(JSON.stringify(o));

@@ -68,10 +68,17 @@ export function roomCornerAngle(g, edge1, edge2, atVertex) {
   const sector2 = 360 - sector1;
   const bis1 = norm360(h1 + sector1 / 2);
   const bis2 = norm360(h1 + sector1 + sector2 / 2);
-  const c = graphCentroid(g);
-  const toC = norm360(Math.atan2(c.z - v.z, c.x - v.x) / RAD);
-  const diff = (a, b) => Math.min(norm360(a - b), norm360(b - a));
-  const use1 = diff(toC, bis1) <= diff(toC, bis2);
+  let use1;
+  const inside = graphInsideTester(g);
+  if (inside) {
+    const r = Math.max(2, Math.min(40, edgeLength(g, edge1) / 4, edgeLength(g, edge2) / 4));
+    use1 = inside(v.x + Math.cos(bis1 * RAD) * r, v.z + Math.sin(bis1 * RAD) * r);
+  } else {
+    const c = graphCentroid(g);
+    const toC = norm360(Math.atan2(c.z - v.z, c.x - v.x) / RAD);
+    const diff = (a, b) => Math.min(norm360(a - b), norm360(b - a));
+    use1 = diff(toC, bis1) <= diff(toC, bis2);
+  }
   const ang = use1 ? sector1 : sector2;
   return { ang: ang >= 359.5 ? 0 : r1(ang), bis: use1 ? bis1 : bis2 };
 }
@@ -122,18 +129,58 @@ export function setEdgeInteriorAngle(g, edgeId, refEdgeId, pivotId, newAng) {
   if (!edge || !ref || !pivot || edge.lock) return false;
   const a = Math.min(359, Math.max(1, +newAng || 90));
   const leaveRef = edgeDirection(g, ref, pivotId);
-  const c = graphCentroid(g);
-  const toC = norm360(Math.atan2(c.z - pivot.z, c.x - pivot.x) / RAD);
-  const diff = (x, y) => Math.min(norm360(x - y), norm360(y - x));
-  let best = norm360(leaveRef + a);
-  let bestDiff = Infinity;
+  const saved = g.vertices.map((v) => ({ x: v.x, z: v.z }));
+  const restore = (pos) => {
+    g.vertices.forEach((v, i) => { v.x = pos[i].x; v.z = pos[i].z; });
+    syncEdgeLengths(g);
+  };
+  const curLeave = edgeDirection(g, edge, pivotId);
+  const turn = (h) => Math.min(norm360(h - curLeave), norm360(curLeave - h));
+  let best = null;
   for (const sign of [1, -1]) {
-    const leaveH = norm360(leaveRef + sign * a);
-    const bis = norm360(leaveRef + sign * (a / 2));
-    const d = diff(bis, toC);
-    if (d < bestDiff) { bestDiff = d; best = leaveH; }
+    restore(saved);
+    const h = norm360(leaveRef + sign * a);
+    if (!rotateEdgeAround(g, edge, pivotId, h)) { restore(saved); return false; }
+    const err = Math.abs(roomCornerAngle(g, ref, edge, pivotId).ang - a);
+    // подходящие варианты (угол совпал) — с наименьшим поворотом стены
+    const score = (err < 0.6 ? 0 : 1000 + err) + turn(h);
+    if (!best || score < best.score) best = { score, pos: g.vertices.map((v) => ({ x: v.x, z: v.z })) };
   }
-  return setEdgeLeaveHeading(g, edgeId, pivotId, best);
+  restore(best.pos);
+  return true;
+}
+
+/**
+ * Направить ребро от pivot под углом headingDeg, сохранив длину.
+ * Замкнутый контур: двигается только дальняя вершина (соседняя стена подстраивается);
+ * открытая цепочка: поворачивается вся ветка за ребром.
+ */
+export function rotateEdgeAround(g, edge, pivotId, headingDeg) {
+  if (!edge || edge.lock) return false;
+  if (edge.from !== pivotId && edge.to !== pivotId) return false;
+  const pivot = getVertex(g, pivotId);
+  const farId = edge.from === pivotId ? edge.to : edge.from;
+  const far = getVertex(g, farId);
+  if (!pivot || !far) return false;
+  const old = Math.atan2(far.z - pivot.z, far.x - pivot.x);
+  const d = norm360(headingDeg) * RAD - old;
+  const cos = Math.cos(d), sin = Math.sin(d);
+  let ids;
+  if (isGraphClosed(g)) {
+    if (edgesAtVertex(g, farId).some((e) => e.id !== edge.id && e.lock)) return false;
+    ids = [farId];
+  } else {
+    ids = [...reachableFrom(g, farId, edge.id)].filter((id) => id !== pivotId);
+  }
+  for (const id of ids) {
+    const v = getVertex(g, id);
+    if (!v) continue;
+    const rx = v.x - pivot.x, rz = v.z - pivot.z;
+    v.x = Math.round(pivot.x + rx * cos - rz * sin);
+    v.z = Math.round(pivot.z + rx * sin + rz * cos);
+  }
+  syncEdgeLengths(g);
+  return true;
 }
 
 /**
@@ -333,13 +380,32 @@ export function edgeOutwardNormal(g, edge, flip = 1) {
   const dx = to.x - from.x, dz = to.z - from.z;
   const len = Math.hypot(dx, dz) || 1;
   let nx = dz / len, nz = -dx / len;
-  if (g.vertices.length >= 2) {
+  const mx = (from.x + to.x) / 2, mz = (from.z + to.z) / 2;
+  const inside = graphInsideTester(g);
+  if (inside) {
+    const r = Math.max(2, Math.min(40, len / 4));
+    if (inside(mx + nx * r, mz + nz * r)) { nx = -nx; nz = -nz; }
+  } else if (g.vertices.length >= 2) {
     const c = graphCentroid(g);
-    const mx = (from.x + to.x) / 2, mz = (from.z + to.z) / 2;
     // если нормаль смотрит к центроиду — это внутрь, разворачиваем
     if (nx * (c.x - mx) + nz * (c.z - mz) > 0) { nx = -nx; nz = -nz; }
   }
   return { nx: nx * flip, nz: nz * flip };
+}
+
+/** Для замкнутого контура — функция (x, z) → точка внутри помещения; иначе null. */
+export function graphInsideTester(g) {
+  if (!isGraphClosed(g)) return null;
+  const poly = graphToOrderedVertices(g);
+  if (poly.length < 3) return null;
+  return (x, z) => {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const a = poly[i], b = poly[j];
+      if ((a.z > z) !== (b.z > z) && x < ((b.x - a.x) * (z - a.z)) / (b.z - a.z) + a.x) inside = !inside;
+    }
+    return inside;
+  };
 }
 
 /** Вершины, достижимые от rootId, не переходя через excludeEdgeId */
@@ -364,8 +430,13 @@ export function syncEdgeLengths(g) {
   g.edges.forEach((e) => { e.len = edgeLength(g, e); });
 }
 
-/** Изменить длину ребра: from фиксирован, ветка to сдвигается */
-export function setEdgeLength(g, edgeId, newLen) {
+/**
+ * Изменить длину ребра. move — id вершины-конца, который сдвигается (по умолчанию edge.to),
+ * или 'both' — оба конца на половину разницы.
+ * Замкнутый контур: конец сдвигается вместе со следующей стеной (она переносится параллельно),
+ * длину меняет стена через одну. Открытая цепочка: сдвигается вся ветка за концом.
+ */
+export function setEdgeLength(g, edgeId, newLen, move = null) {
   const edge = g.edges.find((e) => e.id === edgeId);
   if (!edge || edge.lock) return false;
   const len = Math.max(10, Math.round(newLen));
@@ -375,13 +446,57 @@ export function setEdgeLength(g, edgeId, newLen) {
   const dx = to.x - from.x, dz = to.z - from.z;
   const cur = Math.hypot(dx, dz) || 1;
   const tx = dx / cur, tz = dz / cur;
-  const nx = from.x + tx * len, nz = from.z + tz * len;
-  const ddx = nx - to.x, ddz = nz - to.z;
-  for (const id of reachableFrom(g, edge.to, edge.id)) {
-    const v = getVertex(g, id);
-    if (v) { v.x = Math.round(v.x + ddx); v.z = Math.round(v.z + ddz); }
+  const delta = len - cur;
+  const closed = isGraphClosed(g);
+
+  const sideIds = (vid) => {
+    if (!closed) {
+      const ids = reachableFrom(g, vid, edge.id);
+      const other = vid === edge.to ? edge.from : edge.to;
+      return ids.has(other) ? [vid] : [...ids];
+    }
+    const e2 = edgesAtVertex(g, vid).find((e) => e.id !== edge.id);
+    if (!e2) return [vid];
+    const n = e2.from === vid ? e2.to : e2.from;
+    if (n === edge.from || n === edge.to) return e2.lock ? null : [vid];
+    const e3 = edgesAtVertex(g, n).find((e) => e.id !== e2.id);
+    if (e3?.lock) return null;
+    return [vid, n];
+  };
+  const plan = [];
+  if (move === 'both') plan.push([edge.to, delta / 2], [edge.from, -delta / 2]);
+  else if (move === edge.from) plan.push([edge.from, -delta]);
+  else plan.push([edge.to, delta]);
+  const shifts = [];
+  for (const [vid, d] of plan) {
+    const ids = sideIds(vid);
+    if (!ids) return false;
+    shifts.push([ids, d]);
+  }
+  for (const [ids, d] of shifts) {
+    for (const id of ids) {
+      const v = getVertex(g, id);
+      if (v) { v.x = Math.round(v.x + tx * d); v.z = Math.round(v.z + tz * d); }
+    }
   }
   syncEdgeLengths(g);
+  return true;
+}
+
+/** Переписать id вершин/рёбер target по порядку из template (одинаковая цепочка построения). */
+export function adoptGraphIds(target, template) {
+  if (!target || !template) return false;
+  if (target.vertices.length !== template.vertices.length || target.edges.length !== template.edges.length) return false;
+  const map = new Map(target.vertices.map((v, i) => [v.id, template.vertices[i].id]));
+  target.vertices.forEach((v, i) => { v.id = template.vertices[i].id; });
+  target.edges.forEach((e, i) => {
+    const t = template.edges[i];
+    e.id = t.id;
+    e.from = map.get(e.from) ?? e.from;
+    e.to = map.get(e.to) ?? e.to;
+    if (t.wid) e.wid = t.wid;
+    if (t.wstart) e.wstart = t.wstart;
+  });
   return true;
 }
 

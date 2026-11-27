@@ -1,4 +1,4 @@
-﻿import { EDGES, matsByKind } from './catalog.js?v=20261028m';
+import { EDGES, matsByKind } from './catalog.js?v=20261028m';
 import {
   MODULE_TYPES, BUTT_SIDES, createModule, newProject, buildProject, snapPos, nextFreeX,
   moduleTitle, panelSize, resolveDoors, migrateProject, toggleFront, setAllFronts,
@@ -10,13 +10,14 @@ import { WALL_BY_ID, placeOnWall } from './walls.js?v=20261110a';
 import {
   newObstacle, newOpening, ensureAdvancedFields, unifyRoomPlan, syncSimpleAABB,
   ensureCtorIds,
-  rectPlan, wallSurvey, setWallLengthAt, roomWallSegments, edgeLetter,
+  rectPlan, wallSurvey, setWallLengthAt, roomWallSegments, wallLabel,
   planByLayer, planLayerLabel, insertVertexOnEdge, resetPlanLayerToRect,
   newFeature, featureTitle,
   levelsWithPlans, wallEdgeCount, isOpenRoom, setWallLengthAtLevel, applyDrawnRoom,
-} from './roomGeom.js?v=20261124bb';
-import { chainFromPoints, wallPose } from './roomPlan.js?v=20261110a';
-import { openPlanEditorGraph } from './planEditorGraph.js?v=20261125f';
+} from './roomGeom.js?v=20261127n';
+import { chainFromPoints, wallPose } from './roomPlan.js?v=20261127n';
+import { openPlanEditorGraph } from './planEditorGraph.js?v=20261127s';
+const roomWallLabel = (i) => wallLabel(project.room, i);
 import { validateFit } from './roomFit.js?v=20261110a';
 import {
   showRoomPrompt, renderWallPropsHtml, CONSTRUCTION_CATALOG, CTOR_ICONS, renderPlanSvg,
@@ -32,10 +33,10 @@ import {
   FIXTURE_CATALOG, FIXTURE_ICONS, createFixture, fixtureTitle, fixtureDims,
   fixturesByCategory, communicationsCatalog, socketBlockCount, socketBlockWidth,
   isWallPlateKind, resolveFixtureType,
-} from './fixtures.js?v=20261124be';
-import { Viewer } from './viewer.js?v=20261126a';
+} from './fixtures.js?v=20261127k';
+import { Viewer } from './viewer.js?v=20261127t';
 import { projectFromEkkd } from './ekkd.js?v=20261124as';
-import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261125u';
+import { snapFixture, resolveFixtures, resolveFixture, adaptModule } from './placement.js?v=20261127k';
 import {
   loadUserCatalog, userCatalogItems, userCatalogAll, addUserB3dFiles,
   archiveCatalogEntry, deleteUserEntry, isCatalogArchived, catalogArchivedCount,
@@ -43,6 +44,17 @@ import {
 import {
   loadHwCatalog, autoFittingsForModule, enrichFitting,
 } from './hwCatalog.js?v=20261028m';
+import {
+  initUserObjects, purgeLegacyFragments, listUserObjects, archivedUserObjectsCount,
+  getUserObject, addUserObject, replaceUserObjectMesh, setUserObjectArchived, deleteUserObject,
+  readObjSources, exportUserObjectsBlob, importUserObjectsFile,
+} from './userObjects.js?v=20261127k';
+import { openUserObjectDialog, pickFiles } from './userObjectsUi.js?v=20261127k';
+import { gatePage } from './authGate.js?v=20261127h';
+import { currentUser } from './auth.js?v=20261127h';
+import {
+  loadSiteSettings, applySiteSettingsToDom, applySiteSettingsToProject, getSiteSettings,
+} from './siteSettings.js?v=20261127h';
 
 const $ = (s) => document.querySelector(s);
 const STORE = 'furniture-constructor-project';
@@ -304,7 +316,14 @@ const viewer = new Viewer($('#viewport'), {
   },
   onPlace: (x, z, wall, y, rot, edgeIndex) => placeModuleAt(x, z, wall, y, rot, edgeIndex),
   onPlaceFixture: (hit, rot) => placeFixtureAt(hit, rot),
-  previewFixture: (type, hit, rot) => ({ id: '__ghost', type, ...snapFixture(project, type, hit.point, { ...hit, rot }) }),
+  previewFixture: (type, hit, rot) => {
+    const extra = type === 'userobj' ? userObjFixtureFields(placeUserObjEntry) : {};
+    return {
+      id: '__ghost', type,
+      ...snapFixture(project, type, hit.point, { ...hit, rot, ...userObjHit(type) }),
+      ...extra,
+    };
+  },
   onToggleFront: (id, key) => {
     commit();
     const m = mod(id);
@@ -340,9 +359,22 @@ const viewer = new Viewer($('#viewport'), {
     const f = project.fixtures.find((q) => q.id === id);
     if (!f || !patch) return;
     commit();
-    if (patch.w != null) f.w = +patch.w;
-    if (patch.d != null) f.d = +patch.d;
-    if (patch.h != null) f.h = +patch.h;
+    if (f.type === 'userobj' && f.keepRatio !== false) {
+      // одна ось задаёт масштаб — берём ту, что изменилась сильнее
+      let k = 1, best = 0;
+      for (const ax of ['w', 'h', 'd']) {
+        if (patch[ax] == null || !(+f[ax] > 0)) continue;
+        const r = +patch[ax] / +f[ax];
+        if (Math.abs(Math.log(r)) > best) { best = Math.abs(Math.log(r)); k = r; }
+      }
+      f.w = Math.max(8, Math.round(+f.w * k));
+      f.h = Math.max(10, Math.round(+f.h * k));
+      f.d = Math.max(4, Math.round(+f.d * k));
+    } else {
+      if (patch.w != null) f.w = +patch.w;
+      if (patch.d != null) f.d = +patch.d;
+      if (patch.h != null) f.h = +patch.h;
+    }
     if (patch.elev != null) f.elev = +patch.elev;
     if (patch.x != null) f.x = +patch.x;
     if (patch.z != null) f.z = +patch.z;
@@ -422,8 +454,12 @@ function log(text, cls = '') {
 function updateModeBadge() {
   const el = $('#modeBadge');
   if (viewer.mode === 'place') el.textContent = `Постановка: ${placeEntry?.name || ''} · R поворот`;
-  else if (viewer.mode === 'placeFixture') el.textContent = `Объект: ${FIXTURE_CATALOG[viewer.placeFixture]?.title || ''} · R поворот`;
-  else if (viewer.mode === 'placeCtor') {
+  else if (viewer.mode === 'placeFixture') {
+    const title = viewer.placeFixture === 'userobj'
+      ? (placeUserObjEntry?.title || 'Мой объект')
+      : (FIXTURE_CATALOG[viewer.placeFixture]?.title || '');
+    el.textContent = `Объект: ${title} · R поворот`;
+  } else if (viewer.mode === 'placeCtor') {
     const c = placeCtorEntry || viewer.placeCtor;
     el.textContent = 'Конструкция: ' + (c?.title || '') + ' · Esc';
   } else el.textContent = '';
@@ -464,7 +500,8 @@ function placeFixtureAt(hit, rot) {
   const type = viewer.placeFixture;
   if (!type) return;
   const def = FIXTURE_CATALOG[type];
-  const s = snapFixture(project, type, hit.point, { ...hit, rot });
+  if (type === 'userobj' && !placeUserObjEntry) return;
+  const s = snapFixture(project, type, hit.point, { ...hit, rot, ...userObjHit(type) });
   const needsModule = def.kind === 'sink' || def.kind === 'mixer' || ['hob_60', 'oven_60', 'dishwasher_60'].includes(type);
   if (needsModule && !s.moduleId) {
     log(`${def.title}: наведите курсор на подходящий модуль (нижний${type === 'oven_60' || type === 'dishwasher_60' ? ' или пенал' : ''})`, 'err');
@@ -473,6 +510,7 @@ function placeFixtureAt(hit, rot) {
   commit();
   const { module: target, ...fields } = s;
   const f = { ...createFixture(type), ...fields };
+  if (type === 'userobj') Object.assign(f, userObjFixtureFields(placeUserObjEntry));
   project.fixtures.push(f);
   if (target) {
     const note = adaptModule(type, target);
@@ -482,9 +520,33 @@ function placeFixtureAt(hit, rot) {
     log(`Поставлен объект: ${fixtureTitle(f)}`, 'ok');
   }
   sel = { moduleId: null, panelKey: null, fixtureId: f.id };
+  placeUserObjEntry = null;
   viewer.setMode('select');
   updateModeBadge();
   refresh();
+  try { renderUserObjectsLib(); } catch (_) {}
+}
+
+/** Поля экземпляра своего объекта из записи каталога. */
+function userObjFixtureFields(e) {
+  if (!e) return {};
+  return {
+    objId: e.id,
+    name: e.title,
+    place: e.place === 'wall' ? 'wall' : 'floor',
+    w: Math.round(+e.w) || 100,
+    h: Math.round(+e.h) || 100,
+    d: Math.round(+e.d) || 100,
+    mirror: false,
+    color: '',
+    keepRatio: true,
+  };
+}
+
+/** Подсказки для snapFixture: посадка и габарит своего объекта. */
+function userObjHit(type) {
+  if (type !== 'userobj' || !placeUserObjEntry) return {};
+  return { objPlace: placeUserObjEntry.place, objH: placeUserObjEntry.h, objD: placeUserObjEntry.d };
 }
 
 let geomLoading = false;
@@ -520,6 +582,10 @@ function softSelect() {
 
 function refresh() {
   project = migrateProject(project);
+  // импорт .fr3d упразднён — старые фрагменты убираем из проекта
+  if (project.fixtures?.some((f) => f.type === 'fragment')) {
+    project.fixtures = project.fixtures.filter((f) => f.type !== 'fragment');
+  }
   ensureCtorIds(project.room);
   if (sel.moduleId && !mod(sel.moduleId) && !String(sel.moduleId).startsWith('__top')) {
     sel = { ...sel, moduleId: null, panelKey: null };
@@ -555,6 +621,7 @@ function refresh() {
   try { if (typeof renderPlanEditor === 'function') renderPlanEditor(); } catch(_){}
   try { if (typeof renderConstructionsLib === 'function') renderConstructionsLib(); } catch(_){}
   try { if (typeof renderCommLib === 'function') renderCommLib(); } catch(_){}
+  try { if (typeof renderUserObjectsLib === 'function') renderUserObjectsLib(); } catch(_){}
   try { if (typeof syncLayersForm === 'function') syncLayersForm(); } catch(_){}
   try { if (typeof renderWallPropsPanel === 'function') renderWallPropsPanel(); } catch(_){}
   renderFeatures();
@@ -628,13 +695,165 @@ function renderLibrary() {
 }
 
 function startPlaceFixture(e) {
+  placeUserObjEntry = null;
   viewer.setMode('placeFixture', e.id);
   updateModeBadge();
   try { renderCommLib(); } catch (_) {}
+  try { renderUserObjectsLib(); } catch (_) {}
   const intoModule = e.kind === 'sink' || e.kind === 'mixer'
     || ['hob_60', 'oven_60', 'dishwasher_60', 'microwave', 'hood_60'].includes(e.id);
   const onWall = e.kind === 'socket' || e.kind === 'vent' || e.place === 'wall';
   log(`Постановка: ${e.title}. ${intoModule ? 'Наведите на модуль — встанет по его центру (зелёный призрак).' : onWall ? 'Кликните по стене.' : 'Кликните по полу/стене.'}`, 'ok');
+}
+
+function startPlaceUserObject(entry) {
+  if (!entry) return;
+  placeUserObjEntry = entry;
+  viewer.setMode('placeFixture', 'userobj');
+  updateModeBadge();
+  try { renderCommLib(); } catch (_) {}
+  try { renderUserObjectsLib(); } catch (_) {}
+  log(`Постановка «${entry.title}»: ${entry.place === 'wall' ? 'клик по стене' : 'клик по полу, столешнице или у стены'}. R — поворот, Esc — отмена.`, 'ok');
+}
+
+let showArchivedUserObjects = false;
+
+function renderUserObjectsLib() {
+  const el = $('#userObjLib');
+  if (!el) return;
+  const items = listUserObjects({ archived: showArchivedUserObjects });
+  const archN = archivedUserObjectsCount();
+  const archBtn = $('#uoArchToggle');
+  if (archBtn) {
+    archBtn.textContent = showArchivedUserObjects ? '← К каталогу' : `Архив (${archN})`;
+    archBtn.disabled = !showArchivedUserObjects && !archN;
+  }
+  const active = viewer.mode === 'placeFixture' && viewer.placeFixture === 'userobj' ? placeUserObjEntry?.id : null;
+  if (!items.length) {
+    el.innerHTML = `<p class="muted" style="grid-column:1/-1">${showArchivedUserObjects ? 'Архив пуст.' : 'Каталог пуст — нажмите «Загрузить OBJ…».'}</p>`;
+    return;
+  }
+  let lastCat = null;
+  el.innerHTML = items.map((c) => {
+    const cat = c.category || 'Без категории';
+    const head = cat !== lastCat ? `<h4 class="uo-cat">${escHtml(cat)}</h4>` : '';
+    lastCat = cat;
+    return `${head}
+    <div class="ctor-card uo-card${active === c.id ? ' active' : ''}" data-uo="${c.id}" role="button" tabindex="0"${showArchivedUserObjects ? '' : ' title="Клик — поставить на сцену"'}>
+      <div class="ctor-ico">${c.thumb ? `<img alt="" src="${c.thumb}">` : ''}</div>
+      <div class="ctor-title">${escHtml(c.title)}</div>
+      <div class="muted">${c.w}×${c.h}×${c.d} · ${c.place === 'wall' ? 'стена' : 'пол'}</div>
+      <div class="uo-card-actions">
+        ${showArchivedUserObjects
+          ? '<button type="button" data-uo-act="restore" title="Вернуть в каталог">Вернуть</button>'
+          : `<button type="button" data-uo-act="replace" title="Заменить 3D-модель">Заменить</button>
+             <button type="button" data-uo-act="archive" title="Убрать в архив">В архив</button>`}
+        <button type="button" data-uo-act="delete" class="danger" title="Удалить навсегда">×</button>
+      </div>
+    </div>`;
+  }).join('');
+  el.querySelectorAll('[data-uo]').forEach((node) => {
+    const id = node.dataset.uo;
+    node.onclick = (e) => {
+      const act = e.target.closest?.('[data-uo-act]')?.dataset.uoAct;
+      if (act) { e.stopPropagation(); userObjectAction(act, id); return; }
+      if (!showArchivedUserObjects) startPlaceUserObject(getUserObject(id));
+    };
+    node.onkeydown = (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && !showArchivedUserObjects) {
+        e.preventDefault();
+        startPlaceUserObject(getUserObject(id));
+      }
+    };
+  });
+}
+
+const userObjUses = (id) => (project.fixtures || []).filter((f) => f.type === 'userobj' && f.objId === id);
+
+async function userObjectAction(act, id) {
+  const it = getUserObject(id);
+  if (!it) return;
+  try {
+    if (act === 'archive') {
+      await setUserObjectArchived(id, true);
+      if (placeUserObjEntry?.id === id) { placeUserObjEntry = null; viewer.setMode('select'); updateModeBadge(); }
+      log(`«${it.title}» — в архиве. На сцене остаётся; вернуть — кнопка «Архив».`, 'ok');
+    } else if (act === 'restore') {
+      await setUserObjectArchived(id, false);
+      log(`«${it.title}» возвращён в каталог`, 'ok');
+    } else if (act === 'replace') {
+      const files = await pickFiles('.obj,.mtl,.zip,.png,.jpg,.jpeg,.webp,.bmp');
+      if (!files.length) return;
+      const [src] = await readObjSources(files);
+      const res = await openUserObjectDialog(src, it);
+      if (!res) return;
+      const { item, old } = await replaceUserObjectMesh(id, res.meta, res.meshRec);
+      // экземпляры на сцене сохраняют свой масштаб относительно модели
+      const uses = userObjUses(id);
+      if (uses.length) commit();
+      for (const f of uses) {
+        f.w = Math.round(item.w * (+f.w || old.w) / (old.w || 1));
+        f.h = Math.round(item.h * (+f.h || old.h) / (old.h || 1));
+        f.d = Math.round(item.d * (+f.d || old.d) / (old.d || 1));
+        if (!f.name || f.name === old.title) f.name = item.title;
+      }
+      log(`Модель «${item.title}» заменена${uses.length ? `, обновлено на сцене: ${uses.length}` : ''}`, 'ok');
+    } else if (act === 'delete') {
+      const uses = userObjUses(id);
+      const msg = uses.length
+        ? `Удалить «${it.title}» навсегда? Он стоит на сцене (${uses.length} шт.) — эти экземпляры тоже будут удалены.`
+        : `Удалить «${it.title}» из каталога навсегда?`;
+      if (!confirm(msg)) return;
+      await deleteUserObject(id);
+      if (uses.length) {
+        commit();
+        project.fixtures = project.fixtures.filter((f) => !uses.includes(f));
+        if (sel.fixtureId && uses.some((f) => f.id === sel.fixtureId)) sel.fixtureId = null;
+      }
+      if (placeUserObjEntry?.id === id) { placeUserObjEntry = null; viewer.setMode('select'); updateModeBadge(); }
+      log(`«${it.title}» удалён из каталога`, 'ok');
+    }
+  } catch (err) {
+    log('Мои объекты: ' + (err?.message || err), 'err');
+  }
+  renderUserObjectsLib();
+  refresh();
+}
+
+async function uploadUserObjects(files) {
+  if (!files.length) return;
+  const sources = await readObjSources(files);
+  let n = 0;
+  for (const src of sources) {
+    const res = await openUserObjectDialog(src);
+    if (!res) continue;
+    const item = await addUserObject(res.meta, res.meshRec);
+    n++;
+    log(`В каталог добавлен «${item.title}» (${item.w}×${item.h}×${item.d} мм)`, 'ok');
+  }
+  if (n) { showArchivedUserObjects = false; renderUserObjectsLib(); }
+}
+
+/** Ближайшая стена к точке: проекция на стену, нормаль внутрь помещения, поворот «лицом в комнату». */
+function nearestWallPose(x, z) {
+  const segs = roomWallSegments(project.room);
+  if (!segs.length) return null;
+  const cx = segs.reduce((s, q) => s + q.midX, 0) / segs.length;
+  const cz = segs.reduce((s, q) => s + q.midZ, 0) / segs.length;
+  let best = null;
+  for (const s of segs) {
+    const tx = (s.x2 - s.x1) / s.len, tz = (s.z2 - s.z1) / s.len;
+    const t = Math.max(0, Math.min(s.len, (x - s.x1) * tx + (z - s.z1) * tz));
+    const px = s.x1 + tx * t, pz = s.z1 + tz * t;
+    const dist = Math.hypot(x - px, z - pz);
+    if (!best || dist < best.dist) {
+      let nx = -s.nx, nz = -s.nz;
+      if ((cx - px) * nx + (cz - pz) * nz < 0) { nx = -nx; nz = -nz; }
+      best = { dist, px, pz, nx, nz };
+    }
+  }
+  best.rot = Math.round((Math.atan2(best.nx, best.nz) * 180) / Math.PI + 360) % 360;
+  return best;
 }
 
 function renderFixturesLib() {
@@ -1043,7 +1262,7 @@ function syncViewButtons(mode) {
   document.querySelectorAll('.wall-view-toggle').forEach((btn) => {
     const m = /^wallEdge:(\d+)$/.exec(cur);
     if (m) {
-      btn.textContent = `Стена ${edgeLetter(+m[1])} ▾`;
+      btn.textContent = `Стена ${roomWallLabel(+m[1])} ▾`;
       btn.classList.add('active');
     } else {
       btn.textContent = 'От стены ▾';
@@ -1073,7 +1292,7 @@ function syncWallViewButtons() {
     btn.setAttribute('aria-haspopup', 'true');
     const m = /^wallEdge:(\d+)$/.exec(cur);
     if (m && +m[1] < n) {
-      btn.textContent = `Стена ${edgeLetter(+m[1])} ▾`;
+      btn.textContent = `Стена ${roomWallLabel(+m[1])} ▾`;
       btn.classList.add('active');
     } else {
       btn.textContent = 'От стены ▾';
@@ -1086,7 +1305,7 @@ function syncWallViewButtons() {
       const item = document.createElement('button');
       item.type = 'button';
       item.dataset.view = `wallEdge:${i}`;
-      item.textContent = `Стена ${edgeLetter(i)}`;
+      item.textContent = `Стена ${roomWallLabel(i)}`;
       item.setAttribute('role', 'menuitem');
       if (cur === item.dataset.view) item.classList.add('active');
       menu.appendChild(item);
@@ -1466,12 +1685,13 @@ function renderProps() {
 
 function renderFixtureProps(el, f) {
   if (!f) { sel.fixtureId = null; return renderProps(); }
+  if (f.type === 'userobj') return renderUserObjProps(el, f);
   const def = FIXTURE_CATALOG[f.type];
   const host = f.moduleId && mod(f.moduleId);
   const bind = (id, fn) => { const inp = $('#' + id); if (inp) inp.onchange = () => { commit(); fn(inp); refresh(); }; };
   const head = `
     <h3>${fixtureTitle(f)}</h3>
-    <p class="muted">${def?.category || ''} · ${def?.price ? def.price.toLocaleString('ru-RU') + ' ₽' : ''}</p>`;
+    <p class="muted">${def?.category || ''}${def?.price ? ' · ' + def.price.toLocaleString('ru-RU') + ' ₽' : ''}</p>`;
 
   if (host) {
     const center = +host.p.width / 2;
@@ -1543,13 +1763,116 @@ function renderFixtureProps(el, f) {
       });
       bind('fx_d', (i) => f.d = Math.max(4, +i.value));
     } else if (isWallPlateKind(def?.kind)) {
-      bind('fx_w', (i) => f.w = Math.max(20, +i.value));
-      bind('fx_h', (i) => f.h = Math.max(20, +i.value));
-      bind('fx_d', (i) => f.d = Math.max(4, +i.value));
+      bind('fx_w', (i) => { f.w = Math.max(10, +i.value); });
+      bind('fx_h', (i) => { f.h = Math.max(10, +i.value); });
+      bind('fx_d', (i) => { f.d = Math.max(4, +i.value); });
     }
     $('#fx_rot').onclick = () => { commit(); f.rot = ((+f.rot || 0) + 90) % 360; refresh(); };
   }
+  bind('fx_name', (i) => { f.name = i.value.trim(); });
+  $('#fx_del').onclick = () => { commit(); project.fixtures = project.fixtures.filter((q) => q !== f); sel.fixtureId = null; refresh(); };
+}
+
+/** Свойства своего объекта: положение, габарит с замком пропорций, зеркало, цвет, привязки. */
+function renderUserObjProps(el, f) {
+  const it = getUserObject(f.objId);
+  const dims = fixtureDims(f);
+  const onWall = f.place === 'wall';
+  const bind = (id, fn, ev = 'onchange') => { const inp = $('#' + id); if (inp) inp[ev] = () => { commit(); fn(inp); refresh(); }; };
+  el.innerHTML = `
+    <h3>${escHtml(fixtureTitle(f))}</h3>
+    <p class="muted">Мои объекты${it?.category ? ' · ' + escHtml(it.category) : ''}${it ? '' : ' · <b>модель не найдена в вашем каталоге</b>'}${it?.archived ? ' · в архиве' : ''}</p>
+    ${it?.thumb ? `<img class="frag-props-thumb" alt="" src="${it.thumb}">` : ''}
+    <label>Посадка
+      <select id="uo_place">
+        <option value="floor" ${onWall ? '' : 'selected'}>На пол / поверхность (высота — низ объекта)</option>
+        <option value="wall" ${onWall ? 'selected' : ''}>На стену (высота — центр объекта)</option>
+      </select>
+    </label>
+    <div class="props-grid">
+      ${numField('fx_x', 'X', Math.round(+f.x || 0), 10)}
+      ${numField('fx_z', 'Z', Math.round(+f.z || 0), 10)}
+      ${numField('fx_elev', onWall ? 'Центр от пола' : 'Высота от пола', Math.round(+f.elev || 0), 10)}
+      ${numField('fx_rot', 'Поворот °', Math.round(+f.rot || 0), 15)}
+      ${numField('fx_w', 'Ширина', Math.round(dims.w), 5)}
+      ${numField('fx_h', 'Высота', Math.round(dims.h), 5)}
+      ${numField('fx_d', 'Глубина', Math.round(dims.d), 5)}
+      ${numField('uo_scale', 'Масштаб %', it ? Math.round((dims.w / (it.w || dims.w)) * 100) : 100, 5)}
+    </div>
+    <div class="uo-props-checks">
+      <label class="uo-check"><input type="checkbox" id="uo_ratio" ${f.keepRatio !== false ? 'checked' : ''}> Сохранять пропорции</label>
+      <label class="uo-check"><input type="checkbox" id="uo_mirror" ${f.mirror ? 'checked' : ''}> Зеркально</label>
+    </div>
+    <div class="uo-props-checks">
+      <label class="uo-check"><input type="checkbox" id="uo_owncolor" ${f.color ? 'checked' : ''}> Свой цвет</label>
+      <input type="color" id="uo_color" value="${escHtml(f.color || it?.color || '#b8bcc2')}" ${f.color ? '' : 'disabled'}>
+    </div>
+    <label>Наименование<input type="text" id="fx_name" value="${escHtml(f.name || '')}"></label>
+    <div class="btnrow">
+      <button id="uo_floor" title="Опустить на пол">На пол</button>
+      <button id="uo_wall" title="Прижать спиной к ближайшей стене">К стене</button>
+      <button id="uo_reset" ${it ? '' : 'disabled'} title="Габарит как в каталоге">Исходный размер</button>
+    </div>
+    <div class="btnrow"><button id="fx_rot">Повернуть 90°</button><button id="fx_del" class="danger">Удалить</button></div>
+    <p class="muted">Манипулятор: стрелки — сдвиг, кольца — поворот, кубики — размер (с замком пропорций — равномерно).</p>`;
+
+  const setSize = (ax, v) => {
+    v = Math.max(ax === 'd' ? 4 : 8, +v || 0);
+    if (f.keepRatio !== false && +dims[ax] > 0) {
+      const k = v / dims[ax];
+      f.w = Math.round(dims.w * k); f.h = Math.round(dims.h * k); f.d = Math.round(dims.d * k);
+    } else {
+      f[ax] = Math.round(v);
+    }
+  };
+  bind('fx_x', (i) => f.x = +i.value);
+  bind('fx_z', (i) => f.z = +i.value);
+  bind('fx_elev', (i) => f.elev = Math.max(0, +i.value));
+  bind('fx_rot', (i) => f.rot = ((+i.value % 360) + 360) % 360);
+  bind('fx_w', (i) => setSize('w', i.value));
+  bind('fx_h', (i) => setSize('h', i.value));
+  bind('fx_d', (i) => setSize('d', i.value));
+  bind('uo_scale', (i) => {
+    if (!it) return;
+    const k = Math.max(1, +i.value || 100) / 100;
+    f.w = Math.round(it.w * k); f.h = Math.round(it.h * k); f.d = Math.round(it.d * k);
+  });
+  bind('uo_ratio', (i) => f.keepRatio = i.checked);
+  bind('uo_mirror', (i) => f.mirror = i.checked);
+  bind('uo_owncolor', (i) => f.color = i.checked ? ($('#uo_color').value || it?.color || '#b8bcc2') : '');
+  bind('uo_color', (i) => f.color = i.value);
+  bind('uo_place', (i) => {
+    const toWall = i.value === 'wall';
+    if (toWall === (f.place === 'wall')) return;
+    const h = fixtureDims(f).h;
+    f.elev = toWall ? Math.round((+f.elev || 0) + h / 2) : Math.max(0, Math.round((+f.elev || 0) - h / 2));
+    f.place = toWall ? 'wall' : 'floor';
+  });
   bind('fx_name', (i) => f.name = i.value.trim());
+  $('#uo_floor').onclick = () => {
+    commit();
+    f.elev = f.place === 'wall' ? Math.round(fixtureDims(f).h / 2) : 0;
+    f.rx = 0; f.rz = 0;
+    refresh();
+  };
+  $('#uo_wall').onclick = () => {
+    const p = nearestWallPose(+f.x || 0, +f.z || 0);
+    if (!p) { log('Не найдено ни одной стены помещения', 'err'); return; }
+    commit();
+    const d = fixtureDims(f).d;
+    f.x = Math.round(p.px + p.nx * d / 2);
+    f.z = Math.round(p.pz + p.nz * d / 2);
+    f.rot = p.rot;
+    f.rx = 0; f.rz = 0;
+    refresh();
+  };
+  $('#uo_reset').onclick = () => {
+    if (!it) return;
+    commit();
+    f.w = it.w; f.h = it.h; f.d = it.d;
+    refresh();
+  };
+  $('#fx_rot').onclick = () => { commit(); f.rot = ((+f.rot || 0) + 90) % 360; refresh(); };
   $('#fx_del').onclick = () => { commit(); project.fixtures = project.fixtures.filter((q) => q !== f); sel.fixtureId = null; refresh(); };
 }
 
@@ -1775,7 +2098,11 @@ const actions = {
   redo: () => doRedo(),
   new: () => {
     if (!confirm('Создать новый проект?')) return;
-    commit(); project = newProject(); sel = { moduleId: null, panelKey: null, fixtureId: null }; refresh();
+    commit();
+    project = newProject();
+    applySiteSettingsToProject(project, { forceLighting: true, forcePaths: true });
+    sel = { moduleId: null, panelKey: null, fixtureId: null };
+    refresh();
     openRoomPlan(true);
   },
   importEkkd: () => $('#fileEkkd').click(),
@@ -1890,7 +2217,15 @@ window.addEventListener('keydown', (e) => {
     }
     refresh();
   }
-  if (e.key === 'Escape') { sel = emptySel(); viewer.setMode('select'); placeEntry = null; updateModeBadge(); refresh(); }
+  if (e.key === 'Escape') {
+    sel = emptySel();
+    viewer.setMode('select');
+    placeEntry = null;
+    placeUserObjEntry = null;
+    updateModeBadge();
+    try { renderUserObjectsLib(); } catch (_) {}
+    refresh();
+  }
 });
 
 // ---------- Опросник ТЗ > промпт ИИ ----------
@@ -2088,6 +2423,8 @@ log('Готово. Вкладка «ТЗ > ИИ» — опросник для с
 
 // ===== Keystone patches (viewport bar, column resize, constructions place) =====
 let placeCtorEntry = null;
+/** Запись личного каталога, выбранная для постановки (type=userobj). */
+let placeUserObjEntry = null;
 let planEditLayer = 'floor';
 let _planResizeObs = null;
 let _planLastW = 0;
@@ -2201,6 +2538,59 @@ document.querySelector('.plan-layers')?.addEventListener('click', (e) => {
   renderPlanEditor();
 });
 
+function floorWallLen(room, i) {
+  const p = room.planFloor || [];
+  const a = p[i], b = p[(i + 1) % p.length];
+  return a && b ? Math.hypot(b.x - a.x, b.z - a.z) : 0;
+}
+
+/**
+ * После перестроения плана: цвета стен и проёмы — по постоянным id стен.
+ * Проём на развёрнутой стене отражается, отступ ограничивается длиной стены.
+ * Возвращает число проёмов, чьих стен больше нет.
+ */
+function remapRoomWalls(room, ops, oldIds, oldLens, oldColors, walls) {
+  const ids = room.wallIds || [];
+  const colors = {};
+  for (const [k, c] of Object.entries(oldColors || {})) {
+    const ki = +k;
+    if (!Number.isInteger(ki) || String(ki) !== k) { colors[k] = c; continue; }
+    const ni = ids.indexOf(oldIds[ki]);
+    if (ni >= 0) colors[ni] = c;
+  }
+  room.wallColors = colors;
+  let lost = 0;
+  room.openings = ops.filter((op) => {
+    if (!op.wallId) return true;
+    const ni = ids.indexOf(op.wallId);
+    if (ni < 0) { lost++; return false; }
+    const len = floorWallLen(room, ni);
+    const w = +op.width || 0;
+    let off = +op.offset || 0;
+    if (walls[ni]?.reversed) off = (oldLens[oldIds.indexOf(op.wallId)] ?? len) - off - w;
+    op.offset = Math.round(Math.max(0, Math.min(off, len - w)));
+    op.edgeIndex = ni;
+    return true;
+  });
+  return lost;
+}
+
+/** План сдвинули к началу координат — сдвинуть всё, что стоит в комнате. */
+function shiftRoomContents(dx, dz) {
+  dx = Math.round(+dx || 0);
+  dz = Math.round(+dz || 0);
+  if (!dx && !dz) return;
+  const mv = (o) => {
+    if (Number.isFinite(+o.x)) o.x = Math.round(+o.x + dx);
+    if (Number.isFinite(+o.z)) o.z = Math.round(+o.z + dz);
+  };
+  (project.modules || []).forEach(mv);
+  (project.fixtures || []).filter((f) => !f.moduleId).forEach(mv);
+  (project.room.obstacles || []).forEach(mv);
+  (project.room.ceiling?.samples || []).forEach(mv);
+  log(`Содержимое комнаты сдвинуто вместе с планом (${dx}, ${dz} мм)`, 'info');
+}
+
 /** Гибкий редактор плана: стены от любой вершины, длины/углы, без обязательного замыкания. */
 function openRoomPlan(isNew = false) {
   const room = project.room;
@@ -2216,19 +2606,36 @@ function openRoomPlan(isNew = false) {
       const pts = (closed ? l.plan : l.plan.slice(0, nW + 1)).map((p) => ({ x: +p.x, z: +p.z }));
       return { id: l.id, name: l.name, h: l.h, chain: chainFromPoints(pts, closed) };
     });
+  const oldIds = isNew ? [] : room.wallIds.slice();
   openPlanEditorGraph({
     levels,
     wallThick: room.wallThick || 100,
+    wallIds: isNew ? null : oldIds,
+    wallNames: isNew ? null : room.wallNames,
     onImportEkkd: () => $('#fileEkkd')?.click(),
-    onApply: ({ closed: cl, levels: lv, wallThick }) => {
+    onApply: ({ closed: cl, levels: lv, wallThick, walls = [], wallNames = {} }) => {
       if (!isNew) commit();
       if (isNew) room.openings = [];
-      room.wallColors = {};
-      applyDrawnRoom(room, { levels: lv, closed: cl });
+      const oldColors = room.wallColors || {};
+      const oldLens = oldIds.map((_, i) => floorWallLen(room, i));
+      const ops = room.openings || [];
+      for (const op of ops) {
+        if (!op.wallId && op.edgeIndex != null) op.wallId = oldIds[+op.edgeIndex];
+      }
+      room.openings = [];
+      room.wallIds = walls.map((w) => w.id);
+      const shift = applyDrawnRoom(room, { levels: lv, closed: cl });
       room.wallThick = wallThick;
       const n = wallEdgeCount(room);
+      if (walls.length !== n) room.wallIds = [];
+      room.wallNames = wallNames;
+      ensureAdvancedFields(room);
+      const lost = remapRoomWalls(room, ops, oldIds, oldLens, oldColors, walls);
+      if (!isNew) shiftRoomContents(shift.dx, shift.dz);
+      ensureAdvancedFields(room);
       planEditLayer = 'floor';
       log(`Помещение: ${n} стен, контур ${cl ? 'замкнут' : 'открыт'}, уровней ${lv.length} (${lv.map((l) => l.name).join(', ')})`, 'ok');
+      if (lost) log(`Удалено проёмов на исчезнувших стенах: ${lost}`, 'warn');
       refresh();
       renderPlanEditor();
       viewer.setView('3d');
@@ -2236,6 +2643,17 @@ function openRoomPlan(isNew = false) {
   });
 }
 document.querySelector('#btnPlanFromPoint')?.addEventListener('click', () => openRoomPlan(false));
+document.querySelector('#btnResetRect')?.addEventListener('click', () => {
+  const room = project.room;
+  const L = Math.round(+room.length || 4000), D = Math.round(+room.depth || 3500);
+  const title = planLayerLabel(planEditLayer, room);
+  if (!confirm(`Сбросить контур «${title}» в прямоугольник ${L}×${D} мм?`)) return;
+  commit();
+  resetPlanLayerToRect(room, planEditLayer);
+  log(`Контур «${title}» — прямоугольник ${L}×${D}`, 'ok');
+  refresh();
+  renderPlanEditor();
+});
 
 function renderPlanEditor() {
   const wrap = document.querySelector('#planSvgWrap');
@@ -2252,8 +2670,8 @@ function renderPlanEditor() {
     baseline: _planDragBase,
     onEdgeClick: (ei) => {
       unifyRoomPlan(project.room);
-      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ei, letter: edgeLetter(ei) });
-      renderWallPropsPanel({ kind: 'wall', edgeIndex: ei, letter: edgeLetter(ei) });
+      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ei, letter: roomWallLabel(ei) });
+      renderWallPropsPanel({ kind: 'wall', edgeIndex: ei, letter: roomWallLabel(ei) });
       renderPlanEditor();
     },
     onVertexDown: (i) => {
@@ -2354,7 +2772,7 @@ function placeCtorAt(ctor, hit, rot = 0) {
     });
     project.room.openings.push(op);
     sel = { ...emptySel(), openingId: op.id };
-    log(`Проём «${ctor.title}» · ${edgeLetter(ei)} · ${offset}`, 'ok');
+    log(`Проём «${ctor.title}» · ${roomWallLabel(ei)} · ${offset}`, 'ok');
   } else {
     const w = +ctor.w || 400, d = +ctor.d || 400;
     const x = Math.round((hit.point?.x ?? 500) - w / 2);
@@ -2481,11 +2899,13 @@ if (typeof viewer !== 'undefined' && viewer.h) {
   const prevCancel = viewer.h.onCancelPlace;
   viewer.h.onCancelPlace = () => {
     placeCtorEntry = null;
+    placeUserObjEntry = null;
     prevCancel?.();
     viewer.setMode('select');
     if (typeof updateModeBadge === 'function') updateModeBadge();
     renderConstructionsLib();
     renderCommLib();
+    try { renderUserObjectsLib(); } catch (_) {}
   };
 }
 
@@ -2519,8 +2939,8 @@ if (document.querySelector('#btnAddFloorVert')) {
     const selEi = viewer.roomSel?.kind === 'wall' ? viewer.roomSel.edgeIndex : null;
     if (selEi != null) {
       const ni = insertVertexOnEdge(project.room, selEi);
-      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ni, letter: edgeLetter(ni) });
-      log('Вершина на стене ' + edgeLetter(selEi), 'ok');
+      viewer.setRoomSelection({ kind: 'wall', edgeIndex: ni, letter: roomWallLabel(ni) });
+      log('Вершина на стене ' + roomWallLabel(selEi), 'ok');
     } else {
       const last = project.room.planFloor[project.room.planFloor.length - 1];
       const p = { id: 'v' + Date.now().toString(36), x: (last?.x || 0) + 500, z: last?.z || 0 };
@@ -2538,5 +2958,57 @@ try { renderConstructionsLib(); } catch (_) {}
 try { renderCommLib(); } catch (_) {}
 try { renderPlanEditor(); } catch (_) {}
 
-refresh();
-viewer.setView('3d');
+$('#uoUploadBtn')?.addEventListener('click', async () => {
+  try {
+    await uploadUserObjects(await pickFiles('.obj,.mtl,.zip,.png,.jpg,.jpeg,.webp,.bmp'));
+  } catch (err) {
+    log('Загрузка объекта: ' + (err?.message || err), 'err');
+  }
+});
+$('#uoArchToggle')?.addEventListener('click', () => {
+  showArchivedUserObjects = !showArchivedUserObjects;
+  renderUserObjectsLib();
+});
+$('#uoExportBtn')?.addEventListener('click', () => {
+  const n = listUserObjects().length + archivedUserObjectsCount();
+  if (!n) { log('Каталог пуст — выгружать нечего', 'warn'); return; }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(exportUserObjectsBlob());
+  a.download = `мои-объекты-${currentUser()?.login || 'guest'}-${new Date().toISOString().slice(0, 10)}.ks3dobj.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  log(`Каталог выгружен в файл: объектов ${n}`, 'ok');
+});
+$('#uoImportBtn')?.addEventListener('click', async () => {
+  const [file] = await pickFiles('.json', false);
+  if (!file) return;
+  try {
+    const n = await importUserObjectsFile(file);
+    renderUserObjectsLib();
+    refresh();
+    log(`Загружено объектов из файла: ${n}`, 'ok');
+  } catch (err) {
+    log('Импорт каталога: ' + (err?.message || err), 'err');
+  }
+});
+
+(async () => {
+  await gatePage();
+  await loadSiteSettings();
+  applySiteSettingsToDom(getSiteSettings());
+  applySiteSettingsToProject(project);
+  try {
+    if ($('#samPath') && project.settings.samoletPath) $('#samPath').value = project.settings.samoletPath;
+    if ($('#samUserPath') && project.settings.userCatalogPath) $('#samUserPath').value = project.settings.userCatalogPath;
+    if ($('#furnPath') && project.settings.furniturePath) $('#furnPath').value = project.settings.furniturePath;
+  } catch (_) {}
+  purgeLegacyFragments();
+  try {
+    await initUserObjects(currentUser()?.login);
+  } catch (err) {
+    log('Мои объекты: не удалось открыть каталог — ' + (err?.message || err), 'err');
+  }
+  renderUserObjectsLib();
+  refresh();
+  viewer.setView('3d');
+})();

@@ -3,7 +3,7 @@ import { moduleBox, moduleLocalSize, moduleRow } from './model.js?v=20261110a';
 import {
   isAdvanced, ensureAdvancedFields, ceilingHeightAt, footprintInsideRoom,
   cornerAngleDeg, planAtHeight, roomBounds, isWallCorner,
-} from './roomGeom.js?v=20261110a';
+} from './roomGeom.js?v=20261127n';
 
 /**
  * @returns {{ status: 'ok'|'warn'|'block', summary: string, items: Array<{level, code, text, moduleId?}> }}

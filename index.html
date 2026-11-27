@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <title>Конструктор корпусной мебели</title>
-  <link rel="stylesheet" href="css/app.css?v=20261126a">
+  <link rel="stylesheet" href="css/app.css?v=20261127o">
   <script type="importmap">
   {
     "imports": {
@@ -13,19 +13,22 @@
   }
   </script>
 </head>
-<body>
+<body class="auth-locked">
   <header>
     <input id="prjName" class="prj-name" title="Название проекта">
     <div class="spacer"></div>
+    <span id="authUserLabel" class="auth-user" title="Текущий пользователь"></span>
+    <a class="btn-link" id="authAdminLink" href="admin.html?v=20261127h" hidden>Админ</a>
+    <button type="button" id="authLogout" hidden>Выйти</button>
     <span id="modeBadge" class="mode-badge"></span>
     <span id="total" class="total"></span>
     <button data-act="undo" title="Отменить · Ctrl+Z">↶</button>
     <button data-act="redo" title="Повторить · Ctrl+Y / Ctrl+Shift+Z">↷</button>
     <button data-act="new">Новый</button>
     <button data-act="demoKitchen" title="Новая сцена: кухня из линейки Самолет">Пример кухни</button>
-    <a class="btn-link" href="module.html?v=20261028n" title="Конструктор модуля v1 — детали вручную">Модуль v1</a>
-    <a class="btn-link" href="module2.html?v=20261028v2b" title="Конструктор модулей v2 — шаблоны и мебельные правила">Модуль v2</a>
-    <a class="btn-link" href="module3.html?v=20261125v3" title="Конструктор модулей v3 — отдельная страница">Модуль v3</a>
+    <a class="btn-link" data-site-link="module1" href="module.html?v=20261127g" title="Конструктор модуля v1 — детали вручную">Модуль v1</a>
+    <a class="btn-link" data-site-link="module2" href="module2.html?v=20261127g" title="Конструктор модулей v2 — шаблоны и мебельные правила">Модуль v2</a>
+    <a class="btn-link" data-site-link="module3" href="module3.html?v=20261127g" title="Конструктор модулей v3 — отдельная страница">Модуль v3</a>
     <button data-act="open">Открыть</button>
     <button data-act="save">Сохранить</button>
     <button data-act="spec">Спецификация</button>
@@ -189,6 +192,20 @@
           <summary>Коммуникации</summary>
           <p class="muted">Розетки, выключатели, трубы — клик, затем пол или стена.</p>
           <div id="commLib" class="ctor-grid"></div>
+        </details>
+
+        <details class="room-block" open>
+          <summary>Мои объекты</summary>
+          <p class="muted">Свои 3D-модели в формате OBJ: выберите .obj вместе с .mtl и текстурами или один .zip (до 50 МБ). Клик по карточке — поставить на сцену. Каталог хранится в этом браузере; для переноса на другой компьютер — «Выгрузить» / «Загрузить из файла».</p>
+          <div class="btnrow">
+            <button type="button" id="uoUploadBtn" class="primary" title="OBJ + MTL + текстуры или ZIP">Загрузить OBJ…</button>
+            <button type="button" id="uoArchToggle" title="Объекты в архиве">Архив (0)</button>
+          </div>
+          <div class="btnrow">
+            <button type="button" id="uoExportBtn" title="Сохранить весь каталог в файл">Выгрузить каталог</button>
+            <button type="button" id="uoImportBtn" title="Добавить объекты из файла каталога">Загрузить из файла</button>
+          </div>
+          <div id="userObjLib" class="ctor-grid"></div>
         </details>
 
         <details class="room-block">
@@ -370,6 +387,6 @@
 
   <dialog id="specDlg"><div id="specBody"></div><form method="dialog"><button>Закрыть</button></form></dialog>
 
-  <script type="module" src="js/main.js?v=20261126a"></script>
+  <script type="module" src="js/main.js?v=20261127t"></script>
 </body>
 </html>

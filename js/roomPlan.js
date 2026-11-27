@@ -7,7 +7,7 @@
 // Комната лежит справа по ходу обхода (ось Z на плане вниз) — как у контура planFloor.
 // У замкнутой цепочки стена от последней точки к старту строится автоматически.
 
-import { openChainFloorExtra } from './roomGeom.js?v=20261110a';
+import { openChainFloorExtra } from './roomGeom.js?v=20261127n';
 
 const RAD = Math.PI / 180;
 export const norm360 = (a) => ((a % 360) + 360) % 360;
